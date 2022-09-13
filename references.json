@@ -1,119 +1,103 @@
 [
     {
-        "DOI": "10.1002/jez.1400610202",
         "author": [
             {
-                "family": "Allee",
-                "given": "W. C."
+                "family": "Dunne",
+                "given": "Jennifer A"
+            }
+        ],
+        "container-title": "Ecological networks: Linking structure and dynamics",
+        "editor": [
+            {
+                "family": "Dunne",
+                "given": "Jennifer A"
             },
             {
-                "family": "Bowen",
-                "given": "Edith S."
+                "family": "Pascual",
+                "given": "Mercedes"
             }
         ],
-        "container-title": "Journal of Experimental Zoology",
-        "id": "Allee1932StuAni",
-        "issue": "2",
+        "id": "Dunne2006NetStr",
         "issued": {
             "date-parts": [
                 [
-                    1932,
-                    2
+                    2006
                 ]
             ]
         },
-        "page": "185-207",
-        "title": "Studies in animal aggregations: Mass protection against colloidal silver among goldfishes",
-        "type": "article-journal",
-        "volume": "61"
+        "page": "27-86",
+        "publisher": "Oxford University Press",
+        "title": "The Network Structure of Food Webs",
+        "type": "chapter"
     },
     {
+        "DOI": "10.1111/2041-210X.13835",
         "author": [
             {
-                "family": "Camerano",
-                "given": "Lorenzo"
-            }
-        ],
-        "container-title": "Atti Della R. Accad. Delle Sci. Torino",
-        "id": "Camerano1880EquViv",
-        "issued": {
-            "date-parts": [
-                [
-                    1880
-                ]
-            ]
-        },
-        "page": "393-414",
-        "title": "Dell\u2019equilibrio dei viventi merce la reciproca distruzione",
-        "type": "article-journal",
-        "volume": "15"
-    },
-    {
-        "author": [
-            {
-                "family": "Elton",
-                "given": "Charles S"
-            }
-        ],
-        "id": "Elton1927AniEco",
-        "issued": {
-            "date-parts": [
-                [
-                    1927
-                ]
-            ]
-        },
-        "publisher": "University of Chicago Press",
-        "title": "Animal ecology",
-        "type": "book"
-    },
-    {
-        "author": [
-            {
-                "family": "Fahrenholz",
-                "given": "H."
-            }
-        ],
-        "container-title": "Zool. Anz.",
-        "id": "Fahrenholz1913EctUnd",
-        "issued": {
-            "date-parts": [
-                [
-                    1913
-                ]
-            ]
-        },
-        "page": "371-374",
-        "title": "Ectoparasiten und abstammungslehre",
-        "type": "article-journal",
-        "volume": "41"
-    },
-    {
-        "DOI": "10.1111/j.1096-3642.1935.tb01680.x",
-        "author": [
-            {
-                "family": "Nicholson",
-                "given": "A. J."
+                "family": "Strydom",
+                "given": "Tanya"
             },
             {
-                "family": "Bailey",
-                "given": "V. A."
+                "family": "Bouskila",
+                "given": "Salom\u00e9"
+            },
+            {
+                "family": "Banville",
+                "given": "Francis"
+            },
+            {
+                "family": "Barros",
+                "given": "Ceres"
+            },
+            {
+                "family": "Caron",
+                "given": "Dominique"
+            },
+            {
+                "family": "Farrell",
+                "given": "Maxwell J."
+            },
+            {
+                "family": "Fortin",
+                "given": "Marie-Jos\u00e9e"
+            },
+            {
+                "family": "Hemming",
+                "given": "Victoria"
+            },
+            {
+                "family": "Mercier",
+                "given": "Benjamin"
+            },
+            {
+                "family": "Pollock",
+                "given": "Laura J."
+            },
+            {
+                "family": "Runghen",
+                "given": "Rogini"
+            },
+            {
+                "family": "Dalla Riva",
+                "given": "Giulio V."
+            },
+            {
+                "family": "Poisot",
+                "given": "Timoth\u00e9e"
             }
         ],
-        "container-title": "Proceedings of the Zoological Society of London",
-        "id": "Nicholson1935BalAni",
-        "issue": "3",
+        "container-title": "Methods in Ecology and Evolution",
+        "id": "Strydom2022FooWeb",
+        "issue": "n/a",
         "issued": {
             "date-parts": [
                 [
-                    1935,
-                    9
+                    2022
                 ]
             ]
         },
-        "page": "551-598",
-        "title": "The Balance of Animal Populations.Part I.",
+        "title": "Food web reconstruction through phylogenetic transfer of low-rank network representation",
         "type": "article-journal",
-        "volume": "105"
+        "volume": "n/a"
     }
 ]
