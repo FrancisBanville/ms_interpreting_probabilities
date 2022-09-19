@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Template to prepare preprints and manuscripts using markdown and github actions</title>
+    <title>The biological interpretation of probabilistic ecological networks</title>
     <script src="https://hypothes.is/embed.js" async></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
@@ -170,24 +170,29 @@
 <body>
     <header>
         <div class="container">
-            <div class="header--title">Template to prepare preprints and manuscripts using markdown and github actions</div>
+            <div class="header--title">The biological interpretation of probabilistic ecological networks</div>
             <div class="header--authors">
                 <span class="header--author">
+                <a href="https://orcid.org/0000-0001-9051-0597" target="_blank">
+                    Francis Banville
+                </a>
+                <sup class="affilcode">1</sup>
+                <sup class="affilcode">2</sup>
+                <sup class="affilcode">3</sup>
+                <sup class="affilcode">‡</sup>
+                </span><span class="header--author">
+                <a href="https://orcid.org/0000-0001-6067-1349" target="_blank">
+                    Tanya Strydom
+                </a>
+                <sup class="affilcode">1</sup>
+                <sup class="affilcode">3</sup>
+                <sup class="affilcode">‡</sup>
+                </span><span class="header--author">
                 <a href="https://orcid.org/0000-0002-0735-5184" target="_blank">
                     Timothée Poisot
                 </a>
                 <sup class="affilcode">1</sup>
-                <sup class="affilcode">2</sup>
-                <sup class="affilcode">‡</sup>
-                </span><span class="header--author">
-                Peregrin Took
                 <sup class="affilcode">3</sup>
-                <sup class="affilcode">4</sup>
-                </span><span class="header--author">
-                Merriadoc Brandybuck
-                <sup class="affilcode">5</sup>
-                <sup class="affilcode">4</sup>
-                <sup class="affilcode">‡</sup>
                 </span>
             </div>
         </div>
@@ -198,12 +203,14 @@
             
 
             <dl>
-                    <dt>Purpose</dt>
-                <dd>This template provides a series of scripts to render a markdown document into an interactive website and a series of PDFs.</dd>
-                    <dt>Motivation</dt>
-                <dd>It makes collaborating on text with GitHub easier, and means that we never need to think about the output.</dd>
-                    <dt>Internals</dt>
-                <dd>GitHub actions and a series of python scritpts. The markdown is handled with <code>pandoc</code>.</dd>
+                    <dt>1.</dt>
+                <dd>Community ecologists are increasingly shifting from a binary thinking of ecological networks (e.g., do species interact?) to a more probabilistic perspective (e.g., how likely are species to interact?). Assuredly, the benefits of representing ecological interactions as probabilistic events are numerous, from a better assessment of the spatial variation of interactions to an increase capacity to reconstruct networks from sparse data.</dd>
+                    <dt>2.</dt>
+                <dd>However, probabilities need to be used with caution when working with ecological networks. Indeed, depending on the system at hand and the method used to built probabilistic networks, probabilities can have different interpretations that imply different ways to manipulate them. This is rarely discussed in the literature, thus impeding our ability to use data on probabilistic interactions appropriately.</dd>
+                    <dt>3.</dt>
+                <dd>At the core of these differences lie the distinction between assessing if two groups of individuals <em>can</em> interact or if they <em>will</em> interact. This impacts the spatial, temporal, and taxonomic scaling of interaction probabilities, thus enlightening the need to properly define them in their ecological context.</dd>
+                    <dt>4.</dt>
+                <dd>With these challenges in mind, we call for a better definition and conceptualization of probabilistic ecological networks, both at the local and regional scales, and propose a general approach to thinking about probabilities in regards to ecological interactions.</dd>
                 </dl>
 
             <div class="artifacts">
@@ -242,7 +249,7 @@
     <footer>
         <div class="container">
             <h2>Affiliations</h2> 
-            <sup>1</sup>&nbsp;Université de Montréal; <sup>2</sup>&nbsp;Québec Centre for Biodiversity Sciences; <sup>3</sup>&nbsp;Inn of the Prancing Pony; <sup>4</sup>&nbsp;Fellowship of the Ring; <sup>5</sup>&nbsp;Green Dragon Inn
+            <sup>1</sup>&nbsp;Université de Montréal; <sup>2</sup>&nbsp;Université de Sherbrooke; <sup>3</sup>&nbsp;Quebec Centre for Biodiversity Science
             <br />
             <sup>‡</sup>&nbsp;These authors contributed equally to the work
         </div>

@@ -157,31 +157,30 @@ urlcolor=blue}
 \begin{document}
 \raggedright
 \thispagestyle{empty}
-{\Large\bfseries\sffamily Template to prepare preprints and manuscripts
-using markdown and github actions}
+{\Large\bfseries\sffamily The biological interpretation of probabilistic
+ecological networks}
 \vskip 5em
 
 %
+\href{https://orcid.org/0000-0001-9051-0597}{Francis\,Banville}%
+%
+\,\textsuperscript{1,2,3,‡}\quad %
+\href{https://orcid.org/0000-0001-6067-1349}{Tanya\,Strydom}%
+%
+\,\textsuperscript{1,3,‡}\quad %
 \href{https://orcid.org/0000-0002-0735-5184}{Timothée\,Poisot}%
 %
-\,\textsuperscript{1,2,‡}\quad %
-Peregrin\,Took%
-%
-\,\textsuperscript{3,4}\quad %
-Merriadoc\,Brandybuck%
-%
-\,\textsuperscript{5,4,‡}
+\,\textsuperscript{1,3}
 
 \textsuperscript{1}\,Université de
-Montréal\quad \textsuperscript{2}\,Québec Centre for Biodiversity
-Sciences\quad \textsuperscript{3}\,Inn of the Prancing
-Pony\quad \textsuperscript{4}\,Fellowship of the
-Ring\quad \textsuperscript{5}\,Green Dragon Inn
+Montréal\quad \textsuperscript{2}\,Université de
+Sherbrooke\quad \textsuperscript{3}\,Quebec Centre for Biodiversity
+Science
 
 \textsuperscript{‡}\,These authors contributed equally to the work\\
 
 \textbf{Correspondance to:}\\
-Timothée Poisot --- \texttt{timothee.poisot@umontreal.ca}\\
+Francis Banville --- \texttt{francis.banville@umontreal.ca}\\
 
 \vfill
 This work is released by its authors under a CC-BY 4.0 license\hfill\ccby\\
@@ -193,14 +192,31 @@ Last revision: \emph{\today}
 \vfill
 
 
-        {\bfseries Purpose:}\,This template provides a series of scripts
-to render a markdown document into an interactive website and a series
-of PDFs.\\%
-        {\bfseries Motivation:}\,It makes collaborating on text with
-GitHub easier, and means that we never need to think about the
-output.\\%
-        {\bfseries Internals:}\,GitHub actions and a series of python
-scritpts. The markdown is handled with \texttt{pandoc}.\\%
+        {\bfseries 1.:}\,Community ecologists are increasingly shifting
+from a binary thinking of ecological networks (e.g., do species
+interact?) to a more probabilistic perspective (e.g., how likely are
+species to interact?). Assuredly, the benefits of representing
+ecological interactions as probabilistic events are numerous, from a
+better assessment of the spatial variation of interactions to an
+increase capacity to reconstruct networks from sparse data.\\%
+        {\bfseries 2.:}\,However, probabilities need to be used with
+caution when working with ecological networks. Indeed, depending on the
+system at hand and the method used to built probabilistic networks,
+probabilities can have different interpretations that imply different
+ways to manipulate them. This is rarely discussed in the literature,
+thus impeding our ability to use data on probabilistic interactions
+appropriately.\\%
+        {\bfseries 3.:}\,At the core of these differences lie the
+distinction between assessing if two groups of individuals \emph{can}
+interact or if they \emph{will} interact. This impacts the spatial,
+temporal, and taxonomic scaling of interaction probabilities, thus
+enlightening the need to properly define them in their ecological
+context.\\%
+        {\bfseries 4.:}\,With these challenges in mind, we call for a
+better definition and conceptualization of probabilistic ecological
+networks, both at the local and regional scales, and propose a general
+approach to thinking about probabilities in regards to ecological
+interactions.\\%
     
 \vfill
 
