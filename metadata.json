@@ -1,46 +1,53 @@
 {
-  "title": "Template to prepare preprints and manuscripts using markdown and github actions",
+  "title": "The biological interpretation of probabilistic ecological networks",
   "authors": [
     {
       "affiliations": [
         "Université de Montréal",
-        "Québec Centre for Biodiversity Sciences"
+        "Université de Sherbrooke",
+        "Quebec Centre for Biodiversity Science"
       ],
-      "familyname": "Poisot",
-      "givennames": "Timothée",
-      "email": "timothee.poisot@umontreal.ca",
-      "orcid": "0000-0002-0735-5184",
+      "familyname": "Banville",
+      "givennames": "Francis",
+      "email": "francis.banville@umontreal.ca",
+      "orcid": "0000-0001-9051-0597",
       "status": ["corresponding", "equal"]
     },
     {
       "affiliations": [
-        "Inn of the Prancing Pony",
-        "Fellowship of the Ring"
+        "Université de Montréal",
+        "Quebec Centre for Biodiversity Science"
       ],
-      "familyname": "Took",
-      "givennames": "Peregrin",
-      "email": "pippin@took.shire"
+      "familyname": "Strydom",
+      "givennames": "Tanya",
+      "email": "tanya.strydom@umontreal.ca",
+      "orcid": "0000-0001-6067-1349",
+      "status": ["equal"]
     },
     {
       "affiliations": [
-        "Green Dragon Inn",
-        "Fellowship of the Ring"
+        "Université de Montréal",
+        "Quebec Centre for Biodiversity Science"
       ],
-      "familyname": "Brandybuck",
-      "givennames": "Merriadoc",
-      "email": "merry@fellowship.ring",
-      "status": ["equal"]
+      "familyname": "Poisot",
+      "givennames": "Timothée",
+      "email": "timothee.poisot@umontreal.ca",
+      "orcid": "0000-0002-0735-5184"
     }
   ],
   "abstract": {
-    "Purpose": "This template provides a series of scripts to render a markdown document into an interactive website and a series of PDFs.",
-    "Motivation": "It makes collaborating on text with GitHub easier, and means that we never need to think about the output.",
-    "Internals": "GitHub actions and a series of python scritpts. The markdown is handled with `pandoc`."
+    "1.": "Community ecologists are increasingly shifting from a binary thinking of ecological networks (e.g., do species interact?) to a more probabilistic perspective (e.g., how likely are species to interact?). Assuredly, the benefits of representing ecological interactions as probabilistic events are numerous, from a better assessment of the spatial variation of interactions to an increase capacity to reconstruct networks from sparse data.",
+    "2.": "However, probabilities need to be used with caution when working with ecological networks. Indeed, depending on the system at hand and the method used to built probabilistic networks, probabilities can have different interpretations that imply different ways to manipulate them. This is rarely discussed in the literature, thus impeding our ability to use data on probabilistic interactions appropriately.",
+    "3.": "At the core of these differences lie the distinction between assessing if two groups of individuals *can* interact or if they *will* interact. This impacts the spatial, temporal, and taxonomic scaling of interaction probabilities, thus enlightening the need to properly define them in their ecological context.",
+    "4.": "With these challenges in mind, we call for a better definition and conceptualization of probabilistic ecological networks, both at the local and regional scales, and propose a general approach to thinking about probabilities in regards to ecological interactions."
   },
   "keywords": [
-    "pandoc",
-    "pandoc-crossref",
-    "github actions"
+    "ecological networks",
+    "metaweb",
+    "probabilistic networks",
+    "spatial scale",
+    "species interactions",
+    "temporal scale"
   ],
   "citationstyle": "ecology-letters"
 }
