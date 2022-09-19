@@ -31,6 +31,49 @@
         "type": "chapter"
     },
     {
+        "DOI": "10.1111/2041-210X.12468",
+        "author": [
+            {
+                "family": "Poisot",
+                "given": "Timoth\u00e9e"
+            },
+            {
+                "family": "Cirtwill",
+                "given": "Alyssa R."
+            },
+            {
+                "family": "Cazelles",
+                "given": "K\u00e9vin"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Fortin",
+                "given": "Marie-Jos\u00e9e"
+            },
+            {
+                "family": "Stouffer",
+                "given": "Daniel B."
+            }
+        ],
+        "container-title": "Methods in Ecology and Evolution",
+        "id": "Poisot2016StrProa",
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2016
+                ]
+            ]
+        },
+        "page": "303-312",
+        "title": "The structure of probabilistic networks",
+        "type": "article-journal",
+        "volume": "7"
+    },
+    {
         "DOI": "10.1111/2041-210X.13835",
         "author": [
             {
