@@ -31,6 +31,92 @@
         "type": "chapter"
     },
     {
+        "DOI": "10.1002/ecs2.3018",
+        "author": [
+            {
+                "family": "McLeod",
+                "given": "Anne M."
+            },
+            {
+                "family": "Leroux",
+                "given": "Shawn J."
+            },
+            {
+                "family": "Chu",
+                "given": "Cindy"
+            }
+        ],
+        "container-title": "Ecosphere",
+        "id": "McLeod2020EffSpe",
+        "issue": "2",
+        "issued": {
+            "date-parts": [
+                [
+                    2020
+                ]
+            ]
+        },
+        "other-ids": "McLeod2020EffSpea",
+        "page": "e03018",
+        "title": "Effects of species traits, motif profiles, and environment on spatial variation in multi-trophic antagonistic networks",
+        "type": "article-journal",
+        "volume": "11"
+    },
+    {
+        "DOI": "10.1111/oik.08650",
+        "author": [
+            {
+                "family": "McLeod",
+                "given": "Anne"
+            },
+            {
+                "family": "Leroux",
+                "given": "Shawn J."
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Chu",
+                "given": "Cindy"
+            },
+            {
+                "family": "Cirtwill",
+                "given": "Alyssa R."
+            },
+            {
+                "family": "Fortin",
+                "given": "Marie-Jos\u00e9e"
+            },
+            {
+                "family": "Galiana",
+                "given": "N\u00faria"
+            },
+            {
+                "family": "Poisot",
+                "given": "Timoth\u00e9e"
+            },
+            {
+                "family": "Wood",
+                "given": "Spencer A."
+            }
+        ],
+        "container-title": "Oikos",
+        "id": "McLeod2021SamAsy",
+        "issue": "n/a",
+        "issued": {
+            "date-parts": [
+                [
+                    2021
+                ]
+            ]
+        },
+        "title": "Sampling and asymptotic network properties of spatial multi-trophic networks",
+        "type": "article-journal",
+        "volume": "n/a"
+    },
+    {
         "DOI": "10.1111/2041-210X.12468",
         "author": [
             {
@@ -142,5 +228,44 @@
         "title": "Food web reconstruction through phylogenetic transfer of low-rank network representation",
         "type": "article-journal",
         "volume": "n/a"
+    },
+    {
+        "DOI": "10.1002/ece3.1640",
+        "author": [
+            {
+                "family": "Wood",
+                "given": "Spencer A."
+            },
+            {
+                "family": "Russell",
+                "given": "Roly"
+            },
+            {
+                "family": "Hanson",
+                "given": "Dieta"
+            },
+            {
+                "family": "Williams",
+                "given": "Richard J."
+            },
+            {
+                "family": "Dunne",
+                "given": "Jennifer A."
+            }
+        ],
+        "container-title": "Ecology and Evolution",
+        "id": "Wood2015EffSpa",
+        "issue": "17",
+        "issued": {
+            "date-parts": [
+                [
+                    2015
+                ]
+            ]
+        },
+        "page": "3769-3782",
+        "title": "Effects of spatial scale of sampling on food web structure",
+        "type": "article-journal",
+        "volume": "5"
     }
 ]
