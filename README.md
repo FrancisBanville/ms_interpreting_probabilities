@@ -26,10 +26,9 @@ networks? What is the objective of this paper?
   networks.
 - It is important to document and define what we mean by an interaction
   probability because different definitions can have different ecological and
-  statistical implications.
+  statistical implications and final interpretation.
 - This paper aims to outline some of the challenges in interpreting interaction
   probabilities and propose an approach to thinking about them.
-
 
 # Definitions and interpretations
 
@@ -46,7 +45,7 @@ intuitive as one would think.
   the probability distribution of the amount of energy flow between two
   species).
 - In many studies, it is not obvious if their numbers represent interaction
-  scores or probabilities (in the later case, it is rarely specified what these
+  scores or probabilities (in the latter case, it is rarely specified what these
   probabilities truly represent).
 
 ## Probabilistic metawebs
@@ -54,7 +53,7 @@ intuitive as one would think.
 What does a probability in the context of a metaweb mean?
 
 - It means the probability that two taxa can interact, regardless of biological
-  plasticity and environmental variability.
+  plasticity, environmental variability, or co-occurrence.
 - One observation is enough to set this probability to one.
 - Can we turn this into a local network realisation that is also probabilistic
   and intuitive?
@@ -88,7 +87,7 @@ How do interaction probabilities scale spatially and temporally?
 - Why do probabilistic local networks scale with area and time but not
   probabilistic metawebs?
 - Network area relationships (e.g., Ontario lakes and Alaska datasets)
-- In metawebs, interaction probabilities do not scale with space and time. 
+- In metawebs, interaction probabilities do not scale with space and time.
 - In local networks, interaction probabilities scale with space and time. There
   are more opportunities of interactions (e.g., more environmental conditions)
   in a larger area and longer time period.
@@ -100,13 +99,16 @@ interactions in realized local networks and the number of interactions in the
 corresponding species subnetworks of regional networks. We should expect the
 interaction to be linear below the 1:1 line.
 
+**Papers:** there might be something in these @McLeod2020EffSpe;
+@McLeod2021SamAsy; @Wood2015EffSpa
+
 ## Taxonomic scale
 
 How do interaction probabilities scale taxonomically?
 
 - Difference of interpretation between probabilities in networks at the
   individual level and at any higher taxonomic level.
-- How does the scale up of the nodes from an individual to population to
+- How does the scaling up of the nodes from an individual to population to
   taxonomic group group change our interpretation of interaction probabilities?
   How does the aggregation change the interpretation?
 - How is it analogous to spatial and temporal scaling? Basically, all kinds of
