@@ -65,8 +65,7 @@ What does a probability in the context of a metaweb mean?
 What does a probability in the context of a local network mean? A cautionary
 tale of how we define probabilities.
 
-- It means the probability that two taxa will interact, regardless of biological
-  plasticity and environmental variability.
+- It means the probability that two taxa will interact at a given location.
 - What do we mean by two taxa will interact? That at least one individual from
   one group will interact with (e.g., predate) at least one other individual
   from the other group.
@@ -109,7 +108,7 @@ How do interaction probabilities scale taxonomically?
 - Difference of interpretation between probabilities in networks at the
   individual level and at any higher taxonomic level.
 - How does the scaling up of the nodes from an individual to population to
-  taxonomic group group change our interpretation of interaction probabilities?
+  taxonomic group change our interpretation of interaction probabilities?
   How does the aggregation change the interpretation?
 - How is it analogous to spatial and temporal scaling? Basically, all kinds of
   scaling are just different ways to aggregate individuals or nodes.
@@ -122,9 +121,9 @@ probability of interaction.
 
 Here we present some advice moving forward.
 
-- Non-ecological Networks: What can we learn from other systems/fields (e.g.,
+- Non-ecological networks: What can we learn from other systems/fields (e.g.,
   social networks, probabilistic graph theory)?
-- What even are the probabilities? What is the probability that we will ever
+- What even are probabilities? What is the probability that we will ever
   know the answer to that?
 - Be careful how we define probabilities. Be sure to be explicit about these
   things. Be sure to specify the type of interaction, the spatial, temporal, and
