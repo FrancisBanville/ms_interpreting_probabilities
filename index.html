@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The biological interpretation of probabilistic ecological networks</title>
+    <title>The biological interpretation of probabilistic food webs</title>
     <script src="https://hypothes.is/embed.js" async></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
@@ -170,7 +170,7 @@
 <body>
     <header>
         <div class="container">
-            <div class="header--title">The biological interpretation of probabilistic ecological networks</div>
+            <div class="header--title">The biological interpretation of probabilistic food webs</div>
             <div class="header--authors">
                 <span class="header--author">
                 <a href="https://orcid.org/0000-0001-9051-0597" target="_blank">
@@ -204,13 +204,13 @@
 
             <dl>
                     <dt>1</dt>
-                <dd>Community ecologists are increasingly shifting from a binary thinking of ecological networks (e.g., do species interact?) to a more probabilistic perspective (e.g., how likely are species to interact?). Assuredly, the benefits of representing ecological interactions as probabilistic events are numerous, from a better assessment of the spatial variation of interactions to an increase capacity to reconstruct networks from sparse data.</dd>
+                <dd>Community ecologists are increasingly shifting from a binary thinking of food webs and other ecological networks (e.g., do species interact?) to a more probabilistic perspective (e.g., how likely are species to interact?). Assuredly, the benefits of representing ecological interactions as probabilistic events are numerous, from a better assessment of the spatial variation of trophic interactions to an increase capacity to reconstruct networks from sparse data.</dd>
                     <dt>2</dt>
-                <dd>However, probabilities need to be used with caution when working with interactions and ecological networks. Indeed, depending on the system at hand and the method used to build probabilistic networks, probabilities can have different interpretations that imply different ways to manipulate them. This is rarely discussed in the literature, thus impeding our ability to use data on probabilistic interactions appropriately.</dd>
+                <dd>However, probabilities need to be used with caution when working with species interactions. Indeed, depending on the system at hand and the method used to build probabilistic networks, probabilities can have different interpretations that imply different ways to manipulate them. This is rarely discussed in the literature, thus impeding our ability to use data on probabilistic interactions appropriately.</dd>
                     <dt>3</dt>
                 <dd>At the core of these differences lie the distinction between assessing the likelihood that two groups of individuals <em>can</em> interact and the likelihood that they <em>will</em> interact. This impacts the spatial, temporal, and taxonomic scaling of interaction probabilities, thus further enlightening the need to properly define them in their ecological context.</dd>
                     <dt>4</dt>
-                <dd>With these challenges in mind, we propose a general approach to thinking about probabilities in regards to ecological interactions, and call for better definitions and conceptualizations of probabilistic ecological networks, both at the local and regional scales.</dd>
+                <dd>With these challenges in mind, we propose a general approach to thinking about probabilities in regards to ecological interactions, with a strong focus on food webs, and call for better definitions and conceptualizations of probabilistic ecological networks, both at the local and regional scales.</dd>
                 </dl>
 
             <div class="artifacts">
@@ -225,16 +225,16 @@
             <p>Why is it useful to think about interactions as probabilistic events?</p>
             <ul>
             <li>A biological interaction is probabilistic since two taxa co-occurring does not mean they are going to meet (e.g., think of species relative abundances). Also, two individuals meeting does not mean that an interaction will occur (e.g., a lion crossing paths with a gazelle does not mean predation).</li>
-            <li>Interaction is contextual on the environment and on the physiological state of both species (or individuals).</li>
-            <li>Representing ecological interactions as probabilistic events helps us predict networks across time and space and assess the spatial variability of biological interactions.</li>
+            <li>Species interactions are contextual on the environment and on the physiological state of both species (or individuals).</li>
+            <li>Representing trophic interactions as probabilistic events helps us predict food webs across time and space and assess their spatial variability.</li>
             </ul>
             <p><strong>Papers:</strong> <span class="citation" data-cites="Poisot2016StrProa">Poisot <em>et al.</em> (2016)</span></p>
             <h2 id="problem-and-objectives">Problem and objectives</h2>
-            <p>Why should we use probabilities with caution when working with ecological networks? What is the objective of this paper?</p>
+            <p>Why should we use probabilities with caution when working with food webs and other ecological networks? What is the objective of this paper?</p>
             <ul>
-            <li>There are different ways to define and interpret interaction probabilities depending on the study system and on the method used to build probabilistic networks.</li>
-            <li>It is important to document and define what we mean by an interaction probability because different definitions can have different ecological and statistical implications and final interpretation.</li>
-            <li>This paper aims to outline some of the challenges in interpreting interaction probabilities and propose an approach to thinking about them.</li>
+            <li>There are different ways to define and interpret interaction probabilities depending on the study system and on the method used to build probabilistic food webs.</li>
+            <li>It is important to document and define what we mean by an interaction probability because different definitions can have different ecological and statistical implications and interpretation.</li>
+            <li>This paper aims to outline some of the challenges in interpreting interaction probabilities in food webs and propose an approach to thinking about them. Using clear and simple mathematical equations, we distinguish different meanings of probabilistic interactions.</li>
             </ul>
             <h1 id="definitions-and-interpretations">Definitions and interpretations</h1>
             <h2 id="overview-of-interaction-probabilities">Overview of interaction probabilities</h2>
@@ -242,7 +242,7 @@
             <ul>
             <li>There is a big difference in how we interpret the probability that two species <em>can</em> interact (metaweb) and the probability that they <em>will</em> interact (realized networks).</li>
             <li>Interaction probabilities can be used to describe Boolean interactions (e.g., the probability that two species interact) and weighted interactions (e.g., the probability distribution of the amount of energy flow between two species).</li>
-            <li>In many studies, it is not obvious if their numbers represent interaction scores or probabilities (in the latter case, it is rarely specified what these probabilities truly represent).</li>
+            <li>In many studies, it is not obvious if authors use interaction scores or probabilities (in the latter case, it is rarely specified what these probabilities truly represent).</li>
             </ul>
             <h2 id="probabilistic-metawebs">Probabilistic metawebs</h2>
             <p>What does a probability in the context of a metaweb mean?</p>
@@ -256,38 +256,38 @@
             <p>What does a probability in the context of a local network mean? A cautionary tale of how we define probabilities.</p>
             <ul>
             <li>It means the probability that two taxa will interact at a given location.</li>
-            <li>What do we mean by two taxa will interact? That at least one individual from one group will interact with (e.g., predate) at least one other individual from the other group.</li>
+            <li>What do we mean by saying that two taxa will interact? We usually mean that at least one individual from one group will interact with (e.g., predate) at least one other individual from the other group.</li>
             <li>The probability is conditional on the environmental and local abundance contexts.</li>
-            <li>We should expect a certain number of interactions to occur depending on the probability value. This number depends on the number of trials, which is defined according to the ecological context (e.g., environmental conditions, scale) in which probabilities were estimated. This is in contrast with probabilities in metawebs.</li>
+            <li>We should expect a certain number of interactions to be realized depending on the probability value. This number depends on the number of trials, which also depends on the ecological context (e.g., environmental conditions, scale) in which probabilities were estimated. This is in contrast with probabilities in metawebs.</li>
             </ul>
             <h1 id="scaling">Scaling</h1>
             <h2 id="spatial-and-temporal-scales">Spatial and temporal scales</h2>
             <p>How do interaction probabilities scale spatially and temporally?</p>
             <ul>
-            <li>Why do probabilistic local networks scale with area and time but not probabilistic metawebs?</li>
-            <li>Network area relationships (e.g., Ontario lakes and Alaska datasets)</li>
-            <li>In metawebs, interaction probabilities do not scale with space and time.</li>
-            <li>In local networks, interaction probabilities scale with space and time. There are more opportunities of interactions (e.g., more environmental conditions) in a larger area and longer time period.</li>
-            <li>Regional networks can inform local networks but can local networks inform regional networks?</li>
+            <li>Why do probabilistic local food webs scale with area and time but not probabilistic metawebs?</li>
+            <li>In metawebs, interaction probabilities do not scale with space and time because they depend solely on the biological capacity of two species to interact.</li>
+            <li>In local food webs, interaction probabilities scale with space and time because there are more opportunities of interactions (e.g., more environmental conditions) in a larger area and longer time period.</li>
+            <li>What are some network area relationships in probabilistic local food webs?</li>
+            <li>We know that local networks can inform regional networks. However, can regional networks inform local networks?</li>
             </ul>
-            <p><strong>Figure:</strong> Empirical example of the association between the number of interactions in realized local networks and the number of interactions in the corresponding species subnetworks of regional networks. We should expect the interaction to be linear below the 1:1 line.</p>
+            <p><strong>Figure:</strong> Empirical example of the association between the number of interactions in realized local food webs and the number of interactions in the corresponding species subnetworks of regional networks. We should expect the interaction to be linear below the 1:1 line.</p>
             <p><strong>Papers:</strong> there might be something in these <span class="citation" data-cites="McLeod2020EffSpe">McLeod <em>et al.</em> (2020)</span>; <span class="citation" data-cites="McLeod2021SamAsy">McLeod <em>et al.</em> (2021)</span>; <span class="citation" data-cites="Wood2015EffSpa">Wood <em>et al.</em> (2015)</span></p>
             <h2 id="taxonomic-scale">Taxonomic scale</h2>
             <p>How do interaction probabilities scale taxonomically?</p>
             <ul>
-            <li>Difference of interpretation between probabilities in networks at the individual level and at any higher taxonomic level.</li>
-            <li>How does the scaling up of the nodes from an individual to population to taxonomic group change our interpretation of interaction probabilities? How does the aggregation change the interpretation?</li>
-            <li>How is it analogous to spatial and temporal scaling? Basically, all kinds of scaling are just different ways to aggregate individuals or nodes.</li>
+            <li>There are different biological interpretations of probabilities in food webs at the individual level and at higher taxonomic levels.</li>
+            <li>How does the scaling up of the nodes from an individual to population to any higher taxonomic group change our interpretation of interaction probabilities? How does the aggregation change our interpretation?</li>
+            <li>How is it similar and different to spatial and temporal scaling? Basically, all kinds of scaling are just different ways to aggregate individuals or nodes.</li>
             </ul>
-            <p><strong>Figure:</strong> Conceptual figure of how a scale up of the nodes from an individual to a population to any taxonomic group change our interpretation of the probability of interaction.</p>
+            <p><strong>Figure:</strong> Conceptual figure of how a scale up of the nodes from an individual to a population to any higher taxonomic group change our interpretation of the probability of interaction.</p>
             <h1 id="concluding-remarks">Concluding remarks</h1>
             <p>Here we present some advice moving forward.</p>
             <ul>
-            <li>Non-ecological networks: What can we learn from other systems/fields (e.g., social networks, probabilistic graph theory)?</li>
+            <li>What can we learn from other systems/fields (e.g., social networks, probabilistic graph theory)?</li>
             <li>What even are probabilities? What is the probability that we will ever know the answer to that?</li>
-            <li>Be careful how we define probabilities. Be sure to be explicit about these things. Be sure to specify the type of interaction, the spatial, temporal, and taxonomic scale when presenting new data on interaction probabilities. We need better metadata documentation.</li>
-            <li>Be careful to use and manipulate interaction probabilities properly depending on how they were defined. Different interpretations imply different scaling, and thus different ways to manipulate these numbers.</li>
-            <li>Maybe mention thinking about a workflow to predict probabilistic local networks from probabilistic metawebs.</li>
+            <li>Be careful of how we define probabilities. Be sure to be explicit about these things. Be sure to specify the type of interaction, the spatial, temporal, and taxonomic scale when presenting new data on interaction probabilities. We need better metadata documentation.</li>
+            <li>Be careful to use and manipulate interaction probabilities properly depending on how they were defined and obtained. Different interpretations imply different scaling, and thus different ways to manipulate these numbers.</li>
+            <li>Maybe mention thinking about a workflow to predict probabilistic local food webs from probabilistic metawebs.</li>
             </ul>
             <h1 class="unnumbered" id="references">References</h1>
             <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
