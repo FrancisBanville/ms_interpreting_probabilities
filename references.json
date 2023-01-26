@@ -1,5 +1,36 @@
 [
     {
+        "DOI": "10.1111/geb.13593",
+        "author": [
+            {
+                "family": "Brimacombe",
+                "given": "Chris"
+            },
+            {
+                "family": "Bodner",
+                "given": "Korryn"
+            },
+            {
+                "family": "Michalska-Smith",
+                "given": "Matthew"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Fortin",
+                "given": "Marie-Jos\u00e9e"
+            }
+        ],
+        "container-title": "Global Ecology and Biogeography",
+        "id": "BrimacombeNoStr",
+        "issue": "n/a",
+        "title": "No strong evidence that modularity, specialization or nestedness are linked to seasonal climatic variability in bipartite networks",
+        "type": "article-journal",
+        "volume": "n/a"
+    },
+    {
         "author": [
             {
                 "family": "Dunne",
@@ -17,7 +48,7 @@
                 "given": "Mercedes"
             }
         ],
-        "id": "Dunne2006NetStr",
+        "id": "Dunne2006Network",
         "issued": {
             "date-parts": [
                 [
@@ -29,6 +60,31 @@
         "publisher": "Oxford University Press",
         "title": "The Network Structure of Food Webs",
         "type": "chapter"
+    },
+    {
+        "DOI": "10.1111/1365-2435.12763",
+        "author": [
+            {
+                "family": "Jordano",
+                "given": "Pedro"
+            }
+        ],
+        "container-title": "Functional Ecology",
+        "id": "Jordano2016SamNet",
+        "issue": "12",
+        "issued": {
+            "date-parts": [
+                [
+                    2016
+                ]
+            ]
+        },
+        "page": "1883-1893",
+        "publisher": "Wiley",
+        "publisher-place": "Hoboken",
+        "title": "Sampling networks of ecological interactions",
+        "type": "article-journal",
+        "volume": "30"
     },
     {
         "DOI": "10.1002/ecs2.3018",
@@ -103,7 +159,7 @@
             }
         ],
         "container-title": "Oikos",
-        "id": "McLeod2021SamAsy",
+        "id": "McLeod2021Sampling",
         "issue": "n/a",
         "issued": {
             "date-parts": [
@@ -115,6 +171,39 @@
         "title": "Sampling and asymptotic network properties of spatial multi-trophic networks",
         "type": "article-journal",
         "volume": "n/a"
+    },
+    {
+        "DOI": "10.1111/oik.01719",
+        "author": [
+            {
+                "family": "Poisot",
+                "given": "Timothee"
+            },
+            {
+                "family": "Stouffer",
+                "given": "Daniel B."
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            }
+        ],
+        "container-title": "Oikos",
+        "id": "Poisot2015SpeWhy",
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2015
+                ]
+            ]
+        },
+        "page": "243-251",
+        "publisher": "Wiley",
+        "publisher-place": "Hoboken",
+        "title": "Beyond species: Why ecological interaction networks vary through space and time",
+        "type": "article-journal",
+        "volume": "124"
     },
     {
         "DOI": "10.1111/2041-210X.12468",
@@ -145,7 +234,7 @@
             }
         ],
         "container-title": "Methods in Ecology and Evolution",
-        "id": "Poisot2016StrProa",
+        "id": "Poisot2016Structure",
         "issue": "3",
         "issued": {
             "date-parts": [
@@ -158,6 +247,79 @@
         "title": "The structure of probabilistic networks",
         "type": "article-journal",
         "volume": "7"
+    },
+    {
+        "DOI": "10.1098/rstb.2021.0063",
+        "author": [
+            {
+                "family": "Strydom",
+                "given": "Tanya"
+            },
+            {
+                "family": "Catchen",
+                "given": "Michael D."
+            },
+            {
+                "family": "Banville",
+                "given": "Francis"
+            },
+            {
+                "family": "Caron",
+                "given": "Dominique"
+            },
+            {
+                "family": "Dansereau",
+                "given": "Gabriel"
+            },
+            {
+                "family": "Desjardins-Proulx",
+                "given": "Philippe"
+            },
+            {
+                "family": "Forero-Munoz",
+                "given": "Norma R."
+            },
+            {
+                "family": "Higino",
+                "given": "Gracielle"
+            },
+            {
+                "family": "Mercier",
+                "given": "Benjamin"
+            },
+            {
+                "family": "Gonzalez",
+                "given": "Andrew"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Pollock",
+                "given": "Laura"
+            },
+            {
+                "family": "Poisot",
+                "given": "Timothee"
+            }
+        ],
+        "container-title": "Philosophical Transactions of the Royal Society B-Biological Sciences",
+        "id": "Strydom2021RoaPre",
+        "issue": "1837",
+        "issued": {
+            "date-parts": [
+                [
+                    2021
+                ]
+            ]
+        },
+        "page": "20210063",
+        "publisher": "Royal Soc",
+        "publisher-place": "London",
+        "title": "A roadmap towards predicting species interaction networks (across space and time)",
+        "type": "article-journal",
+        "volume": "376"
     },
     {
         "DOI": "10.1111/2041-210X.13835",
@@ -216,8 +378,8 @@
             }
         ],
         "container-title": "Methods in Ecology and Evolution",
-        "id": "Strydom2022FooWeb",
-        "issue": "n/a",
+        "id": "Strydom2022Food",
+        "issue": "12",
         "issued": {
             "date-parts": [
                 [
@@ -227,7 +389,7 @@
         },
         "title": "Food web reconstruction through phylogenetic transfer of low-rank network representation",
         "type": "article-journal",
-        "volume": "n/a"
+        "volume": "13"
     },
     {
         "DOI": "10.1002/ece3.1640",
@@ -254,7 +416,7 @@
             }
         ],
         "container-title": "Ecology and Evolution",
-        "id": "Wood2015EffSpa",
+        "id": "Wood2015Effects",
         "issue": "17",
         "issued": {
             "date-parts": [

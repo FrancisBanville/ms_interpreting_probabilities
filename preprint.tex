@@ -287,52 +287,56 @@ networks, both at the local and regional scales.\\%
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-\hypertarget{general-background}{%
-\subsection{General background}\label{general-background}}
+Cataloging species interactions across space is a gargantuan task. At
+the core of this challenge lies the spatiotemporal variability of
+ecological networks (Poisot \emph{et al.} 2015), which makes documenting
+the location and timing of interactions difficult. Indeed, it is not
+sufficient to know if two species have the biological capacity to
+interact to infer the realization of this interaction at a specific time
+and space. Taking food webs as an example, a predator and its potential
+prey must first co-occur on the same territory in order for a trophic
+interaction to take place. They must then cross paths, which can happen
+only if their relative abundances in the ecosystem is high enough and
+their phenology matches. Finally, the interaction occurs only if the
+predator has a desire to consume its prey and is able to capture and
+ingest it. Environmental (e.g. temperature and presence of shelters) and
+biological (e.g.~physiological state of both individuals and
+availability of other prey species) factors contribute to this
+variability by impacting species co-occurrence and the realization of
+their interactions. In this context, it is unsurprising that
+computational methods are being developed in ecology to help alleviate
+the colossal sampling efforts required to document species interactions
+across time and space (Strydom \emph{et al.} 2021).
 
-Why is it useful to think about interactions as probabilistic events?
+The recognition of the variability of species interactions and the
+emergence of numerical methods have led ecologists to rethink their
+representation of ecological networks, slowly moving from a binary to a
+probabilistic view of species interactions
+(\textbf{Poisot2016StrProa?}). This has several benefits. For example,
+probabilities represent the limit of our knowledge about species
+interactions and can indicate the expected frequency of two species
+interacting with each other. They are also very helpful in predictive
+models when modeling the spatial distribution and temporal variability
+of ecological networks, generating new ecological data, and identifying
+priority sampling locations.
 
-\begin{itemize}
-\tightlist
-\item
-  A biological interaction is probabilistic since two taxa co-occurring
-  does not mean they are going to meet (e.g., think of species relative
-  abundances). Also, two individuals meeting does not mean that an
-  interaction will occur (e.g., a lion crossing paths with a gazelle
-  does not mean predation).
-\item
-  Species interactions are contextual on the environment and on the
-  physiological state of both species (or individuals).
-\item
-  Representing trophic interactions as probabilistic events helps us
-  predict food webs across time and space and assess their spatial
-  variability.
-\end{itemize}
-
-\textbf{Papers:} Poisot \emph{et al.} (2016)
-
-\hypertarget{problem-and-objectives}{%
-\subsection{Problem and objectives}\label{problem-and-objectives}}
-
-Why should we use probabilities with caution when working with food webs
-and other ecological networks? What is the objective of this paper?
-
-\begin{itemize}
-\tightlist
-\item
-  There are different ways to define and interpret interaction
-  probabilities depending on the study system and on the method used to
-  build probabilistic food webs.
-\item
-  It is important to document and define what we mean by an interaction
-  probability because different definitions can have different
-  ecological and statistical implications and interpretation.
-\item
-  This paper aims to outline some of the challenges in interpreting
-  interaction probabilities in food webs and propose an approach to
-  thinking about them. Using clear and simple mathematical equations, we
-  distinguish different meanings of probabilistic interactions.
-\end{itemize}
+However, representing species interactions probabilistically can also be
+challenging. Beyond methodological difficulties in estimating these
+numbers, there are important conceptual challenges in defining what we
+mean by ``probability of interactions.'' Because this ecological
+representation is still in its infancy, there is no clear definition
+found in the literature. In this contribution, we outline different ways
+to define and interpret interactions probabilities in network ecology
+and propose an approach to thinking about them. These definitions mostly
+depend on the study system (e.g.~local network or metaweb) and on the
+method used to generate them. We show that different definitions can
+have different ecological implications, especially related to spatial,
+temporal, and taxonomic scaling. Although we will focus on food webs,
+our observations and advice can be applied to all types of ecological
+networks, from plant-pollinator to host-parasite networks. Overall, we
+argue that probabilities should be better documented, defined
+mathematically, and used with caution when describing species
+interactions.
 
 \hypertarget{definitions-and-interpretations}{%
 \section{Definitions and
@@ -379,7 +383,7 @@ What does a probability in the context of a metaweb mean?
   probabilistic and intuitive?
 \end{itemize}
 
-\textbf{Papers:} Strydom \emph{et al.} (2022)
+\textbf{Papers:} (\textbf{Strydom2022FooWeb?})
 
 \hypertarget{probabilistic-local-networks}{%
 \subsection{Probabilistic local
@@ -445,7 +449,7 @@ networks. We should expect the interaction to be linear below the 1:1
 line.
 
 \textbf{Papers:} there might be something in these McLeod \emph{et al.}
-(2020); McLeod \emph{et al.} (2021); Wood \emph{et al.} (2015)
+(2020); (\textbf{McLeod2021SamAsy?}); (\textbf{Wood2015EffSpa?})
 
 \hypertarget{taxonomic-scale}{%
 \subsection{Taxonomic scale}\label{taxonomic-scale}}
@@ -505,31 +509,22 @@ Here we present some advice moving forward.
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
-\leavevmode\hypertarget{ref-McLeod2021SamAsy}{}%
-McLeod, A., Leroux, S.J., Gravel, D., Chu, C., Cirtwill, A.R., Fortin,
-M.-J., \emph{et al.} (2021). Sampling and asymptotic network properties
-of spatial multi-trophic networks. \emph{Oikos}, n/a.
-
 \leavevmode\hypertarget{ref-McLeod2020EffSpe}{}%
 McLeod, A.M., Leroux, S.J. \& Chu, C. (2020). Effects of species traits,
 motif profiles, and environment on spatial variation in multi-trophic
 antagonistic networks. \emph{Ecosphere}, 11, e03018.
 
-\leavevmode\hypertarget{ref-Poisot2016StrProa}{}%
-Poisot, T., Cirtwill, A.R., Cazelles, K., Gravel, D., Fortin, M.-J. \&
-Stouffer, D.B. (2016). The structure of probabilistic networks.
-\emph{Methods in Ecology and Evolution}, 7, 303--312.
+\leavevmode\hypertarget{ref-Poisot2015SpeWhy}{}%
+Poisot, T., Stouffer, D.B. \& Gravel, D. (2015). Beyond species: Why
+ecological interaction networks vary through space and time.
+\emph{Oikos}, 124, 243--251.
 
-\leavevmode\hypertarget{ref-Strydom2022FooWeb}{}%
-Strydom, T., Bouskila, S., Banville, F., Barros, C., Caron, D., Farrell,
-M.J., \emph{et al.} (2022). Food web reconstruction through phylogenetic
-transfer of low-rank network representation. \emph{Methods in Ecology
-and Evolution}, n/a.
-
-\leavevmode\hypertarget{ref-Wood2015EffSpa}{}%
-Wood, S.A., Russell, R., Hanson, D., Williams, R.J. \& Dunne, J.A.
-(2015). Effects of spatial scale of sampling on food web structure.
-\emph{Ecology and Evolution}, 5, 3769--3782.
+\leavevmode\hypertarget{ref-Strydom2021RoaPre}{}%
+Strydom, T., Catchen, M.D., Banville, F., Caron, D., Dansereau, G.,
+Desjardins-Proulx, P., \emph{et al.} (2021). A roadmap towards
+predicting species interaction networks (across space and time).
+\emph{Philosophical Transactions of the Royal Society B-Biological
+Sciences}, 376, 20210063.
 
 \end{CSLReferences}
 
