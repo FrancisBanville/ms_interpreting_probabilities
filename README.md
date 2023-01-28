@@ -26,7 +26,7 @@ dynamics [TK], and resilience [TK] of ecosystems worldwide.
 The recognition of the variability of species interactions and the emergence of
 numerical methods have led ecologists to rethink their representation of
 ecological networks, slowly moving from a binary to a probabilistic view of
-species interactions [@Poisot2016StrProa]. This has several benefits. For
+species interactions [@Poisot2016Structure]. This has several benefits. For
 example, probabilities represent the limit of our knowledge about species
 interactions and can indicate the expected frequency of two species interacting
 with each other [TK]. They are also very helpful in predictive models when
@@ -84,6 +84,8 @@ intuitive as one would think.
 
 What does a probability in the context of a metaweb mean?
 
+$$P(i \rightarrow j)$$
+
 - It means the probability that two taxa can interact, regardless of biological
   plasticity, environmental variability, or co-occurrence.
 - One observation is enough to set this probability to one.
@@ -93,6 +95,16 @@ What does a probability in the context of a metaweb mean?
 **Papers:** @Strydom2022FooWeb
 
 ## Probabilistic local networks
+
+$$P(i \rightarrow j | C, A, N, E, t)$$
+
+i = predator
+j = prey
+C = co-occurrence
+A = area
+N = relative abundance 
+E = environment (including network)
+t = time
 
 What does a probability in the context of a local network mean? A cautionary
 tale of how we define probabilities.
