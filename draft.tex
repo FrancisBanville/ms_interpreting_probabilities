@@ -254,24 +254,24 @@ resilience {[}TK{]} of ecosystems worldwide.
 The recognition of the variability of species interactions and the
 emergence of numerical methods have led ecologists to rethink their
 representation of ecological networks, slowly moving from a binary to a
-probabilistic view of species interactions
-(\textbf{Poisot2016StrProa?}). This has several benefits. For example,
-probabilities represent the limit of our knowledge about species
-interactions and can indicate the expected frequency of two species
-interacting with each other {[}TK{]}. They are also very helpful in
-predictive models when modeling the spatial distribution of species
-(Cazelles \emph{et al.} 2016) and the temporal variability of ecological
-networks {[}TK{]}, generating new ecological data (e.g., Strydom
-\emph{et al.} 2022), and identifying priority sampling locations (see
-Andrade-Pacheco \emph{et al.} 2020 for an ecological example of a
-sampling optimization problem). Moreover, the high rate of false
-negatives in ecological network data, resulting from the difficulty of
-witnessing interactions between rare species, makes it hard to interpret
-non-observations of species interactions ecologically (Catchen \emph{et
-al.} 2023). Using probabilities instead of yes-no interactions accounts
-for these observation errors; in that case, only forbidden interactions
-(Jordano \emph{et al.} 2003; Olesen \emph{et al.} 2010) would have a
-probability value of zero (but see Gonzalez-Varo \& Traveset 2016).
+probabilistic view of species interactions (Poisot \emph{et al.} 2016).
+This has several benefits. For example, probabilities represent the
+limit of our knowledge about species interactions and can indicate the
+expected frequency of two species interacting with each other {[}TK{]}.
+They are also very helpful in predictive models when modeling the
+spatial distribution of species (Cazelles \emph{et al.} 2016) and the
+temporal variability of ecological networks {[}TK{]}, generating new
+ecological data (e.g., Strydom \emph{et al.} 2022), and identifying
+priority sampling locations (see Andrade-Pacheco \emph{et al.} 2020 for
+an ecological example of a sampling optimization problem). Moreover, the
+high rate of false negatives in ecological network data, resulting from
+the difficulty of witnessing interactions between rare species, makes it
+hard to interpret non-observations of species interactions ecologically
+(Catchen \emph{et al.} 2023). Using probabilities instead of yes-no
+interactions accounts for these observation errors; in that case, only
+forbidden interactions (Jordano \emph{et al.} 2003; Olesen \emph{et al.}
+2010) would have a probability value of zero (but see Gonzalez-Varo \&
+Traveset 2016).
 
 However, representing species interactions probabilistically can also be
 challenging. Beyond methodological difficulties in estimating these
@@ -327,6 +327,8 @@ not be as intuitive as one would think.
 
 What does a probability in the context of a metaweb mean?
 
+\[P(i \rightarrow j)\]
+
 \begin{itemize}
 \tightlist
 \item
@@ -344,6 +346,11 @@ What does a probability in the context of a metaweb mean?
 \hypertarget{probabilistic-local-networks}{%
 \subsection{Probabilistic local
 networks}\label{probabilistic-local-networks}}
+
+\[P(i \rightarrow j | C, A, N, E, t)\]
+
+i = predator j = prey C = co-occurrence A = area N = relative abundance
+E = environment (including network) t = time
 
 What does a probability in the context of a local network mean? A
 cautionary tale of how we define probabilities.
@@ -511,6 +518,11 @@ Sciences}, 278, 725--732.
 Poisot, T., Canard, E., Mouillot, D., Mouquet, N. \& Gravel, D. (2012).
 The dissimilarity of species interaction networks. \emph{Ecology
 Letters}, 15, 1353--1361.
+
+\leavevmode\hypertarget{ref-Poisot2016Structure}{}%
+Poisot, T., Cirtwill, A.R., Cazelles, K., Gravel, D., Fortin, M.-J. \&
+Stouffer, D.B. (2016). The structure of probabilistic networks.
+\emph{Methods in Ecology and Evolution}, 7, 303--312.
 
 \leavevmode\hypertarget{ref-Poisot2015SpeWhy}{}%
 Poisot, T., Stouffer, D.B. \& Gravel, D. (2015). Beyond species: Why
