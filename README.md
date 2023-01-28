@@ -2,22 +2,26 @@
 
 Cataloging species interactions across space is a gargantuan task. At the core
 of this challenge lies the spatiotemporal variability of ecological networks
-[@Poisot2015SpeWhy], which makes documenting the location and timing of
-interactions difficult. Indeed, it is not sufficient to know if two species have
-the biological capacity to interact to infer the realization of this interaction
-at a specific time and space. Taking food webs as an example, a predator and its
-potential prey must first co-occur on the same territory in order for a trophic
-interaction to take place. They must then cross paths, which can happen only if
-their relative abundances in the ecosystem is high enough and their phenology
-matches. Finally, the interaction occurs only if the predator has a desire to
-consume its prey and is able to capture and ingest it. Environmental (e.g.
-temperature and presence of shelters) and biological (e.g. physiological state
-of both individuals and availability of other prey species) factors contribute
-to this variability by impacting species co-occurrence and the realization of
-their interactions. In this context, it is unsurprising that computational
-methods are being developed in ecology to help alleviate the colossal sampling
-efforts required to document species interactions across time and space
-[@Strydom2021RoaPre]. 
+[@Poisot2012DisSpe; @Poisot2015SpeWhy], which makes documenting the location and
+timing of interactions difficult. Indeed, it is not sufficient to know if two
+species have the biological capacity to interact to infer the realization of
+their interaction at a specific time and space [TK]. Taking food webs as an
+example, a predator and its potential prey must first co-occur on the same
+territory in order for a trophic interaction to take place
+[@Blanchet2020CooNot]. They must then encounter, which is conditional on their
+relative abundances in the ecosystem and the matching of their phenology
+[@Poisot2015SpeWhy]. Finally, the interaction occurs only if the predators have
+a desire to consume their prey and are able to capture and ingest them
+[@Pulliam1974TheOpt]. Environmental (e.g. temperature and presence of shelters)
+and biological (e.g. physiological state of both species and availability of
+other prey species) factors contribute to this variability by impacting species
+co-occurrence [TK] and the realization of their interactions [TK]. In this
+context, it is unsurprising that computational methods are being developed in
+ecology to help alleviate the colossal sampling efforts required to document
+species interactions across time and space [@Strydom2021RoaPre]. Having a better
+portrait of species interactions and the emerging structure of food webs is
+important since it lays the groundwork for understanding the functioning [TK],
+dynamics [TK], and resilience [TK] of ecosystems worldwide. 
 
 The recognition of the variability of species interactions and the emergence of
 numerical methods have led ecologists to rethink their representation of
@@ -25,25 +29,38 @@ ecological networks, slowly moving from a binary to a probabilistic view of
 species interactions [@Poisot2016StrProa]. This has several benefits. For
 example, probabilities represent the limit of our knowledge about species
 interactions and can indicate the expected frequency of two species interacting
-with each other. They are also very helpful in predictive models when modeling
-the spatial distribution and temporal variability of ecological networks,
-generating new ecological data, and identifying priority sampling locations. 
+with each other [TK]. They are also very helpful in predictive models when
+modeling the spatial distribution of species [@Cazelles2016TheSpe] and the
+temporal variability of ecological networks [TK], generating new ecological data
+[e.g., @Strydom2022Food], and identifying priority sampling locations [see
+@Andrade-Pacheco2020FinHot for an ecological example of a sampling optimization
+problem]. Moreover, the high rate of false negatives in ecological network data,
+resulting from the difficulty of witnessing interactions between rare species,
+makes it hard to interpret non-observations of species interactions ecologically
+[@Catchen2023MisLin]. Using probabilities instead of yes-no interactions
+accounts for these observation errors; in that case, only forbidden interactions
+[@Jordano2003InvPro; @Olesen2010MisFor] would have a probability value of zero
+[but see @Gonzalez-Varo2016LabLim]. 
 
 However, representing species interactions probabilistically can also be
 challenging. Beyond methodological difficulties in estimating these numbers,
 there are important conceptual challenges in defining what we mean by
-"probability of interactions". Because this ecological representation is still
-in its infancy, there is no clear definition found in the literature. In this
-contribution, we outline different ways to define and interpret interactions
-probabilities in network ecology and propose an approach to thinking about them.
-These definitions mostly depend on the study system (e.g. local network or
-metaweb) and on the method used to generate them. We show that different
-definitions can have different ecological implications, especially related to
-spatial, temporal, and taxonomic scaling. Although we will focus on food webs,
-our observations and advice can be applied to all types of ecological networks,
-from plant-pollinator to host-parasite networks. Overall, we argue that
-probabilities should be better documented, defined mathematically, and used with
-caution when describing species interactions. 
+"probability of interactions". To the best of our knowledge, because the
+building blocks of this mathematical representation of food webs are still being
+laid, there is no clear definition found in the literature. This is worrisome,
+since working with probabilistic species interactions without clear guidelines
+could be misleading as much for field ecologists as for computational ecologists
+who use and generate these data. In this contribution, we outline different ways
+to define and interpret interactions probabilities in network ecology and
+propose an approach to thinking about them. These definitions mostly depend on
+the study system (e.g. local network or metaweb) and on the method used to
+generate them. We show that different definitions can have different ecological
+implications, especially regarding spatial, temporal, and taxonomic scaling.
+Although we will focus on food webs, our observations and advice can be applied
+to all types of ecological networks, from plant-pollinator to host-parasite
+networks. Specifically, we argue that probabilities should be better documented,
+defined mathematically, and used with caution when describing species
+interactions. 
 
 # Definitions and interpretations
 
