@@ -1,5 +1,99 @@
 [
     {
+        "DOI": "10.1038/s41598-020-67666-3",
+        "author": [
+            {
+                "family": "Andrade-Pacheco",
+                "given": "Ricardo"
+            },
+            {
+                "family": "Rerolle",
+                "given": "Francois"
+            },
+            {
+                "family": "Lemoine",
+                "given": "Jean"
+            },
+            {
+                "family": "Hernandez",
+                "given": "Leda"
+            },
+            {
+                "family": "Me\u00eft\u00e9",
+                "given": "Aboulaye"
+            },
+            {
+                "family": "Juziwelo",
+                "given": "Lazarus"
+            },
+            {
+                "family": "Bibaut",
+                "given": "Aur\u00e9lien F."
+            },
+            {
+                "family": "Laan",
+                "given": "Mark J.",
+                "non-dropping-particle": "van der"
+            },
+            {
+                "family": "Arnold",
+                "given": "Benjamin F."
+            },
+            {
+                "family": "Sturrock",
+                "given": "Hugh J. W."
+            }
+        ],
+        "container-title": "Scientific Reports",
+        "id": "Andrade-Pacheco2020FinHot",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2020
+                ]
+            ]
+        },
+        "page": "10939",
+        "publisher": "Nature Publishing Group",
+        "title": "Finding hotspots: Development of an adaptive spatial sampling approach",
+        "type": "article-journal",
+        "volume": "10"
+    },
+    {
+        "DOI": "10.1111/ele.13525",
+        "author": [
+            {
+                "family": "Blanchet",
+                "given": "F. Guillaume"
+            },
+            {
+                "family": "Cazelles",
+                "given": "Kevin"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            }
+        ],
+        "container-title": "Ecology Letters",
+        "id": "Blanchet2020CooNot",
+        "issue": "7",
+        "issued": {
+            "date-parts": [
+                [
+                    2020
+                ]
+            ]
+        },
+        "page": "1050-1063",
+        "publisher": "Wiley",
+        "publisher-place": "Hoboken",
+        "title": "Co-occurrence is not evidence of ecological interactions",
+        "type": "article-journal",
+        "volume": "23"
+    },
+    {
         "DOI": "10.1111/geb.13593",
         "author": [
             {
@@ -33,6 +127,74 @@
     {
         "author": [
             {
+                "family": "Catchen",
+                "given": "Michael D."
+            },
+            {
+                "family": "Poisot",
+                "given": "Timoth\u00e9e"
+            },
+            {
+                "family": "Pollock",
+                "given": "Laura J."
+            },
+            {
+                "family": "Gonzalez",
+                "given": "Andrew"
+            }
+        ],
+        "id": "Catchen2023MisLin",
+        "issued": {
+            "date-parts": [
+                [
+                    2023
+                ]
+            ]
+        },
+        "publisher": "EcoEvoRxiv",
+        "title": "The missing link: Discerning true from false negatives when sampling species interaction networks",
+        "type": "article-journal"
+    },
+    {
+        "DOI": "10.1007/s12080-015-0281-9",
+        "author": [
+            {
+                "family": "Cazelles",
+                "given": "Kevin"
+            },
+            {
+                "family": "Araujo",
+                "given": "Miguel B."
+            },
+            {
+                "family": "Mouquet",
+                "given": "Nicolas"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            }
+        ],
+        "container-title": "Theoretical Ecology",
+        "id": "Cazelles2016TheSpe",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2016
+                ]
+            ]
+        },
+        "page": "39-48",
+        "publisher": "Springer Heidelberg",
+        "publisher-place": "Heidelberg",
+        "title": "A theory for species co-occurrence in interaction networks",
+        "type": "article-journal",
+        "volume": "9"
+    },
+    {
+        "author": [
+            {
                 "family": "Dunne",
                 "given": "Jennifer A"
             }
@@ -60,6 +222,66 @@
         "publisher": "Oxford University Press",
         "title": "The Network Structure of Food Webs",
         "type": "chapter"
+    },
+    {
+        "DOI": "10.1016/j.tree.2016.06.009",
+        "author": [
+            {
+                "family": "Gonzalez-Varo",
+                "given": "Juan P."
+            },
+            {
+                "family": "Traveset",
+                "given": "Anna"
+            }
+        ],
+        "container-title": "Trends in Ecology & Evolution",
+        "id": "Gonzalez-Varo2016LabLim",
+        "issue": "9",
+        "issued": {
+            "date-parts": [
+                [
+                    2016
+                ]
+            ]
+        },
+        "page": "700-710",
+        "publisher": "Elsevier Science London",
+        "publisher-place": "London",
+        "title": "The Labile Limits of Forbidden Interactions",
+        "type": "article-journal",
+        "volume": "31"
+    },
+    {
+        "DOI": "10.1046/j.1461-0248.2003.00403.x",
+        "author": [
+            {
+                "family": "Jordano",
+                "given": "Pedro"
+            },
+            {
+                "family": "Bascompte",
+                "given": "Jordi"
+            },
+            {
+                "family": "Olesen",
+                "given": "Jens M."
+            }
+        ],
+        "container-title": "Ecology Letters",
+        "id": "Jordano2003InvPro",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2003
+                ]
+            ]
+        },
+        "page": "69-81",
+        "title": "Invariant properties in coevolutionary networks of plantanimal interactions",
+        "type": "article-journal",
+        "volume": "6"
     },
     {
         "DOI": "10.1111/1365-2435.12763",
@@ -173,6 +395,91 @@
         "volume": "n/a"
     },
     {
+        "DOI": "10.1098/rspb.2010.1371",
+        "author": [
+            {
+                "family": "Olesen",
+                "given": "Jens M."
+            },
+            {
+                "family": "Bascompte",
+                "given": "Jordi"
+            },
+            {
+                "family": "Dupont",
+                "given": "Yoko L."
+            },
+            {
+                "family": "Elberling",
+                "given": "Heidi"
+            },
+            {
+                "family": "Rasmussen",
+                "given": "Claus"
+            },
+            {
+                "family": "Jordano",
+                "given": "Pedro"
+            }
+        ],
+        "container-title": "Proceedings of the Royal Society B: Biological Sciences",
+        "id": "Olesen2010MisFor",
+        "issue": "1706",
+        "issued": {
+            "date-parts": [
+                [
+                    2010
+                ]
+            ]
+        },
+        "page": "725-732",
+        "publisher": "Royal Society",
+        "title": "Missing and forbidden links in mutualistic networks",
+        "type": "article-journal",
+        "volume": "278"
+    },
+    {
+        "DOI": "10.1111/ele.12002",
+        "author": [
+            {
+                "family": "Poisot",
+                "given": "Timothee"
+            },
+            {
+                "family": "Canard",
+                "given": "Elsa"
+            },
+            {
+                "family": "Mouillot",
+                "given": "David"
+            },
+            {
+                "family": "Mouquet",
+                "given": "Nicolas"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            }
+        ],
+        "container-title": "Ecology Letters",
+        "id": "Poisot2012DisSpe",
+        "issue": "12",
+        "issued": {
+            "date-parts": [
+                [
+                    2012
+                ]
+            ]
+        },
+        "page": "1353-1361",
+        "publisher": "Wiley",
+        "publisher-place": "Hoboken",
+        "title": "The dissimilarity of species interaction networks",
+        "type": "article-journal",
+        "volume": "15"
+    },
+    {
         "DOI": "10.1111/oik.01719",
         "author": [
             {
@@ -247,6 +554,30 @@
         "title": "The structure of probabilistic networks",
         "type": "article-journal",
         "volume": "7"
+    },
+    {
+        "DOI": "10.1086/282885",
+        "author": [
+            {
+                "family": "Pulliam",
+                "given": "H. Ronald"
+            }
+        ],
+        "container-title": "The American Naturalist",
+        "id": "Pulliam1974TheOpt",
+        "issue": "959",
+        "issued": {
+            "date-parts": [
+                [
+                    1974
+                ]
+            ]
+        },
+        "page": "59-74",
+        "publisher": "The University of Chicago Press",
+        "title": "On the Theory of Optimal Diets",
+        "type": "article-journal",
+        "volume": "108"
     },
     {
         "DOI": "10.1098/rstb.2021.0063",
