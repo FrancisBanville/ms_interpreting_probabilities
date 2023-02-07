@@ -366,31 +366,69 @@ used with caution when describing species interactions.
 \section{Definitions and
 interpretations}\label{definitions-and-interpretations}}
 
-\hypertarget{overview-of-interaction-probabilities}{%
-\subsection{Overview of interaction
-probabilities}\label{overview-of-interaction-probabilities}}
+The basic unit of food webs and other ecological networks are
+individuals that interact with each others (e.g., by predation; Elton
+2001). The aggregation of these individuals into more or less
+homogeneous groups (e.g., populations, species, trophic species) allows
+us to represent networks at different scales, which impacts the
+properties and behaviour of these systems (Guimarães 2020). A network's
+nodes can thus designate distinct levels of organization, whereas the
+edges linking these nodes can describe a variety of interaction
+measures. When using a Boolean (yes-no) representation of biotic
+interactions, the observation that one individual from group (or node)
+\(i\) interacts with another individual from group \(j\) is enough to
+set the interaction \(A_{i,j}\) to 1. This simplified representation of
+food webs is a highly valuable source of ecological information (Pascual
+\emph{et al.} 2006) even though it overlooks important factors regarding
+interaction strengths. These, in turn, can be represented using weighted
+interactions, which better describe the energy flows, demographic
+impacts or frequencies of interactions between nodes (Berlow \emph{et
+al.} 2004; Borrett \& Scharler 2019), with \(A_{i,j} \in \mathbb{N}\) or
+\(\mathbb{R}\) depending on the measure. For example, they can be used
+to estimate the average number of prey individuals consumed by the
+predators in a given time period. This extra amount of ecological
+information typically comes at a cost of greater sampling effort or data
+requirement in predictive models (Strydom \emph{et al.} 2021), which can
+lead to high uncertainties when building these types of networks.
 
-How are interaction probabilities defined in the literature? It might
-not be as intuitive as one would think.
+The uncertainty and spatiotemporal variability of both types of biotic
+interactions (Boolean and weighted) can be represented
+probabilistically. On one hand, Boolean interactions follow a Bernoulli
+distribution \(A_{i,j} \sim {\rm Bernoulli}(p)\), with \(p\) being the
+probability of interactions. The only two possible outcomes are the
+presence (\(A_{i,j} = 1\)) or absence (\(A_{i,j} = 0\)) of an
+interaction between the two nodes. Weighted interactions, on the other
+hand, can follow various probability distributions depending on the
+measure used. In this case, the event's outcome is the value of
+interaction strength. For instance, weights can follow a Poisson
+distribution \(A_{i,j} \sim {\rm Poisson}(\lambda)\) when predicting
+frequencies of interactions between pairs of nodes, with \(\lambda\)
+being the expected rate of interaction. The definition and
+interpretation of parameters like \(p\) and \(\lambda\) are inextricably
+linked to environmental and biological factors such as species relative
+abundance, traits, area, and time, depending on the type of interaction.
+Because Boolean species interactions are much more documented in the
+literature, our primary focus in this contribution will be on addressing
+the challenges in defining and interpretating \(p\) for pairwise species
+interactions.
 
-\begin{itemize}
-\tightlist
-\item
-  There is a big difference in how we interpret the probability that two
-  species \emph{can} interact (metaweb) and the probability that they
-  \emph{will} interact (realized networks).
-\item
-  Interaction probabilities can be used to describe Boolean interactions
-  (e.g., the probability that two species interact) and weighted
-  interactions (e.g., the probability distribution of the amount of
-  energy flow between two species).
-\item
-  In many studies, it is not obvious if authors use interaction scores
-  or probabilities (in the latter case, it is rarely specified what
-  these probabilities truly represent).
-\end{itemize}
-
-Papers: Guimarães (2020)
+The first aspect to take into consideration when estimating or using
+probabilities of interactions is knowing if they describe the likelihood
+of potential or realized interactions. A potential interaction is
+defined as the biological capacity of two species to interact (i.e., the
+probability that they \emph{can} interact) whereas a realized
+interaction refers to the materialization or observation of this
+interaction in a delineated space and time period (i.e., the probability
+that they \emph{will} interact). Here, we will use the terms
+\emph{metaweb} to designate networks of potential interactions and
+\emph{local networks} for those of realized interactions. Frequent
+confusion arises among ecologists over the use of these two terms,
+especially in a probabilistic context. Indeed, in many studies of
+probabilistic ecological networks, it remains unclear when authors
+describe potential or realized interactions, or when so-called
+probabilities are actually \emph{interaction scores}. A better
+understanding of these differences would alleviate interpretation errors
+and help ecologists use these numbers more appropriately.
 
 \hypertarget{probabilistic-metawebs}{%
 \subsection{Probabilistic metawebs}\label{probabilistic-metawebs}}
@@ -409,6 +447,8 @@ What does a probability in the context of a metaweb mean?
 \item
   Can we turn this into a local network realisation that is also
   probabilistic and intuitive?
+\item
+  Low probability with rare interactions?
 \end{itemize}
 
 \textbf{Papers:} (\textbf{Strydom2022FooWeb?})
@@ -562,6 +602,17 @@ Araujo, M.B., Rozenfeld, A., Rahbek, C. \& Marquet, P.A. (2011). Using
 species co-occurrence networks to assess the impacts of climate change.
 \emph{Ecography}, 34, 897--908.
 
+\leavevmode\hypertarget{ref-Berlow2004IntStr}{}%
+Berlow, E.L., Neutel, A.-M., Cohen, J.E., De Ruiter, P.C., Ebenman, B.,
+Emmerson, M., \emph{et al.} (2004). Interaction strengths in food webs:
+Issues and opportunities. \emph{Journal of Animal Ecology}, 73,
+585--598.
+
+\leavevmode\hypertarget{ref-Borrett2019WalPar}{}%
+Borrett, S.R. \& Scharler, U.M. (2019). Walk partitions of flow in
+Ecological Network Analysis: Review and synthesis of methods and
+indicators. \emph{Ecological Indicators}, 106, 105451.
+
 \leavevmode\hypertarget{ref-Delmas2019AnaEco}{}%
 Delmas, E., Besson, M., Brice, M.-H., Burkle, L.A., Dalla Riva, G.V.,
 Fortin, M.-J., \emph{et al.} (2019). Analysing ecological networks of
@@ -571,6 +622,10 @@ species interactions. \emph{Biological Reviews}, 94, 16--36.
 Dunne, J.A. (2006). The Network Structure of Food Webs. In:
 \emph{Ecological networks: Linking structure and dynamics} (eds. Dunne,
 J.A. \& Pascual, M.). Oxford University Press, pp. 27--86.
+
+\leavevmode\hypertarget{ref-Elton2001AniEco}{}%
+Elton, C.S. (2001). \emph{Animal Ecology}. University of Chicago Press,
+Chicago, IL.
 
 \leavevmode\hypertarget{ref-GodsoeSpeInt}{}%
 Godsoe, W., Murray, R. \& Iritani, R. (n.d.). Species interactions and
@@ -618,6 +673,13 @@ Strydom, T., Bouskila, S., Banville, F., Barros, C., Caron, D., Farrell,
 M.J., \emph{et al.} (2022). Food web reconstruction through phylogenetic
 transfer of low-rank network representation. \emph{Methods in Ecology
 and Evolution}, 13.
+
+\leavevmode\hypertarget{ref-Strydom2021Roadmapa}{}%
+Strydom, T., Catchen, M.D., Banville, F., Caron, D., Dansereau, G.,
+Desjardins-Proulx, P., \emph{et al.} (2021). A roadmap towards
+predicting species interaction networks (across space and time).
+\emph{Philosophical Transactions of the Royal Society B-Biological
+Sciences}, 376, 20210063.
 
 \end{CSLReferences}
 
