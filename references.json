@@ -1,11 +1,5 @@
 [
     {
-        "id": "AnaEco",
-        "publisher": "https://onlinelibrary.wiley.com/doi/10.1111/brv.12433",
-        "title": "Analysing ecological networks of species interactions - Delmas - 2019 - Biological Reviews - Wiley Online Library",
-        "type": ""
-    },
-    {
         "DOI": "10.1038/s41598-020-67666-3",
         "author": [
             {
@@ -491,8 +485,15 @@
             }
         ],
         "container-title": "Oikos",
-        "id": "GodsoeSpeInt",
+        "id": "Godsoe2022SpeInt",
         "issue": "n/a",
+        "issued": {
+            "date-parts": [
+                [
+                    2022
+                ]
+            ]
+        },
         "page": "e09282",
         "title": "Species interactions and diversity: A unified framework using Hill numbers",
         "type": "article-journal",
