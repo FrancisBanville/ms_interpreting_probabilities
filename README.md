@@ -70,23 +70,62 @@ interactions.
 
 # Definitions and interpretations
 
-## Overview of interaction probabilities
+The basic unit of food webs and other ecological networks are individuals that
+interact with each others [e.g., by predation; @Elton2001AniEco]. The
+aggregation of these individuals into more or less homogeneous groups (e.g.,
+populations, species, trophic species) allows us to represent networks at
+different scales, which impacts the properties and behaviour of these systems
+[@Guimaraes2020StrEco]. A network's nodes can thus designate distinct levels of
+organization, whereas the edges linking these nodes can describe a variety of
+interaction measures. When using a Boolean (yes-no) representation of biotic
+interactions, the observation that one individual from group (or node) $i$
+interacts with another individual from group $j$ is enough to set the
+interaction $A_{i,j}$ to 1. This simplified representation of food webs is a
+highly valuable source of ecological information [@Pascual2006EcoNet] even
+though it overlooks important factors regarding interaction strengths. These, in
+turn, can be represented using weighted interactions, which better describe the
+energy flows, demographic impacts or frequencies of interactions between nodes
+[@Berlow2004IntStr; @Borrett2019WalPar], with $A_{i,j} \in \mathbb{N}$ or
+$\mathbb{R}$ depending on the measure. For example, they can be used to estimate
+the average number of prey individuals consumed by the predators in a given time
+period. This extra amount of ecological information typically comes at a cost of
+greater sampling effort or data requirement in predictive models
+[@Strydom2021Roadmapa], which can lead to high uncertainties when building these
+types of networks.
 
-How are interaction probabilities defined in the literature? It might not be as
-intuitive as one would think.
+The uncertainty and spatiotemporal variability of both types of biotic
+interactions (Boolean and weighted) can be represented probabilistically. On one
+hand, Boolean interactions follow a Bernoulli distribution $A_{i,j} \sim {\rm
+Bernoulli}(p)$, with $p$ being the probability of interactions. The only two
+possible outcomes are the presence ($A_{i,j} = 1$) or absence ($A_{i,j} = 0$) of
+an interaction between the two nodes. Weighted interactions, on the other hand,
+can follow various probability distributions depending on the measure used. In
+this case, the event's outcome is the value of interaction strength. For
+instance, weights can follow a Poisson distribution $A_{i,j} \sim {\rm
+Poisson}(\lambda)$ when predicting frequencies of interactions between pairs of
+nodes, with $\lambda$ being the expected rate of interaction. The definition and
+interpretation of parameters like $p$ and $\lambda$ are inextricably linked to
+environmental and biological factors such as species relative abundance, traits,
+area, and time, depending on the type of interaction. Because Boolean species
+interactions are much more documented in the literature, our primary focus in
+this contribution will be on addressing the challenges in defining and
+interpretating $p$ for pairwise species interactions.
 
-- There is a big difference in how we interpret the probability that two species
-  *can* interact (metaweb) and the probability that they *will* interact
-  (realized networks).
-- Interaction probabilities can be used to describe Boolean interactions (e.g.,
-  the probability that two species interact) and weighted interactions (e.g.,
-  the probability distribution of the amount of energy flow between two
-  species).
-- In many studies, it is not obvious if authors use interaction
-  scores or probabilities (in the latter case, it is rarely specified what these
-  probabilities truly represent).
-
-Papers: @Guimaraes2020StrEco
+The first aspect to take into consideration when estimating or using
+probabilities of interactions is knowing if they describe the likelihood of
+potential or realized interactions. A potential interaction is defined as the
+biological capacity of two species to interact (i.e., the probability that they
+*can* interact) whereas a realized interaction refers to the materialization or
+observation of this interaction in a delineated space and time period (i.e., the
+probability that they *will* interact). Here, we will use the terms *metaweb* to
+designate networks of potential interactions and *local networks* for those of
+realized interactions. Frequent confusion arises among ecologists over the use
+of these two terms, especially in a probabilistic context. Indeed, in many
+studies of probabilistic ecological networks, it remains unclear when authors
+describe potential or realized interactions, or when so-called probabilities are
+actually *interaction scores*. A better understanding of these differences would
+alleviate interpretation errors and help ecologists use these numbers more
+appropriately. 
 
 ## Probabilistic metawebs
 
@@ -99,6 +138,7 @@ $$P(i \rightarrow j)$$
 - One observation is enough to set this probability to one.
 - Can we turn this into a local network realisation that is also probabilistic
   and intuitive?
+- Low probability with rare interactions?
 
 **Papers:** @Strydom2022FooWeb
 
