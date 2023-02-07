@@ -187,4 +187,16 @@ Here we present some advice moving forward.
 - Maybe mention thinking about a workflow to predict probabilistic local
   food webs from probabilistic metawebs.
 
+# Acknowledgement
+
+We acknowledge that this study was conducted on land within the traditional
+unceded territory of the Saint Lawrence Iroquoian, Anishinabewaki, Mohawk,
+Huron-Wendat, and Omàmiwininiwak nations. This work was supported by the
+Institute for Data Valorisation (IVADO) and the Natural Sciences and Engineering
+Research Council of Canada (NSERC) Collaborative Research and Training
+Experience (CREATE) program, through the Computational Biodiversity Science and
+Services (BIOS²) program. A special thank to all members of the Black Holes and
+Revelations working group (organized by BIOS²) for their insightful discussions
+and valuable feedbacks on this manuscript.
+
 # References
