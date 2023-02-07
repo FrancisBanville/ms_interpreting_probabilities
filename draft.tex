@@ -227,51 +227,60 @@ both at the local and regional scales.
 
 Cataloging species interactions across space is a gargantuan task. At
 the core of this challenge lies the spatiotemporal variability of
-ecological networks (Poisot \emph{et al.} 2012, 2015), which makes
-documenting the location and timing of interactions difficult. Indeed,
-it is not sufficient to know if two species have the biological capacity
-to interact to infer the realization of their interaction at a specific
-time and space {[}TK{]}. Taking food webs as an example, a predator and
-its potential prey must first co-occur on the same territory in order
-for a trophic interaction to take place (Blanchet \emph{et al.} 2020).
-They must then encounter, which is conditional on their relative
-abundances in the ecosystem and the matching of their phenology (Poisot
-\emph{et al.} 2015). Finally, the interaction occurs only if the
-predators have a desire to consume their prey and are able to capture
-and ingest them (Pulliam 1974). Environmental (e.g.~temperature and
-presence of shelters) and biological (e.g.~physiological state of both
-species and availability of other prey species) factors contribute to
-this variability by impacting species co-occurrence {[}TK{]} and the
-realization of their interactions {[}TK{]}. In this context, it is
+ecological networks (\textbf{Poisot2012DisSpe?};
+\textbf{Poisot2015SpeWhy?}), which makes documenting the location and
+timing of interactions difficult. Indeed, it is not sufficient to know
+that two species have the biological capacity to interact to infer the
+realization of their interaction at a specific time and space (Dunne
+2006). Taking food webs as an example, a predator species and its
+potential prey must first co-occur on the same territory in order for a
+trophic interaction to take place (\textbf{Blanchet2020CooNot?}). They
+must then encounter, which is conditional on their relative abundances
+in the ecosystem and the matching of their phenology
+(\textbf{Poisot2015SpeWhy?}). Finally, the interaction occurs only if
+the predators have a desire to consume their prey and are able to
+capture and ingest them (\textbf{Pulliam1974TheOpt?}). Environmental
+(e.g.~temperature and presence of shelters) and biological
+(e.g.~physiological state of both species and availability of other prey
+species) factors contribute to this variability by impacting species
+co-occurrence (Araujo \emph{et al.} 2011) and the realization of their
+interactions (\textbf{Poisot2015SpeWhy?}). In this context, it is
 unsurprising that computational methods are being developed in ecology
 to help alleviate the colossal sampling efforts required to document
-species interactions across time and space (Strydom \emph{et al.} 2021).
-Having a better portrait of species interactions and the emerging
-structure of food webs is important since it lays the groundwork for
-understanding the functioning {[}TK{]}, dynamics {[}TK{]}, and
-resilience {[}TK{]} of ecosystems worldwide.
+species interactions across time and space
+(\textbf{Strydom2021RoaPre?}). Having a better portrait of species
+interactions and the emerging structure of their food webs is important
+since it lays the groundwork for understanding the functioning,
+dynamics, and resilience of ecosystems worldwide (e.g., Proulx \emph{et
+al.} 2005; Pascual \emph{et al.} 2006; Delmas \emph{et al.} 2019).
 
-The recognition of the variability of species interactions and the
-emergence of numerical methods have led ecologists to rethink their
+The recognition of the intrinsic variability of species interactions and
+the emergence of numerical methods have led ecologists to rethink their
 representation of ecological networks, slowly moving from a binary to a
 probabilistic view of species interactions (Poisot \emph{et al.} 2016).
 This has several benefits. For example, probabilities represent the
-limit of our knowledge about species interactions and can indicate the
-expected frequency of two species interacting with each other {[}TK{]}.
-They are also very helpful in predictive models when modeling the
-spatial distribution of species (Cazelles \emph{et al.} 2016) and the
-temporal variability of ecological networks {[}TK{]}, generating new
+limit of our knowledge about species interactions and can inform us
+about the expected number of interactions and emerging network
+properties despite this limited knowledge (Poisot \emph{et al.} 2016).
+They are also very helpful in predicting the spatial distribution of
+species within networks (\textbf{Cazelles2016TheSpe?}) and the temporal
+variability of interactions (Poisot \emph{et al.} 2015), generating new
 ecological data (e.g., Strydom \emph{et al.} 2022), and identifying
-priority sampling locations (see Andrade-Pacheco \emph{et al.} 2020 for
-an ecological example of a sampling optimization problem). Moreover, the
-high rate of false negatives in ecological network data, resulting from
-the difficulty of witnessing interactions between rare species, makes it
-hard to interpret non-observations of species interactions ecologically
-(Catchen \emph{et al.} 2023). Using probabilities instead of yes-no
+priority sampling locations of species interactions (see
+\textbf{Andrade-Pacheco2020FinHot?} for an ecological example of a
+sampling optimization problem). Moreover, the high rate of false
+negatives in ecological network data, resulting from the difficulty of
+witnessing interactions between rare species, makes it hard to interpret
+non-observations of species interactions ecologically
+(\textbf{Catchen2023MisLin?}). Using probabilities instead of yes-no
 interactions accounts for these observation errors; in that case, only
-forbidden interactions (Jordano \emph{et al.} 2003; Olesen \emph{et al.}
-2010) would have a probability value of zero (but see Gonzalez-Varo \&
-Traveset 2016).
+forbidden interactions (\textbf{Jordano2003InvPro?};
+\textbf{Olesen2010MisFor?}) would have a probability value of zero (but
+see \textbf{Gonzalez-Varo2016LabLim?}). Many measures have been
+developed to describe the structure (Poisot \emph{et al.} 2016) and
+diversity (Ohlmann \emph{et al.} 2019; Godsoe \emph{et al.} n.d.) of
+probabilistic interactions, which shows the potential of this framework
+in the study of a variety of ecological phenomena.
 
 However, representing species interactions probabilistically can also be
 challenging. Beyond methodological difficulties in estimating these
@@ -322,6 +331,8 @@ not be as intuitive as one would think.
   these probabilities truly represent).
 \end{itemize}
 
+Papers: Guimarães (2020)
+
 \hypertarget{probabilistic-metawebs}{%
 \subsection{Probabilistic metawebs}\label{probabilistic-metawebs}}
 
@@ -349,8 +360,9 @@ networks}\label{probabilistic-local-networks}}
 
 \[P(i \rightarrow j | C, A, N, E, t)\]
 
-i = predator j = prey C = co-occurrence A = area N = relative abundance
-E = environment (including network) t = time
+i = predator j = prey C = co-occurrence (and relative abundance?) A =
+area N = relative abundance (or network?) E = environment (including
+network?) t = time
 
 What does a probability in the context of a local network mean? A
 cautionary tale of how we define probabilities.
@@ -472,79 +484,67 @@ Here we present some advice moving forward.
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
-\leavevmode\hypertarget{ref-Andrade-Pacheco2020FinHot}{}%
-Andrade-Pacheco, R., Rerolle, F., Lemoine, J., Hernandez, L., Meïté, A.,
-Juziwelo, L., \emph{et al.} (2020). Finding hotspots: Development of an
-adaptive spatial sampling approach. \emph{Scientific Reports}, 10,
-10939.
+\leavevmode\hypertarget{ref-Araujo2011UsiSpe}{}%
+Araujo, M.B., Rozenfeld, A., Rahbek, C. \& Marquet, P.A. (2011). Using
+species co-occurrence networks to assess the impacts of climate change.
+\emph{Ecography}, 34, 897--908.
 
-\leavevmode\hypertarget{ref-Blanchet2020CooNot}{}%
-Blanchet, F.G., Cazelles, K. \& Gravel, D. (2020). Co-occurrence is not
-evidence of ecological interactions. \emph{Ecology Letters}, 23,
-1050--1063.
+\leavevmode\hypertarget{ref-Delmas2019AnaEco}{}%
+Delmas, E., Besson, M., Brice, M.-H., Burkle, L.A., Dalla Riva, G.V.,
+Fortin, M.-J., \emph{et al.} (2019). Analysing ecological networks of
+species interactions. \emph{Biological Reviews}, 94, 16--36.
 
-\leavevmode\hypertarget{ref-Catchen2023MisLin}{}%
-Catchen, M.D., Poisot, T., Pollock, L.J. \& Gonzalez, A. (2023). The
-missing link: Discerning true from false negatives when sampling species
-interaction networks.
+\leavevmode\hypertarget{ref-Dunne2006Network}{}%
+Dunne, J.A. (2006). The Network Structure of Food Webs. In:
+\emph{Ecological networks: Linking structure and dynamics} (eds. Dunne,
+J.A. \& Pascual, M.). Oxford University Press, pp. 27--86.
 
-\leavevmode\hypertarget{ref-Cazelles2016TheSpe}{}%
-Cazelles, K., Araujo, M.B., Mouquet, N. \& Gravel, D. (2016). A theory
-for species co-occurrence in interaction networks. \emph{Theoretical
-Ecology}, 9, 39--48.
+\leavevmode\hypertarget{ref-GodsoeSpeInt}{}%
+Godsoe, W., Murray, R. \& Iritani, R. (n.d.). Species interactions and
+diversity: A unified framework using Hill numbers. \emph{Oikos}, n/a,
+e09282.
 
-\leavevmode\hypertarget{ref-Gonzalez-Varo2016LabLim}{}%
-Gonzalez-Varo, J.P. \& Traveset, A. (2016). The Labile Limits of
-Forbidden Interactions. \emph{Trends in Ecology \& Evolution}, 31,
-700--710.
-
-\leavevmode\hypertarget{ref-Jordano2003InvPro}{}%
-Jordano, P., Bascompte, J. \& Olesen, J.M. (2003). Invariant properties
-in coevolutionary networks of plantanimal interactions. \emph{Ecology
-Letters}, 6, 69--81.
+\leavevmode\hypertarget{ref-Guimaraes2020StrEco}{}%
+Guimarães, P.R. (2020). The Structure of Ecological Networks Across
+Levels of Organization. \emph{Annual Review of Ecology, Evolution, and
+Systematics}, 51, 433--460.
 
 \leavevmode\hypertarget{ref-McLeod2020EffSpe}{}%
 McLeod, A.M., Leroux, S.J. \& Chu, C. (2020). Effects of species traits,
 motif profiles, and environment on spatial variation in multi-trophic
 antagonistic networks. \emph{Ecosphere}, 11, e03018.
 
-\leavevmode\hypertarget{ref-Olesen2010MisFor}{}%
-Olesen, J.M., Bascompte, J., Dupont, Y.L., Elberling, H., Rasmussen, C.
-\& Jordano, P. (2010). Missing and forbidden links in mutualistic
-networks. \emph{Proceedings of the Royal Society B: Biological
-Sciences}, 278, 725--732.
+\leavevmode\hypertarget{ref-Ohlmann2019DivInd}{}%
+Ohlmann, M., Miele, V., Dray, S., Chalmandrier, L., O'Connor, L. \&
+Thuiller, W. (2019). Diversity indices for ecological networks: A
+unifying framework using Hill numbers. \emph{Ecology Letters}, 22,
+737--747.
 
-\leavevmode\hypertarget{ref-Poisot2012DisSpe}{}%
-Poisot, T., Canard, E., Mouillot, D., Mouquet, N. \& Gravel, D. (2012).
-The dissimilarity of species interaction networks. \emph{Ecology
-Letters}, 15, 1353--1361.
+\leavevmode\hypertarget{ref-Pascual2006EcoNet}{}%
+Pascual, M., Dunne, J.A. \& Dunne, J.A. (2006). \emph{Ecological
+Networks: Linking Structure to Dynamics in Food Webs}. Oxford University
+Press, USA.
 
 \leavevmode\hypertarget{ref-Poisot2016Structure}{}%
 Poisot, T., Cirtwill, A.R., Cazelles, K., Gravel, D., Fortin, M.-J. \&
 Stouffer, D.B. (2016). The structure of probabilistic networks.
 \emph{Methods in Ecology and Evolution}, 7, 303--312.
 
-\leavevmode\hypertarget{ref-Poisot2015SpeWhy}{}%
+\leavevmode\hypertarget{ref-Poisot2015Speciesa}{}%
 Poisot, T., Stouffer, D.B. \& Gravel, D. (2015). Beyond species: Why
 ecological interaction networks vary through space and time.
 \emph{Oikos}, 124, 243--251.
 
-\leavevmode\hypertarget{ref-Pulliam1974TheOpt}{}%
-Pulliam, H.R. (1974). On the Theory of Optimal Diets. \emph{The American
-Naturalist}, 108, 59--74.
+\leavevmode\hypertarget{ref-Proulx2005NetThi}{}%
+Proulx, S.R., Promislow, D.E.L. \& Phillips, P.C. (2005). Network
+thinking in ecology and evolution. \emph{Trends in Ecology \&
+Evolution}, SPECIAL issue: BUMPER book REVIEW, 20, 345--353.
 
 \leavevmode\hypertarget{ref-Strydom2022Food}{}%
 Strydom, T., Bouskila, S., Banville, F., Barros, C., Caron, D., Farrell,
 M.J., \emph{et al.} (2022). Food web reconstruction through phylogenetic
 transfer of low-rank network representation. \emph{Methods in Ecology
 and Evolution}, 13.
-
-\leavevmode\hypertarget{ref-Strydom2021RoaPre}{}%
-Strydom, T., Catchen, M.D., Banville, F., Caron, D., Dansereau, G.,
-Desjardins-Proulx, P., \emph{et al.} (2021). A roadmap towards
-predicting species interaction networks (across space and time).
-\emph{Philosophical Transactions of the Royal Society B-Biological
-Sciences}, 376, 20210063.
 
 \end{CSLReferences}
 
