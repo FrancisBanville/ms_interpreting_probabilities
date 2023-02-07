@@ -2,24 +2,24 @@
 
 Cataloging species interactions across space is a gargantuan task. At the core
 of this challenge lies the spatiotemporal variability of ecological networks
-[@Poisot2012DisSpe; @Poisot2015SpeWhy], which makes documenting the location and
+[@Poisot2012Dissimilaritya; @Poisot2015Speciesa], which makes documenting the location and
 timing of interactions difficult. Indeed, it is not sufficient to know that two
 species have the biological capacity to interact to infer the realization of
 their interaction at a specific time and space [@Dunne2006Network]. Taking food
 webs as an example, a predator species and its potential prey must first
 co-occur on the same territory in order for a trophic interaction to take place
-[@Blanchet2020CooNot]. They must then encounter, which is conditional on their
+[@Blanchet2020Cooccurrencea]. They must then encounter, which is conditional on their
 relative abundances in the ecosystem and the matching of their phenology
-[@Poisot2015SpeWhy]. Finally, the interaction occurs only if the predators have
+[@Poisot2015Speciesa]. Finally, the interaction occurs only if the predators have
 a desire to consume their prey and are able to capture and ingest them
-[@Pulliam1974TheOpt]. Environmental (e.g. temperature and presence of shelters)
+[@Pulliam1974Theory]. Environmental (e.g. temperature and presence of shelters)
 and biological (e.g. physiological state of both species and availability of
 other prey species) factors contribute to this variability by impacting species
 co-occurrence [@Araujo2011UsiSpe] and the realization of their interactions
-[@Poisot2015SpeWhy]. In this context, it is unsurprising that computational
+[@Poisot2015Speciesa]. In this context, it is unsurprising that computational
 methods are being developed in ecology to help alleviate the colossal sampling
 efforts required to document species interactions across time and space
-[@Strydom2021RoaPre]. Having a better portrait of species interactions and the
+[@Strydom2021Roadmapa]. Having a better portrait of species interactions and the
 emerging structure of their food webs is important since it lays the groundwork
 for understanding the functioning, dynamics, and resilience of ecosystems
 worldwide [e.g., @Proulx2005NetThi; @Pascual2006EcoNet; @Delmas2019AnaEco]. 
@@ -32,17 +32,17 @@ several benefits. For example, probabilities represent the limit of our
 knowledge about species interactions and can inform us about the expected number
 of interactions and emerging network properties despite this limited knowledge
 [@Poisot2016Structure]. They are also very helpful in predicting the spatial
-distribution of species within networks [@Cazelles2016TheSpe] and the temporal
+distribution of species within networks [@Cazelles2016Theorya] and the temporal
 variability of interactions [@Poisot2015Speciesa], generating new ecological
 data [e.g., @Strydom2022Food], and identifying priority sampling locations of
-species interactions [see @Andrade-Pacheco2020FinHot for an ecological example
+species interactions [see @Andrade-Pacheco2020Finding for an ecological example
 of a sampling optimization problem]. Moreover, the high rate of false negatives
 in ecological network data, resulting from the difficulty of witnessing
 interactions between rare species, makes it hard to interpret non-observations
-of species interactions ecologically [@Catchen2023MisLin]. Using probabilities
+of species interactions ecologically [@Catchen2023Missinga]. Using probabilities
 instead of yes-no interactions accounts for these observation errors; in that
-case, only forbidden interactions [@Jordano2003InvPro; @Olesen2010MisFor] would
-have a probability value of zero [but see @Gonzalez-Varo2016LabLim]. Many
+case, only forbidden interactions [@Jordano2003Invarianta; @Olesen2010Missing] would
+have a probability value of zero [but see @Gonzalez-Varo2016Labilea]. Many
 measures have been developed to describe the structure [@Poisot2016Structure]
 and diversity [@Ohlmann2019DivInd; @GodsoeSpeInt] of probabilistic interactions,
 which shows the potential of this framework in the study of a variety of
@@ -140,7 +140,7 @@ $$P(i \rightarrow j)$$
   and intuitive?
 - Low probability with rare interactions?
 
-**Papers:** @Strydom2022FooWeb
+**Papers:** @Strydom2022Food
 
 ## Probabilistic local networks
 
@@ -192,7 +192,7 @@ corresponding species subnetworks of regional networks. We should expect the
 interaction to be linear below the 1:1 line.
 
 **Papers:** there might be something in these @McLeod2020EffSpe;
-@McLeod2021SamAsy; @Wood2015EffSpa
+@McLeod2021Sampling; @Wood2015Effects
 
 ## Taxonomic scale
 
