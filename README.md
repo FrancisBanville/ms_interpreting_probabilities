@@ -2,23 +2,23 @@
 
 Cataloging species interactions across space is a gargantuan task. At the core
 of this challenge lies the spatiotemporal variability of ecological networks
-[@Poisot2012Dissimilaritya; @Poisot2015Speciesa], which makes documenting the location and
-timing of interactions difficult. Indeed, it is not sufficient to know that two
-species have the biological capacity to interact to infer the realization of
-their interaction at a specific time and space [@Dunne2006Network]. Taking food
-webs as an example, a predator species and its potential prey must first
-co-occur on the same territory in order for a trophic interaction to take place
-[@Blanchet2020Cooccurrencea]. They must then encounter, which is conditional on their
-relative abundances in the ecosystem and the matching of their phenology
-[@Poisot2015Speciesa]. Finally, the interaction occurs only if the predators have
-a desire to consume their prey and are able to capture and ingest them
-[@Pulliam1974Theory]. Environmental (e.g. temperature and presence of shelters)
-and biological (e.g. physiological state of both species and availability of
-other prey species) factors contribute to this variability by impacting species
-co-occurrence [@Araujo2011UsiSpe] and the realization of their interactions
-[@Poisot2015Speciesa]. In this context, it is unsurprising that computational
-methods are being developed in ecology to help alleviate the colossal sampling
-efforts required to document species interactions across time and space
+[@Poisot2012Dissimilaritya; @Poisot2015Speciesa], which makes documenting the
+location and timing of interactions difficult. Indeed, it is not sufficient to
+know that two species have the biological capacity to interact to infer the
+realization of their interaction at a specific time and space
+[@Dunne2006Network]. Taking food webs as an example, a predator species and its
+potential prey must first co-occur on the same territory in order for a trophic
+interaction to take place [@Blanchet2020Cooccurrencea]. They must then
+encounter, which is conditional on their relative abundances in the ecosystem
+and the matching of their phenology [@Poisot2015Speciesa]. Finally, the
+interaction occurs only if the predators have a desire to consume their prey and
+are able to capture and ingest them [@Pulliam1974Theory]. Environmental (e.g.
+temperature and presence of shelters) and biological (e.g. physiological state
+of both species and availability of other prey species) factors contribute to
+this variability by impacting species co-occurrence [@Araujo2011UsiSpe] and the
+realization of their interactions [@Poisot2015Speciesa]. In this context, the
+development of computational methods in ecology can help alleviate the colossal
+sampling efforts required to document species interactions across time and space
 [@Strydom2021Roadmapa]. Having a better portrait of species interactions and the
 emerging structure of their food webs is important since it lays the groundwork
 for understanding the functioning, dynamics, and resilience of ecosystems
@@ -41,12 +41,12 @@ in ecological network data, resulting from the difficulty of witnessing
 interactions between rare species, makes it hard to interpret non-observations
 of species interactions ecologically [@Catchen2023Missinga]. Using probabilities
 instead of yes-no interactions accounts for these observation errors; in that
-case, only forbidden interactions [@Jordano2003Invarianta; @Olesen2010Missing] would
-have a probability value of zero [but see @Gonzalez-Varo2016Labilea]. Many
+case, only forbidden interactions [@Jordano2003Invarianta; @Olesen2010Missing]
+would have a probability value of zero [but see @Gonzalez-Varo2016Labilea]. Many
 measures have been developed to describe the structure [@Poisot2016Structure]
-and diversity [@Ohlmann2019DivInd; @GodsoeSpeInt] of probabilistic interactions,
-which shows the potential of this framework in the study of a variety of
-ecological phenomena.
+and diversity [@Ohlmann2019DivInd; @Godsoe2022SpeInt] of probabilistic
+interactions, which shows the potential of this framework in the study of a
+variety of ecological phenomena.
 
 However, representing species interactions probabilistically can also be
 challenging. Beyond methodological difficulties in estimating these numbers,
@@ -70,30 +70,34 @@ interactions.
 
 # Definitions and interpretations
 
-The basic unit of food webs and other ecological networks are individuals that
-interact with each others [e.g., by predation; @Elton2001AniEco]. The
-aggregation of these individuals into more or less homogeneous groups (e.g.,
-populations, species, trophic species) allows us to represent networks at
-different scales, which impacts the properties and behaviour of these systems
-[@Guimaraes2020StrEco]. A network's nodes can thus designate distinct levels of
-organization, whereas the edges linking these nodes can describe a variety of
-interaction measures. When using a Boolean (yes-no) representation of biotic
-interactions, the observation that one individual from group (or node) $i$
-interacts with another individual from group $j$ is enough to set the
-interaction $A_{i,j}$ to 1. This simplified representation of food webs is a
-highly valuable source of ecological information [@Pascual2006EcoNet] even
-though it overlooks important factors regarding interaction strengths. These, in
-turn, can be represented using weighted interactions, which better describe the
-energy flows, demographic impacts or frequencies of interactions between nodes
-[@Berlow2004IntStr; @Borrett2019WalPar], with $A_{i,j} \in \mathbb{N}$ or
-$\mathbb{R}$ depending on the measure. For example, they can be used to estimate
-the average number of prey individuals consumed by the predators in a given time
-period. This extra amount of ecological information typically comes at a cost of
-greater sampling effort or data requirement in predictive models
-[@Strydom2021Roadmapa], which can lead to high uncertainties when building these
-types of networks.
+## Food-web representations
 
-The uncertainty and spatiotemporal variability of both types of biotic
+The basic unit of food webs and other ecological networks are individuals that
+interact with each others [e.g., by predation; @Elton2001AniEco], forming
+individual-based networks. The aggregation of these individuals into more or
+less homogeneous groups (e.g., populations, species, trophic species, families)
+allows us to represent networks at broader scales, which impacts the properties
+and behaviour of these systems [@Guimaraes2020StrEco]. A network's nodes can
+thus designate distinct levels of organization, whereas the edges linking these
+nodes can describe a variety of interaction measures. When using a Boolean
+(yes-no) representation of biotic interactions, the observation that one
+individual from group (or node) $i$ interacts with another individual from group
+$j$ is enough to set the interaction $A_{i,j}$ to 1. This simplified
+representation of food webs is a highly valuable source of ecological
+information [@Pascual2006EcoNet] even though it overlooks important factors
+regarding interaction strengths. These, in turn, can be represented using
+weighted interactions, which better describe the energy flows, demographic
+impacts or frequencies of interactions between nodes [@Berlow2004IntStr;
+@Borrett2019WalPar], with $A_{i,j} \in \mathbb{N}$ or $\mathbb{R}$ depending on
+the measure. For example, they can be used to estimate the average number of
+prey individuals consumed by the predators in a given time period. This extra
+amount of ecological information typically comes at a cost of greater sampling
+effort or data requirement in predictive models [@Strydom2021Roadmapa], which
+can lead to high uncertainties when building these types of networks. Therefore,
+important methodological and conceptual decisions must been made when sampling
+and building food webs. 
+
+The uncertainty and spatiotemporal variability of both types of trophic
 interactions (Boolean and weighted) can be represented probabilistically. On one
 hand, Boolean interactions follow a Bernoulli distribution $A_{i,j} \sim {\rm
 Bernoulli}(p)$, with $p$ being the probability of interactions. The only two
@@ -117,7 +121,7 @@ potential or realized interactions. A potential interaction is defined as the
 biological capacity of two species to interact (i.e., the probability that they
 *can* interact) whereas a realized interaction refers to the materialization or
 observation of this interaction in a delineated space and time period (i.e., the
-probability that they *will* interact). Here, we will use the terms *metaweb* to
+probability that they interact). Here, we will use the terms *metaweb* to
 designate networks of potential interactions and *local networks* for those of
 realized interactions. Frequent confusion arises among ecologists over the use
 of these two terms, especially in a probabilistic context. Indeed, in many
@@ -129,18 +133,54 @@ appropriately.
 
 ## Probabilistic metawebs
 
-What does a probability in the context of a metaweb mean?
+Metawebs are networks of potential interactions, representing the probability
+that two taxa can interact regardless of biological plasticity, environmental
+variability or co-occurrence. They are the network analogue to the species pool,
+where local networks originate from a subset of both species (nodes) and
+interactions (edges). For this reason, they have been initially designed for
+broad spatial, temporal, and taxonomic scales (e.g, species food webs at the
+continental scale). However, in the next section, we argue that this concept can
+also be used at smaller scales, with similar ecological meaning. 
 
-$$P(i \rightarrow j)$$
+We can express the probability that two taxa $i$ and $j$ can interact as 
 
-- It means the probability that two taxa can interact, regardless of biological
-  plasticity, environmental variability, or co-occurrence.
-- One observation is enough to set this probability to one.
-- Can we turn this into a local network realisation that is also probabilistic
-  and intuitive?
-- Low probability with rare interactions?
+$$P(i \rightarrow j),$$ {#eq:metaweb}
 
-**Papers:** @Strydom2022Food
+which is context independent. In other words, the probability that two species
+can interact is not contingent on location, time, and environmental factors.
+Nevertheless, one aspect of a metaweb that could be conditional on these factors
+is the list of species (or taxa) it is built from when assembled for a specific
+region.
+
+Starting from a selected set of species, metawebs can be built using different
+data sources, including literature review, field work, and predictive models
+[e.g., the metaweb of Canadian mammals inferred by @Strydom2022Food]. Every pair
+of species that has been observed to interact at least once can be given a
+probability of interaction of $1$; we know that they *can* interact. This means
+that rare interactions can be given high probabilities in the metaweb.
+Unobserved interactions, on the other hand, are given lower probabilities, going
+as low as $0$ for forbidden links. Two important nuances must however be made
+here. Because of observation errors due to taxonomic misidentifications and
+ecological misinterpretations, many observations of interactions are actually
+false positives. Similarly, forbidden interactions can be false negatives if
+e.g. they have been assessed for specific phenotypes, locations or time.
+Implementing a Bayesian framework, which updates prior probabilities of
+interactions with empirical data, could lessen these errors.
+
+One potential application of metawebs is the prediction of networks of realized
+interactions. Even though the spatiotemporal variation of interactions is not
+considered in metawebs, they can nevertheless be a useful tool to reconstruct
+local networks. First, metawebs set the upper limit of species interactions,
+i.e. the probability that two species interact at a specific location is always
+lower than the probability of their potential interaction ($P(i \rightarrow j) <
+P(i \rightarrow j | x_1, x_2, ...)$). This implies that predicting local
+networks from metawebs realistically might need be done by filtering out
+interactions from its subnetworks. Second, the structure of local networks is
+constrained by the one of their metaweb. Inferring their structure from the
+metaweb first could help predicting which potential interactions are not
+realized. Ultimately, we believe that predicting probabilistic local networks
+from metawebs must be done with caution, as long as uncertainty is adequately
+propagated.
 
 ## Probabilistic local networks
 
