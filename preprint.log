@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.1)  10 FEB 2023 00:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.1)  10 FEB 2023 00:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1278,8 +1278,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.489 whereas time is the time interval (\$ \bold
-                                                  t\$) during which
+l.489 whereas time is the time interval \$ \bold
+                                                 t\$ during which interactions
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -1290,7 +1290,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.502 and time \$ \bold
+l.501 and time \$ \bold
                         x, \bold y, \bold t\$. Surely, the probability that
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1302,7 +1302,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.502 and time \$ \bold x, \bold
+l.501 and time \$ \bold x, \bold
                                  y, \bold t\$. Surely, the probability that
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1314,36 +1314,36 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.502 and time \$ \bold x, \bold y, \bold
+l.501 and time \$ \bold x, \bold y, \bold
                                           t\$. Surely, the probability that
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 523.
+LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 522.
 
 [3]
 
-LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 598.
+LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 597.
 
 [4]
 
-LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 687.
+LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 686.
 
 [5]
-Overfull \hbox (0.31924pt too wide) in paragraph at lines 728--732
+Overfull \hbox (0.31924pt too wide) in paragraph at lines 727--731
 [][]\T1/stix2/m/n/9 Delmas, E., Besson, M., Brice, M.-H., Burkle, L.A., Dalla R
 iva, G.V., Fortin, M.-J., \T1/stix2/m/it/9 et al. \T1/stix2/m/n/9 (2019). Analy
 sing
  []
 
 
-LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 799.
+LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 798.
 
 [6] 
 AED: lastpage setting LastPage
 
-LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 839.
+LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 838.
 
 [7] (./preprint.aux)
 
@@ -1388,7 +1388,7 @@ fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb></opt/texlive/texdir/texmf
 -dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/texmf-dist/fo
 nts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/u
 rw/helvetic/uhvr8a.pfb>
-Output written on preprint.pdf (7 pages, 771197 bytes).
+Output written on preprint.pdf (7 pages, 771185 bytes).
 PDF statistics:
  195 PDF objects out of 1000 (max. 8388607)
  159 compressed objects within 2 object streams
