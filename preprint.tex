@@ -484,45 +484,43 @@ networks}\label{probabilistic-local-networks}}
 As opposed to metawebs, probabilistic local food webs represent the
 likelihood that two species will interact at a specific location and
 within a given time period; in other words, they are context dependant.
-To be specific, space is defined here as the geographic coordinates \$
-\mathbf{x}, \mathbf{y}\$ of the spatial boundaries delineating the
-system, whereas time is the time interval \$ \mathbf{t}\$ during which
-interactions were sampled or for which they were predicted. We put these
-variables in bold to emphasize that they are not single values, but
-rather continued dimensions that could be outlined differently depending
-on the study system. Regardless of how they were defined, they always
-delineate a specific area \(A\) and duration \(D\). These could refer to
-the sampled area and duration or to the targeted location and time
-period.
+To be specific, space is defined here as the geographic coordinates
+\(x\), \(y\) of the spatial boundaries delineating the system, whereas
+time is the time interval \(t\) during which interactions were sampled
+or for which they were predicted. We want to point out that they are not
+single values, but rather continued dimensions that could be outlined
+differently depending on the study system. Regardless of how they were
+defined, they always delineate a specific area \(A\) and duration \(D\).
+These could refer to the sampled area and duration or to the targeted
+location and time period.
 
 Many factors could be taken into consideration when estimating the
 probability that a predator species \(i\) interacts with a given prey
 species \(j\) locally. One of the most important is species
 co-occurrence, which describes if both species can be found at location
-and time \$ \mathbf{x}, \mathbf{y}, \mathbf{t}\$. Surely, the
-probability that the interaction is realized must be \(0\) when species
-do not co-occur. Similarly, species relative abundance is another
-important predictor of the probability of interaction, because it
-impacts the probability that species will randomly encounter (Canard
-\emph{et al.} 2012; Canard \emph{et al.} 2014; Poisot \emph{et al.}
-2015). Interaction probabilities can also be conditional on other
-biological and environmental variables, such as temperature,
-precipitation, presence of shelters, phenotypic plasticity, phenology,
-and presence of other interacting species in the network. These
-conditions can affect species traits, which greatly impact the
-likelihood of interactions (Poisot \emph{et al.} 2015). When
-probabilities of interactions are estimated using specific values of
-these variables, ecologists should make them explicit in their metadata,
-preferably using mathematical equations to avoid any ambiguity. In the
-next section, we will see examples of why this matters when it comes to
-spatial, temporal, and taxonomic scaling of biotic interactions. Here,
-we will use the variable \(\bold \Omega\) as a substitute for the
-biological and ecological context in which interaction probabilities
-were estimated. This gives us the following equation for the probability
-that species (or taxa) \(i\) and \(j\) interact in a local network
-\(N\):
+and time \(x\), \(y\), \(t\). Surely, the probability that the
+interaction is realized must be \(0\) when species do not co-occur.
+Similarly, species relative abundance is another important predictor of
+the probability of interaction, because it impacts the probability that
+species will randomly encounter (Canard \emph{et al.} 2012; Canard
+\emph{et al.} 2014; Poisot \emph{et al.} 2015). Interaction
+probabilities can also be conditional on other biological and
+environmental variables, such as temperature, precipitation, presence of
+shelters, phenotypic plasticity, phenology, and presence of other
+interacting species in the network. These conditions can affect species
+traits, which greatly impact the likelihood of interactions (Poisot
+\emph{et al.} 2015). When probabilities of interactions are estimated
+using specific values of these variables, ecologists should make them
+explicit in their metadata, preferably using mathematical equations to
+avoid any ambiguity. In the next section, we will see examples of why
+this matters when it comes to spatial, temporal, and taxonomic scaling
+of biotic interactions. Here, we will use the variable \(\Omega\) as a
+substitute for the biological and ecological context in which
+interaction probabilities were estimated. This gives us the following
+equation for the probability that species (or taxa) \(i\) and \(j\)
+interact in a local network \(N\):
 
-\begin{equation}\protect\hypertarget{eq:local}{}{P_N(i \rightarrow j | \mathbf x, \mathbf y, \mathbf t, \mathbf \Omega).}\label{eq:local}\end{equation}
+\begin{equation}\protect\hypertarget{eq:local}{}{P_N(i \rightarrow j | x, y, t, \Omega).}\label{eq:local}\end{equation}
 
 \hypertarget{from-potential-to-realized-interactions}{%
 \subsection{From potential to realized
@@ -544,9 +542,8 @@ First, metawebs set the upper limit of species interactions (McLeod
 specific location is always lower or equal to the probability of their
 potential interaction:
 
-\begin{equation}\protect\hypertarget{eq:switch}{}{P_N(i \rightarrow j | \mathbf x, \mathbf y, \mathbf t, \mathbf \Omega) \le
-P_M(i
-\rightarrow j).}\label{eq:switch}\end{equation}
+\begin{equation}\protect\hypertarget{eq:switch}{}{P_N(i \rightarrow j | x, y, t, \Omega) \le
+P_M(i \rightarrow j).}\label{eq:switch}\end{equation}
 
 Therefore, building local networks from their metaweb keeping the same
 values of interaction probability would generate systematic biases in
