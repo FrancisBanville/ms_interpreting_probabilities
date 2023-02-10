@@ -232,26 +232,25 @@ documenting the location and timing of interactions difficult. Indeed,
 it is not sufficient to know that two species have the biological
 capacity to interact to infer the realization of their interaction at a
 specific time and space (Dunne 2006). Taking food webs as an example, a
-predator species and its potential prey must first co-occur on the same
-territory in order for a trophic interaction to take place (Blanchet
-\emph{et al.} 2020). They must then encounter, which is conditional on
-their relative abundances in the ecosystem and the matching of their
-phenology (Poisot \emph{et al.} 2015). Finally, the interaction occurs
-only if the predators have a desire to consume their prey and are able
-to capture and ingest them (Pulliam 1974). Environmental (e.g.
-temperature and presence of shelters) and biological (e.g.~physiological
-state of both species and availability of other prey species) factors
-contribute to this variability by impacting species co-occurrence
-(Araujo \emph{et al.} 2011) and the realization of their interactions
-(Poisot \emph{et al.} 2015). In this context, the development of
-computational methods in ecology can help alleviate the colossal
-sampling efforts required to document species interactions across time
-and space (Strydom \emph{et al.} 2021). Having a better portrait of
-species interactions and the emerging structure of their food webs is
-important since it lays the groundwork for understanding the
-functioning, dynamics, and resilience of ecosystems worldwide (e.g.,
-Proulx \emph{et al.} 2005; Pascual \emph{et al.} 2006; Delmas \emph{et
-al.} 2019).
+predator species and its potential prey must first co-occur in order for
+a trophic interaction to take place (Blanchet \emph{et al.} 2020). They
+must then encounter, which is conditional on their relative abundances
+in the ecosystem and the matching of their phenology (Poisot \emph{et
+al.} 2015). Finally, the interaction occurs only if the predators have a
+desire to consume their prey and are able to capture and ingest them
+(Pulliam 1974). Environmental (e.g.~temperature and presence of
+shelters) and biological (e.g.~physiological state of both species and
+availability of other prey species) factors contribute to this
+variability by impacting species co-occurrence (Araujo \emph{et al.}
+2011) and the realization of their interactions (Poisot \emph{et al.}
+2015). In this context, the development of computational methods in
+ecology can help alleviate the colossal sampling efforts required to
+document species interactions across time and space (Strydom \emph{et
+al.} 2021). Having a better portrait of species interactions and the
+emerging structure of their food webs is important since it lays the
+groundwork for understanding the functioning, dynamics, and resilience
+of ecosystems worldwide (e.g., Proulx \emph{et al.} 2005; Pascual
+\emph{et al.} 2006; Delmas \emph{et al.} 2019).
 
 The recognition of the intrinsic variability of species interactions and
 the emergence of numerical methods have led ecologists to rethink their
@@ -357,23 +356,26 @@ literature, our primary focus in this contribution will be on addressing
 the challenges in defining and interpretating \(p\) for pairwise species
 interactions.
 
-The first aspect to take into consideration when estimating or using
-probabilities of interactions is knowing if they describe the likelihood
-of potential or realized interactions. A potential interaction is
-defined as the biological capacity of two species to interact (i.e., the
-probability that they \emph{can} interact) whereas a realized
-interaction refers to the materialization or observation of this
-interaction in a delineated space and time period (i.e., the probability
-that they interact). Here, we will use the terms \emph{metaweb} to
-designate networks of potential interactions and \emph{local networks}
-for those of realized interactions. Frequent confusion arises among
-ecologists over the use of these two terms, especially in a
-probabilistic context. Indeed, in many studies of probabilistic
-ecological networks, it remains unclear when authors describe potential
-or realized interactions, or when so-called probabilities are actually
-\emph{interaction scores}. A better understanding of these differences
-would alleviate interpretation errors and help ecologists use these
-numbers more appropriately.
+The first aspect to take into consideration when estimating or
+interpreting probabilities of interactions is knowing if they describe
+the likelihood of potential or realized interactions. A potential
+interaction is defined as the biological capacity of two species to
+interact (i.e., the probability that they \emph{can} interact) whereas a
+realized interaction refers to the materialization or observation of
+this interaction in a delineated space and time period (i.e., the
+probability that they interact). Here, we will use the terms
+\emph{metaweb} to designate networks of potential interactions and
+\emph{local networks} for those of realized interactions. Frequent
+confusion arises among ecologists over the use of these two terms,
+especially in a probabilistic context. Indeed, in many studies of
+probabilistic ecological networks, it remains unclear when authors
+describe potential or realized interactions, or when so-called
+probabilities are actually \emph{interaction scores}. Likewise,
+probabilistic potential interactions are often used as realized
+interactions (and conversely), even when the type of interaction is
+clearly indicated. We believe that a better understanding of these
+differences and concepts would alleviate interpretation errors and help
+ecologists use these numbers more appropriately.
 
 \hypertarget{probabilistic-metawebs}{%
 \subsection{Probabilistic metawebs}\label{probabilistic-metawebs}}
@@ -389,9 +391,9 @@ However, in the next section, we argue that this concept can also be
 used at smaller scales, with similar ecological meaning.
 
 We can express the probability that two taxa \(i\) and \(j\) can
-interact as
+interact in a metaweb \(M\) as
 
-\begin{equation}\protect\hypertarget{eq:metaweb}{}{P(i \rightarrow j),}\label{eq:metaweb}\end{equation}
+\begin{equation}\protect\hypertarget{eq:metaweb}{}{P_{M}(i \rightarrow j),}\label{eq:metaweb}\end{equation}
 
 which is context independent. In other words, the probability that two
 species can interact is not contingent on location, time, and
@@ -405,8 +407,8 @@ predictive models (e.g., the metaweb of Canadian mammals inferred by
 Strydom \emph{et al.} 2022). Every pair of species that has been
 observed to interact at least once can be given a probability of
 interaction of \(1\); we know that they \emph{can} interact. This means
-that rare interactions can be given high probabilities in the metaweb.
-Unobserved interactions, on the other hand, are given lower
+that rare interactions can technically be given high probabilities in
+the metaweb. Unobserved interactions, on the other hand, are given lower
 probabilities, going as low as \(0\) for forbidden links. Two important
 nuances must however be made here. Because of observation errors due to
 taxonomic misidentifications and ecological misinterpretations, many
@@ -416,47 +418,91 @@ assessed for specific phenotypes, locations or time. Implementing a
 Bayesian framework, which updates prior probabilities of interactions
 with empirical data, could lessen these errors.
 
-One potential application of metawebs is the prediction of networks of
-realized interactions. Even though the spatiotemporal variation of
-interactions is not considered in metawebs, they can nevertheless be a
-useful tool to reconstruct local networks. First, metawebs set the upper
-limit of species interactions, i.e.~the probability that two species
-interact at a specific location is always lower than the probability of
-their potential interaction
-(\(P(i \rightarrow j) < P(i \rightarrow j | x_1, x_2, ...)\)). This
-implies that predicting local networks from metawebs realistically might
-need be done by filtering out interactions from its subnetworks. Second,
-the structure of local networks is constrained by the one of their
-metaweb. Inferring their structure from the metaweb first could help
-predicting which potential interactions are not realized. Ultimately, we
-believe that predicting probabilistic local networks from metawebs must
-be done with caution, as long as uncertainty is adequately propagated.
-
 \hypertarget{probabilistic-local-networks}{%
 \subsection{Probabilistic local
 networks}\label{probabilistic-local-networks}}
 
-\[P(i \rightarrow j | C, A, N, E, t)\]
+As opposed to metawebs, probabilistic local food webs represent the
+likelihood that two species will interact at a specific location and
+within a given time period; in other words, they are context dependant.
+To be specific, space is defined here as the geographic coordinates (\$
+\bold x,
+\bold y\() of the spatial boundaries delineating the system, whereas time is the time interval (\)
+\bold t\$) during which interactions were sampled or for which they were
+predicted. We put these variables in bold to emphasize that they are not
+single values, but rather continued dimensions that could be outlined
+differently depending on the study system. Regardless of how they were
+defined, they always delineate a specific area \(A\) and duration \(D\).
+These could refer to the sampled area and duration or to the targeted
+location and time period.
 
-i = predator j = prey C = co-occurrence (and relative abundance?) A =
-area N = relative abundance (or network?) E = environment (including
-network?) t = time
+Many factors could be taken into consideration when estimating the
+probability that a predator species \(i\) interacts with a given prey
+species \(j\) locally. One of the most important is species
+co-occurrence, which describes if both species can be found at location
+and time (\$ \bold x, \bold y, \bold t\$). Surely, the probability that
+the interaction is realized must be \(0\) when species do not co-occur.
+Similarly, species relative abundance is another important predictor of
+the probability of interaction, because it impacts the probability that
+species will randomly encounter (Canard \emph{et al.} 2012; Canard
+\emph{et al.} 2014; Poisot \emph{et al.} 2015). Interaction
+probabilities can also be conditional on other biological and
+environmental variables, such as temperature, precipitation, presence of
+shelters, phenotypic plasticity, phenology, and presence of other
+interacting species in the network. These conditions can affect species
+traits, which greatly impact the likelihood of interactions (Poisot
+\emph{et al.} 2015). When probabilities of interactions are estimated
+using specific values of these variables, ecologists should make them
+explicit in their metadata, preferably using mathematical equations to
+avoid any ambiguity. In the next section, we will see examples of why
+this matters when it comes to spatial, temporal, and taxonomic scaling
+of biotic interactions. Here, we will use the variable \(\bold \Omega\)
+as a substitute for the biological and ecological context in which
+interaction probabilities were estimated. This gives us the following
+equation for the probability that species (or taxa) \(i\) and \(j\)
+interact in a local network \(N\):
 
-What does a probability in the context of a local network mean? A
-cautionary tale of how we define probabilities.
+\begin{equation}\protect\hypertarget{eq:local}{}{P_N(i \rightarrow j | \bold x, \bold y, \bold t, \bold \Omega).}\label{eq:local}\end{equation}
+
+\hypertarget{from-potential-to-realized-interactions}{%
+\subsection{From potential to realized
+interactions}\label{from-potential-to-realized-interactions}}
+
+Even though the spatiotemporal variation of interactions is not
+considered in metawebs, they can still be useful to reconstruct local
+networks of realized interactions. Indeed, local networks are formed
+from subsets of their metaweb (called subnetworks), which are obtained
+by selecting a subset of both species and interactions (Dunne 2006).
+Because a community's composition is arguably easier to sample (or
+predict) than its interactions, the biggest challenge is to sample links
+from the metaweb. This becomes a conceptual issue when we consider how
+potential and realized interactions differ. Despite these concerns,
+metawebs remain an important source of ecological information that can
+be leveraged for realistically predicting spatially explicit networks.
+First, metawebs set the upper limit of species interactions (McLeod
+\emph{et al.} 2021), i.e. the probability that two species interact at a
+specific location is always lower or equal to the probability of their
+potential interaction:
+
+\begin{equation}\protect\hypertarget{eq:switch}{}{P_N(i \rightarrow j | \bold x, \bold y, \bold t, \bold \Omega) \le P_M(i
+\rightarrow j).}\label{eq:switch}\end{equation}
+
+Therefore, building local networks from their metaweb keeping the same
+values of interaction probability would generate systematic biases in
+the prediction. Second, the structure of local networks is constrained
+by the one of their metaweb (Saravia \emph{et al.} 2022). This suggests
+that a metaweb not only constraints the pairwise interactions of its
+corresponding local networks, but also their emerging properties.
+Inferring the structure of local networks from the metaweb could thus
+help estimate more realistically the likelihood that potential
+interactions are realized and observed locally (Strydom \emph{et al.}
+2021).
+
+\hypertarget{scaling}{%
+\section{Scaling}\label{scaling}}
 
 \begin{itemize}
 \tightlist
-\item
-  It means the probability that two taxa will interact at a given
-  location.
-\item
-  What do we mean by saying that two taxa will interact? We usually mean
-  that at least one individual from one group will interact with (e.g.,
-  predate) at least one other individual from the other group.
-\item
-  The probability is conditional on the environmental and local
-  abundance contexts.
 \item
   We should expect a certain number of interactions to be realized
   depending on the probability value. This number depends on the number
@@ -464,9 +510,6 @@ cautionary tale of how we define probabilities.
   environmental conditions, scale) in which probabilities were
   estimated. This is in contrast with probabilities in metawebs.
 \end{itemize}
-
-\hypertarget{scaling}{%
-\section{Scaling}\label{scaling}}
 
 \hypertarget{spatial-and-temporal-scales}{%
 \subsection{Spatial and temporal
@@ -603,6 +646,16 @@ Borrett, S.R. \& Scharler, U.M. (2019). Walk partitions of flow in
 Ecological Network Analysis: Review and synthesis of methods and
 indicators. \emph{Ecological Indicators}, 106, 105451.
 
+\leavevmode\hypertarget{ref-Canard2014EmpEva}{}%
+Canard, E.F., Mouquet, N., Mouillot, D., Stanko, M., Miklisova, D. \&
+Gravel, D. (2014). Empirical Evaluation of Neutral Interactions in
+Host-Parasite Networks. \emph{The American Naturalist}, 183, 468--479.
+
+\leavevmode\hypertarget{ref-Canard2012EmeStr}{}%
+Canard, E., Mouquet, N., Marescot, L., Gaston, K.J., Gravel, D. \&
+Mouillot, D. (2012). Emergence of Structural Patterns in Neutral Trophic
+Networks. \emph{PLOS ONE}, 7, e38295.
+
 \leavevmode\hypertarget{ref-Catchen2023Missinga}{}%
 Catchen, M.D., Poisot, T., Pollock, L.J. \& Gonzalez, A. (2023). The
 missing link: Discerning true from false negatives when sampling species
@@ -697,6 +750,12 @@ Evolution}, SPECIAL issue: BUMPER book REVIEW, 20, 345--353.
 \leavevmode\hypertarget{ref-Pulliam1974Theory}{}%
 Pulliam, H.R. (1974). On the Theory of Optimal Diets. \emph{The American
 Naturalist}, 108, 59--74.
+
+\leavevmode\hypertarget{ref-Saravia2022EcoNet}{}%
+Saravia, L.A., Marina, T.I., Kristensen, N.P., De Troch, M. \& Momo,
+F.R. (2022). Ecological network assembly: How the regional metaweb
+influences local food webs. \emph{Journal of Animal Ecology}, 91,
+630--642.
 
 \leavevmode\hypertarget{ref-Strydom2022Food}{}%
 Strydom, T., Bouskila, S., Banville, F., Barros, C., Caron, D., Farrell,

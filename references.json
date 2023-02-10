@@ -265,6 +265,94 @@
         "volume": "n/a"
     },
     {
+        "DOI": "10.1371/journal.pone.0038295",
+        "author": [
+            {
+                "family": "Canard",
+                "given": "Elsa"
+            },
+            {
+                "family": "Mouquet",
+                "given": "Nicolas"
+            },
+            {
+                "family": "Marescot",
+                "given": "Lucile"
+            },
+            {
+                "family": "Gaston",
+                "given": "Kevin J."
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Mouillot",
+                "given": "David"
+            }
+        ],
+        "container-title": "PLOS ONE",
+        "id": "Canard2012EmeStr",
+        "issue": "8",
+        "issued": {
+            "date-parts": [
+                [
+                    2012
+                ]
+            ]
+        },
+        "page": "e38295",
+        "publisher": "Public Library of Science",
+        "title": "Emergence of Structural Patterns in Neutral Trophic Networks",
+        "type": "article-journal",
+        "volume": "7"
+    },
+    {
+        "DOI": "10.1086/675363",
+        "author": [
+            {
+                "family": "Canard",
+                "given": "E. F."
+            },
+            {
+                "family": "Mouquet",
+                "given": "N."
+            },
+            {
+                "family": "Mouillot",
+                "given": "D."
+            },
+            {
+                "family": "Stanko",
+                "given": "M."
+            },
+            {
+                "family": "Miklisova",
+                "given": "D."
+            },
+            {
+                "family": "Gravel",
+                "given": "D."
+            }
+        ],
+        "container-title": "The American Naturalist",
+        "id": "Canard2014EmpEva",
+        "issue": "4",
+        "issued": {
+            "date-parts": [
+                [
+                    2014
+                ]
+            ]
+        },
+        "page": "468-479",
+        "publisher": "The University of Chicago Press",
+        "title": "Empirical Evaluation of Neutral Interactions in Host-Parasite Networks.",
+        "type": "article-journal",
+        "volume": "183"
+    },
+    {
         "author": [
             {
                 "family": "Catchen",
@@ -467,6 +555,12 @@
         "publisher-place": "Chicago, IL",
         "title": "Animal Ecology",
         "type": "book"
+    },
+    {
+        "id": "EmpEva",
+        "publisher": "https://www.journals.uchicago.edu/doi/full/10.1086/675363",
+        "title": "Empirical Evaluation of Neutral Interactions in Host-Parasite Networks | The American Naturalist: Vol 183, No 4",
+        "type": ""
     },
     {
         "DOI": "10.1111/oik.09282",
@@ -981,6 +1075,45 @@
         "title": "On the Theory of Optimal Diets",
         "type": "article-journal",
         "volume": "108"
+    },
+    {
+        "DOI": "10.1111/1365-2656.13652",
+        "author": [
+            {
+                "family": "Saravia",
+                "given": "Leonardo A."
+            },
+            {
+                "family": "Marina",
+                "given": "Tom\u00e1s I."
+            },
+            {
+                "family": "Kristensen",
+                "given": "Nadiah P."
+            },
+            {
+                "family": "De Troch",
+                "given": "Marleen"
+            },
+            {
+                "family": "Momo",
+                "given": "Fernando R."
+            }
+        ],
+        "container-title": "Journal of Animal Ecology",
+        "id": "Saravia2022EcoNet",
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2022
+                ]
+            ]
+        },
+        "page": "630-642",
+        "title": "Ecological network assembly: How the regional metaweb influences local food webs",
+        "type": "article-journal",
+        "volume": "91"
     },
     {
         "DOI": "10.1098/rstb.2021.0063",
