@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.1)  10 FEB 2023 00:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.1)  10 FEB 2023 01:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -887,108 +887,108 @@ LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 420.
 
 [6]
 
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.429 \mathbf
+              x, \mathbf y\$ of the spatial boundaries delineating the system,
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.429 \mathbf x, \mathbf
+                         y\$ of the spatial boundaries delineating the system,
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.430 whereas time is the time interval \$ \mathbf
+                                                   t\$ during which
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.443 and time \$ \mathbf
+                          x, \mathbf y, \mathbf t\$. Surely, the probability
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.443 and time \$ \mathbf x, \mathbf
+                                     y, \mathbf t\$. Surely, the probability
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \mathbf allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.443 and time \$ \mathbf x, \mathbf y, \mathbf
+                                                t\$. Surely, the probability
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 429.
+d on input line 459.
 
 
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.429 \bold x
-             , \bold y\$ of the spatial boundaries delineating the system,
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.429 \bold x, \bold
-                     y\$ of the spatial boundaries delineating the system,
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.430 whereas time is the time interval \$ \bold
-                                                 t\$ during which interactions
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.442 and time \$ \bold
-                        x, \bold y, \bold t\$. Surely, the probability that
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.442 and time \$ \bold x, \bold
-                                 y, \bold t\$. Surely, the probability that
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.442 and time \$ \bold x, \bold y, \bold
-                                          t\$. Surely, the probability that
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 464.
+LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 465.
 
 [7]
 
-LaTeX Warning: Reference `LastPage' on page 8 undefined on input line 515.
+LaTeX Warning: Reference `LastPage' on page 8 undefined on input line 516.
 
 [8]
 
-LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 574.
+LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 575.
 
 [9]
 
-LaTeX Warning: Reference `LastPage' on page 10 undefined on input line 637.
+LaTeX Warning: Reference `LastPage' on page 10 undefined on input line 638.
 
 [10]
 
-LaTeX Warning: Reference `LastPage' on page 11 undefined on input line 706.
+LaTeX Warning: Reference `LastPage' on page 11 undefined on input line 707.
 
 [11]
 
-LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 771.
+LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 772.
 
 [12] 
 AED: lastpage setting LastPage
 
-LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 779.
+LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 780.
 
 [13] AED endfloat: Processing end Figures and Tables (./draft.aux)
 
