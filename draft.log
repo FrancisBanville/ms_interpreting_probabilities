@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.1)  10 FEB 2023 01:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.1)  10 FEB 2023 01:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -894,7 +894,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.429 \mathbf
-              x, \mathbf y\$ of the spatial boundaries delineating the system,
+             {x}, \mathbf{y}\$ of the spatial boundaries delineating the
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -905,8 +905,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.429 \mathbf x, \mathbf
-                         y\$ of the spatial boundaries delineating the system,
+l.429 \mathbf{x}, \mathbf
+                         {y}\$ of the spatial boundaries delineating the
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -917,8 +917,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.430 whereas time is the time interval \$ \mathbf
-                                                   t\$ during which
+l.430 ...reas time is the time interval \$ \mathbf
+                                                  {t}\$ during which
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -930,7 +930,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.443 and time \$ \mathbf
-                          x, \mathbf y, \mathbf t\$. Surely, the probability
+                         {x}, \mathbf{y}, \mathbf{t}\$. Surely, the
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -941,8 +941,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.443 and time \$ \mathbf x, \mathbf
-                                     y, \mathbf t\$. Surely, the probability
+l.443 and time \$ \mathbf{x}, \mathbf
+                                     {y}, \mathbf{t}\$. Surely, the
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -953,42 +953,42 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.443 and time \$ \mathbf x, \mathbf y, \mathbf
-                                                t\$. Surely, the probability
+l.443 and time \$ \mathbf{x}, \mathbf{y}, \mathbf
+                                                 {t}\$. Surely, the
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 459.
+d on input line 460.
 
 
-LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 465.
+LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 466.
 
 [7]
 
-LaTeX Warning: Reference `LastPage' on page 8 undefined on input line 516.
+LaTeX Warning: Reference `LastPage' on page 8 undefined on input line 518.
 
 [8]
 
-LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 575.
+LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 577.
 
 [9]
 
-LaTeX Warning: Reference `LastPage' on page 10 undefined on input line 638.
+LaTeX Warning: Reference `LastPage' on page 10 undefined on input line 640.
 
 [10]
 
-LaTeX Warning: Reference `LastPage' on page 11 undefined on input line 707.
+LaTeX Warning: Reference `LastPage' on page 11 undefined on input line 709.
 
 [11]
 
-LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 772.
+LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 774.
 
 [12] 
 AED: lastpage setting LastPage
 
-LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 780.
+LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 782.
 
 [13] AED endfloat: Processing end Figures and Tables (./draft.aux)
 
@@ -1033,7 +1033,7 @@ fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb></opt/texlive/texdir/texmf
 -dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/texmf-dist/fo
 nts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/u
 rw/helvetic/uhvr8a.pfb>
-Output written on draft.pdf (13 pages, 723671 bytes).
+Output written on draft.pdf (13 pages, 723669 bytes).
 PDF statistics:
  217 PDF objects out of 1000 (max. 8388607)
  177 compressed objects within 2 object streams
