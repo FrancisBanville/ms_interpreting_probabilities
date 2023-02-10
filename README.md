@@ -175,19 +175,20 @@ probabilities of interactions with empirical data, could lessen these errors.
 As opposed to metawebs, probabilistic local food webs represent the likelihood
 that two species will interact at a specific location and within a given time
 period; in other words, they are context dependant. To be specific, space is
-defined here as the geographic coordinates $ \mathbf x, \mathbf y$ of the spatial
-boundaries delineating the system, whereas time is the time interval $ \mathbf t$ during which interactions were sampled or for which they were predicted. We
-put these variables in bold to emphasize that they are not single values, but
-rather continued dimensions that could be outlined differently depending on the
-study system. Regardless of how they were defined, they always delineate a
-specific area $A$ and duration $D$. These could refer to the sampled area and
-duration or to the targeted location and time period.  
+defined here as the geographic coordinates $ \mathbf{x}, \mathbf{y}$ of the
+spatial boundaries delineating the system, whereas time is the time interval $
+\mathbf{t}$ during which interactions were sampled or for which they were
+predicted. We put these variables in bold to emphasize that they are not single
+values, but rather continued dimensions that could be outlined differently
+depending on the study system. Regardless of how they were defined, they always
+delineate a specific area $A$ and duration $D$. These could refer to the sampled
+area and duration or to the targeted location and time period.  
 
 Many factors could be taken into consideration when estimating the probability
 that a predator species $i$ interacts with a given prey species $j$ locally. One
 of the most important is species co-occurrence, which describes if both species
-can be found at location and time $  \mathbf x,  \mathbf y,  \mathbf t$. Surely, the
-probability that the interaction is realized must be $0$ when species do not
+can be found at location and time $ \mathbf{x}, \mathbf{y}, \mathbf{t}$. Surely,
+the probability that the interaction is realized must be $0$ when species do not
 co-occur. Similarly, species relative abundance is another important predictor
 of the probability of interaction, because it impacts the probability that
 species will randomly encounter [@Canard2012EmeStr; @Canard2014EmpEva;
@@ -200,12 +201,14 @@ probabilities of interactions are estimated using specific values of these
 variables, ecologists should make them explicit in their metadata, preferably
 using mathematical equations to avoid any ambiguity. In the next section, we
 will see examples of why this matters when it comes to spatial, temporal, and
-taxonomic scaling of biotic interactions. Here, we will use the variable $\bold \Omega$ as a substitute for the biological and ecological context in which
+taxonomic scaling of biotic interactions. Here, we will use the variable $\bold
+\Omega$ as a substitute for the biological and ecological context in which
 interaction probabilities were estimated. This gives us the following equation
 for the probability that species (or taxa) $i$ and $j$ interact in a local
 network $N$:
 
-$$P_N(i \rightarrow j | \mathbf x, \mathbf y, \mathbf t, \mathbf \Omega).$$ {#eq:local}
+$$P_N(i \rightarrow j | \mathbf x, \mathbf y, \mathbf t, \mathbf \Omega).$$
+{#eq:local}
 
 ## From potential to realized interactions
 
@@ -223,7 +226,8 @@ metawebs set the upper limit of species interactions [@McLeod2021Sampling], i.e.
 the probability that two species interact at a specific location is always lower
 or equal to the probability of their potential interaction: 
 
-$$P_N(i \rightarrow j | \mathbf x, \mathbf y, \mathbf t, \mathbf \Omega) \le P_M(i
+$$P_N(i \rightarrow j | \mathbf x, \mathbf y, \mathbf t, \mathbf \Omega) \le
+P_M(i
 \rightarrow j).$$ {#eq:switch}
 
 Therefore, building local networks from their metaweb keeping the same values of
