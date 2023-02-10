@@ -175,7 +175,7 @@ probabilities of interactions with empirical data, could lessen these errors.
 As opposed to metawebs, probabilistic local food webs represent the likelihood
 that two species will interact at a specific location and within a given time
 period; in other words, they are context dependant. To be specific, space is
-defined here as the geographic coordinates ($ \bold x, \bold y$) of the spatial
+defined here as the geographic coordinates $ \bold x, \bold y$ of the spatial
 boundaries delineating the system, whereas time is the time interval ($ \bold
 t$) during which interactions were sampled or for which they were predicted. We
 put these variables in bold to emphasize that they are not single values, but
@@ -187,7 +187,7 @@ duration or to the targeted location and time period.
 Many factors could be taken into consideration when estimating the probability
 that a predator species $i$ interacts with a given prey species $j$ locally. One
 of the most important is species co-occurrence, which describes if both species
-can be found at location and time ($ \bold x, \bold y, \bold t$). Surely, the
+can be found at location and time $ \bold x, \bold y, \bold t$. Surely, the
 probability that the interaction is realized must be $0$ when species do not
 co-occur. Similarly, species relative abundance is another important predictor
 of the probability of interaction, because it impacts the probability that
