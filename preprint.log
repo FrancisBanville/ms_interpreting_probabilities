@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.1)  10 FEB 2023 00:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.1)  10 FEB 2023 00:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1255,7 +1255,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.488 \bold x
-             ,
+             , \bold y\$ of the spatial boundaries delineating the system,
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -1266,9 +1266,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.489 \bold
-            y\() of the spatial boundaries delineating the system, whereas t...
-
+l.488 \bold x, \bold
+                     y\$ of the spatial boundaries delineating the system,
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -1279,8 +1278,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.490 \bold
-            t\$) during which interactions were sampled or for which they were
+l.489 whereas time is the time interval (\$ \bold
+                                                  t\$) during which
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -1291,8 +1290,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.502 and time (\$ \bold
-                         x, \bold y, \bold t\$). Surely, the probability that
+l.502 and time \$ \bold
+                        x, \bold y, \bold t\$. Surely, the probability that
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -1303,8 +1302,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.502 and time (\$ \bold x, \bold
-                                  y, \bold t\$). Surely, the probability that
+l.502 and time \$ \bold x, \bold
+                                 y, \bold t\$. Surely, the probability that
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -1315,8 +1314,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.502 and time (\$ \bold x, \bold y, \bold
-                                           t\$). Surely, the probability that
+l.502 and time \$ \bold x, \bold y, \bold
+                                          t\$. Surely, the probability that
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -1389,7 +1388,7 @@ fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb></opt/texlive/texdir/texmf
 -dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/texmf-dist/fo
 nts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/u
 rw/helvetic/uhvr8a.pfb>
-Output written on preprint.pdf (7 pages, 775025 bytes).
+Output written on preprint.pdf (7 pages, 771197 bytes).
 PDF statistics:
  195 PDF objects out of 1000 (max. 8388607)
  159 compressed objects within 2 object streams
