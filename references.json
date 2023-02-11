@@ -173,6 +173,57 @@
         "volume": "73"
     },
     {
+        "DOI": "10.1016/j.tree.2006.11.004",
+        "author": [
+            {
+                "family": "Bickford",
+                "given": "David"
+            },
+            {
+                "family": "Lohman",
+                "given": "David J."
+            },
+            {
+                "family": "Sodhi",
+                "given": "Navjot S."
+            },
+            {
+                "family": "Ng",
+                "given": "Peter K. L."
+            },
+            {
+                "family": "Meier",
+                "given": "Rudolf"
+            },
+            {
+                "family": "Winker",
+                "given": "Kevin"
+            },
+            {
+                "family": "Ingram",
+                "given": "Krista K."
+            },
+            {
+                "family": "Das",
+                "given": "Indraneil"
+            }
+        ],
+        "container-title": "Trends in Ecology & Evolution",
+        "id": "Bickford2007CrySpe",
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2007
+                ]
+            ]
+        },
+        "page": "148-155",
+        "title": "Cryptic species as a window on diversity and conservation",
+        "type": "article-journal",
+        "volume": "22"
+    },
+    {
         "DOI": "10.1111/ele.13525",
         "author": [
             {
@@ -1019,6 +1070,33 @@
         "title": "The structure of probabilistic networks",
         "type": "article-journal",
         "volume": "7"
+    },
+    {
+        "DOI": "10.1146/annurev-ecolsys-110218-024908",
+        "author": [
+            {
+                "family": "Pringle",
+                "given": "Robert M."
+            },
+            {
+                "family": "Hutchinson",
+                "given": "Matthew C."
+            }
+        ],
+        "container-title": "Annual Review of Ecology, Evolution, and Systematics",
+        "id": "Pringle2020ResFoo",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2020
+                ]
+            ]
+        },
+        "page": "55-80",
+        "title": "Resolving Food-Web Structure",
+        "type": "article-journal",
+        "volume": "51"
     },
     {
         "DOI": "10.1016/j.tree.2005.04.004",
