@@ -289,10 +289,10 @@ expect the probability that $i$ and $j$ interacts to scale spatially, i.e.
 $P_{N_1}(i \rightarrow j | A < A_0) \le P_{N_0}(i \rightarrow j | A = A_0)$.
 Similarly, the temporal scaling of probabilistic local food webs could be
 manifested through the effect of sampling effort on the observation of
-interactions [@Jordano2016Samplinga; @McLeod2021Sampling] or of time itself on
+interactions [@Jordano2016SamNet; @McLeod2021Sampling] or of time itself on
 their realization [@Poisot2012Dissimilaritya]. There are many network-area
 relationships [e.g., @Wood2015Effects; @Galiana2018SpaSca] and interaction
-accumulation curves [e.g, @Jordano2016Samplinga] explored in the literature.
+accumulation curves [e.g, @Jordano2016SamNet] explored in the literature.
 These could inspire the development and testing of different equations
 describing the spatiotemporal scaling of probabilistic pairwise interactions in
 local networks, which are over the scope of this manuscript. 
