@@ -257,6 +257,51 @@
         "volume": "23"
     },
     {
+        "DOI": "10.1016/j.tree.2017.03.001",
+        "author": [
+            {
+                "family": "Bohan",
+                "given": "David A."
+            },
+            {
+                "family": "Vacher",
+                "given": "Corinne"
+            },
+            {
+                "family": "Tamaddoni-Nezhad",
+                "given": "Alireza"
+            },
+            {
+                "family": "Raybould",
+                "given": "Alan"
+            },
+            {
+                "family": "Dumbrell",
+                "given": "Alex J."
+            },
+            {
+                "family": "Woodward",
+                "given": "Guy"
+            }
+        ],
+        "container-title": "Trends in Ecology & Evolution",
+        "id": "Bohan2017NexGlo",
+        "issue": "7",
+        "issued": {
+            "date-parts": [
+                [
+                    2017
+                ]
+            ]
+        },
+        "page": "477-487",
+        "publisher": "Elsevier Science London",
+        "publisher-place": "London",
+        "title": "Next-Generation Global Biomonitoring: Large-scale, Automated Reconstruction of Ecological Networks",
+        "type": "article-journal",
+        "volume": "32"
+    },
+    {
         "DOI": "10.1016/j.ecolind.2019.105451",
         "author": [
             {
@@ -606,6 +651,33 @@
         "publisher-place": "Chicago, IL",
         "title": "Animal Ecology",
         "type": "book"
+    },
+    {
+        "DOI": "10.1111/j.0021-8790.2004.00818.x",
+        "author": [
+            {
+                "family": "Emmerson",
+                "given": "Mark C."
+            },
+            {
+                "family": "Raffaelli",
+                "given": "Dave"
+            }
+        ],
+        "container-title": "Journal of Animal Ecology",
+        "id": "Emmerson2004PrePre",
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2004
+                ]
+            ]
+        },
+        "page": "399-409",
+        "title": "Predatorprey body size, interaction strength and the stability of a real food web",
+        "type": "article-journal",
+        "volume": "73"
     },
     {
         "DOI": "10.1038/s41559-018-0517-3",
@@ -1199,6 +1271,208 @@
         "volume": "108"
     },
     {
+        "DOI": "10.1093/gigascience/giac043",
+        "author": [
+            {
+                "family": "Salim",
+                "given": "Jos\u00e9 A"
+            },
+            {
+                "family": "Saraiva",
+                "given": "Antonio M"
+            },
+            {
+                "family": "Zermoglio",
+                "given": "Paula F"
+            },
+            {
+                "family": "Agostini",
+                "given": "Kayna"
+            },
+            {
+                "family": "Wolowski",
+                "given": "Marina"
+            },
+            {
+                "family": "Drucker",
+                "given": "Debora P"
+            },
+            {
+                "family": "Soares",
+                "given": "Filipi M"
+            },
+            {
+                "family": "Bergamo",
+                "given": "Pedro J"
+            },
+            {
+                "family": "Varassin",
+                "given": "Isabela G"
+            },
+            {
+                "family": "Freitas",
+                "given": "Leandro"
+            },
+            {
+                "family": "Mau\u00e9s",
+                "given": "M\u00e1rcia M"
+            },
+            {
+                "family": "Rech",
+                "given": "Andre R"
+            },
+            {
+                "family": "Veiga",
+                "given": "Allan K"
+            },
+            {
+                "family": "Acosta",
+                "given": "Andre L"
+            },
+            {
+                "family": "Araujo",
+                "given": "Andr\u00e9a C"
+            },
+            {
+                "family": "Nogueira",
+                "given": "Anselmo"
+            },
+            {
+                "family": "Blochtein",
+                "given": "Betina"
+            },
+            {
+                "family": "Freitas",
+                "given": "Breno M"
+            },
+            {
+                "family": "Albertini",
+                "given": "Bruno C"
+            },
+            {
+                "family": "Maia-Silva",
+                "given": "Camila"
+            },
+            {
+                "family": "Nunes",
+                "given": "Carlos E P"
+            },
+            {
+                "family": "Pires",
+                "given": "Carmen S S"
+            },
+            {
+                "family": "Santos",
+                "given": "Charles F",
+                "non-dropping-particle": "dos"
+            },
+            {
+                "family": "Queiroz",
+                "given": "Elisa P"
+            },
+            {
+                "family": "Cartolano",
+                "given": "Etienne A"
+            },
+            {
+                "family": "Oliveira",
+                "given": "Fav\u00edzia F",
+                "non-dropping-particle": "de"
+            },
+            {
+                "family": "Amorim",
+                "given": "Felipe W"
+            },
+            {
+                "family": "Font\u00farbel",
+                "given": "Francisco E"
+            },
+            {
+                "family": "Silva",
+                "given": "Gleycon V",
+                "non-dropping-particle": "da"
+            },
+            {
+                "family": "Consolaro",
+                "given": "H\u00e9lder"
+            },
+            {
+                "family": "Alves-dos-Santos",
+                "given": "Isabel"
+            },
+            {
+                "family": "Machado",
+                "given": "Isabel C"
+            },
+            {
+                "family": "Silva",
+                "given": "Juliana S"
+            },
+            {
+                "family": "Aleixo",
+                "given": "K\u00e1tia P"
+            },
+            {
+                "family": "Carvalheiro",
+                "given": "Lu\u00edsa G"
+            },
+            {
+                "family": "Rocca",
+                "given": "M\u00e1rcia A"
+            },
+            {
+                "family": "Pinheiro",
+                "given": "Mardiore"
+            },
+            {
+                "family": "Hrncir",
+                "given": "Michael"
+            },
+            {
+                "family": "Streher",
+                "given": "Nath\u00e1lia S"
+            },
+            {
+                "family": "Ferreira",
+                "given": "Patricia A"
+            },
+            {
+                "family": "Albuquerque",
+                "given": "Patricia M C",
+                "non-dropping-particle": "de"
+            },
+            {
+                "family": "Maruyama",
+                "given": "Pietro K"
+            },
+            {
+                "family": "Borges",
+                "given": "Rafael C"
+            },
+            {
+                "family": "Giannini",
+                "given": "Tereza C"
+            },
+            {
+                "family": "Brito",
+                "given": "Vin\u00edcius L G"
+            }
+        ],
+        "container-title": "GigaScience",
+        "id": "Salim2022DatSta",
+        "issued": {
+            "date-parts": [
+                [
+                    2022
+                ]
+            ]
+        },
+        "page": "giac043",
+        "title": "Data standardization of plantpollinator interactions",
+        "type": "article-journal",
+        "volume": "11"
+    },
+    {
         "DOI": "10.1111/1365-2656.13652",
         "author": [
             {
@@ -1379,6 +1653,46 @@
         "title": "Food web reconstruction through phylogenetic transfer of low-rank network representation",
         "type": "article-journal",
         "volume": "13"
+    },
+    {
+        "DOI": "10.25260/EA.22.32.2.1.1846",
+        "author": [
+            {
+                "family": "V\u00e1zquez",
+                "given": "Diego P."
+            },
+            {
+                "family": "Peralta",
+                "given": "Guadalupe"
+            },
+            {
+                "family": "Cagnolo",
+                "given": "Luciano"
+            },
+            {
+                "family": "Santos",
+                "given": "Micaela"
+            },
+            {
+                "dropping-particle": "autores contribuyeron por",
+                "family": "Igual",
+                "given": " Estos"
+            }
+        ],
+        "container-title": "Ecolog\u00eda Austral",
+        "id": "VazquezSS2022EcoInt",
+        "issue": "2bis",
+        "issued": {
+            "date-parts": [
+                [
+                    2022
+                ]
+            ]
+        },
+        "page": "670-697",
+        "title": "Ecological interaction networks. What we know, what we don\u2019t, and why it matters",
+        "type": "article-journal",
+        "volume": "32"
     },
     {
         "DOI": "10.1002/ece3.1640",
