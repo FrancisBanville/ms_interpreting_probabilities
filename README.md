@@ -226,6 +226,9 @@ explicit in their metadata, preferably using mathematical equations to avoid any
 ambiguity. Below, we will see examples of why this matters when it comes to
 spatial, temporal, and taxonomic scaling of biotic interactions.
 
+[Table 1 about here]. Articles using probabilistic interactions and the
+definitions and variables they considered. 
+
 ## From potential to realized interactions
 
 Even though the spatiotemporal variability of interactions is not considered in
@@ -256,38 +259,74 @@ emerging properties. Inferring the structure of local networks from the metaweb
 could thus help estimate more realistically the likelihood that potential
 interactions are realized and observed locally [@Strydom2021Roadmapa]. 
 
-# Scaling
+[Figure 1 about here]. Empirical example of the association between the number
+of interactions in realized local food webs and the number of interactions in
+the corresponding subnetworks of their regional metaweb. We should expect the
+association to be linear below the 1:1 line, illustrating @eq:switch.
 
-- We should expect a certain number of interactions to be realized depending on
-  the probability value. This number depends on the number of trials, which also
-  depends on the ecological context (e.g., environmental conditions, scale) in
-  which probabilities were estimated. This is in contrast with probabilities in
-  metawebs.
+# Scaling
 
 ## Spatial and temporal scales
 
-How do interaction probabilities scale spatially and temporally?
+Metawebs and local networks intrinsically differ in their relation to scale. On
+one hand, as mentioned above, probabilistic metawebs are context independent,
+i.e., probabilistic pairwise interactions do not scale with space and time
+because they depend solely on the biological capacity of the two taxa to
+interact. This implies that the estimated likelihood that two species can
+potentially interact should be the same among all metawebs in which they are
+present. In practice, this is rarely the case because ecologists use different
+methods and data to estimate these probabilities of interactions. However, in
+the case where local metawebs $M_{x,y}$ are subsampled from their regional
+counterpart $M_0$, we should expect edge values to be identical among all
+networks, regardless of their spatial scale, i.e. $P_{M_{x,y}}(i \rightarrow j)
+= P_{M_0}(i \rightarrow j)$. On the other hand, local probabilistic networks are
+indissociable from their spatial and temporal contexts because there are more
+opportunities of interactions (e.g., more individuals, more trait variations,
+more chance of encounter) in a larger area and longer time period
+[@McLeod2020EffSpe]. Let $N_0$ be a local probabilistic food web delineated in
+an area $A_0$ and $N_1$ a network of area $A_1 < A_0$ within $A_0$. We should
+expect the probability that $i$ and $j$ interacts to scale spatially, i.e.
+$P_{N_1}(i \rightarrow j | A < A_0) \le P_{N_0}(i \rightarrow j | A = A_0)$.
+Similarly, the temporal scaling of probabilistic local food webs could be
+manifested through the effect of sampling effort on the observation of
+interactions [@Jordano2016Samplinga; @McLeod2021Sampling] or of time itself on
+their realization [@Poisot2012Dissimilaritya]. There are many network-area
+relationships [e.g., @Wood2015Effects; @Galiana2018SpaSca] and interaction
+accumulation curves [e.g, @Jordano2016Samplinga] explored in the literature.
+These could inspire the development and testing of different equations
+describing the spatiotemporal scaling of probabilistic pairwise interactions in
+local networks, which are over the scope of this manuscript. 
 
-- Why do probabilistic local food webs scale with area and time but not
-  probabilistic metawebs?
-- In metawebs, interaction probabilities do not scale with space and time
-  because they depend solely on the biological capacity of two species to
-  interact.
-- In local food webs, interaction probabilities scale with space and time
-  because there are more opportunities of interactions (e.g., more environmental
-  conditions) in a larger area and longer time period.
-- What are some network area relationships in probabilistic local food webs?
-- We know that local networks can inform regional networks. However, can
-  regional networks inform local networks?
-- Sampling local networks from metawebs vs from probabilistic local networks
+Another conceptual challenge encountered when using probabilistic food webs is
+the prediction of Boolean networks across space. Lets take $n \times n$ grid
+cells each representing a probabilistic food web. If they contain potential
+interactions, a single random trial must be conducted for each pairwise
+interaction across the region (i.e., we should have only one random realization
+of the regional metaweb). On the contrary, if they represent probabilities of
+realized interactions, each food web must be independently sampled (i.e., $n^2$
+independent random draws). This has direct implications on the spatial scaling
+of interactions. For example, let $N_2$ be another network of area $A_2 < A_0$
+within $A_0$ and disjoint from $N_1$, such as $ N_1 \cup N_2 = N_0$ (think of
+two contiguous cells that together delineate $N_0$). All other things being
+equal, we should expect the probability that $i$ and $j$ interacts in $A_0$ to
+be $P_{N_0}(i \rightarrow j) = 1 - (1 - P_{N_1}(i \rightarrow j)) \times (1 -
+P_{N_2}(i \rightarrow j))$ if $N_1$ and $N_2$ are independently sampled. This
+also implies that we should expect interactions to be realized in a certain
+number of local networks depending on the probability value, which is not the
+case with metawebs. Note that spatial auto-correlation and the concept of
+meta-network (i.e., networks of networks) could invalidate the statistical
+assumption of independence. Nevertheless, the fundamental difference in sampling
+metawebs and local networks stands even when considering these factors. This
+difference in sampling further sheds light on the importance of clearly defining
+interaction probabilities. What we consider as a *Bernoulli trial*, when
+randomly drawing deterministic networks from probabilistic food webs, depends on
+our biological interpretation of these probabilities. 
 
-**Figure:** Empirical example of the association between the number of
-interactions in realized local food webs and the number of interactions in the
-corresponding species subnetworks of regional networks. We should expect the
-interaction to be linear below the 1:1 line.
+- Making interaction probabilities spatiotemporally explicit 
 
-**Papers:** there might be something in these @McLeod2020EffSpe;
-@McLeod2021Sampling; @Wood2015Effects
+[Figure 2 about here]. Conceptual figure showing (1) the spatiotemporal scaling
+of probabilistic metawebs and local food webs and (2) the spatial sampling of
+metawebs and local food webs into Boolean networks. 
 
 ## Taxonomic scale
 
@@ -302,9 +341,9 @@ How do interaction probabilities scale taxonomically?
   all kinds of scaling are just different ways to aggregate individuals or
   nodes.
 
-**Figure:** Conceptual figure of how a scale up of the nodes from an individual
-to a population to any higher taxonomic group change our interpretation of the
-probability of interaction.
+[Figure 3 about here]. Conceptual figure of how a scale up of the nodes from an
+individual to a population to any higher taxonomic group change our
+interpretation of the probability of interaction.
 
 # Conclusion
 
