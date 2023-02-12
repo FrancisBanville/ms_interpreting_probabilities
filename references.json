@@ -81,7 +81,7 @@
             }
         ],
         "container-title": "Ecography",
-        "id": "Araujo2011UsiSpe",
+        "id": "Araujo2011Usinga",
         "issue": "6",
         "issued": {
             "date-parts": [
@@ -158,7 +158,7 @@
             }
         ],
         "container-title": "Journal of Animal Ecology",
-        "id": "Berlow2004IntStr",
+        "id": "Berlow2004Interaction",
         "issue": "3",
         "issued": {
             "date-parts": [
@@ -209,7 +209,7 @@
             }
         ],
         "container-title": "Trends in Ecology & Evolution",
-        "id": "Bickford2007CrySpe",
+        "id": "Bickford2007Cryptic",
         "issue": "3",
         "issued": {
             "date-parts": [
@@ -269,7 +269,7 @@
             }
         ],
         "container-title": "Ecological Indicators",
-        "id": "Borrett2019WalPar",
+        "id": "Borrett2019Walk",
         "issued": {
             "date-parts": [
                 [
@@ -344,7 +344,7 @@
             }
         ],
         "container-title": "PLOS ONE",
-        "id": "Canard2012EmeStr",
+        "id": "Canard2012Emergencea",
         "issue": "8",
         "issued": {
             "date-parts": [
@@ -388,7 +388,7 @@
             }
         ],
         "container-title": "The American Naturalist",
-        "id": "Canard2014EmpEva",
+        "id": "Canard2014Empiricala",
         "issue": "4",
         "issued": {
             "date-parts": [
@@ -532,7 +532,7 @@
             }
         ],
         "container-title": "Biological Reviews",
-        "id": "Delmas2019AnaEco",
+        "id": "Delmas2019Analysing",
         "issue": "1",
         "issued": {
             "date-parts": [
@@ -594,7 +594,7 @@
                 "given": "Timothy J."
             }
         ],
-        "id": "Elton2001AniEco",
+        "id": "Elton2001Animal",
         "issued": {
             "date-parts": [
                 [
@@ -608,10 +608,56 @@
         "type": "book"
     },
     {
-        "id": "EmpEva",
-        "publisher": "https://www.journals.uchicago.edu/doi/full/10.1086/675363",
-        "title": "Empirical Evaluation of Neutral Interactions in Host-Parasite Networks | The American Naturalist: Vol 183, No 4",
-        "type": ""
+        "DOI": "10.1038/s41559-018-0517-3",
+        "author": [
+            {
+                "family": "Galiana",
+                "given": "Nuria"
+            },
+            {
+                "family": "Lurgi",
+                "given": "Miguel"
+            },
+            {
+                "family": "Claramunt-L\u00f3pez",
+                "given": "Bernat"
+            },
+            {
+                "family": "Fortin",
+                "given": "Marie-Jos\u00e9e"
+            },
+            {
+                "family": "Leroux",
+                "given": "Shawn"
+            },
+            {
+                "family": "Cazelles",
+                "given": "Kevin"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Montoya",
+                "given": "Jos\u00e9 M."
+            }
+        ],
+        "container-title": "Nature Ecology & Evolution",
+        "id": "Galiana2018SpaSca",
+        "issue": "5",
+        "issued": {
+            "date-parts": [
+                [
+                    2018
+                ]
+            ]
+        },
+        "page": "782-790",
+        "publisher": "Nature Publishing Group",
+        "title": "The spatial scaling of species interaction networks",
+        "type": "article-journal",
+        "volume": "2"
     },
     {
         "DOI": "10.1111/oik.09282",
@@ -630,7 +676,7 @@
             }
         ],
         "container-title": "Oikos",
-        "id": "Godsoe2022SpeInt",
+        "id": "Godsoe2022Species",
         "issue": "n/a",
         "issued": {
             "date-parts": [
@@ -682,7 +728,7 @@
             }
         ],
         "container-title": "Annual Review of Ecology, Evolution, and Systematics",
-        "id": "Guimaraes2020StrEco",
+        "id": "Guimaraes2020Structurea",
         "issue": "1",
         "issued": {
             "date-parts": [
@@ -738,7 +784,7 @@
             }
         ],
         "container-title": "Functional Ecology",
-        "id": "Jordano2016Samplinga",
+        "id": "Jordano2016SamNet",
         "issue": "12",
         "issued": {
             "date-parts": [
@@ -748,8 +794,6 @@
             ]
         },
         "page": "1883-1893",
-        "publisher": "Wiley",
-        "publisher-place": "Hoboken",
         "title": "Sampling networks of ecological interactions",
         "type": "article-journal",
         "volume": "30"
@@ -869,7 +913,7 @@
             }
         ],
         "container-title": "Ecology Letters",
-        "id": "Ohlmann2019DivInd",
+        "id": "Ohlmann2019Diversity",
         "issue": "4",
         "issued": {
             "date-parts": [
@@ -942,7 +986,7 @@
                 "given": "Jennifer A."
             }
         ],
-        "id": "Pascual2006EcoNet",
+        "id": "Pascual2006Ecologicala",
         "issued": {
             "date-parts": [
                 [
@@ -1084,7 +1128,7 @@
             }
         ],
         "container-title": "Annual Review of Ecology, Evolution, and Systematics",
-        "id": "Pringle2020ResFoo",
+        "id": "Pringle2020Resolving",
         "issue": "1",
         "issued": {
             "date-parts": [
@@ -1116,7 +1160,7 @@
         ],
         "collection-title": "SPECIAL issue: BUMPER book REVIEW",
         "container-title": "Trends in Ecology & Evolution",
-        "id": "Proulx2005NetThi",
+        "id": "Proulx2005Networka",
         "issue": "6",
         "issued": {
             "date-parts": [
@@ -1179,7 +1223,7 @@
             }
         ],
         "container-title": "Journal of Animal Ecology",
-        "id": "Saravia2022EcoNet",
+        "id": "Saravia2022Ecological",
         "issue": "3",
         "issued": {
             "date-parts": [
