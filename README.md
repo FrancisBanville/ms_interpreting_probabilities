@@ -15,14 +15,14 @@ the predators have a desire to consume their prey and are able to capture and
 ingest them [@Pulliam1974Theory]. Environmental (e.g. temperature and presence
 of shelters) and biological (e.g. physiological state of both species and
 availability of other prey species) factors contribute to this variability by
-impacting species co-occurrence [@Araujo2011UsiSpe] and the realization of their
+impacting species co-occurrence [@Araujo2011Usinga] and the realization of their
 interactions [@Poisot2015Speciesa]. In this context, the development of
 computational methods in ecology can help alleviate the colossal sampling
 efforts required to document species interactions across time and space
 [@Strydom2021Roadmapa]. Having a better portrait of species interactions and the
 emerging structure of their food webs is important since it lays the groundwork
 for understanding the functioning, dynamics, and resilience of ecosystems
-worldwide [e.g., @Proulx2005NetThi; @Pascual2006EcoNet; @Delmas2019AnaEco]. 
+worldwide [e.g., @Proulx2005Networka; @Pascual2006Ecologicala; @Delmas2019Analysing]. 
 
 The recognition of the intrinsic variability of species interactions and the
 emergence of numerical methods have led ecologists to rethink their
@@ -44,7 +44,7 @@ instead of yes-no interactions accounts for these observation errors; in that
 case, only forbidden interactions [@Jordano2003Invarianta; @Olesen2010Missing]
 would have a probability value of zero [but see @Gonzalez-Varo2016Labilea]. Many
 measures have been developed to describe the structure [@Poisot2016Structure]
-and diversity [@Ohlmann2019DivInd; @Godsoe2022SpeInt] of probabilistic
+and diversity [@Ohlmann2019Diversity; @Godsoe2022Species] of probabilistic
 interactions, which shows the potential of this framework in the study of a
 variety of ecological phenomena.
 
@@ -73,22 +73,22 @@ interactions.
 ## Food-web representations
 
 The basic unit of food webs and other ecological networks are individuals that
-interact with each others [e.g., by predation; @Elton2001AniEco], forming
+interact with each others [e.g., by predation; @Elton2001Animal], forming
 individual-based networks. The aggregation of these individuals into more or
 less homogeneous groups (e.g., populations, species, trophic species, families)
 allows us to represent networks at broader scales, which impacts the properties
-and behaviour of these systems [@Guimaraes2020StrEco]. A network's nodes can
+and behaviour of these systems [@Guimaraes2020Structurea]. A network's nodes can
 thus designate distinct levels of organization, whereas the edges linking these
 nodes can describe a variety of interaction measures. When using a Boolean
 (yes-no) representation of biotic interactions, the observation that one
 individual from group (or node) $i$ interacts with another individual from group
 $j$ is enough to set the interaction $A_{i,j}$ to 1. This simplified
 representation of food webs is a highly valuable source of ecological
-information [@Pascual2006EcoNet] even though it overlooks important factors
+information [@Pascual2006Ecologicala] even though it overlooks important factors
 regarding interaction strengths. These, in turn, can be represented using
 weighted interactions, which better describe the energy flows, demographic
-impacts or frequencies of interactions between nodes [@Berlow2004IntStr;
-@Borrett2019WalPar], with $A_{i,j} \in \mathbb{N}$ or $\mathbb{R}$ depending on
+impacts or frequencies of interactions between nodes [@Berlow2004Interaction;
+@Borrett2019Walk], with $A_{i,j} \in \mathbb{N}$ or $\mathbb{R}$ depending on
 the measure. For example, they can be used to estimate the average number of
 prey individuals consumed by the predators in a given time period. This extra
 amount of ecological information typically comes at a cost of greater sampling
@@ -165,7 +165,7 @@ metaweb. Unobserved interactions, on the other hand, are given lower
 probabilities, going as low as $0$ for forbidden links. Two important nuances
 must however be made here. Because of observation errors due to taxonomic
 misidentifications and ecological misinterpretations [e.g., due to cryptic
-species and interactions; @Pringle2020ResFoo], many observations of interactions
+species and interactions; @Pringle2020Resolving], many observations of interactions
 are actually false positives. Similarly, forbidden interactions can be false
 negatives if e.g. they have been assessed for specific phenotypes, locations or
 time. Implementing a Bayesian framework, which updates prior probabilities of
@@ -197,8 +197,8 @@ phenology, and presence of other interacting species in the network. These
 conditions can affect species traits, which greatly impact the capacity of
 species to interact [@Poisot2015Speciesa]. Similarly, species relative abundance
 is another important predictor of the probability of interaction, because it
-impacts the probability that species will randomly encounter [@Canard2012EmeStr;
-@Canard2014EmpEva; @Poisot2015Speciesa]. Here, we will use the variable $\Omega$
+impacts the probability that species will randomly encounter [@Canard2012Emergencea;
+@Canard2014Empiricala; @Poisot2015Speciesa]. Here, we will use the variable $\Omega$
 as a substitute for the biological and ecological context in which interaction
 probabilities were estimated. This gives us the following equation for the
 probability of realized interaction between species (or taxa) $i$ and $j$ in a
@@ -253,7 +253,7 @@ of interaction probability would generate systematic biases in the prediction.
 In that case, these networks would instead be called *spatially explicit* or
 *local* metawebs (i.e., smaller-scale networks of potential interactions).
 Second, the structure of local networks is constrained by the one of their
-metaweb [@Saravia2022EcoNet]. This suggests that a metaweb not only constrains
+metaweb [@Saravia2022Ecological]. This suggests that a metaweb not only constrains
 the pairwise interactions of its corresponding local networks, but also their
 emerging properties. Inferring the structure of local networks from the metaweb
 could thus help estimate more realistically the likelihood that potential
