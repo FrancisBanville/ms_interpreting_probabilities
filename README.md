@@ -294,22 +294,22 @@ interaction across the region (i.e., we should have only one random realization
 of the regional metaweb). On the contrary, if they represent probabilities of
 realized interactions, each food web must be independently sampled (i.e., $n^2$
 independent random draws). This has direct implications on the spatial scaling
-of interactions. For example, let $N_2$ be another network of area $A_2 < A_0$
-within $A_0$ and disjoint from $N_1$, such as $N_1$ and $N_2$ form $N_0$ (think
-of two contiguous cells that together delineate $N_0$). All other things being
-equal, we should expect the probability that $i$ and $j$ interacts in $A_0$ to
-be $P_{N_0}(i \rightarrow j) = 1 - (1 - P_{N_1}(i \rightarrow j)) \times (1 -
-P_{N_2}(i \rightarrow j))$ if $N_1$ and $N_2$ are independently sampled. This
-also implies that we should expect interactions to be realized in a certain
-number of local networks depending on the probability value, which is not the
-case with metawebs. Note that spatial auto-correlation and the concept of
-meta-network (i.e., networks of networks) could invalidate the statistical
-assumption of independence. Nevertheless, the fundamental difference in sampling
-metawebs and local networks stands even when considering these factors. This
-difference in sampling further sheds light on the importance of clearly defining
-interaction probabilities. What we consider as a *Bernoulli trial*, when
-randomly drawing deterministic networks from probabilistic food webs, depends on
-our biological interpretation of these probabilities. 
+of interactions. For example, let $N_1$ and $N_2$ be networks of area $< A_0$
+within a bigger area $A_0$ and disjoint from each other, such as $N_1$ and $N_2$
+form $N_0$ (think of two contiguous cells that together delineate $N_0$). All
+other things being equal, we should expect the probability that $i$ and $j$
+interacts in $A_0$ to be $P_{N_0}(i \rightarrow j) = 1 - (1 - P_{N_1}(i
+\rightarrow j)) \times (1 - P_{N_2}(i \rightarrow j))$ if $N_1$ and $N_2$ are
+independently sampled. This also implies that we should expect interactions to
+be realized in a certain number of local networks depending on the probability
+value, which is not the case with metawebs. Note that spatial auto-correlation
+and the concept of meta-network (i.e., networks of networks) could invalidate
+the statistical assumption of independence. Nevertheless, the fundamental
+difference in sampling metawebs and local networks stands even when considering
+these factors. This difference in sampling further sheds light on the importance
+of clearly defining interaction probabilities. What we consider as a *Bernoulli
+trial*, when randomly drawing deterministic networks from probabilistic food
+webs, depends on our biological interpretation of these probabilities. 
 
 ## Describing the spatial and temporal scaling of probabilistic interactions
 
