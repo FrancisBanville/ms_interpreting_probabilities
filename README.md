@@ -1,11 +1,11 @@
 # Introduction
 
-Cataloging species interactions across space is a gargantuan task. At the core
-of this challenge lies the spatiotemporal variability of ecological networks
-[@Poisot2012Dissimilaritya; @Poisot2015Speciesa], which makes documenting the
-location and timing of interactions difficult. Indeed, it is not sufficient to
-know that two species have the biological capacity to interact to infer the
-realization of their interaction at a specific time and space
+Cataloging species interactions across space and time is a gargantuan task. At
+the core of this challenge lies the spatiotemporal variability of ecological
+networks [@Poisot2012Dissimilaritya; @Poisot2015Speciesa], which makes
+documenting the location and timing of interactions difficult. Indeed, it is not
+sufficient to know that two species have the biological capacity to interact to
+infer the realization of their interaction at a specific time and space
 [@Dunne2006Network]. Taking food webs as an example, a predator species and its
 potential prey must first co-occur in order for a trophic interaction to take
 place [@Blanchet2020Cooccurrencea]. They must then encounter, which is
@@ -27,53 +27,52 @@ worldwide [e.g., @Proulx2005Networka; @Pascual2006Ecologicala;
 
 The recognition of the intrinsic variability of species interactions and the
 emergence of numerical methods have led ecologists to rethink their
-representation of ecological networks, slowly moving from a binary to a
-probabilistic view of species interactions [@Poisot2016Structure]. This has
-several benefits. For example, probabilities represent the limit of our
-knowledge about species interactions and can inform us about the expected number
-of interactions and emerging network properties despite this limited knowledge
-[@Poisot2016Structure]. They are also very helpful in predicting the spatial
-distribution of species within networks [@Cazelles2016Theorya] and the temporal
-variability of interactions [@Poisot2015Speciesa], generating new ecological
-data [e.g., @Strydom2022Food], and identifying priority sampling locations of
-species interactions [see @Andrade-Pacheco2020Finding for an ecological example
-of a sampling optimization problem]. Moreover, the high rate of false negatives
-in ecological network data, resulting from the difficulty of witnessing
-interactions between rare species, makes it hard to interpret non-observations
-of species interactions ecologically [@Catchen2023Missinga]. Using probabilities
-instead of yes-no interactions accounts for these observation errors; in that
-case, only forbidden interactions [@Jordano2003Invarianta; @Olesen2010Missing]
-would have a probability value of zero [but see @Gonzalez-Varo2016Labilea]. Many
-measures have been developed to describe the structure [@Poisot2016Structure]
-and diversity [@Ohlmann2019Diversity; @Godsoe2022Species] of probabilistic
-interactions, which shows the potential of this framework in the study of a
-variety of ecological phenomena.
+representation of ecological networks to include a probabilistic view of species
+interactions [@Poisot2016Structure]. This has several benefits. For example,
+probabilities represent the limit of our knowledge about species interactions
+and can inform us about the expected number of interactions and emerging network
+properties despite this limited knowledge [@Poisot2016Structure]. They are also
+very helpful in predicting the spatial distribution of species within networks
+[@Cazelles2016Theorya] and the temporal variability of interactions
+[@Poisot2015Speciesa], generating new ecological data [e.g., @Strydom2022Food],
+and identifying priority sampling locations of species interactions [see
+@Andrade-Pacheco2020Finding for an ecological example of a sampling optimization
+problem]. Moreover, the high rate of false negatives in ecological network data,
+resulting from the difficulty of witnessing interactions between rare species,
+makes it hard to interpret non-observations of species interactions ecologically
+[@Catchen2023Missinga]. Using probabilities instead of Boolean interactions
+accounts for these observation errors; in that case, only forbidden interactions
+[@Jordano2003Invarianta; @Olesen2010Missing] would have a probability value of
+zero [but see @Gonzalez-Varo2016Labilea]. Many measures have been developed to
+describe the structure [@Poisot2016Structure] and diversity
+[@Ohlmann2019Diversity; @Godsoe2022Species] of probabilistic interactions, which
+shows the potential of this framework in the study of a variety of ecological
+phenomena.
 
-However, representing species interactions probabilistically can also be
-challenging. Beyond methodological difficulties in estimating these numbers,
-there are important conceptual challenges in defining what we mean by
-"probability of interactions". To the best of our knowledge, because the
-building blocks of this mathematical representation of food webs are still being
-laid, there is no clear definition found in the literature or data standard when
-it comes to publishing data on probabilistic interactions [see @Salim2022Data
-for a discussion on data standardization for mutualistic networks]. This is
-worrisome, since working with probabilistic species interactions without clear
-guidelines could be misleading as much for field ecologists as for computational
-ecologists who use and generate these data. In this contribution, we outline
-different ways to define and interpret interactions probabilities in network
-ecology and propose an approach to thinking about them. These definitions mostly
-depend on the study system (e.g. local network or metaweb) and on the method
-used to generate them. We show that different definitions can have different
-ecological implications, especially regarding spatial, temporal, and taxonomic
-scaling. Although we will focus on food webs, our observations and advice can be
-applied to all types of ecological networks, from plant-pollinator to
-host-parasite networks. Indeed, all ecological networks, whether they are
-unipartite or bipartite, share fundamental commonalities in their biological
-conceptualization and mathematical representation that support these comparisons
-(i.e., they all describe groups of individuals interacting with each other).
-Regardless of the study system, we argue that probabilities should be better
-documented, defined mathematically, and used with caution when describing
-species interactions. 
+However, representing species interactions probabilistically is challenging.
+Beyond methodological difficulties in estimating these numbers, there are
+important conceptual challenges in defining what we mean by "probability of
+interactions". To the best of our knowledge, because the building blocks of this
+mathematical representation of food webs are still being laid, there is no clear
+definition found in the literature or data standard when it comes to publishing
+data on probabilistic interactions [see @Salim2022Data for a discussion on data
+standardization for mutualistic networks]. This is worrisome, since working with
+probabilistic species interactions without clear guidelines could be misleading
+as much for field ecologists as for computational ecologists who use and
+generate these data. In this contribution, we outline different ways to define
+and interpret interactions probabilities in network ecology and propose an
+approach to thinking about them. These definitions mostly depend on the study
+system (e.g. local network or metaweb) and on the method used to generate them.
+We show that different definitions can have different ecological implications,
+especially regarding spatial, temporal, and taxonomic scaling. Although we will
+focus on food webs, our observations and advice can be applied to all types of
+ecological networks, from plant-pollinator to host-parasite networks. Indeed,
+all ecological networks, whether they are unipartite or bipartite, share
+fundamental commonalities in their biological conceptualization and mathematical
+representation that support these comparisons (i.e., they all describe groups of
+individuals interacting with each other). Regardless of the study system, we
+argue that probabilities should be better documented, defined mathematically,
+and used with caution when describing species interactions. 
 
 # Definitions and interpretations
 
@@ -83,48 +82,48 @@ The basic unit of food webs and other ecological networks are individuals that
 interact with each others [e.g., by predation; @Elton2001Animal], forming
 individual-based networks. The aggregation of these individuals into more or
 less homogeneous groups (e.g., populations, species, trophic species, families)
-allows us to represent networks at broader scales, which impacts the properties
-and behaviour of these systems [@Guimaraes2020Structurea]. A network's nodes can
-thus designate distinct levels of organization, whereas the edges linking these
-nodes can describe a variety of interaction measures. When using a Boolean
-(yes-no) representation of biotic interactions, the observation that one
-individual from group (or node) $i$ interacts with another individual from group
-$j$ is enough to set the interaction $A_{i,j}$ to 1. This simplified
-representation of food webs is a highly valuable source of ecological
-information [@Pascual2006Ecologicala] even though it overlooks important factors
-regarding interaction strengths. These, in turn, can be represented using
-weighted interactions, which better describe the energy flows, demographic
-impacts or frequencies of interactions between nodes [@Berlow2004Interaction;
-@Borrett2019Walk], with $A_{i,j} \in \mathbb{N}$ or $\mathbb{R}$ depending on
-the measure. For example, they can be used to estimate the average number of
-prey individuals consumed by the predators in a given time period (e.g., the
-average number of fish in the stomach of a piscivorous species). Interaction
-strengths can also be used as good estimators of the parameters describing
-species interactions in a Lotka-Volterra model [e.g., @Emmerson2004Predatora].
-This extra amount of ecological information typically comes at a cost of greater
-sampling effort or data requirement in predictive models [@Strydom2021Roadmapa],
-which can lead to high uncertainties when building these types of networks.
-Therefore, important methodological and conceptual decisions must be made when
-sampling and building food webs. 
+allows us to represent networks at broader taxonomic scales, which impacts our
+interpretation of the properties and behaviour of these systems
+[@Guimaraes2020Structurea]. Nodes can thus designate distinct levels of
+organization, whereas edges linking these nodes can describe a variety of
+interaction measures. When using a Boolean representation of biotic
+interactions, the observation that one individual from group (or node) $i$
+interacts with another individual from group $j$ is enough to set the
+interaction $A_{i,j}$ to 1. This simplified representation of food webs is a
+highly valuable source of ecological information [@Pascual2006Ecologicala] even
+though it overlooks important factors regarding interaction strengths. These, in
+turn, can be represented using quantitative interactions, which better describe
+the energy flows, demographic impacts or frequencies of interactions between
+nodes [@Berlow2004Interaction; @Borrett2019Walk], with $A_{i,j}$ being a natural
+number $\mathbb{N}$ or a real number $\mathbb{R}$ depending on the measure. For
+example, they can be used to estimate the average number of prey individuals
+consumed by the predators in a given time period (e.g., the average number of
+fish in the stomach of a piscivorous species). Interaction strengths can also be
+used as good estimators of the parameters describing species interactions in a
+Lotka-Volterra model [e.g., @Emmerson2004Predatora]. This extra amount of
+ecological information typically comes at a cost of greater sampling effort or
+data requirement in predictive models [@Strydom2021Roadmapa], which can lead to
+high uncertainties when building these networks.
 
 The uncertainty and spatiotemporal variability of both types of trophic
-interactions (Boolean and weighted) can be represented probabilistically. On one
-hand, Boolean interactions follow a Bernoulli distribution $A_{i,j} \sim {\rm
-Bernoulli}(p)$, with $p$ being the probability of interactions. The only two
-possible outcomes are the presence ($A_{i,j} = 1$) or absence ($A_{i,j} = 0$) of
-an interaction between the two nodes. Weighted interactions, on the other hand,
-can follow various probability distributions depending on the measure used. In
-this case, the event's outcome is the value of interaction strength. For
-instance, weights can follow a Poisson distribution $A_{i,j} \sim {\rm
-Poisson}(\lambda)$ when predicting frequencies of interactions between pairs of
-nodes, with $\lambda$ being the expected rate of interaction. Note that weighted
-interactions can be converted to probabilistic interactions by normalizing. The
-definition and interpretation of parameters like $p$ and $\lambda$ are
-inextricably linked to environmental and biological factors such as species
-relative abundance, traits, area, and time, depending on the type of
-interaction. Because Boolean species interactions are much more documented in
-the literature, our primary focus in this contribution will be on addressing the
-challenges in defining and interpretating $p$ for pairwise species interactions.
+interactions (Boolean and quantitative) can be represented probabilistically. On
+one hand, Boolean interactions follow a Bernoulli distribution $A_{i,j} \sim
+{\rm Bernoulli}(p)$, with $p$ being the probability of interactions. The only
+two possible outcomes are the presence ($A_{i,j} = 1$) or absence ($A_{i,j} =
+0$) of an interaction between the two nodes. Quantitative interactions, on the
+other hand, can follow various probability distributions depending on the
+measure used. In this case, the event's outcome is the value of interaction
+strength. For instance, these interaction strengths can follow a Poisson
+distribution $A_{i,j} \sim {\rm Poisson}(\lambda)$ when predicting frequencies
+of interactions between pairs of nodes, with $\lambda$ being the expected rate
+of interaction. Note that quantitative interactions can be converted to
+probabilistic interactions by normalizing. The definition and interpretation of
+parameters like $p$ and $\lambda$ are inextricably linked to environmental and
+biological factors such as species relative abundance, traits, area, and time,
+depending on the type of interaction. Because Boolean species interactions are
+much more documented in the literature, our primary focus in this contribution
+will be on addressing the challenges in defining and interpretating $p$ for
+pairwise species interactions.
 
 The first aspect to take into consideration when estimating or interpreting
 probabilities of interactions is knowing if they describe the likelihood of
@@ -458,12 +457,12 @@ there is often a thin line between a real probability and a non-probabilistic
 predictive number (or score). Probabilities are numbers between $0$ and $1$ that
 sum to $1$ and either represent the expected frequency of a phenomenon or the
 degree of belief that it will be realized. Non-probabilistic scores, which are
-more akin to interaction weights, have different mathematical properties, which
-impacts how we should handle these numbers in a spatially or temporally explicit
-context. Therefore, researchers should use their expertise to assess if their
-interaction data are actually probabilities or scores. This should also be added
-to the metadata before sharing them, as well as the methods used to build the
-networks. 
+more akin to interaction strengths, have different mathematical properties,
+which impacts how we should handle these numbers in a spatially or temporally
+explicit context. Therefore, researchers should use their expertise to assess if
+their interaction data are actually probabilities or scores. This should also be
+added to the metadata before sharing them, as well as the methods used to build
+the networks. 
 
 Better metadata documentation would allow researchers to use and manipulate
 probabilistic ecological interactions according to how they were actually
@@ -488,6 +487,6 @@ Research Council of Canada (NSERC) Collaborative Research and Training
 Experience (CREATE) program, through the Computational Biodiversity Science and
 Services (BIOS²) program. A special thank to all members of the Black Holes and
 Revelations working group (organized by BIOS²) for their insightful discussions
-and valuable feedbacks on this manuscript.
+and valuable feedback on this manuscript.
 
 # References
