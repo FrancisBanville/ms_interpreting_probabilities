@@ -303,8 +303,8 @@ probabilistic food webs</div>
 
         <article>
             <h1 id="introduction">Introduction</h1>
-            <p>Cataloging species interactions across space is a
-            gargantuan task. At the core of this challenge lies the
+            <p>Cataloging species interactions across space and time is
+            a gargantuan task. At the core of this challenge lies the
             spatiotemporal variability of ecological networks <span
             class="citation"
             data-cites="Poisot2012Dissimilaritya Poisot2015Speciesa">(Poisot
@@ -351,8 +351,8 @@ probabilistic food webs</div>
             <p>The recognition of the intrinsic variability of species
             interactions and the emergence of numerical methods have led
             ecologists to rethink their representation of ecological
-            networks, slowly moving from a binary to a probabilistic
-            view of species interactions <span class="citation"
+            networks to include a probabilistic view of species
+            interactions <span class="citation"
             data-cites="Poisot2016Structure">(Poisot <em>et al.</em>
             2016)</span>. This has several benefits. For example,
             probabilities represent the limit of our knowledge about
@@ -379,7 +379,7 @@ probabilistic food webs</div>
             species, makes it hard to interpret non-observations of
             species interactions ecologically <span class="citation"
             data-cites="Catchen2023Missinga">(Catchen <em>et al.</em>
-            2023)</span>. Using probabilities instead of yes-no
+            2023)</span>. Using probabilities instead of Boolean
             interactions accounts for these observation errors; in that
             case, only forbidden interactions <span class="citation"
             data-cites="Jordano2003Invarianta Olesen2010Missing">(Jordano
@@ -397,11 +397,11 @@ probabilistic food webs</div>
             this framework in the study of a variety of ecological
             phenomena.</p>
             <p>However, representing species interactions
-            probabilistically can also be challenging. Beyond
-            methodological difficulties in estimating these numbers,
-            there are important conceptual challenges in defining what
-            we mean by “probability of interactions”. To the best of our
-            knowledge, because the building blocks of this mathematical
+            probabilistically is challenging. Beyond methodological
+            difficulties in estimating these numbers, there are
+            important conceptual challenges in defining what we mean by
+            “probability of interactions”. To the best of our knowledge,
+            because the building blocks of this mathematical
             representation of food webs are still being laid, there is
             no clear definition found in the literature or data standard
             when it comes to publishing data on probabilistic
@@ -442,17 +442,17 @@ probabilistic food webs</div>
             individual-based networks. The aggregation of these
             individuals into more or less homogeneous groups (e.g.,
             populations, species, trophic species, families) allows us
-            to represent networks at broader scales, which impacts the
-            properties and behaviour of these systems <span
-            class="citation"
+            to represent networks at broader taxonomic scales, which
+            impacts our interpretation of the properties and behaviour
+            of these systems <span class="citation"
             data-cites="Guimaraes2020Structurea">(Guimarães
-            2020)</span>. A network’s nodes can thus designate distinct
-            levels of organization, whereas the edges linking these
-            nodes can describe a variety of interaction measures. When
-            using a Boolean (yes-no) representation of biotic
-            interactions, the observation that one individual from group
-            (or node) <span class="math inline"><em>i</em></span>
-            interacts with another individual from group <span
+            2020)</span>. Nodes can thus designate distinct levels of
+            organization, whereas edges linking these nodes can describe
+            a variety of interaction measures. When using a Boolean
+            representation of biotic interactions, the observation that
+            one individual from group (or node) <span
+            class="math inline"><em>i</em></span> interacts with another
+            individual from group <span
             class="math inline"><em>j</em></span> is enough to set the
             interaction <span
             class="math inline"><em>A</em><sub><em>i</em>, <em>j</em></sub></span>
@@ -462,34 +462,33 @@ probabilistic food webs</div>
             data-cites="Pascual2006Ecologicala">(Pascual <em>et al.</em>
             2006)</span> even though it overlooks important factors
             regarding interaction strengths. These, in turn, can be
-            represented using weighted interactions, which better
+            represented using quantitative interactions, which better
             describe the energy flows, demographic impacts or
             frequencies of interactions between nodes <span
             class="citation"
             data-cites="Berlow2004Interaction Borrett2019Walk">(Berlow
             <em>et al.</em> 2004; Borrett &amp; Scharler 2019)</span>,
             with <span
-            class="math inline"><em>A</em><sub><em>i</em>, <em>j</em></sub> ∈ ℕ</span>
-            or <span class="math inline">ℝ</span> depending on the
-            measure. For example, they can be used to estimate the
-            average number of prey individuals consumed by the predators
-            in a given time period (e.g., the average number of fish in
-            the stomach of a piscivorous species). Interaction strengths
-            can also be used as good estimators of the parameters
-            describing species interactions in a Lotka-Volterra model
-            <span class="citation"
+            class="math inline"><em>A</em><sub><em>i</em>, <em>j</em></sub></span>
+            being a natural number <span class="math inline">ℕ</span> or
+            a real number <span class="math inline">ℝ</span> depending
+            on the measure. For example, they can be used to estimate
+            the average number of prey individuals consumed by the
+            predators in a given time period (e.g., the average number
+            of fish in the stomach of a piscivorous species).
+            Interaction strengths can also be used as good estimators of
+            the parameters describing species interactions in a
+            Lotka-Volterra model <span class="citation"
             data-cites="Emmerson2004Predatora">(e.g., Emmerson &amp;
             Raffaelli 2004)</span>. This extra amount of ecological
             information typically comes at a cost of greater sampling
             effort or data requirement in predictive models <span
             class="citation" data-cites="Strydom2021Roadmapa">(Strydom
             <em>et al.</em> 2021)</span>, which can lead to high
-            uncertainties when building these types of networks.
-            Therefore, important methodological and conceptual decisions
-            must be made when sampling and building food webs.</p>
+            uncertainties when building these networks.</p>
             <p>The uncertainty and spatiotemporal variability of both
-            types of trophic interactions (Boolean and weighted) can be
-            represented probabilistically. On one hand, Boolean
+            types of trophic interactions (Boolean and quantitative) can
+            be represented probabilistically. On one hand, Boolean
             interactions follow a Bernoulli distribution <span
             class="math inline">$A_{i,j} \sim {\rm
             Bernoulli}(p)$</span>, with <span
@@ -499,18 +498,19 @@ probabilistic food webs</div>
             class="math inline"><em>A</em><sub><em>i</em>, <em>j</em></sub> = 1</span>)
             or absence (<span
             class="math inline"><em>A</em><sub><em>i</em>, <em>j</em></sub> = 0</span>)
-            of an interaction between the two nodes. Weighted
+            of an interaction between the two nodes. Quantitative
             interactions, on the other hand, can follow various
             probability distributions depending on the measure used. In
             this case, the event’s outcome is the value of interaction
-            strength. For instance, weights can follow a Poisson
-            distribution <span class="math inline">$A_{i,j} \sim {\rm
+            strength. For instance, these interaction strengths can
+            follow a Poisson distribution <span
+            class="math inline">$A_{i,j} \sim {\rm
             Poisson}(\lambda)$</span> when predicting frequencies of
             interactions between pairs of nodes, with <span
             class="math inline"><em>λ</em></span> being the expected
-            rate of interaction. Note that weighted interactions can be
-            converted to probabilistic interactions by normalizing. The
-            definition and interpretation of parameters like <span
+            rate of interaction. Note that quantitative interactions can
+            be converted to probabilistic interactions by normalizing.
+            The definition and interpretation of parameters like <span
             class="math inline"><em>p</em></span> and <span
             class="math inline"><em>λ</em></span> are inextricably
             linked to environmental and biological factors such as
@@ -1041,7 +1041,7 @@ probabilistic food webs</div>
             class="math inline">1</span> and either represent the
             expected frequency of a phenomenon or the degree of belief
             that it will be realized. Non-probabilistic scores, which
-            are more akin to interaction weights, have different
+            are more akin to interaction strengths, have different
             mathematical properties, which impacts how we should handle
             these numbers in a spatially or temporally explicit context.
             Therefore, researchers should use their expertise to assess
@@ -1077,7 +1077,7 @@ probabilistic food webs</div>
             Services (BIOS²) program. A special thank to all members of
             the Black Holes and Revelations working group (organized by
             BIOS²) for their insightful discussions and valuable
-            feedbacks on this manuscript.</p>
+            feedback on this manuscript.</p>
             <h1 class="unnumbered" id="references">References</h1>
             <div id="refs"
             class="references csl-bib-body hanging-indent"
