@@ -55,7 +55,7 @@ there are important conceptual challenges in defining what we mean by
 "probability of interactions". To the best of our knowledge, because the
 building blocks of this mathematical representation of food webs are still being
 laid, there is no clear definition found in the literature or data standard when
-it comes to publishing data on probabilistic interactions [see @Salim2022DatSta
+it comes to publishing data on probabilistic interactions [see @Salim2022Data
 for a discussion on data standardization for mutualistic networks]. This is
 worrisome, since working with probabilistic species interactions without clear
 guidelines could be misleading as much for field ecologists as for computational
@@ -100,8 +100,8 @@ the measure. For example, they can be used to estimate the average number of
 prey individuals consumed by the predators in a given time period (e.g., the
 average number of fish in the stomach of a piscivorous species). Interaction
 strengths can also be used as good estimators of the parameters describing
-species interactions in a Lotka-Volterra model [e.g., @Emmerson2004PrePre]. This
-extra amount of ecological information typically comes at a cost of greater
+species interactions in a Lotka-Volterra model [e.g., @Emmerson2004Predatora].
+This extra amount of ecological information typically comes at a cost of greater
 sampling effort or data requirement in predictive models [@Strydom2021Roadmapa],
 which can lead to high uncertainties when building these types of networks.
 Therefore, important methodological and conceptual decisions must be made when
@@ -334,11 +334,11 @@ network of area $A_1 < A_0$ within $A_0$. We should expect the probability that
 $i$ and $j$ interacts to scale spatially, i.e. $P_{N_1}(i \rightarrow j | A <
 A_0) \le P_{N_0}(i \rightarrow j | A = A_0)$. Similarly, the temporal scaling of
 probabilistic local food webs could be manifested through the effect of sampling
-effort on the observation of interactions [@Jordano2016SamNet;
+effort on the observation of interactions [@Jordano2016Samplingb;
 @McLeod2021Sampling] or of time itself on their realization
 [@Poisot2012Dissimilaritya]. There are many network-area relationships [e.g.,
-@Wood2015Effects; @Galiana2018SpaSca] and interaction accumulation curves [e.g,
-@Jordano2016SamNet] explored in the literature. These could inspire the
+@Wood2015Effects; @Galiana2018Spatiala] and interaction accumulation curves
+[e.g, @Jordano2016Samplingb] explored in the literature. These could inspire the
 development and testing of different equations describing the spatiotemporal
 scaling of probabilistic pairwise interactions in local networks, which are over
 the scope of this manuscript. 
@@ -351,9 +351,9 @@ metawebs and local food webs into Boolean networks.
 
 The variability of species interactions spurred the development of methods
 aiming at predicting ecological networks at fine spatial and temporal scales.
-For example, @Bohan2017NexGlo proposed a framework to reconstruct networks in
-real time using continuous biomonitoring. Here, we will build on these studies
-by proposing a simple model to make probabilistic local networks
+For example, @Bohan2017Nextgenerationa proposed a framework to reconstruct
+networks in real time using continuous biomonitoring. Here, we will build on
+these studies by proposing a simple model to make probabilistic local networks
 spatiotemporally explicit. These types of models could prove useful when
 inferring food webs across time and space from sparse data. However, they are
 not suitable for metawebs, which are static objects.
@@ -386,18 +386,18 @@ behaviours and dynamics can be observed and distinct ecological questions can be
 answered (e.g., exploring evolutionary dynamics at broad taxonomic scales).
 Because of these reasons, it could be important to analyse the same network at
 different taxonomic scales. However, we want to emphasize here that many
-networks do not have an homogenous level of organisation [@VazquezSS2022EcoInt].
-Indeed, different nodes within the same network can be represented at different
-taxonomic scales (e.g., a network composed of species and trophic species). This
-becomes important when we consider that the biological interpretation of
-interaction probabilities depends on the nodes' resolution. For example, in
-individual-based networks, the probability that two individuals interact could
-represent the degree of belief that one will actually consume the other. In
-species-based networks, the probability that two species interact could rather
-represent the degree of belief that *at least* one individual from the predator
-species will eat *at least* another individual from the prey species. This
-distinction in interpretation impacts the way probability values change with
-taxonomic scale. 
+networks do not have an homogenous level of organisation
+[@VazquezSS2022Ecological]. Indeed, different nodes within the same network can
+be represented at different taxonomic scales (e.g., a network composed of
+species and trophic species). This becomes important when we consider that the
+biological interpretation of interaction probabilities depends on the nodes'
+resolution. For example, in individual-based networks, the probability that two
+individuals interact could represent the degree of belief that one will actually
+consume the other. In species-based networks, the probability that two species
+interact could rather represent the degree of belief that *at least* one
+individual from the predator species will eat *at least* another individual from
+the prey species. This distinction in interpretation impacts the way probability
+values change with taxonomic scale. 
 
 There are a lot of similarities between taxonomic and spatiotemporal scaling of
 probabilistic interactions. Fundamentally, these types of scaling are just
