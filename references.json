@@ -1,6 +1,15 @@
 [
     {
-        "DOI": "10.1038/s41598-020-67666-3",
+        "publisher": "Nature Publishing Group",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2020
+                ]
+            ]
+        },
+        "container-title": "Scientific Reports",
         "author": [
             {
                 "family": "Andrade-Pacheco",
@@ -19,7 +28,7 @@
                 "given": "Leda"
             },
             {
-                "family": "Me\u00eft\u00e9",
+                "family": "Meïté",
                 "given": "Aboulaye"
             },
             {
@@ -28,7 +37,7 @@
             },
             {
                 "family": "Bibaut",
-                "given": "Aur\u00e9lien F."
+                "given": "Aurélien F."
             },
             {
                 "family": "Laan",
@@ -44,24 +53,25 @@
                 "given": "Hugh J. W."
             }
         ],
-        "container-title": "Scientific Reports",
         "id": "Andrade-Pacheco2020Finding",
-        "issue": "1",
+        "DOI": "10.1038/s41598-020-67666-3",
+        "volume": "10",
+        "page": "10939",
+        "title": "Finding hotspots: Development of an adaptive spatial sampling approach",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "Wiley",
+        "issue": "6",
+        "publisher-place": "Hoboken",
         "issued": {
             "date-parts": [
                 [
-                    2020
+                    2011
                 ]
             ]
         },
-        "page": "10939",
-        "publisher": "Nature Publishing Group",
-        "title": "Finding hotspots: Development of an adaptive spatial sampling approach",
-        "type": "article-journal",
-        "volume": "10"
-    },
-    {
-        "DOI": "10.1111/j.1600-0587.2011.06919.x",
+        "container-title": "Ecography",
         "author": [
             {
                 "family": "Araujo",
@@ -80,25 +90,23 @@
                 "given": "Pablo A."
             }
         ],
-        "container-title": "Ecography",
         "id": "Araujo2011Usinga",
-        "issue": "6",
+        "DOI": "10.1111/j.1600-0587.2011.06919.x",
+        "volume": "34",
+        "page": "897-908",
+        "title": "Using species co-occurrence networks to assess the impacts of climate change",
+        "type": "article-journal"
+    },
+    {
+        "issue": "3",
         "issued": {
             "date-parts": [
                 [
-                    2011
+                    2004
                 ]
             ]
         },
-        "page": "897-908",
-        "publisher": "Wiley",
-        "publisher-place": "Hoboken",
-        "title": "Using species co-occurrence networks to assess the impacts of climate change",
-        "type": "article-journal",
-        "volume": "34"
-    },
-    {
-        "DOI": "10.1111/j.0021-8790.2004.00833.x",
+        "container-title": "Journal of Animal Ecology",
         "author": [
             {
                 "family": "Berlow",
@@ -157,23 +165,23 @@
                 "given": "Owen"
             }
         ],
-        "container-title": "Journal of Animal Ecology",
         "id": "Berlow2004Interaction",
+        "DOI": "10.1111/j.0021-8790.2004.00833.x",
+        "volume": "73",
+        "page": "585-598",
+        "title": "Interaction strengths in food webs: Issues and opportunities",
+        "type": "article-journal"
+    },
+    {
         "issue": "3",
         "issued": {
             "date-parts": [
                 [
-                    2004
+                    2007
                 ]
             ]
         },
-        "page": "585-598",
-        "title": "Interaction strengths in food webs: Issues and opportunities",
-        "type": "article-journal",
-        "volume": "73"
-    },
-    {
-        "DOI": "10.1016/j.tree.2006.11.004",
+        "container-title": "Trends in Ecology & Evolution",
         "author": [
             {
                 "family": "Bickford",
@@ -208,23 +216,25 @@
                 "given": "Indraneil"
             }
         ],
-        "container-title": "Trends in Ecology & Evolution",
         "id": "Bickford2007Cryptic",
-        "issue": "3",
+        "DOI": "10.1016/j.tree.2006.11.004",
+        "volume": "22",
+        "page": "148-155",
+        "title": "Cryptic species as a window on diversity and conservation",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "Wiley",
+        "issue": "7",
+        "publisher-place": "Hoboken",
         "issued": {
             "date-parts": [
                 [
-                    2007
+                    2020
                 ]
             ]
         },
-        "page": "148-155",
-        "title": "Cryptic species as a window on diversity and conservation",
-        "type": "article-journal",
-        "volume": "22"
-    },
-    {
-        "DOI": "10.1111/ele.13525",
+        "container-title": "Ecology Letters",
         "author": [
             {
                 "family": "Blanchet",
@@ -239,25 +249,25 @@
                 "given": "Dominique"
             }
         ],
-        "container-title": "Ecology Letters",
         "id": "Blanchet2020Cooccurrencea",
+        "DOI": "10.1111/ele.13525",
+        "volume": "23",
+        "page": "1050-1063",
+        "title": "Co-occurrence is not evidence of ecological interactions",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "Elsevier Science London",
         "issue": "7",
+        "publisher-place": "London",
         "issued": {
             "date-parts": [
                 [
-                    2020
+                    2017
                 ]
             ]
         },
-        "page": "1050-1063",
-        "publisher": "Wiley",
-        "publisher-place": "Hoboken",
-        "title": "Co-occurrence is not evidence of ecological interactions",
-        "type": "article-journal",
-        "volume": "23"
-    },
-    {
-        "DOI": "10.1016/j.tree.2017.03.001",
+        "container-title": "Trends in Ecology & Evolution",
         "author": [
             {
                 "family": "Bohan",
@@ -284,25 +294,24 @@
                 "given": "Guy"
             }
         ],
-        "container-title": "Trends in Ecology & Evolution",
-        "id": "Bohan2017NexGlo",
-        "issue": "7",
+        "id": "Bohan2017Nextgenerationa",
+        "DOI": "10.1016/j.tree.2017.03.001",
+        "volume": "32",
+        "page": "477-487",
+        "title": "Next-Generation Global Biomonitoring: Large-scale, Automated Reconstruction of Ecological Networks",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "Elsevier",
+        "publisher-place": "Amsterdam",
         "issued": {
             "date-parts": [
                 [
-                    2017
+                    2019
                 ]
             ]
         },
-        "page": "477-487",
-        "publisher": "Elsevier Science London",
-        "publisher-place": "London",
-        "title": "Next-Generation Global Biomonitoring: Large-scale, Automated Reconstruction of Ecological Networks",
-        "type": "article-journal",
-        "volume": "32"
-    },
-    {
-        "DOI": "10.1016/j.ecolind.2019.105451",
+        "container-title": "Ecological Indicators",
         "author": [
             {
                 "family": "Borrett",
@@ -313,21 +322,12 @@
                 "given": "Ursula M."
             }
         ],
-        "container-title": "Ecological Indicators",
         "id": "Borrett2019Walk",
-        "issued": {
-            "date-parts": [
-                [
-                    2019
-                ]
-            ]
-        },
+        "DOI": "10.1016/j.ecolind.2019.105451",
+        "volume": "106",
         "page": "105451",
-        "publisher": "Elsevier",
-        "publisher-place": "Amsterdam",
         "title": "Walk partitions of flow in Ecological Network Analysis: Review and synthesis of methods and indicators",
-        "type": "article-journal",
-        "volume": "106"
+        "type": "article-journal"
     },
     {
         "DOI": "10.1111/geb.13593",
@@ -350,18 +350,27 @@
             },
             {
                 "family": "Fortin",
-                "given": "Marie-Jos\u00e9e"
+                "given": "Marie-Josée"
             }
         ],
-        "container-title": "Global Ecology and Biogeography",
-        "id": "BrimacombeNoStr",
         "issue": "n/a",
+        "volume": "n/a",
+        "id": "BrimacombeNoStr",
         "title": "No strong evidence that modularity, specialization or nestedness are linked to seasonal climatic variability in bipartite networks",
-        "type": "article-journal",
-        "volume": "n/a"
+        "container-title": "Global Ecology and Biogeography",
+        "type": "article-journal"
     },
     {
-        "DOI": "10.1371/journal.pone.0038295",
+        "publisher": "Public Library of Science",
+        "issue": "8",
+        "issued": {
+            "date-parts": [
+                [
+                    2012
+                ]
+            ]
+        },
+        "container-title": "PLOS ONE",
         "author": [
             {
                 "family": "Canard",
@@ -388,24 +397,24 @@
                 "given": "David"
             }
         ],
-        "container-title": "PLOS ONE",
         "id": "Canard2012Emergencea",
-        "issue": "8",
+        "DOI": "10.1371/journal.pone.0038295",
+        "volume": "7",
+        "page": "e38295",
+        "title": "Emergence of Structural Patterns in Neutral Trophic Networks",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "The University of Chicago Press",
+        "issue": "4",
         "issued": {
             "date-parts": [
                 [
-                    2012
+                    2014
                 ]
             ]
         },
-        "page": "e38295",
-        "publisher": "Public Library of Science",
-        "title": "Emergence of Structural Patterns in Neutral Trophic Networks",
-        "type": "article-journal",
-        "volume": "7"
-    },
-    {
-        "DOI": "10.1086/675363",
+        "container-title": "The American Naturalist",
         "author": [
             {
                 "family": "Canard",
@@ -432,23 +441,15 @@
                 "given": "D."
             }
         ],
-        "container-title": "The American Naturalist",
         "id": "Canard2014Empiricala",
-        "issue": "4",
-        "issued": {
-            "date-parts": [
-                [
-                    2014
-                ]
-            ]
-        },
+        "DOI": "10.1086/675363",
+        "volume": "183",
         "page": "468-479",
-        "publisher": "The University of Chicago Press",
         "title": "Empirical Evaluation of Neutral Interactions in Host-Parasite Networks.",
-        "type": "article-journal",
-        "volume": "183"
+        "type": "article-journal"
     },
     {
+        "publisher": "EcoEvoRxiv",
         "author": [
             {
                 "family": "Catchen",
@@ -456,7 +457,7 @@
             },
             {
                 "family": "Poisot",
-                "given": "Timoth\u00e9e"
+                "given": "Timothée"
             },
             {
                 "family": "Pollock",
@@ -468,6 +469,7 @@
             }
         ],
         "id": "Catchen2023Missinga",
+        "title": "The missing link: Discerning true from false negatives when sampling species interaction networks",
         "issued": {
             "date-parts": [
                 [
@@ -475,12 +477,20 @@
                 ]
             ]
         },
-        "publisher": "EcoEvoRxiv",
-        "title": "The missing link: Discerning true from false negatives when sampling species interaction networks",
         "type": "article-journal"
     },
     {
-        "DOI": "10.1007/s12080-015-0281-9",
+        "publisher": "Springer Heidelberg",
+        "issue": "1",
+        "publisher-place": "Heidelberg",
+        "issued": {
+            "date-parts": [
+                [
+                    2016
+                ]
+            ]
+        },
+        "container-title": "Theoretical Ecology",
         "author": [
             {
                 "family": "Cazelles",
@@ -499,25 +509,23 @@
                 "given": "Dominique"
             }
         ],
-        "container-title": "Theoretical Ecology",
         "id": "Cazelles2016Theorya",
+        "DOI": "10.1007/s12080-015-0281-9",
+        "volume": "9",
+        "page": "39-48",
+        "title": "A theory for species co-occurrence in interaction networks",
+        "type": "article-journal"
+    },
+    {
         "issue": "1",
         "issued": {
             "date-parts": [
                 [
-                    2016
+                    2019
                 ]
             ]
         },
-        "page": "39-48",
-        "publisher": "Springer Heidelberg",
-        "publisher-place": "Heidelberg",
-        "title": "A theory for species co-occurrence in interaction networks",
-        "type": "article-journal",
-        "volume": "9"
-    },
-    {
-        "DOI": "10.1111/brv.12433",
+        "container-title": "Biological Reviews",
         "author": [
             {
                 "family": "Delmas",
@@ -529,7 +537,7 @@
             },
             {
                 "family": "Brice",
-                "given": "Marie-H\u00e9l\u00e8ne"
+                "given": "Marie-Hélène"
             },
             {
                 "family": "Burkle",
@@ -541,14 +549,14 @@
             },
             {
                 "family": "Fortin",
-                "given": "Marie-Jos\u00e9e"
+                "given": "Marie-Josée"
             },
             {
                 "family": "Gravel",
                 "given": "Dominique"
             },
             {
-                "family": "Guimar\u00e3es Jr.",
+                "family": "Guimarães Jr.",
                 "given": "Paulo R."
             },
             {
@@ -573,32 +581,27 @@
             },
             {
                 "family": "Poisot",
-                "given": "Timoth\u00e9e"
+                "given": "Timothée"
             }
         ],
-        "container-title": "Biological Reviews",
         "id": "Delmas2019Analysing",
-        "issue": "1",
-        "issued": {
-            "date-parts": [
-                [
-                    2019
-                ]
-            ]
-        },
+        "DOI": "10.1111/brv.12433",
+        "volume": "94",
         "page": "16-36",
         "title": "Analysing ecological networks of species interactions",
-        "type": "article-journal",
-        "volume": "94"
+        "type": "article-journal"
     },
     {
+        "publisher": "Oxford University Press",
         "author": [
             {
                 "family": "Dunne",
                 "given": "Jennifer A"
             }
         ],
-        "container-title": "Ecological networks: Linking structure and dynamics",
+        "id": "Dunne2006Network",
+        "page": "27-86",
+        "title": "The Network Structure of Food Webs",
         "editor": [
             {
                 "family": "Dunne",
@@ -609,7 +612,6 @@
                 "given": "Mercedes"
             }
         ],
-        "id": "Dunne2006Network",
         "issued": {
             "date-parts": [
                 [
@@ -617,18 +619,20 @@
                 ]
             ]
         },
-        "page": "27-86",
-        "publisher": "Oxford University Press",
-        "title": "The Network Structure of Food Webs",
+        "container-title": "Ecological networks: Linking structure and dynamics",
         "type": "chapter"
     },
     {
+        "publisher": "University of Chicago Press",
         "author": [
             {
                 "family": "Elton",
                 "given": "Charles S."
             }
         ],
+        "publisher-place": "Chicago, IL",
+        "id": "Elton2001Animal",
+        "title": "Animal Ecology",
         "editor": [
             {
                 "family": "Leibold",
@@ -639,7 +643,6 @@
                 "given": "Timothy J."
             }
         ],
-        "id": "Elton2001Animal",
         "issued": {
             "date-parts": [
                 [
@@ -647,13 +650,18 @@
                 ]
             ]
         },
-        "publisher": "University of Chicago Press",
-        "publisher-place": "Chicago, IL",
-        "title": "Animal Ecology",
         "type": "book"
     },
     {
-        "DOI": "10.1111/j.0021-8790.2004.00818.x",
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2004
+                ]
+            ]
+        },
+        "container-title": "Journal of Animal Ecology",
         "author": [
             {
                 "family": "Emmerson",
@@ -664,23 +672,24 @@
                 "given": "Dave"
             }
         ],
-        "container-title": "Journal of Animal Ecology",
-        "id": "Emmerson2004PrePre",
-        "issue": "3",
+        "id": "Emmerson2004Predatora",
+        "DOI": "10.1111/j.0021-8790.2004.00818.x",
+        "volume": "73",
+        "page": "399-409",
+        "title": "Predatorprey body size, interaction strength and the stability of a real food web",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "Nature Publishing Group",
+        "issue": "5",
         "issued": {
             "date-parts": [
                 [
-                    2004
+                    2018
                 ]
             ]
         },
-        "page": "399-409",
-        "title": "Predatorprey body size, interaction strength and the stability of a real food web",
-        "type": "article-journal",
-        "volume": "73"
-    },
-    {
-        "DOI": "10.1038/s41559-018-0517-3",
+        "container-title": "Nature Ecology & Evolution",
         "author": [
             {
                 "family": "Galiana",
@@ -691,12 +700,12 @@
                 "given": "Miguel"
             },
             {
-                "family": "Claramunt-L\u00f3pez",
+                "family": "Claramunt-López",
                 "given": "Bernat"
             },
             {
                 "family": "Fortin",
-                "given": "Marie-Jos\u00e9e"
+                "given": "Marie-Josée"
             },
             {
                 "family": "Leroux",
@@ -712,27 +721,26 @@
             },
             {
                 "family": "Montoya",
-                "given": "Jos\u00e9 M."
+                "given": "José M."
             }
         ],
-        "container-title": "Nature Ecology & Evolution",
-        "id": "Galiana2018SpaSca",
-        "issue": "5",
+        "id": "Galiana2018Spatiala",
+        "DOI": "10.1038/s41559-018-0517-3",
+        "volume": "2",
+        "page": "782-790",
+        "title": "The spatial scaling of species interaction networks",
+        "type": "article-journal"
+    },
+    {
+        "issue": "n/a",
         "issued": {
             "date-parts": [
                 [
-                    2018
+                    2022
                 ]
             ]
         },
-        "page": "782-790",
-        "publisher": "Nature Publishing Group",
-        "title": "The spatial scaling of species interaction networks",
-        "type": "article-journal",
-        "volume": "2"
-    },
-    {
-        "DOI": "10.1111/oik.09282",
+        "container-title": "Oikos",
         "author": [
             {
                 "family": "Godsoe",
@@ -747,23 +755,25 @@
                 "given": "Ryosuke"
             }
         ],
-        "container-title": "Oikos",
         "id": "Godsoe2022Species",
-        "issue": "n/a",
+        "DOI": "10.1111/oik.09282",
+        "volume": "n/a",
+        "page": "e09282",
+        "title": "Species interactions and diversity: A unified framework using Hill numbers",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "Elsevier Science London",
+        "issue": "9",
+        "publisher-place": "London",
         "issued": {
             "date-parts": [
                 [
-                    2022
+                    2016
                 ]
             ]
         },
-        "page": "e09282",
-        "title": "Species interactions and diversity: A unified framework using Hill numbers",
-        "type": "article-journal",
-        "volume": "n/a"
-    },
-    {
-        "DOI": "10.1016/j.tree.2016.06.009",
+        "container-title": "Trends in Ecology & Evolution",
         "author": [
             {
                 "family": "Gonzalez-Varo",
@@ -774,33 +784,15 @@
                 "given": "Anna"
             }
         ],
-        "container-title": "Trends in Ecology & Evolution",
         "id": "Gonzalez-Varo2016Labilea",
-        "issue": "9",
-        "issued": {
-            "date-parts": [
-                [
-                    2016
-                ]
-            ]
-        },
+        "DOI": "10.1016/j.tree.2016.06.009",
+        "volume": "31",
         "page": "700-710",
-        "publisher": "Elsevier Science London",
-        "publisher-place": "London",
         "title": "The Labile Limits of Forbidden Interactions",
-        "type": "article-journal",
-        "volume": "31"
+        "type": "article-journal"
     },
     {
-        "DOI": "10.1146/annurev-ecolsys-012220-120819",
-        "author": [
-            {
-                "family": "Guimar\u00e3es",
-                "given": "Paulo R."
-            }
-        ],
-        "container-title": "Annual Review of Ecology, Evolution, and Systematics",
-        "id": "Guimaraes2020Structurea",
+        "publisher": "Annual Reviews",
         "issue": "1",
         "issued": {
             "date-parts": [
@@ -809,15 +801,31 @@
                 ]
             ]
         },
-        "other-ids": "Guim20,Guim20a",
+        "container-title": "Annual Review of Ecology, Evolution, and Systematics",
+        "author": [
+            {
+                "family": "Guimarães",
+                "given": "Paulo R."
+            }
+        ],
+        "id": "Guimaraes2020Structurea",
+        "DOI": "10.1146/annurev-ecolsys-012220-120819",
+        "volume": "51",
         "page": "433-460",
-        "publisher": "Annual Reviews",
         "title": "The Structure of Ecological Networks Across Levels of Organization",
-        "type": "article-journal",
-        "volume": "51"
+        "other-ids": "Guim20,Guim20a",
+        "type": "article-journal"
     },
     {
-        "DOI": "10.1046/j.1461-0248.2003.00403.x",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2003
+                ]
+            ]
+        },
+        "container-title": "Ecology Letters",
         "author": [
             {
                 "family": "Jordano",
@@ -832,31 +840,14 @@
                 "given": "Jens M."
             }
         ],
-        "container-title": "Ecology Letters",
         "id": "Jordano2003Invarianta",
-        "issue": "1",
-        "issued": {
-            "date-parts": [
-                [
-                    2003
-                ]
-            ]
-        },
+        "DOI": "10.1046/j.1461-0248.2003.00403.x",
+        "volume": "6",
         "page": "69-81",
         "title": "Invariant properties in coevolutionary networks of plantanimal interactions",
-        "type": "article-journal",
-        "volume": "6"
+        "type": "article-journal"
     },
     {
-        "DOI": "10.1111/1365-2435.12763",
-        "author": [
-            {
-                "family": "Jordano",
-                "given": "Pedro"
-            }
-        ],
-        "container-title": "Functional Ecology",
-        "id": "Jordano2016SamNet",
         "issue": "12",
         "issued": {
             "date-parts": [
@@ -865,13 +856,30 @@
                 ]
             ]
         },
+        "container-title": "Functional Ecology",
+        "author": [
+            {
+                "family": "Jordano",
+                "given": "Pedro"
+            }
+        ],
+        "id": "Jordano2016Samplingb",
+        "DOI": "10.1111/1365-2435.12763",
+        "volume": "30",
         "page": "1883-1893",
         "title": "Sampling networks of ecological interactions",
-        "type": "article-journal",
-        "volume": "30"
+        "type": "article-journal"
     },
     {
-        "DOI": "10.1002/ecs2.3018",
+        "issue": "2",
+        "issued": {
+            "date-parts": [
+                [
+                    2020
+                ]
+            ]
+        },
+        "container-title": "Ecosphere",
         "author": [
             {
                 "family": "McLeod",
@@ -886,24 +894,24 @@
                 "given": "Cindy"
             }
         ],
-        "container-title": "Ecosphere",
         "id": "McLeod2020EffSpe",
-        "issue": "2",
+        "DOI": "10.1002/ecs2.3018",
+        "volume": "11",
+        "page": "e03018",
+        "title": "Effects of species traits, motif profiles, and environment on spatial variation in multi-trophic antagonistic networks",
+        "other-ids": "McLeod2020EffSpea",
+        "type": "article-journal"
+    },
+    {
+        "issue": "n/a",
         "issued": {
             "date-parts": [
                 [
-                    2020
+                    2021
                 ]
             ]
         },
-        "other-ids": "McLeod2020EffSpea",
-        "page": "e03018",
-        "title": "Effects of species traits, motif profiles, and environment on spatial variation in multi-trophic antagonistic networks",
-        "type": "article-journal",
-        "volume": "11"
-    },
-    {
-        "DOI": "10.1111/oik.08650",
+        "container-title": "Oikos",
         "author": [
             {
                 "family": "McLeod",
@@ -927,37 +935,37 @@
             },
             {
                 "family": "Fortin",
-                "given": "Marie-Jos\u00e9e"
+                "given": "Marie-Josée"
             },
             {
                 "family": "Galiana",
-                "given": "N\u00faria"
+                "given": "Núria"
             },
             {
                 "family": "Poisot",
-                "given": "Timoth\u00e9e"
+                "given": "Timothée"
             },
             {
                 "family": "Wood",
                 "given": "Spencer A."
             }
         ],
-        "container-title": "Oikos",
         "id": "McLeod2021Sampling",
-        "issue": "n/a",
+        "DOI": "10.1111/oik.08650",
+        "volume": "n/a",
+        "title": "Sampling and asymptotic network properties of spatial multi-trophic networks",
+        "type": "article-journal"
+    },
+    {
+        "issue": "4",
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2019
                 ]
             ]
         },
-        "title": "Sampling and asymptotic network properties of spatial multi-trophic networks",
-        "type": "article-journal",
-        "volume": "n/a"
-    },
-    {
-        "DOI": "10.1111/ele.13221",
+        "container-title": "Ecology Letters",
         "author": [
             {
                 "family": "Ohlmann",
@@ -969,14 +977,14 @@
             },
             {
                 "family": "Dray",
-                "given": "St\u00e9phane"
+                "given": "Stéphane"
             },
             {
                 "family": "Chalmandrier",
-                "given": "Lo\u00efc"
+                "given": "Loïc"
             },
             {
-                "family": "O\u2019Connor",
+                "family": "O’Connor",
                 "given": "Louise"
             },
             {
@@ -984,23 +992,24 @@
                 "given": "Wilfried"
             }
         ],
-        "container-title": "Ecology Letters",
         "id": "Ohlmann2019Diversity",
-        "issue": "4",
+        "DOI": "10.1111/ele.13221",
+        "volume": "22",
+        "page": "737-747",
+        "title": "Diversity indices for ecological networks: A unifying framework using Hill numbers",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "Royal Society",
+        "issue": "1706",
         "issued": {
             "date-parts": [
                 [
-                    2019
+                    2010
                 ]
             ]
         },
-        "page": "737-747",
-        "title": "Diversity indices for ecological networks: A unifying framework using Hill numbers",
-        "type": "article-journal",
-        "volume": "22"
-    },
-    {
-        "DOI": "10.1098/rspb.2010.1371",
+        "container-title": "Proceedings of the Royal Society B: Biological Sciences",
         "author": [
             {
                 "family": "Olesen",
@@ -1027,23 +1036,15 @@
                 "given": "Pedro"
             }
         ],
-        "container-title": "Proceedings of the Royal Society B: Biological Sciences",
         "id": "Olesen2010Missing",
-        "issue": "1706",
-        "issued": {
-            "date-parts": [
-                [
-                    2010
-                ]
-            ]
-        },
+        "DOI": "10.1098/rspb.2010.1371",
+        "volume": "278",
         "page": "725-732",
-        "publisher": "Royal Society",
         "title": "Missing and forbidden links in mutualistic networks",
-        "type": "article-journal",
-        "volume": "278"
+        "type": "article-journal"
     },
     {
+        "publisher": "Oxford University Press, USA",
         "author": [
             {
                 "family": "Pascual",
@@ -1059,6 +1060,7 @@
             }
         ],
         "id": "Pascual2006Ecologicala",
+        "title": "Ecological Networks: Linking Structure to Dynamics in Food Webs",
         "issued": {
             "date-parts": [
                 [
@@ -1066,12 +1068,20 @@
                 ]
             ]
         },
-        "publisher": "Oxford University Press, USA",
-        "title": "Ecological Networks: Linking Structure to Dynamics in Food Webs",
         "type": "book"
     },
     {
-        "DOI": "10.1111/ele.12002",
+        "publisher": "Wiley",
+        "issue": "12",
+        "publisher-place": "Hoboken",
+        "issued": {
+            "date-parts": [
+                [
+                    2012
+                ]
+            ]
+        },
+        "container-title": "Ecology Letters",
         "author": [
             {
                 "family": "Poisot",
@@ -1094,25 +1104,25 @@
                 "given": "Dominique"
             }
         ],
-        "container-title": "Ecology Letters",
         "id": "Poisot2012Dissimilaritya",
-        "issue": "12",
+        "DOI": "10.1111/ele.12002",
+        "volume": "15",
+        "page": "1353-1361",
+        "title": "The dissimilarity of species interaction networks",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "Wiley",
+        "issue": "3",
+        "publisher-place": "Hoboken",
         "issued": {
             "date-parts": [
                 [
-                    2012
+                    2015
                 ]
             ]
         },
-        "page": "1353-1361",
-        "publisher": "Wiley",
-        "publisher-place": "Hoboken",
-        "title": "The dissimilarity of species interaction networks",
-        "type": "article-journal",
-        "volume": "15"
-    },
-    {
-        "DOI": "10.1111/oik.01719",
+        "container-title": "Oikos",
         "author": [
             {
                 "family": "Poisot",
@@ -1127,53 +1137,14 @@
                 "given": "Dominique"
             }
         ],
-        "container-title": "Oikos",
         "id": "Poisot2015Speciesa",
-        "issue": "3",
-        "issued": {
-            "date-parts": [
-                [
-                    2015
-                ]
-            ]
-        },
+        "DOI": "10.1111/oik.01719",
+        "volume": "124",
         "page": "243-251",
-        "publisher": "Wiley",
-        "publisher-place": "Hoboken",
         "title": "Beyond species: Why ecological interaction networks vary through space and time",
-        "type": "article-journal",
-        "volume": "124"
+        "type": "article-journal"
     },
     {
-        "DOI": "10.1111/2041-210X.12468",
-        "author": [
-            {
-                "family": "Poisot",
-                "given": "Timoth\u00e9e"
-            },
-            {
-                "family": "Cirtwill",
-                "given": "Alyssa R."
-            },
-            {
-                "family": "Cazelles",
-                "given": "K\u00e9vin"
-            },
-            {
-                "family": "Gravel",
-                "given": "Dominique"
-            },
-            {
-                "family": "Fortin",
-                "given": "Marie-Jos\u00e9e"
-            },
-            {
-                "family": "Stouffer",
-                "given": "Daniel B."
-            }
-        ],
-        "container-title": "Methods in Ecology and Evolution",
-        "id": "Poisot2016Structure",
         "issue": "3",
         "issued": {
             "date-parts": [
@@ -1182,13 +1153,43 @@
                 ]
             ]
         },
+        "container-title": "Methods in Ecology and Evolution",
+        "author": [
+            {
+                "family": "Poisot",
+                "given": "Timothée"
+            },
+            {
+                "family": "Cirtwill",
+                "given": "Alyssa R."
+            },
+            {
+                "family": "Cazelles",
+                "given": "Kévin"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Fortin",
+                "given": "Marie-Josée"
+            },
+            {
+                "family": "Stouffer",
+                "given": "Daniel B."
+            }
+        ],
+        "id": "Poisot2016Structure",
+        "DOI": "10.1111/2041-210X.12468",
+        "volume": "7",
         "page": "303-312",
         "title": "The structure of probabilistic networks",
-        "type": "article-journal",
-        "volume": "7"
+        "type": "article-journal"
     },
     {
         "DOI": "10.1146/annurev-ecolsys-110218-024908",
+        "volume": "51",
         "author": [
             {
                 "family": "Pringle",
@@ -1199,9 +1200,10 @@
                 "given": "Matthew C."
             }
         ],
-        "container-title": "Annual Review of Ecology, Evolution, and Systematics",
-        "id": "Pringle2020Resolving",
         "issue": "1",
+        "id": "Pringle2020Resolving",
+        "page": "55-80",
+        "title": "Resolving Food-Web Structure",
         "issued": {
             "date-parts": [
                 [
@@ -1209,13 +1211,19 @@
                 ]
             ]
         },
-        "page": "55-80",
-        "title": "Resolving Food-Web Structure",
-        "type": "article-journal",
-        "volume": "51"
+        "container-title": "Annual Review of Ecology, Evolution, and Systematics",
+        "type": "article-journal"
     },
     {
-        "DOI": "10.1016/j.tree.2005.04.004",
+        "issue": "6",
+        "issued": {
+            "date-parts": [
+                [
+                    2005
+                ]
+            ]
+        },
+        "container-title": "Trends in Ecology & Evolution",
         "author": [
             {
                 "family": "Proulx",
@@ -1230,32 +1238,16 @@
                 "given": "Patrick C."
             }
         ],
-        "collection-title": "SPECIAL issue: BUMPER book REVIEW",
-        "container-title": "Trends in Ecology & Evolution",
         "id": "Proulx2005Networka",
-        "issue": "6",
-        "issued": {
-            "date-parts": [
-                [
-                    2005
-                ]
-            ]
-        },
+        "collection-title": "SPECIAL ISSUE: BUMPER BOOK REVIEW",
+        "DOI": "10.1016/j.tree.2005.04.004",
+        "volume": "20",
         "page": "345-353",
         "title": "Network thinking in ecology and evolution",
-        "type": "article-journal",
-        "volume": "20"
+        "type": "article-journal"
     },
     {
-        "DOI": "10.1086/282885",
-        "author": [
-            {
-                "family": "Pulliam",
-                "given": "H. Ronald"
-            }
-        ],
-        "container-title": "The American Naturalist",
-        "id": "Pulliam1974Theory",
+        "publisher": "The University of Chicago Press",
         "issue": "959",
         "issued": {
             "date-parts": [
@@ -1264,18 +1256,26 @@
                 ]
             ]
         },
+        "container-title": "The American Naturalist",
+        "author": [
+            {
+                "family": "Pulliam",
+                "given": "H. Ronald"
+            }
+        ],
+        "id": "Pulliam1974Theory",
+        "DOI": "10.1086/282885",
+        "volume": "108",
         "page": "59-74",
-        "publisher": "The University of Chicago Press",
         "title": "On the Theory of Optimal Diets",
-        "type": "article-journal",
-        "volume": "108"
+        "type": "article-journal"
     },
     {
         "DOI": "10.1093/gigascience/giac043",
         "author": [
             {
                 "family": "Salim",
-                "given": "Jos\u00e9 A"
+                "given": "José A"
             },
             {
                 "family": "Saraiva",
@@ -1314,8 +1314,8 @@
                 "given": "Leandro"
             },
             {
-                "family": "Mau\u00e9s",
-                "given": "M\u00e1rcia M"
+                "family": "Maués",
+                "given": "Márcia M"
             },
             {
                 "family": "Rech",
@@ -1331,7 +1331,7 @@
             },
             {
                 "family": "Araujo",
-                "given": "Andr\u00e9a C"
+                "given": "Andréa C"
             },
             {
                 "family": "Nogueira",
@@ -1376,7 +1376,7 @@
             },
             {
                 "family": "Oliveira",
-                "given": "Fav\u00edzia F",
+                "given": "Favízia F",
                 "non-dropping-particle": "de"
             },
             {
@@ -1384,7 +1384,7 @@
                 "given": "Felipe W"
             },
             {
-                "family": "Font\u00farbel",
+                "family": "Fontúrbel",
                 "given": "Francisco E"
             },
             {
@@ -1394,7 +1394,7 @@
             },
             {
                 "family": "Consolaro",
-                "given": "H\u00e9lder"
+                "given": "Hélder"
             },
             {
                 "family": "Alves-dos-Santos",
@@ -1410,15 +1410,15 @@
             },
             {
                 "family": "Aleixo",
-                "given": "K\u00e1tia P"
+                "given": "Kátia P"
             },
             {
                 "family": "Carvalheiro",
-                "given": "Lu\u00edsa G"
+                "given": "Luísa G"
             },
             {
                 "family": "Rocca",
-                "given": "M\u00e1rcia A"
+                "given": "Márcia A"
             },
             {
                 "family": "Pinheiro",
@@ -1430,7 +1430,7 @@
             },
             {
                 "family": "Streher",
-                "given": "Nath\u00e1lia S"
+                "given": "Nathália S"
             },
             {
                 "family": "Ferreira",
@@ -1455,11 +1455,13 @@
             },
             {
                 "family": "Brito",
-                "given": "Vin\u00edcius L G"
+                "given": "Vinícius L G"
             }
         ],
-        "container-title": "GigaScience",
-        "id": "Salim2022DatSta",
+        "volume": "11",
+        "id": "Salim2022Data",
+        "page": "giac043",
+        "title": "Data standardization of plantpollinator interactions",
         "issued": {
             "date-parts": [
                 [
@@ -1467,13 +1469,19 @@
                 ]
             ]
         },
-        "page": "giac043",
-        "title": "Data standardization of plantpollinator interactions",
-        "type": "article-journal",
-        "volume": "11"
+        "container-title": "GigaScience",
+        "type": "article-journal"
     },
     {
-        "DOI": "10.1111/1365-2656.13652",
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2022
+                ]
+            ]
+        },
+        "container-title": "Journal of Animal Ecology",
         "author": [
             {
                 "family": "Saravia",
@@ -1481,7 +1489,7 @@
             },
             {
                 "family": "Marina",
-                "given": "Tom\u00e1s I."
+                "given": "Tomás I."
             },
             {
                 "family": "Kristensen",
@@ -1496,23 +1504,25 @@
                 "given": "Fernando R."
             }
         ],
-        "container-title": "Journal of Animal Ecology",
         "id": "Saravia2022Ecological",
-        "issue": "3",
+        "DOI": "10.1111/1365-2656.13652",
+        "volume": "91",
+        "page": "630-642",
+        "title": "Ecological network assembly: How the regional metaweb influences local food webs",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "Royal Soc",
+        "issue": "1837",
+        "publisher-place": "London",
         "issued": {
             "date-parts": [
                 [
-                    2022
+                    2021
                 ]
             ]
         },
-        "page": "630-642",
-        "title": "Ecological network assembly: How the regional metaweb influences local food webs",
-        "type": "article-journal",
-        "volume": "91"
-    },
-    {
-        "DOI": "10.1098/rstb.2021.0063",
+        "container-title": "Philosophical Transactions of the Royal Society B-Biological Sciences",
         "author": [
             {
                 "family": "Strydom",
@@ -1567,25 +1577,23 @@
                 "given": "Timothee"
             }
         ],
-        "container-title": "Philosophical Transactions of the Royal Society B-Biological Sciences",
         "id": "Strydom2021Roadmapa",
-        "issue": "1837",
+        "DOI": "10.1098/rstb.2021.0063",
+        "volume": "376",
+        "page": "20210063",
+        "title": "A roadmap towards predicting species interaction networks (across space and time)",
+        "type": "article-journal"
+    },
+    {
+        "issue": "12",
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2022
                 ]
             ]
         },
-        "page": "20210063",
-        "publisher": "Royal Soc",
-        "publisher-place": "London",
-        "title": "A roadmap towards predicting species interaction networks (across space and time)",
-        "type": "article-journal",
-        "volume": "376"
-    },
-    {
-        "DOI": "10.1111/2041-210X.13835",
+        "container-title": "Methods in Ecology and Evolution",
         "author": [
             {
                 "family": "Strydom",
@@ -1593,7 +1601,7 @@
             },
             {
                 "family": "Bouskila",
-                "given": "Salom\u00e9"
+                "given": "Salomé"
             },
             {
                 "family": "Banville",
@@ -1613,7 +1621,7 @@
             },
             {
                 "family": "Fortin",
-                "given": "Marie-Jos\u00e9e"
+                "given": "Marie-Josée"
             },
             {
                 "family": "Hemming",
@@ -1637,12 +1645,17 @@
             },
             {
                 "family": "Poisot",
-                "given": "Timoth\u00e9e"
+                "given": "Timothée"
             }
         ],
-        "container-title": "Methods in Ecology and Evolution",
         "id": "Strydom2022Food",
-        "issue": "12",
+        "DOI": "10.1111/2041-210X.13835",
+        "volume": "13",
+        "title": "Food web reconstruction through phylogenetic transfer of low-rank network representation",
+        "type": "article-journal"
+    },
+    {
+        "issue": "2bis",
         "issued": {
             "date-parts": [
                 [
@@ -1650,15 +1663,10 @@
                 ]
             ]
         },
-        "title": "Food web reconstruction through phylogenetic transfer of low-rank network representation",
-        "type": "article-journal",
-        "volume": "13"
-    },
-    {
-        "DOI": "10.25260/EA.22.32.2.1.1846",
+        "container-title": "Ecología Austral",
         "author": [
             {
-                "family": "V\u00e1zquez",
+                "family": "Vázquez",
                 "given": "Diego P."
             },
             {
@@ -1674,28 +1682,28 @@
                 "given": "Micaela"
             },
             {
-                "dropping-particle": "autores contribuyeron por",
                 "family": "Igual",
-                "given": " Estos"
+                "given": " Estos",
+                "dropping-particle": "autores contribuyeron por"
             }
         ],
-        "container-title": "Ecolog\u00eda Austral",
-        "id": "VazquezSS2022EcoInt",
-        "issue": "2bis",
+        "id": "VazquezSS2022Ecological",
+        "DOI": "10.25260/EA.22.32.2.1.1846",
+        "volume": "32",
+        "page": "670-697",
+        "title": "Ecological interaction networks. What we know, what we don’t, and why it matters",
+        "type": "article-journal"
+    },
+    {
+        "issue": "17",
         "issued": {
             "date-parts": [
                 [
-                    2022
+                    2015
                 ]
             ]
         },
-        "page": "670-697",
-        "title": "Ecological interaction networks. What we know, what we don\u2019t, and why it matters",
-        "type": "article-journal",
-        "volume": "32"
-    },
-    {
-        "DOI": "10.1002/ece3.1640",
+        "container-title": "Ecology and Evolution",
         "author": [
             {
                 "family": "Wood",
@@ -1718,19 +1726,11 @@
                 "given": "Jennifer A."
             }
         ],
-        "container-title": "Ecology and Evolution",
         "id": "Wood2015Effects",
-        "issue": "17",
-        "issued": {
-            "date-parts": [
-                [
-                    2015
-                ]
-            ]
-        },
+        "DOI": "10.1002/ece3.1640",
+        "volume": "5",
         "page": "3769-3782",
         "title": "Effects of spatial scale of sampling on food web structure",
-        "type": "article-journal",
-        "volume": "5"
+        "type": "article-journal"
     }
 ]
