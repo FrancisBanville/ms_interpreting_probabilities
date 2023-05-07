@@ -293,8 +293,8 @@ probabilistic interactions. This table illustrates the diversity of measures
 used to estimate probabilistic interactions and emphasizes the need to qualify
 interaction data before integrating and analyzing them.
 
-|   Formula                                    | Description | Studies | 
-| :------------------------------------------- | :---------- | ------: | 
+|   Formula  | Description | Studies | 
+| :------- | :----------------- | ------: | 
 | $P_M(i \rightarrow j)$                       | probability that the interaction is biologically feasible                                              |   |   
 | $P_N(i \rightarrow j)$                       | probability that the interaction is realized locally                                                   |   |    
 | $P_N(i \rightarrow j \vert A)$               | probability that the interaction is realized locally given the area                                    |   |   
