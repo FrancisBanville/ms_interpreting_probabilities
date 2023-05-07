@@ -1205,6 +1205,71 @@
         "type": "article-journal"
     },
     {
+        "publisher": "Blackwell Publishing Ltd",
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2019
+                ]
+            ]
+        },
+        "container-title": "Ecography",
+        "author": [
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Baiser",
+                "given": "Benjamin"
+            },
+            {
+                "family": "Dunne",
+                "given": "Jennifer A."
+            },
+            {
+                "family": "Kopelke",
+                "given": "Jens-Peter"
+            },
+            {
+                "family": "Martinez",
+                "given": "Neo D."
+            },
+            {
+                "family": "Nyman",
+                "given": "Tommi"
+            },
+            {
+                "family": "Poisot",
+                "given": "Timothée"
+            },
+            {
+                "family": "Stouffer",
+                "given": "Daniel B."
+            },
+            {
+                "family": "Tylianakis",
+                "given": "Jason M."
+            },
+            {
+                "family": "Wood",
+                "given": "Spencer A."
+            },
+            {
+                "family": "Roslin",
+                "given": "Tomas"
+            }
+        ],
+        "id": "Gravel2019BriElt",
+        "DOI": "10.1111/ecog.04006",
+        "volume": "42",
+        "page": "401-415",
+        "title": "Bringing Elton and Grinnell together: A quantitative framework to represent the biogeography of ecological interaction networks",
+        "other-ids": "GravBais19",
+        "type": "article-journal"
+    },
+    {
         "publisher": "Annual Reviews",
         "issue": "1",
         "issued": {
@@ -1356,6 +1421,85 @@
         "type": "article-journal"
     },
     {
+        "issue": "4",
+        "issued": {
+            "date-parts": [
+                [
+                    2012
+                ]
+            ]
+        },
+        "container-title": "Ecology Letters",
+        "author": [
+            {
+                "family": "Kéfi",
+                "given": "Sonia"
+            },
+            {
+                "family": "Berlow",
+                "given": "Eric L."
+            },
+            {
+                "family": "Wieters",
+                "given": "Evie A."
+            },
+            {
+                "family": "Navarrete",
+                "given": "Sergio A."
+            },
+            {
+                "family": "Petchey",
+                "given": "Owen L."
+            },
+            {
+                "family": "Wood",
+                "given": "Spencer A."
+            },
+            {
+                "family": "Boit",
+                "given": "Alice"
+            },
+            {
+                "family": "Joppa",
+                "given": "Lucas N."
+            },
+            {
+                "family": "Lafferty",
+                "given": "Kevin D."
+            },
+            {
+                "family": "Williams",
+                "given": "Richard J."
+            },
+            {
+                "family": "Martinez",
+                "given": "Neo D."
+            },
+            {
+                "family": "Menge",
+                "given": "Bruce A."
+            },
+            {
+                "family": "Blanchette",
+                "given": "Carol A."
+            },
+            {
+                "family": "Iles",
+                "given": "Alison C."
+            },
+            {
+                "family": "Brose",
+                "given": "Ulrich"
+            }
+        ],
+        "id": "Kefi2012MorMea",
+        "DOI": "10.1111/j.1461-0248.2011.01732.x",
+        "volume": "15",
+        "page": "291-300",
+        "title": "More than a meal… integrating non-feeding interactions into food webs",
+        "type": "article-journal"
+    },
+    {
         "issue": "1",
         "issued": {
             "date-parts": [
@@ -1440,6 +1584,78 @@
         "volume": "14",
         "page": "e1002527",
         "title": "How Structured Is the Entangled Bank? The Surprisingly Simple Organization of Multiplex Ecological Networks Leads to Increased Persistence and Resilience",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "Springer",
+        "issue": "1",
+        "publisher-place": "New York",
+        "issued": {
+            "date-parts": [
+                [
+                    2014
+                ]
+            ]
+        },
+        "container-title": "Oecologia",
+        "author": [
+            {
+                "family": "Klecka",
+                "given": "Jan"
+            },
+            {
+                "family": "Boukal",
+                "given": "David S."
+            }
+        ],
+        "id": "Klecka2014EffHab",
+        "DOI": "10.1007/s00442-014-3007-6",
+        "volume": "176",
+        "page": "183-191",
+        "title": "The effect of habitat structure on prey mortality depends on predator and prey microhabitat use",
+        "type": "article-journal"
+    },
+    {
+        "issue": "6",
+        "issued": {
+            "date-parts": [
+                [
+                    2017
+                ]
+            ]
+        },
+        "container-title": "Ecology",
+        "author": [
+            {
+                "family": "Kopelke",
+                "given": "Jens-Peter"
+            },
+            {
+                "family": "Nyman",
+                "given": "Tommi"
+            },
+            {
+                "family": "Cazelles",
+                "given": "Kévin"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Vissault",
+                "given": "Steve"
+            },
+            {
+                "family": "Roslin",
+                "given": "Tomas"
+            }
+        ],
+        "id": "Kopelke2017FooStra",
+        "DOI": "10.1002/ecy.1832",
+        "volume": "98",
+        "page": "1730-1730",
+        "title": "Food-web structure of willow-galling sawflies and their natural enemies across Europe",
         "type": "article-journal"
     },
     {
@@ -1722,6 +1938,42 @@
         "type": "article-journal"
     },
     {
+        "publisher": "Nature Publishing Group",
+        "issue": "4",
+        "issued": {
+            "date-parts": [
+                [
+                    2017
+                ]
+            ]
+        },
+        "container-title": "Nature Ecology & Evolution",
+        "author": [
+            {
+                "family": "Pilosof",
+                "given": "Shai"
+            },
+            {
+                "family": "Porter",
+                "given": "Mason A."
+            },
+            {
+                "family": "Pascual",
+                "given": "Mercedes"
+            },
+            {
+                "family": "Kéfi",
+                "given": "Sonia"
+            }
+        ],
+        "id": "Pilosof2017MulNat",
+        "DOI": "10.1038/s41559-017-0101",
+        "volume": "1",
+        "page": "1-9",
+        "title": "The multilayer nature of ecological networks",
+        "type": "article-journal"
+    },
+    {
         "publisher": "Wiley",
         "issue": "12",
         "publisher-place": "Hoboken",
@@ -1836,6 +2088,59 @@
         "volume": "7",
         "page": "303-312",
         "title": "The structure of probabilistic networks",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "Wiley",
+        "issue": "5",
+        "publisher-place": "Hoboken",
+        "issued": {
+            "date-parts": [
+                [
+                    2014
+                ]
+            ]
+        },
+        "container-title": "Methods in Ecology and Evolution",
+        "author": [
+            {
+                "family": "Pollock",
+                "given": "Laura J."
+            },
+            {
+                "family": "Tingley",
+                "given": "Reid"
+            },
+            {
+                "family": "Morris",
+                "given": "William K."
+            },
+            {
+                "family": "Golding",
+                "given": "Nick"
+            },
+            {
+                "family": "O’Hara",
+                "given": "Robert B."
+            },
+            {
+                "family": "Parris",
+                "given": "Kirsten M."
+            },
+            {
+                "family": "Vesk",
+                "given": "Peter A."
+            },
+            {
+                "family": "McCarthy",
+                "given": "Michael A."
+            }
+        ],
+        "id": "Pollock2014UndCoo",
+        "DOI": "10.1111/2041-210X.12180",
+        "volume": "5",
+        "page": "397-406",
+        "title": "Understanding co-occurrence bymodelling species simultaneously with a Joint Species DistributionModel (JSDM)",
         "type": "article-journal"
     },
     {
