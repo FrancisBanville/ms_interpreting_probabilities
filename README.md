@@ -273,25 +273,25 @@ $$P_{N}(i \rightarrow j | A, t, C, \Omega).$$
 {#eq:local}
 
 The local context in which probabilities are estimated and the variables that
-should be taken into consideration depend on the study system and the resources
-available to the researchers. In other words, these variables do not
-systematically need to be accounted for. However, when they are, they should be
-specified in the documentation of the data, preferentially in mathematical terms
-to avoid any confusion in their interpretation and manipulation errors during
-their re-use. For example, when generating interaction data, ecologists should
-be explicit about their consideration of co-occurrence in their estimation of
-local interaction probabilities since this can impact their interpretation and
-analysis. Indeed, it is important to specify if probability values are
-conditional $P_{N}(i \rightarrow j | C = 1)$ or not $P_{N}(i \rightarrow j)$ on
-co-occurrence. For practical reasons, probabilistic ecological networks are
-generally represented as adjacency matrices of probability values (i.e.,
-matrices of edge values). Without clear indications about $C$, it may be
-difficult to interpret if these numbers represent "raw" edge values or the
-product of edge and node values. In @tbl:prob, we present a handful of studies
-that used probabilistic ecological networks and their formulation of
-probabilistic interactions. This table illustrates the diversity of measures
-used to estimate probabilistic interactions and emphasizes the need to qualify
-interaction data before integrating and analyzing them.
+should be taken into consideration depend on the study system, the objective of
+the study, and the resources available to the researchers. In other words, these
+variables do not systematically need to be accounted for. However, when they
+are, they should be specified in the documentation of the data, preferentially
+in mathematical terms to avoid any confusion in their interpretation and
+manipulation errors during their re-use. For example, when generating
+interaction data, ecologists should be explicit about their consideration of
+co-occurrence in their estimation of local interaction probabilities since this
+can impact their interpretation and analysis. Indeed, it is important to specify
+if probability values are conditional $P_{N}(i \rightarrow j | C = 1)$ or not
+$P_{N}(i \rightarrow j)$ on co-occurrence. For practical reasons, probabilistic
+ecological networks are generally represented as adjacency matrices of
+probability values (i.e., matrices of edge values). Without clear indications
+about $C$, it may be difficult to interpret if these numbers represent "raw"
+edge values or the product of edge and node values. In @tbl:prob, we present a
+handful of studies that used probabilistic ecological networks and their
+formulation of probabilistic interactions. This table illustrates the diversity
+of measures used to estimate probabilistic interactions and emphasizes the need
+to qualify interaction data before integrating and analyzing them.
 
 |   Formula  | Description | Studies | 
 | :------- | :----------------- | ------: | 
