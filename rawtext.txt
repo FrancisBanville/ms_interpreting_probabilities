@@ -325,59 +325,31 @@ estimate probabilistic interactions and emphasizes the need to qualify
 interaction data before integrating and analyzing them.
 
 ::: {#tbl:prob}
-  ----------------------------------------------------------------------------
-  Formula                                            Description       Studies
-  -------------------------------------------------- --------------- ---------
-  $P_M(i \rightarrow j)$                             probability     
-                                                     that the        
-                                                     interaction is  
-                                                     biologically    
-                                                     feasible        
+  -----------------------------------------------------------------------------------------------------
+  Formula                                        Description                                    Studies
+  ---------------------------------------------- -------------------------------------- ---------------
+  $P_M(i \rightarrow j)$                         probability that the interaction is    
+                                                 biologically feasible                  
 
-  $P_N(i \rightarrow j)$                             probability     
-                                                     that the        
-                                                     interaction is  
-                                                     realized        
-                                                     locally         
+  $P_N(i \rightarrow j)$                         probability that the interaction is    
+                                                 realized locally                       
 
-  $P_N(i \rightarrow j \vert A)$                     probability     
-                                                     that the        
-                                                     interaction is  
-                                                     realized        
-                                                     locally given   
-                                                     the area        
+  $P_N(i \rightarrow j \vert A)$                 probability that the interaction is    
+                                                 realized locally given the area        
 
-  $P_N(i \rightarrow j \vert t)$                     probability     
-                                                     that the        
-                                                     interaction is  
-                                                     realized        
-                                                     locally given   
-                                                     the time period 
+  $P_N(i \rightarrow j \vert t)$                 probability that the interaction is    
+                                                 realized locally given the time period 
 
-  $P_N(i \rightarrow j \vert C)$                     probability     
-                                                     that the        
-                                                     interaction is  
-                                                     realized        
-                                                     locally given   
-                                                     co-occurrence   
+  $P_N(i \rightarrow j \vert C)$                 probability that the interaction is    
+                                                 realized locally given co-occurrence   
 
-  $P_N(i \rightarrow j \vert \Omega)$                probability     
-                                                     that the        
-                                                     interaction is  
-                                                     realized        
-                                                     locally given   
-                                                     chosen          
-                                                     environmental   
-                                                     and biological  
-                                                     factors         
+  $P_N(i \rightarrow j \vert \Omega)$            probability that the interaction is    
+                                                 realized locally given chosen          
+                                                 environmental and biological factors   
 
-  $P_N(i \rightarrow j \vert A, t, C, \Omega)$       probability     
-                                                     that the        
-                                                     interaction is  
-                                                     realized        
-                                                     locally given   
-                                                     several factors 
-  ----------------------------------------------------------------------------
+  $P_N(i \rightarrow j \vert A, t, C, \Omega)$   probability that the interaction is    
+                                                 realized locally given several factors 
+  -----------------------------------------------------------------------------------------------------
 
   : Table 1: Interaction probabilities are interpreted differently in
   metawebs and local networks. Each formula includes different
