@@ -356,9 +356,9 @@ probabilistic networks</div>
             behavioral choices <span class="citation"
             data-cites="Pulliam1974Theory Choh2012PreRol">(Pulliam 1974;
             Choh <em>et al.</em> 2012)</span> and phenotypes
-            [Bolnick2011WhyInt; <span class="citation"
+            (Bolnick2011WhyInt; <span class="citation"
             data-cites="Stouffer2011RolBod">Stouffer <em>et al.</em>
-            (2011)</span>; Gravel2013InfFooa]. Environmental factors,
+            (2011)</span>; Gravel2013InfFooa). Environmental factors,
             such as temperature <span class="citation"
             data-cites="Angilletta2004TemGro">(Angilletta <em>et
             al.</em> 2004)</span>, drought <span class="citation"
@@ -898,57 +898,77 @@ probabilistic networks</div>
             <h2
             id="metawebs-regional-catalogs-of-interactions">Metawebs:
             regional catalogs of interactions</h2>
-            <p>Metawebs are networks of potential interactions,
-            representing the probability that two taxa can interact
-            regardless of biological plasticity, environmental
-            variability or co-occurrence. Instead of describing
-            stochastic biological processes occurring in nature,
-            probabilistic potential interactions can be thought of as a
-            measure of imperfect knowledge about the capacity of two
-            taxa to interact. For this reason, they have been initially
-            designed for broad spatial, temporal, and taxonomic scales
-            (e.g, species food webs at the continental scale).</p>
-            <p>We can express the probability that two taxa <span
+            <p>Metawebs are networks of potential interactions that have
+            been designed for broad spatial, temporal, and taxonomic
+            scales (e.g, species food webs at the continental scale).
+            They represent the probability that two taxa can
+            biologically interact regardless of their co-occurrence and
+            local environmental conditions. Indeed, potential
+            interactions are by definition context-independent,
+            i.e. they are not measured at a specific location and time.
+            In contrast with probabilistic local networks, which
+            represent the stochasticity of interactions occurring in
+            nature, probabilistic metawebs measure our degree of belief
+            in the capacity of two taxa to interact (i.e., the
+            probability that their traits could support an interaction
+            in the right conditions). In other words, potential
+            interactions describe the probability that there exists at
+            least one combination of phenotypes of taxa <span
             class="math inline"><em>i</em></span> and <span
-            class="math inline"><em>j</em></span> can interact in a
-            metaweb <span class="math inline"><em>M</em></span> as</p>
+            class="math inline"><em>j</em></span> that can interact with
+            each other if they were to encounter. This probability of
+            interaction, in a metaweb <span
+            class="math inline"><em>M</em></span>, can be expressed
+            as</p>
             <p><span id="eq:metaweb"><span
             class="math display"><em>P</em><sub><em>M</em></sub>(<em>i</em>→<em>j</em>),   (3)</span></span></p>
-            <p>which is context independent. In other words, the
-            probability that two species can interact is not contingent
-            on location, time, and environmental factors. Nevertheless,
-            one aspect of a metaweb that could be conditional on these
-            factors is the list of species (or taxa) it is built from
-            when assembled for a specific region.</p>
-            <p>Starting from a selected set of species, metawebs can be
+            <p>which, compared to eq. 2, is not conditional on any
+            spatial, temporal, or environmental variables (tbl. 1).</p>
+            <p>Starting from a selected set of taxa, which are usually
+            distributed within a region of interest, metawebs can be
             built using different data sources, including literature
-            review, field work, and predictive models <span
+            review, fieldwork, and predictive models <span
             class="citation" data-cites="Strydom2022Food">(e.g., the
             metaweb of Canadian mammals inferred by Strydom <em>et
-            al.</em> 2022)</span>. Every pair of species that has been
-            observed to interact at least once can be given a
-            probability of interaction of <span
-            class="math inline">1</span>; we know that they <em>can</em>
-            interact. This means that rare interactions can technically
-            be given high probabilities in the metaweb. Unobserved
-            interactions, on the other hand, are given lower
-            probabilities, going as low as <span
-            class="math inline">0</span> for forbidden links. Two
-            important nuances must however be made here. Because of
-            observation errors due to taxonomic misidentifications and
-            ecological misinterpretations [e.g., due to cryptic species
-            and interactions; <span class="citation"
+            al.</em> 2022)</span>. Every pair of taxa that have
+            confidently been observed to interact at least once can be
+            given a probability of <span class="math inline">1</span>
+            (i.e., <span
+            class="math inline"><em>P</em><sub><em>M</em></sub>(<em>i</em>→<em>j</em>) = 1</span>)
+            since we know that they <em>can</em> interact. This is
+            usually not the case in local probabilistic networks, in
+            which probabilities usually remain stochastic (i.e., <span
+            class="math inline"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>) &lt; 1</span>)
+            after empirically observing interactions because of their
+            intrinsic spatiotemporal variability. Similarly, although
+            rare interactions typically have low probabilities in local
+            networks, they can have high probabilities in metawebs if
+            the traits of the taxa match. On the other hand,
+            interactions that were never observed can have low
+            probability values in both metawebs and local networks,
+            going as low as <span class="math inline">0</span> for
+            forbidden links. However, because of observation errors due
+            to taxonomic misidentifications and ecological
+            misinterpretations (e.g., due to cryptic species and
+            interactions, <span class="citation"
             data-cites="Pringle2020Resolving">Pringle &amp; Hutchinson
-            (2020)</span>], many observations of interactions are
+            (2020)</span>), many observations of interactions are
             actually false positives. Similarly, forbidden interactions
-            can be false negatives if e.g. they have been assessed for
-            specific phenotypes, locations or time. Implementing a
-            Bayesian framework, which updates prior probabilities of
-            interactions with empirical data, could lessen these
-            errors.</p>
-            <p>Below, we will see examples of why this matters when it
-            comes to spatial, temporal, and taxonomic scaling of biotic
-            interactions.</p>
+            can be false negatives in metawebs, e.g. if they have been
+            assessed for specific phenotypes, locations or time.
+            Implementing a Bayesian framework, which updates prior
+            probabilities of interactions with empirical data (e.g.,
+            <span class="citation"
+            data-cites="Bartomeus2016ComFra">Bartomeus <em>et al.</em>
+            (2016)</span>, <span class="citation"
+            data-cites="Cirtwill2019QuaFra">Cirtwill <em>et al.</em>
+            (2019)</span>), could lessen these errors. There are thus
+            fundamental differences between metawebs and local networks
+            when it comes to the estimation and biological
+            interpretation of interaction probabilities. These
+            differences must be taken into account when analyzing
+            ecological interaction data because they impact the
+            statistical behaviour of these probabilistic networks.</p>
             <h1
             id="statistical-behaviour-of-networks-in-key-ecological-applications">Statistical
             behaviour of networks in key ecological applications</h1>
@@ -1229,6 +1249,18 @@ probabilistic networks</div>
             equal to the probability of their potential interaction:</p>
             <p><span id="eq:switch"><span
             class="math display"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>A</em>,<em>t</em>,<em>C</em>,<em>Ω</em>) ≤ <em>P</em><sub><em>M</em></sub>(<em>i</em>→<em>j</em>).   (4)</span></span></p>
+            <p>Probabilistic metawebs give limited information on local
+            networks. Additionally, our degree of belief that two taxa
+            have the capacity to interact must be higher than the
+            probability that they will actually interact (or that they
+            will ever interact). This implies that the accumulated
+            probability of realized interactions across all spatial,
+            temporal, and environmental conditions must be lower than
+            the probability of potential interaction, i.e. </p>
+            <p><span id="eq:all"><span
+            class="math display">∫<sub><em>Ω</em></sub>∫<sub><em>A</em></sub>∫<sub><em>t</em></sub><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>A</em>,<em>t</em>,<em>Ω</em>)<em>d</em><em>t</em><em>d</em><em>A</em><em>d</em><em>Ω</em> ≤ <em>P</em><sub><em>M</em></sub>(<em>i</em>→<em>j</em>),   (5)</span></span></p>
+            <p>since both taxa might never co-occur or encounter
+            locally.</p>
             <p>Therefore, inferring local networks from their metaweb
             keeping the same values of interaction probability would
             generate systematic biases in the prediction. In that case,
