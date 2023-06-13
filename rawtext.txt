@@ -241,24 +241,23 @@ its large number of replicated samples, this dataset can be used to
 infer the probability of locally observing an interaction between a pair
 of taxa [@Gravel2019BriElt]. More generally, we define space as the
 geographic coordinates $(x, y)$ of the spatial boundaries delineating
-the system (sampled or targeted) and time as the time interval $t$
-during which interactions were sampled or for which they were predicted.
-Given that space and time are in reality continuous variables, the
-probability that an interaction occurs within a particular spatial and
-temporal setting is given by the integral of the probability density
-function describing the relative likelihood that this interaction is
-realized at any specific and infinitely small location and time.
-Therefore, the edge value could represent a probability density or a
-probability mass depending on how space and time are measured. For
-simplicity reasons, we will consider space and time as discrete
-dimensions that provide actual probabilities of interactions, which is
-conform to how ecological interactions are usually sampled. Using space
-and time intervals allows us to measure an area $A$ and duration $t$,
-which can be directly used in spatiotemporal analyses of ecological
-networks. For example, when studying network-area relationships [NAR,
-@Galiana2018Spatiala], we should expect local probabilities of
-interactions to scale with area and duration because taxa have more
-opportunities to interact.
+the system (sampled or targeted) and time as the time interval during
+which interactions were sampled or for which they were predicted. Given
+that space and time are in reality continuous variables, the probability
+that an interaction occurs within a particular spatial and temporal
+setting is given by the integral of the probability density function
+describing the relative likelihood that this interaction is realized at
+any specific and infinitely small location and time. Therefore, the edge
+value could represent a probability density or a probability mass
+depending on how space and time are measured. For simplicity reasons, we
+will consider space and time as discrete dimensions that provide actual
+probabilities of interactions, which is conform to how ecological
+interactions are usually sampled. Using space and time intervals allows
+us to measure an area $A$ and duration $t$, which can be directly used
+in spatiotemporal analyses of ecological networks. For example, when
+studying network-area relationships [NAR, @Galiana2018Spatiala], we
+should expect local probabilities of interactions to scale with area and
+duration because taxa have more opportunities to interact.
 
 The probability that two taxa $i$ and $j$ interact locally can also be
 conditional on many environmental and biological factors. One of these
@@ -268,8 +267,8 @@ area. In local networks, the probability that the interaction is
 realized must be $0$ when taxa do not co-occur,
 i.e. $P_{N}(i \rightarrow j | C = 0) = 0$. Co-occurrence can also be
 modeled probabilistically. In that case, it follows a Bernoulli
-distribution $C_{i,j} \sim {\rm Bernoulli}(P_{i,j}(x,y))$, where the
-probability of co-occurrence $P_{i,j}(x,y)$ can be estimated using
+distribution $C_{i,j} \sim {\rm Bernoulli}(P_{i,j}(x, y))$, where the
+probability of co-occurrence $P_{i,j}(x, y)$ can be estimated using
 species distribution models [e.g., @Pollock2014UndCoo]. More generally,
 the probability that two taxa interact locally can be obtained by the
 product of their probability of interaction given co-occurrence with
@@ -297,7 +296,7 @@ variables that were taken into consideration when measuring interaction
 probabilities and is, therefore, a subset of all factors actually
 impacting ecological interactions.
 
-The probability that two taxa $i$ and $j$ interacts in a local network
+The probability that two taxa $i$ and $j$ interact in a local network
 $N$ can thus be conditional on the area $A$, the time interval $t$,
 their co-occurrence $C$ and chosen environmental and biological
 conditions $\Omega$. This gives us the following equation when all these
@@ -338,8 +337,7 @@ interaction data before integrating and analyzing them.
                                                  realized locally given network area    
 
   $P_N(i \rightarrow j \vert t)$                 probability that the interaction is    
-                                                 realized locally given network         
-                                                 duration                               
+                                                 realized locally given duration        
 
   $P_N(i \rightarrow j \vert C)$                 probability that the interaction is    
                                                  realized locally given co-occurrence   
@@ -349,8 +347,8 @@ interaction data before integrating and analyzing them.
                                                  environmental and biological factors   
 
   $P_N(i \rightarrow j \vert A, t, C, \Omega)$   probability that the interaction is    
-                                                 realized locally given all of these    
-                                                 factors                                
+                                                 realized locally given many            
+                                                 conditional factors                    
   -----------------------------------------------------------------------------------------------------
 
   : Table 1: Interaction probabilities are interpreted differently in
@@ -380,49 +378,48 @@ interaction, in a metaweb $M$, can be expressed as
 
 [$$P_{M}(i \rightarrow j),\qquad{(3)}$$]{#eq:metaweb}
 
-which, compared to eq. 2, is not conditional on any spatial, temporal,
-or environmental variables (tbl. 1).
+which, in contrast with eq. 2, is not conditional on any spatial,
+temporal, or environmental variables (tbl. 1).
 
 Starting from a selected set of taxa, which are usually distributed
-within a region of interest, metawebs can be built using different data
-sources, including literature review, fieldwork, and predictive models
-[e.g., the metaweb of Canadian mammals inferred by @Strydom2022Food].
-Every pair of taxa that have confidently been observed to interact at
-least once can be given a probability of $1$ (i.e.,
-$P_{M}(i \rightarrow j) = 1$) since we know that they *can* interact.
-This is usually not the case in local probabilistic networks, in which
-probabilities usually remain stochastic (i.e.,
+within a broad region of interest, metawebs can be built using different
+data sources, including literature review, fieldwork, and predictive
+models [e.g., the metaweb of Canadian mammals inferred by
+@Strydom2022Food]. Every pair of taxa that have confidently been
+observed to interact at least once can be given a probability of $1$
+(i.e., $P_{M}(i \rightarrow j) = 1$) since we know that they *can*
+interact. This is usually not the case in local probabilistic networks,
+in which probabilities usually remain stochastic (i.e.,
 $P_{N}(i \rightarrow j) < 1$) after empirically observing interactions
 because of their intrinsic spatiotemporal variability. Similarly,
 although rare interactions typically have low probabilities in local
 networks, they can have high probabilities in metawebs if the traits of
-the taxa match. On the other hand, interactions that were never observed
-can have low probability values in both metawebs and local networks,
-going as low as $0$ for forbidden links. However, because of observation
-errors due to taxonomic misidentifications and ecological
+both taxa match. On the other hand, interactions that were never
+observed can have low probability values in both metawebs and local
+networks, going as low as $0$ for forbidden links. However, because of
+observation errors due to taxonomic misidentifications and ecological
 misinterpretations (e.g., due to cryptic species and interactions,
 @Pringle2020Resolving), many observations of interactions are actually
 false positives. Similarly, forbidden interactions can be false
 negatives in metawebs, e.g. if they have been assessed for specific
 phenotypes, locations or time. Implementing a Bayesian framework, which
-updates prior probabilities of interactions with empirical data (e.g.,
-@Bartomeus2016ComFra, @Cirtwill2019QuaFra), could lessen these errors.
+updates prior probabilities with empirical data (e.g.,
+@Bartomeus2016ComFra, @Cirtwill2019QuaFra), could improve our estimation
+of interaction probabilities in both systems.
+
+# Statistical behavior of networks in key ecological applications
+
 There are thus fundamental differences between metawebs and local
 networks when it comes to the estimation and biological interpretation
 of interaction probabilities. These differences must be taken into
 account when analyzing ecological interaction data because they impact
-the statistical behaviour of these probabilistic networks.
-
-# Statistical behaviour of networks in key ecological applications
-
-Quantitative interactions can be converted to probabilistic interactions
-by normalizing.
+the statistical behavior of these probabilistic networks.
 
 ## Taxonomic agglomeration and division of nodes
 
 The properties of ecological networks depend on their level of
 organization [@Guimaraes2020Structurea]. Indeed, at different taxonomic
-scales, different behaviours and dynamics can be observed and distinct
+scales, different behaviors and dynamics can be observed and distinct
 ecological questions can be answered (e.g., exploring evolutionary
 dynamics at broad taxonomic scales). Because of these reasons, it could
 be important to analyse the same network at different taxonomic scales.
@@ -448,11 +445,11 @@ nodes, either spatially, temporally, or taxonomically. However, there
 are also important differences between them. First, in metawebs, if we
 know that two species have the capacity to interact, we can infer that
 their respective genus should also be able to interact (i.e., there
-should be at least two individuals within these genus that can
-interact). On the contrary, knowing that two genus can interact does not
-mean that all pairwise combinations of species within these genus can
-also interact among themselves. This observation also applies to local
-networks. When it comes to probabilistic networks, interaction
+should be at least two individuals within these genera that can
+interact). On the contrary, knowing that two genera can interact does
+not mean that all pairwise combinations of species within these genera
+can also interact among themselves. This observation also applies to
+local networks. When it comes to probabilistic networks, interaction
 probabilities at broader taxonomic scales can be directly obtained from
 probabilities at finer scales when aggregating nodes. For example, if we
 have in a network $n_A$ species from genus $A$ and $n_B$ species from
@@ -467,15 +464,11 @@ for example, estimate the probabilities of all pairwise species
 interactions by using a Beta distribution parametrised by the
 broader-scale network.
 
-\[Figure 3 about here\]. Conceptual figure of how a scale up of the
-nodes from an individual to a population to any higher taxonomic group
-change our interpretation of the probability of interaction.
-
 ## Spatial and temporal scaling of probabilistic interactions
 
 Metawebs and local networks intrinsically differ in their relation to
 scale. On one hand, as mentioned above, probabilistic metawebs are
-context independent, i.e., probabilistic pairwise interactions do not
+context-independent, i.e., probabilistic pairwise interactions do not
 scale with space and time because they depend solely on the biological
 capacity of the two taxa to interact. This implies that the estimated
 likelihood that two species can potentially interact should be the same
@@ -507,11 +500,6 @@ could inspire the development and testing of different equations
 describing the spatiotemporal scaling of probabilistic pairwise
 interactions in local networks, which are over the scope of this
 manuscript.
-
-\[Figure 2 about here\]. Conceptual figure showing (1) the
-spatiotemporal scaling of probabilistic metawebs and local food webs and
-(2) the spatial sampling of metawebs and local food webs into Boolean
-networks.
 
 ## Spatiotemporally explicit model of probabilistic interactions
 
@@ -578,6 +566,9 @@ What we consider as a *Bernoulli trial*, when randomly drawing
 deterministic networks from probabilistic food webs, depends on our
 biological interpretation of these probabilities.
 
+Quantitative interactions can be converted to probabilistic interactions
+by normalizing.
+
 ## Prediction of local networks from probabilistic metawebs
 
 Even though the spatiotemporal variability of interactions is not
@@ -624,71 +615,29 @@ Inferring the structure of local networks from the metaweb could thus
 help estimate more realistically the likelihood that potential
 interactions are realized and observed locally [@Strydom2021Roadmapa].
 
-\[Figure 1 about here\]. Empirical example of the association between
-the number of interactions in realized local food webs and the number of
-interactions in the corresponding subnetworks of their regional metaweb.
-We should expect the association to be linear below the 1:1 line,
-illustrating eq. 4.
-
 # Conclusion
 
-The emergence of probabilistic thinking in network ecology has paved the
-way to a better assessment of the spatiotemporal variability and
-uncertainty of biotic interactions. However, measuring probabilities
-empirically can be strenuous given the difficulties of deciphering
-species and interactions [@Pringle2020Resolving]. In this context, the
-development of computational methods makes it possible to estimate
-interaction probabilities at large scales, which in turn can pinpoint
-where we should go to optimise our sampling effort for better resolving
-local food webs.
+In this contribution, we underlined the importance of network metadata
+for adequately interpreting and manipulating probabilistic interaction
+data. Indeed, the mathematical representation of probabilities and their
+statistical behaviors depend on the type of interactions (local or
+potential) and the conditions in which they were estimated. We showed
+that probabilistic local networks and metawebs differ in their
+relationship to spatial and temporal scales, with potential interactions
+being scale-independent. In contrast, local interactions are measured in
+a specific context (e.g., in a given area, time, and biological and
+environmental conditions) and are conditional on taxa co-occurrence.
+These important conceptual differences bring to light the need to use
+probabilistic data with caution, for instance when generating binary
+network realizations across space and predicting local networks from
+metawebs. Clear metadata describing the type of interaction and the
+variables used in their estimation are required to ensure adequate data
+manipulation. Better data practices and rigorous foundations for
+probabilistic thinking in network ecology could enable more reliable
+assessments of the spatiotemporal variability and measurement
+uncertainty of biotic interactions.
 
-In this contribution, we showed that network metadata are perhaps as
-important as interaction data themselves when it comes to interpreting
-probabilistic food webs in ecological terms. First, the type of
-probabilistic interaction (potential or realized) impacts the importance
-of scale, with interactions in metawebs being scale independent, both
-spatially and temporally. Second, the conditions in which local networks
-were estimated (e.g., area, time, biological and environmental factors)
-and the attributes of the interacting species that were considered
-(e.g., species co-occurrence) are essential contextual factors that
-impact the mathematical representation of probabilities and their
-resulting behaviour. Third, the biological interpretation of
-probabilities changes with the level of organization of the network due
-to the aggregation of individuals into broader groups. All these
-information should be available as clear metadata so that ecologists can
-use probabilistic network data appropriately.
-
-Moreover, many statistical models in ecology that yield accurate
-predictions of biotic interactions are black boxes difficult to
-interpret. Ecologists should be careful before using the output of these
-models as probabilistic objects, since there is often a thin line
-between a real probability and a non-probabilistic predictive number (or
-score). Probabilities are numbers between $0$ and $1$ that sum to $1$
-and either represent the expected frequency of a phenomenon or the
-degree of belief that it will be realized. Non-probabilistic scores,
-which are more akin to interaction strengths, have different
-mathematical properties, which impacts how we should handle these
-numbers in a spatially or temporally explicit context. Therefore,
-researchers should use their expertise to assess if their interaction
-data are actually probabilities or scores. This should also be added to
-the metadata before sharing them, as well as the methods used to build
-the networks.
-
-Better metadata documentation would allow researchers to use and
-manipulate probabilistic ecological interactions according to how they
-were actually defined and obtained. This would support better scientific
-practices, in particular when these data are used for ecological
-prediction and forecasting. For instance, we showed that building a
-rigorous workflow to predict local networks from a probabilistic metaweb
-requires a good understanding of the data at hand. Similarly, explicitly
-stating the context in which probabilistic data were estimated would
-help using forecasting food-web models more rigorously under specific
-climate change and habitat use scenarios. Regardless of the method and
-application, fostering a better foundation for probabilistic reasonings
-in network ecology, from the very nature of probabilities and biotic
-interactions, is essential.
-
-# Acknowledgement
+# Acknowledgment
 
 We acknowledge that this study was conducted on land within the
 traditional unceded territory of the Saint Lawrence Iroquoian,
