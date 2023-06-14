@@ -1137,6 +1137,39 @@
         "type": "article-journal"
     },
     {
+        "publisher": "Nature Publishing Group",
+        "issue": "7300",
+        "publisher-place": "London",
+        "issued": {
+            "date-parts": [
+                [
+                    2010
+                ]
+            ]
+        },
+        "container-title": "Nature",
+        "author": [
+            {
+                "family": "Gomez",
+                "given": "Jose M."
+            },
+            {
+                "family": "Verdu",
+                "given": "Miguel"
+            },
+            {
+                "family": "Perfectti",
+                "given": "Francisco"
+            }
+        ],
+        "id": "Gomez2010EcoInt",
+        "DOI": "10.1038/nature09113",
+        "volume": "465",
+        "page": "918-U6",
+        "title": "Ecological interactions are evolutionarily conserved across the entire tree of life",
+        "type": "article-journal"
+    },
+    {
         "publisher": "Elsevier Science London",
         "issue": "9",
         "publisher-place": "London",
@@ -1320,6 +1353,47 @@
         "volume": "106",
         "page": "22073-22078",
         "title": "Missing and spurious interactions and the reconstruction of complex networks",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "Wiley",
+        "issue": "3",
+        "publisher-place": "Hoboken",
+        "issued": {
+            "date-parts": [
+                [
+                    2021
+                ]
+            ]
+        },
+        "container-title": "Ecology",
+        "author": [
+            {
+                "family": "Hemprich-Bennett",
+                "given": "David R."
+            },
+            {
+                "family": "Oliveira",
+                "given": "Hernani F. M."
+            },
+            {
+                "family": "Le Comber",
+                "given": "Steven C."
+            },
+            {
+                "family": "Rossiter",
+                "given": "Stephen J."
+            },
+            {
+                "family": "Clare",
+                "given": "Elizabeth L."
+            }
+        ],
+        "id": "Hemprich-Bennett2021AssImp",
+        "DOI": "10.1002/ecy.3256",
+        "volume": "102",
+        "page": "e03256",
+        "title": "Assessing the impact of taxon resolution on network structure",
         "type": "article-journal"
     },
     {

@@ -407,62 +407,83 @@ updates prior probabilities with empirical data (e.g.,
 @Bartomeus2016ComFra, @Cirtwill2019QuaFra), could improve our estimation
 of interaction probabilities in both systems.
 
-# Statistical behavior of networks in key ecological applications
+# Statistical behaviors of probabilistic networks
 
-There are thus fundamental differences between metawebs and local
-networks when it comes to the estimation and biological interpretation
-of interaction probabilities. These differences must be taken into
-account when analyzing ecological interaction data because they impact
-the statistical behavior of these probabilistic networks.
+The differences in the mathematical formulations of probabilistic local
+and potential interactions can affect their statistical behaviors when
+applied to key ecological questions. These disparities must therefore be
+taken into account when analyzing probabilistic interaction data to
+prevent misleading results and minimize interpretation errors. Here we
+show four common applications of probabilistic interactions and compare
+the characteristics of local networks and metawebs using simulated and
+empirical data.
 
 ## Taxonomic agglomeration and division of nodes
 
-The properties of ecological networks depend on their level of
-organization [@Guimaraes2020Structurea]. Indeed, at different taxonomic
-scales, different behaviors and dynamics can be observed and distinct
-ecological questions can be answered (e.g., exploring evolutionary
-dynamics at broad taxonomic scales). Because of these reasons, it could
-be important to analyse the same network at different taxonomic scales.
-However, we want to emphasize here that many networks do not have an
-homogenous level of organisation [@VazquezSS2022Ecological]. Indeed,
-different nodes within the same network can be represented at different
-taxonomic scales (e.g., a network composed of species and trophic
-species). This becomes important when we consider that the biological
-interpretation of interaction probabilities depends on the nodes'
-resolution. For example, in individual-based networks, the probability
-that two individuals interact could represent the degree of belief that
-one will actually consume the other. In species-based networks, the
-probability that two species interact could rather represent the degree
-of belief that *at least* one individual from the predator species will
-eat *at least* another individual from the prey species. This
-distinction in interpretation impacts the way probability values change
-with taxonomic scale.
+Probabilistic networks can be used to address a wide range of ecological
+questions based on their level of organization. For example, the
+assemblage of interactions across ecological scales can be studied using
+species-based networks, whereas clade-based networks can be used to
+study macroevolutionary processes [e.g., @Gomez2010EcoInt]. Because our
+interpretation of the properties and dynamics of ecological networks
+depends on their taxonomic scale [@Guimaraes2020Structurea], examining
+the phylogenetic scaling of network structure is also a promising
+research avenue. Analyzing the same system at different taxonomic scales
+can thus provide meaningful and complementary ecological information and
+is, in our perspective, best conducted using probabilistic networks.
 
-There are a lot of similarities between taxonomic and spatiotemporal
-scaling of probabilistic interactions. Fundamentally, these types of
-scaling are just different ways to aggregate individuals into broader
-nodes, either spatially, temporally, or taxonomically. However, there
-are also important differences between them. First, in metawebs, if we
-know that two species have the capacity to interact, we can infer that
-their respective genus should also be able to interact (i.e., there
-should be at least two individuals within these genera that can
-interact). On the contrary, knowing that two genera can interact does
-not mean that all pairwise combinations of species within these genera
-can also interact among themselves. This observation also applies to
-local networks. When it comes to probabilistic networks, interaction
-probabilities at broader taxonomic scales can be directly obtained from
-probabilities at finer scales when aggregating nodes. For example, if we
-have in a network $n_A$ species from genus $A$ and $n_B$ species from
-genus $B$, we can calculate the probability that the two genus interact
-as
-$P_N(A \rightarrow B) = 1 - \prod_{i = 1}^{n_A}\prod_{j = 1}^{n_B}(1 - P_N(A_i \rightarrow B_j))$,
+Local networks are analogous to metawebs in their taxonomic scaling of
+interactions because only the nodes are defined taxonomically. In other
+words, the edge values of local networks (eq. 2) and metawebs (eq. 3)
+are not conditional on any taxonomic scale. It is the definition of the
+event itself (i.e., the interaction of the two taxa) that has a given
+phylogenetic scale, not their conditional variables. In both types of
+networks, shifting to a broader level of organization can be directly
+done using probabilities at finer scales. For example, if we have a
+network of $n_A$ species from genus $A$ and $n_B$ species from genus
+$B$, we can calculate the probability that at least one species from
+genus $A$ interact with at least one species from genus $B$ as follows:
+
+[$$P(A \rightarrow B) = 1 - \prod_{i = 1}^{n_A}\prod_{j = 1}^{n_B}(1 - P(A_i
+\rightarrow B_j)),\qquad{(4)}$$]{#eq:taxo}
+
 where $A_i$ and $B_j$ are the species of the corresponding genus.
-However, more sophisticated models need to be used when building
-probabilistic networks at smaller taxonomic resolutions (e.g., when
-building a species-level network from a genus-level network). One could,
-for example, estimate the probabilities of all pairwise species
-interactions by using a Beta distribution parametrised by the
-broader-scale network.
+Knowing that two species interact (i.e., $P(A_i \rightarrow B_j) = 1$)
+gives a probability of genus interaction of $1$. @Canard2012Emergencea
+built a species-based network from neutrally simulated interactions
+between individuals using a similar approach. In contrast, more
+sophisticated models need to be built when shifting to a finer level of
+organization. Indeed, knowing that two genera interact does not imply
+that all of their pairwise species combinations can also interact. One
+could, for example, build a finer-scale network by generating
+probabilities of species interactions by randomly sampling them from a
+beta distribution parametrized by the broader-scale network.
+
+The biological interpretation of probabilistic interactions should not
+differ across a network even if it has heterogenous levels of
+organization, i.e. if different nodes are represented at different
+taxonomic scales (e.g., a network composed of species and trophic
+species). This is frequent in ecological networks where taxonomic
+resolution is typically low
+[@Hemprich-Bennett2021AssImp; @VazquezSS2022Ecological]. Indeed, these
+definitions should be based on probabilities of interactions between
+individuals, either locally or potentially. In local individual-based
+food webs, the probability that two individuals interact represents the
+degree of belief that one individual will actually consume the other.
+Similarly, in local species-based food webs, the probability that two
+species interact represents the degree of belief that at least one
+individual from the predator species consumes at least another
+individual from the prey species. Moreover, in local clade-based food
+webs, the probability that two clades interact represents the degree of
+belief that at least two species from these clades interact with each
+other or, equivalently, that at least two individuals from these clades
+interact with each other. Fundamentally, the taxonomic scaling of
+interactions is an aggregation of interactions between individuals into
+larger groups, which could be more or less homogeneous depending on the
+organisms and the study system. This type of scaling is analogous to the
+spatial and temporal scaling of interactions to the extent that these
+are different ways to aggregate individuals into broader nodes, either
+spatially, temporally, or taxonomically.
 
 ## Spatial and temporal scaling of probabilistic interactions
 
@@ -501,7 +522,7 @@ describing the spatiotemporal scaling of probabilistic pairwise
 interactions in local networks, which are over the scope of this
 manuscript.
 
-## Spatiotemporally explicit model of probabilistic interactions
+### A spatiotemporally explicit model of probabilistic interactions
 
 The variability of species interactions spurred the development of
 methods aiming at predicting ecological networks at fine spatial and
@@ -588,7 +609,7 @@ probability that two species interact at a specific location is always
 lower or equal to the probability of their potential interaction:
 
 [$$P_{N}(i \rightarrow j | A, t, C, \Omega) \le
-P_M(i \rightarrow j).\qquad{(4)}$$]{#eq:switch}
+P_M(i \rightarrow j).\qquad{(5)}$$]{#eq:switch}
 
 Probabilistic metawebs give limited information on local networks.
 Additionally, our degree of belief that two taxa have the capacity to
@@ -599,7 +620,7 @@ temporal, and environmental conditions must be lower than the
 probability of potential interaction, i.e. 
 
 [$$\int_\Omega\int_A\int_t P_{N}(i \rightarrow j | A, t, \Omega) dt dA d\Omega
-\leq P_M(i \rightarrow j),\qquad{(5)}$$]{#eq:all}
+\leq P_M(i \rightarrow j),\qquad{(6)}$$]{#eq:all}
 
 since both taxa might never co-occur or encounter locally.
 
