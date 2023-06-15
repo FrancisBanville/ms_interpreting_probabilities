@@ -531,6 +531,42 @@
         "type": "article-journal"
     },
     {
+        "publisher": "Nature Publishing Group",
+        "issue": "6979",
+        "issued": {
+            "date-parts": [
+                [
+                    2004
+                ]
+            ]
+        },
+        "container-title": "Nature",
+        "author": [
+            {
+                "family": "Brose",
+                "given": "Ulrich"
+            },
+            {
+                "family": "Ostling",
+                "given": "Annette"
+            },
+            {
+                "family": "Harrison",
+                "given": "Kateri"
+            },
+            {
+                "family": "Martinez",
+                "given": "Neo D."
+            }
+        ],
+        "id": "Brose2004UniSpa",
+        "DOI": "10.1038/nature02297",
+        "volume": "428",
+        "page": "167-171",
+        "title": "Unified spatial scaling of species and their trophic interactions",
+        "type": "article-journal"
+    },
+    {
         "publisher": "Public Library of Science",
         "issue": "8",
         "issued": {
