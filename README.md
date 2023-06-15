@@ -7,7 +7,7 @@ uncoupling of species and the large number of potential interactions in a
 community, of which the vast majority are rare [@Jordano2016Samplingb].
 Documenting the location and timing of interactions becomes even more
 challenging when accounting for the spatiotemporal variability of ecological
-networks [@Poisot2012Dissimilaritya; @Poisot2015Speciesa]. Indeed, it is now
+networks [@Poisot2012Dissimilaritya, @Poisot2015Speciesa]. Indeed, it is now
 recognized that knowing the biological capacity of two species to interact is
 necessary but not sufficient for inferring their interaction at a specific time
 and space. For example, @Golubski2011ModMod presented many cases where trophic
@@ -19,11 +19,11 @@ within the region of interest [@Blanchet2020Cooccurrencea]. Then, they must
 encounter locally. Probabilities of interspecific encounters are typically low,
 especially for rare species with low relative abundances
 [@Canard2012Emergencea]. Finally, their traits must be locally compatible
-[@Poisot2015Speciesa]. This includes their phenology [@Olesen2010Missing;
-@Singer2012GeoMos], behavioral choices [@Pulliam1974Theory; @Choh2012PreRol] and
-phenotypes (Bolnick2011WhyInt; @Stouffer2011RolBod; Gravel2013InfFooa).
+[@Poisot2015Speciesa]. This includes their phenology [@Olesen2010Missing,
+@Singer2012GeoMos], behavioral choices [@Pulliam1974Theory, @Choh2012PreRol] and
+phenotypes (Bolnick2011WhyInt, @Stouffer2011RolBod, Gravel2013InfFooa).
 Environmental factors, such as temperature [@Angilletta2004TemGro], drought
-[@Woodward2012CliCha], climate change [@Gilman2010FraCom; @Woodward2010ChaEco;
+[@Woodward2012CliCha], climate change [@Gilman2010FraCom, @Woodward2010ChaEco,
 @Araujo2011Usinga], and habitat modifications [@Tylianakis2007HabMod],
 contribute to this spatiotemporal variability of interactions by impacting
 species abundance and traits. In this context, it is unsurprising that our
@@ -41,7 +41,7 @@ considers inherent uncertainties and observation errors associated with
 ecological data. In the broadest sense, binary networks are also a type of
 probabilistic network, in which the value of interactions is restrained to $0$
 (non-observed) or $1$ (observed). In probabilistic networks, only forbidden
-interactions [@Jordano2003Invarianta; @Olesen2010Missing] have a probability
+interactions [@Jordano2003Invarianta, @Olesen2010Missing] have a probability
 value of zero [but see @Gonzalez-Varo2016Labilea]. However, *neutral* forbidden
 interactions [i.e., improbable interactions between rare species,
 @Canard2012Emergencea] could have low probability values in a local network but
@@ -52,7 +52,7 @@ By accounting for the uncertainty of interactions, probabilistic networks
 provide a more realistic portrait of species interactions and their emerging
 structure. This is important given that network structure is one of the major
 drivers of the functioning, dynamics, and resilience of ecosystems worldwide
-[@Proulx2005Networka; @McCann2007ProBio; @McCann2011FooWeb; @Rooney2012IntFoo].
+[@Proulx2005Networka, @McCann2007ProBio, @McCann2011FooWeb, @Rooney2012IntFoo].
 Moreover, the application and development of computational methods in network
 ecology, which are often based on a probabilistic representation of
 interactions, can help alleviate the colossal sampling efforts required to
@@ -66,14 +66,14 @@ the identification of priority sampling locations of ecological networks [e.g.,
 @Andrade-Pacheco2020Finding present an approach to identify priority sampling
 locations of disease hotspots]. Statistical models can also be used to generate
 network predictions without prior knowledge of pairwise interactions, for
-instance using body size [@Petchey2008SizFor; @Gravel2013InfFooa], phylogeny
-[@Elmasri2020HieBay; @Strydom2022Food], or a combination of niche and neutral
-processes [@Bartomeus2016ComFra; @Pomeranz2019InfPre] for inference. Topological
-null models [e.g., @Bascompte2003NesAss; @Fortuna2006HabLos], which can be used
+instance using body size [@Petchey2008SizFor, @Gravel2013InfFooa], phylogeny
+[@Elmasri2020HieBay, @Strydom2022Food], or a combination of niche and neutral
+processes [@Bartomeus2016ComFra, @Pomeranz2019InfPre] for inference. Topological
+null models [e.g., @Bascompte2003NesAss, @Fortuna2006HabLos], which can be used
 to generate underlying distributions of network measures for null hypothesis
 significance testing, are other examples of common probabilistic network models.
 Many measures have been developed to describe the structure
-[@Poisot2016Structure] and diversity [@Ohlmann2019Diversity; @Godsoe2022Species]
+[@Poisot2016Structure] and diversity [@Ohlmann2019Diversity, @Godsoe2022Species]
 of probabilistic networks. These models and measures support the use of this
 approach for the study of a wide range of ecological questions, from making
 better predictions of species distribution [@Cazelles2016Theorya] to forecasting
@@ -102,7 +102,7 @@ prediction of binary networks across space. Although we focus on food webs, our
 observations and advice can be applied to most types of ecological networks,
 from plant-pollinator to host-parasite networks. Indeed, excepting networks of
 indirect interactions such as competition and facilitation networks
-[@Kefi2015NetStr; @Kefi2016HowStr], most ecological networks describe
+[@Kefi2015NetStr, @Kefi2016HowStr], most ecological networks describe
 probabilities of direct interactions, which are conceptually and mathematically
 analogous to each other regardless of their biological type (e.g., trophic and
 parasitic interactions). Overall, we argue that probabilistic networks should be
@@ -168,7 +168,7 @@ Even though binary networks constitute a highly valuable source of ecological
 information [@Pascual2006Ecologicala], they overlook important factors regarding
 interaction strengths. These are represented using quantitative interactions,
 which better describe the energy flows, demographic impacts or frequencies of
-interactions between nodes [@Berlow2004Interaction; @Borrett2019Walk], with
+interactions between nodes [@Berlow2004Interaction, @Borrett2019Walk], with
 $A_{i,j}$ being a natural number $\mathbb{N}$ or a real number $\mathbb{R}$
 depending on the measure. For example, they can represent the average number of
 prey individuals consumed by a predator in a given time period (e.g., the
@@ -253,7 +253,7 @@ probabilities at the local scale are taxa relative abundance
 [@Canard2012Emergencea] and traits [@Poisot2015Speciesa], as well as
 environmental factors such as temperature [@Angilletta2004TemGro], precipitation
 [@Woodward2012CliCha], habitat structure [@Klecka2014EffHab], and presence of
-other interacting taxa in the network [@Pilosof2017MulNat; @Kefi2012MorMea].
+other interacting taxa in the network [@Pilosof2017MulNat, @Kefi2012MorMea].
 Here, we will use the variable $\Omega$ to describe the biological and
 ecological context in which interaction probabilities were estimated. For
 example, if a research team conducts a mesocosm experiment to estimate
@@ -408,7 +408,7 @@ differ across a network even if it has heterogenous levels of organization, i.e.
 if different nodes are represented at different taxonomic scales (e.g., a
 network composed of species and trophic species). This is frequent in ecological
 networks where taxonomic resolution is typically low
-[@Hemprich-Bennett2021AssImp; @VazquezSS2022Ecological]. Broader-scale
+[@Hemprich-Bennett2021AssImp, @VazquezSS2022Ecological]. Broader-scale
 interactions should be based on probabilities of interactions between
 individuals, either at the local or regional scale. For example, in local
 individual-based food webs, the probability that two individuals interact
@@ -432,7 +432,7 @@ either spatially, temporally, or taxonomically.
 The study of network-area relationships (NARs) and interaction accumulation
 curves (IACs) are important realms of research in network ecology. Firstly, NARs
 describe the scaling of network properties (such as modularity and trophic chain
-lengths) with spatial scale [e.g., @Wood2015Effects; @Galiana2018Spatiala]. The
+lengths) with spatial scale [e.g., @Wood2015Effects, @Galiana2018Spatiala]. The
 variation of network structure across spatial scales can be the result of the
 scaling of species richness (species-area relationships, SARs) and the number of
 interactions [@Brose2004UniSpa] with the area sampled, but can also be due to
@@ -463,7 +463,7 @@ probabilities of interaction should be identical regardless of scale, i.e.
 $P_{M_1}(i \rightarrow j) = P_{M_0}(i \rightarrow j)$. On the other hand, local
 ecological networks scale both spatially and temporally since interactions have
 more opportunities to be realized and observed in a larger area and duration
-(e.g., more individuals, more trait variations, more chance of encounter;
+(e.g., more individuals, more trait variations, more chance of encounter,
 @McLeod2020EffSpe). For example, if a local probabilistic network $N_1$ of area
 $A_1$ is obtained from a larger network $N_0$ of area $A_0$, with $A_1$ being
 completely nested within $A_0$, interaction probabilities should be smaller in
@@ -476,36 +476,71 @@ intervals are nested. Statistical models, such as network-area relationships and
 interaction accumulation curves, can be used to generate estimates of local
 probabilities of interactions across spatial and temporal scales. 
 
-#### A spatiotemporally explicit model of probabilistic interactions
+#### A spatiotemporally explicit model of interactions
 
-The variability of species interactions spurred the development of methods
-aiming at predicting ecological networks at fine spatial and temporal scales.
-For example, @Bohan2017Nextgenerationa proposed a framework to reconstruct
-networks in real time using continuous biomonitoring. Here, we will build on
-these studies by proposing a simple model to make probabilistic local networks
-spatiotemporally explicit. These types of models could prove useful when
-inferring food webs across time and space from sparse data. However, they are
-not suitable for metawebs, which are static objects.
+Predicting local networks across time and space is an important goal of network
+ecology [@Strydom2021Roadmapa]. Indeed, in a context of scarcity of interaction
+data [@Jordano2016Samplingb], ecologists must rely on predictive models to
+reconstruct networks at fine spatial and temporal scales. For example, local
+ecological networks could be reconstructed using real-time biomonitoring data
+and adequate numerical models [@Bohan2017Nextgenerationa], which could pave the
+way for fine-scale studies of ecosystem functioning and dynamics. Besides
+predictive models, statistical models can also be built to describe parameters
+of interest, such as probabilities of interactions. In that case, parameter
+values provide valuable ecological information in their own rights. Different
+types of models (e.g., Bayesian and machine learning models) of ecological
+interactions have been built for predictive and descriptive purposes
+[@Strydom2021Roadmapa]. Representing interactions probabilistically reflects the
+uncertainty of these models, which is usually represented in terms of
+probability distributions. Here we show how to build a simple generative
+mechanistic model of probabilistic interactions that takes into account their
+inherent spatiotemporal variability, i.e. a model that is spatiotemporally
+explicit. Our model is not suitable for potential interactions, which are
+scale-independent. Rather, it could prove useful for predicting local
+interactions across time and space by generating new interaction data after
+parameter inference.
 
-One way that probabilistic food webs can be made spatiotemporally explicit is by
-modelling interactions between co-occurring species as a Poisson process with
-rate $\lambda$. Specifically, if the total observation time for a location is
-$t_0$, the probability that two co-occurring species $i$ and $j$ will interact
-during this time period is $P_N(i \rightarrow j | C_{i,j} = 1, t = t_0) =
-1-e^{-\lambda t_0}$, which approaches $1$ when $t \to \infty$. The value of the
-parameter $\lambda$ could be estimated using prior data on interaction
-strengths, if available. Additionally, we can estimate the probability of
-co-occurrence at location $(x,y)$ with $P_{x,y}(C_{i,j} = 1) = P_{x,y}(i)
-P_{x,y}(j)\gamma$, where $P_{x,y}(i)$ and $P_{x,y}(j)$ are respectively the
-probabilities of occurrence of species $i$ and $j$ and $\gamma$ is the strength
-of association between occurrence and co-occurrence, as defined in
-@Cazelles2016Theorya. Note that in empirical networks, $\gamma$ is typically $>
-1$ [@Catchen2023Missinga]. The observation of this interaction would thus follow
-a Bernoulli distribution with parameter $p =
-p_A(x,y)p_B(x,y)\gamma(1-e^{-\lambda t_0})$. This simple model could be
-customized in many ways, e.g. by linking $\lambda$ with given environmental
-variables or by adding in observation errors (i.e., probability of false
-negatives and false positives; @Catchen2023Missinga).
+As stated by @eq:co-occur, the probability that two taxa $i$ and $j$ interact at
+a given location $(x, y)$ is given by the product of their probability of
+interaction given co-occurrence and their probability of co-occurrence. First,
+their probability of co-occurrence is given by their respective probabilities of
+occurrence $P_i(x, y)$ and $P_j(x, y)$ and the strength of association $\gamma$
+between their occurrence and co-occurrence [@Cazelles2016Theorya]: 
+
+$$P_{i, j}(x, y) = P_i(x, y) P_j(x, y) \gamma.$$ {#eq:modelcoprob}
+
+When $\gamma > 1$, the geographic distributions of both taxa are positively
+associated, which implies that the occurrence of one taxa increases the
+probability of occurrence of the other. In empirical networks, $\gamma > 1$ for
+most species pairs [@Catchen2023Missinga]. The co-occurrence of both taxa is the
+result of a Bernoulli trial
+
+$$C \sim Bernoulli(P_{i, j}(x, y)).$$ {#eq:modelco}
+
+Second, the probability of interaction given co-occurrence can be made
+temporally explicit by modelling it as a Poisson process with rate $\lambda$.
+This parameter corresponds to the expected frequency of interaction between both
+taxa in a given time period and its value can be estimated using prior data on
+interaction strengths, if available. Specifically, the probability that two
+co-occurring taxa interact during a time period $t_0$ is: 
+
+$$P_N(i \rightarrow j | C = 1) = 1-e^{-\lambda t_0},$$ {#eq:modelrate}
+
+which approaches $1$ when $t_0 \to \infty$. 
+
+The realization of the interaction between $i$ and $j$ is the result of a
+Bernoulli trial with probability $P_{N}(i \rightarrow j)$. A Bayesian inference
+model can thus be built from the previous equations to estimate the value of the
+$\lambda$ parameter and generate new interaction data:
+
+$$I \sim \text{Bernoulli}(P_{N}(i \rightarrow j))$$ {#eq:model} $$P_{N}(i
+\rightarrow j) = P_i(x, y) P_j(x, y) \gamma (1-e^{-\lambda t_0})$$ {#eq:modeleq}
+$$\gamma \sim \text{Gamma}(2,0.5)$$ {#eq:modelgamma} $$\lambda \sim
+\text{Exponential}(2)$$ {#eq:modellambda}
+
+This simple model can be customized in many ways, e.g. by linking $\lambda$ with
+given environmental variables or by explicitly modelling observation errors
+(i.e., the probability of false negatives and false positives).
 
 ## Binary conversion of probabilistic networks through random draws
 
