@@ -209,28 +209,28 @@ are to interact at a given location and time period (i.e., they are
 context-dependent). In local networks, edges commonly represent our degree of
 belief that two taxa interact in nature, but can also document the probability
 of *observing* this interaction [@Catchen2023Missinga]. For example,
-@Kopelke2017FooStra assembled a dataset of deterministic local European food
-webs of willow-galling sawflies and their natural enemies, clearly referencing
-each food web in space and time. Because of its large number of replicated
-samples, this dataset can be used to infer the probability of locally observing
-an interaction between a pair of taxa [@Gravel2019BriElt]. More generally, we
-define space as the geographic coordinates $(x, y)$ of the spatial boundaries
-delineating the system (sampled or targeted) and time as the time interval
-during which interactions were sampled or for which they were predicted. Given
-that space and time are in reality continuous variables, the probability that an
-interaction occurs within a particular spatial and temporal setting is given by
-the integral of the probability density function describing the relative
-likelihood that this interaction is realized at any specific and infinitely
-small location and time. Therefore, the edge value could represent a probability
-density or a probability mass depending on how space and time are measured. For
-simplicity reasons, we will consider space and time as discrete dimensions that
-provide actual probabilities of interactions, which is conform to how ecological
-interactions are usually sampled. Using space and time intervals allows us to
-measure an area $A$ and duration $t$, which can be directly used in
-spatiotemporal analyses of ecological networks. For example, when studying
-network-area relationships [NAR, @Galiana2018Spatiala], we should expect local
-probabilities of interactions to scale with area and duration because taxa have
-more opportunities to interact.
+@Kopelke2017FooStra assembled a dataset of binary local European food webs of
+willow-galling sawflies and their natural enemies, clearly referencing each food
+web in space and time. Because of its large number of replicated samples, this
+dataset can be used to infer the probability of locally observing an interaction
+between any pair of taxa by measuring the proportion of sites where an
+interaction was observed [@Gravel2019BriElt]. More generally, we define space as
+the geographic coordinates $(x, y)$ of the spatial boundaries delineating the
+system (sampled or targeted) and time as the time interval during which
+interactions were sampled or for which they were predicted. Given that space and
+time are in reality continuous variables, the probability that an interaction
+occurs within a particular spatial and temporal setting is given by the integral
+of the probability density function describing the relative likelihood that this
+interaction is realized at any specific and infinitely small location and time.
+Therefore, the edge value could represent a probability density or a probability
+mass depending on how space and time are measured. For simplicity reasons, we
+will consider space and time as discrete dimensions that provide actual
+probabilities of interactions, which is conform to how ecological interactions
+are usually sampled. Using space and time intervals allows us to measure an area
+$A$ and duration $t$, which can be directly used in spatiotemporal analyses of
+ecological networks. For example, when studying network-area relationships [NAR,
+@Galiana2018Spatiala], we should expect local probabilities of interactions to
+scale with area and duration because taxa have more opportunities to interact.
 
 The probability that two taxa $i$ and $j$ interact locally can also be
 conditional on many environmental and biological factors. One of these is their
@@ -518,7 +518,7 @@ result of a Bernoulli trial
 $$C \sim Bernoulli(P_{i, j}(x, y)).$$ {#eq:modelco}
 
 Second, the probability of interaction given co-occurrence can be made
-temporally explicit by modelling it as a Poisson process with rate $\lambda$.
+temporally explicit by modeling it as a Poisson process with rate $\lambda$.
 This parameter corresponds to the expected frequency of interaction between both
 taxa in a given time period and its value can be estimated using prior data on
 interaction strengths, if available. Specifically, the probability that two
@@ -542,37 +542,60 @@ This simple model can be customized in many ways, e.g. by linking $\lambda$ with
 given environmental variables or by explicitly modelling observation errors
 (i.e., the probability of false negatives and false positives).
 
-## Binary conversion of probabilistic networks through random draws
+## Sampling binary networks 
 
-Another conceptual challenge encountered when using probabilistic food webs is
-the prediction of Boolean networks across space. Lets take $n \times n$ grid
-cells each representing a probabilistic food web. If they contain potential
-interactions, a single random trial must be conducted for each pairwise
-interaction across the region (i.e., we should have only one random realization
-of the regional metaweb). On the contrary, if they represent probabilities of
-realized interactions, each food web must be independently sampled (i.e., $n^2$
-independent random draws). This has direct implications on the spatial scaling
-of interactions. For example, let $N_1$ and $N_2$ be networks of area $< A_0$
-within a bigger area $A_0$ and disjoint from each other, such as $N_1$ and $N_2$
-form $N_0$ (think of two contiguous cells that together delineate $N_0$). All
-other things being equal, we should expect the probability that $i$ and $j$
-interacts in $A_0$ to be $P_{N_0}(i \rightarrow j) = 1 - (1 - P_{N_1}(i
-\rightarrow j)) \times (1 - P_{N_2}(i \rightarrow j))$ if $N_1$ and $N_2$ are
-independently sampled. This also implies that we should expect interactions to
-be realized in a certain number of local networks depending on the probability
-value, which is not the case with metawebs. Note that spatial auto-correlation
-and the concept of meta-network (i.e., networks of networks) could invalidate
-the statistical assumption of independence. Nevertheless, the fundamental
-difference in sampling metawebs and local networks stands even when considering
-these factors. This difference in sampling further sheds light on the importance
-of clearly defining interaction probabilities. What we consider as a *Bernoulli
-trial*, when randomly drawing deterministic networks from probabilistic food
-webs, depends on our biological interpretation of these probabilities. 
+Probabilistic networks can be used to predict binary interactions through random
+draws. This can be useful when analyzing the structure of a probabilistic
+network when analytical probabilistic measures are lacking. A binary network can
+be generated from independent Bernoulli trials for each interaction. The
+distribution of a network's property can then be obtained after measuring the
+structure of all randomly generated networks [@Poisot2016Structure]. Doing so
+allows us to represent the variability of network structure, although possibly
+with biases when connectance is low [@Poisot2014WheEco; @Chagnon2015ChaTop].
+When binary networks are generated under a null model, this method can be used
+for null hypothesis significance testing, in which case the observed measure is
+compared to a null distribution [e.g., @Bascompte2003NesAss]. Furthermore,
+randomly generating binary networks across space and time can help us visualize
+the spatiotemporal variability of network structure and test ecological
+hypotheses on interactions across large spatial and temporal scales. 
 
-Quantitative interactions can be converted to probabilistic interactions by
-normalizing. 
+There are at least two different approaches when sampling binary networks from
+probabilistic webs across space, e.g. if we want to predict a binary network for
+each of $n \times n$ grid cells. The first approach is to conduct a single
+Bernoulli trial for each pair of taxa found in the region of interest based on
+their regional probability of interaction. As a result, each pair of taxa that
+are predicted to interact in the regional network realization will interact in
+all of the $n^2$ networks in which they co-occur. This sampling technique is
+best used with potential interactions that have no spatial variation. The second
+approach is to independently sample each of the $n^2$ networks. In practice,
+this can be done by generating a different probabilistic network for each grid
+cell. Depending on how they were obtained, these networks can differ in their
+taxa composition (nodes) and/or interaction probabilities (edges). Then, binary
+networks can be independently sampled for each grid cell. Because this method
+generates spatial variation in binary interactions, it is best used with local
+interactions. 
 
-## Prediction of local networks from probabilistic metawebs
+The choice of sampling approach has an impact on the selection of grid cell
+size. In the first approach, interactions will be the same regardless of cell
+size because interactions are sampled only once from the regional network.
+However, in the second approach, local interaction probabilities depend on the
+network area. For example, let $N_1$ and $N_2$ be networks of area
+$\frac{1}{2}A_0$ nested within $A_0$ and disjoint from each other, i.e. two
+contiguous cells that form $N_0$. If $N_1$ and $N_2$ are independent (which is
+rarely the case in reality because of spatial auto-correlation), the probability
+that two taxa $i$ and $j$ interact in $N_0$ is given by:
+
+$$P_{N_0}(i \rightarrow j) = 1 - (1 - P_{N_1}(i \rightarrow j)) \times (1 -
+P_{N_2}(i \rightarrow j)).$$ {#eq:binary}
+
+Because of its larger area, the probability that the two taxa interact in $N_0$
+is higher than in $N_1$ and $N_2$. When sampling binary interactions from local
+networks, it is thus important to sample at the same spatial scale as the one
+for which probabilities were estimated. Otherwise, interaction probabilities
+must be adjusted to correspond to the targeted cell size and avoid systematic
+biases in prediction.
+
+## Prediction of local networks from metawebs
 
 Even though the spatiotemporal variability of interactions is not considered in
 metawebs, they can still be useful to reconstruct local networks of realized
