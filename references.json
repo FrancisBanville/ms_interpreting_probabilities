@@ -723,6 +723,34 @@
         "type": "article-journal"
     },
     {
+        "issued": {
+            "date-parts": [
+                [
+                    2015
+                ]
+            ]
+        },
+        "container-title": "Ecological Complexity",
+        "author": [
+            {
+                "family": "Chagnon",
+                "given": "Pierre-Luc"
+            }
+        ],
+        "id": "Chagnon2015ChaTop",
+        "DOI": "10.1016/j.ecocom.2015.01.004",
+        "volume": "22",
+        "page": "36-39",
+        "title": "Characterizing topology of ecological networks along gradients: The limits of metrics’ standardization",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "https://www.sciencedirect.com/science/article/pii/S1476945X15000070",
+        "id": "ChaTop",
+        "title": "Characterizing topology of ecological networks along gradients: The limits of metrics’ standardization - ScienceDirect",
+        "type": ""
+    },
+    {
         "publisher": "Nature Portfolio",
         "publisher-place": "Berlin",
         "issued": {
@@ -2122,6 +2150,33 @@
         "volume": "15",
         "page": "1353-1361",
         "title": "The dissimilarity of species interaction networks",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "PeerJ Inc.",
+        "issued": {
+            "date-parts": [
+                [
+                    2014
+                ]
+            ]
+        },
+        "container-title": "PeerJ",
+        "author": [
+            {
+                "family": "Poisot",
+                "given": "Timothée"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            }
+        ],
+        "id": "Poisot2014WheEco",
+        "DOI": "10.7717/peerj.251",
+        "volume": "2",
+        "page": "e251",
+        "title": "When is an ecological network complex? Connectance drives degree distribution and emerging network properties",
         "type": "article-journal"
     },
     {

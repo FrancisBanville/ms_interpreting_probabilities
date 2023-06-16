@@ -671,13 +671,14 @@ probabilistic networks</div>
             class="citation" data-cites="Catchen2023Missinga">(Catchen
             <em>et al.</em> 2023)</span>. For example, <span
             class="citation" data-cites="Kopelke2017FooStra">Kopelke
-            <em>et al.</em> (2017)</span> assembled a dataset of
-            deterministic local European food webs of willow-galling
-            sawflies and their natural enemies, clearly referencing each
-            food web in space and time. Because of its large number of
-            replicated samples, this dataset can be used to infer the
-            probability of locally observing an interaction between a
-            pair of taxa <span class="citation"
+            <em>et al.</em> (2017)</span> assembled a dataset of binary
+            local European food webs of willow-galling sawflies and
+            their natural enemies, clearly referencing each food web in
+            space and time. Because of its large number of replicated
+            samples, this dataset can be used to infer the probability
+            of locally observing an interaction between any pair of taxa
+            by measuring the proportion of sites where an interaction
+            was observed <span class="citation"
             data-cites="Gravel2019BriElt">(Gravel <em>et al.</em>
             2019)</span>. More generally, we define space as the
             geographic coordinates <span
@@ -1207,8 +1208,8 @@ probabilistic networks</div>
             <p><span id="eq:modelco"><span
             class="math display"><em>C</em> ∼ <em>B</em><em>e</em><em>r</em><em>n</em><em>o</em><em>u</em><em>l</em><em>l</em><em>i</em>(<em>P</em><sub><em>i</em>, <em>j</em></sub>(<em>x</em>,<em>y</em>)).   (6)</span></span></p>
             <p>Second, the probability of interaction given
-            co-occurrence can be made temporally explicit by modelling
-            it as a Poisson process with rate <span
+            co-occurrence can be made temporally explicit by modeling it
+            as a Poisson process with rate <span
             class="math inline"><em>λ</em></span>. This parameter
             corresponds to the expected frequency of interaction between
             both taxa in a given time period and its value can be
@@ -1243,63 +1244,93 @@ probabilistic networks</div>
             given environmental variables or by explicitly modelling
             observation errors (i.e., the probability of false negatives
             and false positives).</p>
-            <h2
-            id="binary-conversion-of-probabilistic-networks-through-random-draws">Binary
-            conversion of probabilistic networks through random
-            draws</h2>
-            <p>Another conceptual challenge encountered when using
-            probabilistic food webs is the prediction of Boolean
-            networks across space. Lets take <span
-            class="math inline"><em>n</em> × <em>n</em></span> grid
-            cells each representing a probabilistic food web. If they
-            contain potential interactions, a single random trial must
-            be conducted for each pairwise interaction across the region
-            (i.e., we should have only one random realization of the
-            regional metaweb). On the contrary, if they represent
-            probabilities of realized interactions, each food web must
-            be independently sampled (i.e., <span
-            class="math inline"><em>n</em><sup>2</sup></span>
-            independent random draws). This has direct implications on
-            the spatial scaling of interactions. For example, let <span
-            class="math inline"><em>N</em><sub>1</sub></span> and <span
-            class="math inline"><em>N</em><sub>2</sub></span> be
+            <h2 id="sampling-binary-networks">Sampling binary
+            networks</h2>
+            <p>Probabilistic networks can be used to predict binary
+            interactions through random draws. This can be useful when
+            analyzing the structure of a probabilistic network when
+            analytical probabilistic measures are lacking. A binary
+            network can be generated from independent Bernoulli trials
+            for each interaction. The distribution of a network’s
+            property can then be obtained after measuring the structure
+            of all randomly generated networks <span class="citation"
+            data-cites="Poisot2016Structure">(Poisot <em>et al.</em>
+            2016)</span>. Doing so allows us to represent the
+            variability of network structure, although possibly with
+            biases when connectance is low <span class="citation"
+            data-cites="Poisot2014WheEco Chagnon2015ChaTop">(Poisot
+            &amp; Gravel 2014; Chagnon 2015)</span>. When binary
+            networks are generated under a null model, this method can
+            be used for null hypothesis significance testing, in which
+            case the observed measure is compared to a null distribution
+            <span class="citation"
+            data-cites="Bascompte2003NesAss">(e.g., Bascompte <em>et
+            al.</em> 2003)</span>. Furthermore, randomly generating
+            binary networks across space and time can help us visualize
+            the spatiotemporal variability of network structure and test
+            ecological hypotheses on interactions across large spatial
+            and temporal scales.</p>
+            <p>There are at least two different approaches when sampling
+            binary networks from probabilistic webs across space,
+            e.g. if we want to predict a binary network for each of
+            <span class="math inline"><em>n</em> × <em>n</em></span>
+            grid cells. The first approach is to conduct a single
+            Bernoulli trial for each pair of taxa found in the region of
+            interest based on their regional probability of interaction.
+            As a result, each pair of taxa that are predicted to
+            interact in the regional network realization will interact
+            in all of the <span
+            class="math inline"><em>n</em><sup>2</sup></span> networks
+            in which they co-occur. This sampling technique is best used
+            with potential interactions that have no spatial variation.
+            The second approach is to independently sample each of the
+            <span class="math inline"><em>n</em><sup>2</sup></span>
+            networks. In practice, this can be done by generating a
+            different probabilistic network for each grid cell.
+            Depending on how they were obtained, these networks can
+            differ in their taxa composition (nodes) and/or interaction
+            probabilities (edges). Then, binary networks can be
+            independently sampled for each grid cell. Because this
+            method generates spatial variation in binary interactions,
+            it is best used with local interactions.</p>
+            <p>The choice of sampling approach has an impact on the
+            selection of grid cell size. In the first approach,
+            interactions will be the same regardless of cell size
+            because interactions are sampled only once from the regional
+            network. However, in the second approach, local interaction
+            probabilities depend on the network area. For example, let
+            <span class="math inline"><em>N</em><sub>1</sub></span> and
+            <span class="math inline"><em>N</em><sub>2</sub></span> be
             networks of area <span
-            class="math inline"> &lt; <em>A</em><sub>0</sub></span>
-            within a bigger area <span
-            class="math inline"><em>A</em><sub>0</sub></span> and
-            disjoint from each other, such as <span
+            class="math inline">$\frac{1}{2}A_0$</span> nested within
+            <span class="math inline"><em>A</em><sub>0</sub></span> and
+            disjoint from each other, i.e. two contiguous cells that
+            form <span
+            class="math inline"><em>N</em><sub>0</sub></span>. If <span
             class="math inline"><em>N</em><sub>1</sub></span> and <span
-            class="math inline"><em>N</em><sub>2</sub></span> form <span
-            class="math inline"><em>N</em><sub>0</sub></span> (think of
-            two contiguous cells that together delineate <span
-            class="math inline"><em>N</em><sub>0</sub></span>). All
-            other things being equal, we should expect the probability
-            that <span class="math inline"><em>i</em></span> and <span
-            class="math inline"><em>j</em></span> interacts in <span
-            class="math inline"><em>A</em><sub>0</sub></span> to be
-            <span
-            class="math inline"><em>P</em><sub><em>N</em><sub>0</sub></sub>(<em>i</em>→<em>j</em>) = 1 − (1−<em>P</em><sub><em>N</em><sub>1</sub></sub>(<em>i</em>→<em>j</em>)) × (1−<em>P</em><sub><em>N</em><sub>2</sub></sub>(<em>i</em>→<em>j</em>))</span>
-            if <span class="math inline"><em>N</em><sub>1</sub></span>
-            and <span class="math inline"><em>N</em><sub>2</sub></span>
-            are independently sampled. This also implies that we should
-            expect interactions to be realized in a certain number of
-            local networks depending on the probability value, which is
-            not the case with metawebs. Note that spatial
-            auto-correlation and the concept of meta-network (i.e.,
-            networks of networks) could invalidate the statistical
-            assumption of independence. Nevertheless, the fundamental
-            difference in sampling metawebs and local networks stands
-            even when considering these factors. This difference in
-            sampling further sheds light on the importance of clearly
-            defining interaction probabilities. What we consider as a
-            <em>Bernoulli trial</em>, when randomly drawing
-            deterministic networks from probabilistic food webs, depends
-            on our biological interpretation of these probabilities.</p>
-            <p>Quantitative interactions can be converted to
-            probabilistic interactions by normalizing.</p>
+            class="math inline"><em>N</em><sub>2</sub></span> are
+            independent (which is rarely the case in reality because of
+            spatial auto-correlation), the probability that two taxa
+            <span class="math inline"><em>i</em></span> and <span
+            class="math inline"><em>j</em></span> interact in <span
+            class="math inline"><em>N</em><sub>0</sub></span> is given
+            by:</p>
+            <p><span id="eq:binary"><span
+            class="math display"><em>P</em><sub><em>N</em><sub>0</sub></sub>(<em>i</em>→<em>j</em>) = 1 − (1−<em>P</em><sub><em>N</em><sub>1</sub></sub>(<em>i</em>→<em>j</em>)) × (1−<em>P</em><sub><em>N</em><sub>2</sub></sub>(<em>i</em>→<em>j</em>)).   (12)</span></span></p>
+            <p>Because of its larger area, the probability that the two
+            taxa interact in <span
+            class="math inline"><em>N</em><sub>0</sub></span> is higher
+            than in <span
+            class="math inline"><em>N</em><sub>1</sub></span> and <span
+            class="math inline"><em>N</em><sub>2</sub></span>. When
+            sampling binary interactions from local networks, it is thus
+            important to sample at the same spatial scale as the one for
+            which probabilities were estimated. Otherwise, interaction
+            probabilities must be adjusted to correspond to the targeted
+            cell size and avoid systematic biases in prediction.</p>
             <h2
-            id="prediction-of-local-networks-from-probabilistic-metawebs">Prediction
-            of local networks from probabilistic metawebs</h2>
+            id="prediction-of-local-networks-from-metawebs">Prediction
+            of local networks from metawebs</h2>
             <p>Even though the spatiotemporal variability of
             interactions is not considered in metawebs, they can still
             be useful to reconstruct local networks of realized
@@ -1321,7 +1352,7 @@ probabilistic networks</div>
             species interact at a specific location is always lower or
             equal to the probability of their potential interaction:</p>
             <p><span id="eq:switch"><span
-            class="math display"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>A</em>,<em>t</em>,<em>C</em>,<em>Ω</em>) ≤ <em>P</em><sub><em>M</em></sub>(<em>i</em>→<em>j</em>).   (12)</span></span></p>
+            class="math display"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>A</em>,<em>t</em>,<em>C</em>,<em>Ω</em>) ≤ <em>P</em><sub><em>M</em></sub>(<em>i</em>→<em>j</em>).   (13)</span></span></p>
             <p>Probabilistic metawebs give limited information on local
             networks. Additionally, our degree of belief that two taxa
             have the capacity to interact must be higher than the
@@ -1331,7 +1362,7 @@ probabilistic networks</div>
             temporal, and environmental conditions must be lower than
             the probability of potential interaction, i.e. </p>
             <p><span id="eq:all"><span
-            class="math display">∫<sub><em>Ω</em></sub>∫<sub><em>A</em></sub>∫<sub><em>t</em></sub><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>A</em>,<em>t</em>,<em>Ω</em>)<em>d</em><em>t</em><em>d</em><em>A</em><em>d</em><em>Ω</em> ≤ <em>P</em><sub><em>M</em></sub>(<em>i</em>→<em>j</em>),   (13)</span></span></p>
+            class="math display">∫<sub><em>Ω</em></sub>∫<sub><em>A</em></sub>∫<sub><em>t</em></sub><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>A</em>,<em>t</em>,<em>Ω</em>)<em>d</em><em>t</em><em>d</em><em>A</em><em>d</em><em>Ω</em> ≤ <em>P</em><sub><em>M</em></sub>(<em>i</em>→<em>j</em>),   (14)</span></span></p>
             <p>since both taxa might never co-occur or encounter
             locally.</p>
             <p>Therefore, inferring local networks from their metaweb
@@ -1497,6 +1528,14 @@ probabilistic networks</div>
             href="https://doi.org/10.1007/s12080-015-0281-9">A theory
             for species co-occurrence in interaction networks</a>.
             <em>Theoretical Ecology</em>, 9, 39–48.
+            </div>
+            <div id="ref-Chagnon2015ChaTop" class="csl-entry"
+            role="doc-biblioentry">
+            Chagnon, P.-L. (2015). <a
+            href="https://doi.org/10.1016/j.ecocom.2015.01.004">Characterizing
+            topology of ecological networks along gradients: The limits
+            of metrics’ standardization</a>. <em>Ecological
+            Complexity</em>, 22, 36–39.
             </div>
             <div id="ref-Choh2012PreRol" class="csl-entry"
             role="doc-biblioentry">
@@ -1784,6 +1823,14 @@ probabilistic networks</div>
             href="https://doi.org/10.1111/2041-210X.12468">The structure
             of probabilistic networks</a>. <em>Methods in Ecology and
             Evolution</em>, 7, 303–312.
+            </div>
+            <div id="ref-Poisot2014WheEco" class="csl-entry"
+            role="doc-biblioentry">
+            Poisot, T. &amp; Gravel, D. (2014). <a
+            href="https://doi.org/10.7717/peerj.251">When is an
+            ecological network complex? Connectance drives degree
+            distribution and emerging network properties</a>.
+            <em>PeerJ</em>, 2, e251.
             </div>
             <div id="ref-Poisot2015Speciesa" class="csl-entry"
             role="doc-biblioentry">
