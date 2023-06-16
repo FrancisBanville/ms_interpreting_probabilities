@@ -152,7 +152,7 @@ appropriately.
 
 ## Pairwise interactions: the building blocks of ecological networks
 
-Local ecological networks and metawebs, like any type of networks, are
+Local ecological networks and metawebs, like any type of network, are
 made of nodes and edges that can be represented at different levels of
 organization and precision. The basic unit of food webs and other
 ecological networks are individuals that interact with each other (e.g.,
@@ -361,7 +361,7 @@ interaction data before integrating and analyzing them.
 ## Metawebs: regional catalogs of interactions
 
 Metawebs are networks of potential interactions that have been designed
-for broad spatial, temporal, and taxonomic scales (e.g, species food
+for broad spatial, temporal, and taxonomic scales (e.g., species food
 webs at the continental scale). They represent the probability that two
 taxa can biologically interact regardless of their co-occurrence and
 local environmental conditions. Indeed, potential interactions are by
@@ -526,11 +526,11 @@ i.e. $P_{M_1}(i \rightarrow j) = P_{M_0}(i \rightarrow j)$. On the other
 hand, local ecological networks scale both spatially and temporally
 since interactions have more opportunities to be realized and observed
 in a larger area and duration (e.g., more individuals, more trait
-variations, more chance of encounter, @McLeod2020EffSpe). For example,
-if a local probabilistic network $N_1$ of area $A_1$ is obtained from a
-larger network $N_0$ of area $A_0$, with $A_1$ being completely nested
-within $A_0$, interaction probabilities should be smaller in the smaller
-network,
+variations, more chance of an encounter, @McLeod2020EffSpe). For
+example, if a local probabilistic network $N_1$ of area $A_1$ is
+obtained from a larger network $N_0$ of area $A_0$, with $A_1$ being
+completely nested within $A_0$, interaction probabilities should be
+smaller in the smaller network,
 i.e. $P_{N_1}(i \rightarrow j | A_1 < A_0) \le P_{N_0}(i \rightarrow j | A_0)$.
 However, if $A_1$ and $A_0$ are disjoint, interaction probabilities
 could be incidentally higher in the smaller area depending on their
@@ -561,8 +561,8 @@ probabilistically reflects the uncertainty of these models, which is
 usually represented in terms of probability distributions. Here we show
 how to build a simple generative mechanistic model of probabilistic
 interactions that takes into account their inherent spatiotemporal
-variability, i.e. a model that is spatiotemporally explicit. Our model
-is not suitable for potential interactions, which are scale-independent.
+variability, i.e. a spatiotemporally-explicit model. Our model is not
+suitable for potential interactions, which are scale-independent.
 Rather, it could prove useful for predicting local interactions across
 time and space by generating new interaction data after parameter
 inference.
@@ -578,7 +578,7 @@ co-occurrence [@Cazelles2016Theorya]:
 [$$P_{i, j}(x, y) = P_i(x, y) P_j(x, y) \gamma.\qquad{(5)}$$]{#eq:modelcoprob}
 
 When $\gamma > 1$, the geographic distributions of both taxa are
-positively associated, which implies that the occurrence of one taxa
+positively associated, which implies that the occurrence of one taxon
 increases the probability of occurrence of the other. In empirical
 networks, $\gamma > 1$ for most species pairs [@Catchen2023Missinga].
 The co-occurrence of both taxa is the result of a Bernoulli trial
@@ -611,7 +611,7 @@ interaction data:
 \text{Exponential}(2)\qquad{(11)}$$]{#eq:modellambda}
 
 This simple model can be customized in many ways, e.g. by linking
-$\lambda$ with given environmental variables or by explicitly modelling
+$\lambda$ with given environmental variables or by explicitly modeling
 observation errors (i.e., the probability of false negatives and false
 positives).
 
@@ -675,49 +675,53 @@ the targeted cell size and avoid systematic biases in prediction.
 
 ## Prediction of local networks from metawebs
 
-Even though the spatiotemporal variability of interactions is not
-considered in metawebs, they can still be useful to reconstruct local
-networks of realized interactions. Indeed, local networks are formed
-from subsets of their metaweb (called subnetworks), which are obtained
-by selecting a subset of both species and interactions
-[@Dunne2006Network]. Because a community's composition is arguably
-easier to sample (or predict) than its interactions, the biggest
-challenge is to sample links from the metaweb. This becomes a conceptual
-issue when we consider how potential and realized interactions differ.
-Despite these concerns, metawebs remain an important source of
-ecological information that can be leveraged for realistically
-predicting spatially explicit networks. First, metawebs set the upper
-limit of species interactions [@McLeod2021Sampling], i.e. the
-probability that two species interact at a specific location is always
-lower or equal to the probability of their potential interaction:
+Metawebs are an important source of ecological information that can be
+leveraged for predicting local networks. Indeed, binary local networks
+can be reconstructed by selecting a subset of both taxa and interactions
+from the metaweb [@Dunne2006Network]. This implies that there are always
+more interactions in a metaweb compared to its corresponding local
+networks. In practice, because a community's composition is arguably
+easier to sample or predict than its interactions, the list of taxa to
+select can be known empirically or obtained using range maps or species
+distribution models. The challenge is rather to choose which
+interactions to select from the metaweb, which could require more
+sophisticated statistical models and ecological knowledge. Because the
+structure of local networks is constrained by the one of the metaweb
+[@Saravia2022Ecological], inferring their structure from the metaweb
+before predicting local pairwise interactions could prove promising
+[@Strydom2021Roadmapa].
+
+When building probabilistic local networks from a probabilistic metaweb,
+interaction probabilities decrease. This is because two taxa must first
+have the capacity to interact (i.e., $M_{i,j}^* = 1$ in the binary
+metaweb $M^*$) before interacting locally:
+
+$$P_N(i \rightarrow j) = P_M(i \rightarrow j) \times P_N(i \rightarrow j
+|M_{i,j}^* = 1).$$
+
+Therefore, inferring local networks from their metaweb keeping the same
+values of interaction probability would generate systematic biases in
+the prediction. In that case, these networks would instead represent
+smaller-scale metawebs of potential interactions, which could be
+misinterpreted as local interactions. As suggested by
+@McLeod2021Sampling, even though metawebs do not capture the
+spatiotemporal variability of interactions, they set the upper limit of
+local interactions. In other words, the probability that two taxa
+interact at a given location and time is always lower or equal to the
+probability of their potential interaction:
 
 [$$P_{N}(i \rightarrow j | A, t, C, \Omega) \le
 P_M(i \rightarrow j).\qquad{(13)}$$]{#eq:switch}
 
-Probabilistic metawebs give limited information on local networks.
-Additionally, our degree of belief that two taxa have the capacity to
-interact must be higher than the probability that they will actually
-interact (or that they will ever interact). This implies that the
-accumulated probability of realized interactions across all spatial,
-temporal, and environmental conditions must be lower than the
-probability of potential interaction, i.e. 
+Moreover, the probability that two taxa have the biological capacity to
+interact must be higher than the probability that they will ever
+interact because they might never co-occur or encounter locally. More
+precisely, the accumulated probability of realized interactions across
+all spatial, temporal, and environmental conditions must be lower than
+the probability of potential interaction, i.e. 
 
 [$$\int_\Omega\int_A\int_t P_{N}(i \rightarrow j | A, t, \Omega) dt dA d\Omega
-\leq P_M(i \rightarrow j),\qquad{(14)}$$]{#eq:all}
-
-since both taxa might never co-occur or encounter locally.
-
-Therefore, inferring local networks from their metaweb keeping the same
-values of interaction probability would generate systematic biases in
-the prediction. In that case, these networks would instead be called
-*spatially explicit* or *local* metawebs (i.e., smaller-scale networks
-of potential interactions). Second, the structure of local networks is
-constrained by the one of their metaweb [@Saravia2022Ecological]. This
-suggests that a metaweb not only constrains the pairwise interactions of
-its corresponding local networks, but also their emerging properties.
-Inferring the structure of local networks from the metaweb could thus
-help estimate more realistically the likelihood that potential
-interactions are realized and observed locally [@Strydom2021Roadmapa].
+\leq P_M(i \rightarrow j).\qquad{(14)}$$]{#eq:all}
 
 # Conclusion
 
@@ -750,7 +754,7 @@ work was supported by the Institute for Data Valorisation (IVADO) and
 the Natural Sciences and Engineering Research Council of Canada (NSERC)
 Collaborative Research and Training Experience (CREATE) program, through
 the Computational Biodiversity Science and Services (BIOS²) program. A
-special thank to all members of the Black Holes and Revelations working
+special thanks to all members of the Black Holes and Revelations working
 group (organized by BIOS²) for their insightful discussions and valuable
 feedback on this manuscript.
 
