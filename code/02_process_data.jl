@@ -39,7 +39,7 @@ rename!(site_interact, :SITE => :site,
                     :NB_GALLS_PAR => :parasitoid_nb)
 
 
-## make metaweb
+## reshape dataframe so that every row is a different interaction
 
 # get salix-galler interactions
 salix_galler = select(site_interact, :site, :salix, :galler, :galler_nb)
@@ -56,28 +56,67 @@ rename!(galler_parasitoid, :galler => :to,
                     :parasitoid => :from,
                     :parasitoid_nb => :weight)
 
-all_links = vcat(salix_galler, galler_parasitoid)
+metaweb_links = vcat(salix_galler, galler_parasitoid)
 
 # remove rows without interactions
-all_links = filter(x -> x.weight != 0, all_links)
+metaweb_links = filter(x -> x.weight != 0, metaweb_links)
 
-# make list of all unique species
-sp = unique(vcat(all_links.to, all_links.from))
+# remove weight column since we work with binary interactions
+metaweb_links = select(metaweb_links, Not(:weight))
 
-# count number of species 
-S = length(sp)
+# remove duplicate interactions
+metaweb_links = unique(metaweb_links)
 
-# make adjacency matrix
-mat = zeros(Bool, S, S)
 
-for i in 1:S 
-    for j in 1:S
-        mat[i, j] = sum(all_links.from .== sp[i] .&& all_links.to .== sp[j]) > 0
+## build local networks and metaweb 
+
+function build_networks(site_id::String)
+
+    if site_id == "metaweb"
+        # keep all links when building the metaweb
+        local_links = select(metaweb_links, Not(:site))
+        # remove duplicate interactions
+        local_links = unique(local_links)
+    else
+        # get local links when building a local network
+        local_links = filter(x -> x.site == site_id, metaweb_links)
+        local_links = select(local_links, Not(:site))
     end
+
+    # make list of all unique species in that site
+    sp = unique(vcat(local_links.to, local_links.from))
+
+    # count number of species 
+    S = length(sp)
+
+    # make adjacency matrix
+    mat = zeros(Bool, S, S)
+
+    for i in 1:S 
+        for j in 1:S
+            mat[i, j] = sum(local_links.from .== sp[i] .&& local_links.to .== sp[j]) > 0
+        end
+    end
+
+    # return network with species names 
+    return simplify(UnipartiteNetwork(mat, sp))
 end
 
-# create and save metaweb with species names 
-M = UnipartiteNetwork(mat, sp)
 
+# build metaweb 
+M = build_networks("metaweb")
 save(joinpath("data", "processed", "metaweb.jld2"), "N", M)
+
+# build local networks
+sites = unique(metaweb_links.site)
+
+Ns = []
+
+for i in sites
+    push!(Ns, build_networks(i))
+end
+
+save(joinpath("data", "processed", "local_networks.jld2"), "N", Ns)
+
+
 
