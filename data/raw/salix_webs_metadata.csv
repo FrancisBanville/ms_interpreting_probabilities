@@ -1,0 +1,162 @@
+﻿Column header;Explanation
+Year of coll;Year of collection
+Rearing;Identification code of individual rearing
+leg;Date of collection
+country;Country of collection
+region;Region of collection
+site;Name of site
+Ndecdeg;Decimal degrees north
+Edecdeg;Decimal degrees east
+Elevation;Elevation (m)
+Salix;Salix species
+Salix author;Author of Salix species
+genus;Genus of galler
+species;Species of galler
+Genus species;Scientific name of galler
+Rgaller;Code name of galler species (for R)
+author;Author of galler species
+code galltype;"Gall types as coded by Kopelke (1999, 2003a,b). For leaf galls, codes are as follows: RK1 = thick-walled, elongated sausage-shaped galls on the upper surface of the leaf; RK2 = thin-walled, kidney-shaped spacious galls transected horizontally by the leaf blade; RK3 = thick-walled, bean-shaped galls with a narrow cavity, transected horizontally by the leaf blade; RK4 = thin to thick-walled, pea-shaped galls at the underside of the leaf "
+code galltype simplified;Simplified gall type classification used by Nyman et al. (2000, 2007)
+distribution;Distribution of galler species
+n galls;Number of galls reared
+n clean galls;"Number of galls that were ""fake galls"": the egg-laying galler will often induce fake galls around her real galls to throw off predators"
+n real galls;Number or REAL gall reared: use this number!
+parasitised galls;Number of galls that were parasitized
+unparasitised galls;Number of galls that were unparasitized
+total parasitism rate;Rate of parasitism summed across rearing
+Anaprostocetus acuminatus (Ratzeburg 1848);Number of individuals of parasitoid/inquiline species
+Aprostocetus alveatus Graham 1961;Number of individuals of parasitoid/inquiline species
+Aprostocetus tymber (Walker 1839);Number of individuals of parasitoid/inquiline species
+Aprostocetus sp.;Number of individuals of parasitoid/inquiline species
+Chrysocharis elongata (Thomson 1878);Number of individuals of parasitoid/inquiline species
+Cirrospilus vittatus Walker 1838;Number of individuals of parasitoid/inquiline species
+Closterocerus trifasciatus Westwood 1833;Number of individuals of parasitoid/inquiline species
+Dicladocerus westwoodi Westwood 1832;Number of individuals of parasitoid/inquiline species
+Entedon heyeri (Ratzeburg 1848);Number of individuals of parasitoid/inquiline species
+Euderus albitarsis (Zetterstedt 1838);Number of individuals of parasitoid/inquiline species
+Pediobius saulius (Walker 1839);Number of individuals of parasitoid/inquiline species
+Pnigalio nemati (Westwood 1838);Number of individuals of parasitoid/inquiline species
+Pnigalio pectinicornis (Linnaeus 1758);Number of individuals of parasitoid/inquiline species
+Pnigalio soemius (Walker 1839);Number of individuals of parasitoid/inquiline species
+Tetrastichus sp.1;Number of individuals of parasitoid/inquiline species
+Tetrastichus sp.2;Number of individuals of parasitoid/inquiline species
+Tetrastichus sp.3;Number of individuals of parasitoid/inquiline species
+Tetrastichus sp.4;Number of individuals of parasitoid/inquiline species
+Tetrastichus sp.5;Number of individuals of parasitoid/inquiline species
+Tetrastichus sp.6;Number of individuals of parasitoid/inquiline species
+Tetrastichus sp.;Number of individuals of parasitoid/inquiline species
+Eurytoma aciculata Ratzeburg 1848;Number of individuals of parasitoid/inquiline species
+Eurytoma nobbei Mayr 1878;Number of individuals of parasitoid/inquiline species
+Eurytoma salicis Walker 1834;Number of individuals of parasitoid/inquiline species
+Eurytoma sp.;Number of individuals of parasitoid/inquiline species
+Mymaridae gen. sp.;Number of individuals of parasitoid/inquiline species
+Eulonchetron torymoides (Thomson 1878);Number of individuals of parasitoid/inquiline species
+Eupelmus urozonus Dalman 1820;Number of individuals of parasitoid/inquiline species
+Macroneura vesicularis (Retzius 1783);Number of individuals of parasitoid/inquiline species
+Mesopolobus ?longicollis Graham 1969;Number of individuals of parasitoid/inquiline species
+Pteromalus cyniphidis (Linnaeus 1758);Number of individuals of parasitoid/inquiline species
+Pteromalus dolichurus (Thomson 1878);Number of individuals of parasitoid/inquiline species
+Pteromalus euurae Askew 1995;Number of individuals of parasitoid/inquiline species
+Pteromalus pontaniae Askew 1985;Number of individuals of parasitoid/inquiline species
+Pteromalus sp.;Number of individuals of parasitoid/inquiline species
+Sympiesis ?alcalle (Walker 1848);Number of individuals of parasitoid/inquiline species
+Torymus sp.;Number of individuals of parasitoid/inquiline species
+Chalcidoidea indet.;Number of individuals of parasitoid/inquiline species
+Apanteles ?morrisi Mason 1974;Number of individuals of parasitoid/inquiline species
+Apanteles xanthostigma (Haliday 1834);Number of individuals of parasitoid/inquiline species
+Apanteles sp.;Number of individuals of parasitoid/inquiline species
+Bracon breviusculus (Wesmael 1838);Number of individuals of parasitoid/inquiline species
+Bracon conjugellae Bengtsson 1924;Number of individuals of parasitoid/inquiline species
+Bracon discoideus (Wesmael 1838);Number of individuals of parasitoid/inquiline species
+Bracon epitriptus Marshall 1885;Number of individuals of parasitoid/inquiline species
+Bracon immutator Nees 1834;Number of individuals of parasitoid/inquiline species
+Bracon intercessor Nees 1834;Number of individuals of parasitoid/inquiline species
+Bracon kopelkei Papp 2000;Number of individuals of parasitoid/inquiline species
+Bracon lividus Telenga 1936;Number of individuals of parasitoid/inquiline species
+Bracon obscurator Nees 1811;Number of individuals of parasitoid/inquiline species
+Bracon picticornis (Wesmael 1838);Number of individuals of parasitoid/inquiline species
+Bracon pulcher Bengtsson 1924;Number of individuals of parasitoid/inquiline species
+Bracon romani Fahringer 1927;Number of individuals of parasitoid/inquiline species
+Bracon sp.;Number of individuals of parasitoid/inquiline species
+Colastes flavitarsis (Thomson 1892);Number of individuals of parasitoid/inquiline species
+Colastes gracilis Papp 1975;Number of individuals of parasitoid/inquiline species
+Colastes ?incertus (Wesmael 1838);Number of individuals of parasitoid/inquiline species
+Colastes laevis (Thomson 1892);Number of individuals of parasitoid/inquiline species
+Colastes nr. subquadratus Achterberg;Number of individuals of parasitoid/inquiline species
+Dolichogenidea coleophorae (Wilkinson 1938);Number of individuals of parasitoid/inquiline species
+Dolichogenidea longicauda (Wesmael 1837);Number of individuals of parasitoid/inquiline species
+Ichneutes brevis Wesmael 1835;Number of individuals of parasitoid/inquiline species
+Ichneutes lapponicus Thomson 1895;Number of individuals of parasitoid/inquiline species
+Ichneutes reunitor Nees 1816;Number of individuals of parasitoid/inquiline species
+Ichneutes sp.;Number of individuals of parasitoid/inquiline species
+Lissogaster subcompleta (Nees v. Esenbeck 1834);Number of individuals of parasitoid/inquiline species
+Shawiana lapponica (Thomson 1892);Number of individuals of parasitoid/inquiline species
+Braconidae indet.;Number of individuals of parasitoid/inquiline species
+Adelognathus cubiceps Roman 1925;Number of individuals of parasitoid/inquiline species
+Adelognathus pusillus Holmgren 1857;Number of individuals of parasitoid/inquiline species
+Adelognathus trochanteratus Kasparyan 1986;Number of individuals of parasitoid/inquiline species
+Adelognathus sp.;Number of individuals of parasitoid/inquiline species
+Anoncus gallicola Kasparyan & Kopelke 2009;Number of individuals of parasitoid/inquiline species
+Aptesis nigrocincta (Gravenhorst 1815);Number of individuals of parasitoid/inquiline species
+Campodorus variegatus Jurine 1807;Number of individuals of parasitoid/inquiline species
+Campoplex sp.;Number of individuals of parasitoid/inquiline species
+Cteniscus dorsalis Cresson 1864;Number of individuals of parasitoid/inquiline species
+Ctenochira ?oreophila (Schmiedeknecht 1912);Number of individuals of parasitoid/inquiline species
+Ctenochira romani (Pfankuch 1925);Number of individuals of parasitoid/inquiline species
+Ctenochira sp.;Number of individuals of parasitoid/inquiline species
+Diaparsis stramineipes (Brischke 1880);Number of individuals of parasitoid/inquiline species
+Eclytus sp.;Number of individuals of parasitoid/inquiline species
+Eridolius frontator Kasparyan 1985;Number of individuals of parasitoid/inquiline species
+Eridolius pygmaeus (Holmgren 1857);Number of individuals of parasitoid/inquiline species
+Eridolius taigensis Kasparyan 1985;Number of individuals of parasitoid/inquiline species
+Eridolius sp.;Number of individuals of parasitoid/inquiline species
+Erromenus analis Brischke 1871;Number of individuals of parasitoid/inquiline species
+Exochus sp. 1;Number of individuals of parasitoid/inquiline species
+Exyston calcaratus Thomson 1883;Number of individuals of parasitoid/inquiline species
+Gambrus ornatus (Gravenhorst 1829);Number of individuals of parasitoid/inquiline species
+Gelis sp.;Number of individuals of parasitoid/inquiline species
+Itoplectis alternans (Gravenhorst 1829);Number of individuals of parasitoid/inquiline species
+Lathrostizus alpicola Horstmann 2004;Number of individuals of parasitoid/inquiline species
+Lathrostizus alpinus Horstmann 1971;Number of individuals of parasitoid/inquiline species
+Lathrostizus flexicauda (Holmgren 1860);Number of individuals of parasitoid/inquiline species
+Lathrostizus forticauda (Thomson 1887);Number of individuals of parasitoid/inquiline species
+Lathrostizus lapponicus Horstmann 2004;Number of individuals of parasitoid/inquiline species
+Lathrostizus lugens (Gravenhorst 1829);Number of individuals of parasitoid/inquiline species
+Lathrostizus punctipes (Thomson 1887);Number of individuals of parasitoid/inquiline species
+Lissonota ?alpinistor Aubert 1969;Number of individuals of parasitoid/inquiline species
+Mesochorus sp.1;Number of individuals of parasitoid/inquiline species
+Mesoleius sp.;Number of individuals of parasitoid/inquiline species
+Olesicampe sp.;Number of individuals of parasitoid/inquiline species
+Polyblastus pumilus Holmgren 1855;Number of individuals of parasitoid/inquiline species
+Polyblastus sp.?;Number of individuals of parasitoid/inquiline species
+Probles clavicornis Horstmann 1971;Number of individuals of parasitoid/inquiline species
+Rhinotorus brachycerus Kasparyan & Kopelke 2009;Number of individuals of parasitoid/inquiline species
+Saotis alpinator Kasparyan & Kopelke 2009;Number of individuals of parasitoid/inquiline species
+Saotis boreator Kasparyan & Kopelke 2010;Number of individuals of parasitoid/inquiline species
+Saotis granulator Kasparyan & Kopelke 2010;Number of individuals of parasitoid/inquiline species
+Saotis morleyi Fitton 1976;Number of individuals of parasitoid/inquiline species
+Saotis nigriscuta (Thomson, 1883);Number of individuals of parasitoid/inquiline species
+Saotis pygidiator pygidiator Kasparyan & Kopelke 2009;Number of individuals of parasitoid/inquiline species
+Saotis renovata (Morley, 1911);Number of individuals of parasitoid/inquiline species
+Saotis subarctor Kasparyan & Kopelke 2010;Number of individuals of parasitoid/inquiline species
+Saotis tricolor (Thomson 1883);Number of individuals of parasitoid/inquiline species
+Saotis sp.;Number of individuals of parasitoid/inquiline species
+Scambus vesicarius (Ratzeburg 1844);Number of individuals of parasitoid/inquiline species
+Theroscopus hemipteron (Riche 1791) insignipennis (Schmiedeknecht 1905);Number of individuals of parasitoid/inquiline species
+Lathrostizus/Olesicampe sp.;Number of individuals of parasitoid/inquiline species
+Ichneumonidae indet.;Number of individuals of parasitoid/inquiline species
+Apion minimum Herbst 1797;Number of individuals of parasitoid/inquiline species
+Curculio crux Fabricius 1776;Number of individuals of parasitoid/inquiline species
+Curculio salicivorus Paykull 1792;Number of individuals of parasitoid/inquiline species
+Euphranta toxoneura (Loew 1846);Number of individuals of parasitoid/inquiline species
+Hydriomena ruberata Freyer 1831;Number of individuals of parasitoid/inquiline species
+ORDER;Order of parasitoid/inquiline species
+SUPERFAMILY;Superfamily of parasitoid/inquiline species
+FAMILY;Family of parasitoid/inquiline species
+GENUS;Genus of parasitoid/inquiline species
+GOODNESS OF ID;Level to which parasitoid/inquiline has been identified
+P/I;Parasitoid/Inquiline
+ENDO/ECTO;Endoparasite/Ectoparasite
+KOINO/IDIO;Koinobiont/Idiobiont
+1INSTAR/LINSTAR/COCOON/EGG;Target of attack: 1st instar larvae / later instar larvae / cocoons / eggs
+RPAR;Code name of parasitoid/inquiline species (for use in R)
