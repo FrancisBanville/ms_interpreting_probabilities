@@ -81,6 +81,8 @@ bs_975 = quantile.(eachcol(bs), 0.975)
 
 # make bos beta diversity figure
 
+a = [1,2,3,5,10,25,50,100,200] # specified x-ticks 
+
 plot_bos = plot(1:n_samples,
     bos_975,
     fillrange=bos_025,
@@ -102,8 +104,10 @@ plot_bos = plot(1:n_samples,
     legendfontpointsize=7,
     legendfontfamily="Times")
 
-xaxis!(xlabel="Number of samples", 
-    xlims=(0,n_samples))
+xaxis!(:log,
+    xlabel="Number of samples", 
+    xticks=(a,a),
+    xlims=(1,200))
 
 yaxis!(ylabel="Dissimilarity of interactions between common species (βos)", 
     ylims=(0, 0.5))
@@ -149,8 +153,10 @@ plot_bs = plot(1:n_samples,
     legendfontpointsize=7,
     legendfontfamily="Times")
 
-xaxis!(xlabel="Number of samples", 
-    xlims=(0,n_samples))
+xaxis!(:log,
+    xlabel="Number of samples", 
+    xticks=(a,a),
+    xlims=(1,200))
 
 yaxis!(ylabel="Dissimilarity in species composition (βs)", 
     ylims=(0, 1))
