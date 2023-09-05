@@ -4,7 +4,7 @@ Cataloging ecological interactions is a gargantuan task. Regardless of sampling
 effort, there are practical and biological constraints that hinder our ability
 to observe all interactions in nature, such as the spatial and temporal
 uncoupling of species and the large number of potential interactions in a
-community, of which the vast majority are rare [@Jordano2016Samplingb].
+community, of which the vast majority are rare (@Jordano2016Samplingb).
 Documenting the location and timing of interactions becomes even more
 challenging when accounting for the spatiotemporal variability of ecological
 networks (@Poisot2012Dissimilaritya, @Poisot2015Speciesa). Indeed, it is now
