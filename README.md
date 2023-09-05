@@ -19,9 +19,9 @@ within the region of interest [@Blanchet2020Cooccurrencea]. Then, they must
 encounter locally. Probabilities of interspecific encounters are typically low,
 especially for rare species with low relative abundances
 [@Canard2012Emergencea]. Finally, their traits must be locally compatible
-[@Poisot2015Speciesa]. This includes their phenology [@Olesen2010Missing,
-@Singer2012GeoMos], behavioral choices [@Pulliam1974Theory, @Choh2012PreRol] and
-phenotypes (Bolnick2011WhyInt, @Stouffer2011RolBod, Gravel2013InfFooa).
+[@Poisot2015Speciesa]. This includes their phenology (@Olesen2010Missing,
+@Singer2012GeoMos), behavioral choices (@Pulliam1974Theory, @Choh2012PreRol) and
+phenotypes (@Bolnick2011WhyInt, @Stouffer2011RolBod, @Gravel2013InfFooa).
 Environmental factors, such as temperature [@Angilletta2004TemGro], drought
 [@Woodward2012CliCha], climate change [@Gilman2010FraCom, @Woodward2010ChaEco,
 @Araujo2011Usinga], and habitat modifications [@Tylianakis2007HabMod],
