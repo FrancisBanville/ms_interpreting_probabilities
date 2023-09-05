@@ -8,7 +8,7 @@ potential interactions in a community, of which the vast majority are
 rare [@Jordano2016Samplingb]. Documenting the location and timing of
 interactions becomes even more challenging when accounting for the
 spatiotemporal variability of ecological networks
-[@Poisot2012Dissimilaritya, @Poisot2015Speciesa]. Indeed, it is now
+(@Poisot2012Dissimilaritya, @Poisot2015Speciesa). Indeed, it is now
 recognized that knowing the biological capacity of two species to
 interact is necessary but not sufficient for inferring their interaction
 at a specific time and space. For example, @Golubski2011ModMod presented
