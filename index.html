@@ -265,25 +265,24 @@ probabilistic networks</div>
     <main class="container">
         <section class="abstract">
             The stochastic nature of ecological interactions has led
-            many biologists to adopt a probabilistic view of ecological
+            biologists to adopt a probabilistic view of ecological
             networks. Representing species interactions
-            probabilistically (how likely are they to interact?) as
-            opposed to deterministically (do they interact?) allows a
+            probabilistically (how likely are they occurring?) as
+            opposed to deterministically (are they occurring?) allows a
             better assessment of their spatiotemporal variability and
-            accounts for inherent uncertainties in observations and
+            accounts for inherent uncertainties in both observations and
             predictions. However, despite this growing interest in
-            probabilistic networks, general guidelines regarding the
-            estimation and documentation of probabilistic interaction
-            data are still lacking. This is concerning given that their
-            biological interpretation and statistical manipulation are
-            contingent upon the methods and variables used to estimate
-            them. In this contribution, we review how probabilistic
-            interactions are defined in the literature at different
-            spatial scales, from local interactions to regional networks
-            (metawebs), with a strong emphasis on food webs. These
-            definitions are based on the distinction between the
-            realization of an interaction at a specific time and space
-            and its biological feasibility. We show that different
+            probabilistic networks, guidelines for the estimation and
+            documentation of probabilistic interaction data are still
+            lacking. This is concerning given that their biological
+            interpretation and statistical manipulation are contingent
+            upon the methods and variables used to estimate them. We
+            review how probabilistic interactions are defined at
+            different spatial scales, from local interactions to
+            regional networks (metawebs), with a strong emphasis on food
+            webs. These definitions are based on the distinction between
+            the observation of an interaction at a specific time and
+            space and its biological feasibility. We show that different
             network representations have different statistical
             behaviours when it comes to common ecological applications.
             Specifically, we argue that local probabilistic networks and
@@ -291,18 +290,17 @@ probabilistic networks</div>
             interactions, with potential interactions being
             scale-independent. This is in contrast with the taxonomic
             scaling of interactions, which does not qualitatively differ
-            between both types of networks. Moreover, we suggest two
-            approaches to sampling deterministic networks from
-            probabilistic webs that account for these differences and
-            argue that systematic biases arise when directly inferring
-            local networks from subsets of metawebs. To support our
-            arguments, we built a spatiotemporally explicit model of
-            probabilistic interactions and developed different case
-            studies using empirical and simulated data. Overall, our
-            results emphasize the need for better documentation of
-            probabilistic ecological networks, both at the local and
-            regional scales, to inform the appropriate reuse of these
-            data.
+            between both types of networks. We suggest two approaches to
+            inferring deterministic networks from probabilistic webs
+            that account for these differences and argue that systematic
+            biases arise when directly inferring local networks from
+            subsets of metawebs. To support our arguments, we build a
+            spatiotemporally explicit model of probabilistic
+            interactions and develop different case studies using
+            empirical and simulated data. Overall, our results emphasize
+            the need for better documentation of probabilistic
+            ecological networks, both at the local and regional scales,
+            to inform the appropriate reuse of these data.
 
 
             <div class="artifacts">
@@ -314,43 +312,44 @@ probabilistic networks</div>
 
         <article>
             <h1 id="introduction">Introduction</h1>
-            <p>Cataloging ecological interactions is a gargantuan task.
-            Regardless of sampling effort, there are practical and
-            biological constraints that hinder our ability to observe
-            all interactions in nature, such as the spatial and temporal
-            uncoupling of species and the large number of potential
+            <p>Cataloging ecological interactions is a substantial
+            challenge. There are practical and biological constraints
+            that hinder our ability to observe all interactions, such as
+            the spatial and temporal uncoupling of species (<span
+            class="citation" data-cites="Jordano1987PatMut">Jordano
+            (1987)</span>) and the large number of potential
             interactions in a community, of which the vast majority are
             rare (<span class="citation"
             data-cites="Jordano2016Samplingb">Jordano (2016)</span>).
             Documenting the location and timing of interactions becomes
-            even more challenging when accounting for the spatiotemporal
+            even more difficult when accounting for the spatiotemporal
             variability of ecological networks (<span class="citation"
             data-cites="Poisot2012Dissimilaritya">Poisot <em>et al.</em>
             (2012)</span>, <span class="citation"
             data-cites="Poisot2015Speciesa">Poisot <em>et al.</em>
-            (2015)</span>). Indeed, it is now recognized that knowing
-            the biological capacity of two species to interact is
-            necessary but not sufficient for inferring their interaction
-            at a specific time and space. For example, <span
-            class="citation" data-cites="Golubski2011ModMod">Golubski
-            &amp; Abrams (2011)</span> presented many cases where
-            trophic interactions in food webs depend on the presence or
+            (2015)</span>). Indeed, knowing the biological capacity of
+            two species to interact is necessary but not sufficient for
+            inferring their interaction at a specific time and space.
+            For example, <span class="citation"
+            data-cites="Golubski2011ModMod">Golubski &amp; Abrams
+            (2011)</span> presented many cases where trophic
+            interactions in food webs depend on the presence or
             abundance of a third species (e.g., of a more profitable
             prey species). More generally, a handful of conditions must
             be satisfied for an interaction to be observed locally.
             First, both species must have overlapping geographic ranges,
-            i.e. they must co-occur within the region of interest <span
+            i.e. they must co-occur within the region of interest (<span
             class="citation"
-            data-cites="Blanchet2020Cooccurrencea">(Blanchet <em>et
-            al.</em> 2020)</span>. Then, they must encounter locally.
+            data-cites="Blanchet2020Cooccurrencea">Blanchet <em>et
+            al.</em> (2020)</span>). Then, they must encounter locally.
             Probabilities of interspecific encounters are typically low,
             especially for rare species with low relative abundances
-            <span class="citation"
-            data-cites="Canard2012Emergencea">(Canard <em>et al.</em>
-            2012)</span>. Finally, their traits must be locally
-            compatible <span class="citation"
-            data-cites="Poisot2015Speciesa">(Poisot <em>et al.</em>
-            2015)</span>. This includes their phenology (<span
+            (<span class="citation"
+            data-cites="Canard2012Emergencea">Canard <em>et al.</em>
+            (2012)</span>). Finally, their traits must be locally
+            compatible (<span class="citation"
+            data-cites="Poisot2015Speciesa">Poisot <em>et al.</em>
+            (2015)</span>). This includes their phenology (<span
             class="citation" data-cites="Olesen2010Missing">Olesen
             <em>et al.</em> (2010)</span>, <span class="citation"
             data-cites="Singer2012GeoMos">Singer &amp; McBride
@@ -364,153 +363,182 @@ probabilistic networks</div>
             (2011)</span>, <span class="citation"
             data-cites="Gravel2013InfFooa">Gravel <em>et al.</em>
             (2013)</span>). Environmental factors, such as temperature
-            <span class="citation"
-            data-cites="Angilletta2004TemGro">(Angilletta <em>et
-            al.</em> 2004)</span>, drought <span class="citation"
-            data-cites="Woodward2012CliCha">(Woodward <em>et al.</em>
-            2012)</span>, climate change <span class="citation"
-            data-cites="Gilman2010FraCom">Araujo <em>et al.</em>
-            (2011)</span>, and habitat modifications <span
+            (<span class="citation"
+            data-cites="Angilletta2004TemGro">Angilletta <em>et al.</em>
+            (2004)</span>), drought (<span class="citation"
+            data-cites="Woodward2012CliCha">Woodward <em>et al.</em>
+            (2012)</span>), climate change (<span class="citation"
+            data-cites="Gilman2010FraCom">Gilman <em>et al.</em>
+            (2010)</span>, <span class="citation"
+            data-cites="Woodward2010ChaEco">Woodward <em>et al.</em>
+            (2010)</span>, <span class="citation"
+            data-cites="Araujo2011Usinga">Araujo <em>et al.</em>
+            (2011)</span>), and habitat modifications (<span
             class="citation"
-            data-cites="Tylianakis2007HabMod">(Tylianakis <em>et
-            al.</em> 2007)</span>, contribute to this spatiotemporal
+            data-cites="Tylianakis2007HabMod">Tylianakis <em>et al.</em>
+            (2007)</span>), contribute to this spatiotemporal
             variability of interactions by impacting species abundance
             and traits. In this context, it is unsurprising that our
-            knowledge of ecological interactions remains limited <span
-            class="citation" data-cites="Hortal2015SevSho">(Hortal
-            <em>et al.</em> 2015)</span> despite extensive biodiversity
-            data collection <span class="citation"
-            data-cites="Schmeller2015GloTer">(Schmeller <em>et al.</em>
-            2015)</span>.</p>
+            knowledge of ecological interactions remains limited (<span
+            class="citation" data-cites="Hortal2015SevSho">Hortal <em>et
+            al.</em> (2015)</span>) despite extensive biodiversity data
+            collection (<span class="citation"
+            data-cites="Schmeller2015GloTer">Schmeller <em>et al.</em>
+            (2015)</span>).</p>
             <p>The recognition of the intrinsic variability of species
             interactions has led ecologists to expand their
             representation of ecological networks to include a
-            probabilistic view of interactions <span class="citation"
-            data-cites="Poisot2016Structure">(Poisot <em>et al.</em>
-            2016)</span>. As opposed to binary deterministic networks,
-            in which interactions are either observed or not,
-            probabilistic networks represent our degree of belief about
-            the realization or feasibility of pairwise interactions at
-            the local or regional scale, respectively. In other words,
-            representing interactions probabilistically considers
-            inherent uncertainties and observation errors associated
+            probabilistic view of interactions (<span class="citation"
+            data-cites="Poisot2016Structure">Poisot <em>et al.</em>
+            (2016)</span>). As opposed to binary deterministic networks,
+            in which interactions are regarded as either occurring or
+            not, probabilistic networks represent our degree of belief
+            about the realization or feasibility of pairwise
+            interactions at the local or regional scale, respectively.
+            In other words, representing interactions probabilistically
+            considers inherent uncertainties and variability associated
             with ecological data. In the broadest sense, binary networks
             are also a type of probabilistic network, in which the value
             of interactions is restrained to <span
-            class="math inline">0</span> (non-observed) or <span
-            class="math inline">1</span> (observed). In probabilistic
-            networks, only forbidden interactions <span class="citation"
-            data-cites="Jordano2003Invarianta">Olesen <em>et al.</em>
-            (2010)</span> have a probability value of zero <span
-            class="citation" data-cites="Gonzalez-Varo2016Labilea">(but
-            see Gonzalez-Varo &amp; Traveset 2016)</span>. However,
-            <em>neutral</em> forbidden interactions <span
-            class="citation" data-cites="Canard2012Emergencea">(i.e.,
-            improbable interactions between rare species, Canard <em>et
-            al.</em> 2012)</span> could have low probability values in a
-            local network but high probability in a regional network
+            class="math inline">0</span> (non-occurring) or <span
+            class="math inline">1</span> (occurring). In probabilistic
+            networks, only forbidden interactions (i.e., interactions
+            prohibited by biological traits, <span class="citation"
+            data-cites="Jordano2003Invarianta">Jordano <em>et al.</em>
+            (2003)</span>, <span class="citation"
+            data-cites="Olesen2010Missing">Olesen <em>et al.</em>
+            (2010)</span>) have a probability value of zero, provided
+            that intraspecific trait variability is considered (<span
+            class="citation"
+            data-cites="Gonzalez-Varo2016Labilea">Gonzalez-Varo &amp;
+            Traveset (2016)</span>). However, <em>neutrally</em>
+            forbidden interactions (i.e., improbable interactions
+            between rare species, <span class="citation"
+            data-cites="Canard2012Emergencea">Canard <em>et al.</em>
+            (2012)</span>) could have low probability values in local
+            networks but high probability in a regional network
             (metaweb) describing the biological capacity of species to
             interact.</p>
             <p>By accounting for the uncertainty of interactions,
             probabilistic networks provide a more realistic portrait of
-            species interactions and their emerging structure. This is
-            important given that network structure is one of the major
-            drivers of the functioning, dynamics, and resilience of
-            ecosystems worldwide <span class="citation"
-            data-cites="Proulx2005Networka">Rooney &amp; McCann
-            (2012)</span>. Moreover, the application and development of
-            computational methods in network ecology, which are often
-            based on a probabilistic representation of interactions, can
-            help alleviate the colossal sampling efforts required to
-            document species interactions <span class="citation"
-            data-cites="Strydom2021Roadmapa">(Strydom <em>et al.</em>
-            2021)</span>. For example, statistical models can be used to
-            estimate the uncertainty of pairwise interactions <span
-            class="citation" data-cites="Cirtwill2019QuaFra">(Cirtwill
-            <em>et al.</em> 2019)</span> and the probability of missing
-            (false negatives) and spurious (false positives)
-            interactions <span class="citation"
-            data-cites="Guimera2009MisSpu">(Guimerà &amp; Sales-Pardo
-            2009)</span>. Considering the high rate of false negatives
+            species interactions and their emerging structure, which is
+            a major driver of functioning, dynamics, and resilience of
+            ecosystems worldwide (<span class="citation"
+            data-cites="Proulx2005Networka">Proulx <em>et al.</em>
+            (2005)</span>, <span class="citation"
+            data-cites="McCann2007ProBio">McCann (2007)</span>, <span
+            class="citation" data-cites="McCann2011FooWeb">McCann
+            (2011)</span>, <span class="citation"
+            data-cites="Rooney2012IntFoo">Rooney &amp; McCann
+            (2012)</span>). Moreover, the application and development of
+            computational methods in network ecology, often based on a
+            probabilistic representation of interactions, can alleviate
+            the sampling efforts required to document species
+            interactions (<span class="citation"
+            data-cites="Strydom2021Roadmapa">Strydom <em>et al.</em>
+            (2021)</span>). For example, statistical models can be used
+            to estimate the uncertainty of pairwise interactions (<span
+            class="citation" data-cites="Cirtwill2019QuaFra">Cirtwill
+            <em>et al.</em> (2019)</span>) and the probability of
+            missing (false negatives) and spurious (false positives)
+            interactions (<span class="citation"
+            data-cites="Guimera2009MisSpu">Guimerà &amp; Sales-Pardo
+            (2009)</span>). Considering the high rate of false negatives
             in species interaction data due to the difficulty of
-            witnessing rare interactions <span class="citation"
-            data-cites="Catchen2023Missinga">(Catchen <em>et al.</em>
-            2023)</span>, these models can inform the identification of
-            priority sampling locations of ecological networks <span
-            class="citation"
-            data-cites="Andrade-Pacheco2020Finding">(e.g.,
-            Andrade-Pacheco <em>et al.</em> 2020 present an approach to
-            identify priority sampling locations of disease
-            hotspots)</span>. Statistical models can also be used to
+            witnessing rare interactions (<span class="citation"
+            data-cites="Catchen2023Missinga">Catchen <em>et al.</em>
+            (2023)</span>), these models could inform the identification
+            of priority sampling locations of ecological networks that
+            would yield the highest amount of information to alleviate
+            these errors. Optimization models for sampling locations
+            have mostly found applications in biological systems that
+            are not networked, such as identifying priority sampling
+            sites for disease hotspots (<span class="citation"
+            data-cites="Andrade-Pacheco2020Finding">Andrade-Pacheco
+            <em>et al.</em> (2020)</span>), but there is substantial
+            promise in applying them to probabilistic ecological
+            interactions. Statistical models can also be used to
             generate network predictions without prior knowledge of
-            pairwise interactions, for instance using body size <span
-            class="citation" data-cites="Petchey2008SizFor">Gravel
-            <em>et al.</em> (2013)</span>, phylogeny <span
-            class="citation" data-cites="Elmasri2020HieBay">Strydom
-            <em>et al.</em> (2022)</span>, or a combination of niche and
-            neutral processes <span class="citation"
-            data-cites="Bartomeus2016ComFra">Pomeranz <em>et al.</em>
-            (2019)</span> for inference. Topological null models <span
-            class="citation" data-cites="Bascompte2003NesAss">Fortuna
-            &amp; Bascompte (2006)</span>, which can be used to generate
-            underlying distributions of network measures for null
-            hypothesis significance testing, are other examples of
-            common probabilistic network models. Many measures have been
-            developed to describe the structure <span class="citation"
-            data-cites="Poisot2016Structure">(Poisot <em>et al.</em>
-            2016)</span> and diversity <span class="citation"
-            data-cites="Ohlmann2019Diversity">Godsoe <em>et al.</em>
-            (2022)</span> of probabilistic networks. These models and
+            pairwise interactions, for instance using body size (<span
+            class="citation" data-cites="Petchey2008SizFor">Petchey
+            <em>et al.</em> (2008)</span>, <span class="citation"
+            data-cites="Gravel2013InfFooa">Gravel <em>et al.</em>
+            (2013)</span>), phylogeny (<span class="citation"
+            data-cites="Elmasri2020HieBay">Elmasri <em>et al.</em>
+            (2020)</span>, <span class="citation"
+            data-cites="Strydom2022Food">Strydom <em>et al.</em>
+            (2022)</span>), or a combination of niche and neutral
+            processes (<span class="citation"
+            data-cites="Bartomeus2016ComFra">Bartomeus <em>et al.</em>
+            (2016)</span>, <span class="citation"
+            data-cites="Pomeranz2019InfPre">Pomeranz <em>et al.</em>
+            (2019)</span>) for inference. Topological null models (e.g.,
+            <span class="citation"
+            data-cites="Bascompte2003NesAss">Bascompte <em>et al.</em>
+            (2003)</span>, <span class="citation"
+            data-cites="Fortuna2006HabLos">Fortuna &amp; Bascompte
+            (2006)</span>), which can be used to generate underlying
+            distributions of network measures for null hypothesis
+            significance testing, are other examples of common
+            probabilistic network models. Many measures have been
+            developed to describe the structure (<span class="citation"
+            data-cites="Poisot2016Structure">Poisot <em>et al.</em>
+            (2016)</span>) and diversity (<span class="citation"
+            data-cites="Ohlmann2019Diversity">Ohlmann <em>et al.</em>
+            (2019)</span>, <span class="citation"
+            data-cites="Godsoe2022Species">Godsoe <em>et al.</em>
+            (2022)</span>) of probabilistic networks. These models and
             measures support the use of this approach for the study of a
             wide range of ecological questions, from making better
-            predictions of species distribution <span class="citation"
-            data-cites="Cazelles2016Theorya">(Cazelles <em>et al.</em>
-            2016)</span> to forecasting the impact of climate change on
-            ecological networks <span class="citation"
-            data-cites="Gilman2010FraCom">(Gilman <em>et al.</em>
-            2010)</span>.</p>
-            <p>Despite these advances and opportunities, the lack of
-            clear guidelines on the use of probabilistic interaction
-            data is worrisome, especially for field and computational
-            ecologists who manipulate and generate these numbers.
-            Indeed, beyond methodological challenges encountered when
-            evaluating them, there are important and perhaps more
-            fundamental conceptual challenges when it comes to defining
-            them. To the best of our knowledge, there is currently no
-            data standard that could guide the estimation and
-            documentation of interaction probabilities <span
-            class="citation" data-cites="Salim2022Data">(Salim <em>et
-            al.</em> 2022 discuss data standards for deterministic
-            mutualistic networks)</span>. General guidelines could
-            support more adequate manipulation and integration of
+            predictions of species distribution (<span class="citation"
+            data-cites="Cazelles2016Theorya">Cazelles <em>et al.</em>
+            (2016)</span>) to forecasting the impact of climate change
+            on ecological networks (<span class="citation"
+            data-cites="Gilman2010FraCom">Gilman <em>et al.</em>
+            (2010)</span>).</p>
+            <p>The lack of clear guidelines on the use of probabilistic
+            interaction data is worrisome (<span class="citation"
+            data-cites="Brimacombe2023ShoReu">Brimacombe <em>et al.</em>
+            (2023)</span>), both for data producers and re-users who
+            manipulate and generate these numbers. Indeed, beyond
+            methodological challenges encountered when evaluating them,
+            there are important and perhaps more fundamental conceptual
+            challenges when it comes to defining them. There is
+            currently no data standard that could guide the estimation
+            and documentation of all types of probabilistic interactions
+            (<span class="citation" data-cites="Salim2022Data">Salim
+            <em>et al.</em> (2022)</span> discuss data standards for
+            deterministic mutualistic networks). General guidelines
+            could support more adequate manipulation and integration of
             interaction data from different sources and prevent
             ecologists from being misled by ambiguous and often
-            diverging interpretations of probabilistic networks. In this
-            contribution, we aim to take a step back by outlining
-            different ways in which they were defined and used in
-            network ecology and propose an approach to thinking about
-            them. We distinguish two broad categories of probabilistic
-            networks that have different statistical behaviors when
-            applied to key ecological questions: local networks of
-            realized interactions and regional networks (metawebs) of
-            potential interactions. We show that these representations
-            have different ecological and statistical implications,
-            especially regarding the spatial and temporal scaling of
-            interactions and the prediction of binary networks across
-            space. Although we focus on food webs, our observations and
-            advice can be applied to most types of ecological networks,
-            from plant-pollinator to host-parasite networks. Indeed,
+            diverging interpretations of probabilistic networks. We aim
+            to take a step back by outlining different ways in which
+            they were defined and used in network ecology and propose a
+            framework to contextualize them. We distinguish two broad
+            categories of probabilistic networks that require distinct
+            handling techniques when applied to key ecological
+            questions: local networks of realized interactions, and
+            regional networks (metawebs) of potential interactions. We
+            show that these representations differ in their ecological
+            interpretation and statistical outcomes, especially
+            regarding the spatial and temporal scaling of interactions
+            and the prediction of binary networks across space. Although
+            we focus on food webs, our observations and advice can be
+            applied to other types of ecological networks, from
+            plant-pollinator to host-parasite networks. Indeed,
             excepting networks of indirect interactions such as
-            competition and facilitation networks <span class="citation"
-            data-cites="Kefi2015NetStr">Kéfi <em>et al.</em>
-            (2016)</span>, most ecological networks describe
+            competition and facilitation networks (<span
+            class="citation" data-cites="Kefi2015NetStr">Kéfi <em>et
+            al.</em> (2015)</span>, <span class="citation"
+            data-cites="Kefi2016HowStr">Kéfi <em>et al.</em>
+            (2016)</span>), most ecological networks describe
             probabilities of direct interactions, which are conceptually
-            and mathematically analogous to each other regardless of
-            their biological type (e.g., trophic and parasitic
-            interactions). Overall, we argue that probabilistic networks
-            should be better documented, clearly defined in mathematical
-            terms, and used with caution when analyzing ecological
-            interactions.</p>
+            and mathematically analogous regardless of their biological
+            type (e.g., trophic and parasitic interactions). We argue
+            that probabilistic networks should be better documented,
+            clearly defined in mathematical terms, and used with caution
+            when analyzing ecological interactions.</p>
             <h1
             id="probabilistic-representations-of-interactions">Probabilistic
             representations of interactions</h1>
@@ -521,30 +549,33 @@ probabilistic networks</div>
             capacity of two taxa to interact (i.e., the probability that
             they <em>can</em> theoretically interact) whereas a realized
             interaction refers to the materialization or observation of
-            this interaction in a delineated space and time (i.e., the
+            this interaction in a well-defined space and time (i.e., the
             probability that they interact locally). Here, we use the
-            terms <em>metaweb</em> to designate networks of potential
-            interactions and <em>local networks</em> for those of
-            realized interactions. Metawebs are the network analog of
-            the species pool, where local networks originate from a
-            subset of both species (nodes) and interactions (edges) of
-            the regional metaweb <span class="citation"
-            data-cites="Saravia2022Ecological">(Saravia <em>et al.</em>
-            2022)</span>. Frequent confusion arises among ecologists
-            over the use of these two terms, especially in a
-            probabilistic context. Indeed, it can be difficult to know
-            when published probabilistic networks describe potential or
-            realized interactions, or when so-called probabilities are
-            in reality <em>interaction scores</em> (i.e., a type of
-            non-probabilistic quantitative interactions). Likewise,
-            probabilistic potential interactions are often used and
-            interpreted as realized interactions (and conversely), which
-            may generate misleading findings when analyzing these data.
-            We believe that a better understanding of the differences,
-            similarities, and relationships between these two
-            probabilistic representations of ecological networks would
-            alleviate interpretation errors and help ecologists use
-            these numbers more appropriately.</p>
+            terms <em>metaweb</em> (<span class="citation"
+            data-cites="Dunne2006Network">Dunne (2006)</span>) to
+            designate networks of potential interactions and <em>local
+            networks</em> (<span class="citation"
+            data-cites="Poisot2012Dissimilaritya">Poisot <em>et al.</em>
+            (2012)</span>) for those of realized interactions. Metawebs
+            are the network analogues of the species pool, where local
+            networks originate from a subset of both species (nodes) and
+            interactions (edges) of the regional metaweb (<span
+            class="citation" data-cites="Saravia2022Ecological">Saravia
+            <em>et al.</em> (2022)</span>). Frequent confusion arises
+            among ecologists over the use of these two terms, especially
+            in a probabilistic context. Indeed, it can be difficult to
+            know when published probabilistic networks describe
+            potential or realized interactions, or when so-called
+            probabilities are in reality <em>interaction scores</em>
+            (i.e., non-probabilistic quantitative interactions).
+            Likewise, probabilistic potential interactions are often
+            used and interpreted as realized interactions (and
+            conversely), which may generate misleading findings when
+            analyzing these data. We believe that a better understanding
+            of the differences, similarities, and relationships between
+            these two probabilistic representations of ecological
+            networks would alleviate interpretation errors and help
+            ecologists use these numbers more appropriately.</p>
             <h2
             id="pairwise-interactions-the-building-blocks-of-ecological-networks">Pairwise
             interactions: the building blocks of ecological
@@ -556,14 +587,16 @@ probabilistic networks</div>
             individuals that interact with each other (e.g., by
             predation, <span class="citation"
             data-cites="Elton2001Animal">Elton (2001)</span>), forming
-            individual-based networks. The aggregation of these
-            individuals into more or less homogeneous groups (e.g.,
-            populations, species, trophic species, families) allows us
-            to represent nodes at broader taxonomic scales, which
-            impacts our interpretation of the properties and behavior of
-            these systems <span class="citation"
-            data-cites="Guimaraes2020Structurea">(Guimarães
-            2020)</span>. Moreover, edges linking these nodes can
+            individual-based networks (<span class="citation"
+            data-cites="Melian2011EcoDyn">Melián <em>et al.</em>
+            (2011)</span>). The aggregation of these individuals into
+            more or less homogeneous groups (e.g., populations, species,
+            trophic species, families) allows us to represent nodes at
+            broader taxonomic scales, which affects our interpretation
+            of the properties and behavior of these systems (<span
+            class="citation"
+            data-cites="Guimaraes2020Structurea">Guimarães
+            (2020)</span>). Moreover, edges linking these nodes can
             describe a variety of interaction measures. Ecologists have
             traditionally represented interactions as binary objects
             that were considered realized after observing at least one
@@ -571,7 +604,7 @@ probabilistic networks</div>
             class="math inline"><em>i</em></span> interact with at least
             another individual from group <span
             class="math inline"><em>j</em></span>. Boolean interactions
-            are actually the result of a Bernoulli process <span
+            can be viewed as the result of a Bernoulli process <span
             class="math inline">$A_{i,j} \sim {\rm Bernoulli}(P(i
             \rightarrow j))$</span>, with <span
             class="math inline"><em>P</em>(<em>i</em>→<em>j</em>)</span>
@@ -602,15 +635,17 @@ probabilistic networks</div>
             interact and the environmental conditions that enabled them
             to interact locally.</p>
             <p>Even though binary networks constitute a highly valuable
-            source of ecological information <span class="citation"
-            data-cites="Pascual2006Ecologicala">(Pascual <em>et al.</em>
-            2006)</span>, they overlook important factors regarding
+            source of ecological information (<span class="citation"
+            data-cites="Pascual2006Ecologicala">Pascual <em>et al.</em>
+            (2006)</span>), they overlook important factors regarding
             interaction strengths. These are represented using
             quantitative interactions, which better describe the energy
             flows, demographic impacts or frequencies of interactions
-            between nodes <span class="citation"
-            data-cites="Berlow2004Interaction">Borrett &amp; Scharler
-            (2019)</span>, with <span
+            between nodes (<span class="citation"
+            data-cites="Berlow2004Interaction">Berlow <em>et al.</em>
+            (2004)</span>, <span class="citation"
+            data-cites="Borrett2019Walk">Borrett &amp; Scharler
+            (2019)</span>), with <span
             class="math inline"><em>A</em><sub><em>i</em>, <em>j</em></sub></span>
             being a natural number <span class="math inline">ℕ</span> or
             a real number <span class="math inline">ℝ</span> depending
@@ -620,14 +655,14 @@ probabilistic networks</div>
             of a piscivorous species). Because quantitative interactions
             can describe predation pressure on prey taxa, they can be
             good estimators of the parameters describing species
-            interactions in a Lotka-Volterra model <span
-            class="citation" data-cites="Emmerson2004Predatora">(e.g.,
-            Emmerson &amp; Raffaelli 2004)</span>. However, this extra
-            amount of ecological information typically comes at a cost
-            of greater sampling effort or data requirement in predictive
-            models <span class="citation"
-            data-cites="Strydom2021Roadmapa">(Strydom <em>et al.</em>
-            2021)</span>, which can lead to relatively high levels of
+            interactions in a Lotka-Volterra model (e.g., <span
+            class="citation" data-cites="Emmerson2004Predatora">Emmerson
+            &amp; Raffaelli (2004)</span>). However, this extra amount
+            of ecological information typically comes at a cost of
+            greater sampling effort or data requirement in predictive
+            models (<span class="citation"
+            data-cites="Strydom2021Roadmapa">Strydom <em>et al.</em>
+            (2021)</span>), which can lead to relatively high levels of
             uncertainties when inferring quantitative networks with
             limited data. Just like binary networks, the uncertainty and
             spatiotemporal variability of quantitative interactions can
@@ -650,15 +685,15 @@ probabilistic networks</div>
             Poisson distribution can also be 0-inflated when considering
             non-interacting taxa, which constitute the majority of taxa
             pairs in most local networks due to their typically high
-            sparseness <span class="citation"
-            data-cites="Jordano2016Samplingb">(Jordano 2016)</span>.
+            sparseness (<span class="citation"
+            data-cites="Jordano2016Samplingb">Jordano (2016)</span>).
             Because of the methodological difficulties typically
             encountered when building deterministic quantitative
-            networks, binary networks, which are easier to sample <span
-            class="citation" data-cites="Jordano2016Samplingb">(Jordano
-            2016)</span> and predict <span class="citation"
-            data-cites="Strydom2021Roadmapa">(Strydom <em>et al.</em>
-            2021)</span>, are much more documented and modeled in the
+            networks, binary networks, which are easier to sample (<span
+            class="citation" data-cites="Jordano2016Samplingb">Jordano
+            (2016)</span>) and predict (<span class="citation"
+            data-cites="Strydom2021Roadmapa">Strydom <em>et al.</em>
+            (2021)</span>), are much more documented and modeled in the
             literature. Moreover, most published probabilistic networks
             and methods describe Bernoulli interactions, which
             underlines the need for better guidelines regarding the
@@ -675,9 +710,9 @@ probabilistic networks</div>
             and time period (i.e., they are context-dependent). In local
             networks, edges commonly represent our degree of belief that
             two taxa interact in nature, but can also document the
-            probability of <em>observing</em> this interaction <span
-            class="citation" data-cites="Catchen2023Missinga">(Catchen
-            <em>et al.</em> 2023)</span>. For example, <span
+            probability of <em>observing</em> this interaction (<span
+            class="citation" data-cites="Catchen2023Missinga">Catchen
+            <em>et al.</em> (2023)</span>). For example, <span
             class="citation" data-cites="Kopelke2017FooStra">Kopelke
             <em>et al.</em> (2017)</span> assembled a dataset of binary
             local European food webs of willow-galling sawflies and
@@ -686,9 +721,9 @@ probabilistic networks</div>
             samples, this dataset can be used to infer the probability
             of locally observing an interaction between any pair of taxa
             by measuring the proportion of sites where an interaction
-            was observed <span class="citation"
-            data-cites="Gravel2019BriElt">(Gravel <em>et al.</em>
-            2019)</span>. More generally, we define space as the
+            was observed (<span class="citation"
+            data-cites="Gravel2019BriElt">Gravel <em>et al.</em>
+            (2019)</span>). More generally, we define space as the
             geographic coordinates <span
             class="math inline">(<em>x</em>,<em>y</em>)</span> of the
             spatial boundaries delineating the system (sampled or
@@ -710,12 +745,12 @@ probabilistic networks</div>
             class="math inline"><em>A</em></span> and duration <span
             class="math inline"><em>t</em></span>, which can be directly
             used in spatiotemporal analyses of ecological networks. For
-            example, when studying network-area relationships <span
-            class="citation" data-cites="Galiana2018Spatiala">(NAR,
-            Galiana <em>et al.</em> 2018)</span>, we should expect local
-            probabilities of interactions to scale with area and
-            duration because taxa have more opportunities to
-            interact.</p>
+            example, when studying network-area relationships (NAR,
+            <span class="citation"
+            data-cites="Galiana2018Spatiala">Galiana <em>et al.</em>
+            (2018)</span>), we should expect local probabilities of
+            interactions to scale with area and duration because taxa
+            have more opportunities to interact.</p>
             <p>The probability that two taxa <span
             class="math inline"><em>i</em></span> and <span
             class="math inline"><em>j</em></span> interact locally can
@@ -733,31 +768,34 @@ probabilistic networks</div>
             class="math inline">$C_{i,j} \sim {\rm Bernoulli}(P_{i,j}(x,
             y))$</span>, where the probability of co-occurrence <span
             class="math inline"><em>P</em><sub><em>i</em>, <em>j</em></sub>(<em>x</em>,<em>y</em>)</span>
-            can be estimated using species distribution models <span
-            class="citation" data-cites="Pollock2014UndCoo">(e.g.,
-            Pollock <em>et al.</em> 2014)</span>. More generally, the
-            probability that two taxa interact locally can be obtained
-            by the product of their probability of interaction given
-            co-occurrence with their probability of co-occurrence:</p>
+            can be estimated using species distribution models (e.g.,
+            <span class="citation"
+            data-cites="Pollock2014UndCoo">Pollock <em>et al.</em>
+            (2014)</span>). More generally, the probability that two
+            taxa interact locally can be obtained by the product of
+            their probability of interaction given co-occurrence with
+            their probability of co-occurrence:</p>
             <p><span id="eq:co-occur"><span
             class="math display"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>) = <em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>C</em>=1) × <em>P</em><sub><em>i</em>, <em>j</em></sub>(<em>x</em>,<em>y</em>).   (1)</span></span></p>
             <p>Other important factors that can impact our estimation of
             interaction probabilities at the local scale are taxa
-            relative abundance <span class="citation"
-            data-cites="Canard2012Emergencea">(Canard <em>et al.</em>
-            2012)</span> and traits <span class="citation"
-            data-cites="Poisot2015Speciesa">(Poisot <em>et al.</em>
-            2015)</span>, as well as environmental factors such as
-            temperature <span class="citation"
-            data-cites="Angilletta2004TemGro">(Angilletta <em>et
-            al.</em> 2004)</span>, precipitation <span class="citation"
-            data-cites="Woodward2012CliCha">(Woodward <em>et al.</em>
-            2012)</span>, habitat structure <span class="citation"
-            data-cites="Klecka2014EffHab">(Klecka &amp; Boukal
-            2014)</span>, and presence of other interacting taxa in the
-            network <span class="citation"
-            data-cites="Pilosof2017MulNat">Kéfi <em>et al.</em>
-            (2012)</span>. Here, we will use the variable <span
+            relative abundance (<span class="citation"
+            data-cites="Canard2012Emergencea">Canard <em>et al.</em>
+            (2012)</span>) and traits (<span class="citation"
+            data-cites="Poisot2015Speciesa">Poisot <em>et al.</em>
+            (2015)</span>), as well as environmental factors such as
+            temperature (<span class="citation"
+            data-cites="Angilletta2004TemGro">Angilletta <em>et al.</em>
+            (2004)</span>), precipitation (<span class="citation"
+            data-cites="Woodward2012CliCha">Woodward <em>et al.</em>
+            (2012)</span>), habitat structure (<span class="citation"
+            data-cites="Klecka2014EffHab">Klecka &amp; Boukal
+            (2014)</span>), and presence of other interacting taxa in
+            the network (<span class="citation"
+            data-cites="Pilosof2017MulNat">Pilosof <em>et al.</em>
+            (2017)</span>, <span class="citation"
+            data-cites="Kefi2012MorMea">Kéfi <em>et al.</em>
+            (2012)</span>). Here, we will use the variable <span
             class="math inline"><em>Ω</em></span> to describe the
             biological and ecological context in which interaction
             probabilities were estimated. For example, if a research
@@ -919,13 +957,13 @@ probabilistic networks</div>
             <p>Starting from a selected set of taxa, which are usually
             distributed within a broad region of interest, metawebs can
             be built using different data sources, including literature
-            review, fieldwork, and predictive models <span
-            class="citation" data-cites="Strydom2022Food">(e.g., the
-            metaweb of Canadian mammals inferred by Strydom <em>et
-            al.</em> 2022)</span>. Every pair of taxa that have
-            confidently been observed to interact at least once can be
-            given a probability of <span class="math inline">1</span>
-            (i.e., <span
+            review, fieldwork, and predictive models (e.g., the metaweb
+            of Canadian mammals inferred by <span class="citation"
+            data-cites="Strydom2022Food">Strydom <em>et al.</em>
+            (2022)</span>). Every pair of taxa that have confidently
+            been observed to interact at least once can be given a
+            probability of <span class="math inline">1</span> (i.e.,
+            <span
             class="math inline"><em>P</em><sub><em>M</em></sub>(<em>i</em>→<em>j</em>) = 1</span>)
             since we know that they <em>can</em> interact. This is
             usually not the case in local probabilistic networks, in
@@ -975,18 +1013,18 @@ probabilistic networks</div>
             organization. For example, the assemblage of interactions
             across ecological scales can be studied using species-based
             networks, whereas clade-based networks can be used to study
-            macroevolutionary processes <span class="citation"
-            data-cites="Gomez2010EcoInt">(e.g., Gomez <em>et al.</em>
-            2010)</span>. Because our interpretation of the properties
+            macroevolutionary processes (e.g., <span class="citation"
+            data-cites="Gomez2010EcoInt">Gomez <em>et al.</em>
+            (2010)</span>). Because our interpretation of the properties
             and dynamics of ecological networks depends on their
-            taxonomic scale <span class="citation"
-            data-cites="Guimaraes2020Structurea">(Guimarães
-            2020)</span>, examining the phylogenetic scaling of network
-            structure is also a promising research avenue. Analyzing the
-            same system at different taxonomic scales can thus provide
-            meaningful and complementary ecological information and is,
-            in our perspective, best conducted using probabilistic
-            networks.</p>
+            taxonomic scale (<span class="citation"
+            data-cites="Guimaraes2020Structurea">Guimarães
+            (2020)</span>), examining the phylogenetic scaling of
+            network structure is also a promising research avenue.
+            Analyzing the same system at different taxonomic scales can
+            thus provide meaningful and complementary ecological
+            information and is, in our perspective, best conducted using
+            probabilistic networks.</p>
             <p>There is no qualitative difference in the taxonomic
             scaling of local networks compared to metawebs because only
             the nodes are defined taxonomically. In other words, the
@@ -1038,11 +1076,13 @@ probabilistic networks</div>
             nodes are represented at different taxonomic scales (e.g., a
             network composed of species and trophic species). This is
             frequent in ecological networks where taxonomic resolution
-            is typically low <span class="citation"
-            data-cites="Hemprich-Bennett2021AssImp">Vázquez <em>et
-            al.</em> (2022)</span>. Broader-scale interactions should be
-            based on probabilities of interactions between individuals,
-            either at the local or regional scale. For example, in local
+            is typically low (<span class="citation"
+            data-cites="Hemprich-Bennett2021AssImp">Hemprich-Bennett
+            <em>et al.</em> (2021)</span>, <span class="citation"
+            data-cites="VazquezSS2022Ecological">Vázquez <em>et al.</em>
+            (2022)</span>). Broader-scale interactions should be based
+            on probabilities of interactions between individuals, either
+            at the local or regional scale. For example, in local
             individual-based food webs, the probability that two
             individuals interact represents the degree of belief that
             one individual will actually consume the other. Similarly,
@@ -1070,29 +1110,31 @@ probabilistic networks</div>
             interaction accumulation curves (IACs) are important realms
             of research in network ecology. Firstly, NARs describe the
             scaling of network properties (such as modularity and
-            trophic chain lengths) with spatial scale <span
-            class="citation" data-cites="Wood2015Effects">Galiana <em>et
-            al.</em> (2018)</span>. The variation of network structure
-            across spatial scales can be the result of the scaling of
-            species richness (species-area relationships, SARs) and the
-            number of interactions <span class="citation"
-            data-cites="Brose2004UniSpa">(Brose <em>et al.</em>
-            2004)</span> with the area sampled, but can also be due to
+            trophic chain lengths) with spatial scale (e.g., <span
+            class="citation" data-cites="Wood2015Effects">Wood <em>et
+            al.</em> (2015)</span>, <span class="citation"
+            data-cites="Galiana2018Spatiala">Galiana <em>et al.</em>
+            (2018)</span>). The variation of network structure across
+            spatial scales can be the result of the scaling of species
+            richness (species-area relationships, SARs) and the number
+            of interactions (<span class="citation"
+            data-cites="Brose2004UniSpa">Brose <em>et al.</em>
+            (2004)</span>) with the area sampled, but can also be due to
             ecological processes (e.g., spatial variability in community
             composition and extinction and colonization events)
-            occurring at different scales <span class="citation"
-            data-cites="Galiana2018Spatiala">(Galiana <em>et al.</em>
-            2018)</span>. Secondly, IACs describe the scaling of the
-            number of interactions observed with sampling effort <span
-            class="citation" data-cites="Jordano2016Samplingb">(Jordano
-            2016)</span>, which can impact many measures of network
-            structure such as connectance <span class="citation"
-            data-cites="McLeod2021Sampling">(McLeod <em>et al.</em>
-            2021)</span>. Beyond sampling effort, the temporal scaling
+            occurring at different scales (<span class="citation"
+            data-cites="Galiana2018Spatiala">Galiana <em>et al.</em>
+            (2018)</span>). Secondly, IACs describe the scaling of the
+            number of interactions observed with sampling effort (<span
+            class="citation" data-cites="Jordano2016Samplingb">Jordano
+            (2016)</span>), which can impact many measures of network
+            structure such as connectance (<span class="citation"
+            data-cites="McLeod2021Sampling">McLeod <em>et al.</em>
+            (2021)</span>). Beyond sampling effort, the temporal scaling
             of interactions describes how network structure changes with
-            the duration of the network <span class="citation"
-            data-cites="Poisot2012Dissimilaritya">(Poisot <em>et
-            al.</em> 2012)</span> given that different interactions are
+            the duration of the network (<span class="citation"
+            data-cites="Poisot2012Dissimilaritya">Poisot <em>et al.</em>
+            (2012)</span>) given that different interactions are
             occurring through time. Because probabilistic local networks
             can assess the spatiotemporal variability of interactions
             (eq. 2), they are useful tools to develop and test different
@@ -1151,18 +1193,18 @@ probabilistic networks</div>
             <h2 id="a-spatiotemporally-explicit-model-of-interactions">A
             spatiotemporally explicit model of interactions</h2>
             <p>Predicting local networks across time and space is an
-            important goal of network ecology <span class="citation"
-            data-cites="Strydom2021Roadmapa">(Strydom <em>et al.</em>
-            2021)</span>. Indeed, in a context of scarcity of
-            interaction data <span class="citation"
-            data-cites="Jordano2016Samplingb">(Jordano 2016)</span>,
+            important goal of network ecology (<span class="citation"
+            data-cites="Strydom2021Roadmapa">Strydom <em>et al.</em>
+            (2021)</span>). Indeed, in a context of scarcity of
+            interaction data (<span class="citation"
+            data-cites="Jordano2016Samplingb">Jordano (2016)</span>),
             ecologists must rely on predictive models to reconstruct
             networks at fine spatial and temporal scales. For example,
             local ecological networks could be reconstructed using
             real-time biomonitoring data and adequate numerical models
-            <span class="citation"
-            data-cites="Bohan2017Nextgenerationa">(Bohan <em>et al.</em>
-            2017)</span>, which could pave the way for fine-scale
+            (<span class="citation"
+            data-cites="Bohan2017Nextgenerationa">Bohan <em>et al.</em>
+            (2017)</span>), which could pave the way for fine-scale
             studies of ecosystem functioning and dynamics. Besides
             predictive models, statistical models can also be built to
             describe parameters of interest, such as probabilities of
@@ -1170,9 +1212,9 @@ probabilistic networks</div>
             valuable ecological information in their own rights.
             Different types of models (e.g., Bayesian and machine
             learning models) of ecological interactions have been built
-            for predictive and descriptive purposes <span
-            class="citation" data-cites="Strydom2021Roadmapa">(Strydom
-            <em>et al.</em> 2021)</span>. Representing interactions
+            for predictive and descriptive purposes (<span
+            class="citation" data-cites="Strydom2021Roadmapa">Strydom
+            <em>et al.</em> (2021)</span>). Representing interactions
             probabilistically reflects the uncertainty of these models,
             which is usually represented in terms of probability
             distributions. Here we show how to build a simple generative
@@ -1198,9 +1240,9 @@ probabilistic networks</div>
             class="math inline"><em>P</em><sub><em>j</em></sub>(<em>x</em>,<em>y</em>)</span>
             and the strength of association <span
             class="math inline"><em>γ</em></span> between their
-            occurrence and co-occurrence <span class="citation"
-            data-cites="Cazelles2016Theorya">(Cazelles <em>et al.</em>
-            2016)</span>:</p>
+            occurrence and co-occurrence (<span class="citation"
+            data-cites="Cazelles2016Theorya">Cazelles <em>et al.</em>
+            (2016)</span>):</p>
             <p><span id="eq:modelcoprob"><span
             class="math display"><em>P</em><sub><em>i</em>, <em>j</em></sub>(<em>x</em>,<em>y</em>) = <em>P</em><sub><em>i</em></sub>(<em>x</em>,<em>y</em>)<em>P</em><sub><em>j</em></sub>(<em>x</em>,<em>y</em>)<em>γ</em>.   (5)</span></span></p>
             <p>When <span class="math inline"><em>γ</em> &gt; 1</span>,
@@ -1209,9 +1251,9 @@ probabilistic networks</div>
             increases the probability of occurrence of the other. In
             empirical networks, <span
             class="math inline"><em>γ</em> &gt; 1</span> for most
-            species pairs <span class="citation"
-            data-cites="Catchen2023Missinga">(Catchen <em>et al.</em>
-            2023)</span>. The co-occurrence of both taxa is the result
+            species pairs (<span class="citation"
+            data-cites="Catchen2023Missinga">Catchen <em>et al.</em>
+            (2023)</span>). The co-occurrence of both taxa is the result
             of a Bernoulli trial</p>
             <p><span id="eq:modelco"><span
             class="math display"><em>C</em> ∼ <em>B</em><em>e</em><em>r</em><em>n</em><em>o</em><em>u</em><em>l</em><em>l</em><em>i</em>(<em>P</em><sub><em>i</em>, <em>j</em></sub>(<em>x</em>,<em>y</em>)).   (6)</span></span></p>
@@ -1261,21 +1303,22 @@ probabilistic networks</div>
             network can be generated from independent Bernoulli trials
             for each interaction. The distribution of a network’s
             property can then be obtained after measuring the structure
-            of all randomly generated networks <span class="citation"
-            data-cites="Poisot2016Structure">(Poisot <em>et al.</em>
-            2016)</span>. Doing so allows us to represent the
+            of all randomly generated networks (<span class="citation"
+            data-cites="Poisot2016Structure">Poisot <em>et al.</em>
+            (2016)</span>). Doing so allows us to represent the
             variability of network structure, although possibly with
-            biases when connectance is low <span class="citation"
-            data-cites="Poisot2014WheEco Chagnon2015ChaTop">(Poisot
-            &amp; Gravel 2014; Chagnon 2015)</span>. When binary
-            networks are generated under a null model, this method can
-            be used for null hypothesis significance testing, in which
-            case the observed measure is compared to a null distribution
-            <span class="citation"
-            data-cites="Bascompte2003NesAss">(e.g., Bascompte <em>et
-            al.</em> 2003)</span>. Furthermore, randomly generating
-            binary networks across space and time can help us visualize
-            the spatiotemporal variability of network structure and test
+            biases when connectance is low (<span class="citation"
+            data-cites="Poisot2014WheEco">Poisot &amp; Gravel
+            (2014)</span>, <span class="citation"
+            data-cites="Chagnon2015ChaTop">Chagnon (2015)</span>). When
+            binary networks are generated under a null model, this
+            method can be used for null hypothesis significance testing,
+            in which case the observed measure is compared to a null
+            distribution (e.g., <span class="citation"
+            data-cites="Bascompte2003NesAss">Bascompte <em>et al.</em>
+            (2003)</span>). Furthermore, randomly generating binary
+            networks across space and time can help us visualize the
+            spatiotemporal variability of network structure and test
             ecological hypotheses on interactions across large spatial
             and temporal scales.</p>
             <p>There are at least two different approaches when sampling
@@ -1343,8 +1386,8 @@ probabilistic networks</div>
             information that can be leveraged for predicting local
             networks. Indeed, binary local networks can be reconstructed
             by selecting a subset of both taxa and interactions from the
-            metaweb <span class="citation"
-            data-cites="Dunne2006Network">(Dunne 2006)</span>. This
+            metaweb (<span class="citation"
+            data-cites="Dunne2006Network">Dunne (2006)</span>). This
             implies that there are always more interactions in a metaweb
             compared to its corresponding local networks. In practice,
             because a community’s composition is arguably easier to
@@ -1354,13 +1397,13 @@ probabilistic networks</div>
             choose which interactions to select from the metaweb, which
             could require more sophisticated statistical models and
             ecological knowledge. Because the structure of local
-            networks is constrained by the one of the metaweb <span
-            class="citation" data-cites="Saravia2022Ecological">(Saravia
-            <em>et al.</em> 2022)</span>, inferring their structure from
-            the metaweb before predicting local pairwise interactions
-            could prove promising <span class="citation"
-            data-cites="Strydom2021Roadmapa">(Strydom <em>et al.</em>
-            2021)</span>.</p>
+            networks is constrained by the one of the metaweb (<span
+            class="citation" data-cites="Saravia2022Ecological">Saravia
+            <em>et al.</em> (2022)</span>), inferring their structure
+            from the metaweb before predicting local pairwise
+            interactions could prove promising (<span class="citation"
+            data-cites="Strydom2021Roadmapa">Strydom <em>et al.</em>
+            (2021)</span>).</p>
             <p>When building probabilistic local networks from a
             probabilistic metaweb, interaction probabilities decrease.
             This is because two taxa must first have the capacity to
@@ -1520,6 +1563,15 @@ probabilistic networks</div>
             partitions of flow in Ecological Network Analysis: Review
             and synthesis of methods and indicators</a>. <em>Ecological
             Indicators</em>, 106, 105451.
+            </div>
+            <div id="ref-Brimacombe2023ShoReu" class="csl-entry"
+            role="doc-biblioentry">
+            Brimacombe, C., Bodner, K., Michalska-Smith, M., Poisot, T.
+            &amp; Fortin, M.-J. (2023). <a
+            href="https://doi.org/10.1371/journal.pbio.3002068">Shortcomings
+            of reusing species interaction networks created by different
+            sets of researchers</a>. <em>PLOS Biology</em>, 21,
+            e3002068.
             </div>
             <div id="ref-Brose2004UniSpa" class="csl-entry"
             role="doc-biblioentry">
@@ -1708,6 +1760,14 @@ probabilistic networks</div>
             Biodiversity</a>. <em>Annual Review of Ecology, Evolution,
             and Systematics</em>, 46, 523–549.
             </div>
+            <div id="ref-Jordano1987PatMut" class="csl-entry"
+            role="doc-biblioentry">
+            Jordano, P. (1987). <a
+            href="https://doi.org/10.1086/284665">Patterns of
+            Mutualistic Interactions in Pollination and Seed Dispersal:
+            Connectance, Dependence Asymmetries, and Coevolution</a>.
+            <em>The American Naturalist</em>, 129, 657–677.
+            </div>
             <div id="ref-Jordano2016Samplingb" class="csl-entry"
             role="doc-biblioentry">
             Jordano, P. (2016). <a
@@ -1790,6 +1850,16 @@ probabilistic networks</div>
             traits, motif profiles, and environment on spatial variation
             in multi-trophic antagonistic networks</a>.
             <em>Ecosphere</em>, 11, e03018.
+            </div>
+            <div id="ref-Melian2011EcoDyn" class="csl-entry"
+            role="doc-biblioentry">
+            Melián, C.J., Vilas, C., Baldó, F., González-Ortegón, E.,
+            Drake, P. &amp; Williams, R.J. (2011). <a
+            href="https://doi.org/10.1016/B978-0-12-386475-8.00006-X">Eco-evolutionary
+            Dynamics of Individual-Based Food Webs</a>. In: <em>Advances
+            in Ecological Research</em>, The Role of Body Size in
+            Multispecies Systems (ed. Belgrano, A.). Academic Press, pp.
+            225–268.
             </div>
             <div id="ref-Ohlmann2019Diversity" class="csl-entry"
             role="doc-biblioentry">

@@ -500,6 +500,46 @@
         "type": "article-journal"
     },
     {
+        "publisher": "Public Library of Science",
+        "issue": "4",
+        "issued": {
+            "date-parts": [
+                [
+                    2023
+                ]
+            ]
+        },
+        "container-title": "PLOS Biology",
+        "author": [
+            {
+                "family": "Brimacombe",
+                "given": "Chris"
+            },
+            {
+                "family": "Bodner",
+                "given": "Korryn"
+            },
+            {
+                "family": "Michalska-Smith",
+                "given": "Matthew"
+            },
+            {
+                "family": "Poisot",
+                "given": "Timothée"
+            },
+            {
+                "family": "Fortin",
+                "given": "Marie-Josée"
+            }
+        ],
+        "id": "Brimacombe2023ShoReu",
+        "DOI": "10.1371/journal.pbio.3002068",
+        "volume": "21",
+        "page": "e3002068",
+        "title": "Shortcomings of reusing species interaction networks created by different sets of researchers",
+        "type": "article-journal"
+    },
+    {
         "issue": "n/a",
         "container-title": "Global Ecology and Biogeography",
         "author": [
@@ -1505,6 +1545,30 @@
         "type": "article-journal"
     },
     {
+        "publisher": "The University of Chicago Press",
+        "issue": "5",
+        "issued": {
+            "date-parts": [
+                [
+                    1987
+                ]
+            ]
+        },
+        "container-title": "The American Naturalist",
+        "author": [
+            {
+                "family": "Jordano",
+                "given": "Pedro"
+            }
+        ],
+        "id": "Jordano1987PatMut",
+        "DOI": "10.1086/284665",
+        "volume": "129",
+        "page": "657-677",
+        "title": "Patterns of Mutualistic Interactions in Pollination and Seed Dispersal: Connectance, Dependence Asymmetries, and Coevolution",
+        "type": "article-journal"
+    },
+    {
         "issue": "1",
         "issued": {
             "date-parts": [
@@ -1924,6 +1988,56 @@
         "volume": "n/a",
         "title": "Sampling and asymptotic network properties of spatial multi-trophic networks",
         "type": "article-journal"
+    },
+    {
+        "publisher": "Academic Press",
+        "issued": {
+            "date-parts": [
+                [
+                    2011
+                ]
+            ]
+        },
+        "container-title": "Advances in Ecological Research",
+        "author": [
+            {
+                "family": "Melián",
+                "given": "Carlos J."
+            },
+            {
+                "family": "Vilas",
+                "given": "César"
+            },
+            {
+                "family": "Baldó",
+                "given": "Francisco"
+            },
+            {
+                "family": "González-Ortegón",
+                "given": "Enrique"
+            },
+            {
+                "family": "Drake",
+                "given": "Pilar"
+            },
+            {
+                "family": "Williams",
+                "given": "Richard J."
+            }
+        ],
+        "id": "Melian2011EcoDyn",
+        "editor": [
+            {
+                "family": "Belgrano",
+                "given": "Andrea"
+            }
+        ],
+        "collection-title": "The Role of Body Size in Multispecies Systems",
+        "DOI": "10.1016/B978-0-12-386475-8.00006-X",
+        "volume": "45",
+        "page": "225-268",
+        "title": "Eco-evolutionary Dynamics of Individual-Based Food Webs",
+        "type": "chapter"
     },
     {
         "issue": "4",
