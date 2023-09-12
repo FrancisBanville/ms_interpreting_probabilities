@@ -31,4 +31,7 @@ using RCall
 ## Load scripts
 # source("01_import_data.r") # run in R
 include(joinpath("code", "02_process_data.jl"))
+include(joinpath("code", "03_build_prob_networks.jl"))
+include(joinpath("code", "04_make_figures.jl"))
+
 
