@@ -659,8 +659,8 @@ probabilistic networks</div>
             class="citation" data-cites="Emmerson2004Predatora">Emmerson
             &amp; Raffaelli (2004)</span>). However, this extra amount
             of ecological information typically comes at a cost of
-            greater sampling effort or data requirement in predictive
-            models (<span class="citation"
+            greater sampling effort or data volume in predictive models
+            (<span class="citation"
             data-cites="Strydom2021Roadmapa">Strydom <em>et al.</em>
             (2021)</span>), which can lead to relatively high levels of
             uncertainties when inferring quantitative networks with
@@ -705,23 +705,23 @@ probabilistic networks</div>
             <h2
             id="local-networks-communities-interacting-in-space-and-time">Local
             networks: communities interacting in space and time</h2>
-            <p>As opposed to metawebs, probabilistic local networks
-            describe how likely taxa are to interact at a given location
-            and time period (i.e., they are context-dependent). In local
-            networks, edges commonly represent our degree of belief that
-            two taxa interact in nature, but can also document the
-            probability of <em>observing</em> this interaction (<span
-            class="citation" data-cites="Catchen2023Missinga">Catchen
-            <em>et al.</em> (2023)</span>). For example, <span
-            class="citation" data-cites="Kopelke2017FooStra">Kopelke
-            <em>et al.</em> (2017)</span> assembled a dataset of binary
-            local European food webs of willow-galling sawflies and
-            their natural enemies, clearly referencing each food web in
-            space and time. Because of its large number of replicated
-            samples, this dataset can be used to infer the probability
-            of locally observing an interaction between any pair of taxa
-            by measuring the proportion of sites where an interaction
-            was observed (<span class="citation"
+            <p>Probabilistic local networks describe how likely taxa are
+            to interact at a given location and time period (i.e., they
+            are context-dependent). In local networks, edges commonly
+            represent our degree of belief that two taxa interact in
+            nature, but can also document the probability of
+            <em>observing</em> this interaction (<span class="citation"
+            data-cites="Catchen2023Missinga">Catchen <em>et al.</em>
+            (2023)</span>). For example, <span class="citation"
+            data-cites="Kopelke2017FooStra">Kopelke <em>et al.</em>
+            (2017)</span> assembled a dataset of binary local European
+            food webs of willow-galling sawflies and their natural
+            enemies, clearly referencing each food web in space and
+            time. Because of its large number of replicated samples,
+            this dataset can be used to infer the probability of locally
+            observing an interaction between any pair of taxa by
+            measuring the proportion of sites where an interaction was
+            observed (<span class="citation"
             data-cites="Gravel2019BriElt">Gravel <em>et al.</em>
             (2019)</span>). More generally, we define space as the
             geographic coordinates <span
@@ -749,8 +749,8 @@ probabilistic networks</div>
             <span class="citation"
             data-cites="Galiana2018Spatiala">Galiana <em>et al.</em>
             (2018)</span>), we should expect local probabilities of
-            interactions to scale with area and duration because taxa
-            have more opportunities to interact.</p>
+            interactions to scale positively with area and duration
+            because taxa have more opportunities to interact.</p>
             <p>The probability that two taxa <span
             class="math inline"><em>i</em></span> and <span
             class="math inline"><em>j</em></span> interact locally can
@@ -768,8 +768,8 @@ probabilistic networks</div>
             class="math inline">$C_{i,j} \sim {\rm Bernoulli}(P_{i,j}(x,
             y))$</span>, where the probability of co-occurrence <span
             class="math inline"><em>P</em><sub><em>i</em>, <em>j</em></sub>(<em>x</em>,<em>y</em>)</span>
-            can be estimated using species distribution models (e.g.,
-            <span class="citation"
+            can be estimated using joint species distribution models
+            (e.g., <span class="citation"
             data-cites="Pollock2014UndCoo">Pollock <em>et al.</em>
             (2014)</span>). More generally, the probability that two
             taxa interact locally can be obtained by the product of
@@ -832,9 +832,11 @@ probabilistic networks</div>
             the resources available to the researchers. In other words,
             these variables do not systematically need to be accounted
             for. However, when they are, they should be specified in the
-            documentation of the data, preferentially in mathematical
-            terms to avoid any confusion in their interpretation and to
-            limit manipulation errors during their re-use. For example,
+            documentation of the data (<span class="citation"
+            data-cites="Brimacombe2023ShoReu">Brimacombe <em>et al.</em>
+            (2023)</span>), preferentially in mathematical terms to
+            avoid any confusion in their interpretation and to limit
+            manipulation errors during their re-use. For example,
             ecologists should be explicit about their consideration of
             co-occurrence in their estimation of local interaction
             probabilities. Indeed, it is important to specify if
@@ -853,7 +855,9 @@ probabilistic networks</div>
             <div id="tbl:prob">
             <table>
             <caption>Table 1: Interaction probabilities are interpreted
-            differently in metawebs and local networks. Each formula
+            differently in metawebs (<span
+            class="math inline"><em>M</em></span>) and local networks
+            (<span class="math inline"><em>N</em></span>). Each formula
             includes different conditional variables and is described in
             plain text. A non-exhaustive list of studies using these
             formulas is included, with the variables used specified in
@@ -958,12 +962,12 @@ probabilistic networks</div>
             distributed within a broad region of interest, metawebs can
             be built using different data sources, including literature
             review, fieldwork, and predictive models (e.g., the metaweb
-            of Canadian mammals inferred by <span class="citation"
-            data-cites="Strydom2022Food">Strydom <em>et al.</em>
-            (2022)</span>). Every pair of taxa that have confidently
-            been observed to interact at least once can be given a
-            probability of <span class="math inline">1</span> (i.e.,
-            <span
+            of trophic interactions between Canadian mammals inferred by
+            <span class="citation" data-cites="Strydom2022Food">Strydom
+            <em>et al.</em> (2022)</span>). Every pair of taxa that have
+            confidently been observed to interact at least once can be
+            given a probability of <span class="math inline">1</span>
+            (i.e., <span
             class="math inline"><em>P</em><sub><em>M</em></sub>(<em>i</em>→<em>j</em>) = 1</span>)
             since we know that they <em>can</em> interact. This is
             usually not the case in local probabilistic networks, in
@@ -982,14 +986,14 @@ probabilistic networks</div>
             misinterpretations (e.g., due to cryptic species and
             interactions, <span class="citation"
             data-cites="Pringle2020Resolving">Pringle &amp; Hutchinson
-            (2020)</span>), many observations of interactions are
-            actually false positives. Similarly, forbidden interactions
-            can be false negatives in metawebs, e.g. if they have been
-            assessed for specific phenotypes, locations or time.
-            Implementing a Bayesian framework, which updates prior
-            probabilities with empirical data (e.g., <span
-            class="citation" data-cites="Bartomeus2016ComFra">Bartomeus
-            <em>et al.</em> (2016)</span>, <span class="citation"
+            (2020)</span>), many observations of interactions are only
+            false positives. Similarly, forbidden interactions can be
+            false negatives in metawebs, e.g. if they have been assessed
+            for specific phenotypes, locations or time. Implementing a
+            Bayesian framework, which updates prior probabilities with
+            empirical data (e.g., <span class="citation"
+            data-cites="Bartomeus2016ComFra">Bartomeus <em>et al.</em>
+            (2016)</span>, <span class="citation"
             data-cites="Cirtwill2019QuaFra">Cirtwill <em>et al.</em>
             (2019)</span>), could improve our estimation of interaction
             probabilities in both systems.</p>
