@@ -181,7 +181,7 @@ quantitative interactions can describe predation pressure on prey taxa, they can
 be good estimators of the parameters describing species interactions in a
 Lotka-Volterra model (e.g., @Emmerson2004Predatora). However, this extra amount
 of ecological information typically comes at a cost of greater sampling effort
-or data requirement in predictive models (@Strydom2021Roadmapa), which can lead
+or data volume in predictive models (@Strydom2021Roadmapa), which can lead
 to relatively high levels of uncertainties when inferring quantitative networks
 with limited data. Just like binary networks, the uncertainty and spatiotemporal
 variability of quantitative interactions can be represented probabilistically,
@@ -208,7 +208,7 @@ networks and metawebs.
 
 ## Local networks: communities interacting in space and time
 
-As opposed to metawebs, probabilistic local networks describe how likely taxa
+Probabilistic local networks describe how likely taxa
 are to interact at a given location and time period (i.e., they are
 context-dependent). In local networks, edges commonly represent our degree of
 belief that two taxa interact in nature, but can also document the probability
@@ -234,7 +234,7 @@ are usually sampled. Using space and time intervals allows us to measure an area
 $A$ and duration $t$, which can be directly used in spatiotemporal analyses of
 ecological networks. For example, when studying network-area relationships (NAR,
 @Galiana2018Spatiala), we should expect local probabilities of interactions to
-scale with area and duration because taxa have more opportunities to interact.
+scale positively with area and duration because taxa have more opportunities to interact.
 
 The probability that two taxa $i$ and $j$ interact locally can also be
 conditional on many environmental and biological factors. One of these is their
@@ -244,7 +244,7 @@ probability that the interaction is realized must be $0$ when taxa do not
 co-occur, i.e. $P_{N}(i \rightarrow j | C = 0) = 0$. Co-occurrence can also be
 modeled probabilistically. In that case, it follows a Bernoulli distribution
 $C_{i,j} \sim {\rm Bernoulli}(P_{i,j}(x, y))$, where the probability of
-co-occurrence $P_{i,j}(x, y)$ can be estimated using species distribution models
+co-occurrence $P_{i,j}(x, y)$ can be estimated using joint species distribution models
 (e.g., @Pollock2014UndCoo). More generally, the probability that two taxa
 interact locally can be obtained by the product of their probability of
 interaction given co-occurrence with their probability of co-occurrence: 
@@ -283,7 +283,7 @@ The local context in which probabilities are estimated and the variables that
 should be taken into consideration depend on the study system, the objective of
 the study, and the resources available to the researchers. In other words, these
 variables do not systematically need to be accounted for. However, when they
-are, they should be specified in the documentation of the data, preferentially
+are, they should be specified in the documentation of the data (@Brimacombe2023ShoReu), preferentially
 in mathematical terms to avoid any confusion in their interpretation and to
 limit manipulation errors during their re-use. For example, ecologists should be
 explicit about their consideration of co-occurrence in their estimation of local
@@ -306,8 +306,8 @@ carefully describe interaction data before integrating and analyzing them.
 | $P_N(i \rightarrow j \vert \Omega)$          | probability that the interaction is realized locally given chosen environmental and biological factors |   |  
 | $P_N(i \rightarrow j \vert A, t, C, \Omega)$ | probability that the interaction is realized locally given many conditional factors                             |   | 
 
-Table: Interaction probabilities are interpreted differently in metawebs and
-local networks. Each formula includes different conditional variables and is
+Table: Interaction probabilities are interpreted differently in metawebs ($M$) and
+local networks ($N$). Each formula includes different conditional variables and is
 described in plain text. A non-exhaustive list of studies using these formulas
 is included, with the variables used specified in parentheses. {#tbl:prob}
 
@@ -336,7 +336,7 @@ or environmental variables (@tbl:prob).
 Starting from a selected set of taxa, which are usually distributed within a
 broad region of interest, metawebs can be built using different data sources,
 including literature review, fieldwork, and predictive models (e.g., the metaweb
-of Canadian mammals inferred by @Strydom2022Food). Every pair of taxa that have
+of trophic interactions between Canadian mammals inferred by @Strydom2022Food). Every pair of taxa that have
 confidently been observed to interact at least once can be given a probability
 of $1$ (i.e., $P_{M}(i \rightarrow j) = 1$) since we know that they *can*
 interact. This is usually not the case in local probabilistic networks, in which
@@ -349,7 +349,7 @@ were never observed can have low probability values in both metawebs and local
 networks, going as low as $0$ for forbidden links. However, because of
 observation errors due to taxonomic misidentifications and ecological
 misinterpretations (e.g., due to cryptic species and interactions,
-@Pringle2020Resolving), many observations of interactions are actually false
+@Pringle2020Resolving), many observations of interactions are only false
 positives. Similarly, forbidden interactions can be false negatives in metawebs,
 e.g. if they have been assessed for specific phenotypes, locations or time.
 Implementing a Bayesian framework, which updates prior probabilities with
