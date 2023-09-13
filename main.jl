@@ -28,6 +28,11 @@ using EcologicalNetworks
 # Using R within Julia
 using RCall
 
+## Load functions
+include(joinpath("code", "functions", "prob_metaweb.jl"))
+include(joinpath("code", "functions", "prob_networks.jl"))
+include(joinpath("code", "functions", "merge_networks.jl"))
+
 ## Load scripts
 # source("01_import_data.r") # run in R
 include(joinpath("code", "02_process_data.jl"))
