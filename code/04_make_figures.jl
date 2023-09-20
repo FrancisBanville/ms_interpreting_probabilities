@@ -8,6 +8,9 @@ fonts=font("Times",7)
 
 ## read network data
 
+# probabilistic networks
+include("03_build_prob_networks.jl")
+
 # metaweb
 M = load(joinpath("data", "processed", "metaweb.jld2"))["N"]
 
@@ -16,7 +19,6 @@ Ns = load(joinpath("data", "processed", "local_networks.jld2"))["N"]
 
 # keep networks with 5 or more interactions only
 Ns = Ns[links.(Ns) .>= 5]
-
 
 ####### Figure of beta diversity #######
 
