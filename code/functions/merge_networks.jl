@@ -1,10 +1,9 @@
 """
     merge_networks(N1_obj::Any, N2_obj::Any, M::UnipartiteProbabilisticNetwork)
 
-Merge probabilistic networks, assuming independance between pairwise interactions in different local networks.
+Merge local probabilistic networks, assuming independance between pairwise interactions in different local networks.
 
-For each pair of species in the new network, the conditional probability that an interaction occurs between them in at least one of the networks, given that they have the capacity to interact, is computed. This probability is then multiplied by the probability of potential interaction found in the metaweb.
-
+For each pair of species, the conditional probability that an interaction occurs between them in at least one of the networks, given that they have the capacity to interact, is multiplied by the probability of potential interaction found in the metaweb.
 """
 
 function merge_networks(N1_obj::Any, N2_obj::Any, M::UnipartiteProbabilisticNetwork)
@@ -47,7 +46,7 @@ function merge_networks(N1_obj::Any, N2_obj::Any, M::UnipartiteProbabilisticNetw
         probM = mat_potential[N12_species .== spi, N12_species .== spj][1]
 
         # compute conditional probability of interaction (assuming independance)
-        mat_condprob[i, j] = (1 - (1 - prob1) * (1 - prob2))
+        mat_condprob[i, j] = 1 - (1 - prob1) * (1 - prob2)
         
         # compute local probability of interaction 
         N12[i, j] =  mat_condprob[i, j] * probM

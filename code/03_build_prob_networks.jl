@@ -23,7 +23,7 @@ parasitoid = filter(x -> x != "none", parasitoid)
 
 M1 = prob_metaweb(M, "method1") # probabilities of average connectance
 M2 = prob_metaweb(M, "method2") # probabilities of subnetwork connectance
-M3 = prob_metaweb(M, "method3"; fp = 0.05, fn = 0.1) # false positive and negative rates
+M3 = prob_metaweb(M, "method3"; fp = 0, fn = 0) # false positive and negative rates
 
 
 ## build probabilistic local networks from binary networks and probabilistic metawebs 
