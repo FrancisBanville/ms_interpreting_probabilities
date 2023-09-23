@@ -4,7 +4,7 @@
 # metaweb
 M = load(joinpath("data", "processed", "metaweb.jld2"))["N"]
 
-# local networks
+# local networks (minimum 5 species)
 Ns = load(joinpath("data", "processed", "local_networks.jld2"))["N"]
 
 ## load interactions data to get species names
@@ -24,6 +24,8 @@ parasitoid = filter(x -> x != "none", parasitoid)
 M1 = prob_metaweb(M, "method1") # probabilities of average connectance
 M2 = prob_metaweb(M, "method2") # probabilities of subnetwork connectance
 M3 = prob_metaweb(M, "method3"; fp = 0, fn = 0) # false positive and negative rates
+M3_fpfn = prob_metaweb(M, "method3"; fp = 0.05, fn = 0.1) # false positive and negative rates
+
 
 
 ## build probabilistic local networks from binary networks and probabilistic metawebs 
@@ -40,3 +42,5 @@ Ns_M2_p50 = [prob_networks(Ns[i], M2; p = 0.5) for i in 1:length(Ns)]
 Ns_M3_p100 = [prob_networks(Ns[i], M3; p = 1.0) for i in 1:length(Ns)] 
 Ns_M3_p75 = [prob_networks(Ns[i], M3; p = 0.75) for i in 1:length(Ns)] 
 Ns_M3_p50 = [prob_networks(Ns[i], M3; p = 0.5) for i in 1:length(Ns)] 
+
+

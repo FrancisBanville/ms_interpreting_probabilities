@@ -116,6 +116,9 @@ for i in sites
     push!(Ns, build_networks(i))
 end
 
+# keep networks with 5 or more interactions only
+Ns = Ns[links.(Ns) .>= 5]
+
 save(joinpath("data", "processed", "local_networks.jld2"), "N", Ns)
 
 

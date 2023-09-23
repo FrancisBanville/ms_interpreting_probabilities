@@ -14,17 +14,14 @@ include("03_build_prob_networks.jl")
 # metaweb
 M = load(joinpath("data", "processed", "metaweb.jld2"))["N"]
 
-# local networks
+# local networks (minimum 5 species)
 Ns = load(joinpath("data", "processed", "local_networks.jld2"))["N"]
-
-# keep networks with 5 or more interactions only
-Ns = Ns[links.(Ns) .>= 5]
 
 ####### Figure of network accumulation curves (beta diversity) #######
 
 # number of simulations and samples
 n_sim = 100
-n_samples = 200
+n_samples = length(Ns)
 
 # we use bw (Whittaker 1960) as a measure of network dissimilarity
 # bw = (a + b + c) / [(2a + b + c) / 2] - 1
@@ -97,7 +94,7 @@ plot_bos = plot(1:n_samples,
 xaxis!(:log,
     xlabel="Number of samples", 
     xticks=(a,a),
-    xlims=(1,200))
+    xlims=(1,n_samples))
 
 yaxis!(ylabel="Dissimilarity of interactions between common species (βos)", 
     ylims=(0, 0.5))
@@ -146,7 +143,7 @@ plot_bs = plot(1:n_samples,
 xaxis!(:log,
     xlabel="Number of samples", 
     xticks=(a,a),
-    xlims=(1,200))
+    xlims=(1,n_samples))
 
 yaxis!(ylabel="Dissimilarity in species composition (βs)", 
     ylims=(0, 1))
@@ -240,7 +237,7 @@ plot!(1:n_samples,
 xaxis!(:log,
     xlabel="Number of samples", 
     xticks=(a,a),
-    xlims=(1,200))
+    xlims=(1,n_samples))
 
 yaxis!(ylabel="Number of links")
 
@@ -291,7 +288,7 @@ plot!(1:n_samples,
 xaxis!(:log,
     xlabel="Number of samples", 
     xticks=(a,a),
-    xlims=(1,200))
+    xlims=(1,n_samples))
 
 yaxis!(ylabel="Connectance")
 
@@ -306,3 +303,6 @@ plot(plot_bos, plot_bs, plot_links, plot_co,
     size=(800, 600))
 
 savefig(joinpath("figures","network_accumulation.png"))
+
+
+
