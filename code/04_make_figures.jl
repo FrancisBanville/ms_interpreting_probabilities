@@ -306,3 +306,212 @@ savefig(joinpath("figures","network_accumulation.png"))
 
 
 
+####### Figure of network sampling #######
+
+# generate binary realizations of each local network using the two sampling methods (sampling interactions from the metaweb once or independently for each local network)
+
+# calculate connectance for each random draw of each local network
+nsim = 100
+
+Ns_draws1_co = zeros(Float64, nsim, length(Ns))
+Ns_draws2_co = zeros(Float64, nsim, length(Ns))
+
+# generate binary realizations from probabilistic networks obtained using the method of false positives and negatives
+for i in 1:nsim
+    ## first sampling method: one random realization of the metaweb
+    Ns_draws1 = sample_networks(M3_fpfn, Ns_M3_fpfn_p100)
+    ## second sampling method: one random realization for each local network
+    Ns_draws2 = sample_networks(Ns_M3_fpfn_p100)
+
+    ## calculate connectance
+    Ns_draws1_co[i, :] = connectance.(Ns_draws1)
+    Ns_draws2_co[i, :] = connectance.(Ns_draws2)
+    
+end
+
+# first subplot: average connectance for each network across simulations
+plotA = density(mean.(eachcol(Ns_draws1_co)), 
+                label="",
+                fill=(0, .5),
+                linewidth=2, 
+                framestyle=:box, 
+                grid=false,
+                minorgrid=false,
+                dpi=1000, 
+                size=(800,500), 
+                margin=5Plots.mm, 
+                guidefont=fonts, 
+                xtickfont=fonts, 
+                ytickfont=fonts,
+                foreground_color_legend=nothing, 
+                background_color_legend=:white, 
+                legendfont=fonts,
+                legendfontpointsize=8,
+                legendfontfamily="Times")
+
+    # second sampling method
+    density!(mean.(eachcol(Ns_draws2_co)), 
+            label="",
+            fill=(0, .2),
+            linewidth=2)
+
+    xaxis!(xlabel="Average connectance across simulations", 
+        xlims=(0, 0.27))
+
+    yaxis!(ylabel="Density", 
+        ylims=(0, Inf))
+
+
+# second subplot: average connectance for each simulation across networks
+plotB = density(mean.(eachrow(Ns_draws1_co)), 
+                label="",
+                fill=(0, .5),
+                linewidth=2, 
+                framestyle=:box, 
+                grid=false,
+                minorgrid=false,
+                dpi=1000, 
+                size=(800,500), 
+                margin=5Plots.mm, 
+                guidefont=fonts, 
+                xtickfont=fonts, 
+                ytickfont=fonts,
+                foreground_color_legend=nothing, 
+                background_color_legend=:white, 
+                legendfont=fonts,
+                legendfontpointsize=8,
+                legendfontfamily="Times")
+
+    # second sampling method
+    density!(mean.(eachrow(Ns_draws2_co)), 
+            label="",
+            fill=(0, .2),
+            linewidth=2)
+
+    xaxis!(xlabel="Average connectance across networks")
+
+    yaxis!(ylabel="Density", 
+        ylims=(0, Inf))
+        
+
+# third subplot: standard deviation of connectance for each simulation across networks
+plotC = density(std.(eachrow(Ns_draws1_co)), 
+                label="",
+                fill=(0, .5),
+                linewidth=2, 
+                framestyle=:box, 
+                grid=false,
+                minorgrid=false,
+                dpi=1000, 
+                size=(800,500), 
+                margin=5Plots.mm, 
+                guidefont=fonts, 
+                xtickfont=fonts, 
+                ytickfont=fonts,
+                foreground_color_legend=nothing, 
+                background_color_legend=:white, 
+                legendfont=fonts,
+                legendfontpointsize=8,
+                legendfontfamily="Times")
+
+    # second sampling method
+    density!(std.(eachrow(Ns_draws2_co)), 
+            label="",
+            fill=(0, .2),
+            linewidth=2)
+
+    xaxis!(xlabel="Standard deviation of connectance across networks")
+
+    yaxis!(ylabel="Density", 
+        ylims=(0, Inf))
+
+
+# legend
+legend = plot([0 0], 
+            fill=(0, .5), 
+            linewidth=2, 
+            showaxis = false, 
+            grid = false, 
+            label = ["sampling from the metaweb" "sampling from local networks"], 
+            legend = :top,
+            foreground_color_legend=nothing, 
+            background_color_legend=:white,
+            legendfont=fonts,
+            legendfontpointsize=7,
+            legendfontfamily="Times")
+
+
+plot(plotA, plotB, plotC, legend,
+        title = ["(a)" "(b)" "(c)" ""],
+        titleloc=:right, 
+        titlefont=fonts,
+        layout = @layout([[A B C]; D{.1h}]),
+        dpi=1000,
+        size=(800, 400))
+
+    
+savefig(joinpath("figures","network_sampling.png"))
+
+
+
+
+## difference between sampling methods for individual networks (SUP MAT)
+
+function density_plots_co(i::Int64)
+
+    density(Ns_draws1_co[:, i], 
+                label="",
+                fill=(0, .5),
+                linewidth=2, 
+                framestyle=:box, 
+                grid=false,
+                minorgrid=false,
+                dpi=1000, 
+                size=(800,500), 
+                margin=5Plots.mm, 
+                guidefont=fonts, 
+                xtickfont=fonts, 
+                ytickfont=fonts,
+                foreground_color_legend=nothing, 
+                background_color_legend=:white, 
+                legendfont=fonts,
+                legendfontpointsize=8,
+                legendfontfamily="Times")
+
+    # second sampling method
+    density!(Ns_draws2_co[:, i], 
+            label="",
+            fill=(0, .2),
+            linewidth=2)
+        
+    xaxis!(xlabel="Connectance")
+
+    yaxis!(ylabel="Density", 
+            ylims=(0, Inf))
+end
+
+# select 9 networks randomly 
+i = sample(1:length(Ns), 9, replace=false)
+Si = richness.(Ns[i])
+
+# plot them
+plot1 = density_plots_co(i[1]) 
+plot2 = density_plots_co(i[2]) 
+plot3 = density_plots_co(i[3]) 
+plot4 = density_plots_co(i[4]) 
+plot5 = density_plots_co(i[5]) 
+plot6 = density_plots_co(i[6]) 
+plot7 = density_plots_co(i[7]) 
+plot8 = density_plots_co(i[8]) 
+plot9 = density_plots_co(i[9]) 
+
+
+plot(plot1, plot2, plot3, plot4, plot5, plot6, plot7, plot8, plot9, legend,
+        title = ["S = $(Si[1])" "S = $(Si[2])" "S = $(Si[3])" "S = $(Si[4])" "S = $(Si[5])" "S = $(Si[6])" "S = $(Si[7])" "S = $(Si[8])" "S = $(Si[9])" ""],
+        titleloc=:right, 
+        titlefont=fonts,
+        layout = @layout([[A B C]; [D E F]; [G H I]; D{.1h}]),
+        dpi=1000,
+        size=(800, 800))
+
+savefig(joinpath("figures","network_sampling_examples.png"))

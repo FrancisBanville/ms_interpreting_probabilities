@@ -43,4 +43,9 @@ Ns_M3_p100 = [prob_networks(Ns[i], M3; p = 1.0) for i in 1:length(Ns)]
 Ns_M3_p75 = [prob_networks(Ns[i], M3; p = 0.75) for i in 1:length(Ns)] 
 Ns_M3_p50 = [prob_networks(Ns[i], M3; p = 0.5) for i in 1:length(Ns)] 
 
+Ns_M3_fpfn_p100 = [prob_networks(Ns[i], M3_fpfn; p = 1.0) for i in 1:length(Ns)] 
+Ns_M3_fpfn_p75 = [prob_networks(Ns[i], M3_fpfn; p = 0.75) for i in 1:length(Ns)] 
+Ns_M3_fpfn_p50 = [prob_networks(Ns[i], M3_fpfn; p = 0.5) for i in 1:length(Ns)] 
+
+
 

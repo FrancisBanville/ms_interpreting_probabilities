@@ -30,9 +30,11 @@ using RCall
 
 ## Load functions
 include(joinpath("code", "functions", "accumulate.jl"))
+include(joinpath("code", "functions", "merge_networks.jl"))
 include(joinpath("code", "functions", "prob_metaweb.jl"))
 include(joinpath("code", "functions", "prob_networks.jl"))
-include(joinpath("code", "functions", "merge_networks.jl"))
+include(joinpath("code", "functions", "sample_networks.jl"))
+
 
 ## Load scripts
 # source("01_import_data.r") # run in R
