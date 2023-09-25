@@ -311,7 +311,7 @@ savefig(joinpath("figures","network_accumulation.png"))
 # generate binary realizations of each local network using the two sampling methods (sampling interactions from the metaweb once or independently for each local network)
 
 # calculate connectance for each random draw of each local network
-nsim = 100
+nsim = 500
 
 Ns_draws1_co = zeros(Float64, nsim, length(Ns))
 Ns_draws2_co = zeros(Float64, nsim, length(Ns))
@@ -515,3 +515,101 @@ plot(plot1, plot2, plot3, plot4, plot5, plot6, plot7, plot8, plot9, legend,
         size=(800, 800))
 
 savefig(joinpath("figures","network_sampling_examples.png"))
+
+
+
+####### Figure of spatiotemporal interactions #######
+
+### heatmap of the probability of interactions with changing λ and γ (fixed p_ixy, p_jxy and t0)
+
+# explored values of λ and γ
+λ = [0:0.01:4;]
+γ = [0:0.01:4;]
+
+# calculate probability of interactions
+p = zeros(Float64, length(γ), length(λ))
+
+for i in 1:length(γ), j in 1:length(λ)
+    p[i, j] = spatiotemporal_model(γ = γ[i], λ = λ[j], p_ixy = 0.5, p_jxy = 0.5, t0 = 1)
+end
+
+# make heatmap
+plotA = heatmap(λ, γ, p, c = :viridis, 
+        label="",
+        framestyle=:box, 
+        grid=false,
+        minorgrid=false,
+        dpi=1000, 
+        size=(800,500), 
+        margin=5Plots.mm, 
+        guidefont=fonts, 
+        xtickfont=fonts, 
+        ytickfont=fonts,
+        foreground_color_legend=nothing, 
+        background_color_legend=:white)
+
+xaxis!(xlabel="Interaction rate λ")
+yaxis!(ylabel="Strength of co-occurrence γ")
+
+
+### time series of the probability of interactions with changing λ and γ (fixed p_ixy and p_jxy)
+
+# explored values of λ and γ
+γ = [1.0; 2.0]
+λ = [1.0; 2.0]
+
+params = vec(collect(Base.product(γ, λ)))
+
+# time steps
+t = [0:0.1:5;]
+
+# calculate probability of interactions
+p = zeros(length(t), length(params))
+
+for (i, t0) in enumerate(t), j in 1:length(params)
+    p[i,j] = spatiotemporal_model(p_ixy = 0.5, p_jxy = 0.5, γ = params[j][1], λ = params[j][2], t0 = t0)
+end
+
+# plot time series
+plotB = plot(t, p[:,1],
+    alpha=0.8,
+    linewidth=4,
+    label="γ = $(params[1][1]), λ = $(params[1][2])",
+    grid=false,
+    minorgrid=false,
+    dpi=1000, 
+    size=(800,500), 
+    margin=5Plots.mm, 
+    guidefont=fonts,
+    xtickfont=fonts, 
+    ytickfont=fonts, 
+    foreground_color_legend=nothing, 
+    background_color_legend=:white, 
+    legendfont=fonts,
+    legendfontpointsize=7,
+    legendfontfamily="Times")
+
+for i in 2:length(params)
+    plot!(t, p[:,i],
+        alpha=0.8,
+        linewidth=4,
+        label="γ = $(params[i][1]), λ = $(params[i][2])")
+end
+
+xaxis!(xlabel="Duration t0",
+    xlims=(0, Inf))
+
+yaxis!(ylabel="Probability of interaction", 
+        ylims=(0, 0.52))
+
+
+plot(plotA, plotB,
+        title = ["(a)" "(b)"],
+        titleloc=:right, 
+        titlefont=fonts,
+        dpi=1000,
+        size=(800, 350))
+
+savefig(joinpath("figures","spatiotemporal_model.png"))
+
+

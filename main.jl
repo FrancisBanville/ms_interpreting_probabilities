@@ -12,6 +12,7 @@ using DataFrames
 using JLD2
 
 # Doing statistics and models
+using Distributions
 using ProgressMeter
 using Random
 using SparseArrays
@@ -34,6 +35,7 @@ include(joinpath("code", "functions", "merge_networks.jl"))
 include(joinpath("code", "functions", "prob_metaweb.jl"))
 include(joinpath("code", "functions", "prob_networks.jl"))
 include(joinpath("code", "functions", "sample_networks.jl"))
+include(joinpath("code", "functions", "spatiotemporal_model.jl"))
 
 
 ## Load scripts
