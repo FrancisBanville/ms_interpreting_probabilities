@@ -17,6 +17,10 @@ M = load(joinpath("data", "processed", "metaweb.jld2"))["N"]
 # local networks (minimum 5 species)
 Ns = load(joinpath("data", "processed", "local_networks.jld2"))["N"]
 
+# spatial information (site name and latitude)
+sites_lat = DataFrame(CSV.File(joinpath("data", "processed", "sites_lat.csv")))
+
+
 ####### Figure of network accumulation curves (beta diversity) #######
 
 # number of simulations and samples
@@ -515,6 +519,149 @@ plot(plot1, plot2, plot3, plot4, plot5, plot6, plot7, plot8, plot9, legend,
         size=(800, 800))
 
 savefig(joinpath("figures","network_sampling_examples.png"))
+
+
+
+
+
+####### Figure of spatial scaling #######
+
+# latitude widths to explore
+areas = [1.0:1.0:12.0;]
+
+# calculate the expected total number of links in all local networks within a given latitude width
+links_sum = []
+
+# calculate the expected number of links of the network obtained after merging all networks within a given latitude width
+links_merged = []
+
+# use the probabilistic networks built using the false positive and false negative method
+p = Progress(length(areas))
+for (a, area) in enumerate(areas)
+    links_scale = spatial_scaling(Ns_M3_fpfn_p100, M3_fpfn, area)
+    push!(links_sum, links_scale.links_sum)
+    push!(links_merged, links_scale.links_merged)
+    
+    next!(p)
+end
+
+
+# calculate quantiles of expected numbers of links
+links_sum_025 = quantile.(links_sum, 0.025)
+links_sum_250 = quantile.(links_sum, 0.25)
+links_sum_500 = quantile.(links_sum, 0.50)
+links_sum_750 = quantile.(links_sum, 0.75)
+links_sum_975 = quantile.(links_sum, 0.975)
+
+links_merged_025 = quantile.(links_merged, 0.025)
+links_merged_250 = quantile.(links_merged, 0.25)
+links_merged_500 = quantile.(links_merged, 0.50)
+links_merged_750 = quantile.(links_merged, 0.75)
+links_merged_975 = quantile.(links_merged, 0.975)
+
+
+# make spatial scaling figures
+a = [2:2:Int64(maximum(areas));]
+## total expected number of links
+
+plot_links_sum = plot(areas,
+    links_sum_975,
+    fillrange=links_sum_025,
+    color=:lightgrey, 
+    fillalpha = 0.50,
+    label="95% PI",
+    linewidth=0, 
+    grid=false,
+    minorgrid=false,
+    dpi=1000, 
+    size=(800,500), 
+    margin=5Plots.mm, 
+    guidefont=fonts,
+    xtickfont=fonts, 
+    ytickfont=fonts, 
+    foreground_color_legend=nothing, 
+    background_color_legend=:white, 
+    legendfont=fonts,
+    legendfontpointsize=7,
+    legendfontfamily="Times")
+
+xaxis!(xlabel="Latitude width",
+    xlims=(minimum(areas), Inf),
+    xticks=(a,a))
+
+yaxis!(ylabel="Expected total number of links", 
+    ylims=(0, Inf))
+
+plot!(areas,
+    links_sum_250,
+    fillrange=links_sum_750,
+    color=:grey, 
+    fillalpha = 0.50,
+    label="50% PI",
+    linewidth=0)
+
+plot!(areas,
+    links_sum_500,
+    label="median",
+    color=RGB(204/255,121/255,167/255),
+    alpha=0.9,
+    linewidth=4)
+
+
+## expected number of links in the merged network
+
+plot_links_merged = plot(areas,
+    links_merged_975,
+    fillrange=links_merged_025,
+    color=:lightgrey, 
+    fillalpha = 0.50,
+    label="95% PI",
+    linewidth=0, 
+    grid=false,
+    minorgrid=false,
+    dpi=1000, 
+    size=(800,500), 
+    margin=5Plots.mm, 
+    guidefont=fonts,
+    xtickfont=fonts, 
+    ytickfont=fonts, 
+    foreground_color_legend=nothing, 
+    background_color_legend=:white, 
+    legendfont=fonts,
+    legendfontpointsize=7,
+    legendfontfamily="Times")
+
+xaxis!(xlabel="Latitude width",
+    xlims=(minimum(areas), Inf),
+    xticks=(a,a))
+
+yaxis!(ylabel="Expected number of links in merged network", 
+    ylims=(0, Inf))
+
+plot!(areas,
+    links_merged_250,
+    fillrange=links_merged_750,
+    color=:grey, 
+    fillalpha = 0.50,
+    label="50% PI",
+    linewidth=0)
+
+plot!(areas,
+    links_merged_500,
+    label="median",
+    color=RGB(204/255,121/255,167/255),
+    alpha=0.9,
+    linewidth=4)
+
+
+plot(plot_links_sum, plot_links_merged,
+    title = ["(a)" "(b)"],
+    titleloc=:right, 
+    titlefont=fonts,
+    dpi=1000,
+    size=(800, 400))
+
+savefig(joinpath("figures","spatial_scaling.png"))
 
 
 

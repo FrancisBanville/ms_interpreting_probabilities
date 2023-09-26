@@ -35,6 +35,7 @@ include(joinpath("code", "functions", "merge_networks.jl"))
 include(joinpath("code", "functions", "prob_metaweb.jl"))
 include(joinpath("code", "functions", "prob_networks.jl"))
 include(joinpath("code", "functions", "sample_networks.jl"))
+include(joinpath("code", "functions", "spatial_scaling.jl"))
 include(joinpath("code", "functions", "spatiotemporal_model.jl"))
 
 
