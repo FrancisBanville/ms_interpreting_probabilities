@@ -669,19 +669,30 @@ savefig(joinpath("figures","spatial_scaling.png"))
 
 ### heatmap of the probability of interactions with changing λ and γ (fixed p_ixy, p_jxy and t0)
 
-# explored values of λ and γ
-λ = [0:0.01:4;]
-γ = [0:0.01:4;]
+# explored values of λ and γ for heatmap
+λ_heat = [0:0.01:4;]
+γ_heat = [0:0.01:4;]
+
+# explored values of λ and γ for line plot
+γ_line = [1.0; 2.0]
+λ_line = [1.0; 2.0]
+
+# reshape points for plotting
+params = vec(collect(Base.product(γ_line, λ_line)))
+
+n_points = size(params)[1]
+γ_point = [params[i][1] for i in 1:n_points]
+λ_point = [params[i][2] for i in 1:n_points]
 
 # calculate probability of interactions
-p = zeros(Float64, length(γ), length(λ))
+p = zeros(Float64, length(γ_heat), length(λ_heat))
 
-for i in 1:length(γ), j in 1:length(λ)
-    p[i, j] = spatiotemporal_model(γ = γ[i], λ = λ[j], p_ixy = 0.5, p_jxy = 0.5, t0 = 1)
+for i in 1:length(γ_heat), j in 1:length(λ_heat)
+    p[i, j] = spatiotemporal_model(γ = γ_heat[i], λ = λ_heat[j], p_ixy = 0.5, p_jxy = 0.5, t0 = 1)
 end
 
 # make heatmap
-plotA = heatmap(λ, γ, p, c = :viridis, 
+plotA = heatmap(λ_heat, γ_heat, p, c = :viridis, 
         label="",
         framestyle=:box, 
         grid=false,
@@ -695,17 +706,21 @@ plotA = heatmap(λ, γ, p, c = :viridis,
         foreground_color_legend=nothing, 
         background_color_legend=:white)
 
-xaxis!(xlabel="Interaction rate λ")
-yaxis!(ylabel="Strength of co-occurrence γ")
+scatter!(λ_point, 
+        γ_point,
+        markershape = :star4,
+        markercolor = :white,
+        markersize = 5,
+        label = "")
+
+xaxis!(xlabel="Interaction rate λ", 
+        xlims=(minimum(λ_heat), maximum(λ_heat)))
+
+yaxis!(ylabel="Strength of co-occurrence γ",
+        ylims=(minimum(γ_heat), maximum(γ_heat)))
 
 
 ### time series of the probability of interactions with changing λ and γ (fixed p_ixy and p_jxy)
-
-# explored values of λ and γ
-γ = [1.0; 2.0]
-λ = [1.0; 2.0]
-
-params = vec(collect(Base.product(γ, λ)))
 
 # time steps
 t = [0:0.1:5;]
@@ -718,9 +733,10 @@ for (i, t0) in enumerate(t), j in 1:length(params)
 end
 
 # plot time series
+linestyles = [:solid, :dash, :dot, :dashdot]
 plotB = plot(t, p[:,1],
-    alpha=0.8,
-    linewidth=4,
+    linewidth=1.5,
+    linestyle=linestyles[1],
     label="γ = $(params[1][1]), λ = $(params[1][2])",
     grid=false,
     minorgrid=false,
@@ -738,8 +754,8 @@ plotB = plot(t, p[:,1],
 
 for i in 2:length(params)
     plot!(t, p[:,i],
-        alpha=0.8,
-        linewidth=4,
+        linewidth=1.5,
+        linestyle=linestyles[i],
         label="γ = $(params[i][1]), λ = $(params[i][2])")
 end
 
