@@ -21,6 +21,8 @@ Ns = load(joinpath("data", "processed", "local_networks.jld2"))["N"]
 sites_lat = DataFrame(CSV.File(joinpath("data", "processed", "sites_lat.csv")))
 
 
+
+
 ####### Figure of network accumulation curves (beta diversity) #######
 
 # number of simulations and samples
@@ -170,6 +172,9 @@ plot!(1:n_samples,
 
 
 
+
+
+
 ####### Figure of network accumulation curves (network structure) #######
 
 # simulate network accumulation curves
@@ -310,31 +315,245 @@ savefig(joinpath("figures","network_accumulation.png"))
 
 
 
+
+
+
 ####### Figure of network sampling #######
 
 # generate binary realizations of each local network using the two sampling methods (sampling interactions from the metaweb once or independently for each local network)
 
 # calculate connectance for each random draw of each local network
-nsim = 500
 
-Ns_draws1_co = zeros(Float64, nsim, length(Ns))
-Ns_draws2_co = zeros(Float64, nsim, length(Ns))
+function sample_connectance(M::UnipartiteProbabilisticNetwork, Ns_obj::Vector; nsim=100)
 
-# generate binary realizations from probabilistic networks obtained using the method of false positives and negatives
-for i in 1:nsim
-    ## first sampling method: one random realization of the metaweb
-    Ns_draws1 = sample_networks(M3_fpfn, Ns_M3_fpfn_p100)
-    ## second sampling method: one random realization for each local network
-    Ns_draws2 = sample_networks(Ns_M3_fpfn_p100)
+    # vectors for the connectance of networks obtained from the two methods
+    Ns_draws1_co = zeros(Float64, nsim, length(Ns))
+    Ns_draws2_co = zeros(Float64, nsim, length(Ns))
 
-    ## calculate connectance
-    Ns_draws1_co[i, :] = connectance.(Ns_draws1)
-    Ns_draws2_co[i, :] = connectance.(Ns_draws2)
-    
+    # generate binary network realizations from probabilistic networks obtained using the method of false positives and negatives
+    for i in 1:nsim
+        ## first sampling method: one random realization of the metaweb
+        Ns_draws1 = sample_networks(M, Ns_obj)
+        ## second sampling method: one random realization for each local network
+        Ns_draws2 = sample_networks(Ns_obj)
+
+        ## calculate connectance
+        Ns_draws1_co[i, :] = connectance.(Ns_draws1)
+        Ns_draws2_co[i, :] = connectance.(Ns_draws2)
+    end
+    return (samples_metaweb_co = Ns_draws1_co, samples_local_co = Ns_draws2_co)
 end
 
-# first subplot: average connectance for each network across simulations
-plotA = density(mean.(eachcol(Ns_draws1_co)), 
+
+### first subplot: scatterplot of network connectance obtained from the metaweb and local network sampling methods (averaged across simulations) 
+# probability of local interaction between potentially interacting species = 1.0
+
+samples_co_100 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p100, nsim = 100)
+
+# minimum and maximum values for plotting
+min = minimum(vcat(mean.(eachcol(samples_co_100.samples_metaweb_co)),
+        mean.(eachcol(samples_co_100.samples_local_co))))
+
+max = maximum(vcat(mean.(eachcol(samples_co_100.samples_metaweb_co)),
+                    mean.(eachcol(samples_co_100.samples_local_co))))
+
+plotA = scatter(mean.(eachcol(samples_co_100.samples_metaweb_co)), 
+        mean.(eachcol(samples_co_100.samples_local_co)), 
+        label = "",
+        alpha = 0.8,
+        framestyle=:box, 
+        grid=false,
+        minorgrid=false,
+        dpi=1000, 
+        size=(800,500), 
+        margin=5Plots.mm, 
+        guidefont=fonts, 
+        xtickfont=fonts, 
+        ytickfont=fonts,
+        foreground_color_legend=nothing, 
+        background_color_legend=:white, 
+        legendfont=fonts,
+        legendfontpointsize=8,
+        legendfontfamily="Times")
+
+# 1:1 line
+plot!(min:0.01:max, 
+        min:0.01:max, 
+        linestyle=:dash, 
+        linecolor=:grey,
+        label="")
+
+xaxis!(xlabel="Average connectance across samples from the metaweb", 
+        xlims=(min, max))
+
+yaxis!(ylabel="Average connectance across samples from local networks", 
+        ylims=(min, max))
+
+
+
+### second subplot: scatterplot of network connectance obtained from the metaweb and local network sampling methods (averaged across simulations) 
+# probability of local interaction between potentially interacting species = 0.5
+
+samples_co_50 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p50, nsim = 100)
+
+# minimum and maximum values for plotting
+min = minimum(filter(!isnan, vcat(mean.(eachcol(samples_co_50. samples_metaweb_co)), mean.(eachcol(samples_co_50.samples_local_co)))))
+
+max = maximum(filter(!isnan, vcat(mean.(eachcol(samples_co_50.samples_metaweb_co)), mean.(eachcol(samples_co_50.samples_local_co)))))
+
+plotB = scatter(mean.(eachcol(samples_co_50.samples_metaweb_co)), 
+        mean.(eachcol(samples_co_50.samples_local_co)), 
+        label = "",
+        alpha = 0.8,
+        framestyle=:box, 
+        grid=false,
+        minorgrid=false,
+        dpi=1000, 
+        size=(800,500), 
+        margin=5Plots.mm, 
+        guidefont=fonts, 
+        xtickfont=fonts, 
+        ytickfont=fonts,
+        foreground_color_legend=nothing, 
+        background_color_legend=:white, 
+        legendfont=fonts,
+        legendfontpointsize=8,
+        legendfontfamily="Times")
+
+# 1:1 line
+plot!(min:0.01:max, 
+        min:0.01:max, 
+        linestyle=:dash, 
+        linecolor=:grey,
+        label="")
+
+xaxis!(xlabel="Average connectance across samples from the metaweb", 
+        xlims=(min, max))
+
+yaxis!(ylabel="Average connectance across samples from local networks", 
+        ylims=(min, max))
+
+
+### third subplot: scatterplot of the mean squared logarithmic error between the connectance obtained from the local network and metaweb sampling methods as a function of the number of simulations
+# probability of local interaction between potentially interacting species = 1.0
+
+# calculate the divergence between the two sampling methods for a given number of simulations
+function divergence_sim(M::UnipartiteProbabilisticNetwork, Ns_obj::Vector; nsim=100)
+
+    # sample network connectance with the two methods
+    samples_co = sample_connectance(M, Ns_obj; nsim = nsim)
+    
+    # calculate mean connectance across simulations for both methods
+    samples_metaweb_co = mean.(eachcol(samples_co.samples_metaweb_co))
+    samples_local_co = mean.(eachcol(samples_co.samples_local_co))
+
+    # remove missing values
+    samples_metaweb_co_clean = samples_metaweb_co[Not(isnan.(samples_metaweb_co) .|| isnan.(samples_local_co))]
+
+    samples_local_co_clean = samples_local_co[Not(isnan.(samples_metaweb_co) .|| isnan.(samples_local_co))]
+
+    # calculate divergence (mean squared logarithmic error)
+    return mean((log.(samples_metaweb_co_clean) .- log.(samples_local_co_clean)).^2)
+end
+
+
+# calculate divergence for different numbers of simulations
+nsims = 1:1:100
+
+# divergence between the two methods when p = 1.0
+divergences_100 = zeros(Float64, length(nsims))
+
+p = Progress(length(nsims))
+Threads.@threads for i in nsims
+    divergences_100[i] = divergence_sim(M3_fpfn, Ns_M3_fpfn_p100, nsim = i) 
+next!(p)
+end
+
+plotC = scatter(nsims, 
+        divergences_100, 
+        label = "",
+        alpha = 0.8,
+        framestyle=:box, 
+        grid=false,
+        minorgrid=false,
+        dpi=1000, 
+        size=(800,500), 
+        margin=5Plots.mm, 
+        guidefont=fonts, 
+        xtickfont=fonts, 
+        ytickfont=fonts,
+        foreground_color_legend=nothing, 
+        background_color_legend=:white, 
+        legendfont=fonts,
+        legendfontpointsize=8,
+        legendfontfamily="Times")
+
+xaxis!(xlabel="Number of binary samples", 
+        xlims = (0, maximum(nsims)))
+
+yaxis!(ylabel="Mean squared logarithmic error (MSLE)",
+        ylims=(0, Inf))
+
+
+
+### fourth subplot: scatterplot of the mean squared logarithmic error between the connectance obtained from the local network and metaweb sampling methods as a function of the number of simulations
+# probability of local interaction between potentially interacting species = 0.5
+
+# divergence between the two methods when p = 0.5
+divergences_50 = zeros(Float64, length(nsims))
+
+p = Progress(length(nsims))
+Threads.@threads for i in nsims
+    divergences_50[i] = divergence_sim(M3_fpfn, Ns_M3_fpfn_p50, nsim = i) 
+next!(p)
+end
+
+
+plotD = scatter(nsims, 
+        divergences_50, 
+        label = "",
+        alpha = 0.8,
+        framestyle=:box, 
+        grid=false,
+        minorgrid=false,
+        dpi=1000, 
+        size=(800,500), 
+        margin=5Plots.mm, 
+        guidefont=fonts, 
+        xtickfont=fonts, 
+        ytickfont=fonts,
+        foreground_color_legend=nothing, 
+        background_color_legend=:white, 
+        legendfont=fonts,
+        legendfontpointsize=8,
+        legendfontfamily="Times")
+
+xaxis!(xlabel="Number of binary samples",
+        xlims = (0, maximum(nsims)))
+
+yaxis!(ylabel="Mean squared logarithmic error (MSLE)")
+        
+
+
+plot(plotA, plotB, plotC, plotD,
+        title = ["(a) p = 1.0" "(b) p = 0.5" "(c) p = 1.0" "(d) p = 0.5"],
+        titleloc=:right, 
+        titlefont=fonts,
+        layout = (2, 2),
+        dpi=1000,
+        size=(800, 800))
+        
+savefig(joinpath("figures","network_sampling.png"))
+
+
+
+
+
+####### suppmat 
+
+
+# average connectance for each network across simulations
+plotA_sup = density(mean.(eachcol(samples_co_100.samples_metaweb_co)), 
                 label="",
                 fill=(0, .5),
                 linewidth=2, 
@@ -354,7 +573,7 @@ plotA = density(mean.(eachcol(Ns_draws1_co)),
                 legendfontfamily="Times")
 
     # second sampling method
-    density!(mean.(eachcol(Ns_draws2_co)), 
+    density!(mean.(eachcol(samples_co_100.samples_local_co)), 
             label="",
             fill=(0, .2),
             linewidth=2)
@@ -366,8 +585,8 @@ plotA = density(mean.(eachcol(Ns_draws1_co)),
         ylims=(0, Inf))
 
 
-# second subplot: average connectance for each simulation across networks
-plotB = density(mean.(eachrow(Ns_draws1_co)), 
+# average connectance for each simulation across networks
+plotB_sup = density(mean.(eachrow(samples_co_100.samples_metaweb_co)), 
                 label="",
                 fill=(0, .5),
                 linewidth=2, 
@@ -382,12 +601,13 @@ plotB = density(mean.(eachrow(Ns_draws1_co)),
                 ytickfont=fonts,
                 foreground_color_legend=nothing, 
                 background_color_legend=:white, 
+                legend=:topleft,
                 legendfont=fonts,
                 legendfontpointsize=8,
                 legendfontfamily="Times")
 
     # second sampling method
-    density!(mean.(eachrow(Ns_draws2_co)), 
+    density!(mean.(eachrow(samples_co_100.samples_local_co)), 
             label="",
             fill=(0, .2),
             linewidth=2)
@@ -398,8 +618,8 @@ plotB = density(mean.(eachrow(Ns_draws1_co)),
         ylims=(0, Inf))
         
 
-# third subplot: standard deviation of connectance for each simulation across networks
-plotC = density(std.(eachrow(Ns_draws1_co)), 
+# standard deviation of connectance for each simulation across networks
+plotC_sup = density(std.(eachrow(samples_co_100.samples_metaweb_co)), 
                 label="",
                 fill=(0, .5),
                 linewidth=2, 
@@ -419,7 +639,7 @@ plotC = density(std.(eachrow(Ns_draws1_co)),
                 legendfontfamily="Times")
 
     # second sampling method
-    density!(std.(eachrow(Ns_draws2_co)), 
+    density!(std.(eachrow(samples_co_100.samples_local_co)), 
             label="",
             fill=(0, .2),
             linewidth=2)
@@ -445,7 +665,7 @@ legend = plot([0 0],
             legendfontfamily="Times")
 
 
-plot(plotA, plotB, plotC, legend,
+plot(plotA_sup, plotB_sup, plotC_sup, legend,
         title = ["(a)" "(b)" "(c)" ""],
         titleloc=:right, 
         titlefont=fonts,
@@ -454,16 +674,16 @@ plot(plotA, plotB, plotC, legend,
         size=(800, 400))
 
     
-savefig(joinpath("figures","network_sampling.png"))
+savefig(joinpath("figures", "supp", "network_sampling_avg.png"))
 
 
 
 
-## difference between sampling methods for individual networks (SUP MAT)
+## difference between sampling methods for individual networks
 
 function density_plots_co(i::Int64)
 
-    density(Ns_draws1_co[:, i], 
+    density(samples_co_100.samples_metaweb_co[:, i], 
                 label="",
                 fill=(0, .5),
                 linewidth=2, 
@@ -483,7 +703,7 @@ function density_plots_co(i::Int64)
                 legendfontfamily="Times")
 
     # second sampling method
-    density!(Ns_draws2_co[:, i], 
+    density!(samples_co_100.samples_local_co[:, i], 
             label="",
             fill=(0, .2),
             linewidth=2)
@@ -518,7 +738,7 @@ plot(plot1, plot2, plot3, plot4, plot5, plot6, plot7, plot8, plot9, legend,
         dpi=1000,
         size=(800, 800))
 
-savefig(joinpath("figures","network_sampling_examples.png"))
+savefig(joinpath("figures", "supp", "network_sampling_examples.png"))
 
 
 
