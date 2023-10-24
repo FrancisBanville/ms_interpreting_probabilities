@@ -583,7 +583,7 @@ yaxis!(ylabel="Mean squared logarithmic error (MSLE)")
 
 
 
-l = @layout [ a b c ; d{0.6h} ]
+l = @layout [grid(3,1) d{0.6w}]
 
 plot(plotA, plotB, plotC, plotD,
         title = ["(a) p = 1.0" "(b) p = 0.75" "(c) p = 0.50" "(d)"],
@@ -591,7 +591,7 @@ plot(plotA, plotB, plotC, plotD,
         titlefont=fonts,
         layout = l,
         dpi=1000,
-        size=(1000, 800))
+        size=(800, 800))
         
 savefig(joinpath("figures","network_sampling.png"))
 
