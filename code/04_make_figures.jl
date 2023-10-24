@@ -91,7 +91,7 @@ plot_bos = plot(1:n_samples,
     guidefont=fonts,
     xtickfont=fonts, 
     ytickfont=fonts, 
-    foreground_color_legend=nothing, 
+    foreground_color_legend=:black, 
     background_color_legend=:white, 
     legendfont=fonts,
     legendfontpointsize=7,
@@ -140,7 +140,7 @@ plot_bs = plot(1:n_samples,
     guidefont=fonts,
     xtickfont=fonts, 
     ytickfont=fonts, 
-    foreground_color_legend=nothing, 
+    foreground_color_legend=:black, 
     background_color_legend=:white, 
     legendfont=fonts,
     legendfontpointsize=7,
@@ -216,7 +216,7 @@ plot_links = plot(1:n_samples,
     guidefont=fonts,
     xtickfont=fonts, 
     ytickfont=fonts, 
-    foreground_color_legend=nothing, 
+    foreground_color_legend=:black, 
     background_color_legend=:white, 
     legendfont=fonts,
     legendfontpointsize=7,
@@ -227,7 +227,7 @@ plot!(1:n_samples,
     color=RGB(86/255,190/255,233/255),
     alpha=0.6,
     linewidth=3,
-    label="p = 1.0 (metaweb)")
+    label="p = 1.0")
 
 plot!(1:n_samples,
     Ns_M3_p75_links,
@@ -265,7 +265,7 @@ plot_co = plot(1:n_samples,
     guidefont=fonts,
     xtickfont=fonts, 
     ytickfont=fonts, 
-    foreground_color_legend=nothing, 
+    foreground_color_legend=:black, 
     background_color_legend=:white, 
     legendfont=fonts,
     legendfontpointsize=7,
@@ -277,7 +277,7 @@ plot!(1:n_samples,
     color=RGB(86/255,190/255,233/255),
     alpha=0.6,
     linewidth=3,
-    label="p = 1.0 (metaweb)")
+    label="p = 1.0")
 
 plot!(1:n_samples,
     Ns_M3_p75_co,
@@ -348,19 +348,18 @@ end
 ### first subplot: scatterplot of network connectance obtained from the metaweb and local network sampling methods (averaged across simulations) 
 # probability of local interaction between potentially interacting species = 1.0
 
+samples_co_100_1 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p100, nsim = 1)
 samples_co_100 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p100, nsim = 100)
 
 # minimum and maximum values for plotting
-min = minimum(vcat(mean.(eachcol(samples_co_100.samples_metaweb_co)),
-        mean.(eachcol(samples_co_100.samples_local_co))))
+min = 0.04
+max = 0.26
 
-max = maximum(vcat(mean.(eachcol(samples_co_100.samples_metaweb_co)),
-                    mean.(eachcol(samples_co_100.samples_local_co))))
-
-plotA = scatter(mean.(eachcol(samples_co_100.samples_metaweb_co)), 
-        mean.(eachcol(samples_co_100.samples_local_co)), 
-        label = "",
-        alpha = 0.8,
+plotA = scatter(mean.(eachcol(samples_co_100_1.samples_metaweb_co)), 
+        mean.(eachcol(samples_co_100_1.samples_local_co)), 
+        label = "n = 1",
+        alpha = 0.5,
+        color = :darkgrey,
         framestyle=:box, 
         grid=false,
         minorgrid=false,
@@ -370,11 +369,17 @@ plotA = scatter(mean.(eachcol(samples_co_100.samples_metaweb_co)),
         guidefont=fonts, 
         xtickfont=fonts, 
         ytickfont=fonts,
-        foreground_color_legend=nothing, 
+        foreground_color_legend=:black,
         background_color_legend=:white, 
         legendfont=fonts,
         legendfontpointsize=8,
         legendfontfamily="Times")
+        
+scatter!(mean.(eachcol(samples_co_100.samples_metaweb_co)), 
+        mean.(eachcol(samples_co_100.samples_local_co)), 
+        label = "n = 100",
+        color = RGB(86/255,190/255,233/255),
+        alpha = 0.5)
 
 # 1:1 line
 plot!(min:0.01:max, 
@@ -383,42 +388,45 @@ plot!(min:0.01:max,
         linecolor=:grey,
         label="")
 
-xaxis!(xlabel="Average connectance across samples from the metaweb", 
-        xlims=(min, max))
+xaxis!(xlabel="Average connectance across metaweb samples", 
+        xlims=(min-0.005, max+0.005))
 
-yaxis!(ylabel="Average connectance across samples from local networks", 
-        ylims=(min, max))
-
+yaxis!(ylabel="Average connectance across local samples", 
+        ylims=(min-0.005, max+0.005))
 
 
 ### second subplot: scatterplot of network connectance obtained from the metaweb and local network sampling methods (averaged across simulations) 
-# probability of local interaction between potentially interacting species = 0.5
 
-samples_co_50 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p50, nsim = 100)
+# probability of local interaction between potentially interacting species = 0.75
 
-# minimum and maximum values for plotting
-min = minimum(filter(!isnan, vcat(mean.(eachcol(samples_co_50. samples_metaweb_co)), mean.(eachcol(samples_co_50.samples_local_co)))))
+samples_co_75_1 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p75, nsim = 1)
+samples_co_75 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p75, nsim = 100)
 
-max = maximum(filter(!isnan, vcat(mean.(eachcol(samples_co_50.samples_metaweb_co)), mean.(eachcol(samples_co_50.samples_local_co)))))
+plotB = scatter(mean.(eachcol(samples_co_75_1.samples_metaweb_co)), 
+mean.(eachcol(samples_co_75_1.samples_local_co)), 
+    label = "n = 1",
+    alpha = 0.5,
+    color = :darkgrey,
+    framestyle=:box, 
+    grid=false,
+    minorgrid=false,
+    dpi=1000, 
+    size=(800,500), 
+    margin=5Plots.mm, 
+    guidefont=fonts, 
+    xtickfont=fonts, 
+    ytickfont=fonts,
+    foreground_color_legend=:black,
+    background_color_legend=:white, 
+    legendfont=fonts,
+    legendfontpointsize=8,
+    legendfontfamily="Times")
 
-plotB = scatter(mean.(eachcol(samples_co_50.samples_metaweb_co)), 
-        mean.(eachcol(samples_co_50.samples_local_co)), 
-        label = "",
-        alpha = 0.8,
-        framestyle=:box, 
-        grid=false,
-        minorgrid=false,
-        dpi=1000, 
-        size=(800,500), 
-        margin=5Plots.mm, 
-        guidefont=fonts, 
-        xtickfont=fonts, 
-        ytickfont=fonts,
-        foreground_color_legend=nothing, 
-        background_color_legend=:white, 
-        legendfont=fonts,
-        legendfontpointsize=8,
-        legendfontfamily="Times")
+scatter!(mean.(eachcol(samples_co_75.samples_metaweb_co)), 
+        mean.(eachcol(samples_co_75.samples_local_co)), 
+        label = "n = 100",
+        color = RGB(0/255,158/255,115/255),
+        alpha = 0.5)
 
 # 1:1 line
 plot!(min:0.01:max, 
@@ -427,15 +435,61 @@ plot!(min:0.01:max,
         linecolor=:grey,
         label="")
 
-xaxis!(xlabel="Average connectance across samples from the metaweb", 
-        xlims=(min, max))
+xaxis!(xlabel="Average connectance across metaweb samples", 
+        xlims=(min-0.005, max+0.005))
 
-yaxis!(ylabel="Average connectance across samples from local networks", 
-        ylims=(min, max))
+yaxis!(ylabel="Average connectance across local samples", 
+        ylims=(min-0.005, max+0.005))
 
 
-### third subplot: scatterplot of the mean squared logarithmic error between the connectance obtained from the local network and metaweb sampling methods as a function of the number of simulations
-# probability of local interaction between potentially interacting species = 1.0
+### third subplot: scatterplot of network connectance obtained from the metaweb and local network sampling methods (averaged across simulations) 
+# probability of local interaction between potentially interacting species = 0.5
+
+samples_co_50_1 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p50, nsim = 1)
+samples_co_50 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p50, nsim = 100)
+
+plotC = scatter(mean.(eachcol(samples_co_50_1.samples_metaweb_co)), 
+mean.(eachcol(samples_co_50_1.samples_local_co)), 
+    label = "n = 1",
+    alpha = 0.5,
+    color = :darkgrey,
+    framestyle=:box, 
+    grid=false,
+    minorgrid=false,
+    dpi=1000, 
+    size=(800,500), 
+    margin=5Plots.mm, 
+    guidefont=fonts, 
+    xtickfont=fonts, 
+    ytickfont=fonts,
+    foreground_color_legend=:black,
+    background_color_legend=:white, 
+    legendfont=fonts,
+    legendfontpointsize=8,
+    legendfontfamily="Times")
+
+scatter!(mean.(eachcol(samples_co_50.samples_metaweb_co)), 
+        mean.(eachcol(samples_co_50.samples_local_co)), 
+        label = "n = 100",
+        color = RGB(230/255,159/255,0/255),
+        alpha = 0.5)
+
+# 1:1 line
+plot!(min:0.01:max, 
+        min:0.01:max, 
+        linestyle=:dash, 
+        linecolor=:grey,
+        label="")
+
+xaxis!(xlabel="Average connectance across metaweb samples", 
+        xlims=(min-0.005, max+0.005))
+
+yaxis!(ylabel="Average connectance across local samples", 
+        ylims=(min-0.005, max+0.005))
+
+
+### fourth subplot: scatterplot of the mean squared logarithmic error between the connectance obtained from the local network and metaweb sampling methods as a function of the number of simulations
+# for different probabilities of local interaction between potentially interacting species 
 
 # calculate the divergence between the two sampling methods for a given number of simulations
 function divergence_sim(M::UnipartiteProbabilisticNetwork, Ns_obj::Vector; nsim=100)
@@ -469,35 +523,14 @@ Threads.@threads for i in nsims
 next!(p)
 end
 
-plotC = scatter(nsims, 
-        divergences_100, 
-        label = "",
-        alpha = 0.8,
-        framestyle=:box, 
-        grid=false,
-        minorgrid=false,
-        dpi=1000, 
-        size=(800,500), 
-        margin=5Plots.mm, 
-        guidefont=fonts, 
-        xtickfont=fonts, 
-        ytickfont=fonts,
-        foreground_color_legend=nothing, 
-        background_color_legend=:white, 
-        legendfont=fonts,
-        legendfontpointsize=8,
-        legendfontfamily="Times")
+# divergence between the two methods when p = 0.75
+divergences_75 = zeros(Float64, length(nsims))
 
-xaxis!(xlabel="Number of binary samples", 
-        xlims = (0, maximum(nsims)))
-
-yaxis!(ylabel="Mean squared logarithmic error (MSLE)",
-        ylims=(0, Inf))
-
-
-
-### fourth subplot: scatterplot of the mean squared logarithmic error between the connectance obtained from the local network and metaweb sampling methods as a function of the number of simulations
-# probability of local interaction between potentially interacting species = 0.5
+p = Progress(length(nsims))
+Threads.@threads for i in nsims
+    divergences_75[i] = divergence_sim(M3_fpfn, Ns_M3_fpfn_p75, nsim = i) 
+next!(p)
+end
 
 # divergence between the two methods when p = 0.5
 divergences_50 = zeros(Float64, length(nsims))
@@ -508,10 +541,12 @@ Threads.@threads for i in nsims
 next!(p)
 end
 
+a = [1,5,10,20,40,100]
 
 plotD = scatter(nsims, 
-        divergences_50, 
-        label = "",
+        divergences_100, 
+        label = "p = 1.0",
+        color = RGB(86/255,190/255,233/255),
         alpha = 0.8,
         framestyle=:box, 
         grid=false,
@@ -522,26 +557,41 @@ plotD = scatter(nsims,
         guidefont=fonts, 
         xtickfont=fonts, 
         ytickfont=fonts,
-        foreground_color_legend=nothing, 
+        foreground_color_legend=:black,
         background_color_legend=:white, 
         legendfont=fonts,
         legendfontpointsize=8,
         legendfontfamily="Times")
 
-xaxis!(xlabel="Number of binary samples",
-        xlims = (0, maximum(nsims)))
+scatter!(nsims, 
+        divergences_75, 
+        label = "p = 0.75",
+        alpha = 0.8,
+        color = RGB(0/255,158/255,115/255))
+
+scatter!(nsims, 
+        divergences_50, 
+        label = "p = 0.50",
+        color = RGB(230/255,159/255,0/255),
+        alpha = 0.8)
+
+xaxis!(:log,
+        xlabel="Number of binary samples", 
+        xticks = (a, a))
 
 yaxis!(ylabel="Mean squared logarithmic error (MSLE)")
-        
 
+
+
+l = @layout [ a b c ; d{0.6h} ]
 
 plot(plotA, plotB, plotC, plotD,
-        title = ["(a) p = 1.0" "(b) p = 0.5" "(c) p = 1.0" "(d) p = 0.5"],
+        title = ["(a) p = 1.0" "(b) p = 0.75" "(c) p = 0.50" "(d)"],
         titleloc=:right, 
         titlefont=fonts,
-        layout = (2, 2),
+        layout = l,
         dpi=1000,
-        size=(800, 800))
+        size=(1000, 800))
         
 savefig(joinpath("figures","network_sampling.png"))
 
@@ -566,7 +616,7 @@ plotA_sup = density(mean.(eachcol(samples_co_100.samples_metaweb_co)),
                 guidefont=fonts, 
                 xtickfont=fonts, 
                 ytickfont=fonts,
-                foreground_color_legend=nothing, 
+                foreground_color_legend=:black, 
                 background_color_legend=:white, 
                 legendfont=fonts,
                 legendfontpointsize=8,
@@ -599,7 +649,7 @@ plotB_sup = density(mean.(eachrow(samples_co_100.samples_metaweb_co)),
                 guidefont=fonts, 
                 xtickfont=fonts, 
                 ytickfont=fonts,
-                foreground_color_legend=nothing, 
+                foreground_color_legend=:black, 
                 background_color_legend=:white, 
                 legend=:topleft,
                 legendfont=fonts,
@@ -632,7 +682,7 @@ plotC_sup = density(std.(eachrow(samples_co_100.samples_metaweb_co)),
                 guidefont=fonts, 
                 xtickfont=fonts, 
                 ytickfont=fonts,
-                foreground_color_legend=nothing, 
+                foreground_color_legend=:black, 
                 background_color_legend=:white, 
                 legendfont=fonts,
                 legendfontpointsize=8,
@@ -658,7 +708,7 @@ legend = plot([0 0],
             grid = false, 
             label = ["sampling from the metaweb" "sampling from local networks"], 
             legend = :top,
-            foreground_color_legend=nothing, 
+            foreground_color_legend=:black, 
             background_color_legend=:white,
             legendfont=fonts,
             legendfontpointsize=7,
@@ -696,7 +746,7 @@ function density_plots_co(i::Int64)
                 guidefont=fonts, 
                 xtickfont=fonts, 
                 ytickfont=fonts,
-                foreground_color_legend=nothing, 
+                foreground_color_legend=:black, 
                 background_color_legend=:white, 
                 legendfont=fonts,
                 legendfontpointsize=8,
@@ -799,7 +849,7 @@ plot_links_sum = plot(areas,
     guidefont=fonts,
     xtickfont=fonts, 
     ytickfont=fonts, 
-    foreground_color_legend=nothing, 
+    foreground_color_legend=:black, 
     background_color_legend=:white, 
     legendfont=fonts,
     legendfontpointsize=7,
@@ -845,7 +895,7 @@ plot_links_merged = plot(areas,
     guidefont=fonts,
     xtickfont=fonts, 
     ytickfont=fonts, 
-    foreground_color_legend=nothing, 
+    foreground_color_legend=:black, 
     background_color_legend=:white, 
     legendfont=fonts,
     legendfontpointsize=7,
@@ -923,7 +973,7 @@ plotA = heatmap(λ_heat, γ_heat, p, c = :viridis,
         guidefont=fonts, 
         xtickfont=fonts, 
         ytickfont=fonts,
-        foreground_color_legend=nothing, 
+        foreground_color_legend=:black, 
         background_color_legend=:white)
 
 scatter!(λ_point, 
@@ -966,7 +1016,7 @@ plotB = plot(t, p[:,1],
     guidefont=fonts,
     xtickfont=fonts, 
     ytickfont=fonts, 
-    foreground_color_legend=nothing, 
+    foreground_color_legend=:black, 
     background_color_legend=:white, 
     legendfont=fonts,
     legendfontpointsize=7,
