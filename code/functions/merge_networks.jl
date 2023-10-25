@@ -19,7 +19,7 @@ function merge_networks(N1_obj::Any, N2_obj::Any, M::UnipartiteProbabilisticNetw
     # get species list 
     N1_species = species(N1)
     N2_species = species(N2)
-    N12_species = union(N1_species, N2_species)
+    N12_species = unique(vcat(N1_species, N2_species))
 
     # calculate number of species in merged network
     S12 = length(N12_species)
@@ -33,7 +33,7 @@ function merge_networks(N1_obj::Any, N2_obj::Any, M::UnipartiteProbabilisticNetw
     mat_condprob = zeros(Float64, S12, S12)
 
     for (i, spi) in enumerate(N12_species), (j, spj) in enumerate(N12_species)
-        
+       
         # get conditional probability of interaction between species i and j in network 1
         prob1 = N1_condprob[N1_species .== spi, N1_species .== spj]
         isempty(prob1) ? prob1 = 0.0 : prob1 = prob1[1]
@@ -47,7 +47,7 @@ function merge_networks(N1_obj::Any, N2_obj::Any, M::UnipartiteProbabilisticNetw
 
         # compute conditional probability of interaction (assuming independance)
         mat_condprob[i, j] = 1 - (1 - prob1) * (1 - prob2)
-        
+    
         # compute local probability of interaction 
         N12[i, j] =  mat_condprob[i, j] * probM
     end

@@ -37,10 +37,7 @@ function spatial_scaling(N_obj::Vector, M::UnipartiteProbabilisticNetwork, lats:
 
             #### expected number of links in the merged network 
         
-            # make empty object for merged networks
-            N_acc = []
-            
-            # add a first network to that object 
+            # make object for merged networks that will be updated in loop
             N_acc = N_obj[ind[1]]
         
             # merge all networks found in the window
