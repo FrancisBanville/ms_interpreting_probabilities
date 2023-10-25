@@ -825,7 +825,6 @@ for (a, area) in enumerate(areas)
     next!(p)
 end
 
-
 # calculate quantiles of expected numbers of links in merged networks
 links_merged_025 = quantile.(eachcol(links_merged), 0.025)
 links_merged_250 = quantile.(eachcol(links_merged), 0.25)
