@@ -825,38 +825,18 @@ for (a, area) in enumerate(areas)
     next!(p)
 end
 
-# calculate quantiles of expected numbers of links in merged networks
-links_merged_025 = quantile.(eachcol(links_merged), 0.025)
-links_merged_250 = quantile.(eachcol(links_merged), 0.25)
-links_merged_500 = quantile.(eachcol(links_merged), 0.50)
-links_merged_750 = quantile.(eachcol(links_merged), 0.75)
-links_merged_975 = quantile.(eachcol(links_merged), 0.975)
-
-# calculate quantiles of expected numbers of links in the submetawebs
-links_metaweb_025 = quantile.(eachcol(links_metaweb), 0.025)
-links_metaweb_250 = quantile.(eachcol(links_metaweb), 0.25)
-links_metaweb_500 = quantile.(eachcol(links_metaweb), 0.50)
-links_metaweb_750 = quantile.(eachcol(links_metaweb), 0.75)
-links_metaweb_975 = quantile.(eachcol(links_metaweb), 0.975)
-
-# reshape data for scatter plot
-areas_x = reduce(vcat, [fill(areas[i], length(lats)) for i in 1:length(areas)])
-
-links_merged_y = reduce(vcat, links_merged)
-links_metaweb_y = reduce(vcat, links_metaweb)
-
 # make spatial scaling figures
 a = [2:2:Int64(maximum(areas));]
 
 ## expected number of links in the merged network
 
 plot_links_merged = plot(areas,
-    links_merged_975,
-    fillrange=links_merged_025,
-    color=:lightgrey, 
-    fillalpha = 0.50,
-    label="95% PI",
-    linewidth=0, 
+    links_merged[1,:],
+    label="expanding windows",
+    color=:grey,
+    alpha=0.7,
+    linestyle=:dot,
+    linewidth=1, 
     grid=false,
     minorgrid=false,
     dpi=1000, 
@@ -871,26 +851,21 @@ plot_links_merged = plot(areas,
     legendfontpointsize=7,
     legendfontfamily="Times")
 
-plot!(areas,
-    links_merged_250,
-    fillrange=links_merged_750,
-    color=:grey, 
-    fillalpha = 0.50,
-    label="50% PI",
-    linewidth=0)
-
-plot!(areas,
-    links_merged_500,
-    label="median",
-    color=RGB(204/255,121/255,167/255),
-    alpha=0.9,
-    linewidth=4)
-
-scatter!(areas_x, links_merged_y, 
+for i in 2:length(areas)
+    plot!(areas,
+    links_merged[i,:],
+    linestyle=:dot,
+    alpha=0.7,
+    color="grey",
     label="",
-    alpha=0.4,
-    markersize=3,
-    color=:grey)
+    linewidth=1)
+end
+
+plot!(areas,
+    median.(eachcol(links_merged)),
+    color=RGB(204/255,121/255,167/255),
+    label="median",
+    linewidth=5)
 
 xaxis!(xlabel="Latitude width",
     xticks=(a,a))
@@ -902,12 +877,12 @@ yaxis!(ylabel="Expected number of links in merged network",
 ## expected number of links in the submetawebs
 
 plot_links_metaweb = plot(areas,
-    links_metaweb_975,
-    fillrange=links_metaweb_025,
-    color=:lightgrey, 
-    fillalpha = 0.50,
-    label="95% PI",
-    linewidth=0, 
+    links_metaweb[1,:],
+    label="expanding windows",
+    color=:grey,
+    linewidth=1, 
+    linestyle=:dot,
+    alpha=0.7,
     grid=false,
     minorgrid=false,
     dpi=1000, 
@@ -922,32 +897,28 @@ plot_links_metaweb = plot(areas,
     legendfontpointsize=7,
     legendfontfamily="Times")
 
-plot!(areas,
-    links_metaweb_250,
-    fillrange=links_metaweb_750,
-    color=:grey, 
-    fillalpha = 0.50,
-    label="50% PI",
-    linewidth=0)
-
-plot!(areas,
-    links_metaweb_500,
-    label="median",
-    color=RGB(204/255,121/255,167/255),
-    alpha=0.9,
-    linewidth=4)
-
-scatter!(areas_x, links_metaweb_y, 
+for i in 2:length(areas)
+    plot!(areas,
+    links_metaweb[i,:],
+    color="grey",
     label="",
-    alpha=0.4,
-    color=:grey,
-    markersize=3)
+    alpha=0.7,
+    linestyle=:dot,
+    linewidth=1)
+end
+
+plot!(areas,
+    median.(eachcol(links_metaweb)),
+    color=RGB(204/255,121/255,167/255),
+    label="median",
+    linewidth=5)
 
 xaxis!(xlabel="Latitude width",
     xticks=(a,a))
 
 yaxis!(ylabel="Expected number of links in metaweb", 
     ylims=(-0.05, 1650))
+
 
 
 # heatmaps of the expected numbers of links in the merged networks and submetawebs as a function of position and latitude width 
