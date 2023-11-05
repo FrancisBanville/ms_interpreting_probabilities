@@ -321,8 +321,8 @@ probabilistic networks that used diverse formulations of probabilistic
 interactions, highlighting the importance of a thorough description of
 interaction data. 
 
-| Formula | Type | Definitions | Studies | 
-| :------ | :--- | :---------- | ------: | 
+| Formula | Type | Definition | Studies | 
+| :--- | :--- | :----------- | ------: | 
 | $P_M(i \rightarrow j)$ | potential | biological feasibility of the interaction |   |   
 | $P_N(i \rightarrow j)$ | local | realization of the interaction at any given location and time |   |    
 | $P_N(i \rightarrow j \vert A)$ | local | realization of the interaction in a given area |   |   
