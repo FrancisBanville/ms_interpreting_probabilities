@@ -225,49 +225,55 @@ Bernoulli interactions, in both probabilistic local networks and metawebs.
 ## Local networks: communities interacting in space and time
 
 Probabilistic local networks describe how likely taxa are to interact at a given
-location and time period (i.e., they are context-dependent). In local networks,
+location and time period (i.e., interactions are contingent upon the
+environmental and biological conditions of the community). In local networks,
 edges commonly represent our degree of belief that two taxa interact in nature,
-but can also document the probability of *observing* this interaction
+but can also represent the probability of *observing* this interaction
 (@Catchen2023Missinga). For example, @Kopelke2017FooStra assembled a dataset of
 binary local European food webs of willow-galling sawflies and their natural
-enemies, clearly referencing each food web in space and time. Because of its
-large number of replicated samples, this dataset can be used to infer the
-probability of locally observing an interaction between any pair of taxa by
-measuring the proportion of sites where an interaction was observed
-(@Gravel2019BriElt). More generally, we define space as the geographic
-coordinates $(x, y)$ of the spatial boundaries delineating the system (sampled
-or targeted) and time as the time interval during which interactions were
-sampled or for which they were predicted. Given that space and time are in
-reality continuous variables, the probability that an interaction occurs within
-a particular spatial and temporal setting is given by the integral of the
-probability density function describing the relative likelihood that this
-interaction is realized at any specific and infinitely small location and time.
-Therefore, the edge value could represent a probability density or a probability
-mass depending on how space and time are measured. For simplicity reasons, we
-will consider space and time as discrete dimensions that provide actual
-probabilities of interactions, which is conform to how ecological interactions
-are usually sampled. Using space and time intervals allows us to measure an area
-$A$ and duration $t$, which can be directly used in spatiotemporal analyses of
-ecological networks. For example, when studying network-area relationships (NAR,
-@Galiana2018Spatiala), we should expect local probabilities of interactions to
-scale positively with area and duration because taxa have more opportunities to
-interact.
+enemies, clearly referencing each food web in space and time. @Gravel2019BriElt
+used this dataset to infer the probabilities of locally observing interactions
+between co-occurring species, with the added aspect of situating local networks
+within the context of environmental variables. This was achieved by including
+temperature and precipitation as conditional variables in some of their models. 
 
-The probability that two taxa $i$ and $j$ interact locally can also be
-conditional on many environmental and biological factors. One of these is their
-co-occurrence $C_{i,j}$, which is usually a Boolean describing if the geographic
-distribution of both taxa overlaps within the study area. In local networks, the
-probability that the interaction is realized must be $0$ when taxa do not
-co-occur, i.e. $P_{N}(i \rightarrow j | C = 0) = 0$. Co-occurrence can also be
-modeled probabilistically. In that case, it follows a Bernoulli distribution
-$C_{i,j} \sim {\rm Bernoulli}(P_{i,j}(x, y))$, where the probability of
-co-occurrence $P_{i,j}(x, y)$ can be estimated using joint species distribution
-models (e.g., @Pollock2014UndCoo). More generally, the probability that two taxa
-interact locally can be obtained by the product of their probability of
-interaction given co-occurrence with their probability of co-occurrence: 
+We define space as the set of geographic coordinates $(x, y, z)$ of the spatial
+boundaries delineating the system, whether sampled or targeted. Ecological
+interactions may exhibit variations spatially and along altitudinal gradients,
+as evidenced by changes in hummingbird-plant interactions (@Weinstein2017PerBil
+and @Weinstein2017ComTra) and mosquitoes biting rates (e.g.,
+@Kulkarni2006EntEva) at different elevations. In contrast, time is defined as
+the specific time period within which interactions were either observed or
+predicted. With these definitions in mind, space and time can be conceptualized
+as distinct patches or time segments. Treating them as discrete dimensions
+aligns with the common sampling methods of ecological networks and provides
+actual probabilities of interactions across space and time. This differs from
+the approach of treating them as continuous variables, where edge values
+represent probability densities (i.e., relative likelihoods of interactions
+occurring at infinitesimal locations and instants in time) rather than discrete
+probability values (which can be obtained by integrating probability densities).
+By employing discrete locations and time periods, we can quantify both an area
+$A$ and a duration $t$, which can be readily used in spatiotemporal analyses of
+ecological networks. For example, when studying network-area relationships (NAR,
+@Galiana2018Spatiala), we anticipate that local probabilities of interactions
+scale positively with area and duration because taxa have more opportunities to
+interact as these dimensions expand.
+
+The probability that two taxa $i$ and $j$ interact locally can be conditional on
+many environmental and biological factors. One of these is their co-occurrence
+$C_{i,j}$, which is usually a Boolean describing if the geographic distributions
+of both taxa overlap within the study area. Co-occurrence can be modeled
+probabilistically, in which case it may conform to a Bernoulli distribution
+$C_{i,j} \sim {\rm Bernoulli}(P_{i,j}(x, y, z))$, where the probability of
+co-occurrence $P_{i,j}(x, y, z)$ can be estimated through the application of
+joint species distribution models (e.g., @Pollock2014UndCoo). Considering that
+the probability that two non co-occurring taxa interact locally is zero (i.e.,
+$P_{N}(i \rightarrow j | C = 0) = 0$), the probability of local interaction can
+be obtained by multiplying the probability of interaction given co-occurrence
+with the probability of co-occurrence: 
 
 $$P_{N}(i \rightarrow j) = P_{N}(i \rightarrow j | C = 1) \times
-P_{i,j}(x,y).$${#eq:co-occur}
+P_{i,j}(x,y,z).$${#eq:co-occur}
 
 Other important factors that can impact our estimation of interaction
 probabilities at the local scale are taxa relative abundance
@@ -275,60 +281,64 @@ probabilities at the local scale are taxa relative abundance
 environmental factors such as temperature (@Angilletta2004TemGro), precipitation
 (@Woodward2012CliCha), habitat structure (@Klecka2014EffHab), and presence of
 other interacting taxa in the network (@Pilosof2017MulNat, @Kefi2012MorMea).
-Here, we will use the variable $\Omega$ to describe the biological and
-ecological context in which interaction probabilities were estimated. For
-example, if a research team conducts a mesocosm experiment to estimate
-interaction probabilities between predators and prey with and without shelters,
-$\Omega$ would represent the presence or absence of these shelters. Like
-co-occurrence, $\Omega$ can also be modeled probabilistically when the
-stochasticity or uncertainty of environmental and biological factors is
-considered. In sum, $\Omega$ represents all ecological and biological variables
-that were taken into consideration when measuring interaction probabilities and
-is, therefore, a subset of all factors actually impacting ecological
-interactions. 
+Here, we use the variable $\Omega$ to describe the biological and ecological
+context in which interaction probabilities were estimated. For example, if a
+research team conducts a mesocosm experiment to estimate interaction
+probabilities between predators and prey with and without shelters, $\Omega$
+would represent the presence or absence of these shelters. Like co-occurrence,
+$\Omega$ can also be modeled probabilistically when the stochasticity or
+uncertainty of environmental and biological factors is considered. In sum,
+$\Omega$ represents all ecological and biological variables that were taken into
+consideration when measuring interaction probabilities and is, therefore, a
+subset of all factors actually impacting ecological interactions. 
 
 The probability that two taxa $i$ and $j$ interact in a local network $N$ can
 thus be conditional on the area $A$, the time interval $t$, their co-occurrence
 $C$ and chosen environmental and biological conditions $\Omega$. This gives us
-the following equation when all these conditions are included in the estimation
-of interaction probabilities:
+the following equation when all of these conditions are included in the
+estimation of interaction probabilities:
 
 $$P_{N}(i \rightarrow j | A, t, C, \Omega).$$
 {#eq:local}
 
-The local context in which probabilities are estimated and the variables that
-should be taken into consideration depend on the study system, the objective of
-the study, and the resources available to the researchers. In other words, these
-variables do not systematically need to be accounted for. However, when they
-are, they should be specified in the documentation of the data
-(@Brimacombe2023ShoReu), preferentially in mathematical terms to avoid any
-confusion in their interpretation and to limit manipulation errors during their
-re-use. For example, ecologists should be explicit about their consideration of
-co-occurrence in their estimation of local interaction probabilities. Indeed, it
-is important to specify if probability values are conditional $P_{N}(i
-\rightarrow j | C = 1)$ or not $P_{N}(i \rightarrow j)$ on co-occurrence since
-this can significantly impact the interpretation and analysis of the data. In
-@tbl:prob, we present a handful of studies of probabilistic ecological networks
-and their formulation of probabilistic interactions. This table illustrates the
-variety of definitions of probabilistic interactions found in the literature and
-emphasizes the need to carefully describe interaction data before integrating
-and analyzing them.
+The representation of the local context in which probabilities are estimated and
+the variables that should be taken into consideration depend on the study
+system, the objectives of the study, and the resources available to the
+researchers. In other words, these variables do not systematically need to be
+accounted for. For example, in @Gravel2019BriElt, for the purpose of model
+comparison, some models incorporated environmental variables as conditional
+factors to estimate interaction probabilities, while others did not. When
+accounted for, these variables should be clearly described in the documentation
+of the data (@Brimacombe2023ShoReu), preferentially in mathematical terms to
+avoid any confusion in their interpretation and to limit manipulation errors
+during their re-use. For instance, ecologists should be explicit about their
+consideration of co-occurrence in their estimation of local interaction
+probabilities. Indeed, it is important to specify if probability values are
+conditional $P_{N}(i \rightarrow j | C = 1)$ or not $P_{N}(i \rightarrow j)$ on
+co-occurrence since this can significantly impact the interpretation and
+analysis of the data. In @tbl:prob, we present a handful of studies of
+probabilistic networks that used diverse formulations of probabilistic
+interactions, highlighting the importance of a thorough description of
+interaction data. 
 
-|   Formula  | Description | Studies | 
-| :------- | :----------------- | ------: | 
-| $P_M(i \rightarrow j)$                       | probability that the interaction is biologically feasible                                              |   |   
-| $P_N(i \rightarrow j)$                       | probability that the interaction is realized locally                                                   |   |    
-| $P_N(i \rightarrow j \vert A)$               | probability that the interaction is realized locally given network area                                    |   |   
-| $P_N(i \rightarrow j \vert t)$               | probability that the interaction is realized locally given  duration                            |   |   
-| $P_N(i \rightarrow j \vert C)$               | probability that the interaction is realized locally given co-occurrence                               |   |  
-| $P_N(i \rightarrow j \vert \Omega)$          | probability that the interaction is realized locally given chosen environmental and biological factors |   |  
-| $P_N(i \rightarrow j \vert A, t, C, \Omega)$ | probability that the interaction is realized locally given many conditional factors                             |   | 
+| Formula | Type | Definitions | Studies | 
+| :------ | :--- | :---------- | ------: | 
+| $P_M(i \rightarrow j)$ | potential | biological feasibility of the interaction |   |   
+| $P_N(i \rightarrow j)$ | local | realization of the interaction at any given location and time |   |    
+| $P_N(i \rightarrow j \vert A)$ | local | realization of the interaction in a given area |   |   
+| $P_N(i \rightarrow j \vert t)$ | local | realization of the interaction during a given time period |   |   
+| $P_N(i \rightarrow j \vert C)$ | local | realization of the interaction given that the taxa co-occur |   |  
+| $P_N(i \rightarrow j \vert \Omega)$ | local | realization of the interaction given a set of environmental and biological conditions |   |  
 
-Table: Interaction probabilities are interpreted differently in metawebs ($M$)
-and local networks ($N$). Each formula includes different conditional variables
-and is described in plain text. A non-exhaustive list of studies using these
-formulas is included, with the variables used specified in parentheses.
-{#tbl:prob}
+Table: **Notation and description of probabilistic interactions.** A probability
+of interaction between two taxa $i$ and $j$ is interpreted differently in a
+metaweb $M$ and local network $N$. Each formula includes a different conditional
+variable described in plain text. A non-exhaustive list of studies using these
+conditional variables is included, with the variables used specified in
+parentheses. Note that interaction probabilities can be contingent upon multiple
+conditional variables, or none at. Additionally, local interaction probabilities
+might represent the probability of observing an interaction, not necessarily its
+actual occurrence. {#tbl:prob}
 
 ## Metawebs: regional catalogs of interactions
 
