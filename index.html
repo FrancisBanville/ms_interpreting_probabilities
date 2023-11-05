@@ -528,7 +528,7 @@ probabilistic networks</div>
             for probabilistic networks would support more adequate
             manipulation and integration of interaction data from
             different sources and guard against the potential
-            misinterpretations arising from ambiguous interpretations of
+            misinterpretations arising from ambiguous definitions of
             probabilistic networks. These metadata should outline the
             nature (i.e., potential or local) and type (e.g., predatory
             or pollination) of the interactions, provide information
@@ -537,7 +537,7 @@ probabilistic networks</div>
             involved in an interaction, present the mathematical
             formulation of probabilities, including clearly identified
             conditional variables, and describe the methods and contexts
-            (e.g., location, environmental conditions) in which
+            (e.g., location, time, environmental conditions) in which
             interactions were estimated. Inadequately documented
             probabilistic interaction data should be used with caution
             when analyzing ecological networks. Although our
@@ -562,8 +562,8 @@ probabilistic networks</div>
             A potential interaction is defined as the biological
             capacity of two taxa to interact (i.e., the probability that
             they <em>can</em> theoretically interact) whereas a realized
-            interaction refers to the materialization or observation of
-            this interaction in a well-defined space and time (i.e., the
+            interaction is the materialization or observation of this
+            interaction in a well-defined space and time (i.e., the
             probability that they interact locally). Here, we use the
             terms <em>metaweb</em> (<span class="citation"
             data-cites="Dunne2006Network">Dunne (2006)</span>) to
@@ -575,20 +575,19 @@ probabilistic networks</div>
             networks originate from a subset of both species (nodes) and
             interactions (edges) of the regional metaweb (<span
             class="citation" data-cites="Saravia2022Ecological">Saravia
-            <em>et al.</em> (2022)</span>). It can be challenging to
-            know when published probabilistic networks describe
-            potential or realized interactions, or when so-called
-            probabilities are in reality <em>interaction scores</em>
-            (i.e., non-probabilistic quantitative interactions).
-            Moreover, probabilistic potential interactions are often
-            used and interpreted as realized interactions (and
-            conversely), which may generate misleading findings when
-            analyzing these data. We believe that a better understanding
-            of the differences, similarities, and relationships between
-            these two probabilistic representations of ecological
-            networks would alleviate interpretation errors and
-            facilitate a more adequate utilization of interaction
-            data.</p>
+            <em>et al.</em> (2022)</span>). Without clear documentation,
+            it can be challenging to know if published probabilistic
+            networks describe potential or realized interactions, or if
+            so-called probabilities are in reality <em>interaction
+            scores</em> (i.e., non-probabilistic quantitative
+            interactions). When probabilistic potential interactions are
+            used and interpreted as local interactions (and conversely),
+            this may generate misleading findings during data analysis.
+            We believe that a better understanding of the differences,
+            similarities, and relationships between these two
+            probabilistic representations of ecological networks would
+            alleviate interpretation errors and facilitate a more
+            adequate utilization of interaction data.</p>
             <h2
             id="pairwise-interactions-the-building-blocks-of-ecological-networks">Pairwise
             interactions: the building blocks of ecological
@@ -630,18 +629,24 @@ probabilistic networks</div>
             class="math inline"><em>P</em>(<em>i</em>→<em>j</em>)</span>
             can be linked to environmental and biological factors such
             as species relative abundance, traits, area, and time
-            (tbl. 1). In these probabilistic network representations in
-            which <span
+            (tbl. 1), for example using logistic regression with a logit
+            link function with continuous explanatory variables. In
+            these probabilistic network representations in which <span
             class="math inline"><em>P</em>(<em>i</em>→<em>j</em>)</span>
             are edge values, the only two possible outcomes are the
             presence (<span
             class="math inline"><em>A</em><sub><em>i</em>, <em>j</em></sub> = 1</span>)
             or absence (<span
             class="math inline"><em>A</em><sub><em>i</em>, <em>j</em></sub> = 0</span>)
-            of an interaction between each pair of nodes. Observing an
-            interaction between two taxa at a given location and time
-            provides important information that can be used to update
-            previous estimates of <span
+            of an interaction between each pair of nodes. When
+            considering uncertainties around the estimation of <span
+            class="math inline"><em>P</em>(<em>i</em>→<em>j</em>)</span>,
+            a Beta distribution <span class="math inline">${\rm
+            Beta}(\alpha, \beta)$</span> can also be used to encompass
+            all possible probability values. Observing an interaction
+            between two taxa at a given location and time provides
+            important information that can be used to update previous
+            estimates of <span
             class="math inline"><em>P</em>(<em>i</em>→<em>j</em>)</span>,
             informing us on the biological capacity of both taxa to
             interact and the environmental conditions that enabled them
@@ -661,43 +666,54 @@ probabilistic networks</div>
             class="math inline"><em>A</em><sub><em>i</em>, <em>j</em></sub></span>
             being a natural number <span class="math inline">ℕ</span> or
             a real number <span class="math inline">ℝ</span> depending
-            on the measure. For example, they can represent the average
-            number of prey individuals consumed by a predator in a given
-            time period (e.g., the average number of fish in the stomach
-            of a piscivorous species). Because quantitative interactions
-            can describe predation pressure on prey taxa, they can be
+            on the measure. For example, they may represent local
+            interaction rates between pairs of taxa (e.g., the flower
+            visiting rates of pollinators in a mutualistic network,
+            <span class="citation"
+            data-cites="Herrera1989PolAbu">Herrera (1989)</span>).
+            Because quantitative interactions can also describe
+            predation pressure on prey taxa in food webs, they can be
             good estimators of the parameters describing species
             interactions in a Lotka-Volterra model (e.g., <span
             class="citation" data-cites="Emmerson2004Predatora">Emmerson
-            &amp; Raffaelli (2004)</span>). However, this extra amount
-            of ecological information typically comes at a cost of
-            greater sampling effort or data volume in predictive models
-            (<span class="citation"
+            &amp; Raffaelli (2004)</span>). The extra amount of
+            ecological information in quantitative networks typically
+            comes at a cost of greater sampling effort and data volume
+            in predictive models (<span class="citation"
             data-cites="Strydom2021Roadmapa">Strydom <em>et al.</em>
             (2021)</span>), which can lead to relatively high levels of
             uncertainties when inferring quantitative networks with
             limited data. Just like binary networks, the uncertainty and
             spatiotemporal variability of quantitative interactions can
-            be represented probabilistically, with the difference that
-            quantitative interactions can follow various probability
-            distributions depending on the measure used, the event’s
-            outcome being the value of interaction strength. For
-            instance, quantitative interactions can follow a Poisson
-            distribution <span class="math inline">$A_{i,j} \sim {\rm
-            Poisson}(\lambda_{i \rightarrow j})$</span> when predicting
-            frequencies of interactions between pairs of nodes, with
-            <span
+            be represented probabilistically. However, the need to
+            estimate the probability distribution of all possible value
+            of interaction strengths can make the inference of
+            probabilities more challenging in quantitative networks
+            compared to binary networks, which require only one
+            probability estimate for each interaction. Quantitative
+            interactions can follow various probability distributions
+            depending on the measure used, the event’s outcome being the
+            value of interaction strength. For instance, quantitative
+            interactions can follow a Poisson distribution <span
+            class="math inline">$A_{i,j} \sim {\rm Poisson}(\lambda_{i
+            \rightarrow j})$</span> when predicting frequencies of
+            interactions between pairs of nodes, with <span
             class="math inline"><em>λ</em><sub><em>i</em> → <em>j</em></sub></span>
             being the expected rate at which individuals of taxa <span
             class="math inline"><em>i</em></span> and <span
             class="math inline"><em>j</em></span> interact (e.g., the
             average number of prey <span
             class="math inline"><em>j</em></span> consumed by all
-            predators <span class="math inline"><em>i</em></span>). The
-            Poisson distribution can also be 0-inflated when considering
-            non-interacting taxa, which constitute the majority of taxa
-            pairs in most local networks due to their typically high
-            sparseness (<span class="citation"
+            predators <span class="math inline"><em>i</em></span> in a
+            given time period). The Poisson distribution can also be
+            0-inflated after initially modeling non-interacting taxa
+            (e.g., <span class="citation"
+            data-cites="Boulangeat2012AccDis">Boulangeat <em>et al.</em>
+            (2012)</span> employ a 0-inflated model to analyze species
+            abundance following the modeling of species presence and
+            absence), which constitute the majority of taxa pairs in
+            most local networks due to their typically high sparseness
+            (<span class="citation"
             data-cites="Jordano2016Samplingb">Jordano (2016)</span>).
             Because of the methodological difficulties typically
             encountered when building deterministic quantitative
@@ -707,13 +723,15 @@ probabilistic networks</div>
             data-cites="Strydom2021Roadmapa">Strydom <em>et al.</em>
             (2021)</span>), are much more documented and modeled in the
             literature. Moreover, most published probabilistic networks
-            and methods describe Bernoulli interactions, which
+            and methods describe Bernoulli interactions (whether
+            interaction probabilities are regarded as constant or
+            variable, e.g. represented by Beta distributions), which
             underlines the need for better guidelines regarding the
             interpretation and manipulation of these types of networks.
             For these reasons, our primary focus in this contribution
-            will be on addressing the challenges in estimating and using
-            Bernoulli interactions, in both probabilistic local networks
-            and metawebs.</p>
+            will be on addressing the challenges in interpreting and
+            using Bernoulli interactions, in both probabilistic local
+            networks and metawebs.</p>
             <h2
             id="local-networks-communities-interacting-in-space-and-time">Local
             networks: communities interacting in space and time</h2>
@@ -1588,6 +1606,14 @@ probabilistic networks</div>
             and synthesis of methods and indicators</a>. <em>Ecological
             Indicators</em>, 106, 105451.
             </div>
+            <div id="ref-Boulangeat2012AccDis" class="csl-entry"
+            role="doc-biblioentry">
+            Boulangeat, I., Gravel, D. &amp; Thuiller, W. (2012). <a
+            href="https://doi.org/10.1111/j.1461-0248.2012.01772.x">Accounting
+            for dispersal and biotic interactions to disentangle the
+            drivers of species distributions and their abundances</a>.
+            <em>Ecology Letters</em>, 15, 584–593.
+            </div>
             <div id="ref-Brimacombe2023ShoReu" class="csl-entry"
             role="doc-biblioentry">
             Brimacombe, C., Bodner, K., Michalska-Smith, M., Poisot, T.
@@ -1774,6 +1800,15 @@ probabilistic networks</div>
             href="https://doi.org/10.1002/ecy.3256">Assessing the impact
             of taxon resolution on network structure</a>.
             <em>Ecology</em>, 102, e03256.
+            </div>
+            <div id="ref-Herrera1989PolAbu" class="csl-entry"
+            role="doc-biblioentry">
+            Herrera, C.M. (1989). <a
+            href="https://doi.org/10.1007/BF00380158">Pollinator
+            abundance, morphology, and flower visitation rate: Analysis
+            of the <span>“quantity”</span> component in a
+            plant-pollinator system</a>. <em>Oecologia</em>, 80,
+            241–248.
             </div>
             <div id="ref-Hortal2015SevSho" class="csl-entry"
             role="doc-biblioentry">
