@@ -1915,6 +1915,57 @@
         "type": "article-journal"
     },
     {
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2006
+                ]
+            ]
+        },
+        "container-title": "Journal of Medical Entomology",
+        "author": [
+            {
+                "family": "Kulkarni",
+                "given": "M. A."
+            },
+            {
+                "family": "Kweka",
+                "given": "E."
+            },
+            {
+                "family": "Nyale",
+                "given": "E."
+            },
+            {
+                "family": "Lyatuu",
+                "given": "E."
+            },
+            {
+                "family": "Mosha",
+                "given": "F. W."
+            },
+            {
+                "family": "Chandramohan",
+                "given": "D."
+            },
+            {
+                "family": "Rau",
+                "given": "M. E."
+            },
+            {
+                "family": "Drakeley",
+                "given": "C."
+            }
+        ],
+        "id": "Kulkarni2006EntEva",
+        "DOI": "10.1093/jmedent/43.3.580",
+        "volume": "43",
+        "page": "580-588",
+        "title": "Entomological Evaluation of Malaria Vectors at Different Altitudes in Hai District, Northeastern Tanzania",
+        "type": "article-journal"
+    },
+    {
         "publisher": "Nature Publishing Group UK London",
         "volume": "446",
         "author": [
@@ -3232,6 +3283,59 @@
         "volume": "32",
         "page": "670-697",
         "title": "Ecological interaction networks. What we know, what we don’t, and why it matters",
+        "type": "article-journal"
+    },
+    {
+        "issued": {
+            "date-parts": [
+                [
+                    2017
+                ]
+            ]
+        },
+        "container-title": "Food Webs",
+        "author": [
+            {
+                "family": "Weinstein",
+                "given": "Ben G."
+            },
+            {
+                "family": "Graham",
+                "given": "Catherine H."
+            }
+        ],
+        "id": "Weinstein2017ComTra",
+        "DOI": "10.1016/j.fooweb.2017.05.002",
+        "volume": "11",
+        "page": "17-25",
+        "title": "On comparing traits and abundance for predicting species interactions with imperfect detection",
+        "type": "article-journal"
+    },
+    {
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2017
+                ]
+            ]
+        },
+        "container-title": "Ecology Letters",
+        "author": [
+            {
+                "family": "Weinstein",
+                "given": "Ben G."
+            },
+            {
+                "family": "Graham",
+                "given": "Catherine H."
+            }
+        ],
+        "id": "Weinstein2017PerBil",
+        "DOI": "10.1111/ele.12730",
+        "volume": "20",
+        "page": "326-335",
+        "title": "Persistent bill and corolla matching despite shifting temporal resources in tropical hummingbird-plant interactions",
         "type": "article-journal"
     },
     {

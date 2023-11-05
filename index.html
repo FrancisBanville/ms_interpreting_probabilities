@@ -736,77 +736,88 @@ probabilistic networks</div>
             id="local-networks-communities-interacting-in-space-and-time">Local
             networks: communities interacting in space and time</h2>
             <p>Probabilistic local networks describe how likely taxa are
-            to interact at a given location and time period (i.e., they
-            are context-dependent). In local networks, edges commonly
-            represent our degree of belief that two taxa interact in
-            nature, but can also document the probability of
-            <em>observing</em> this interaction (<span class="citation"
-            data-cites="Catchen2023Missinga">Catchen <em>et al.</em>
-            (2023)</span>). For example, <span class="citation"
-            data-cites="Kopelke2017FooStra">Kopelke <em>et al.</em>
-            (2017)</span> assembled a dataset of binary local European
-            food webs of willow-galling sawflies and their natural
-            enemies, clearly referencing each food web in space and
-            time. Because of its large number of replicated samples,
-            this dataset can be used to infer the probability of locally
-            observing an interaction between any pair of taxa by
-            measuring the proportion of sites where an interaction was
-            observed (<span class="citation"
+            to interact at a given location and time period (i.e.,
+            interactions are contingent upon the environmental and
+            biological conditions of the community). In local networks,
+            edges commonly represent our degree of belief that two taxa
+            interact in nature, but can also represent the probability
+            of <em>observing</em> this interaction (<span
+            class="citation" data-cites="Catchen2023Missinga">Catchen
+            <em>et al.</em> (2023)</span>). For example, <span
+            class="citation" data-cites="Kopelke2017FooStra">Kopelke
+            <em>et al.</em> (2017)</span> assembled a dataset of binary
+            local European food webs of willow-galling sawflies and
+            their natural enemies, clearly referencing each food web in
+            space and time. <span class="citation"
             data-cites="Gravel2019BriElt">Gravel <em>et al.</em>
-            (2019)</span>). More generally, we define space as the
-            geographic coordinates <span
-            class="math inline">(<em>x</em>,<em>y</em>)</span> of the
-            spatial boundaries delineating the system (sampled or
-            targeted) and time as the time interval during which
-            interactions were sampled or for which they were predicted.
-            Given that space and time are in reality continuous
-            variables, the probability that an interaction occurs within
-            a particular spatial and temporal setting is given by the
-            integral of the probability density function describing the
-            relative likelihood that this interaction is realized at any
-            specific and infinitely small location and time. Therefore,
-            the edge value could represent a probability density or a
-            probability mass depending on how space and time are
-            measured. For simplicity reasons, we will consider space and
-            time as discrete dimensions that provide actual
-            probabilities of interactions, which is conform to how
-            ecological interactions are usually sampled. Using space and
-            time intervals allows us to measure an area <span
-            class="math inline"><em>A</em></span> and duration <span
-            class="math inline"><em>t</em></span>, which can be directly
-            used in spatiotemporal analyses of ecological networks. For
-            example, when studying network-area relationships (NAR,
-            <span class="citation"
+            (2019)</span> used this dataset to infer the probabilities
+            of locally observing interactions between co-occurring
+            species, with the added aspect of situating local networks
+            within the context of environmental variables. This was
+            achieved by including temperature and precipitation as
+            conditional variables in some of their models.</p>
+            <p>We define space as the set of geographic coordinates
+            <span
+            class="math inline">(<em>x</em>,<em>y</em>,<em>z</em>)</span>
+            of the spatial boundaries delineating the system, whether
+            sampled or targeted. Ecological interactions may exhibit
+            variations spatially and along altitudinal gradients, as
+            evidenced by changes in hummingbird-plant interactions
+            (<span class="citation"
+            data-cites="Weinstein2017PerBil">Weinstein &amp; Graham
+            (2017b)</span> and <span class="citation"
+            data-cites="Weinstein2017ComTra">Weinstein &amp; Graham
+            (2017a)</span>) and mosquitoes biting rates (e.g., <span
+            class="citation" data-cites="Kulkarni2006EntEva">Kulkarni
+            <em>et al.</em> (2006)</span>) at different elevations. In
+            contrast, time is defined as the specific time period within
+            which interactions were either observed or predicted. With
+            these definitions in mind, space and time can be
+            conceptualized as distinct patches or time segments.
+            Treating them as discrete dimensions aligns with the common
+            sampling methods of ecological networks and provides actual
+            probabilities of interactions across space and time. This
+            differs from the approach of treating them as continuous
+            variables, where edge values represent probability densities
+            (i.e., relative likelihoods of interactions occurring at
+            infinitesimal locations and instants in time) rather than
+            discrete probability values (which can be obtained by
+            integrating probability densities). By employing discrete
+            locations and time periods, we can quantify both an area
+            <span class="math inline"><em>A</em></span> and a duration
+            <span class="math inline"><em>t</em></span>, which can be
+            readily used in spatiotemporal analyses of ecological
+            networks. For example, when studying network-area
+            relationships (NAR, <span class="citation"
             data-cites="Galiana2018Spatiala">Galiana <em>et al.</em>
-            (2018)</span>), we should expect local probabilities of
-            interactions to scale positively with area and duration
-            because taxa have more opportunities to interact.</p>
+            (2018)</span>), we anticipate that local probabilities of
+            interactions scale positively with area and duration because
+            taxa have more opportunities to interact as these dimensions
+            expand.</p>
             <p>The probability that two taxa <span
             class="math inline"><em>i</em></span> and <span
             class="math inline"><em>j</em></span> interact locally can
-            also be conditional on many environmental and biological
-            factors. One of these is their co-occurrence <span
+            be conditional on many environmental and biological factors.
+            One of these is their co-occurrence <span
             class="math inline"><em>C</em><sub><em>i</em>, <em>j</em></sub></span>,
             which is usually a Boolean describing if the geographic
-            distribution of both taxa overlaps within the study area. In
-            local networks, the probability that the interaction is
-            realized must be <span class="math inline">0</span> when
-            taxa do not co-occur, i.e. <span
-            class="math inline"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>C</em>=0) = 0</span>.
-            Co-occurrence can also be modeled probabilistically. In that
-            case, it follows a Bernoulli distribution <span
+            distributions of both taxa overlap within the study area.
+            Co-occurrence can be modeled probabilistically, in which
+            case it may conform to a Bernoulli distribution <span
             class="math inline">$C_{i,j} \sim {\rm Bernoulli}(P_{i,j}(x,
-            y))$</span>, where the probability of co-occurrence <span
-            class="math inline"><em>P</em><sub><em>i</em>, <em>j</em></sub>(<em>x</em>,<em>y</em>)</span>
-            can be estimated using joint species distribution models
-            (e.g., <span class="citation"
+            y, z))$</span>, where the probability of co-occurrence <span
+            class="math inline"><em>P</em><sub><em>i</em>, <em>j</em></sub>(<em>x</em>,<em>y</em>,<em>z</em>)</span>
+            can be estimated through the application of joint species
+            distribution models (e.g., <span class="citation"
             data-cites="Pollock2014UndCoo">Pollock <em>et al.</em>
-            (2014)</span>). More generally, the probability that two
-            taxa interact locally can be obtained by the product of
-            their probability of interaction given co-occurrence with
-            their probability of co-occurrence:</p>
+            (2014)</span>). Considering that the probability that two
+            non co-occurring taxa interact locally is zero (i.e., <span
+            class="math inline"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>C</em>=0) = 0</span>),
+            the probability of local interaction can be obtained by
+            multiplying the probability of interaction given
+            co-occurrence with the probability of co-occurrence:</p>
             <p><span id="eq:co-occur"><span
-            class="math display"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>) = <em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>C</em>=1) × <em>P</em><sub><em>i</em>, <em>j</em></sub>(<em>x</em>,<em>y</em>).   (1)</span></span></p>
+            class="math display"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>) = <em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>C</em>=1) × <em>P</em><sub><em>i</em>, <em>j</em></sub>(<em>x</em>,<em>y</em>,<em>z</em>).   (1)</span></span></p>
             <p>Other important factors that can impact our estimation of
             interaction probabilities at the local scale are taxa
             relative abundance (<span class="citation"
@@ -825,7 +836,7 @@ probabilistic networks</div>
             data-cites="Pilosof2017MulNat">Pilosof <em>et al.</em>
             (2017)</span>, <span class="citation"
             data-cites="Kefi2012MorMea">Kéfi <em>et al.</em>
-            (2012)</span>). Here, we will use the variable <span
+            (2012)</span>). Here, we use the variable <span
             class="math inline"><em>Ω</em></span> to describe the
             biological and ecological context in which interaction
             probabilities were estimated. For example, if a research
@@ -852,21 +863,27 @@ probabilistic networks</div>
             co-occurrence <span class="math inline"><em>C</em></span>
             and chosen environmental and biological conditions <span
             class="math inline"><em>Ω</em></span>. This gives us the
-            following equation when all these conditions are included in
-            the estimation of interaction probabilities:</p>
+            following equation when all of these conditions are included
+            in the estimation of interaction probabilities:</p>
             <p><span id="eq:local"><span
             class="math display"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>A</em>,<em>t</em>,<em>C</em>,<em>Ω</em>).   (2)</span></span></p>
-            <p>The local context in which probabilities are estimated
-            and the variables that should be taken into consideration
-            depend on the study system, the objective of the study, and
-            the resources available to the researchers. In other words,
-            these variables do not systematically need to be accounted
-            for. However, when they are, they should be specified in the
+            <p>The representation of the local context in which
+            probabilities are estimated and the variables that should be
+            taken into consideration depend on the study system, the
+            objectives of the study, and the resources available to the
+            researchers. In other words, these variables do not
+            systematically need to be accounted for. For example, in
+            <span class="citation" data-cites="Gravel2019BriElt">Gravel
+            <em>et al.</em> (2019)</span>, for the purpose of model
+            comparison, some models incorporated environmental variables
+            as conditional factors to estimate interaction
+            probabilities, while others did not. When accounted for,
+            these variables should be clearly described in the
             documentation of the data (<span class="citation"
             data-cites="Brimacombe2023ShoReu">Brimacombe <em>et al.</em>
             (2023)</span>), preferentially in mathematical terms to
             avoid any confusion in their interpretation and to limit
-            manipulation errors during their re-use. For example,
+            manipulation errors during their re-use. For instance,
             ecologists should be explicit about their consideration of
             co-occurrence in their estimation of local interaction
             probabilities. Indeed, it is important to specify if
@@ -876,31 +893,40 @@ probabilistic networks</div>
             class="math inline"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>)</span>
             on co-occurrence since this can significantly impact the
             interpretation and analysis of the data. In tbl. 1, we
-            present a handful of studies of probabilistic ecological
-            networks and their formulation of probabilistic
-            interactions. This table illustrates the variety of
-            definitions of probabilistic interactions found in the
-            literature and emphasizes the need to carefully describe
-            interaction data before integrating and analyzing them.</p>
+            present a handful of studies of probabilistic networks that
+            used diverse formulations of probabilistic interactions,
+            highlighting the importance of a thorough description of
+            interaction data.</p>
             <div id="tbl:prob">
             <table>
-            <caption>Table 1: Interaction probabilities are interpreted
-            differently in metawebs (<span
-            class="math inline"><em>M</em></span>) and local networks
-            (<span class="math inline"><em>N</em></span>). Each formula
-            includes different conditional variables and is described in
-            plain text. A non-exhaustive list of studies using these
-            formulas is included, with the variables used specified in
-            parentheses.</caption>
+            <caption>Table 1: <strong>Notation and description of
+            probabilistic interactions.</strong> A probability of
+            interaction between two taxa <span
+            class="math inline"><em>i</em></span> and <span
+            class="math inline"><em>j</em></span> is interpreted
+            differently in a metaweb <span
+            class="math inline"><em>M</em></span> and local network
+            <span class="math inline"><em>N</em></span>. Each formula
+            includes a different conditional variable described in plain
+            text. A non-exhaustive list of studies using these
+            conditional variables is included, with the variables used
+            specified in parentheses. Note that interaction
+            probabilities can be contingent upon multiple conditional
+            variables, or none at. Additionally, local interaction
+            probabilities might represent the probability of observing
+            an interaction, not necessarily its actual
+            occurrence.</caption>
             <colgroup>
             <col style="width: 24%" />
-            <col style="width: 54%" />
-            <col style="width: 21%" />
+            <col style="width: 13%" />
+            <col style="width: 37%" />
+            <col style="width: 24%" />
             </colgroup>
             <thead>
             <tr class="header">
             <th style="text-align: left;">Formula</th>
-            <th style="text-align: left;">Description</th>
+            <th style="text-align: left;">Type</th>
+            <th style="text-align: left;">Definitions</th>
             <th style="text-align: right;">Studies</th>
             </tr>
             </thead>
@@ -908,52 +934,49 @@ probabilistic networks</div>
             <tr class="odd">
             <td style="text-align: left;"><span
             class="math inline"><em>P</em><sub><em>M</em></sub>(<em>i</em>→<em>j</em>)</span></td>
-            <td style="text-align: left;">probability that the
-            interaction is biologically feasible</td>
+            <td style="text-align: left;">potential</td>
+            <td style="text-align: left;">biological feasibility of the
+            interaction</td>
             <td style="text-align: right;"></td>
             </tr>
             <tr class="even">
             <td style="text-align: left;"><span
             class="math inline"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>)</span></td>
-            <td style="text-align: left;">probability that the
-            interaction is realized locally</td>
+            <td style="text-align: left;">local</td>
+            <td style="text-align: left;">realization of the interaction
+            at any given location and time</td>
             <td style="text-align: right;"></td>
             </tr>
             <tr class="odd">
             <td style="text-align: left;"><span
             class="math inline"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>A</em>)</span></td>
-            <td style="text-align: left;">probability that the
-            interaction is realized locally given network area</td>
+            <td style="text-align: left;">local</td>
+            <td style="text-align: left;">realization of the interaction
+            in a given area</td>
             <td style="text-align: right;"></td>
             </tr>
             <tr class="even">
             <td style="text-align: left;"><span
             class="math inline"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>t</em>)</span></td>
-            <td style="text-align: left;">probability that the
-            interaction is realized locally given duration</td>
+            <td style="text-align: left;">local</td>
+            <td style="text-align: left;">realization of the interaction
+            during a given time period</td>
             <td style="text-align: right;"></td>
             </tr>
             <tr class="odd">
             <td style="text-align: left;"><span
             class="math inline"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>C</em>)</span></td>
-            <td style="text-align: left;">probability that the
-            interaction is realized locally given co-occurrence</td>
+            <td style="text-align: left;">local</td>
+            <td style="text-align: left;">realization of the interaction
+            given that the taxa co-occur</td>
             <td style="text-align: right;"></td>
             </tr>
             <tr class="even">
             <td style="text-align: left;"><span
             class="math inline"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>Ω</em>)</span></td>
-            <td style="text-align: left;">probability that the
-            interaction is realized locally given chosen environmental
-            and biological factors</td>
-            <td style="text-align: right;"></td>
-            </tr>
-            <tr class="odd">
-            <td style="text-align: left;"><span
-            class="math inline"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>A</em>,<em>t</em>,<em>C</em>,<em>Ω</em>)</span></td>
-            <td style="text-align: left;">probability that the
-            interaction is realized locally given many conditional
-            factors</td>
+            <td style="text-align: left;">local</td>
+            <td style="text-align: left;">realization of the interaction
+            given a set of environmental and biological conditions</td>
             <td style="text-align: right;"></td>
             </tr>
             </tbody>
@@ -1884,6 +1907,15 @@ probabilistic networks</div>
             of willow-galling sawflies and their natural enemies across
             Europe</a>. <em>Ecology</em>, 98, 1730–1730.
             </div>
+            <div id="ref-Kulkarni2006EntEva" class="csl-entry"
+            role="doc-biblioentry">
+            Kulkarni, M.A., Kweka, E., Nyale, E., Lyatuu, E., Mosha,
+            F.W., Chandramohan, D., <em>et al.</em> (2006). <a
+            href="https://doi.org/10.1093/jmedent/43.3.580">Entomological
+            Evaluation of Malaria Vectors at Different Altitudes in Hai
+            District, Northeastern Tanzania</a>. <em>Journal of Medical
+            Entomology</em>, 43, 580–588.
+            </div>
             <div id="ref-McCann2007ProBio" class="csl-entry"
             role="doc-biblioentry">
             McCann, K. (2007). Protecting biostructure. <em>Nature</em>,
@@ -2111,6 +2143,22 @@ probabilistic networks</div>
             href="https://doi.org/10.25260/EA.22.32.2.1.1846">Ecological
             interaction networks. What we know, what we don’t, and why
             it matters</a>. <em>Ecología Austral</em>, 32, 670–697.
+            </div>
+            <div id="ref-Weinstein2017ComTra" class="csl-entry"
+            role="doc-biblioentry">
+            Weinstein, B.G. &amp; Graham, C.H. (2017a). <a
+            href="https://doi.org/10.1016/j.fooweb.2017.05.002">On
+            comparing traits and abundance for predicting species
+            interactions with imperfect detection</a>. <em>Food
+            Webs</em>, 11, 17–25.
+            </div>
+            <div id="ref-Weinstein2017PerBil" class="csl-entry"
+            role="doc-biblioentry">
+            Weinstein, B.G. &amp; Graham, C.H. (2017b). <a
+            href="https://doi.org/10.1111/ele.12730">Persistent bill and
+            corolla matching despite shifting temporal resources in
+            tropical hummingbird-plant interactions</a>. <em>Ecology
+            Letters</em>, 20, 326–335.
             </div>
             <div id="ref-Wood2015Effects" class="csl-entry"
             role="doc-biblioentry">
