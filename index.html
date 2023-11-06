@@ -988,11 +988,11 @@ probabilistic networks</div>
             <p>Metawebs are networks of potential interactions that have
             been designed for broad spatial, temporal, and taxonomic
             scales (e.g., species food webs at the continental scale).
-            They represent the probability that two taxa can
-            biologically interact regardless of their co-occurrence and
-            local environmental conditions. Potential interactions are
-            by definition context-independent, i.e. they are not
-            measured at a specific location and time. In contrast with
+            They represent the probability that taxa can biologically
+            interact regardless of their co-occurrence and local
+            environmental conditions. Potential interactions are by
+            definition context-independent, i.e. they are not measured
+            at a specific location and time. In contrast with
             probabilistic local networks, which represent the
             stochasticity of interactions occurring in nature,
             probabilistic metawebs measure our degree of belief in the
@@ -1003,34 +1003,47 @@ probabilistic networks</div>
             of phenotypes of taxa <span
             class="math inline"><em>i</em></span> and <span
             class="math inline"><em>j</em></span> that can interact with
-            each other if they were to encounter. This probability of
-            interaction, in a metaweb <span
-            class="math inline"><em>M</em></span>, can be expressed
-            as</p>
+            each other if they were to encounter. To reduce any biases
+            in our calculation of this probability, it is crucial to
+            ensure that the set of traits sampled or considered
+            accurately reflects the overall trait distribution in both
+            taxa. This enhances our confidence in concluding that the
+            taxa cannot interact when no positive observation has been
+            made and increases our capacity to detect an interaction
+            when it is biologically feasible. In addition to one-on-one
+            interactions, the extent of sampling effort also contributes
+            to shaping our assessment of metaweb properties, as sampling
+            a larger number of local networks allows us to capture more
+            potential interactions (<span class="citation"
+            data-cites="McLeod2021SamAsy">McLeod <em>et al.</em>
+            (2021a)</span>). A probability of potential interaction in a
+            metaweb <span class="math inline"><em>M</em></span> can be
+            expressed as</p>
             <p><span id="eq:metaweb"><span
             class="math display"><em>P</em><sub><em>M</em></sub>(<em>i</em>→<em>j</em>),   (3)</span></span></p>
             <p>which, in contrast with eq. 2, is not conditional on any
             spatial, temporal, or environmental variables (tbl. 1).</p>
             <p>Starting from a selected set of taxa, which are usually
-            distributed within a broad region of interest, metawebs can
-            be built using different data sources, including literature
-            review, fieldwork, and predictive models (e.g., the metaweb
-            of trophic interactions between Canadian mammals inferred by
-            <span class="citation" data-cites="Strydom2022Food">Strydom
-            <em>et al.</em> (2022)</span>). Every pair of taxa that have
-            confidently been observed to interact at least once can be
-            given a probability of <span class="math inline">1</span>
-            (i.e., <span
+            distributed within a broad region of interest, probabilistic
+            metawebs can be built using different data sources,
+            including literature review, fieldwork, and predictive
+            models (e.g., the metaweb of trophic interactions between
+            Canadian mammals inferred by <span class="citation"
+            data-cites="Strydom2022Food">Strydom <em>et al.</em>
+            (2022)</span>). Every pair of taxa that have confidently
+            been observed to interact at least once can be given a
+            probability of <span class="math inline">1</span> (i.e.,
+            <span
             class="math inline"><em>P</em><sub><em>M</em></sub>(<em>i</em>→<em>j</em>) = 1</span>)
-            since we know that they <em>can</em> interact. This is
-            usually not the case in local probabilistic networks, in
-            which probabilities usually remain stochastic (i.e., <span
+            since we know that they <em>can</em> interact. This is not
+            the case in local probabilistic networks, in which
+            interaction events usually remain stochastic (i.e., <span
             class="math inline"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>) &lt; 1</span>)
             after empirically observing interactions because of their
             intrinsic spatiotemporal variability. Similarly, although
             rare interactions typically have low probabilities in local
-            networks, they can have high probabilities in metawebs if
-            the traits of both taxa match. On the other hand,
+            networks, they can have high probabilities in metawebs when
+            the traits of both taxa are congruent. On the other hand,
             interactions that were never observed can have low
             probability values in both metawebs and local networks,
             going as low as <span class="math inline">0</span> for
@@ -1039,19 +1052,24 @@ probabilistic networks</div>
             misinterpretations (e.g., due to cryptic species and
             interactions, <span class="citation"
             data-cites="Pringle2020Resolving">Pringle &amp; Hutchinson
-            (2020)</span>), many observations of interactions are only
-            false positives. Similarly, forbidden interactions can be
-            false negatives in metawebs, e.g. if they have been assessed
-            for specific phenotypes, locations or time. Implementing a
-            Bayesian framework, which updates prior probabilities with
-            empirical data (e.g., <span class="citation"
+            (2020)</span>), many observations of interactions are in
+            reality false positives. Likewise, forbidden interactions
+            can be false negatives in metawebs, e.g. if they have been
+            assessed for specific phenotypes, locations or time.
+            Employing Bayesian models, whether they are mechanistic or
+            phenomenological, has the potential to enhance the accuracy
+            of our estimation of interaction probabilities within both
+            local and potential networks (e.g., <span class="citation"
             data-cites="Bartomeus2016ComFra">Bartomeus <em>et al.</em>
             (2016)</span>, <span class="citation"
             data-cites="Cirtwill2019QuaFra">Cirtwill <em>et al.</em>
-            (2019)</span>), could improve our estimation of interaction
-            probabilities in both systems.</p>
-            <h1 id="probabilistic-networks-in-action">Probabilistic
-            networks in action</h1>
+            (2019)</span>). This improvement is achieved in potential
+            networks by leveraging prior information regarding the
+            feasibility of interactions along with the empirical data on
+            observed interactions.</p>
+            <h1
+            id="trends-and-features-of-probabilistic-networks">Trends
+            and features of probabilistic networks</h1>
             <p>The differences in the mathematical formulations of local
             and potential interactions can affect their statistical
             properties when applied to key ecological questions. These
@@ -1188,9 +1206,10 @@ probabilistic networks</div>
             (2016)</span>), which can impact many measures of network
             structure such as connectance (<span class="citation"
             data-cites="McLeod2021Sampling">McLeod <em>et al.</em>
-            (2021)</span>). Beyond sampling effort, the temporal scaling
-            of interactions describes how network structure changes with
-            the duration of the network (<span class="citation"
+            (2021b)</span>). Beyond sampling effort, the temporal
+            scaling of interactions describes how network structure
+            changes with the duration of the network (<span
+            class="citation"
             data-cites="Poisot2012Dissimilaritya">Poisot <em>et al.</em>
             (2012)</span>) given that different interactions are
             occurring through time. Because probabilistic local networks
@@ -1486,7 +1505,7 @@ probabilistic networks</div>
             metawebs of potential interactions, which could be
             misinterpreted as local interactions. As suggested by <span
             class="citation" data-cites="McLeod2021Sampling">McLeod
-            <em>et al.</em> (2021)</span>, even though metawebs do not
+            <em>et al.</em> (2021b)</span>, even though metawebs do not
             capture the spatiotemporal variability of interactions, they
             set the upper limit of local interactions. In other words,
             the probability that two taxa interact at a given location
@@ -1926,10 +1945,18 @@ probabilistic networks</div>
             McCann, K.S. (2011). Food webs (MPB-50). In: <em>Food Webs
             (MPB-50)</em>. Princeton University Press.
             </div>
+            <div id="ref-McLeod2021SamAsy" class="csl-entry"
+            role="doc-biblioentry">
+            McLeod, A., Leroux, S.J., Gravel, D., Chu, C., Cirtwill,
+            A.R., Fortin, M.-J., <em>et al.</em> (2021a). <a
+            href="https://doi.org/10.1111/oik.08650">Sampling and
+            asymptotic network properties of spatial multi-trophic
+            networks</a>. <em>Oikos</em>, 130, 2250–2259.
+            </div>
             <div id="ref-McLeod2021Sampling" class="csl-entry"
             role="doc-biblioentry">
             McLeod, A., Leroux, S.J., Gravel, D., Chu, C., Cirtwill,
-            A.R., Fortin, M.-J., <em>et al.</em> (2021). <a
+            A.R., Fortin, M.-J., <em>et al.</em> (2021b). <a
             href="https://doi.org/10.1111/oik.08650">Sampling and
             asymptotic network properties of spatial multi-trophic
             networks</a>. <em>Oikos</em>, n/a.
