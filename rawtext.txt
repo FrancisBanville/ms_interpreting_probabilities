@@ -778,25 +778,53 @@ the probability of potential interaction, i.e. 
 
 # Conclusion
 
-In this contribution, we underlined the importance of network metadata
+In this contribution, we underline the importance of network metadata
 for adequately interpreting and manipulating probabilistic interaction
-data. Indeed, the mathematical representation of probabilities and their
+data. The mathematical representation of probabilities and their
 statistical properties depend on the type of interactions (local or
 potential) and the conditions in which they were estimated. We showed
 that probabilistic local networks and metawebs differ in their
 relationship to spatial and temporal scales, with potential interactions
-being scale-independent. In contrast, local interactions are measured in
-a specific context (e.g., in a given area, time, and biological and
-environmental conditions) and are conditional on taxa co-occurrence.
-These important conceptual differences bring to light the need to use
-probabilistic data with caution, for instance when generating binary
-network realizations across space and predicting local networks from
-metawebs. Clear metadata describing the type of interaction and the
-variables used in their estimation are required to ensure adequate data
-manipulation. Better data practices and rigorous foundations for
-probabilistic thinking in network ecology could enable more reliable
-assessments of the spatiotemporal variability and measurement
-uncertainty of biotic interactions.
+remaining consistent across scales. In contrast with metawebs, local
+interactions are measured in a specific context (e.g., in a given area,
+time, and biological and environmental conditions) and depend on taxa
+co-occurrence. These important conceptual differences bring to light the
+need to use probabilistic data with caution, for instance when
+generating binary network realizations across space and predicting local
+networks from metawebs. Clear metadata describing the type of
+interaction and the variables used in their estimation are required to
+ensure adequate data manipulation. Better data practices and foundations
+for probabilistic thinking in network ecology could enable more reliable
+assessments of the spatiotemporal variability and uncertainty of biotic
+interactions.
+
+It is essential to enhance our comprehension of both potential and local
+interactions, especially considering the current scarcity of interaction
+data. However, while sampling biological communities does decrease the
+uncertainty of interactions by accumulating evidence for their
+feasibility and local realization, there is a limit to how much we can
+diminish their inherent randomness. In metawebs, probabilities reflect
+our limited knowledge of interactions (i.e., our degree of belief that
+interactions are feasible), which is expected to improve with a larger
+volume of data. We should anticipate that potential interactions will
+become more definitive (with probabilities approaching $0$ or $1$) as we
+investigate various conditions, including different combinations of
+species traits. Conversely, in the case of local networks, which can be
+seen as random instances of metawebs, randomness cannot be as reduced.
+In local interactions, probabilities can be divided into a component
+representing uncertainty and another representing spatiotemporal
+variability. Owing to environmental heterogeneity, there will invariably
+be instances in which an interaction occurs and others in which it does
+not, across different times and locations, irrespective of the extent to
+which we can improve our knowledge of its biological feasibility and the
+local conditions that facilitate its occurrence. When local networks
+depict probabilities of observing interactions rather than just their
+actual occurrence, we must also consider the observation variability as
+an additional source of randomness. Every ecological process is
+stochastic but there is also a possibility that a phenomenon goes
+undetected. Quantifying and partitioning this stochasticity will enable
+us to make more accurate predictions about ecological interactions at
+various spatial and temporal scales.
 
 # Acknowledgment
 
