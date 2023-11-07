@@ -361,7 +361,7 @@ formulations of probabilistic interactions and conditional variables.
                                                     the interaction           
 
   $P_N(i \rightarrow j)$                local       realization of the               @Fortuna2006HabLos
-                                                    interaction                     `<br>`{=html} (null
+                                                    interaction                   `<br />`{=html} (null
                                                                                                  model)
 
   $P_N(i \rightarrow j \vert A)$        local       realization of the          @Galiana2018Spatiala \*
@@ -369,7 +369,7 @@ formulations of probabilistic interactions and conditional variables.
                                                     area                      
 
   $P_N(i \rightarrow j \vert t)$        local       realization of the            @Nielsen2007EcoNet \*
-                                                    interaction during a        `<br>`{=html} (sampling
+                                                    interaction during a      `<br />`{=html} (sampling
                                                     given time period                           effort)
 
   $P_N(i \rightarrow j \vert C)$        local       realization of the                @Gravel2019BriElt
@@ -377,7 +377,7 @@ formulations of probabilistic interactions and conditional variables.
                                                     the taxa co-occur         
 
   $P_N(i \rightarrow j \vert \Omega)$   local       realization of the                @Gravel2019BriElt
-                                                    interaction given                     `<br>`{=html}
+                                                    interaction given                   `<br />`{=html}
                                                     environmental conditions           (temperature and
                                                                                          precipitation)
   -----------------------------------------------------------------------------------------------------
