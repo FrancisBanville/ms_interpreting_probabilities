@@ -325,21 +325,21 @@ variables.
 | $P_M(i \rightarrow j)$ | potential | biological feasibility of the interaction | @Strydom2022Food |   
 | $P_N(i \rightarrow j)$ | local | realization of the interaction | @Fortuna2006HabLos (null model) |    
 | $P_N(i \rightarrow j \vert A)$ | local | realization of the interaction in a given area | @Galiana2018Spatiala * |   
-| $P_N(i \rightarrow j \vert t)$ | local | realization of the interaction during a given time period | @Nielsen2007EcoNet * (sampling effort) |   
+| $P_N(i \rightarrow j \vert t)$ | local | realization of the interaction during a given time period | @Weinstein2017ComTra |   
 | $P_N(i \rightarrow j \vert C)$ | local | realization of the interaction given that the taxa co-occur | @Gravel2019BriElt |  
 | $P_N(i \rightarrow j \vert \Omega)$ | local | realization of the interaction given environmental conditions | @Gravel2019BriElt (temperature and precipitation) |  
 
 Table: **Notation of probabilistic interactions.** The probability of
 interaction between two taxa $i$ and $j$ is interpreted differently in a metaweb
 $M$ of potential interactions and a local network $N$ of realized interactions.
-Each notation includes a different conditional variable described in plain text,
-when applicable. An example of a study employing each of these notations or
-conditional variables is provided, with the specific variables used indicated in
-parentheses. Studies marked with an asterisk have been carried out on binary
-networks. Note that interaction probabilities can be contingent upon multiple
-conditional variables, or none at all. Additionally, local interaction
-probabilities might represent the probability of observing an interaction, not
-necessarily its actual occurrence. {#tbl:prob}
+Each notation includes a different conditional variable, when applicable. An
+example of a study employing each of these notations and conditional variables
+is provided, with the specific variables used indicated in parentheses. The
+study marked with an asterisk has been carried out on binary networks. Note that
+interaction probabilities can be contingent upon multiple conditional variables,
+or none at all. Additionally, local interaction probabilities might represent
+the probability of observing an interaction, not necessarily its actual
+occurrence. {#tbl:prob}
 
 ## Metawebs: regional catalogs of interactions
 
