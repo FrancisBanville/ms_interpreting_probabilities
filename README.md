@@ -321,25 +321,28 @@ probabilistic networks that used diverse formulations of probabilistic
 interactions, highlighting the importance of a thorough description of
 interaction data. 
 
-| Formula | Type | Description | Studies | 
-| :--- | :-- | :------------ | -------: | 
+| Formula | Type | Description | Reference | 
+| :--- | :-- | :----------- | -------: | 
 | $P_M(i \rightarrow j)$ | potential | biological feasibility of the interaction | @Strydom2022Food |   
-| $P_N(i \rightarrow j)$ | local | realization of the interaction | @Fortuna2006HabLos, @Bascompte2003NesAss |    
-| $P_N(i \rightarrow j \vert A)$ | local | realization of the interaction in a given area |   |   
-| $P_N(i \rightarrow j \vert t)$ | local | realization of the interaction during a given time period |   |   
-| $P_N(i \rightarrow j \vert C)$ | local | realization of the interaction given that the taxa co-occur |   |  
-| $P_N(i \rightarrow j \vert \Omega)$ | local | realization of the interaction given environmental and biological conditions | @Gravel2019BriElt*, @Rohr2010ModFoo**, @Vazquez2009EvaMul\*** |  
-
- Carstensen et al. 2014; Olito & Fox 2015; Trøjelsgaard et al. 2015
+| $P_N(i \rightarrow j)$ | local | realization of the interaction | @Fortuna2006HabLos |    
+| $P_N(i \rightarrow j \vert A)$ | local | realization of the interaction in a given area | @Galiana2018Spatiala * |   
+| $P_N(i \rightarrow j \vert t)$ | local | realization of the interaction during a given time period | @Nielsen2007EcoNet * |   
+| $P_N(i \rightarrow j \vert C)$ | local | realization of the interaction given that the taxa co-occur | @Gravel2019BriElt  |  
+| $P_N(i \rightarrow j \vert \Omega)$ | local | realization of the interaction given environmental conditions | @Gravel2019BriElt (temperature and precipitation) |  
 
 Table: **Notation of probabilistic interactions.** The probability of
 interaction between two taxa $i$ and $j$ is interpreted differently in a metaweb
 $M$ and local network $N$. Each formula includes a different conditional
-variable described in plain text. A non-exhaustive list of studies using these
-conditional variables is included. Note that interaction probabilities can be contingent upon multiple
+variable described in plain text. An example of a study employing each of these
+conditional variables is provided, with the specific variables used specified in
+parentheses. Studies marked with an asterisk have been carried out on binary
+networks. Note that interaction probabilities can be contingent upon multiple
 conditional variables, or none at all. Additionally, local interaction
 probabilities might represent the probability of observing an interaction, not
-necessarily its actual occurrence. \*Temperature and precipitation, \**Body size, \***Species relative abundance and spatiotemporal overlap. {#tbl:prob}
+necessarily its actual occurrence. {#tbl:prob}
+
+Nielsen & Bascompte 2007; Va´zquez et al. 2009a;
+Blu¨thgen 2010; Dorado et al. 2011
 
 ## Metawebs: regional catalogs of interactions
 
