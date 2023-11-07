@@ -11,7 +11,7 @@
       "givennames": "Francis",
       "email": "francis.banville@umontreal.ca",
       "orcid": "0000-0001-9051-0597",
-      "status": ["corresponding", "equal"]
+      "status": ["corresponding"]
     },
     {
       "affiliations": [
@@ -21,8 +21,53 @@
       "familyname": "Strydom",
       "givennames": "Tanya",
       "email": "tanya.strydom@umontreal.ca",
-      "orcid": "0000-0001-6067-1349",
-      "status": ["equal"]
+      "orcid": "0000-0001-6067-1349"
+    },
+    {
+      "affiliations": [
+        "University of Toronto"
+      ],
+      "familyname": "Brimacombe",
+      "givennames": "Chris",
+      "email": "chris.brimacombe@mail.utoronto.ca",
+      "orcid": "0000-0002-9368-6106"
+    },
+    {
+      "affiliations": [
+        "McGill University",
+        "Quebec Centre for Biodiversity Science"
+      ],
+      "familyname": "Catchen",
+      "givennames": "Michael",
+      "email": "mdcatchen@gmail.com",
+      "orcid": "0000-0002-6506-6487"
+    },
+    {
+      "affiliations": [
+        "Université de Sherbrooke",
+        "Quebec Centre for Biodiversity Science"
+      ],
+      "familyname": "Gravel",
+      "givennames": "Dominique",
+      "email": "dominique.gravel@usherbrooke.ca"
+    },
+    {
+      "affiliations": [
+        "Université de Sherbrooke"
+      ],
+      "familyname": "Higino",
+      "givennames": "Gracielle",
+      "email": "gracielle.teixeira.higino@usherbrooke.ca",
+      "orcid": "0000-0003-2791-8383"
+    },
+    {
+      "affiliations": [
+        "Université de Montréal"
+      ],
+      "familyname": "Norman",
+      "givennames": "Kari",
+      "email": "kari.norman@berkeley.edu",
+      "orcid": "0000-0002-2029-2325"
     },
     {
       "affiliations": [
