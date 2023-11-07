@@ -629,9 +629,10 @@ probabilistic networks</div>
             class="math inline"><em>P</em>(<em>i</em>→<em>j</em>)</span>
             can be linked to environmental and biological factors such
             as species relative abundance, traits, area, and time
-            (tbl. 1), for example using logistic regression with a logit
-            link function with continuous explanatory variables. In
-            these probabilistic network representations in which <span
+            (tbl. <strong>¿tbl:prob?</strong>), for example using
+            logistic regression with a logit link function with
+            continuous explanatory variables. In these probabilistic
+            network representations in which <span
             class="math inline"><em>P</em>(<em>i</em>→<em>j</em>)</span>
             are edge values, the only two possible outcomes are the
             presence (<span
@@ -892,29 +893,13 @@ probabilistic networks</div>
             or not <span
             class="math inline"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>)</span>
             on co-occurrence since this can significantly impact the
-            interpretation and analysis of the data. In tbl. 1, we
-            present a handful of studies of probabilistic networks that
-            used diverse formulations of probabilistic interactions,
-            highlighting the importance of a thorough description of
-            interaction data.</p>
-            <div id="tbl:prob">
+            interpretation and analysis of the data. In
+            tbl. <strong>¿tbl:prob?</strong>, we present a handful of
+            studies of probabilistic networks that used diverse
+            formulations of probabilistic interactions, highlighting the
+            importance of a thorough description of interaction
+            data.</p>
             <table>
-            <caption>Table 1: <strong>Notation of probabilistic
-            interactions.</strong> The probability of interaction
-            between two taxa <span class="math inline"><em>i</em></span>
-            and <span class="math inline"><em>j</em></span> is
-            interpreted differently in a metaweb <span
-            class="math inline"><em>M</em></span> and local network
-            <span class="math inline"><em>N</em></span>. Each formula
-            includes a different conditional variable described in plain
-            text. A non-exhaustive list of studies using these
-            conditional variables is included, with the variables used
-            specified in parentheses. Note that interaction
-            probabilities can be contingent upon multiple conditional
-            variables, or none at all. Additionally, local interaction
-            probabilities might represent the probability of observing
-            an interaction, not necessarily its actual
-            occurrence.</caption>
             <colgroup>
             <col style="width: 14%" />
             <col style="width: 10%" />
@@ -946,7 +931,11 @@ probabilistic networks</div>
             <td style="text-align: left;">local</td>
             <td style="text-align: left;">realization of the
             interaction</td>
-            <td style="text-align: right;"></td>
+            <td style="text-align: right;"><span class="citation"
+            data-cites="Fortuna2006HabLos">Fortuna &amp; Bascompte
+            (2006)</span>, <span class="citation"
+            data-cites="Bascompte2003NesAss">Bascompte <em>et al.</em>
+            (2003)</span></td>
             </tr>
             <tr class="odd">
             <td style="text-align: left;"><span
@@ -980,11 +969,33 @@ probabilistic networks</div>
             given environmental and biological conditions</td>
             <td style="text-align: right;"><span class="citation"
             data-cites="Gravel2019BriElt">Gravel <em>et al.</em>
-            (2019)</span> (temperature and precipitation)</td>
+            (2019)</span>*, <span class="citation"
+            data-cites="Rohr2010ModFoo">Rohr <em>et al.</em>
+            (2010)</span><strong>, <span class="citation"
+            data-cites="Vazquez2009EvaMul">Vázquez <em>et al.</em>
+            (2009)</span>*</strong></td>
             </tr>
             </tbody>
             </table>
-            </div>
+            <p>Carstensen et al. 2014; Olito &amp; Fox 2015;
+            Trøjelsgaard et al. 2015</p>
+            <p>Table: <strong>Notation of probabilistic
+            interactions.</strong> The probability of interaction
+            between two taxa <span class="math inline"><em>i</em></span>
+            and <span class="math inline"><em>j</em></span> is
+            interpreted differently in a metaweb <span
+            class="math inline"><em>M</em></span> and local network
+            <span class="math inline"><em>N</em></span>. Each formula
+            includes a different conditional variable described in plain
+            text. A non-exhaustive list of studies using these
+            conditional variables is included. Note that interaction
+            probabilities can be contingent upon multiple conditional
+            variables, or none at all. Additionally, local interaction
+            probabilities might represent the probability of observing
+            an interaction, not necessarily its actual occurrence.
+            *Temperature and precipitation, **Body size, ***Species
+            relative abundance and spatiotemporal overlap.
+            {#tbl:prob}</p>
             <h2
             id="metawebs-regional-catalogs-of-interactions">Metawebs:
             regional catalogs of interactions</h2>
@@ -1025,7 +1036,8 @@ probabilistic networks</div>
             <p><span id="eq:metaweb"><span
             class="math display"><em>P</em><sub><em>M</em></sub>(<em>i</em>→<em>j</em>),   (3)</span></span></p>
             <p>which, in contrast with eq. 2, is not conditional on any
-            spatial, temporal, or environmental variables (tbl. 1).</p>
+            spatial, temporal, or environmental variables
+            (tbl. <strong>¿tbl:prob?</strong>).</p>
             <p>Starting from a selected set of taxa, which are usually
             distributed within a broad region of interest, probabilistic
             metawebs can be built using different data sources,
@@ -2125,6 +2137,14 @@ probabilistic networks</div>
             Optimal Diets</a>. <em>The American Naturalist</em>, 108,
             59–74.
             </div>
+            <div id="ref-Rohr2010ModFoo" class="csl-entry"
+            role="doc-biblioentry">
+            Rohr, R.P., Scherer, H., Kehrli, P., Mazza, C. &amp;
+            Bersier, L.-F. (2010). <a
+            href="https://doi.org/10.1086/653667">Modeling Food Webs:
+            Exploring Unexplained Structure Using Latent Traits.</a>
+            <em>The American Naturalist</em>, 176, 170–177.
+            </div>
             <div id="ref-Rooney2012IntFoo" class="csl-entry"
             role="doc-biblioentry">
             Rooney, N. &amp; McCann, K.S. (2012). <a
@@ -2199,6 +2219,13 @@ probabilistic networks</div>
             <a href="https://doi.org/10.1038/nature05429">Habitat
             modification alters the structure of tropical hostparasitoid
             food webs</a>. <em>Nature</em>, 445, 202–205.
+            </div>
+            <div id="ref-Vazquez2009EvaMul" class="csl-entry"
+            role="doc-biblioentry">
+            Vázquez, D.P., Chacoff, N.P. &amp; Cagnolo, L. (2009). <a
+            href="https://doi.org/10.1890/08-1837.1">Evaluating multiple
+            determinants of the structure of plantanimal mutualistic
+            networks</a>. <em>Ecology</em>, 90, 2039–2046.
             </div>
             <div id="ref-VazquezSS2022Ecological" class="csl-entry"
             role="doc-biblioentry">

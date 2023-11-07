@@ -2701,6 +2701,46 @@
         "type": "article-journal"
     },
     {
+        "publisher": "The University of Chicago Press",
+        "issue": "2",
+        "issued": {
+            "date-parts": [
+                [
+                    2010
+                ]
+            ]
+        },
+        "container-title": "The American Naturalist",
+        "author": [
+            {
+                "family": "Rohr",
+                "given": "Rudolf Philippe"
+            },
+            {
+                "family": "Scherer",
+                "given": "Heike"
+            },
+            {
+                "family": "Kehrli",
+                "given": "Patrik"
+            },
+            {
+                "family": "Mazza",
+                "given": "Christian"
+            },
+            {
+                "family": "Bersier",
+                "given": "Louis-Félix"
+            }
+        ],
+        "id": "Rohr2010ModFoo",
+        "DOI": "10.1086/653667",
+        "volume": "176",
+        "page": "170-177",
+        "title": "Modeling Food Webs: Exploring Unexplained Structure Using Latent Traits.",
+        "type": "article-journal"
+    },
+    {
         "issue": "1",
         "issued": {
             "date-parts": [
@@ -3298,6 +3338,37 @@
         "volume": "445",
         "page": "202-205",
         "title": "Habitat modification alters the structure of tropical hostparasitoid food webs",
+        "type": "article-journal"
+    },
+    {
+        "issue": "8",
+        "issued": {
+            "date-parts": [
+                [
+                    2009
+                ]
+            ]
+        },
+        "container-title": "Ecology",
+        "author": [
+            {
+                "family": "Vázquez",
+                "given": "Diego P."
+            },
+            {
+                "family": "Chacoff",
+                "given": "Natacha P."
+            },
+            {
+                "family": "Cagnolo",
+                "given": "Luciano"
+            }
+        ],
+        "id": "Vazquez2009EvaMul",
+        "DOI": "10.1890/08-1837.1",
+        "volume": "90",
+        "page": "2039-2046",
+        "title": "Evaluating multiple determinants of the structure of plantanimal mutualistic networks",
         "type": "article-journal"
     },
     {
