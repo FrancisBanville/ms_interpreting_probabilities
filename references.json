@@ -2200,6 +2200,33 @@
         "type": "chapter"
     },
     {
+        "issue": "5",
+        "issued": {
+            "date-parts": [
+                [
+                    2007
+                ]
+            ]
+        },
+        "container-title": "Journal of Ecology",
+        "author": [
+            {
+                "family": "Nielsen",
+                "given": "Anders"
+            },
+            {
+                "family": "Bascompte",
+                "given": "Jordi"
+            }
+        ],
+        "id": "Nielsen2007EcoNet",
+        "DOI": "10.1111/j.1365-2745.2007.01271.x",
+        "volume": "95",
+        "page": "1134-1141",
+        "title": "Ecological networks, nestedness and sampling effort",
+        "type": "article-journal"
+    },
+    {
         "issue": "4",
         "issued": {
             "date-parts": [

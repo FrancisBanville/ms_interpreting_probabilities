@@ -182,9 +182,9 @@ intrinsic spatiotemporal variability. Depending on the type of networks
 (local or metaweb), the mathematical formulation and interpretation of
 stochastic parameters like $P(i \rightarrow j)$ can be linked to
 environmental and biological factors such as species relative abundance,
-traits, area, and time (tbl. **¿tbl:prob?**), for example using logistic
-regression with a logit link function with continuous explanatory
-variables. In these probabilistic network representations in which
+traits, area, and time (tbl. 1), for example using logistic regression
+with a logit link function with continuous explanatory variables. In
+these probabilistic network representations in which
 $P(i \rightarrow j)$ are edge values, the only two possible outcomes are
 the presence ($A_{i,j} = 1$) or absence ($A_{i,j} = 0$) of an
 interaction between each pair of nodes. When considering uncertainties
@@ -350,47 +350,48 @@ interaction probabilities. Indeed, it is important to specify if
 probability values are conditional $P_{N}(i \rightarrow j | C = 1)$ or
 not $P_{N}(i \rightarrow j)$ on co-occurrence since this can
 significantly impact the interpretation and analysis of the data. In
-tbl. **¿tbl:prob?**, we present a handful of studies of probabilistic
-networks that used diverse formulations of probabilistic interactions,
-highlighting the importance of a thorough description of interaction
-data.
+tbl. 1, we present a handful of studies of probabilistic networks that
+used diverse formulations of probabilistic interactions, highlighting
+the importance of a thorough description of interaction data.
 
-  -----------------------------------------------------------------------------------------------------------
-  Formula                               Type        Description                                       Studies
-  ------------------------------------- ----------- -------------------------------- ------------------------
-  $P_M(i \rightarrow j)$                potential   biological feasibility of the            @Strydom2022Food
-                                                    interaction                      
+::: {#tbl:prob}
+  --------------------------------------------------------------------------------------------------------
+  Formula                               Type        Description                                  Reference
+  ------------------------------------- ----------- ------------------------------- ----------------------
+  $P_M(i \rightarrow j)$                potential   biological feasibility of the         @Strydom2022Food
+                                                    interaction                     
 
-  $P_N(i \rightarrow j)$                local       realization of the interaction        @Fortuna2006HabLos,
-                                                                                         @Bascompte2003NesAss
+  $P_N(i \rightarrow j)$                local       realization of the interaction      @Fortuna2006HabLos
 
-  $P_N(i \rightarrow j \vert A)$        local       realization of the interaction   
-                                                    in a given area                  
+  $P_N(i \rightarrow j \vert A)$        local       realization of the interaction    @Galiana2018Spatiala
+                                                    in a given area                                     \*
 
-  $P_N(i \rightarrow j \vert t)$        local       realization of the interaction   
-                                                    during a given time period       
+  $P_N(i \rightarrow j \vert t)$        local       realization of the interaction   @Nielsen2007EcoNet \*
+                                                    during a given time period      
 
-  $P_N(i \rightarrow j \vert C)$        local       realization of the interaction   
-                                                    given that the taxa co-occur     
+  $P_N(i \rightarrow j \vert C)$        local       realization of the interaction       @Gravel2019BriElt
+                                                    given that the taxa co-occur    
 
-  $P_N(i \rightarrow j \vert \Omega)$   local       realization of the interaction       @Gravel2019BriElt\*,
-                                                    given environmental and                @Rohr2010ModFoo**,
-                                                    biological conditions              @Vazquez2009EvaMul\***
-  -----------------------------------------------------------------------------------------------------------
+  $P_N(i \rightarrow j \vert \Omega)$   local       realization of the interaction       @Gravel2019BriElt
+                                                    given environmental conditions        (temperature and
+                                                                                            precipitation)
+  --------------------------------------------------------------------------------------------------------
 
-Carstensen et al. 2014; Olito & Fox 2015; Trøjelsgaard et al. 2015
+  : Table 1: **Notation of probabilistic interactions.** The probability
+  of interaction between two taxa $i$ and $j$ is interpreted differently
+  in a metaweb $M$ and local network $N$. Each formula includes a
+  different conditional variable described in plain text. An example of
+  a study employing each of these conditional variables is provided,
+  with the specific variables used specified in parentheses. Studies
+  marked with an asterisk have been carried out on binary networks. Note
+  that interaction probabilities can be contingent upon multiple
+  conditional variables, or none at all. Additionally, local interaction
+  probabilities might represent the probability of observing an
+  interaction, not necessarily its actual occurrence.
+:::
 
-Table: **Notation of probabilistic interactions.** The probability of
-interaction between two taxa $i$ and $j$ is interpreted differently in a
-metaweb $M$ and local network $N$. Each formula includes a different
-conditional variable described in plain text. A non-exhaustive list of
-studies using these conditional variables is included. Note that
-interaction probabilities can be contingent upon multiple conditional
-variables, or none at all. Additionally, local interaction probabilities
-might represent the probability of observing an interaction, not
-necessarily its actual occurrence. \*Temperature and precipitation,
-\*\*Body size, \*\*\*Species relative abundance and spatiotemporal
-overlap. {#tbl:prob}
+Nielsen & Bascompte 2007; Va´zquez et al. 2009a; Blu¨thgen 2010; Dorado
+et al. 2011
 
 ## Metawebs: regional catalogs of interactions
 
@@ -423,7 +424,7 @@ as
 [$$P_{M}(i \rightarrow j),\qquad{(3)}$$]{#eq:metaweb}
 
 which, in contrast with eq. 2, is not conditional on any spatial,
-temporal, or environmental variables (tbl. **¿tbl:prob?**).
+temporal, or environmental variables (tbl. 1).
 
 Starting from a selected set of taxa, which are usually distributed
 within a broad region of interest, probabilistic metawebs can be built
