@@ -355,31 +355,30 @@ used diverse formulations of probabilistic interactions, highlighting
 the importance of a thorough description of interaction data.
 
 ::: {#tbl:prob}
-  -----------------------------------------------------------------------------------------------------
-  Notation                              Type        Description                               Reference
-  ------------------------------------- ----------- ------------------------- -------------------------
-  $P_M(i \rightarrow j)$                potential   biological feasibility of          @Strydom2022Food
-                                                    the interaction           
+  --------------------------------------------------------------------------------------------------------------
+  Notation                              Type        Description                                        Reference
+  ------------------------------------- ----------- --------------------------- --------------------------------
+  $P_M(i \rightarrow j)$                potential   biological feasibility of                   @Strydom2022Food
+                                                    the interaction             
 
-  $P_N(i \rightarrow j)$                local       realization of the         @Fortuna2006HabLos (null
-                                                    interaction                                  model)
+  $P_N(i \rightarrow j)$                local       realization of the           @Fortuna2006HabLos (null model)
+                                                    interaction                 
 
-  $P_N(i \rightarrow j \vert A)$        local       realization of the          @Galiana2018Spatiala \*
-                                                    interaction in a given    
-                                                    area                      
+  $P_N(i \rightarrow j \vert A)$        local       realization of the                   @Galiana2018Spatiala \*
+                                                    interaction in a given area 
 
-  $P_N(i \rightarrow j \vert t)$        local       realization of the               @Nielsen2007EcoNet
-                                                    interaction during a           (sampling effort) \*
-                                                    given time period         
+  $P_N(i \rightarrow j \vert t)$        local       realization of the           @Nielsen2007EcoNet \* (sampling
+                                                    interaction during a given                           effort)
+                                                    time period                 
 
-  $P_N(i \rightarrow j \vert C)$        local       realization of the                @Gravel2019BriElt
-                                                    interaction given that    
-                                                    the taxa co-occur         
+  $P_N(i \rightarrow j \vert C)$        local       realization of the                         @Gravel2019BriElt
+                                                    interaction given that the  
+                                                    taxa co-occur               
 
-  $P_N(i \rightarrow j \vert \Omega)$   local       realization of the                @Gravel2019BriElt
-                                                    interaction given                  (temperature and
-                                                    environmental conditions             precipitation)
-  -----------------------------------------------------------------------------------------------------
+  $P_N(i \rightarrow j \vert \Omega)$   local       realization of the            @Gravel2019BriElt (temperature
+                                                    interaction given                         and precipitation)
+                                                    environmental conditions    
+  --------------------------------------------------------------------------------------------------------------
 
   : Table 1: **Notation of probabilistic interactions.** The probability
   of interaction between two taxa $i$ and $j$ is interpreted differently
