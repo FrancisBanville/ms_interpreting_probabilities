@@ -321,13 +321,13 @@ these diverse formulations of probabilistic interactions and conditional
 variables. 
 
 | Notation | Type | Description | Reference | 
-| :--- | :-- | :-------- | --------: | 
+| :--- | :-- | :-------- | -------: | 
 | $P_M(i \rightarrow j)$ | potential | biological feasibility of the interaction | @Strydom2022Food |   
-| $P_N(i \rightarrow j)$ | local | realization of the interaction | @Fortuna2006HabLos <br /> (null model) |    
+| $P_N(i \rightarrow j)$ | local | realization of the interaction | @Fortuna2006HabLos (null model) |    
 | $P_N(i \rightarrow j \vert A)$ | local | realization of the interaction in a given area | @Galiana2018Spatiala * |   
-| $P_N(i \rightarrow j \vert t)$ | local | realization of the interaction during a given time period | @Nielsen2007EcoNet * <br /> (sampling effort) |   
+| $P_N(i \rightarrow j \vert t)$ | local | realization of the interaction during a given time period | @Nielsen2007EcoNet * (sampling effort) |   
 | $P_N(i \rightarrow j \vert C)$ | local | realization of the interaction given that the taxa co-occur | @Gravel2019BriElt |  
-| $P_N(i \rightarrow j \vert \Omega)$ | local | realization of the interaction given environmental conditions | @Gravel2019BriElt <br /> (temperature and precipitation) |  
+| $P_N(i \rightarrow j \vert \Omega)$ | local | realization of the interaction given environmental conditions | @Gravel2019BriElt (temperature and precipitation) |  
 
 Table: **Notation of probabilistic interactions.** The probability of
 interaction between two taxa $i$ and $j$ is interpreted differently in a metaweb
