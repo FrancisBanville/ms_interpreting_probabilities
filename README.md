@@ -321,14 +321,14 @@ probabilistic networks that used diverse formulations of probabilistic
 interactions, highlighting the importance of a thorough description of
 interaction data. 
 
-| Formula | Type | Definition | Studies | 
-| :--- | :--- | :----------- | ------: | 
+| Formula | Type | Description | Studies | 
+| :-- | :-- | :------------ | -------: | 
 | $P_M(i \rightarrow j)$ | potential | biological feasibility of the interaction |   |   
-| $P_N(i \rightarrow j)$ | local | realization of the interaction at any given location and time |   |    
+| $P_N(i \rightarrow j)$ | local | realization of the interaction |  |    
 | $P_N(i \rightarrow j \vert A)$ | local | realization of the interaction in a given area |   |   
 | $P_N(i \rightarrow j \vert t)$ | local | realization of the interaction during a given time period |   |   
 | $P_N(i \rightarrow j \vert C)$ | local | realization of the interaction given that the taxa co-occur |   |  
-| $P_N(i \rightarrow j \vert \Omega)$ | local | realization of the interaction given environmental and biological conditions |   |  
+| $P_N(i \rightarrow j \vert \Omega)$ | local | realization of the interaction given environmental and biological conditions | @Gravel2019BriElt (temperature and precipitation)  |  
 
 Table: **Notation and description of probabilistic interactions.** The
 probability of interaction between two taxa $i$ and $j$ is interpreted
@@ -397,7 +397,7 @@ achieved in potential networks by leveraging prior information regarding the
 feasibility of interactions along with the empirical data on observed
 interactions.
 
-# Trends and features of probabilistic networks 
+# Properties of probabilistic networks 
 
 The differences in the mathematical formulations of local and potential
 interactions can affect their statistical properties when applied to key
