@@ -1105,16 +1105,89 @@ probabilistic networks</div>
             observed interactions.</p>
             <h1 id="properties-of-probabilistic-networks">Properties of
             probabilistic networks</h1>
-            <p>The differences in the mathematical formulations of local
-            and potential interactions can affect their statistical
-            properties when applied to key ecological questions. These
-            disparities must therefore be taken into account when
-            analyzing probabilistic interaction data to prevent
-            misleading results and minimize interpretation errors. Here
-            we show four common applications of probabilistic
-            interactions and compare the characteristics of local
-            networks and metawebs using simulated and empirical
-            data.</p>
+            <p>Probabilistic local networks and metawebs differ in the
+            type of interaction represented by their edges (i.e., local
+            or potential interactions) and in the conditional variables
+            upon which their values depend. These differences are
+            significant as they influence the characteristics of
+            probabilistic networks, particularly when they are applied
+            to answer critical ecological questions. Neglecting to
+            consider these differences may result in misleading results
+            and interpretation errors when analyzing the properties of
+            probabilistic networks. Here we compare the characteristics
+            of local networks and metawebs through the presentation of
+            four common applications of probabilistic interactions.</p>
+            <p>We use the collection of tripartite host-parasite
+            networks sampled across Europe, created by <span
+            class="citation" data-cites="Kopelke2017FooStra">Kopelke
+            <em>et al.</em> (2017)</span>, in most of our case studies.
+            This dataset contains well-resolved binary local
+            interactions between willows (52 species), willow-galling
+            sawflies (96 species), and their parasitoids (126 species).
+            Given its replicated networks spanning large spatiotemporal
+            scales, this dataset is well-suited for analyzing a variety
+            of ecological hypotheses and processes. Out of a total of
+            374 local networks, we retained those containing a minimum
+            of 5 species, resulting in a set of 233 georeferenced local
+            networks. We built a binary metaweb by aggregating all local
+            interactions, which gave us a regional metaweb composed of
+            274 nodes and 1080 interactions. In the first two panels of
+            fig. <strong>¿fig:accumulation?</strong>, we show how the
+            dissimilarity of interactions between common species (<span
+            class="math inline"><em>β</em><sub><em>O</em><em>S</em></sub></span>)
+            and the dissimilarity in species composition (<span
+            class="math inline"><em>β</em><sub><em>S</em></sub></span>
+            between the metaweb and aggregated local networks (<span
+            class="citation"
+            data-cites="Poisot2012Dissimilaritya">Poisot <em>et al.</em>
+            (2012)</span>) vary with the number of sampled local
+            networks, highlighting the differences in both species and
+            interactions between these two types of networks.</p>
+            <p>We converted these binary networks into probabilistic
+            ones using models based on simple assumptions. Our models do
+            not aim to precisely estimate the actual values of
+            probabilistic interactions but rather to offer simplified
+            networks as illustrative examples to underscore the
+            differences between probabilistic local networks and
+            metawebs. We created two probabilistic metawebs by employing
+            constant false positive and false negative rates for all
+            potential interactions. In the first metaweb, we set both
+            false positive and false negative rates to zero to prevent
+            artificially inflating the total number of links, enabling a
+            more accurate comparison with binary networks. In the
+            second, we introduced a 5% false positive rate to account
+            for spurious interactions and a 10% false negative rate to
+            capture the elevated occurrence of false negatives in
+            ecological networks (<span class="citation"
+            data-cites="Catchen2023Missinga">Catchen <em>et al.</em>
+            (2023)</span>). Observed potential interactions were thus
+            given a probability of 95%, whereas unobserved ones were
+            assigned a probability of 10%.</p>
+            <p>To create probabilistic local networks, we began by
+            recognizing that local interactions must initially be
+            biologically feasible before occurring at a specific time
+            and space. A local interaction <span
+            class="math inline"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>)</span>
+            can thus be expressed as the product of the probability of
+            local interaction given that the two taxa can potentially
+            interact <span
+            class="math inline"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>M</em><sub><em>i</em> → <em>j</em></sub>=1)</span>,
+            which we denote as <span
+            class="math inline"><em>p</em></span> for the sake of
+            simplicity, with the probability of potential interaction
+            <span
+            class="math inline"><em>P</em><sub><em>M</em></sub>(<em>i</em>→<em>j</em>)</span>:</p>
+            <p><span id="eq:local_meta"><span
+            class="math display"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>) = <em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>M</em><sub><em>i</em> → <em>j</em></sub>=1) × <em>P</em><sub><em>M</em></sub>(<em>i</em>→<em>j</em>).   (4)</span></span></p>
+            <p>We derived probabilistic local networks from our
+            probabilistic metawebs by applying constant values of <span
+            class="math inline"><em>p</em></span> across interactions.
+            Lower values of <span class="math inline"><em>p</em></span>
+            indicate infrequent local occurrences of feasible
+            interactions, intermediate values around 50% suggest
+            considerable spatiotemporal variability, while higher values
+            indicate that potential interactions are nearly always
+            realized.</p>
             <p><img src="figures/network_accumulation.png"
             id="fig:accumulation" /></p>
             <h2 id="taxonomic-scaling-of-interactions">Taxonomic scaling
@@ -1160,7 +1233,7 @@ probabilistic networks</div>
             <p><span id="eq:taxo"><span class="math display">$$P(A
             \rightarrow B) = 1 - \prod_{i = 1}^{n_A}\prod_{j =
             1}^{n_B}(1 - P(A_i
-            \rightarrow B_j)),\qquad{(4)}$$</span></span></p>
+            \rightarrow B_j)),\qquad{(5)}$$</span></span></p>
             <p>where <span
             class="math inline"><em>A</em><sub><em>i</em></sub></span>
             and <span
@@ -1359,7 +1432,7 @@ probabilistic networks</div>
             data-cites="Cazelles2016Theorya">Cazelles <em>et al.</em>
             (2016)</span>):</p>
             <p><span id="eq:modelcoprob"><span
-            class="math display"><em>P</em><sub><em>i</em>, <em>j</em></sub>(<em>x</em>,<em>y</em>) = <em>P</em><sub><em>i</em></sub>(<em>x</em>,<em>y</em>)<em>P</em><sub><em>j</em></sub>(<em>x</em>,<em>y</em>)<em>γ</em>.   (5)</span></span></p>
+            class="math display"><em>P</em><sub><em>i</em>, <em>j</em></sub>(<em>x</em>,<em>y</em>) = <em>P</em><sub><em>i</em></sub>(<em>x</em>,<em>y</em>)<em>P</em><sub><em>j</em></sub>(<em>x</em>,<em>y</em>)<em>γ</em>.   (6)</span></span></p>
             <p>When <span class="math inline"><em>γ</em> &gt; 1</span>,
             the geographic distributions of both taxa are positively
             associated, which implies that the occurrence of one taxon
@@ -1371,7 +1444,7 @@ probabilistic networks</div>
             (2023)</span>). The co-occurrence of both taxa is the result
             of a Bernoulli trial</p>
             <p><span id="eq:modelco"><span
-            class="math display"><em>C</em> ∼ <em>B</em><em>e</em><em>r</em><em>n</em><em>o</em><em>u</em><em>l</em><em>l</em><em>i</em>(<em>P</em><sub><em>i</em>, <em>j</em></sub>(<em>x</em>,<em>y</em>)).   (6)</span></span></p>
+            class="math display"><em>C</em> ∼ <em>B</em><em>e</em><em>r</em><em>n</em><em>o</em><em>u</em><em>l</em><em>l</em><em>i</em>(<em>P</em><sub><em>i</em>, <em>j</em></sub>(<em>x</em>,<em>y</em>)).   (7)</span></span></p>
             <p>Second, the probability of interaction given
             co-occurrence can be made temporally explicit by modeling it
             as a Poisson process with rate <span
@@ -1383,7 +1456,7 @@ probabilistic networks</div>
             co-occurring taxa interact during a time period <span
             class="math inline"><em>t</em><sub>0</sub></span> is:</p>
             <p><span id="eq:modelrate"><span
-            class="math display"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>C</em>=1) = 1 − <em>e</em><sup>−<em>λ</em><em>t</em><sub>0</sub></sup>,   (7)</span></span></p>
+            class="math display"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>C</em>=1) = 1 − <em>e</em><sup>−<em>λ</em><em>t</em><sub>0</sub></sup>,   (8)</span></span></p>
             <p>which approaches <span class="math inline">1</span> when
             <span
             class="math inline"><em>t</em><sub>0</sub> → ∞</span>.</p>
@@ -1397,13 +1470,13 @@ probabilistic networks</div>
             class="math inline"><em>λ</em></span> parameter and generate
             new interaction data:</p>
             <p><span id="eq:model"><span
-            class="math display"><em>I</em> ∼ Bernoulli(<em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>))   (8)</span></span>
+            class="math display"><em>I</em> ∼ Bernoulli(<em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>))   (9)</span></span>
             <span id="eq:modeleq"><span
-            class="math display"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>) = <em>P</em><sub><em>i</em></sub>(<em>x</em>,<em>y</em>)<em>P</em><sub><em>j</em></sub>(<em>x</em>,<em>y</em>)<em>γ</em>(1−<em>e</em><sup>−<em>λ</em><em>t</em><sub>0</sub></sup>)   (9)</span></span>
+            class="math display"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>) = <em>P</em><sub><em>i</em></sub>(<em>x</em>,<em>y</em>)<em>P</em><sub><em>j</em></sub>(<em>x</em>,<em>y</em>)<em>γ</em>(1−<em>e</em><sup>−<em>λ</em><em>t</em><sub>0</sub></sup>)   (10)</span></span>
             <span id="eq:modelgamma"><span
-            class="math display"><em>γ</em> ∼ Gamma(2,0.5)   (10)</span></span>
+            class="math display"><em>γ</em> ∼ Gamma(2,0.5)   (11)</span></span>
             <span id="eq:modellambda"><span
-            class="math display"><em>λ</em> ∼ Exponential(2)   (11)</span></span></p>
+            class="math display"><em>λ</em> ∼ Exponential(2)   (12)</span></span></p>
             <p>This simple model can be customized in many ways, e.g. by
             linking <span class="math inline"><em>λ</em></span> with
             given environmental variables or by explicitly modeling
@@ -1484,7 +1557,7 @@ probabilistic networks</div>
             class="math inline"><em>N</em><sub>0</sub></span> is given
             by:</p>
             <p><span id="eq:binary"><span
-            class="math display"><em>P</em><sub><em>N</em><sub>0</sub></sub>(<em>i</em>→<em>j</em>) = 1 − (1−<em>P</em><sub><em>N</em><sub>1</sub></sub>(<em>i</em>→<em>j</em>)) × (1−<em>P</em><sub><em>N</em><sub>2</sub></sub>(<em>i</em>→<em>j</em>)).   (12)</span></span></p>
+            class="math display"><em>P</em><sub><em>N</em><sub>0</sub></sub>(<em>i</em>→<em>j</em>) = 1 − (1−<em>P</em><sub><em>N</em><sub>1</sub></sub>(<em>i</em>→<em>j</em>)) × (1−<em>P</em><sub><em>N</em><sub>2</sub></sub>(<em>i</em>→<em>j</em>)).   (13)</span></span></p>
             <p>Because of its larger area, the probability that the two
             taxa interact in <span
             class="math inline"><em>N</em><sub>0</sub></span> is higher
@@ -1547,7 +1620,7 @@ probabilistic networks</div>
             and time is always lower or equal to the probability of
             their potential interaction:</p>
             <p><span id="eq:switch"><span
-            class="math display"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>A</em>,<em>t</em>,<em>C</em>,<em>Ω</em>) ≤ <em>P</em><sub><em>M</em></sub>(<em>i</em>→<em>j</em>).   (13)</span></span></p>
+            class="math display"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>A</em>,<em>t</em>,<em>C</em>,<em>Ω</em>) ≤ <em>P</em><sub><em>M</em></sub>(<em>i</em>→<em>j</em>).   (14)</span></span></p>
             <p>Moreover, the probability that two taxa have the
             biological capacity to interact must be higher than the
             probability that they will ever interact because they might
@@ -1557,7 +1630,7 @@ probabilistic networks</div>
             lower than the probability of potential interaction,
             i.e. </p>
             <p><span id="eq:all"><span
-            class="math display">∫<sub><em>Ω</em></sub>∫<sub><em>A</em></sub>∫<sub><em>t</em></sub><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>A</em>,<em>t</em>,<em>Ω</em>)<em>d</em><em>t</em><em>d</em><em>A</em><em>d</em><em>Ω</em> ≤ <em>P</em><sub><em>M</em></sub>(<em>i</em>→<em>j</em>).   (14)</span></span></p>
+            class="math display">∫<sub><em>Ω</em></sub>∫<sub><em>A</em></sub>∫<sub><em>t</em></sub><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>A</em>,<em>t</em>,<em>Ω</em>)<em>d</em><em>t</em><em>d</em><em>A</em><em>d</em><em>Ω</em> ≤ <em>P</em><sub><em>M</em></sub>(<em>i</em>→<em>j</em>).   (15)</span></span></p>
             <h1 id="conclusion">Conclusion</h1>
             <p>In this contribution, we underline the importance of
             network metadata for adequately interpreting and
