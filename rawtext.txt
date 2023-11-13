@@ -458,16 +458,18 @@ interactions along with the empirical data on observed interactions.
 
 # Properties of probabilistic networks
 
-Probabilistic local networks and metawebs differ in the type of
-interaction represented by their edges (i.e., local or potential
-interactions) and in the conditional variables upon which their values
-depend. These differences are significant as they influence the
-characteristics of probabilistic networks, particularly when they are
-applied to answer critical ecological questions. Neglecting to consider
-these differences may result in misleading results and interpretation
-errors when analyzing the properties of probabilistic networks. Here we
-compare the characteristics of local networks and metawebs through the
-presentation of four common applications of probabilistic interactions.
+Probabilistic local networks and metawebs differ in their type of
+interactions (i.e., local or potential) and in the conditional variables
+upon which interaction values depend. These differences are significant
+as they influence the characteristics of probabilistic networks.
+Neglecting to consider them may result in misleading results and
+interpretation errors when analyzing the properties of probabilistic
+networks, which could be particularly problematic when addressing
+crucial ecological questions about networks. Here we compare the
+characteristics of local networks and metawebs through the presentation
+of four common applications of probabilistic interactions.
+
+## Host-parasite network data
 
 We use the collection of tripartite host-parasite networks sampled
 across Europe, created by @Kopelke2017FooStra, in most of our case
@@ -476,16 +478,38 @@ between willows (52 species), willow-galling sawflies (96 species), and
 their parasitoids (126 species). Given its replicated networks spanning
 large spatiotemporal scales, this dataset is well-suited for analyzing a
 variety of ecological hypotheses and processes. Out of a total of 374
-local networks, we retained those containing a minimum of 5 species,
+local networks, we retained those containing at least 5 species,
 resulting in a set of 233 georeferenced local networks. We built a
 binary metaweb by aggregating all local interactions, which gave us a
-regional metaweb composed of 274 nodes and 1080 interactions. In the
-first two panels of fig. **¿fig:accumulation?**, we show how the
-dissimilarity of interactions between common species ($\beta_{OS}$) and
-the dissimilarity in species composition ($\beta_{S}$ between the
-metaweb and aggregated local networks (@Poisot2012Dissimilaritya) vary
-with the number of sampled local networks, highlighting the differences
-in both species and interactions between these two types of networks.
+regional metaweb composed of 274 species and 1080 interactions. In the
+first two panels of fig. 1, we show how the dissimilarity of
+interactions between common species ($\beta_{OS}$) and the dissimilarity
+in species composition ($\beta_{S}$) between the metaweb and aggregated
+local networks (@Poisot2012Dissimilaritya) vary with the number of
+sampled local networks. This shows that networks of local interactions
+are highly dissimilar from the metaweb, both in terms of species and
+interactions, especially when only a limited number of sites has been
+sampled.
+
+![Figure 1: **Network accumulation curves.** (a) Dissimilarity of
+interactions between common species and (b) dissimilarity in species
+composition between aggregated local networks and the binary regional
+metaweb. Aggregated local networks were obtained by sequentially and
+randomly selecting a number of binary local networks and aggregating
+both their species and interactions. In both panels, the colored line
+represents the median dissimilarity across simulations and the grey
+areas cover the 50% and 95% percentile intervals. (c) Scaling of the
+number of links and (d) scaling of connectance with the number of
+sampled binary and probabilistic local networks. For a better comparison
+with binary networks, local probabilistic networks were derived from the
+probabilistic metaweb with a false positive and false negative rates of
+zero. We used a fixed value of $p$ (the local probability of interaction
+among potentially interacting species) for each local network, which
+varied across curves. Aggregated probabilistic local networks were
+obtained by sequentially and randomly selecting a number of
+probabilistic local networks and aggregating both their species and
+interactions (with the value of $p$ adjusting according to
+eq. 5.).](figures/network_accumulation.png){#fig:accumulation}
 
 We converted these binary networks into probabilistic ones using models
 based on simple assumptions. Our models do not aim to precisely estimate
@@ -496,33 +520,62 @@ created two probabilistic metawebs by employing constant false positive
 and false negative rates for all potential interactions. In the first
 metaweb, we set both false positive and false negative rates to zero to
 prevent artificially inflating the total number of links, enabling a
-more accurate comparison with binary networks. In the second, we
-introduced a 5% false positive rate to account for spurious interactions
-and a 10% false negative rate to capture the elevated occurrence of
-false negatives in ecological networks (@Catchen2023Missinga). Observed
+more accurate comparison with binary networks. This gave us a
+probability of potential interaction of 1 when at least one interaction
+has been observed and of 0 in the absence of any observed interaction
+between a given pair of species. In the second metaweb, we introduced a
+5% false positive rate to account for spurious interactions and a 10%
+false negative rate to capture the elevated occurrence of false
+negatives in ecological networks (@Catchen2023Missinga). Observed
 potential interactions were thus given a probability of 95%, whereas
 unobserved ones were assigned a probability of 10%.
 
-To create probabilistic local networks, we began by recognizing that
-local interactions must initially be biologically feasible before
-occurring at a specific time and space. A local interaction
-$P_{N}(i \rightarrow j)$ can thus be expressed as the product of the
+To build probabilistic local networks, we first recognize that local
+interactions must initially be biologically feasible before occurring at
+a specific time and space. A local probability of interaction
+$P_{N}(i \rightarrow j)$ can be expressed as the product of the
 probability of local interaction given that the two taxa can potentially
 interact $P_{N}(i \rightarrow j | M_{i \rightarrow j} = 1)$, which we
-denote as $p$ for the sake of simplicity, with the probability of
+denote as $p$ for the sake of simplicity, with their probability of
 potential interaction $P_{M}(i \rightarrow j)$:
 
 [$$P_{N}(i \rightarrow j) = P_{N}(i \rightarrow j | M_{i \rightarrow j} = 1)
 \times P_{M}(i \rightarrow j).\qquad{(4)}$$]{#eq:local_meta}
 
-We derived probabilistic local networks from our probabilistic metawebs
-by applying constant values of $p$ across interactions. Lower values of
-$p$ indicate infrequent local occurrences of feasible interactions,
-intermediate values around 50% suggest considerable spatiotemporal
-variability, while higher values indicate that potential interactions
-are nearly always realized.
+We built the probabilistic local networks from the binary ones by using
+the probabilistic metawebs and a constant value of $p$ across
+interactions. Lower values of $p$ indicate that feasible interactions
+rarely occur locally, intermediate values around 50% suggest
+considerable spatiotemporal variability, while higher values indicate
+that potential interactions are nearly always realized. Following eq. 4,
+the local probabilities of interaction between a given pair of taxa
+consistently remained equal to or below their probability of potential
+interaction.
 
-![](figures/network_accumulation.png){#fig:accumulation}
+In the last two panels of fig. 1, we show how the aggregated number of
+links and connectance (i.e., the proportion of all of the $S^2$ possible
+links that are realized, where $S$ represents species richness) scale
+with the number of sampled local probabilistic networks, according to
+different values of $p$. When aggregating local probabilistic networks,
+the constancy of the probability of potential interaction across the
+entire study area means that any rise in the probability of local
+interaction is solely attributable to an increase in $p$. The
+probability $p_{1,2}$ of local interaction among potentially interacting
+species in an aggregated network $N_{1,2}$ is obtained by:
+
+[$$p_{1,2} = 1 - (1 - p_1) \times (1 - p_2),\qquad{(5)}$$]{#eq:aggregate}
+
+where $p_1$ and $p_2$ are the probabilities of local interaction among
+two potentially interacting species in the subnetworks $N_1$ and $N_2$,
+respectively.
+
+By comparing the scaling relationships observed in binary and
+probabilistic networks, fig. 1 illustrates that high values of $p$ lead
+to systematic overestimations in the number of links and connectance,
+especially when $p = 1$ (corresponding to the scenario where local
+probabilities of interactions are equivalent to the probabilities of
+potential interactions). However, these biases tend to diminish as the
+number of sampled networks increases.
 
 ## Taxonomic scaling of interactions
 
@@ -552,7 +605,7 @@ probability that at least one species from genus $A$ interact with at
 least one species from genus $B$ as follows:
 
 [$$P(A \rightarrow B) = 1 - \prod_{i = 1}^{n_A}\prod_{j = 1}^{n_B}(1 - P(A_i
-\rightarrow B_j)),\qquad{(5)}$$]{#eq:taxo}
+\rightarrow B_j)),\qquad{(6)}$$]{#eq:taxo}
 
 where $A_i$ and $B_j$ are the species of the corresponding genus.
 Knowing that two species interact (i.e., $P(A_i \rightarrow B_j) = 1$)
@@ -683,7 +736,7 @@ their respective probabilities of occurrence $P_i(x, y)$ and $P_j(x, y)$
 and the strength of association $\gamma$ between their occurrence and
 co-occurrence (@Cazelles2016Theorya):
 
-[$$P_{i, j}(x, y) = P_i(x, y) P_j(x, y) \gamma.\qquad{(6)}$$]{#eq:modelcoprob}
+[$$P_{i, j}(x, y) = P_i(x, y) P_j(x, y) \gamma.\qquad{(7)}$$]{#eq:modelcoprob}
 
 When $\gamma > 1$, the geographic distributions of both taxa are
 positively associated, which implies that the occurrence of one taxon
@@ -691,7 +744,7 @@ increases the probability of occurrence of the other. In empirical
 networks, $\gamma > 1$ for most species pairs (@Catchen2023Missinga).
 The co-occurrence of both taxa is the result of a Bernoulli trial
 
-[$$C \sim Bernoulli(P_{i, j}(x, y)).\qquad{(7)}$$]{#eq:modelco}
+[$$C \sim Bernoulli(P_{i, j}(x, y)).\qquad{(8)}$$]{#eq:modelco}
 
 Second, the probability of interaction given co-occurrence can be made
 temporally explicit by modeling it as a Poisson process with rate
@@ -701,7 +754,7 @@ be estimated using prior data on interaction strengths, if available.
 Specifically, the probability that two co-occurring taxa interact during
 a time period $t_0$ is:
 
-[$$P_N(i \rightarrow j | C = 1) = 1-e^{-\lambda t_0},\qquad{(8)}$$]{#eq:modelrate}
+[$$P_N(i \rightarrow j | C = 1) = 1-e^{-\lambda t_0},\qquad{(9)}$$]{#eq:modelrate}
 
 which approaches $1$ when $t_0 \to \infty$.
 
@@ -711,12 +764,12 @@ inference model can thus be built from the previous equations to
 estimate the value of the $\lambda$ parameter and generate new
 interaction data:
 
-[$$I \sim \text{Bernoulli}(P_{N}(i \rightarrow j))\qquad{(9)}$$]{#eq:model}
+[$$I \sim \text{Bernoulli}(P_{N}(i \rightarrow j))\qquad{(10)}$$]{#eq:model}
 [$$P_{N}(i
-\rightarrow j) = P_i(x, y) P_j(x, y) \gamma (1-e^{-\lambda t_0})\qquad{(10)}$$]{#eq:modeleq}
-[$$\gamma \sim \text{Gamma}(2,0.5)\qquad{(11)}$$]{#eq:modelgamma}
+\rightarrow j) = P_i(x, y) P_j(x, y) \gamma (1-e^{-\lambda t_0})\qquad{(11)}$$]{#eq:modeleq}
+[$$\gamma \sim \text{Gamma}(2,0.5)\qquad{(12)}$$]{#eq:modelgamma}
 [$$\lambda \sim
-\text{Exponential}(2)\qquad{(12)}$$]{#eq:modellambda}
+\text{Exponential}(2)\qquad{(13)}$$]{#eq:modellambda}
 
 This simple model can be customized in many ways, e.g. by linking
 $\lambda$ with given environmental variables or by explicitly modeling
@@ -774,7 +827,7 @@ because of spatial auto-correlation), the probability that two taxa $i$
 and $j$ interact in $N_0$ is given by:
 
 [$$P_{N_0}(i \rightarrow j) = 1 - (1 - P_{N_1}(i \rightarrow j)) \times (1 -
-P_{N_2}(i \rightarrow j)).\qquad{(13)}$$]{#eq:binary}
+P_{N_2}(i \rightarrow j)).\qquad{(14)}$$]{#eq:binary}
 
 Because of its larger area, the probability that the two taxa interact
 in $N_0$ is higher than in $N_1$ and $N_2$. When sampling binary
@@ -823,7 +876,7 @@ interact at a given location and time is always lower or equal to the
 probability of their potential interaction:
 
 [$$P_{N}(i \rightarrow j | A, t, C, \Omega) \le
-P_M(i \rightarrow j).\qquad{(14)}$$]{#eq:switch}
+P_M(i \rightarrow j).\qquad{(15)}$$]{#eq:switch}
 
 Moreover, the probability that two taxa have the biological capacity to
 interact must be higher than the probability that they will ever
@@ -833,7 +886,7 @@ all spatial, temporal, and environmental conditions must be lower than
 the probability of potential interaction, i.e. 
 
 [$$\int_\Omega\int_A\int_t P_{N}(i \rightarrow j | A, t, \Omega) dt dA d\Omega
-\leq P_M(i \rightarrow j).\qquad{(15)}$$]{#eq:all}
+\leq P_M(i \rightarrow j).\qquad{(16)}$$]{#eq:all}
 
 # Conclusion
 
