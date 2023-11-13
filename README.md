@@ -400,13 +400,64 @@ interactions.
 
 # Properties of probabilistic networks 
 
-The differences in the mathematical formulations of local and potential
-interactions can affect their statistical properties when applied to key
-ecological questions. These disparities must therefore be taken into account
-when analyzing probabilistic interaction data to prevent misleading results and
-minimize interpretation errors. Here we show four common applications of
-probabilistic interactions and compare the characteristics of local networks and
-metawebs using simulated and empirical data. 
+Probabilistic local networks and metawebs differ in the type of interaction
+represented by their edges (i.e., local or potential interactions) and in the
+conditional variables upon which their values depend. These differences are
+significant as they influence the characteristics of probabilistic networks,
+particularly when they are applied to answer critical ecological questions.
+Neglecting to consider these differences may result in misleading results and
+interpretation errors when analyzing the properties of probabilistic networks.
+Here we compare the characteristics of local networks and metawebs through the
+presentation of four common applications of probabilistic interactions. 
+
+We use the collection of tripartite host-parasite networks sampled across
+Europe, created by @Kopelke2017FooStra, in most of our case studies. This
+dataset contains well-resolved binary local interactions between willows (52
+species), willow-galling sawflies (96 species), and their parasitoids (126
+species). Given its replicated networks spanning large spatiotemporal scales,
+this dataset is well-suited for analyzing a variety of ecological hypotheses and
+processes. Out of a total of 374 local networks, we retained those containing a
+minimum of 5 species, resulting in a set of 233 georeferenced local networks. We
+built a binary metaweb by aggregating all local interactions, which gave us a
+regional metaweb composed of 274 nodes and 1080 interactions. In the first two
+panels of @fig:accumulation, we show how the dissimilarity of interactions
+between common species ($\beta_{OS}$) and the dissimilarity in species
+composition ($\beta_{S}$ between the metaweb and aggregated local networks
+(@Poisot2012Dissimilaritya) vary with the number of sampled local networks,
+highlighting the differences in both species and interactions between these two
+types of networks. 
+
+We converted these binary networks into probabilistic ones using models based on
+simple assumptions. Our models do not aim to precisely estimate the actual
+values of probabilistic interactions but rather to offer simplified networks as
+illustrative examples to underscore the differences between probabilistic local
+networks and metawebs. We created two probabilistic metawebs by employing
+constant false positive and false negative rates for all potential interactions.
+In the first metaweb, we set both false positive and false negative rates to
+zero to prevent artificially inflating the total number of links, enabling a
+more accurate comparison with binary networks. In the second, we introduced a 5%
+false positive rate to account for spurious interactions and a 10% false
+negative rate to capture the elevated occurrence of false negatives in
+ecological networks (@Catchen2023Missinga). Observed potential interactions were
+thus given a probability of 95%, whereas unobserved ones were assigned a
+probability of 10%.
+
+To create probabilistic local networks, we began by recognizing that local
+interactions must initially be biologically feasible before occurring at a
+specific time and space. A local interaction $P_{N}(i \rightarrow j)$ can thus
+be expressed as the product of the probability of local interaction given that
+the two taxa can potentially interact $P_{N}(i \rightarrow j | M_{i \rightarrow
+j} = 1)$, which we denote as $p$ for the sake of simplicity, with the
+probability of potential interaction $P_{M}(i \rightarrow j)$: 
+
+$$P_{N}(i \rightarrow j) = P_{N}(i \rightarrow j | M_{i \rightarrow j} = 1)
+\times P_{M}(i \rightarrow j).$$ {#eq:local_meta}
+
+We derived probabilistic local networks from our probabilistic metawebs by
+applying constant values of $p$ across interactions. Lower values of $p$
+indicate infrequent local occurrences of feasible interactions, intermediate
+values around 50% suggest considerable spatiotemporal variability, while higher
+values indicate that potential interactions are nearly always realized.
 
 ![](figures/network_accumulation.png){#fig:accumulation}
 
