@@ -1507,110 +1507,153 @@ probabilistic networks</div>
             <h2
             id="box-1-a-spatiotemporally-explicit-model-of-interactions">Box
             1: A spatiotemporally explicit model of interactions</h2>
-            <p>Predicting local networks across time and space is an
-            important goal of network ecology (<span class="citation"
+            <p>Predicting local networks across time and space is a
+            pivotal goal of network ecology (<span class="citation"
             data-cites="Strydom2021Roadmapa">Strydom <em>et al.</em>
-            (2021)</span>). Indeed, in a context of scarcity of
-            interaction data (<span class="citation"
-            data-cites="Jordano2016Samplingb">Jordano (2016)</span>),
-            ecologists must rely on predictive models to reconstruct
-            networks at fine spatial and temporal scales. For example,
-            local ecological networks could be reconstructed using
-            real-time biomonitoring data and adequate numerical models
+            (2021)</span>). In a context of scarcity of interaction data
             (<span class="citation"
+            data-cites="Jordano2016Samplingb">Jordano (2016)</span>),
+            ecologists must resort to predictive models for
+            reconstructing networks at fine spatial and temporal scales.
+            For instance, real-time biomonitoring data coupled with
+            appropriate numerical models (<span class="citation"
             data-cites="Bohan2017Nextgenerationa">Bohan <em>et al.</em>
-            (2017)</span>), which could pave the way for fine-scale
-            studies of ecosystem functioning and dynamics. Besides
-            predictive models, statistical models can also be built to
-            describe parameters of interest, such as probabilities of
-            interactions. In that case, parameter values provide
-            valuable ecological information in their own rights.
-            Different types of models (e.g., Bayesian and machine
-            learning models) of ecological interactions have been built
-            for predictive and descriptive purposes (<span
-            class="citation" data-cites="Strydom2021Roadmapa">Strydom
-            <em>et al.</em> (2021)</span>). Representing interactions
-            probabilistically reflects the uncertainty of these models,
-            which is usually represented in terms of probability
-            distributions. Here we show how to build a simple generative
-            mechanistic model of probabilistic interactions that takes
-            into account their inherent spatiotemporal variability,
-            i.e. a spatiotemporally-explicit model. Our model is not
-            suitable for potential interactions, which are
-            scale-independent. Rather, it could prove useful for
+            (2017)</span>) can be employed to reconstruct local
+            ecological networks, opening avenues for in-depth studies on
+            local ecosystem functioning and dynamics. Apart from their
+            predictive applications, statistical models can also be
+            crafted for descriptive purposes, elucidating key parameters
+            of interest such as probabilities of interactions. In such
+            instances, the parameter values themselves offer valuable
+            ecological insights. Various types of models (e.g., Bayesian
+            and machine learning models) have been used for both
+            predictive and descriptive purposes in the realm of
+            ecological interactions (<span class="citation"
+            data-cites="Strydom2021Roadmapa">Strydom <em>et al.</em>
+            (2021)</span>). The probabilistic representation of
+            interactions acknowledges the inherent uncertainty in these
+            models, typically expressed through probability
+            distributions. We introduce and develop a simple generative
+            mechanistic model for probabilistic local interactions that
+            takes into consideration their spatiotemporal variability
+            (i.e. a spatiotemporally explicit model of local
+            interactions). It is essential to note that our model is not
+            designed for potential interactions, which are
+            scale-independent. Rather, it could prove valuable for
             predicting local interactions across time and space by
-            generating new interaction data after parameter
+            generating new interaction data following parameter
             inference.</p>
-            <p>As stated by eq. 1, the probability that two taxa <span
-            class="math inline"><em>i</em></span> and <span
-            class="math inline"><em>j</em></span> interact at a given
+            <p>As indicated by eq. 1, the probability that two taxa
+            <span class="math inline"><em>i</em></span> and <span
+            class="math inline"><em>j</em></span> interact at a specific
             location <span
-            class="math inline">(<em>x</em>,<em>y</em>)</span> is given
-            by the product of their probability of interaction given
-            co-occurrence and their probability of co-occurrence. First,
-            their probability of co-occurrence is given by their
-            respective probabilities of occurrence <span
-            class="math inline"><em>P</em><sub><em>i</em></sub>(<em>x</em>,<em>y</em>)</span>
+            class="math inline">(<em>x</em>,<em>y</em>,<em>z</em>)</span>
+            is determined by the product of their probability of
+            interaction given co-occurrence and their probability of
+            co-occurrence. First, their co-occurrence probability can be
+            calculated using their individual occurrence probabilities
+            <span
+            class="math inline"><em>P</em><sub><em>i</em></sub>(<em>x</em>,<em>y</em>,<em>z</em>)</span>
             and <span
-            class="math inline"><em>P</em><sub><em>j</em></sub>(<em>x</em>,<em>y</em>)</span>
-            and the strength of association <span
+            class="math inline"><em>P</em><sub><em>j</em></sub>(<em>x</em>,<em>y</em>,<em>z</em>)</span>,
+            along with the strength of association <span
             class="math inline"><em>γ</em></span> between their
-            occurrence and co-occurrence (<span class="citation"
+            occurrences and co-occurrence (<span class="citation"
             data-cites="Cazelles2016Theorya">Cazelles <em>et al.</em>
             (2016)</span>):</p>
             <p><span id="eq:modelcoprob"><span
-            class="math display"><em>P</em><sub><em>i</em>, <em>j</em></sub>(<em>x</em>,<em>y</em>) = <em>P</em><sub><em>i</em></sub>(<em>x</em>,<em>y</em>)<em>P</em><sub><em>j</em></sub>(<em>x</em>,<em>y</em>)<em>γ</em>.   (7)</span></span></p>
+            class="math display"><em>P</em><sub><em>i</em>, <em>j</em></sub>(<em>x</em>,<em>y</em>,<em>z</em>) = <em>P</em><sub><em>i</em></sub>(<em>x</em>,<em>y</em>,<em>z</em>)<em>P</em><sub><em>j</em></sub>(<em>x</em>,<em>y</em>,<em>z</em>)<em>γ</em>.   (7)</span></span></p>
             <p>When <span class="math inline"><em>γ</em> &gt; 1</span>,
-            the geographic distributions of both taxa are positively
-            associated, which implies that the occurrence of one taxon
-            increases the probability of occurrence of the other. In
-            empirical networks, <span
-            class="math inline"><em>γ</em> &gt; 1</span> for most
-            species pairs (<span class="citation"
+            it signifies a positive association in the geographic
+            distributions of both taxa, indicating that the presence of
+            one taxon enhances the probability of occurrence of the
+            other. In empirical networks, <span
+            class="math inline"><em>γ</em> &gt; 1</span> holds true for
+            the majority of species pairs (<span class="citation"
             data-cites="Catchen2023Missinga">Catchen <em>et al.</em>
-            (2023)</span>). The co-occurrence of both taxa is the result
-            of a Bernoulli trial</p>
+            (2023)</span>). The co-occurrence of both taxa is modeled as
+            the outcome of a Bernoulli trial</p>
             <p><span id="eq:modelco"><span
-            class="math display"><em>C</em> ∼ <em>B</em><em>e</em><em>r</em><em>n</em><em>o</em><em>u</em><em>l</em><em>l</em><em>i</em>(<em>P</em><sub><em>i</em>, <em>j</em></sub>(<em>x</em>,<em>y</em>)).   (8)</span></span></p>
-            <p>Second, the probability of interaction given
-            co-occurrence can be made temporally explicit by modeling it
-            as a Poisson process with rate <span
+            class="math display"><em>C</em> ∼ <em>B</em><em>e</em><em>r</em><em>n</em><em>o</em><em>u</em><em>l</em><em>l</em><em>i</em>(<em>P</em><sub><em>i</em>, <em>j</em></sub>(<em>x</em>,<em>y</em>,<em>z</em>)).   (8)</span></span></p>
+            <p>Next, the probability of interaction given co-occurrence
+            can be made temporally explicit by modeling it as a Poisson
+            process with rate parameter <span
             class="math inline"><em>λ</em></span>. This parameter
-            corresponds to the expected frequency of interaction between
-            both taxa in a given time period and its value can be
-            estimated using prior data on interaction strengths, if
-            available. Specifically, the probability that two
-            co-occurring taxa interact during a time period <span
-            class="math inline"><em>t</em><sub>0</sub></span> is:</p>
+            represents the expected frequency of interaction between the
+            taxa within a defined time interval and can be estimated
+            using prior data on interaction strengths, when accessible.
+            The probability that two co-occurring taxa engage in an
+            interaction during a time period <span
+            class="math inline"><em>t</em><sub>0</sub></span> is given
+            by:</p>
             <p><span id="eq:modelrate"><span
             class="math display"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>|<em>C</em>=1) = 1 − <em>e</em><sup>−<em>λ</em><em>t</em><sub>0</sub></sup>,   (9)</span></span></p>
-            <p>which approaches <span class="math inline">1</span> when
-            <span
-            class="math inline"><em>t</em><sub>0</sub> → ∞</span>.</p>
-            <p>The realization of the interaction between <span
+            <p>which tends toward <span class="math inline">1</span> as
+            <span class="math inline"><em>t</em><sub>0</sub> → ∞</span>.
+            It is important to note that the units of <span
+            class="math inline"><em>λ</em></span> and <span
+            class="math inline"><em>t</em><sub>0</sub></span> are
+            complementary. For instance, if the duration <span
+            class="math inline"><em>t</em><sub>0</sub></span> is
+            measured in months, <span
+            class="math inline"><em>λ</em></span> denote the expected
+            number of interactions per month.</p>
+            <p>The occurrence of an interaction between <span
             class="math inline"><em>i</em></span> and <span
-            class="math inline"><em>j</em></span> is the result of a
-            Bernoulli trial with probability <span
+            class="math inline"><em>j</em></span> can be modeled as a
+            Bernoulli trial with a probability of <span
             class="math inline"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>)</span>.
-            A Bayesian inference model can thus be built from the
-            previous equations to estimate the value of the <span
-            class="math inline"><em>λ</em></span> parameter and generate
-            new interaction data:</p>
+            Consequently, a Bayesian inference model can be built based
+            on the preceding equations to estimate the value of the
+            <span class="math inline"><em>λ</em></span> and <span
+            class="math inline"><em>γ</em></span> parameters and
+            generate novel interaction data:</p>
             <p><span id="eq:model"><span
             class="math display"><em>I</em> ∼ Bernoulli(<em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>))   (10)</span></span>
             <span id="eq:modeleq"><span
-            class="math display"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>) = <em>P</em><sub><em>i</em></sub>(<em>x</em>,<em>y</em>)<em>P</em><sub><em>j</em></sub>(<em>x</em>,<em>y</em>)<em>γ</em>(1−<em>e</em><sup>−<em>λ</em><em>t</em><sub>0</sub></sup>)   (11)</span></span>
-            <span id="eq:modelgamma"><span
-            class="math display"><em>γ</em> ∼ Gamma(2,0.5)   (12)</span></span>
-            <span id="eq:modellambda"><span
+            class="math display"><em>P</em><sub><em>N</em></sub>(<em>i</em>→<em>j</em>) = <em>P</em><sub><em>i</em></sub>(<em>x</em>,<em>y</em>,<em>z</em>)<em>P</em><sub><em>j</em></sub>(<em>x</em>,<em>y</em>,<em>z</em>)<em>γ</em>(1−<em>e</em><sup>−<em>λ</em><em>t</em><sub>0</sub></sup>)   (11)</span></span></p>
+            <p><span id="eq:modelgamma"><span
+            class="math display"><em>γ</em> ∼ Gamma(2,0.5)   (12)</span></span></p>
+            <p><span id="eq:modellambda"><span
             class="math display"><em>λ</em> ∼ Exponential(2)   (13)</span></span></p>
-            <p>This simple model can be customized in many ways, e.g. by
-            linking <span class="math inline"><em>λ</em></span> with
-            given environmental variables or by explicitly modeling
-            observation errors (i.e., the probability of false negatives
-            and false positives).</p>
-            <p><img src="figures/spatiotemporal_model.png"
-            id="fig:spatiotemporal" /></p>
+            <p>In fig. 3, we show the variation in the probability of
+            interaction under different parameter values. In the right
+            panel, we notice that, irrespective of the interaction rate
+            <span class="math inline"><em>λ</em></span>, the probability
+            of interaction converges toward an asymptote determined by
+            the co-occurrence <span
+            class="math inline"><em>P</em><sub><em>i</em>, <em>j</em></sub>(<em>x</em>,<em>y</em>,<em>z</em>)</span>
+            (eq. 7). This model can be customized in different ways,
+            such as by linking <span
+            class="math inline"><em>λ</em></span> with specific
+            environmental variables or explicitly incorporating
+            observation errors (i.e., the probabilities of false
+            negatives and false positives).</p>
+            <figure>
+            <img src="figures/spatiotemporal_model.png"
+            id="fig:spatiotemporal"
+            alt="Figure 3: Parameters of the spatiotemporally explicit model of interactions. (a) Probability of local interaction given by the process model (eq. 11) under different values of \lambda and \gamma, with t_0 = 1. The parameter values used in the right panel are denoted by the white stars. (b) Scaling of the probability of interaction with the duration parameter t_0 in eq. 11, for different values of \lambda and \gamma. In both panels, the individual probabilities of occurrence P_i(x, y, z) and P_j(x, y, z) are set to a constant value of 0.5." />
+            <figcaption aria-hidden="true">Figure 3: <strong>Parameters
+            of the spatiotemporally explicit model of
+            interactions.</strong> (a) Probability of local interaction
+            given by the process model (eq. 11) under different values
+            of <span class="math inline"><em>λ</em></span> and <span
+            class="math inline"><em>γ</em></span>, with <span
+            class="math inline"><em>t</em><sub>0</sub> = 1</span>. The
+            parameter values used in the right panel are denoted by the
+            white stars. (b) Scaling of the probability of interaction
+            with the duration parameter <span
+            class="math inline"><em>t</em><sub>0</sub></span> in eq. 11,
+            for different values of <span
+            class="math inline"><em>λ</em></span> and <span
+            class="math inline"><em>γ</em></span>. In both panels, the
+            individual probabilities of occurrence <span
+            class="math inline"><em>P</em><sub><em>i</em></sub>(<em>x</em>,<em>y</em>,<em>z</em>)</span>
+            and <span
+            class="math inline"><em>P</em><sub><em>j</em></sub>(<em>x</em>,<em>y</em>,<em>z</em>)</span>
+            are set to a constant value of <span
+            class="math inline">0.5</span>.</figcaption>
+            </figure>
             <h2 id="sampling-binary-networks">Sampling binary
             networks</h2>
             <p>Probabilistic networks can be used to predict binary
