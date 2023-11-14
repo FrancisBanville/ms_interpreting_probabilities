@@ -656,70 +656,92 @@ values of $p$ remaining at their maximum value of $1$ following @eq:aggregate.
 
 ## Box 1: A spatiotemporally explicit model of interactions
 
-Predicting local networks across time and space is an important goal of network
-ecology (@Strydom2021Roadmapa). Indeed, in a context of scarcity of interaction
-data (@Jordano2016Samplingb), ecologists must rely on predictive models to
-reconstruct networks at fine spatial and temporal scales. For example, local
-ecological networks could be reconstructed using real-time biomonitoring data
-and adequate numerical models (@Bohan2017Nextgenerationa), which could pave the
-way for fine-scale studies of ecosystem functioning and dynamics. Besides
-predictive models, statistical models can also be built to describe parameters
-of interest, such as probabilities of interactions. In that case, parameter
-values provide valuable ecological information in their own rights. Different
-types of models (e.g., Bayesian and machine learning models) of ecological
-interactions have been built for predictive and descriptive purposes
-(@Strydom2021Roadmapa). Representing interactions probabilistically reflects the
-uncertainty of these models, which is usually represented in terms of
-probability distributions. Here we show how to build a simple generative
-mechanistic model of probabilistic interactions that takes into account their
-inherent spatiotemporal variability, i.e. a spatiotemporally-explicit model. Our
-model is not suitable for potential interactions, which are scale-independent.
-Rather, it could prove useful for predicting local interactions across time and
-space by generating new interaction data after parameter inference.
+Predicting local networks across time and space is a pivotal goal of network
+ecology (@Strydom2021Roadmapa). In a context of scarcity of interaction data
+(@Jordano2016Samplingb), ecologists must resort to predictive models for
+reconstructing networks at fine spatial and temporal scales. For instance,
+real-time biomonitoring data coupled with appropriate numerical models
+(@Bohan2017Nextgenerationa) can be employed to reconstruct local ecological
+networks, opening avenues for in-depth studies on local ecosystem functioning
+and dynamics. Apart from their predictive applications, statistical models can
+also be crafted for descriptive purposes, elucidating key parameters of interest
+such as probabilities of interactions. In such instances, the parameter values
+themselves offer valuable ecological insights. Various types of models (e.g.,
+Bayesian and machine learning models) have been used for both predictive and
+descriptive purposes in the realm of ecological interactions
+(@Strydom2021Roadmapa). The probabilistic representation of interactions
+acknowledges the inherent uncertainty in these models, typically expressed
+through probability distributions. We introduce and develop a simple generative
+mechanistic model for probabilistic local interactions that takes into
+consideration their spatiotemporal variability (i.e. a spatiotemporally explicit
+model of local interactions). It is essential to note that our model is not
+designed for potential interactions, which are scale-independent. Rather, it
+could prove valuable for predicting local interactions across time and space by
+generating new interaction data following parameter inference.
 
-As stated by @eq:co-occur, the probability that two taxa $i$ and $j$ interact at
-a given location $(x, y)$ is given by the product of their probability of
-interaction given co-occurrence and their probability of co-occurrence. First,
-their probability of co-occurrence is given by their respective probabilities of
-occurrence $P_i(x, y)$ and $P_j(x, y)$ and the strength of association $\gamma$
-between their occurrence and co-occurrence (@Cazelles2016Theorya): 
+As indicated by @eq:co-occur, the probability that two taxa $i$ and $j$ interact
+at a specific location $(x, y, z)$ is determined by the product of their
+probability of interaction given co-occurrence and their probability of
+co-occurrence. First, their co-occurrence probability can be calculated using
+their individual occurrence probabilities $P_i(x, y, z)$ and $P_j(x, y, z)$,
+along with the strength of association $\gamma$ between their occurrences and
+co-occurrence (@Cazelles2016Theorya): 
 
-$$P_{i, j}(x, y) = P_i(x, y) P_j(x, y) \gamma.$$ {#eq:modelcoprob}
+$$P_{i, j}(x, y, z) = P_i(x, y, z) P_j(x, y, z) \gamma.$$ {#eq:modelcoprob}
 
-When $\gamma > 1$, the geographic distributions of both taxa are positively
-associated, which implies that the occurrence of one taxon increases the
-probability of occurrence of the other. In empirical networks, $\gamma > 1$ for
-most species pairs (@Catchen2023Missinga). The co-occurrence of both taxa is the
-result of a Bernoulli trial
+When $\gamma > 1$, it signifies a positive association in the geographic
+distributions of both taxa, indicating that the presence of one taxon enhances
+the probability of occurrence of the other. In empirical networks, $\gamma > 1$
+holds true for the majority of species pairs (@Catchen2023Missinga). The
+co-occurrence of both taxa is modeled as the outcome of a Bernoulli trial
 
-$$C \sim Bernoulli(P_{i, j}(x, y)).$$ {#eq:modelco}
+$$C \sim Bernoulli(P_{i, j}(x, y, z)).$$ {#eq:modelco}
 
-Second, the probability of interaction given co-occurrence can be made
-temporally explicit by modeling it as a Poisson process with rate $\lambda$.
-This parameter corresponds to the expected frequency of interaction between both
-taxa in a given time period and its value can be estimated using prior data on
-interaction strengths, if available. Specifically, the probability that two
-co-occurring taxa interact during a time period $t_0$ is: 
+Next, the probability of interaction given co-occurrence can be made temporally
+explicit by modeling it as a Poisson process with rate parameter $\lambda$. This
+parameter represents the expected frequency of interaction between the taxa
+within a defined time interval and can be estimated using prior data on
+interaction strengths, when accessible. The probability that two co-occurring
+taxa engage in an interaction during a time period $t_0$ is given by:
 
 $$P_N(i \rightarrow j | C = 1) = 1-e^{-\lambda t_0},$$ {#eq:modelrate}
 
-which approaches $1$ when $t_0 \to \infty$. 
+which tends toward $1$ as $t_0 \to \infty$. It is important to note that the
+units of $\lambda$ and $t_0$ are complementary. For instance, if the duration
+$t_0$ is measured in months, $\lambda$ denote the expected number of
+interactions per month.
 
-The realization of the interaction between $i$ and $j$ is the result of a
-Bernoulli trial with probability $P_{N}(i \rightarrow j)$. A Bayesian inference
-model can thus be built from the previous equations to estimate the value of the
-$\lambda$ parameter and generate new interaction data:
+The occurrence of an interaction between $i$ and $j$ can be modeled as a
+Bernoulli trial with a probability of $P_{N}(i \rightarrow j)$. Consequently, a
+Bayesian inference model can be built based on the preceding equations to
+estimate the value of the $\lambda$ and $\gamma$ parameters and generate novel
+interaction data:
 
 $$I \sim \text{Bernoulli}(P_{N}(i \rightarrow j))$$ {#eq:model} $$P_{N}(i
-\rightarrow j) = P_i(x, y) P_j(x, y) \gamma (1-e^{-\lambda t_0})$$ {#eq:modeleq}
-$$\gamma \sim \text{Gamma}(2,0.5)$$ {#eq:modelgamma} $$\lambda \sim
-\text{Exponential}(2)$$ {#eq:modellambda}
+\rightarrow j) = P_i(x, y, z) P_j(x, y, z) \gamma (1-e^{-\lambda t_0})$$
+{#eq:modeleq}
 
-This simple model can be customized in many ways, e.g. by linking $\lambda$ with
-given environmental variables or by explicitly modeling observation errors
-(i.e., the probability of false negatives and false positives).
+$$\gamma \sim \text{Gamma}(2,0.5)$$ {#eq:modelgamma} 
 
-![](figures/spatiotemporal_model.png){#fig:spatiotemporal}
+$$\lambda \sim \text{Exponential}(2)$$ {#eq:modellambda}
+
+In @fig:spatiotemporal, we show the variation in the probability of interaction
+under different parameter values. In the right panel, we notice that,
+irrespective of the interaction rate $\lambda$, the probability of interaction
+converges toward an asymptote determined by the co-occurrence $P_{i, j}(x, y,
+z)$ (@eq:modelcoprob). This model can be customized in different ways, such as
+by linking $\lambda$ with specific environmental variables or explicitly
+incorporating observation errors (i.e., the probabilities of false negatives and
+false positives).
+
+![**Parameters of the spatiotemporally explicit model of interactions.** (a)
+Probability of local interaction given by the process model (@eq:modeleq) under
+different values of $\lambda$ and $\gamma$, with $t_0 = 1$. The parameter values
+used in the right panel are denoted by the white stars. (b) Scaling of the
+probability of interaction with the duration parameter $t_0$ in @eq:modeleq, for
+different values of $\lambda$ and $\gamma$. In both panels, the individual
+probabilities of occurrence $P_i(x, y, z)$ and $P_j(x, y, z)$ are set to a
+constant value of $0.5$.](figures/spatiotemporal_model.png){#fig:spatiotemporal}
 
 ## Sampling binary networks 
 
