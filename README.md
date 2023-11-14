@@ -432,21 +432,21 @@ limited number of sites has been sampled.
 
 ![**Network accumulation curves.** (a) Dissimilarity of interactions between
 common species and (b) dissimilarity in species composition between aggregated
-local networks and the binary regional metaweb. Aggregated local networks were
-obtained by sequentially and randomly selecting a number of binary local
-networks and aggregating both their species and interactions. In both panels,
-the colored line represents the median dissimilarity across simulations and the
-grey areas cover the 50% and 95% percentile intervals. (c) Scaling of the number
-of links and (d) scaling of connectance with the number of sampled binary and
-probabilistic local networks. For a better comparison with binary networks,
-local probabilistic networks were derived from the probabilistic metaweb with a
-false positive and false negative rates of zero. We used a fixed value of $p$
-(the local probability of interaction among potentially interacting species) for
-each local network, which varied across curves. Aggregated probabilistic local
-networks were obtained by sequentially and randomly selecting a number of
-probabilistic local networks and aggregating both their species and interactions
-(with the value of $p$ adjusting according to
-@eq:aggregate.).](figures/network_accumulation.png){#fig:accumulation}
+local networks and the binary metaweb of host-parasite interactions. Aggregated
+local networks were obtained by sequentially and randomly selecting a number of
+binary local networks and aggregating both their species and interactions. In
+both panels, the colored line represents the median dissimilarity across
+simulations and the grey areas cover the 50% and 95% percentile intervals. (c)
+Scaling of the number of links and (d) scaling of connectance with the number of
+sampled binary and probabilistic local networks. For a better comparison with
+binary networks, local probabilistic networks were derived from the
+probabilistic metaweb with a false positive and false negative rates of zero. A
+specific value of $p$ (the local probability of interaction among potentially
+interacting species) was used for all local networks within a particular curve.
+Aggregated probabilistic local networks were obtained by sequentially and
+randomly selecting a number of probabilistic local networks and aggregating both
+their species and interactions (with the value of $p$ adjusting according to
+@eq:aggregate).](figures/network_accumulation.png){#fig:accumulation}
 
 We converted these binary networks into probabilistic ones using models based on
 simple assumptions. Our models do not aim to precisely estimate the actual
@@ -578,54 +578,81 @@ broader groups (either spatially, temporally, or taxonomically).
 
 ## Spatial and temporal scaling of interactions
 
-The study of network-area relationships (NARs) and interaction accumulation
-curves (IACs) are important realms of research in network ecology. Firstly, NARs
-describe the scaling of network properties (such as modularity and trophic chain
-lengths) with spatial scale (e.g., @Wood2015Effects, @Galiana2018Spatiala). The
-variation of network structure across spatial scales can be the result of the
-scaling of species richness (species-area relationships, SARs) and the number of
-interactions (@Brose2004UniSpa) with the area sampled, but can also be due to
-ecological processes (e.g., spatial variability in community composition and
-extinction and colonization events) occurring at different scales
-(@Galiana2018Spatiala). Secondly, IACs describe the scaling of the number of
-interactions observed with sampling effort (@Jordano2016Samplingb), which can
-impact many measures of network structure such as connectance
-(@McLeod2021Sampling). Beyond sampling effort, the temporal scaling of
-interactions describes how network structure changes with the duration of the
-network (@Poisot2012Dissimilaritya) given that different interactions are
-occurring through time. Because probabilistic local networks can assess the
-spatiotemporal variability of interactions (@eq:local), they are useful tools to
-develop and test different equations of the scaling of network structure with
-space and time.
+The investigation of network-area relationships (NARs) and interaction
+accumulation curves (IACs) is an important area of research in network ecology.
+First, NARs elucidate the scaling of network properties (such as modularity and
+trophic chain lengths) with spatial scale (e.g., @Wood2015Effects,
+@Galiana2018Spatiala). The variations in network structure across spatial scales
+may stem from the scaling of species richness (species-area relationships, SARs)
+and the number of interactions (@Brose2004UniSpa) with the sampled area.
+Additionally, ecological processes unfolding at distinct spatial scales, such as
+the spatial variability in local community composition resulting from different
+sequences of extinction and colonization events, can also contribute to this
+variation (@Galiana2018Spatiala). Next, IACs describe the scaling of the number
+of observed interactions with sampling effort (@Jordano2016Samplingb), which can
+also impact various measures of network structure such as connectance
+(@McLeod2021Sampling). Apart from sampling effort, the temporal scaling of
+interactions elucidates how network structure changes with the duration of the
+network (@Poisot2012Dissimilaritya), acknowledging that distinct interactions
+take place over time. Given that probabilistic local networks can quantify the
+spatiotemporal variability of interactions (@eq:local), they serve as valuable
+tools for developing and testing equations describing the scaling of network
+structure with space and time. 
 
-Metawebs and local networks intrinsically differ in their relationship to
-spatial and temporal scales. On one hand, because probabilistic metawebs are
-context-independent, potential interactions do not scale with space and time
-since they depend solely on the biological capacity of the two taxa to interact,
-regardless of any particular environmental conditions. This suggests that the
-probability that two taxa can potentially interact should theoretically be the
-same in all metawebs in which they are present, provided that the data and
-methods used to estimate them are the same. As a result, if a potential network
-$M_1$ is subsampled from a regional metaweb $M_0$ to represent the potential
-interactions between a subset of taxa found in a smaller region, their
-probabilities of interaction should be identical regardless of scale, i.e.
-$P_{M_1}(i \rightarrow j) = P_{M_0}(i \rightarrow j)$. On the other hand, local
-ecological networks scale both spatially and temporally since interactions have
-more opportunities to be realized and observed in a larger area and duration
-(e.g., more individuals, more trait variations, more chance of an encounter,
-@McLeod2020EffSpe). For example, if a local probabilistic network $N_1$ of area
-$A_1$ is obtained from a larger network $N_0$ of area $A_0$, with $A_1$ being
-completely nested within $A_0$, interaction probabilities should be smaller in
-the smaller network, i.e. $P_{N_1}(i \rightarrow j | A_1 < A_0) \le P_{N_0}(i
-\rightarrow j | A_0)$. However, if $A_1$ and $A_0$ are disjoint, interaction
-probabilities could be incidentally higher in the smaller area depending on
-their environmental and biological conditions. Similarly, interaction
-probabilities should be smaller in networks of shorter durations if time
-intervals are nested. Statistical models, such as network-area relationships and
-interaction accumulation curves, can be used to generate estimates of local
-probabilities of interactions across spatial and temporal scales.
+Metawebs and local networks exhibit distinct relationships with spatial and
+temporal scales. On one hand, probabilistic metawebs, being independent of any
+local context, feature potential interactions that do not scale with space and
+time. This is because potential interactions depend solely on the biological
+capacity of two taxa to interact, regardless of their co-occurrence and specific
+environmental conditions. This implies that the probability of two taxa
+potentially interacting should theoretically be the same in all metawebs in
+which they are present, provided that the data and methods used for estimation
+are consistent. As a result, if a smaller metaweb $M_1$ is derived from
+subsampling a regional metaweb $M_0$ to represent potential interactions among a
+subset of taxa in a smaller region, their probabilities of interaction should be
+identical regardless of scale, i.e. $P_{M_1}(i \rightarrow j) = P_{M_0}(i
+\rightarrow j)$. However, because the number of taxa may be higher in the larger
+metaweb, it is expected that the overall number of interactions would be higher
+in the larger network, despite pairwise probabilities being identical.
 
-![](figures/spatial_scaling.png){#fig:spatial}
+On the other hand, local interactions scale both spatially and temporally, given
+that they have more opportunities to be realized and observed in larger areas
+and longer durations. This is attributed to factors such as a higher number of
+individuals, greater trait variations, and increased opportunities for
+encounters, as highlighted by @McLeod2020EffSpe. For example, if a local
+probabilistic network $N_1$ with an area $A_1$ is derived from a larger network
+$N_0$ with an area $A_0$, and $A_1$ is entirely nested within $A_0$, interaction
+probabilities should be lower in the smaller network, i.e. $P_{N_1}(i
+\rightarrow j | A_1 < A_0) \le P_{N_0}(i \rightarrow j | A_0)$. However, if
+$A_1$ and $A_0$ are disjoint, interaction probabilities could potentially be
+higher in the smaller area, contingent upon their environmental and biological
+conditions. Likewise, interaction probabilities are expected to be lower in
+networks with shorter durations when time intervals are nested. In @fig:spatial,
+we show how the expected number of local host-parasite interactions scales with
+area, represented as an expanding latitudinal window, in comparison with
+potential interactions. Even though we employed local probabilities of
+interactions equal to potential interactions for the purpose of comparison
+(i.e., using $p = 1$ here), we notice that the total number of potential
+interactions scales more rapidly than local interactions. This is due to the
+fact that numerous potential interactions involve species that never co-occur,
+and as a result, these interactions are not captured in local networks.
+
+![**Spatial scaling of interactions.** Expected number of host-parasite
+interactions in a network aggregating all probabilistic (a) local and (b)
+potential interactions within a latitudinal window of a given length. Every
+dashed curve corresponds to a different expanding window characterized by a
+different central latitude, with the colored solid line representing the median
+number of interactions. Heatmaps of the expected number of (c) local and (d)
+potential interactions found in windows of specified length and central
+latitudes. Probabilities of potential interactions were obtained with a false
+positive rate of 5% and a false negative rate of 10%. Local probabilistic
+interactions were derived from the probabilistic metaweb by setting the value of
+$p$ (the local probability of interaction among potentially interacting species)
+to $1$, ensuring a conservative comparison between aggregated local networks and
+metawebs. Aggregated local networks were obtained by aggregating both the
+species and interactions found within a particular latitudinal window, with the
+values of $p$ remaining at their maximum value of $1$ following @eq:aggregate.
+](figures/spatial_scaling.png){#fig:spatial}
 
 ## Box 1: A spatiotemporally explicit model of interactions
 
