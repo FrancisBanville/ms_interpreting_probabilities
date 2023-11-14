@@ -967,8 +967,8 @@ yaxis!(ylabel="Central latitude (position)")
 
 
 
-plot(plot_links_merged, heatmap_links_merged,
-    plot_links_metaweb, heatmap_links_metaweb,
+plot(plot_links_merged, plot_links_metaweb, 
+    heatmap_links_merged, heatmap_links_metaweb,
     title = ["(a)" "(b)" "(c)" "(d)"],
     titleloc=:right, 
     titlefont=fonts,
