@@ -579,71 +579,76 @@ number of sampled networks increases.
 
 ## Taxonomic scaling of interactions
 
-Probabilistic networks can be used to address a wide range of ecological
-questions based on their level of organization. For example, the
-assemblage of interactions across ecological scales can be studied using
-species-based networks, whereas clade-based networks can be used to
-study macroevolutionary processes (e.g., @Gomez2010EcoInt). Because our
-interpretation of the properties and dynamics of ecological networks
-depends on their taxonomic scale (@Guimaraes2020Structurea), examining
-the phylogenetic scaling of network structure is also a promising
-research avenue. Analyzing the same system at different taxonomic scales
-can thus provide meaningful and complementary ecological information and
-is, in our perspective, best conducted using probabilistic networks.
+Probabilistic networks offer a versatile approach to tackle a broad
+array of ecological questions, depending on their level of organization.
+For instance, the assemblage of interactions across ecological scales
+can be explored through species-based networks, while clade-based
+networks provide insights into macroevolutionary processes (e.g.,
+@Gomez2010EcoInt). Given that our interpretation of the properties and
+dynamics of ecological networks depends on their taxonomic scale
+(@Guimaraes2020Structurea), investigating the phylogenetic scaling of
+network structure emerges as a promising research avenue. Examining the
+same system at various taxonomic scales can yield meaningful and
+complementary ecological information, and, in our perspective, employing
+probabilistic networks is an effective approach for such analyses.
 
-There is no qualitative difference in the taxonomic scaling of local
-networks compared to metawebs because only the nodes are defined
-taxonomically. In other words, the edge probability values of local
-networks (eq. 2) and metawebs (eq. 3) are not conditional on any
-taxonomic scale. It is the definition of the event itself (i.e., the
-interaction of the two taxa) that has a given phylogenetic scale, not
-their conditional variables. In both types of networks, shifting to a
-broader level of organization can be directly done using probabilities
-at finer scales. For example, if we have a network of $n_A$ species from
-genus $A$ and $n_B$ species from genus $B$, we can calculate the
-probability that at least one species from genus $A$ interact with at
-least one species from genus $B$ as follows:
+There are no inherent differences in the taxonomic scaling between local
+networks and metawebs, as only the nodes are defined taxonomically. In
+other words, the probability values of edges in both local networks
+(eq. 2) and metawebs (eq. 3) are not conditional on any taxonomic scale.
+The phylogenetic scale is tied to the definition of the event itself
+(i.e., the interaction between two taxa), not to the conditional
+variables. In both types of networks, transitioning to a broader level
+of organization can be accomplished directly by using probabilities from
+finer scales. For example, in a network with $n_A$ species from genus
+$A$ and $n_B$ species from genus $B$, one can compute the probability
+that at least one species from genus $A$ interacts with at least one
+species from genus $B$ as follows:
 
 [$$P(A \rightarrow B) = 1 - \prod_{i = 1}^{n_A}\prod_{j = 1}^{n_B}(1 - P(A_i
 \rightarrow B_j)),\qquad{(6)}$$]{#eq:taxo}
 
-where $A_i$ and $B_j$ are the species of the corresponding genus.
-Knowing that two species interact (i.e., $P(A_i \rightarrow B_j) = 1$)
-gives a probability of genus interaction of $1$. @Canard2012Emergencea
-built a species-based network from neutrally simulated interactions
-between individuals using a similar approach. In contrast, more
-sophisticated models need to be built when shifting to a finer level of
-organization. Indeed, knowing that two genera interact does not imply
-that all of their pairwise species combinations can also interact. One
-could, for example, build a finer-scale network by generating
-probabilities of species interactions by randomly sampling them from a
-beta distribution parametrized by the broader-scale network.
+where $A_i$ and $B_j$ are the species of the corresponding genus. If it
+is known that at least two of these species interact (i.e.,
+$P(A_i \rightarrow B_j) = 1$ for at least one pair of ${i, j}$), it
+implies a probability of genus interaction equal to $1$.
+@Canard2012Emergencea built a species-based network following a similar
+approach, by using simulated interactions between individuals derived
+from a neutral model (i.e., a model that assumed ecological equivalence
+among individuals). In contrast, a more sophisticated approach is
+necessary when transitioning from a broader to a finer level of
+organization. This is because knowledge of an interaction between two
+genera does not guarantee that all possible pairwise combinations of
+their species will also interact. One possible method is to build a
+finer-scale network by generating probabilities of interactions through
+random sampling from a beta distribution, parameterized by the
+broader-scale network.
 
-Ideally, the biological interpretation of probabilistic interactions
-should not differ across a network even if it has heterogenous levels of
-organization, i.e. if different nodes are represented at different
-taxonomic scales (e.g., a network composed of species and trophic
-species). This is frequent in ecological networks where taxonomic
-resolution is typically low (@Hemprich-Bennett2021AssImp,
-@VazquezSS2022Ecological). Broader-scale interactions should be based on
-probabilities of interactions between individuals, either at the local
-or regional scale. For example, in local individual-based food webs, the
-probability that two individuals interact represents the degree of
-belief that one individual will actually consume the other. Similarly,
-in local species-based food webs, the probability that two species
-interact represents the degree of belief that at least one individual
-from the predator species consumes at least another individual from the
-prey species. Moreover, in local clade-based food webs, the probability
-that two clades interact represents the degree of belief that at least
+Ideally, our biological interpretation of probabilistic interactions
+should remain consistent across a network even if it incorporates
+heterogenous levels of organization (e.g., a network whose nodes are
+composed of both species and trophic species). This is common in
+ecological networks where taxonomic resolution is typically low
+(@Hemprich-Bennett2021AssImp, @VazquezSS2022Ecological). Interaction
+probabilities at broader taxonomic scales should be based on
+probabilities of interactions between individuals, for both local
+networks and metawebs. For instance, in local individual-based food
+webs, the probability that two individuals interact reflects our degree
+of belief that one individual will consume the other. Similarly, in
+local species-based food webs, the probability that two species interact
+represents our degree of belief that at least one individual from the
+predator species consumes at least another individual from the prey
+species. Furthermore, in local clade-based food webs, the probability
+that two clades interact represents our degree of belief that at least
 two species from these clades interact with each other or, equivalently,
 that at least two individuals from these clades interact with each
-other. Fundamentally, the taxonomic scaling of interactions is an
-aggregation of interactions between individuals into larger groups,
-which could be more or less homogeneous depending on the organisms and
-the study system. This type of scaling is analogous to the spatial and
-temporal scaling of interactions to the extent that they represent
-different ways to aggregate individuals into broader groups, either
-spatially, temporally, or taxonomically.
+other. Fundamentally, the taxonomic scaling of interactions involves
+aggregating interactions between individuals into larger groups, which
+may exhibit varying degrees of homogeneity based on the organisms and
+the study system. In that regard, taxonomic scaling is analogous to the
+spatial and temporal scaling of interactions, as they all represent
+different ways to aggregate individuals into broader groups (either
+spatially, temporally, or taxonomically).
 
 ## Spatial and temporal scaling of interactions
 
