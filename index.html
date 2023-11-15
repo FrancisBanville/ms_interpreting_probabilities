@@ -1116,7 +1116,9 @@ probabilistic networks</div>
             problematic when addressing crucial ecological questions
             about networks. Here we compare the characteristics of local
             networks and metawebs through the presentation of four
-            common applications of probabilistic interactions.</p>
+            common applications of probabilistic interactions. All code
+            and data to reproduce these analyses are available at the
+            Open Science Framework (TBD).</p>
             <h2 id="host-parasite-network-data">Host-parasite network
             data</h2>
             <p>We use the collection of tripartite host-parasite
@@ -1656,91 +1658,142 @@ probabilistic networks</div>
             </figure>
             <h2 id="sampling-binary-networks">Sampling binary
             networks</h2>
-            <p>Probabilistic networks can be used to predict binary
-            interactions through random draws. This can be useful when
-            analyzing the structure of a probabilistic network when
-            analytical probabilistic measures are lacking. A binary
-            network can be generated from independent Bernoulli trials
-            for each interaction. The distribution of a network’s
-            property can then be obtained after measuring the structure
-            of all randomly generated networks (<span class="citation"
-            data-cites="Poisot2016Structure">Poisot <em>et al.</em>
-            (2016)</span>). Doing so allows us to represent the
-            variability of network structure, although possibly with
-            biases when connectance is low (<span class="citation"
-            data-cites="Poisot2014WheEco">Poisot &amp; Gravel
-            (2014)</span>, <span class="citation"
-            data-cites="Chagnon2015ChaTop">Chagnon (2015)</span>). When
-            binary networks are generated under a null model, this
-            method can be used for null hypothesis significance testing,
-            in which case the observed measure is compared to a null
-            distribution (e.g., <span class="citation"
+            <p>The prediction of binary interactions through random
+            draws is an important application of probabilistic networks.
+            This approach proves beneficial for analyzing the structural
+            characteristics of probabilistic networks, particularly in
+            the absence of specific analytical measures. By simulating
+            independent Bernoulli trials for each interaction, a binary
+            network can be generated. A probability distribution of
+            network properties can be obtained by measuring network
+            structure across multiple randomly generated networks (<span
+            class="citation" data-cites="Poisot2016Structure">Poisot
+            <em>et al.</em> (2016)</span>). This method enables the
+            representation of the variability of network structure,
+            albeit with potential biases when connectance is low (<span
+            class="citation" data-cites="Poisot2014WheEco">Poisot &amp;
+            Gravel (2014)</span>, <span class="citation"
+            data-cites="Chagnon2015ChaTop">Chagnon (2015)</span>).
+            Employing this strategy to generate binary networks under a
+            null model facilitates null hypothesis significance testing,
+            wherein the observed measure is compared against the
+            simulated distribution (e.g., <span class="citation"
             data-cites="Bascompte2003NesAss">Bascompte <em>et al.</em>
-            (2003)</span>). Furthermore, randomly generating binary
-            networks across space and time can help us visualize the
-            spatiotemporal variability of network structure and test
-            ecological hypotheses on interactions across large spatial
-            and temporal scales.</p>
-            <p>There are at least two different approaches when sampling
-            binary networks from probabilistic webs across space,
-            e.g. if we want to predict a binary network for each of
-            <span class="math inline"><em>n</em> × <em>n</em></span>
-            grid cells. The first approach is to conduct a single
-            Bernoulli trial for each pair of taxa found in the region of
-            interest based on their regional probability of interaction.
-            As a result, each pair of taxa that are predicted to
-            interact in the regional network realization will interact
-            in all of the <span
-            class="math inline"><em>n</em><sup>2</sup></span> networks
-            in which they co-occur. This sampling technique is best used
-            with potential interactions that have no spatial variation.
-            The second approach is to independently sample each of the
-            <span class="math inline"><em>n</em><sup>2</sup></span>
-            networks. In practice, this can be done by generating a
-            different probabilistic network for each grid cell.
-            Depending on how they were obtained, these networks can
-            differ in their taxa composition (nodes) and/or interaction
-            probabilities (edges). Then, binary networks can be
-            independently sampled for each grid cell. Because this
-            method generates spatial variation in binary interactions,
-            it is best used with local interactions.</p>
-            <p>The choice of sampling approach has an impact on the
-            selection of grid cell size. In the first approach,
-            interactions will be the same regardless of cell size
-            because interactions are sampled only once from the regional
-            network. However, in the second approach, local interaction
-            probabilities depend on the network area. For example, let
-            <span class="math inline"><em>N</em><sub>1</sub></span> and
-            <span class="math inline"><em>N</em><sub>2</sub></span> be
-            networks of area <span
-            class="math inline">$\frac{1}{2}A_0$</span> nested within
-            <span class="math inline"><em>A</em><sub>0</sub></span> and
-            disjoint from each other, i.e. two contiguous cells that
-            form <span
-            class="math inline"><em>N</em><sub>0</sub></span>. If <span
+            (2003)</span>). Additionally, randomly generating binary
+            networks across spatial and temporal dimensions aids in
+            representing the spatiotemporal variability of network
+            structure, allowing the testing of ecological hypotheses
+            regarding interactions on large spatial and temporal
+            scales.</p>
+            <p>There are at least two distinct approaches to sample
+            binary networks from probabilistic webs across space, for
+            example, when attempting to predict a binary network for
+            each of a number of locations within a given region. The
+            first approach involves performing a singular Bernoulli
+            trial for each pair of taxa within the region of interest
+            based on their regional probability of potential
+            interaction. In employing this approach, every pair of taxa
+            predicted to interact in the binary metaweb realization will
+            be treated as interacting in all local networks where they
+            co-occur. This will result in local pairwise interactions
+            without spatial variation. The second approach is to
+            independently sample each of the local probabilistic
+            networks, which can be achieved by first generating distinct
+            probabilistic networks for each location. These local
+            probabilistic networks may vary in taxa composition and
+            interaction probabilities. Subsequently, binary networks can
+            be independently sampled for each location, introducing
+            spatial variation in binary interactions.</p>
+            <p>In fig. 4, we compare the average connectance of binary
+            networks resulting from these two sampling techniques, where
+            potential and local interactions are drawn from our
+            host-parasite probabilistic networks, generating a number of
+            binary network realizations for each site in the dataset.
+            These two sampling approaches yield different outcomes,
+            particularly for lower values of <span
+            class="math inline"><em>p</em></span>, which denote
+            instances when potential interactions do not consistently
+            manifest locally. Small discrepancies are also apparent
+            between these techniques when we equate the probability of
+            local interaction to the probability of potential
+            interaction (i.e., when using <span
+            class="math inline"><em>p</em> = 1.0</span> in eq. 4),
+            especially when the number of binary network samples for
+            each location is low. As anticipated, we observe that
+            sampling binary interactions from the metaweb tends to
+            overestimate connectance on average compared to sampling
+            them from local networks. Furthermore, we observe an
+            increase in the variability of connectance when employing a
+            single sample, representing what we consider as a more
+            tangible process leading to the realization of local and
+            potential interactions in nature.</p>
+            <figure>
+            <img src="figures/network_sampling.png" id="fig:sampling"
+            alt="Figure 4: Connectance of sampled binary networks. Comparison between the average connectance of binary network samples obtained from the probabilistic local networks and metaweb. Each dot corresponds to a different site. The local probability of interaction between potentially interacting species was set to three different values: (a) p = 1.0, (b) p = 0.75, and (c) p = 0.50. Grey dots represent the outcome of a single trial, while colored dots represent the average connectance of each network across 100 trials. (d) Reduction in the mean squared logarithmic error between the average connectance of binary networks obtained from these two sampling methods as the number of trials increases, for the same values of p used in panels a-c. Probabilities of potential interactions were obtained with a false positive rate of 5% and a false negative rate of 10%. Metaweb samples were obtained by randomly sampling binary interactions from the probabilistic metaweb, and then propagating this result to all local networks that include the species potentially engaged in the interactions. Local binary networks were generated by independently sampling binary interactions for each local probabilistic network." />
+            <figcaption aria-hidden="true">Figure 4: <strong>Connectance
+            of sampled binary networks.</strong> Comparison between the
+            average connectance of binary network samples obtained from
+            the probabilistic local networks and metaweb. Each dot
+            corresponds to a different site. The local probability of
+            interaction between potentially interacting species was set
+            to three different values: (a) <span
+            class="math inline"><em>p</em> = 1.0</span>, (b) <span
+            class="math inline"><em>p</em> = 0.75</span>, and (c) <span
+            class="math inline"><em>p</em> = 0.50</span>. Grey dots
+            represent the outcome of a single trial, while colored dots
+            represent the average connectance of each network across
+            <span class="math inline">100</span> trials. (d) Reduction
+            in the mean squared logarithmic error between the average
+            connectance of binary networks obtained from these two
+            sampling methods as the number of trials increases, for the
+            same values of <span class="math inline"><em>p</em></span>
+            used in panels a-c. Probabilities of potential interactions
+            were obtained with a false positive rate of 5% and a false
+            negative rate of 10%. Metaweb samples were obtained by
+            randomly sampling binary interactions from the probabilistic
+            metaweb, and then propagating this result to all local
+            networks that include the species potentially engaged in the
+            interactions. Local binary networks were generated by
+            independently sampling binary interactions for each local
+            probabilistic network.</figcaption>
+            </figure>
+            <p>The choice of a sampling approach can influence the
+            selection of grid cell size when delineating local
+            communities within a broader region of interest. In the
+            first approach, pairwise interactions remain constant
+            irrespective of cell size since they are sampled only once
+            from the regional network. However, in the second approach,
+            local interaction probabilities are contingent on the
+            network area. For instance, consider networks <span
             class="math inline"><em>N</em><sub>1</sub></span> and <span
-            class="math inline"><em>N</em><sub>2</sub></span> are
-            independent (which is rarely the case in reality because of
-            spatial auto-correlation), the probability that two taxa
+            class="math inline"><em>N</em><sub>2</sub></span> with an
+            area of <span class="math inline">$\frac{1}{2}A_0$</span>,
+            both nested within <span
+            class="math inline"><em>A</em><sub>0</sub></span> but
+            disjoint from each other, forming <span
+            class="math inline"><em>N</em><sub>0</sub></span>. If we
+            treat <span
+            class="math inline"><em>N</em><sub>1</sub></span> and <span
+            class="math inline"><em>N</em><sub>2</sub></span> as
+            independent, the probability of interaction between taxa
             <span class="math inline"><em>i</em></span> and <span
-            class="math inline"><em>j</em></span> interact in <span
+            class="math inline"><em>j</em></span> in <span
             class="math inline"><em>N</em><sub>0</sub></span> is given
             by:</p>
             <p><span id="eq:binary"><span
             class="math display"><em>P</em><sub><em>N</em><sub>0</sub></sub>(<em>i</em>→<em>j</em>) = 1 − (1−<em>P</em><sub><em>N</em><sub>1</sub></sub>(<em>i</em>→<em>j</em>)) × (1−<em>P</em><sub><em>N</em><sub>2</sub></sub>(<em>i</em>→<em>j</em>)).   (14)</span></span></p>
-            <p>Because of its larger area, the probability that the two
-            taxa interact in <span
-            class="math inline"><em>N</em><sub>0</sub></span> is higher
-            than in <span
+            <p>Due to its larger area, the probability that the two taxa
+            interact in <span
+            class="math inline"><em>N</em><sub>0</sub></span> is equal
+            or greater than in <span
             class="math inline"><em>N</em><sub>1</sub></span> and <span
             class="math inline"><em>N</em><sub>2</sub></span>. When
-            sampling binary interactions from local networks, it is thus
-            important to sample at the same spatial scale as the one for
-            which probabilities were estimated. Otherwise, interaction
-            probabilities must be adjusted to correspond to the targeted
-            cell size and avoid systematic biases in prediction.</p>
-            <p><img src="figures/network_sampling.png"
-            id="fig:sampling" /></p>
+            sampling binary interactions from local networks, it is
+            crucial to sample at the same spatial scale for which
+            probabilities were estimated. Otherwise, interaction
+            probabilities must be adjusted to align with the intended
+            cell size, preventing potential systematic biases in
+            predictions.</p>
             <h2
             id="prediction-of-local-networks-from-metawebs">Prediction
             of local networks from metawebs</h2>
