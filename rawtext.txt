@@ -933,53 +933,59 @@ cell size, preventing potential systematic biases in predictions.
 
 ## Prediction of local networks from metawebs
 
-Metawebs are an important source of ecological information that can be
-leveraged for predicting local networks. Indeed, binary local networks
-can be reconstructed by selecting a subset of both taxa and interactions
-from the metaweb (@Dunne2006Network). This implies that there are always
-more interactions in a metaweb compared to its corresponding local
-networks. In practice, because a community's composition is arguably
-easier to sample or predict than its interactions, the list of taxa to
-select can be known empirically or obtained using range maps or species
-distribution models. The challenge is rather to choose which
-interactions to select from the metaweb, which could require more
-sophisticated statistical models and ecological knowledge. Because the
-structure of local networks is constrained by the one of the metaweb
-(@Saravia2022Ecological), inferring their structure from the metaweb
-before predicting local pairwise interactions could prove promising
-(@Strydom2021Roadmapa).
+Metawebs serve as a valuable source of ecological information for
+predicting local networks across time and space. Binary local networks
+can be reconstructed by selecting a subset of taxa and interactions from
+the metaweb (@Dunne2006Network). This implies that metawebs consistently
+contain more interactions than their corresponding local networks.
+Determining the list of taxa to select can be achieved empirically or
+through methods like range maps or species distribution models. As the
+species composition of a community is arguably less difficult to sample
+or predict than its interactions, the primary challenge lies in deciding
+which interactions to select from the metaweb, a task that may
+necessitate advanced statistical models and ecological expertise.
+Inferring the structure of local networks from the metaweb before
+predicting specific local pairwise interactions could hold promise
+(@Strydom2021Roadmapa), considering that the structure of local networks
+is constrained by the metaweb (@Saravia2022Ecological).
 
-When building probabilistic local networks from a probabilistic metaweb,
-interaction probabilities decrease. This is because two taxa must first
-have the capacity to interact (i.e., $M_{i,j}^* = 1$ in the binary
-metaweb $M^*$) before interacting locally:
-
-$$P_N(i \rightarrow j) = P_M(i \rightarrow j) \times P_N(i \rightarrow j
-|M_{i,j}^* = 1).$$
-
-Therefore, inferring local networks from their metaweb keeping the same
-values of interaction probability would generate systematic biases in
-the prediction. In that case, these networks would instead represent
-smaller-scale metawebs of potential interactions, which could be
-misinterpreted as local interactions. As suggested by
-@McLeod2021Sampling, even though metawebs do not capture the
-spatiotemporal variability of interactions, they set the upper limit of
-local interactions. In other words, the probability that two taxa
-interact at a given location and time is always lower or equal to the
+Building probabilistic local networks from a probabilistic metaweb
+involves a reduction in the value of pairwise interaction probabilities.
+This decrease is attributed to the prerequisite that two taxa must
+initially possess the capacity to interact before engaging in local
+interactions (eq. 4). Therefore, inferring local networks from their
+metaweb while maintaining identical interaction probability values would
+introduce systematic biases into the predictions. In such cases, these
+networks would essentially represent smaller-scale metawebs of potential
+interactions, potentially leading to misinterpretations by being
+perceived as local interactions. As proposed by @McLeod2021Sampling,
+although metawebs lack the ability to capture the spatiotemporal
+variability of interactions, they establish an upper limit for local
+interactions. In other words, the probability of two taxa interacting at
+a specific location and time is consistently lower or equal to the
 probability of their potential interaction:
 
 [$$P_{N}(i \rightarrow j | A, t, C, \Omega) \le
 P_M(i \rightarrow j).\qquad{(15)}$$]{#eq:switch}
 
-Moreover, the probability that two taxa have the biological capacity to
-interact must be higher than the probability that they will ever
-interact because they might never co-occur or encounter locally. More
-precisely, the accumulated probability of realized interactions across
-all spatial, temporal, and environmental conditions must be lower than
-the probability of potential interaction, i.e. 
+Moreover, the probability that two taxa possess the biological capacity
+to interact must exceed the probability of them interacting at any
+location and time because they may never co-occur or encounter locally.
+Specifically, the cumulative probability of realized interactions across
+all spatial, temporal, and environmental conditions must be less than
+the probability of potential interaction, i.e.
 
 [$$\int_\Omega\int_A\int_t P_{N}(i \rightarrow j | A, t, \Omega) dt dA d\Omega
 \leq P_M(i \rightarrow j).\qquad{(16)}$$]{#eq:all}
+
+Estimating more precisely the probability $p$ that two taxa interact
+locally if they can potentially interact allows for improved predictions
+of local networks from a probabilistic metaweb. This task is challenging
+due to the variability of this probability across space and time, as
+well as its potential variations among pairwise interactions within a
+network. Using simple models of $p$, as demonstrated in our case
+studies, represents an initial step toward the overarching objective of
+reconstructing local networks from metawebs.
 
 # Conclusion
 
