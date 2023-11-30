@@ -44,6 +44,16 @@
     },
     {
       "affiliations": [
+        "Université de Montréal",
+        "Quebec Centre for Biodiversity Science"
+      ],
+      "familyname": "Dansereau",
+      "givennames": "Gabriel",
+      "email": "gabriel.dansereau@umontreal.ca",
+      "orcid": "0000-0002-2212-3584"
+    },
+    {
+      "affiliations": [
         "Université de Sherbrooke",
         "Quebec Centre for Biodiversity Science"
       ],
@@ -68,6 +78,14 @@
       "givennames": "Thomas",
       "email": "tdmalpas1@sheffield.ac.uk",
       "orcid": "0000-0001-5575-609X"
+    },
+    {
+      "affiliations": [
+        "University of Sheffield"
+      ],
+      "familyname": "Mayall",
+      "givennames": "Hana",
+      "email": "hbmayall1@sheffield.ac.uk"    
     },
     {
       "affiliations": [
