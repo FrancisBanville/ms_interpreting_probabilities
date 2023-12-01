@@ -15,10 +15,10 @@ depend on the presence or abundance of a third species (e.g., of a more
 profitable prey species). More generally, a handful of conditions must be
 satisfied for an interaction to be observed locally. First, both species must
 have overlapping geographic ranges, i.e. they must co-occur within the region of
-interest (@Blanchet2020Cooccurrencea). Then, they must encounter locally.
+interest (@Blanchet2020Cooccurrencea), second, they must have some probability of meeting.
 Probabilities of interspecific encounters are typically low, especially for rare
 species with low relative abundances (@Canard2012Emergencea). Finally, their
-traits must be locally compatible (@Poisot2015Speciesa). This includes their
+traits must be locally compatible (@Poisot2015Speciesa). Including but not limited to;
 phenology (@Olesen2010Missing, @Singer2012GeoMos), behavioral choices
 (@Pulliam1974Theory, @Choh2012PreRol) and phenotypes (@Bolnick2011WhyInt,
 @Stouffer2011RolBod, @Gravel2013InfFooa). Environmental factors, such as
@@ -66,7 +66,7 @@ interactions (@Catchen2023Missinga), these models could inform the
 identification of priority sampling locations of ecological networks where data
 collection would yield the most valuable information, thereby reducing errors.
 Optimization models for sampling locations have mostly found applications in
-biological systems that are not networked, such as identifying priority sampling
+biological systems that are not networks, such as identifying priority sampling
 sites for disease hotspots (@Andrade-Pacheco2020Finding), but there is
 substantial promise in applying them to probabilistic ecological interactions.
 Statistical models can also be used to generate network predictions without
@@ -99,7 +99,7 @@ two representations and show that they yield different statistical outcomes
 regarding e.g. the spatial and temporal scaling of interactions and the
 prediction of binary networks across space. Moreover, there is currently no
 metadata standard that could guide the documentation of all types of
-probabilistic interactions (@Salim2022Data discuss data standards for
+probabilistic interactions (although see e.g., @Salim2022Data who discuss data standards for
 deterministic mutualistic networks). Well-defined metadata for probabilistic
 networks would support more adequate manipulation and integration of interaction
 data from different sources and guard against the potential misinterpretations
@@ -213,7 +213,7 @@ constitute the majority of taxa pairs in most local networks due to their
 typically high sparseness (@Jordano2016Samplingb). Because of the methodological
 difficulties typically encountered when building deterministic quantitative
 networks, binary networks, which are easier to sample (@Jordano2016Samplingb)
-and predict (@Strydom2021Roadmapa), are much more documented and modeled in the
+and predict (@Strydom2021Roadmapa), are documented more frequently and modeled in the
 literature. Moreover, most published probabilistic networks and methods describe
 Bernoulli interactions (whether interaction probabilities are regarded as
 constant or variable, e.g. represented by Beta distributions), which underlines
