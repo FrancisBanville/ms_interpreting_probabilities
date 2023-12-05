@@ -2,7 +2,7 @@
 
 As we try to navigate global biodiversity change (decline?), filling in
 knowledge gaps about biodiversity becomes instrumental to monitoring and
-mitigating those changes (@AndrewGonzalez2022Monitor,
+mitigating those changes (@Gonzalez2022Monitor,
 @Abrego2021Accounting). However, cataloging species,
 populations and, in particular, ecological interactions is a substantial
 challenge. There are methodological and biological constraints that hinder our
@@ -35,8 +35,8 @@ Knowing the biological capacity of two species to interact is necessary but not
 sufficient for inferring their interaction at a specific time and space. The
 recognition of the intrinsic variability of species interactions has led
 ecologists to expand their representation of ecological networks to include a
-probabilistic view of interactions (@Poisot2016Structure, @Dallas2017Predicting,
-@XiaoFu2019Link). This different perspective allows us to fill in the Eltonian
+probabilistic view of interactions (@Poisot2016Structure, @Dallas2017Predictinga,
+@Fu2021Link). This different perspective allows us to fill in the Eltonian
 shortfall by modeling the probability of detecting interactions, which can be an
 important tool for directing efforts and take action, especially in places where
 access and resources for research are scarce. As opposed to binary deterministic
