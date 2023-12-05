@@ -45,7 +45,6 @@
         ],
         "id": "Abrego2021Accounting",
         "DOI": "10.1111/ecog.05547",
-        "keyword": "Arctic,Arthropoda,climate change,community assembly,food web,joint species distribution model,trophic cascade",
         "volume": "44",
         "page": "885-896",
         "title": "Accounting for species interactions is necessary for predicting how arctic arthropod communities respond to climate change",
@@ -110,31 +109,6 @@
         "volume": "10",
         "page": "10939",
         "title": "Finding hotspots: Development of an adaptive spatial sampling approach",
-        "other-ids": "andrade-pachecoFindingHotspotsDevelopment2020",
-        "type": "article-journal"
-    },
-    {
-        "DOI": "10.1126/science.adg1506",
-        "volume": "378",
-        "author": [
-            {
-                "literal": "Andrew Gonzalez"
-            },
-            {
-                "literal": "Maria Cecilia Londoño"
-            }
-        ],
-        "id": "AndrewGonzalez2022Monitor",
-        "page": "1147-1147",
-        "title": "Monitor biodiversity for action",
-        "issued": {
-            "date-parts": [
-                [
-                    2022
-                ]
-            ]
-        },
-        "container-title": "Science",
         "type": "article-journal"
     },
     {
@@ -282,7 +256,7 @@
         "DOI": "10.1073/pnas.1633576100",
         "volume": "100",
         "page": "9383-9387",
-        "title": "The nested assembly of PlantAnimal mutualistic networks",
+        "title": "The nested assembly of plantanimal mutualistic networks",
         "type": "article-journal"
     },
     {
@@ -893,11 +867,6 @@
         "type": "article-journal"
     },
     {
-        "id": "ChaTop",
-        "title": "Characterizing topology of ecological networks along gradients: The limits of metrics’ standardization - ScienceDirect",
-        "type": ""
-    },
-    {
         "publisher": "Nature Portfolio",
         "publisher-place": "Berlin",
         "issued": {
@@ -978,8 +947,7 @@
         "issued": {
             "date-parts": [
                 [
-                    2017,
-                    5
+                    2017
                 ]
             ]
         },
@@ -998,9 +966,8 @@
                 "given": "John M."
             }
         ],
-        "id": "Dallas2017Predicting",
+        "id": "Dallas2017Predictinga",
         "DOI": "10.1371/journal.pcbi.1005557",
-        "keyword": "Algorithms,Animal phylogenetics,Forecasting,Host-pathogen interactions,Parasitic diseases,Parasitism,Simulation and modeling,Species interactions",
         "volume": "13",
         "page": "e1005557",
         "title": "Predicting cryptic links in host-parasite networks",
@@ -1202,7 +1169,7 @@
         "DOI": "10.1111/j.0021-8790.2004.00818.x",
         "volume": "73",
         "page": "399-409",
-        "title": "PredatorPrey body size, interaction strength and the stability of a real food web",
+        "title": "Predatorprey body size, interaction strength and the stability of a real food web",
         "type": "article-journal"
     },
     {
@@ -1229,7 +1196,42 @@
         "DOI": "10.1111/j.1461-0248.2005.00868.x",
         "volume": "9",
         "page": "281-286",
-        "title": "Habitat loss and the structure of PlantAnimal mutualistic networks",
+        "title": "Habitat loss and the structure of plantanimal mutualistic networks",
+        "type": "article-journal"
+    },
+    {
+        "issue": "8",
+        "issued": {
+            "date-parts": [
+                [
+                    2021
+                ]
+            ]
+        },
+        "container-title": "IEEE Transactions on Knowledge and Data Engineering",
+        "author": [
+            {
+                "family": "Fu",
+                "given": "Xiao"
+            },
+            {
+                "family": "Seo",
+                "given": "Eugene"
+            },
+            {
+                "family": "Clarke",
+                "given": "Justin"
+            },
+            {
+                "family": "Hutchinson",
+                "given": "Rebecca A."
+            }
+        ],
+        "id": "Fu2021Link",
+        "DOI": "10.1109/TKDE.2019.2962031",
+        "volume": "33",
+        "page": "3117-3128",
+        "title": "Link Prediction Under Imperfect Detection: Collaborative Filtering for Ecological Networks",
         "type": "article-journal"
     },
     {
@@ -1444,6 +1446,34 @@
         "type": "article-journal"
     },
     {
+        "publisher": "American Association for the Advancement of Science",
+        "issue": "6625",
+        "issued": {
+            "date-parts": [
+                [
+                    2022
+                ]
+            ]
+        },
+        "container-title": "Science",
+        "author": [
+            {
+                "family": "Gonzalez",
+                "given": "Andrew"
+            },
+            {
+                "family": "Londoño",
+                "given": "Maria Cecilia"
+            }
+        ],
+        "id": "Gonzalez2022Monitor",
+        "DOI": "10.1126/science.adg1506",
+        "volume": "378",
+        "page": "1147-1147",
+        "title": "Monitor biodiversity for action",
+        "type": "article-journal"
+    },
+    {
         "issue": "11",
         "issued": {
             "date-parts": [
@@ -1479,7 +1509,7 @@
         "DOI": "10.1111/2041-210X.12103",
         "volume": "4",
         "page": "1083-1090",
-        "title": "Inferring food web structure from PredatorPrey body size relationships",
+        "title": "Inferring food web structure from predatorprey body size relationships",
         "type": "article-journal"
     },
     {
@@ -1661,7 +1691,7 @@
         "DOI": "10.1007/BF00380158",
         "volume": "80",
         "page": "241-248",
-        "title": "Pollinator abundance, morphology, and flower visitation rate: Analysis of the “Quantity” component in a plant-pollinator system",
+        "title": "Pollinator abundance, morphology, and flower visitation rate: Analysis of the “quantity” component in a plant-pollinator system",
         "type": "article-journal"
     },
     {
@@ -1760,7 +1790,7 @@
         "DOI": "10.1046/j.1461-0248.2003.00403.x",
         "volume": "6",
         "page": "69-81",
-        "title": "Invariant properties in coevolutionary networks of PlantAnimal interactions",
+        "title": "Invariant properties in coevolutionary networks of plantanimal interactions",
         "type": "article-journal"
     },
     {
@@ -2751,7 +2781,7 @@
         "DOI": "10.1111/2041-210X.13125",
         "volume": "10",
         "page": "356-367",
-        "title": "Inferring PredatorPrey interactions in food webs",
+        "title": "Inferring predatorprey interactions in food webs",
         "type": "article-journal"
     },
     {
@@ -2806,7 +2836,7 @@
             }
         ],
         "id": "Proulx2005Networka",
-        "collection-title": "Special issue: Bumper book review",
+        "collection-title": "SPECIAL ISSUE: BUMPER BOOK REVIEW",
         "DOI": "10.1016/j.tree.2005.04.004",
         "volume": "20",
         "page": "345-353",
@@ -3103,10 +3133,11 @@
         "DOI": "10.1093/gigascience/giac043",
         "volume": "11",
         "page": "giac043",
-        "title": "Data standardization of PlantPollinator interactions",
+        "title": "Data standardization of plantpollinator interactions",
         "type": "article-journal"
     },
     {
+        "publisher": "Royal Society",
         "issue": "6",
         "issued": {
             "date-parts": [
@@ -3115,7 +3146,6 @@
                 ]
             ]
         },
-        "PMID": "22896268",
         "container-title": "Biology Letters",
         "author": [
             {
@@ -3123,13 +3153,13 @@
                 "given": "Dirk"
             },
             {
-                "family": "Van Veen",
-                "given": "F. J.Frank"
+                "family": "Veen",
+                "given": "F. J. Frank",
+                "non-dropping-particle": "van"
             }
         ],
         "id": "Sanders2012Indirect",
         "DOI": "10.1098/rsbl.2012.0572",
-        "keyword": "Aphids,Food web,Indirect effects,Parasitoid,Resource competition,Secondary extinctions",
         "volume": "8",
         "page": "960-963",
         "title": "Indirect commensalism promotes persistence of secondary consumer species",
@@ -3297,7 +3327,7 @@
         "DOI": "10.1890/11-2078.1",
         "volume": "93",
         "page": "2658-2673",
-        "title": "Geographic mosaics of species’ association: A definition and an example driven by PlantInsect phenological synchrony",
+        "title": "Geographic mosaics of species’ association: A definition and an example driven by plantinsect phenological synchrony",
         "type": "article-journal"
     },
     {
@@ -3503,7 +3533,7 @@
         "DOI": "10.1038/nature05429",
         "volume": "445",
         "page": "202-205",
-        "title": "Habitat modification alters the structure of tropical HostParasitoid food webs",
+        "title": "Habitat modification alters the structure of tropical hostparasitoid food webs",
         "type": "article-journal"
     },
     {
@@ -3534,7 +3564,7 @@
         "DOI": "10.1890/08-1837.1",
         "volume": "90",
         "page": "2039-2046",
-        "title": "Evaluating multiple determinants of the structure of PlantAnimal mutualistic networks",
+        "title": "Evaluating multiple determinants of the structure of plantanimal mutualistic networks",
         "type": "article-journal"
     },
     {
@@ -3567,7 +3597,7 @@
             {
                 "family": "Igual",
                 "given": " Estos",
-                "non-dropping-particle": "autores contribuyeron por"
+                "dropping-particle": "autores contribuyeron por"
             }
         ],
         "id": "VazquezSS2022Ecological",
@@ -3829,37 +3859,6 @@
         "volume": "367",
         "page": "2990-2997",
         "title": "Climate change impacts in multispecies systems: Drought alters food web size structure in a field experiment",
-        "type": "article-journal"
-    },
-    {
-        "publisher": "IEEE Computer Society",
-        "issue": "01",
-        "issued": {
-            "date-parts": [
-                [
-                    2019,
-                    12
-                ]
-            ]
-        },
-        "container-title": "IEEE Transactions on Knowledge & Data Engineering",
-        "author": [
-            {
-                "literal": "Xiao Fu"
-            },
-            {
-                "literal": "Eugene Seo"
-            },
-            {
-                "literal": "Justin Clarke"
-            },
-            {
-                "literal": "Rebecca A. Hutchinson"
-            }
-        ],
-        "id": "XiaoFu2019Link",
-        "DOI": "10.1109/TKDE.2019.2962031",
-        "title": "Link Prediction Under Imperfect Detection: Collaborative Filtering for Ecological Networks",
         "type": "article-journal"
     }
 ]

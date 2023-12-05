@@ -2,19 +2,19 @@
 
 As we try to navigate global biodiversity change (decline?), filling in
 knowledge gaps about biodiversity becomes instrumental to monitoring and
-mitigating those changes (@AndrewGonzalez2022Monitor,
-@Abrego2021Accounting). However, cataloging species, populations and, in
-particular, ecological interactions is a substantial challenge. There
-are methodological and biological constraints that hinder our ability to
-observe all interactions, such as the spatial and temporal uncoupling of
-species (@Jordano1987PatMut) and the large number of possible
-interactions in a community, of which the vast majority are rare
-(@Jordano2016Samplingb). More generally, a handful of conditions must be
-satisfied for an interaction to be observed locally. First, both species
-must have overlapping geographic ranges, i.e. they must co-occur within
-the region of interest (@Blanchet2020Cooccurrencea). Then, they must
-encounter locally. Probabilities of interspecific encounters are
-typically low, especially for rare species with low relative abundances
+mitigating those changes (@Gonzalez2022Monitor, @Abrego2021Accounting).
+However, cataloging species, populations and, in particular, ecological
+interactions is a substantial challenge. There are methodological and
+biological constraints that hinder our ability to observe all
+interactions, such as the spatial and temporal uncoupling of species
+(@Jordano1987PatMut) and the large number of possible interactions in a
+community, of which the vast majority are rare (@Jordano2016Samplingb).
+More generally, a handful of conditions must be satisfied for an
+interaction to be observed locally. First, both species must have
+overlapping geographic ranges, i.e. they must co-occur within the region
+of interest (@Blanchet2020Cooccurrencea). Then, they must encounter
+locally. Probabilities of interspecific encounters are typically low,
+especially for rare species with low relative abundances
 (@Canard2012Emergencea). Finally, their traits must be locally
 compatible (@Poisot2015Speciesa). This includes their phenology
 (@Olesen2010Missing, @Singer2012GeoMos), behavioral choices
@@ -39,7 +39,7 @@ but not sufficient for inferring their interaction at a specific time
 and space. The recognition of the intrinsic variability of species
 interactions has led ecologists to expand their representation of
 ecological networks to include a probabilistic view of interactions
-(@Poisot2016Structure, @Dallas2017Predicting, @XiaoFu2019Link). This
+(@Poisot2016Structure, @Dallas2017Predictinga, @Fu2021Link). This
 different perspective allows us to fill in the Eltonian shortfall by
 modeling the probability of detecting interactions, which can be an
 important tool for directing efforts and take action, especially in
