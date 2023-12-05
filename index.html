@@ -358,7 +358,15 @@ probabilistic networks</div>
 
         <article>
             <h1 id="introduction">Introduction</h1>
-            <p>Cataloging ecological interactions is a substantial
+            <p>As we try to navigate global biodiversity change
+            (decline?), filling in knowledge gaps about biodiversity
+            becomes instrumental to monitoring and mitigating those
+            changes (<span class="citation"
+            data-cites="AndrewGonzalez2022Monitor">Andrew Gonzalez &amp;
+            Maria Cecilia Londoño (2022)</span>, <span class="citation"
+            data-cites="Abrego2021Accounting">Abrego <em>et al.</em>
+            (2021)</span>). However, cataloging species, populations
+            and, in particular, ecological interactions is a substantial
             challenge. There are methodological and biological
             constraints that hinder our ability to observe all
             interactions, such as the spatial and temporal uncoupling of
@@ -367,24 +375,10 @@ probabilistic networks</div>
             the large number of possible interactions in a community, of
             which the vast majority are rare (<span class="citation"
             data-cites="Jordano2016Samplingb">Jordano (2016)</span>).
-            Documenting the location and timing of interactions becomes
-            even more difficult when accounting for the spatiotemporal
-            variability of ecological networks (<span class="citation"
-            data-cites="Poisot2012Dissimilaritya">Poisot <em>et al.</em>
-            (2012)</span>, <span class="citation"
-            data-cites="Poisot2015Speciesa">Poisot <em>et al.</em>
-            (2015)</span>). Indeed, knowing the biological capacity of
-            two species to interact is necessary but not sufficient for
-            inferring their interaction at a specific time and space.
-            For example, <span class="citation"
-            data-cites="Golubski2011ModMod">Golubski &amp; Abrams
-            (2011)</span> presented many cases where trophic
-            interactions in food webs depend on the presence or
-            abundance of a third species (e.g., of a more profitable
-            prey species). More generally, a handful of conditions must
-            be satisfied for an interaction to be observed locally.
-            First, both species must have overlapping geographic ranges,
-            i.e. they must co-occur within the region of interest (<span
+            More generally, a handful of conditions must be satisfied
+            for an interaction to be observed locally. First, both
+            species must have overlapping geographic ranges, i.e. they
+            must co-occur within the region of interest (<span
             class="citation"
             data-cites="Blanchet2020Cooccurrencea">Blanchet <em>et
             al.</em> (2020)</span>). Then, they must encounter locally.
@@ -402,13 +396,25 @@ probabilistic networks</div>
             (2012)</span>), behavioral choices (<span class="citation"
             data-cites="Pulliam1974Theory">Pulliam (1974)</span>, <span
             class="citation" data-cites="Choh2012PreRol">Choh <em>et
-            al.</em> (2012)</span>) and phenotypes (<span
-            class="citation" data-cites="Bolnick2011WhyInt">Bolnick
-            <em>et al.</em> (2011)</span>, <span class="citation"
+            al.</em> (2012)</span>), phenotypes (<span class="citation"
+            data-cites="Bolnick2011WhyInt">Bolnick <em>et al.</em>
+            (2011)</span>, <span class="citation"
             data-cites="Stouffer2011RolBod">Stouffer <em>et al.</em>
             (2011)</span>, <span class="citation"
             data-cites="Gravel2013InfFooa">Gravel <em>et al.</em>
-            (2013)</span>). Environmental factors, such as temperature
+            (2013)</span>) and even the presence or abundance of a third
+            species (e.g., of a more profitable prey species) (<span
+            class="citation" data-cites="Golubski2011ModMod">Golubski
+            &amp; Abrams (2011)</span>, <span class="citation"
+            data-cites="Sanders2012Indirect">Sanders &amp; Van Veen
+            (2012)</span>). Documenting the location and timing of
+            interactions becomes even more difficult when accounting for
+            the spatiotemporal variability of ecological networks (<span
+            class="citation"
+            data-cites="Poisot2012Dissimilaritya">Poisot <em>et al.</em>
+            (2012)</span>, <span class="citation"
+            data-cites="Poisot2015Speciesa">Poisot <em>et al.</em>
+            (2015)</span>). Environmental factors, such as temperature
             (<span class="citation"
             data-cites="Angilletta2004TemGro">Angilletta <em>et al.</em>
             (2004)</span>), drought (<span class="citation"
@@ -431,22 +437,34 @@ probabilistic networks</div>
             collection (<span class="citation"
             data-cites="Schmeller2015GloTer">Schmeller <em>et al.</em>
             (2015)</span>).</p>
-            <p>The recognition of the intrinsic variability of species
-            interactions has led ecologists to expand their
-            representation of ecological networks to include a
-            probabilistic view of interactions (<span class="citation"
+            <p>Knowing the biological capacity of two species to
+            interact is necessary but not sufficient for inferring their
+            interaction at a specific time and space. The recognition of
+            the intrinsic variability of species interactions has led
+            ecologists to expand their representation of ecological
+            networks to include a probabilistic view of interactions
+            (<span class="citation"
             data-cites="Poisot2016Structure">Poisot <em>et al.</em>
-            (2016)</span>). As opposed to binary deterministic networks,
-            in which interactions are regarded as either occurring or
-            not, probabilistic networks represent our degree of belief
-            about the realization or feasibility of pairwise
-            interactions at the local or regional scale, respectively.
-            In other words, representing interactions probabilistically
-            takes into account inherent uncertainties and variability
-            associated with ecological data. In the broadest sense,
-            binary networks are also a type of probabilistic network, in
-            which the numerical value of an interaction is restrained to
-            <span class="math inline">0</span> (non-occurring) or <span
+            (2016)</span>, <span class="citation"
+            data-cites="Dallas2017Predicting">Dallas <em>et al.</em>
+            (2017)</span>, <span class="citation"
+            data-cites="XiaoFu2019Link">Xiao Fu <em>et al.</em>
+            (2019)</span>). This different perspective allows us to fill
+            in the Eltonian shortfall by modeling the probability of
+            detecting interactions, which can be an important tool for
+            directing efforts and take action, especially in places
+            where access and resources for research are scarce. As
+            opposed to binary deterministic networks, in which
+            interactions are regarded as either occurring or not,
+            probabilistic networks represent our degree of belief about
+            the realization or feasibility of pairwise interactions at
+            the local or regional scale, respectively. In other words,
+            representing interactions probabilistically takes into
+            account inherent uncertainties and variability associated
+            with ecological data. In the broadest sense, binary networks
+            are also a type of probabilistic network, in which the
+            numerical value of an interaction is restrained to <span
+            class="math inline">0</span> (non-occurring) or <span
             class="math inline">1</span> (occurring). In probabilistic
             networks, only forbidden interactions (i.e., interactions
             prohibited by biological traits, <span class="citation"
@@ -480,8 +498,8 @@ probabilistic networks</div>
             (2012)</span>). Moreover, the application and development of
             computational methods in network ecology, often based on a
             probabilistic representation of interactions, can alleviate
-            the sampling efforts required to document species
-            interactions (<span class="citation"
+            (and guide) the sampling efforts required to document
+            species interactions (<span class="citation"
             data-cites="Strydom2021Roadmapa">Strydom <em>et al.</em>
             (2021)</span>). For example, statistical models can be used
             to estimate the uncertainty of pairwise interactions (<span
@@ -726,10 +744,11 @@ probabilistic networks</div>
             data-cites="Strydom2021Roadmapa">Strydom <em>et al.</em>
             (2021)</span>), which can lead to relatively high levels of
             uncertainties when inferring quantitative networks with
-            limited data. Just like binary networks, the uncertainty and
+            limited data.</p>
+            <p>Just like binary networks, the uncertainty and
             spatiotemporal variability of quantitative interactions can
             be represented probabilistically. However, the need to
-            estimate the probability distribution of all possible value
+            estimate the probability distribution of all possible values
             of interaction strengths can make the inference of
             probabilities more challenging in quantitative networks
             compared to binary networks, which require only one
@@ -1941,7 +1960,9 @@ probabilistic networks</div>
             undetected. Quantifying and partitioning this stochasticity
             will enable us to make more accurate predictions about
             ecological interactions at various spatial and temporal
-            scales.</p>
+            scales. This will prove to be of vital importance as our
+            time to understand nature runs out, especially at the places
+            where the climate change impacts hit harder.</p>
             <h1 id="acknowledgment">Acknowledgment</h1>
             <p>We acknowledge that this study was conducted on land
             within the traditional unceded territory of the Saint
@@ -1959,6 +1980,15 @@ probabilistic networks</div>
             <div id="refs"
             class="references csl-bib-body hanging-indent"
             role="doc-bibliography">
+            <div id="ref-Abrego2021Accounting" class="csl-entry"
+            role="doc-biblioentry">
+            Abrego, N., Roslin, T., Huotari, T., Ji, Y., Schmidt, N.M.,
+            Wang, J., <em>et al.</em> (2021). <a
+            href="https://doi.org/10.1111/ecog.05547">Accounting for
+            species interactions is necessary for predicting how arctic
+            arthropod communities respond to climate change</a>.
+            <em>Ecography</em>, 44, 885–896.
+            </div>
             <div id="ref-Andrade-Pacheco2020Finding" class="csl-entry"
             role="doc-biblioentry">
             Andrade-Pacheco, R., Rerolle, F., Lemoine, J., Hernandez,
@@ -1966,6 +1996,13 @@ probabilistic networks</div>
             href="https://doi.org/10.1038/s41598-020-67666-3">Finding
             hotspots: Development of an adaptive spatial sampling
             approach</a>. <em>Scientific Reports</em>, 10, 10939.
+            </div>
+            <div id="ref-AndrewGonzalez2022Monitor" class="csl-entry"
+            role="doc-biblioentry">
+            Andrew Gonzalez &amp; Maria Cecilia Londoño. (2022). <a
+            href="https://doi.org/10.1126/science.adg1506">Monitor
+            biodiversity for action</a>. <em>Science</em>, 378,
+            1147–1147.
             </div>
             <div id="ref-Angilletta2004TemGro" class="csl-entry"
             role="doc-biblioentry">
@@ -1998,7 +2035,7 @@ probabilistic networks</div>
             Bascompte, J., Jordano, P., Melián, C.J. &amp; Olesen, J.M.
             (2003). <a
             href="https://doi.org/10.1073/pnas.1633576100">The nested
-            assembly of plantanimal mutualistic networks</a>.
+            assembly of PlantAnimal mutualistic networks</a>.
             <em>Proceedings of the National Academy of Sciences</em>,
             100, 9383–9387.
             </div>
@@ -2115,6 +2152,13 @@ probabilistic networks</div>
             empirical network construction</a>. <em>Methods in Ecology
             and Evolution</em>, 10, 902–911.
             </div>
+            <div id="ref-Dallas2017Predicting" class="csl-entry"
+            role="doc-biblioentry">
+            Dallas, T., Park, A.W. &amp; Drake, J.M. (2017). <a
+            href="https://doi.org/10.1371/journal.pcbi.1005557">Predicting
+            cryptic links in host-parasite networks</a>. <em>PLOS
+            Computational Biology</em>, 13, e1005557.
+            </div>
             <div id="ref-Dunne2006Network" class="csl-entry"
             role="doc-biblioentry">
             Dunne, J.A. (2006). The Network Structure of Food Webs. In:
@@ -2138,7 +2182,7 @@ probabilistic networks</div>
             <div id="ref-Emmerson2004Predatora" class="csl-entry"
             role="doc-biblioentry">
             Emmerson, M.C. &amp; Raffaelli, D. (2004). <a
-            href="https://doi.org/10.1111/j.0021-8790.2004.00818.x">Predatorprey
+            href="https://doi.org/10.1111/j.0021-8790.2004.00818.x">PredatorPrey
             body size, interaction strength and the stability of a real
             food web</a>. <em>Journal of Animal Ecology</em>, 73,
             399–409.
@@ -2147,7 +2191,7 @@ probabilistic networks</div>
             role="doc-biblioentry">
             Fortuna, M.A. &amp; Bascompte, J. (2006). <a
             href="https://doi.org/10.1111/j.1461-0248.2005.00868.x">Habitat
-            loss and the structure of plantanimal mutualistic
+            loss and the structure of PlantAnimal mutualistic
             networks</a>. <em>Ecology Letters</em>, 9, 281–286.
             </div>
             <div id="ref-Galiana2018Spatiala" class="csl-entry"
@@ -2210,7 +2254,7 @@ probabilistic networks</div>
             Gravel, D., Poisot, T., Albouy, C., Velez, L. &amp;
             Mouillot, D. (2013). <a
             href="https://doi.org/10.1111/2041-210X.12103">Inferring
-            food web structure from predatorprey body size
+            food web structure from PredatorPrey body size
             relationships</a>. <em>Methods in Ecology and
             Evolution</em>, 4, 1083–1090.
             </div>
@@ -2243,7 +2287,7 @@ probabilistic networks</div>
             Herrera, C.M. (1989). <a
             href="https://doi.org/10.1007/BF00380158">Pollinator
             abundance, morphology, and flower visitation rate: Analysis
-            of the <span>“quantity”</span> component in a
+            of the <span>“Quantity”</span> component in a
             plant-pollinator system</a>. <em>Oecologia</em>, 80,
             241–248.
             </div>
@@ -2275,7 +2319,7 @@ probabilistic networks</div>
             role="doc-biblioentry">
             Jordano, P., Bascompte, J. &amp; Olesen, J.M. (2003). <a
             href="https://doi.org/10.1046/j.1461-0248.2003.00403.x">Invariant
-            properties in coevolutionary networks of plantanimal
+            properties in coevolutionary networks of PlantAnimal
             interactions</a>. <em>Ecology Letters</em>, 6, 69–81.
             </div>
             <div id="ref-Kefi2015NetStr" class="csl-entry"
@@ -2458,7 +2502,7 @@ probabilistic networks</div>
             Pomeranz, J.P.F., Thompson, R.M., Poisot, T. &amp; Harding,
             J.S. (2019). <a
             href="https://doi.org/10.1111/2041-210X.13125">Inferring
-            predatorprey interactions in food webs</a>. <em>Methods in
+            PredatorPrey interactions in food webs</a>. <em>Methods in
             Ecology and Evolution</em>, 10, 356–367.
             </div>
             <div id="ref-Pringle2020Resolving" class="csl-entry"
@@ -2473,7 +2517,7 @@ probabilistic networks</div>
             Proulx, S.R., Promislow, D.E.L. &amp; Phillips, P.C. (2005).
             <a href="https://doi.org/10.1016/j.tree.2005.04.004">Network
             thinking in ecology and evolution</a>. <em>Trends in Ecology
-            &amp; Evolution</em>, SPECIAL ISSUE: BUMPER BOOK REVIEW, 20,
+            &amp; Evolution</em>, Special issue: Bumper book review, 20,
             345–353.
             </div>
             <div id="ref-Pulliam1974Theory" class="csl-entry"
@@ -2495,8 +2539,15 @@ probabilistic networks</div>
             Salim, J.A., Saraiva, A.M., Zermoglio, P.F., Agostini, K.,
             Wolowski, M., Drucker, D.P., <em>et al.</em> (2022). <a
             href="https://doi.org/10.1093/gigascience/giac043">Data
-            standardization of plantpollinator interactions</a>.
+            standardization of PlantPollinator interactions</a>.
             <em>GigaScience</em>, 11, giac043.
+            </div>
+            <div id="ref-Sanders2012Indirect" class="csl-entry"
+            role="doc-biblioentry">
+            Sanders, D. &amp; Van Veen, F.J.F. (2012). <a
+            href="https://doi.org/10.1098/rsbl.2012.0572">Indirect
+            commensalism promotes persistence of secondary consumer
+            species</a>. <em>Biology Letters</em>, 8, 960–963.
             </div>
             <div id="ref-Saravia2022Ecological" class="csl-entry"
             role="doc-biblioentry">
@@ -2520,7 +2571,7 @@ probabilistic networks</div>
             Singer, M.C. &amp; McBride, C.S. (2012). <a
             href="https://doi.org/10.1890/11-2078.1">Geographic mosaics
             of species’ association: A definition and an example driven
-            by plantinsect phenological synchrony</a>. <em>Ecology</em>,
+            by PlantInsect phenological synchrony</a>. <em>Ecology</em>,
             93, 2658–2673.
             </div>
             <div id="ref-Stouffer2011RolBod" class="csl-entry"
@@ -2555,13 +2606,13 @@ probabilistic networks</div>
             role="doc-biblioentry">
             Tylianakis, J.M., Tscharntke, T. &amp; Lewis, O.T. (2007).
             <a href="https://doi.org/10.1038/nature05429">Habitat
-            modification alters the structure of tropical hostparasitoid
+            modification alters the structure of tropical HostParasitoid
             food webs</a>. <em>Nature</em>, 445, 202–205.
             </div>
             <div id="ref-VazquezSS2022Ecological" class="csl-entry"
             role="doc-biblioentry">
             Vázquez, D.P., Peralta, G., Cagnolo, L., Santos, M. &amp;
-            Igual, E. autores contribuyeron por. (2022). <a
+            autores contribuyeron por Igual, E. (2022). <a
             href="https://doi.org/10.25260/EA.22.32.2.1.1846">Ecological
             interaction networks. What we know, what we don’t, and why
             it matters</a>. <em>Ecología Austral</em>, 32, 670–697.
@@ -2608,6 +2659,15 @@ probabilistic networks</div>
             size structure in a field experiment</a>. <em>Philosophical
             Transactions of the Royal Society B: Biological
             Sciences</em>, 367, 2990–2997.
+            </div>
+            <div id="ref-XiaoFu2019Link" class="csl-entry"
+            role="doc-biblioentry">
+            Xiao Fu, Eugene Seo, Justin Clarke &amp; Rebecca A.
+            Hutchinson. (2019). <a
+            href="https://doi.org/10.1109/TKDE.2019.2962031">Link
+            Prediction Under Imperfect Detection: Collaborative
+            Filtering for Ecological Networks</a>. <em>IEEE Transactions
+            on Knowledge &amp; Data Engineering</em>.
             </div>
             </div>
         </article>
