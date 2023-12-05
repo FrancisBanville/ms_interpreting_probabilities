@@ -1,47 +1,54 @@
 # Introduction
 
-Cataloging ecological interactions is a substantial challenge. There are
-methodological and biological constraints that hinder our ability to observe all
-interactions, such as the spatial and temporal uncoupling of species
-(@Jordano1987PatMut) and the large number of possible interactions in a
-community, of which the vast majority are rare (@Jordano2016Samplingb).
+As we try to navigate global biodiversity change (decline?), filling in
+knowledge gaps about biodiversity becomes instrumental to monitoring and
+mitigating those changes (@AndrewGonzalez2022Monitor,
+@Abrego2021Accounting). However, cataloging species,
+populations and, in particular, ecological interactions is a substantial
+challenge. There are methodological and biological constraints that hinder our
+ability to observe all interactions, such as the spatial and temporal uncoupling
+of species (@Jordano1987PatMut) and the large number of possible interactions in
+a community, of which the vast majority are rare (@Jordano2016Samplingb). More
+generally, a handful of conditions must be satisfied for an interaction to be
+observed locally. First, both species must have overlapping geographic ranges,
+i.e. they must co-occur within the region of interest
+(@Blanchet2020Cooccurrencea). Then, they must encounter locally. Probabilities
+of interspecific encounters are typically low, especially for rare species with
+low relative abundances (@Canard2012Emergencea). Finally, their traits must be
+locally compatible (@Poisot2015Speciesa). This includes their phenology
+(@Olesen2010Missing, @Singer2012GeoMos), behavioral choices (@Pulliam1974Theory,
+@Choh2012PreRol), phenotypes (@Bolnick2011WhyInt, @Stouffer2011RolBod,
+@Gravel2013InfFooa) and even the presence or abundance of a third species (e.g.,
+of a more profitable prey species) (@Golubski2011ModMod, @Sanders2012Indirect).
 Documenting the location and timing of interactions becomes even more difficult
 when accounting for the spatiotemporal variability of ecological networks
-(@Poisot2012Dissimilaritya, @Poisot2015Speciesa). Indeed, knowing the biological
-capacity of two species to interact is necessary but not sufficient for
-inferring their interaction at a specific time and space. For example,
-@Golubski2011ModMod presented many cases where trophic interactions in food webs
-depend on the presence or abundance of a third species (e.g., of a more
-profitable prey species). More generally, a handful of conditions must be
-satisfied for an interaction to be observed locally. First, both species must
-have overlapping geographic ranges, i.e. they must co-occur within the region of
-interest (@Blanchet2020Cooccurrencea). Then, they must encounter locally.
-Probabilities of interspecific encounters are typically low, especially for rare
-species with low relative abundances (@Canard2012Emergencea). Finally, their
-traits must be locally compatible (@Poisot2015Speciesa). This includes their
-phenology (@Olesen2010Missing, @Singer2012GeoMos), behavioral choices
-(@Pulliam1974Theory, @Choh2012PreRol) and phenotypes (@Bolnick2011WhyInt,
-@Stouffer2011RolBod, @Gravel2013InfFooa). Environmental factors, such as
+(@Poisot2012Dissimilaritya, @Poisot2015Speciesa). Environmental factors, such as
 temperature (@Angilletta2004TemGro), drought (@Woodward2012CliCha), climate
 change (@Gilman2010FraCom, @Woodward2010ChaEco, @Araujo2011Usinga), and habitat
 modifications (@Tylianakis2007HabMod), contribute to this spatiotemporal
 variability of interactions by impacting species abundance and traits. In this
 context, it is unsurprising that our knowledge of ecological interactions
 remains limited (@Hortal2015SevSho) despite extensive biodiversity data
-collection (@Schmeller2015GloTer).
+collection (@Schmeller2015GloTer). 
 
-The recognition of the intrinsic variability of species interactions has led
+Knowing the biological capacity of two species to interact is necessary but not
+sufficient for inferring their interaction at a specific time and space. The
+recognition of the intrinsic variability of species interactions has led
 ecologists to expand their representation of ecological networks to include a
-probabilistic view of interactions (@Poisot2016Structure). As opposed to binary
-deterministic networks, in which interactions are regarded as either occurring
-or not, probabilistic networks represent our degree of belief about the
-realization or feasibility of pairwise interactions at the local or regional
-scale, respectively. In other words, representing interactions probabilistically
-takes into account inherent uncertainties and variability associated with
-ecological data. In the broadest sense, binary networks are also a type of
-probabilistic network, in which the numerical value of an interaction is
-restrained to $0$ (non-occurring) or $1$ (occurring). In probabilistic networks,
-only forbidden interactions (i.e., interactions prohibited by biological traits,
+probabilistic view of interactions (@Poisot2016Structure, @Dallas2017Predicting,
+@XiaoFu2019Link). This different perspective allows us to fill in the Eltonian
+shortfall by modeling the probability of detecting interactions, which can be an
+important tool for directing efforts and take action, especially in places where
+access and resources for research are scarce. As opposed to binary deterministic
+networks, in which interactions are regarded as either occurring or not,
+probabilistic networks represent our degree of belief about the realization or
+feasibility of pairwise interactions at the local or regional scale,
+respectively. In other words, representing interactions probabilistically takes
+into account inherent uncertainties and variability associated with ecological
+data. In the broadest sense, binary networks are also a type of probabilistic
+network, in which the numerical value of an interaction is restrained to $0$
+(non-occurring) or $1$ (occurring). In probabilistic networks, only forbidden
+interactions (i.e., interactions prohibited by biological traits,
 @Jordano2003Invarianta, @Olesen2010Missing) have a probability value of zero,
 provided that intraspecific trait variability is considered
 (@Gonzalez-Varo2016Labilea). However, *neutrally* forbidden interactions (i.e.,
@@ -55,7 +62,7 @@ provide a more realistic portrait of species interactions and network structure
 dynamics, and resilience of ecosystems worldwide (@Proulx2005Networka,
 @McCann2007ProBio, @McCann2011FooWeb, @Rooney2012IntFoo). Moreover, the
 application and development of computational methods in network ecology, often
-based on a probabilistic representation of interactions, can alleviate the
+based on a probabilistic representation of interactions, can alleviate (and guide) the
 sampling efforts required to document species interactions
 (@Strydom2021Roadmapa). For example, statistical models can be used to estimate
 the uncertainty of pairwise interactions (@Cirtwill2019QuaFra) and the
@@ -193,9 +200,11 @@ model (e.g., @Emmerson2004Predatora). The extra amount of ecological information
 in quantitative networks typically comes at a cost of greater sampling effort
 and data volume in predictive models (@Strydom2021Roadmapa), which can lead to
 relatively high levels of uncertainties when inferring quantitative networks
-with limited data. Just like binary networks, the uncertainty and spatiotemporal
+with limited data. 
+
+Just like binary networks, the uncertainty and spatiotemporal
 variability of quantitative interactions can be represented probabilistically.
-However, the need to estimate the probability distribution of all possible value
+However, the need to estimate the probability distribution of all possible values
 of interaction strengths can make the inference of probabilities more
 challenging in quantitative networks compared to binary networks, which require
 only one probability estimate for each interaction. Quantitative interactions
@@ -931,7 +940,9 @@ consider the observation variability as an additional source of randomness.
 Every ecological process is stochastic but there is also a possibility that a
 phenomenon goes undetected. Quantifying and partitioning this stochasticity will
 enable us to make more accurate predictions about ecological interactions at
-various spatial and temporal scales.
+various spatial and temporal scales. This will prove to be of vital importance
+as our time to understand nature runs out, especially at the places where the
+climate change impacts hit harder.
 
 # Acknowledgment
 
