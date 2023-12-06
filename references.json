@@ -653,6 +653,33 @@
         "type": "article-journal"
     },
     {
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2005
+                ]
+            ]
+        },
+        "container-title": "Behavioral Ecology",
+        "author": [
+            {
+                "family": "Broom",
+                "given": "Mark"
+            },
+            {
+                "family": "Ruxton",
+                "given": "Graeme D."
+            }
+        ],
+        "id": "Broom2005You",
+        "DOI": "10.1093/beheco/ari024",
+        "volume": "16",
+        "page": "534-540",
+        "title": "You can runor you can hide: Optimal strategies for cryptic prey against pursuit predators",
+        "type": "article-journal"
+    },
+    {
         "publisher": "Nature Publishing Group",
         "issue": "6979",
         "issued": {

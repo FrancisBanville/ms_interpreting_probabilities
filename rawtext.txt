@@ -8,23 +8,27 @@ interactions is a substantial challenge. There are methodological and
 biological constraints that hinder our ability to observe all
 interactions, such as the spatial and temporal uncoupling of species
 (@Jordano1987PatMut) and the large number of possible interactions in a
-community, of which the vast majority are rare (@Jordano2016Samplingb).
+community, the vast majority of which are rare (@Jordano2016Samplingb).
 More generally, a handful of conditions must be satisfied for an
 interaction to be observed locally. First, both species must have
 overlapping geographic ranges, i.e. they must co-occur within the region
 of interest (@Blanchet2020Cooccurrencea). Second, they must have some
 probability of meeting. Probabilities of interspecific encounters are
 typically low, especially for rare species with low relative abundances
-(@Canard2012Emergencea). Finally, their traits must be locally
-compatible (@Poisot2015Speciesa), including but not limited to phenology
-(@Olesen2010Missing, @Singer2012GeoMos), behavioral choices
-(@Pulliam1974Theory, @Choh2012PreRol), and phenotypes
-(@Bolnick2011WhyInt, @Stouffer2011RolBod, @Gravel2013InfFooa).
+(@Canard2012Emergencea). The probability that species meet each other
+also depends on their biological characteristics, such as the
+synchronization of their phenology (@Olesen2010Missing,
+@Singer2012GeoMos) and their discoverability (e.g., @Broom2005You).
+Finally, when species do come into contact, an interaction occurs only
+if their traits are locally compatible\
+(@Poisot2015Speciesa), including but not limited to their body
+phenotypes (@Bolnick2011WhyInt, @Stouffer2011RolBod, @Gravel2013InfFooa)
+and behavioral choices (@Pulliam1974Theory, @Choh2012PreRol).
 Interactions may also be influenced by the presence or prevalence of a
 third species (e.g., of a more profitable prey species)
 (@Golubski2011ModMod, @Sanders2012Indirect). Documenting the location
 and timing of interactions becomes even more difficult when accounting
-for the spatiotemporal variability of ecological networks
+for the spatiotemporal variability of ecological interactions
 (@Poisot2012Dissimilaritya, @Poisot2015Speciesa). Environmental factors,
 such as temperature (@Angilletta2004TemGro), drought
 (@Woodward2012CliCha), climate change (@Gilman2010FraCom,
@@ -41,27 +45,27 @@ and space. The recognition of the intrinsic variability of species
 interactions has led ecologists to expand their representation of
 ecological networks to include a probabilistic view of interactions
 (@Poisot2016Structure, @Dallas2017Predictinga, @Fu2021Link). This
-different perspective allows us to fill in the Eltonian shortfall by
-modeling the probability of detecting interactions, which can be an
-important tool for directing efforts and take action, especially in
-places where access and resources for research are scarce. As opposed to
-binary deterministic networks, in which interactions are regarded as
-either occurring or not, probabilistic networks represent our degree of
-belief about the realization or feasibility of pairwise interactions at
-the local or regional scale, respectively. In other words, representing
-interactions probabilistically takes into account inherent uncertainties
-and variability associated with ecological data. In the broadest sense,
-binary networks are also a type of probabilistic network, in which the
-numerical value of an interaction is restrained to $0$ (non-occurring)
-or $1$ (occurring). In probabilistic networks, only forbidden
-interactions (i.e., interactions prohibited by biological traits,
-@Jordano2003Invarianta, @Olesen2010Missing) have a probability value of
-zero, provided that intraspecific trait variability is considered
-(@Gonzalez-Varo2016Labilea). However, *neutrally* forbidden interactions
-(i.e., improbable interactions between rare species,
-@Canard2012Emergencea) could have low probability values in local
-networks but high probability in a regional network (metaweb) describing
-the biological capacity of species to interact.
+different perspective allows us to fill in the Eltonian shortfall
+(@Hortal2015SevSho) by modeling the probability of detecting
+interactions, which can be an important tool for directing efforts and
+taking action, especially in places where access and resources for
+research are scarce. Representing interactions probabilistically enables
+us to capture the spatiotemporal variability of the aforementioned
+ecological processes and the uncertainties associated with their
+measurement. As opposed to binary deterministic networks, in which
+interactions are regarded as either occurring or not, probabilistic
+networks, within a Bayesian framework, express our degree of belief (or
+confidence) regarding the occurrence of interactions. Based on the scale
+at which they are estimated, probabilistic interactions may reflect our
+level of confidence in whether interactions will be observed, realized,
+or biologically feasible. In the broadest sense, binary networks are
+also a type of probabilistic network, in which the numerical value of an
+interaction is restrained to $0$ (non-occurring) or $1$ (occurring). In
+probabilistic networks, only forbidden interactions (i.e., interactions
+prohibited by biological traits, @Jordano2003Invarianta,
+@Olesen2010Missing) have a probability value of zero, provided that
+intraspecific trait variability is considered
+(@Gonzalez-Varo2016Labilea).
 
 By accounting for the uncertainty of interactions, probabilistic
 networks provide a more realistic portrait of species interactions and
@@ -90,10 +94,12 @@ knowledge of pairwise interactions, for instance using body size
 (@Petchey2008SizFor, @Gravel2013InfFooa), phylogeny (@Elmasri2020HieBay,
 @Strydom2022Food), or a combination of niche and neutral processes
 (@Bartomeus2016ComFra, @Pomeranz2019InfPre) for inference. Topological
-null models (e.g., @Bascompte2003NesAss, @Fortuna2006HabLos), which can
-be used to generate underlying distributions of network measures for
-null hypothesis significance testing, are other examples of common
-probabilistic network models. Many measures have been developed to
+null models, which generate probabilistic networks by preserving chosen
+characteristics of the binary adjacency matrix while intentionally
+omitting others (@Bascompte2003NesAss, @Fortuna2006HabLos), serve as
+other examples of common probabilistic network models. Null models can
+be used to produce underlying distributions of network measures for null
+hypothesis significance testing. Many measures have been developed to
 describe the structure (@Poisot2016Structure) and diversity
 (@Ohlmann2019Diversity, @Godsoe2022Species) of probabilistic networks.
 These models and measures support the use of this approach for the study
@@ -208,16 +214,17 @@ conditions that enabled them to interact locally.
 
 Even though binary networks constitute a highly valuable source of
 ecological information (@Pascual2006Ecologicala), they overlook
-important factors regarding interaction strengths. These are represented
-using quantitative interactions, which better describe the energy flows,
-demographic impacts or frequencies of interactions between nodes
+important factors regarding interaction strengths. Represented as
+quantitative interactions not confined to the $[0, 1]$ range,
+interaction strengths better describe the energy flows, demographic
+impacts or frequencies of interactions between nodes
 (@Berlow2004Interaction, @Borrett2019Walk), with $A_{i,j}$ being a
-natural number $\mathbb{N}$ or a real number $\mathbb{R}$ depending on
-the measure. For example, they may represent local interaction rates
-between pairs of taxa (e.g., the flower visiting rates of pollinators in
-a mutualistic network, @Herrera1989PolAbu). Because quantitative
-interactions can also describe predation pressure on prey taxa in food
-webs, they can be good estimators of the parameters describing species
+natural $\mathbb{N}$ or real $\mathbb{R}$ number depending on the
+measure. For example, they may represent local interaction rates between
+pairs of taxa (e.g., the flower-visiting rates of pollinators in a
+mutualistic network, @Herrera1989PolAbu). When interaction strengths
+characterize predation pressure on prey taxa in food webs, they can
+serve as good estimators of the parameters describing species
 interactions in a Lotka-Volterra model (e.g., @Emmerson2004Predatora).
 The extra amount of ecological information in quantitative networks
 typically comes at a cost of greater sampling effort and data volume in
@@ -226,15 +233,14 @@ high levels of uncertainties when inferring quantitative networks with
 limited data.
 
 Just like binary networks, the uncertainty and spatiotemporal
-variability of quantitative interactions can be represented
+variability of interaction strengths can be represented
 probabilistically. However, the need to estimate the probability
 distribution of all possible values of interaction strengths can make
 the inference of probabilities more challenging in quantitative networks
 compared to binary networks, which require only one probability estimate
-for each interaction. Quantitative interactions can follow various
-probability distributions depending on the measure used, the event's
-outcome being the value of interaction strength. For instance,
-quantitative interactions can follow a Poisson distribution
+for each interaction. Interaction strengths can follow various
+probability distributions depending on the measure used. For instance,
+they can follow a Poisson distribution
 $A_{i,j} \sim {\rm Poisson}(\lambda_{i \rightarrow j})$ when predicting
 frequencies of interactions between pairs of nodes, with
 $\lambda_{i \rightarrow j}$ being the expected rate at which individuals
@@ -318,24 +324,24 @@ interaction given co-occurrence with the probability of co-occurrence:
 [$$P_{N}(i \rightarrow j) = P_{N}(i \rightarrow j | C = 1) \times
 P_{i,j}(x,y,z).\qquad{(1)}$$]{#eq:co-occur}
 
-Other important factors that can impact our estimation of interaction
-probabilities at the local scale are taxa relative abundance
-(@Canard2012Emergencea) and traits (@Poisot2015Speciesa), as well as
-environmental factors such as temperature (@Angilletta2004TemGro),
-precipitation (@Woodward2012CliCha), habitat structure
-(@Klecka2014EffHab), and presence of other interacting taxa in the
-network (@Pilosof2017MulNat, @Kefi2012MorMea). Here, we use the variable
-$\Omega$ to describe the biological and ecological context in which
-interaction probabilities were estimated. For example, if a research
-team conducts a mesocosm experiment to estimate interaction
-probabilities between predators and prey with and without shelters,
-$\Omega$ would represent the presence or absence of these shelters. Like
-co-occurrence, $\Omega$ can also be modeled probabilistically when the
-stochasticity or uncertainty of environmental and biological factors is
-considered. In sum, $\Omega$ represents all ecological and biological
-variables that were taken into consideration when measuring interaction
-probabilities and is, therefore, a subset of all factors actually
-impacting ecological interactions.
+Other important factors that can impact interaction probabilities at the
+local scale are taxa relative abundance (@Canard2012Emergencea) and
+traits (@Poisot2015Speciesa), as well as environmental factors such as
+temperature (@Angilletta2004TemGro), precipitation
+(@Woodward2012CliCha), habitat structure (@Klecka2014EffHab), and
+presence of other interacting taxa in the network (@Pilosof2017MulNat,
+@Kefi2012MorMea). Here, we use the variable $\Omega$ to describe the
+biological and ecological context in which interaction probabilities
+were estimated. For example, if a research team conducts a mesocosm
+experiment to estimate interaction probabilities between predators and
+prey with and without shelters, $\Omega$ would represent the presence or
+absence of these shelters. Like co-occurrence, $\Omega$ can also be
+modeled probabilistically when the stochasticity or uncertainty of
+environmental and biological factors is considered. In sum, $\Omega$
+represents all ecological and biological variables that were taken into
+consideration when measuring interaction probabilities and is,
+therefore, a subset of all factors actually impacting ecological
+interactions.
 
 The probability that two taxa $i$ and $j$ interact in a local network
 $N$ can thus be conditional on the area $A$, the time interval $t$,
@@ -419,16 +425,19 @@ and time. In contrast with probabilistic local networks, which represent
 the stochasticity of interactions occurring in nature, probabilistic
 metawebs measure our degree of belief in the capacity of two taxa to
 interact (i.e., the probability that their traits could support an
-interaction in the right conditions). In other words, potential
-interactions describe the probability that there exists at least one
-combination of phenotypes of taxa $i$ and $j$ that can interact with
-each other if they were to encounter. To reduce any biases in our
-calculation of this probability, it is crucial to ensure that the set of
-traits sampled or considered accurately reflects the overall trait
-distribution in both taxa. This enhances our confidence in concluding
-that the taxa cannot interact when no positive observation has been made
-and increases our capacity to detect an interaction when it is
-biologically feasible. In addition to one-on-one interactions, the
+interaction in the right conditions). Consequently, although *neutrally*
+forbidden interactions (i.e., improbable interactions between rare
+species, @Canard2012Emergencea) tend to have low probability values in
+local networks, they may exhibit a higher probability in the metaweb.
+Potential interactions describe the probability that there exists at
+least one combination of phenotypes of taxa $i$ and $j$ that can
+interact with each other if they were to encounter. To reduce any biases
+in our calculation of this probability, it is crucial to ensure that the
+set of traits sampled or considered accurately reflects the overall
+trait distribution in both taxa. This enhances our confidence in
+concluding that the taxa cannot interact when no positive observation
+has been made and increases our capacity to detect an interaction when
+it is biologically feasible. In addition to one-on-one interactions, the
 extent of sampling effort also contributes to shaping our assessment of
 metaweb properties, as sampling a larger number of local networks allows
 us to capture more potential interactions (@McLeod2021SamAsy). A
@@ -1006,21 +1015,21 @@ In this contribution, we underline the importance of network metadata
 for adequately interpreting and manipulating probabilistic interaction
 data. The mathematical representation of probabilities and their
 statistical properties depend on the type of interactions (local or
-potential) and the conditions in which they were estimated. We showed
-that probabilistic local networks and metawebs differ in their
-relationship to spatial and temporal scales, with potential interactions
-remaining consistent across scales. In contrast with metawebs, local
-interactions are measured in a specific context (e.g., in a given area,
-time, and biological and environmental conditions) and depend on taxa
-co-occurrence. These important conceptual differences bring to light the
-need to use probabilistic data with caution, for instance when
-generating binary network realizations across space and predicting local
-networks from metawebs. Clear metadata describing the type of
-interaction and the variables used in their estimation are required to
-ensure adequate data manipulation. Better data practices and foundations
-for probabilistic thinking in network ecology could enable more reliable
-assessments of the spatiotemporal variability and uncertainty of biotic
-interactions.
+potential) and the conditions under which these interactions were
+evaluated. We showed that probabilistic local networks and metawebs
+differ in their relationship to spatial and temporal scales, with
+potential interactions remaining consistent across scales. In contrast
+with metawebs, local interactions are measured in a specific context
+(e.g., in a given area, time, and biological and environmental
+conditions) and depend on taxa co-occurrence. These important conceptual
+differences bring to light the need to use probabilistic data with
+caution, for instance when generating binary network realizations across
+space and predicting local networks from metawebs. Clear metadata
+describing the type of interaction and the variables used in their
+estimation are required to ensure adequate data manipulation. Better
+data practices and foundations for probabilistic thinking in network
+ecology could enable more reliable assessments of the spatiotemporal
+variability and uncertainty of biotic interactions.
 
 It is essential to enhance our comprehension of both potential and local
 interactions, especially considering the current scarcity of interaction
