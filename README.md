@@ -61,14 +61,14 @@ belief (or confidence) regarding the occurrence of interactions. Based on the
 scale at which they are estimated, probabilistic interactions may reflect our
 level of confidence in whether interactions will be observed, realized, or
 biologically feasible. As an illustration, we could outline a situation in which
-there is a $50\%$ certainty that an interaction occurs $50\%$ of the time, or
-that there is a $50\%$ certainty that it simply occurs. Our level of confidence
-should be more definitive (approaching either $0$ or $1$) as we extend our
+there is a 50% certainty that an interaction occurs 50% of the time, or
+that there is a 50% certainty that it simply occurs. Our level of confidence
+should be more definitive (approaching either 0 or 1) as we extend our
 sampling to a broader area and over a longer time period, thereby diminishing
 the uncertainty of the interactions (but not necessarily the estimation of their
 variability). In the broadest sense, binary networks are also a type of
 probabilistic network, in which the numerical value of an interaction is
-restrained to $0$ (non-occurring) or $1$ (occurring). Yet, for the sake of
+restrained to 0 (non-occurring) or 1 (occurring). Yet, for the sake of
 clarity, we omit binary networks from our discussion of probabilistic networks
 in this contribution. In probabilistic webs, only forbidden interactions (i.e.,
 interactions prohibited by biological traits or species absence,
@@ -166,7 +166,7 @@ interactions. Metawebs are the network analogs of the species pool, where local
 webs originate from a subset of both species (nodes) and interactions (edges) of
 the regional metaweb (@Saravia2022Ecological). Without clear documentation, it
 can be challenging to know if published probabilistic webs describe local or
-regional interactions, or if so-called probabilities are in reality *interaction
+regional interactions (@tbl:prob provides examples of studies employing both types of probabilistic networks), or if so-called probabilities are in reality *interaction
 scores* (i.e., non-probabilistic quantitative interactions). When probabilistic
 regional interactions are used and interpreted as local interactions (and
 conversely), this may generate misleading findings during data analysis. We
@@ -184,37 +184,42 @@ with each other (e.g., by predation, @Elton2001Animal), forming individual-based
 networks (@Melian2011EcoDyn). The aggregation of these individuals into more or
 less homogeneous groups (e.g., populations, species, trophic species, families)
 allows us to represent nodes at broader taxonomic scales, which affects our
-interpretation of the properties of these systems (@Guimaraes2020Structurea).
-Moreover, edges linking these nodes can describe a variety of interaction
-measures. Ecologists have traditionally represented interactions as binary
-objects that were considered realized after observing at least one individual
-from group $i$ interact with at least another individual from group $j$. Boolean
-interactions can be viewed as the result of a Bernoulli process $A_{i,j} \sim
-{\rm Bernoulli}(P(i \rightarrow j))$, with $P(i \rightarrow j)$ being the
-probability of interaction between $i$ and $j$ that characterizes our limited
-knowledge of the system and its intrinsic spatiotemporal variability. Depending
-on the type of network (local or metaweb), the mathematical formulation and
-interpretation of stochastic parameters like $P(i \rightarrow j)$ can be linked
-to environmental and biological factors such as species relative abundance,
-traits, area, and time (@tbl:prob), for example using logistic regression with a
-logit link function with continuous explanatory variables. In these
-probabilistic network representations in which $P(i \rightarrow j)$ are edge
-values, the only two possible outcomes are the presence ($A_{i,j} = 1$) or
-absence ($A_{i,j} = 0$) of an interaction between each pair of nodes. When
-considering uncertainties around the estimation of $P(i \rightarrow j)$, a Beta
-distribution ${\rm Beta}(\alpha, \beta)$ can also be used to encompass all
-possible probability values. Observing an interaction between two taxa at a
-given location and time provides important information that can be used to
-update previous estimates of $P(i \rightarrow j)$, informing us on the
-biological capacity of both taxa to interact and the environmental conditions
-that enabled them to interact locally. 
+interpretation of the properties of these systems (@Guimaraes2020Structurea,
+@Hemprich-Bennett2021AssImp). Moreover, edges linking these nodes can describe a
+variety of interaction measures. Ecologists have traditionally represented
+interactions as binary objects that were considered realized after observing at
+least one individual from group $i$ interact with at least another individual
+from group $j$. In a binary adjacency matrix $B$, the presence or absence of an
+interaction $B_{i \rightarrow j}$ between two taxa can be viewed as the result
+of a Bernoulli process $B_{i \rightarrow j} \sim {\rm Bernoulli}(P(i \rightarrow
+j))$, with $P(i \rightarrow j)$ being the probability of interaction that
+characterizes our limited knowledge of the system and its intrinsic
+spatiotemporal variability. Depending on the type of network (local or metaweb),
+the mathematical formulation and interpretation of stochastic parameters like
+$P(i \rightarrow j)$ can be linked to environmental and biological factors such
+as species relative abundance, traits, area, and time (@tbl:prob), for example
+using logistic regression with a logit link function with continuous explanatory
+variables. In these probabilistic network representations in which $P(i
+\rightarrow j)$ are edge values, the only two possible outcomes are the presence
+($B_{i \rightarrow j} = 1$) or absence ($B_{i \rightarrow j} = 0$) of an
+interaction between each pair of nodes. Predicting the number of local webs in
+which the interaction occurs can be achieved by using a Binomial distribution,
+assuming a constant probability of interaction and independence between networks
+(trials). When considering uncertainties around the estimation of $P(i
+\rightarrow j)$, a Beta distribution can also be used to encompass all possible
+probability values. In that case, a Beta-Binomial distribution can be used to
+predict the number of networks in which the interaction occurs. Observing an
+interaction between two taxa at a given location and time provides important
+information that can be used to update previous estimates of $P(i \rightarrow
+j)$, informing us on the biological capacity of both taxa to interact and the
+environmental conditions that enabled them to interact locally. 
 
 Even though binary webs constitute a highly valuable source of ecological
 information (@Pascual2006Ecologicala), they overlook important factors regarding
 interaction strengths. Represented as quantitative interactions not confined to
 the $[0, 1]$ range, interaction strengths better describe the energy flows,
 demographic impacts or frequencies of interactions between nodes
-(@Berlow2004Interaction, @Borrett2019Walk), with $A_{i,j}$ being a natural
+(@Berlow2004Interaction, @Borrett2019Walk), with $W_{i \rightarrow j}$ being a natural
 $\mathbb{N}$ or real $\mathbb{R}$ number depending on the measure. For example,
 they may represent local interaction rates between pairs of taxa (e.g., the
 flower-visiting rates of pollinators in a mutualistic network,
