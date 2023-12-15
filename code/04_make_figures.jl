@@ -227,21 +227,21 @@ plot!(1:n_samples,
     color=RGB(86/255,190/255,233/255),
     alpha=0.6,
     linewidth=3,
-    label="p = 1.0")
+    label="P(L | M) = 1.0")
 
 plot!(1:n_samples,
     Ns_M3_p75_links,
     color=RGB(0/255,158/255,115/255),
     alpha=0.6,
     linewidth=3,
-    label="p = 0.75")
+    label="P(L | M) = 0.75")
 
 plot!(1:n_samples,
     Ns_M3_p50_links,
     color=RGB(230/255,159/255,0/255),
     alpha=0.6,
     linewidth=3,
-    label="p = 0.50")
+    label="P(L | M) = 0.50")
 
 xaxis!(:log,
     xlabel="Number of samples", 
@@ -277,21 +277,21 @@ plot!(1:n_samples,
     color=RGB(86/255,190/255,233/255),
     alpha=0.6,
     linewidth=3,
-    label="p = 1.0")
+    label="P(L | M) = 1.0")
 
 plot!(1:n_samples,
     Ns_M3_p75_co,
     color=RGB(0/255,158/255,115/255),
     alpha=0.6,
     linewidth=3,
-    label="p = 0.75")
+    label="P(L | M) = 0.75")
 
 plot!(1:n_samples,
     Ns_M3_p50_co,
     color=RGB(230/255,159/255,0/255),
     alpha=0.6,
     linewidth=3,
-    label="p = 0.50")
+    label="P(L | M) = 0.50")
 
 
 xaxis!(:log,
@@ -545,7 +545,7 @@ a = [1,5,10,20,40,100]
 
 plotD = scatter(nsims, 
         divergences_100, 
-        label = "p = 1.0",
+        label = "P(L | M) = 1.0",
         color = RGB(86/255,190/255,233/255),
         alpha = 0.8,
         framestyle=:box, 
@@ -565,13 +565,13 @@ plotD = scatter(nsims,
 
 scatter!(nsims, 
         divergences_75, 
-        label = "p = 0.75",
+        label = "P(L | M) = 0.75",
         alpha = 0.8,
         color = RGB(0/255,158/255,115/255))
 
 scatter!(nsims, 
         divergences_50, 
-        label = "p = 0.50",
+        label = "P(L | M) = 0.50",
         color = RGB(230/255,159/255,0/255),
         alpha = 0.8)
 
@@ -586,7 +586,7 @@ yaxis!(ylabel="Mean squared logarithmic error (MSLE)")
 l = @layout [grid(3,1) d{0.6w}]
 
 plot(plotA, plotB, plotC, plotD,
-        title = ["(a) p = 1.0" "(b) p = 0.75" "(c) p = 0.50" "(d)"],
+        title = ["(a) P(L | M) = 1.0" "(b) P(L | M) = 0.75" "(c) P(L | M) = 0.50" "(d)"],
         titleloc=:right, 
         titlefont=fonts,
         layout = l,

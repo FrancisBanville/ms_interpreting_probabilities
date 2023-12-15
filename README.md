@@ -372,8 +372,9 @@ variables.
 | $P(L_{i \rightarrow j})$ | local | realization of the interaction | @Fortuna2006HabLos (null model) |    
 | $P(L_{i \rightarrow j} \vert A)$ | local | realization of the interaction in a given area or volume | @Galiana2018Spatiala * |   
 | $P(L_{i \rightarrow j} \vert t)$ | local | realization of the interaction during a given time period | @Weinstein2017ComTra |   
-| $P(L_{i \rightarrow j} \vert C)$ | local | realization of the interaction given that the taxa co-occur | @Gravel2019BriElt |  
+| $P(L_{i \rightarrow j} \vert C_{i, j})$ | local | realization of the interaction given that the taxa co-occur | @Gravel2019BriElt |  
 | $P(L_{i \rightarrow j} \vert \Omega)$ | local | realization of the interaction given environmental conditions | @Gravel2019BriElt (temperature and precipitation) |  
+| $P(L_{i \rightarrow j} \vert M_{i \rightarrow j})$ | local | realization of the interaction among potentially interacting taxa | this study |
 
 Table: **Notation of probabilistic interactions.** The probability of
 interaction between two taxa $i$ and $j$ is interpreted differently in a metaweb
@@ -489,12 +490,12 @@ and the grey areas cover the 50% and 95% percentile intervals. (c) Scaling of
 the number of links and (d) scaling of connectance with the number of sampled
 binary and probabilistic local webs. For a better comparison with binary webs,
 local probabilistic webs were derived from the probabilistic metaweb with a
-false positive and false negative rate of zero. A specific value of $p$ (the
-local probability of interaction among potentially interacting species) was used
-for all local webs within a particular curve. Aggregated probabilistic local
-webs were obtained by sequentially and randomly selecting a number of
+false positive and false negative rate of zero. A specific value of $P(L|M)$
+(the local probability of interaction among potentially interacting species) was
+used for all local webs within a particular curve. Aggregated probabilistic
+local webs were obtained by sequentially and randomly selecting a number of
 probabilistic local webs and aggregating both their species and interactions
-(with the value of $p$ adjusting according to
+(with the value of $P(L|M)$ adjusting according to
 @eq:aggregate).](figures/network_accumulation.png){#fig:accumulation}
 
 We converted these binary networks into probabilistic ones using models based on
@@ -519,15 +520,15 @@ must initially be biologically feasible before occurring at a specific time and
 space. A local probability of interaction $P(L_{i \rightarrow j})$ can be
 expressed as the product of the probability of local interaction given that the
 two taxa can potentially interact $P(L_{i \rightarrow j} | M_{i \rightarrow j} =
-1)$, which we denote as $p$ for the sake of simplicity, with their probability
-of regional interaction $P(M_{i \rightarrow j})$: 
+1)$, which we denote as $P(L|M)$ for the sake of simplicity, with their
+probability of regional interaction $P(M_{i \rightarrow j})$: 
 
 $$P(L_{i \rightarrow j}) = P(L_{i \rightarrow j} | M_{i \rightarrow j} = 1)
 \times P(M_{i \rightarrow j} = 1).$$ {#eq:local_meta}
 
 We built the probabilistic local webs from the binary ones by using the
-probabilistic metawebs and a constant value of $p$ across interactions. Low
-values of $p$ indicate that feasible interactions rarely occur locally,
+probabilistic metawebs and a constant value of $P(L|M)$ across interactions. Low
+values of $P(L|M)$ indicate that feasible interactions rarely occur locally,
 intermediate values around 50% suggest considerable spatiotemporal variability,
 while high values indicate that regional interactions are nearly always realized
 locally. Following @eq:local_meta, the local probability of interaction between
@@ -537,24 +538,26 @@ of regional interaction.
 In the last two panels of @fig:accumulation, we show how the aggregated number
 of links and connectance (i.e., the proportion of all of the possible links that
 are realized) scale with the number of sampled local probabilistic webs,
-according to different values of $p$. When aggregating local probabilistic webs,
-the constancy of the probability of regional interaction across the entire study
-area means that any rise in the probability of local interaction is solely
-attributable to an increase in $p$. The probability $p_{1,2}$ of local
+according to different values of $P(L|M)$. When aggregating local probabilistic
+webs, the constancy of the probability of regional interaction across the entire
+study area means that any rise in the probability of local interaction is solely
+attributable to an increase in $P(L|M)$. The probability $P(L_{1,2}|M)$ of local
 interaction among potentially interacting species in an aggregated web $L_{1,2}$
 is obtained by: 
 
-$$p_{1,2} = 1 - (1 - p_1) \times (1 - p_2),$$ {#eq:aggregate}
+$$P(L_{1,2}|M) = 1 - (1 - P(L_{1}|M)) \times (1 - P(L_{2}|M)),$$ {#eq:aggregate}
 
-where $p_1$ and $p_2$ are the probabilities of local interaction among two
-potentially interacting species in the subnetworks L_1$ and $L_2$, respectively. 
+where $P(L_{1}|M)$ and $P(L_{2}|M)$ are the probabilities of local interaction
+among two
+potentially interacting species in the subnetworks $L_1$ and $L_2$,
+respectively. 
 
 By comparing the scaling relationships observed in binary and probabilistic
-webs, @fig:accumulation illustrates that high values of $p$ lead to systematic
-overestimations in the number of links and connectance, especially when $p = 1$
-(corresponding to the scenario where local probabilities of interactions are
-equivalent to the probabilities of regional interactions). However, these biases
-tend to diminish as the number of sampled webs increases.
+webs, @fig:accumulation illustrates that high values of $P(L|M)$ lead to
+systematic overestimations in the number of links and connectance, especially
+when $P(L|M) = 1$ (corresponding to the scenario where local probabilities of
+interactions are equivalent to the probabilities of regional interactions).
+However, these biases tend to diminish as the number of sampled webs increases.
 
 ## Taxonomic scaling of interactions 
 
@@ -587,7 +590,7 @@ P(S_{g_{1i} \rightarrow g_{2j}})),$$ {#eq:taxo}
 
 where $g_{1i}$ and $g_{2j}$ are the species of the corresponding genus. If it is
 known that at least two of these species interact (i.e., $P(S_{g_{1i}
-\rightarrow g_{2j}}) = 1$ for at least one pair of $(g_{1i}, g_{2j})$, it
+\rightarrow g_{2j}}) = 1$ for at least one pair of $(g_{1i}, g_{2j})$), it
 implies a probability of genus interaction equal to $1$. @Canard2012Emergencea
 built a species-based network following a similar approach, by using simulated
 interactions between individuals derived from a neutral model (i.e., a model
@@ -677,7 +680,7 @@ durations when time intervals are nested. In @fig:spatial, we show how the
 expected number of local host-parasite interactions scales with area,
 represented as an expanding latitudinal window, in comparison with regional
 interactions. Even though we employed local probabilities of interactions equal
-to regional interactions for the purpose of comparison (i.e., using $p = 1$
+to regional interactions for the purpose of comparison (i.e., using $P(L|M) = 1$
 here), we notice that the total number of regional interactions scales more
 rapidly than local interactions. This is because numerous regional interactions
 involve species that never co-occur, and as a result, these interactions are not
@@ -693,12 +696,12 @@ regional interactions found in windows of specified length and central
 latitudes. Probabilities of regional interactions were obtained with a false
 positive rate of 5% and a false negative rate of 10%. Local probabilistic
 interactions were derived from the probabilistic metaweb by setting the value of
-$p$ (the local probability of interaction among potentially interacting species)
-to $1$, ensuring a conservative comparison between aggregated local webs and
-metawebs. Aggregated local webs were obtained by aggregating both the species
-and interactions found within a particular latitudinal window, with the values
-of $p$ remaining at their maximum value of $1$ following @eq:aggregate.
-](figures/spatial_scaling.png){#fig:spatial}
+$P(L|M)$ (the local probability of interaction among potentially interacting
+species) to $1$, ensuring a conservative comparison between aggregated local
+webs and metawebs. Aggregated local webs were obtained by aggregating both the
+species and interactions found within a particular latitudinal window, with the
+values of $P(L|M)$ remaining at their maximum value of $1$ following
+@eq:aggregate. ](figures/spatial_scaling.png){#fig:spatial}
 
 ## Box 1: A spatiotemporally explicit model of interactions
 
@@ -829,29 +832,30 @@ resulting from these two sampling techniques, where regional and local
 interactions are drawn from our host-parasite probabilistic networks, generating
 a number of binary web realizations for each site in the dataset. These two
 sampling approaches yield different outcomes, particularly for lower values of
-$p$, which denote instances where regional interactions do not consistently
+$P(L|M)$, which denote instances where regional interactions do not consistently
 manifest locally. Small discrepancies are also apparent between these techniques
 when we equate the probability of local interaction to the probability of
-regional interaction (i.e., when using $p = 1.0$ in @eq:local_meta), especially
-when the number of binary network samples for each location is low. As
-anticipated, we observe that sampling binary interactions from the metaweb tends
-to overestimate connectance on average compared to sampling them from local
-webs. Furthermore, we observe an increase in the variability of connectance when
-employing a single sample, representing what we consider as a more tangible
-process leading to the realization of local and regional interactions in nature. 
+regional interaction (i.e., when using $P(L|M) = 1.0$ in @eq:local_meta),
+especially when the number of binary network samples for each location is low.
+As anticipated, we observe that sampling binary interactions from the metaweb
+tends to overestimate connectance on average compared to sampling them from
+local webs. Furthermore, we observe an increase in the variability of
+connectance when employing a single sample, representing what we consider as a
+more tangible process leading to the realization of local and regional
+interactions in nature. 
 
 ![**Connectance of sampled binary webs.** Comparison between the average
 connectance of binary network samples obtained from the probabilistic local and
 metawebs. Each dot corresponds to a different site. The local probability of
 interaction between potentially interacting species was set to three different
-values: (a) $p = 1.0$, (b) $p = 0.75$, and (c) $p = 0.50$. Grey dots represent
-the outcome of a single trial, while colored dots represent the average
-connectance of each network across $100$ trials. (d) Reduction in the mean
-squared logarithmic error between the average connectance of binary networks
-obtained from these two sampling methods as the number of trials increases, for
-the same values of $p$ used in panels a-c. Probabilities of regional
-interactions were obtained with a false positive rate of 5% and a false negative
-rate of 10%. Metaweb samples were obtained by randomly sampling binary
+values: (a) $P(L|M) = 1.0$, (b) $P(L|M) = 0.75$, and (c) $P(L|M) = 0.50$. Grey
+dots represent the outcome of a single trial, while colored dots represent the
+average connectance of each network across $100$ trials. (d) Reduction in the
+mean squared logarithmic error between the average connectance of binary
+networks obtained from these two sampling methods as the number of trials
+increases, for the same values of $P(L|M)$ used in panels a-c. Probabilities of
+regional interactions were obtained with a false positive rate of 5% and a false
+negative rate of 10%. Metaweb samples were obtained by randomly sampling binary
 interactions from the probabilistic metaweb, and then propagating this result to
 all local webs that include the species potentially engaged in the interactions.
 Local binary webs were generated by independently sampling binary interactions
@@ -921,13 +925,14 @@ interaction, i.e.
 $$\int_\Omega\int_A\int_t P(L_{i \rightarrow j} | A, t, \Omega) dt dA d\Omega
 \leq P(M_{i \rightarrow j}).$$ {#eq:all}
 
-Estimating more precisely the probability $p$ that two taxa interact locally if
+Estimating more precisely the probability $P(L|M)$ that two taxa interact
+locally if
 they can potentially interact allows for improved predictions of local webs from
 a probabilistic metaweb. This task is challenging due to the variability of this
 probability across space and time, as well as its variability across pairwise
-interactions within a network. Using simple models of $p$, as demonstrated in
-our case studies, represents an initial step toward the overarching objective of
-reconstructing local webs from metawebs.
+interactions within a network. Using simple models of $P(L|M)$, as demonstrated
+in our case studies, represents an initial step toward the overarching objective
+of reconstructing local webs from metawebs.
 
 # Conclusion
 
