@@ -61,20 +61,19 @@ belief (or confidence) regarding the occurrence of interactions. Based on the
 scale at which they are estimated, probabilistic interactions may reflect our
 level of confidence in whether interactions will be observed, realized, or
 biologically feasible. As an illustration, we could outline a situation in which
-there is a 50% certainty that an interaction occurs 50% of the time, or
-that there is a 50% certainty that it simply occurs. Our level of confidence
-should be more definitive (approaching either 0 or 1) as we extend our
-sampling to a broader area and over a longer time period, thereby diminishing
-the uncertainty of the interactions (but not necessarily the estimation of their
-variability). In the broadest sense, binary networks are also a type of
-probabilistic network, in which the numerical value of an interaction is
-restrained to 0 (non-occurring) or 1 (occurring). Yet, for the sake of
-clarity, we omit binary networks from our discussion of probabilistic networks
-in this contribution. In probabilistic webs, only forbidden interactions (i.e.,
-interactions prohibited by biological traits or species absence,
-@Jordano2003Invarianta, @Olesen2010Missing) have a probability value of zero by
-default, provided that intraspecific trait variability is considered
-(@Gonzalez-Varo2016Labilea).
+there is a 50% certainty that an interaction occurs 50% of the time, or that
+there is a 50% certainty that it simply occurs. Our level of confidence should
+be more definitive (approaching either 0 or 1) as we extend our sampling to a
+broader area and over a longer time period, thereby diminishing the uncertainty
+of the interactions (but not necessarily the estimation of their variability).
+In the broadest sense, binary networks are also a type of probabilistic network,
+in which the numerical value of an interaction is restrained to 0
+(non-occurring) or 1 (occurring). Yet, for the sake of clarity, we omit binary
+networks from our discussion of probabilistic networks in this contribution. In
+probabilistic webs, only forbidden interactions (i.e., interactions prohibited
+by biological traits or species absence, @Jordano2003Invarianta,
+@Olesen2010Missing) have a probability value of zero by default, provided that
+intraspecific trait variability is considered (@Gonzalez-Varo2016Labilea).
 
 By accounting for the uncertainty of interactions, probabilistic webs may
 provide a more realistic portrait of species interactions and network structure
@@ -166,14 +165,15 @@ interactions. Metawebs are the network analogs of the species pool, where local
 webs originate from a subset of both species (nodes) and interactions (edges) of
 the regional metaweb (@Saravia2022Ecological). Without clear documentation, it
 can be challenging to know if published probabilistic webs describe local or
-regional interactions (@tbl:prob provides examples of studies employing both types of probabilistic networks), or if so-called probabilities are in reality *interaction
-scores* (i.e., non-probabilistic quantitative interactions). When probabilistic
-regional interactions are used and interpreted as local interactions (and
-conversely), this may generate misleading findings during data analysis. We
-believe that a better understanding of the differences, similarities, and
-relationships between these two probabilistic representations of ecological webs
-would alleviate interpretation errors and facilitate a more adequate utilization
-of interaction data.
+regional interactions (@tbl:prob provides examples of studies employing both
+types of probabilistic networks), or if so-called probabilities are in reality
+*interaction scores* (i.e., non-probabilistic quantitative interactions). When
+probabilistic regional interactions are used and interpreted as local
+interactions (and conversely), this may generate misleading findings during data
+analysis. We believe that a better understanding of the differences,
+similarities, and relationships between these two probabilistic representations
+of ecological webs would alleviate interpretation errors and facilitate a more
+adequate utilization of interaction data.
 
 ## Pairwise interactions: the building blocks of ecological networks
 
@@ -185,47 +185,49 @@ networks (@Melian2011EcoDyn). The aggregation of these individuals into more or
 less homogeneous groups (e.g., populations, species, trophic species, families)
 allows us to represent nodes at broader taxonomic scales, which affects our
 interpretation of the properties of these systems (@Guimaraes2020Structurea,
-@Hemprich-Bennett2021AssImp). Moreover, edges linking these nodes can describe a
-variety of interaction measures. Ecologists have traditionally represented
-interactions as binary objects that were considered realized after observing at
-least one individual from group $i$ interact with at least another individual
-from group $j$. In a binary adjacency matrix $B$, the presence or absence of an
-interaction $B_{i \rightarrow j}$ between two taxa can be viewed as the result
-of a Bernoulli process $B_{i \rightarrow j} \sim {\rm Bernoulli}(P(i \rightarrow
-j))$, with $P(i \rightarrow j)$ being the probability of interaction that
-characterizes our limited knowledge of the system and its intrinsic
-spatiotemporal variability. Depending on the type of network (local or metaweb),
-the mathematical formulation and interpretation of stochastic parameters like
-$P(i \rightarrow j)$ can be linked to environmental and biological factors such
-as species relative abundance, traits, area, and time (@tbl:prob), for example
-using logistic regression with a logit link function with continuous explanatory
-variables. In these probabilistic network representations in which $P(i
-\rightarrow j)$ are edge values, the only two possible outcomes are the presence
-($B_{i \rightarrow j} = 1$) or absence ($B_{i \rightarrow j} = 0$) of an
-interaction between each pair of nodes. Predicting the number of local webs in
-which the interaction occurs can be achieved by using a Binomial distribution,
-assuming a constant probability of interaction and independence between networks
-(trials). When considering uncertainties around the estimation of $P(i
-\rightarrow j)$, a Beta distribution can also be used to encompass all possible
-probability values. In that case, a Beta-Binomial distribution can be used to
-predict the number of networks in which the interaction occurs. Observing an
-interaction between two taxa at a given location and time provides important
-information that can be used to update previous estimates of $P(i \rightarrow
-j)$, informing us on the biological capacity of both taxa to interact and the
+@Hemprich-Bennett2021AssImp). 
+
+Edges linking nodes can describe a variety of interaction measures. Ecologists
+have traditionally represented interactions as binary objects that were
+considered realized after observing at least one individual from group $i$
+interact with at least another individual from group $j$. In a binary adjacency
+matrix $B$, the presence or absence of an interaction $B_{i \rightarrow j}$
+between two taxa can be viewed as the result of a Bernoulli process $B_{i
+\rightarrow j} \sim {\rm Bernoulli}(P(B_{i \rightarrow j}))$, with $P(B_{i
+\rightarrow j})$ being the probability of interaction that characterizes our
+limited knowledge of the system and its intrinsic spatiotemporal variability. In
+probabilistic networks, $P(B_{i \rightarrow j})$ are edge values, and the only
+two possible outcomes are the presence ($B_{i \rightarrow j} = 1$) or absence
+($B_{i \rightarrow j} = 0$) of an interaction between each pair of nodes.
+Depending on the type of probabilistic network (local or metaweb), the
+mathematical formulation and interpretation of stochastic parameters like
+$P(B_{i \rightarrow j})$ can be linked to environmental and biological factors
+such as species relative abundance, traits, area, and time (@tbl:prob), for
+example using logistic regression with a logit link function with continuous
+explanatory variables. Predicting the number of local webs in which the
+interaction occurs can be achieved by using a Binomial distribution, assuming a
+constant probability of interaction and independence between networks (trials).
+When considering uncertainties around the estimation of $P(B_{i \rightarrow
+j})$, a Beta distribution can also be used to encompass all possible probability
+values. In that case, a Beta-Binomial distribution can be used to predict the
+number of networks in which the interaction occurs. Observing an interaction
+between two taxa at a given location and time provides important information
+that can be used to update previous estimates of $P(B_{i \rightarrow j})$,
+informing us on the biological capacity of both taxa to interact and the
 environmental conditions that enabled them to interact locally. 
 
 Even though binary webs constitute a highly valuable source of ecological
 information (@Pascual2006Ecologicala), they overlook important factors regarding
-interaction strengths. Represented as quantitative interactions not confined to
-the $[0, 1]$ range, interaction strengths better describe the energy flows,
-demographic impacts or frequencies of interactions between nodes
-(@Berlow2004Interaction, @Borrett2019Walk), with $W_{i \rightarrow j}$ being a natural
-$\mathbb{N}$ or real $\mathbb{R}$ number depending on the measure. For example,
-they may represent local interaction rates between pairs of taxa (e.g., the
-flower-visiting rates of pollinators in a mutualistic network,
-@Herrera1989PolAbu). When interaction strengths characterize predation pressure
-on prey taxa in food webs, they can serve as good estimators of the parameters
-describing species interactions in a Lotka-Volterra model (e.g.,
+interaction strengths. Represented in a quantitative adjacency matrix $W$ as
+numbers not confined to the $[0, 1]$ range, interaction strengths better
+describe the energy flows, demographic impacts or frequencies of interactions
+between nodes (@Berlow2004Interaction, @Borrett2019Walk), with $W_{i \rightarrow
+j}$ being a natural $\mathbb{N}$ or real $\mathbb{R}$ number depending on the
+measure. For example, they may represent local interaction rates between pairs
+of taxa (e.g., the flower-visiting rates of pollinators in a mutualistic
+network, @Herrera1989PolAbu). When interaction strengths characterize predation
+pressure on prey taxa in food webs, they can serve as good estimators of the
+parameters describing species interactions in a Lotka-Volterra model (e.g.,
 @Emmerson2004Predatora). The extra amount of ecological information in
 quantitative networks typically comes at a cost of greater sampling effort and
 data volume in predictive models (@Strydom2021Roadmapa), which can lead to
@@ -239,25 +241,27 @@ strengths can make the inference of probabilities more challenging in
 quantitative webs compared to binary webs, which require only one probability
 estimate for each interaction. Interaction strengths can follow various
 probability distributions depending on the measure used. For instance, they can
-follow a Poisson distribution $A_{i,j} \sim {\rm Poisson}(\lambda_{i \rightarrow
-j})$ when predicting frequencies of interactions between pairs of nodes, with
-$\lambda_{i \rightarrow j}$ being the expected rate at which individuals of taxa
-$i$ and $j$ interact (e.g., the average number of prey $j$ consumed by all
-predators $i$ in a given time period). The Poisson distribution can also be
-0-inflated after initially modeling non-interacting taxa (e.g.,
+follow a Poisson distribution $W_{i \rightarrow j} \sim {\rm Poisson}(\lambda_{i
+\rightarrow j})$ when predicting frequencies of interactions between pairs of
+nodes, with $\lambda_{i \rightarrow j}$ being the expected rate at which
+individuals of taxa $i$ and $j$ interact (e.g., the average number of prey $j$
+consumed by all predators $i$ in a given time period). The Poisson distribution
+can also be 0-inflated after initially modeling non-interacting taxa (e.g.,
 @Boulangeat2012AccDis employ a 0-inflated model to analyze species abundance
 following the modeling of species presence and absence), which constitute the
 majority of taxa pairs in most local webs due to their typically high sparseness
 (@Jordano2016Samplingb). Because of the methodological difficulties typically
-encountered when building deterministic quantitative webs, binary webs, which
-are easier to sample (@Jordano2016Samplingb) and predict (@Strydom2021Roadmapa),
-are documented and modeled more frequently in the literature. Moreover, most
-published probabilistic networks and methods describe Bernoulli interactions
-(whether interaction probabilities are regarded as constant or variable, e.g.
-represented by Beta distributions), which underlines the need for better
-guidelines regarding the interpretation and manipulation of these types of webs.
-For these reasons, our primary focus in this contribution will be on addressing
-the challenges in interpreting and using Bernoulli interactions, in both
+encountered when building deterministic quantitative webs (which are only
+partially mitigated by models such as Ecopath, @Plaganyi2004Criticala), binary
+webs, which are easier to sample (@Jordano2016Samplingb) and predict
+(@Strydom2021Roadmapa), have been more frequently studied and modeled. Moreover,
+most published probabilistic networks and methods describe probabilistic
+interactions whose outcome is binary (whether interaction probabilities are
+regarded as constant or variable, e.g. represented by a Beta distribution),
+which underlines the need for better guidelines regarding the interpretation and
+manipulation of these types of webs first. For these reasons, our primary focus
+in this contribution will be on addressing the challenges in interpreting and
+using interaction probabilities in Bernoulli distributions, in both
 probabilistic local and metawebs.
 
 ## Local webs: communities interacting in space and time
@@ -267,13 +271,13 @@ location and time period (i.e., interactions are contingent upon the
 environmental and biological conditions of the community). In local webs, edges
 commonly represent our degree of belief that two taxa interact in nature, but
 can also represent the probability of *observing* this interaction
-(@Catchen2023Missinga). For example, @Kopelke2017FooStra assembled a dataset of
-binary local European food webs of willow-galling sawflies and their natural
-enemies, clearly referencing each food web in space and time. @Gravel2019BriElt
-used this dataset to infer the probabilities of locally observing interactions
-between co-occurring species, with the added aspect of situating local webs
-within the context of environmental variables. This was achieved by including
-temperature and precipitation as conditional variables in some of their models. 
+(@Catchen2023Missinga). For example,  @Gravel2019BriElt used a dataset of binary
+local European food webs of willow-galling sawflies and their natural enemies,
+all referenced in space and time and consisting of similar species, to infer the
+probabilities of locally observing interactions between co-occurring species.
+This was achieved by situating local webs within the context of environmental
+variables, i.e. by including temperature and precipitation as conditional
+variables in some of their models.
 
 We define space as the collection of geographic coordinates $(x, y, z)$, with
 $(x, y)$ representing longitude and latitude coordinates, and $z$ denoting
@@ -292,53 +296,55 @@ them as continuous variables, where edge values represent probability densities
 (i.e., relative likelihoods of interactions occurring at infinitesimal locations
 and instants in time) rather than discrete probability values (which can be
 obtained by integrating probability densities). By employing discrete locations
-and time periods, we can quantify both a volume or area $A$ and a duration $t$,
+and time periods, we can quantify an area (or volume) $A$ and a duration $t$,
 which can be readily used in spatiotemporal analyses of ecological networks. For
 example, when studying network-area relationships (NAR, @Galiana2018Spatiala),
 we anticipate that local probabilities of interactions scale positively with
 area and duration because taxa have more opportunities to interact as these
 dimensions expand.
 
-The probability that two taxa $i$ and $j$ interact locally can be conditional on
-many environmental and biological factors. One of these is their co-occurrence
-$C_{i,j}$, which is usually a Boolean describing if the geographic distributions
-of both taxa overlap within the study area. Co-occurrence can be modeled
-probabilistically, in which case it may conform to a Bernoulli distribution
-$C_{i,j} \sim {\rm Bernoulli}(P_{i,j}(x, y, z))$, where the probability of
-co-occurrence $P_{i,j}(x, y, z)$ can be estimated through the application of
-joint species distribution models (e.g., @Pollock2014UndCoo). Considering that
-the probability that two non-co-occurring taxa interact locally is zero (i.e.,
-$P_{N}(i \rightarrow j | C = 0) = 0$), the probability of local interaction can
-be obtained by multiplying the probability of interaction given co-occurrence
-with the probability of co-occurrence: 
+The probability that two taxa $i$ and $j$ interact in a local web $L_{x,y,z,t}$
+(spatial and temporal subscripts hereafter omitted for clarity) can be
+conditional on many environmental and biological factors. One of these is their
+co-occurrence $C_{i,j}$, which is usually a Boolean describing if the geographic
+distributions of both taxa overlap within the study area. Co-occurrence can be
+modeled probabilistically, in which case it may conform to a Bernoulli
+distribution $C_{i,j} \sim {\rm Bernoulli}(P(C_{i,j}))$, where the probability
+of co-occurrence $P(C_{i,j})$ can be estimated through the application of joint
+species distribution models (e.g., @Pollock2014UndCoo). Considering that the
+probability that two non-co-occurring taxa interact locally is zero (i.e.,
+$P(L_{i \rightarrow j}| C_{i,j} = 0) = 0$), the probability of local interaction
+can be obtained by multiplying the probability of interaction given
+co-occurrence with the probability of co-occurrence: 
 
-$$P_{N}(i \rightarrow j) = P_{N}(i \rightarrow j | C = 1) \times
-P_{i,j}(x,y,z).$${#eq:co-occur}
+$$P(L_{i \rightarrow j}) = P(L_{i \rightarrow j}| C_{i,j} = 1) \times
+P(C_{i,j} = 1).$${#eq:co-occur}
 
 Other important factors that can impact interaction probabilities at the local
 scale are taxa relative abundance (@Canard2012Emergencea) and traits
 (@Poisot2015Speciesa), as well as environmental factors such as temperature
 (@Angilletta2004TemGro), precipitation (@Woodward2012CliCha), habitat structure
 (@Klecka2014EffHab), and presence of other interacting taxa in the network
-(@Pilosof2017MulNat, @Kefi2012MorMea). Here, we use the variable $\Omega$ to
-describe the biological and ecological context in which interaction
-probabilities were estimated. For example, if a research team conducts a
-mesocosm experiment to estimate interaction probabilities between predators and
-prey with and without shelters, $\Omega$ would represent the presence or absence
-of these shelters. Like co-occurrence, $\Omega$ can also be modeled
-probabilistically when the stochasticity or uncertainty of environmental and
-biological factors is considered. In sum, $\Omega$ represents all ecological and
-biological variables that were taken into consideration when measuring
-interaction probabilities and is, therefore, a subset of all factors actually
-impacting ecological interactions. 
+(@Pilosof2017MulNat, @Kefi2012MorMea), as described above. Here, we use the
+variable $\Omega$ to describe the biological and ecological context in which
+interaction probabilities were estimated. For example, if a research team
+conducts a mesocosm experiment to estimate interaction probabilities between
+predators and prey with and without shelters (a place that offers refuge and
+protection for prey, shielding them from predators), $\Omega$ would represent
+the presence or absence of these shelters. Like co-occurrence, $\Omega$ can also
+be modeled probabilistically when the stochasticity or uncertainty of
+environmental and biological factors is considered. In sum, $\Omega$ represents
+all ecological and biological variables that were taken into consideration when
+measuring interaction probabilities and is, therefore, a subset of all factors
+actually impacting ecological interactions. 
 
-The probability that two taxa $i$ and $j$ interact in a local web $N$ can thus
-be conditional on the area $A$, the time interval $t$, their co-occurrence $C$
-and chosen environmental and biological conditions $\Omega$. This gives us the
-following equation when all of these conditions are included in the estimation
-of interaction probabilities:
+The probability that two taxa $i$ and $j$ interact in a local web $L$ can thus
+be conditional on the area (or volume) $A$, the time interval $t$, their
+co-occurrence $C_{i,j}$ and chosen environmental and biological conditions
+$\Omega$. This gives us the following equation when all of these conditions are
+included in the estimation of interaction probabilities:
 
-$$P_{N}(i \rightarrow j | A, t, C, \Omega).$$
+$$P(L_{i \rightarrow j} | A, t, C_{i,j}, \Omega).$$
 {#eq:local}
 
 The representation of the local context in which probabilities are estimated and
@@ -354,24 +360,24 @@ avoid any confusion in their interpretation and to limit manipulation errors
 during their re-use. For instance, ecologists should be explicit about their
 consideration of co-occurrence in their estimation of local interaction
 probabilities. Indeed, it is important to specify if probability values are
-conditional $P_{N}(i \rightarrow j | C = 1)$ or not $P_{N}(i \rightarrow j)$ on
-co-occurrence since this can significantly impact the interpretation and
+conditional $P(L_{i \rightarrow j} | C_{i,j} = 1)$ or not $P(L_{i \rightarrow
+j})$ on co-occurrence since this can significantly impact the interpretation and
 analysis of the data. In @tbl:prob, we present examples of studies that used
 these diverse formulations of probabilistic interactions and conditional
 variables. 
 
 | Notation | Type | Description | Reference | 
 | :--- | :-- | :-------- | -------: | 
-| $P_M(i \rightarrow j)$ | regional | biological feasibility of the interaction | @Strydom2022Food |   
-| $P_N(i \rightarrow j)$ | local | realization of the interaction | @Fortuna2006HabLos (null model) |    
-| $P_N(i \rightarrow j \vert A)$ | local | realization of the interaction in a given area | @Galiana2018Spatiala * |   
-| $P_N(i \rightarrow j \vert t)$ | local | realization of the interaction during a given time period | @Weinstein2017ComTra |   
-| $P_N(i \rightarrow j \vert C)$ | local | realization of the interaction given that the taxa co-occur | @Gravel2019BriElt |  
-| $P_N(i \rightarrow j \vert \Omega)$ | local | realization of the interaction given environmental conditions | @Gravel2019BriElt (temperature and precipitation) |  
+| $P(M_{i \rightarrow j})$ | regional | biological feasibility of the interaction | @Strydom2022Food |   
+| $P(L_{i \rightarrow j})$ | local | realization of the interaction | @Fortuna2006HabLos (null model) |    
+| $P(L_{i \rightarrow j} \vert A)$ | local | realization of the interaction in a given area or volume | @Galiana2018Spatiala * |   
+| $P(L_{i \rightarrow j} \vert t)$ | local | realization of the interaction during a given time period | @Weinstein2017ComTra |   
+| $P(L_{i \rightarrow j} \vert C)$ | local | realization of the interaction given that the taxa co-occur | @Gravel2019BriElt |  
+| $P(L_{i \rightarrow j} \vert \Omega)$ | local | realization of the interaction given environmental conditions | @Gravel2019BriElt (temperature and precipitation) |  
 
 Table: **Notation of probabilistic interactions.** The probability of
 interaction between two taxa $i$ and $j$ is interpreted differently in a metaweb
-$M$ of potential interactions and a local web $N$ of realized interactions. Each
+$M$ of potential interactions and a local web $L$ of realized interactions. Each
 notation includes a different conditional variable, when applicable. An example
 of a study employing each of these notations and conditional variables is
 provided, with the specific variables used indicated in parentheses. The study
@@ -409,7 +415,7 @@ larger number of local webs allows us to capture more regional interactions
 (@McLeod2021SamAsy). A probability of potential interaction in a metaweb $M$ can
 be expressed as 
 
-$$P_{M}(i \rightarrow j),$$ {#eq:metaweb}
+$$P(M_{i \rightarrow j}),$$ {#eq:metaweb}
 
 which, in contrast with @eq:local, is not conditional on any spatial, temporal,
 or environmental variables (@tbl:prob). 
@@ -419,10 +425,10 @@ broad region of interest, probabilistic metawebs can be built using different
 data sources, including literature review, fieldwork, and predictive models
 (e.g., the metaweb of trophic interactions between Canadian mammals inferred by
 @Strydom2022Food). Every pair of taxa that have confidently been observed to
-interact at least once can be given a probability of $1$ (i.e., $P_{M}(i
-\rightarrow j) = 1$) since we know that they *can* interact. This is not the
+interact at least once can be given a probability of $1$ (i.e., $P(M_{i
+\rightarrow j}) = 1$) since we know that they *can* interact. This is not the
 case in local probabilistic webs, in which interaction events usually remain
-stochastic (i.e., $P_{N}(i \rightarrow j) < 1$) after empirically observing
+stochastic (i.e., $P(L_{i \rightarrow j}) < 1$) after empirically observing
 interactions because of their intrinsic spatiotemporal variability. Similarly,
 although rare interactions typically have low probabilities in local webs, they
 can have high probabilities in metawebs when the traits of both taxa are
@@ -440,7 +446,7 @@ interaction probabilities within both local and regional webs (e.g.,
 metawebs by leveraging prior information regarding the feasibility of
 interactions along with the empirical data on observed interactions.
 
-# Properties of probabilistic 
+# Properties of probabilistic webs
 
 Probabilistic local and metawebs differ in their type of interactions (i.e.,
 realized or potential) and in the conditional variables upon which interaction
@@ -510,14 +516,14 @@ whereas unobserved ones were assigned a probability of 10%.
 
 To build probabilistic local webs, we first recognize that local interactions
 must initially be biologically feasible before occurring at a specific time and
-space. A local probability of interaction $P_{N}(i \rightarrow j)$ can be
+space. A local probability of interaction $P(L_{i \rightarrow j})$ can be
 expressed as the product of the probability of local interaction given that the
-two taxa can potentially interact $P_{N}(i \rightarrow j | M_{i \rightarrow j} =
+two taxa can potentially interact $P(L_{i \rightarrow j} | M_{i \rightarrow j} =
 1)$, which we denote as $p$ for the sake of simplicity, with their probability
-of regional interaction $P_{M}(i \rightarrow j)$: 
+of regional interaction $P(M_{i \rightarrow j})$: 
 
-$$P_{N}(i \rightarrow j) = P_{N}(i \rightarrow j | M_{i \rightarrow j} = 1)
-\times P_{M}(i \rightarrow j).$$ {#eq:local_meta}
+$$P(L_{i \rightarrow j}) = P(L_{i \rightarrow j} | M_{i \rightarrow j} = 1)
+\times P(M_{i \rightarrow j} = 1).$$ {#eq:local_meta}
 
 We built the probabilistic local webs from the binary ones by using the
 probabilistic metawebs and a constant value of $p$ across interactions. Low
@@ -529,20 +535,19 @@ a given pair of taxa consistently remained equal to or below their probability
 of regional interaction. 
 
 In the last two panels of @fig:accumulation, we show how the aggregated number
-of links and connectance (i.e., the proportion of all of the $S^2$ possible
-links that are realized, where $S$ represents species richness) scale with the
-number of sampled local probabilistic webs, according to different values of
-$p$. When aggregating local probabilistic webs, the constancy of the probability
-of regional interaction across the entire study area means that any rise in the
-probability of local interaction is solely attributable to an increase in $p$.
-The probability $p_{1,2}$ of local interaction among potentially interacting
-species in an aggregated web $N_{1,2}$ is obtained by: 
+of links and connectance (i.e., the proportion of all of the possible links that
+are realized) scale with the number of sampled local probabilistic webs,
+according to different values of $p$. When aggregating local probabilistic webs,
+the constancy of the probability of regional interaction across the entire study
+area means that any rise in the probability of local interaction is solely
+attributable to an increase in $p$. The probability $p_{1,2}$ of local
+interaction among potentially interacting species in an aggregated web $L_{1,2}$
+is obtained by: 
 
 $$p_{1,2} = 1 - (1 - p_1) \times (1 - p_2),$$ {#eq:aggregate}
 
 where $p_1$ and $p_2$ are the probabilities of local interaction among two
-potentially interacting species in the subnetworks $N_1$ and $N_2$,
-respectively. 
+potentially interacting species in the subnetworks L_1$ and $L_2$, respectively. 
 
 By comparing the scaling relationships observed in binary and probabilistic
 webs, @fig:accumulation illustrates that high values of $p$ lead to systematic
@@ -571,28 +576,28 @@ probability values of edges in both local (@eq:local) and metawebs (@eq:metaweb)
 are not conditional on any taxonomic scale. The phylogenetic scale is tied to
 the definition of the event itself (i.e., the interaction between two taxa), not
 to the conditional variables. In both types of webs, transitioning to a broader
-level of organization can be accomplished directly by using probabilities from
-finer scales. For example, in a network with $n_A$ species from genus $A$ and
-$n_B$ species from genus $B$, one can compute the probability that at least one
-species from genus $A$ interacts with at least one species from genus $B$ as
-follows:
+level of organization (e.g., from a species-level web $S$ to a genus-level web
+$G$) can be accomplished directly by using probabilities from finer scales. For
+example, in a network with $n_1$ species from genus $g_1$ and $n_2$ species from
+genus $g_2$, one can compute the probability that at least one species from
+genus $g_1$ interacts with at least one species from genus $g_2$ as follows:
 
-$$P(A \rightarrow B) = 1 - \prod_{i = 1}^{n_A}\prod_{j = 1}^{n_B}(1 - P(A_i
-\rightarrow B_j)),$$ {#eq:taxo}
+$$P(G_{g_1 \rightarrow g_2}) = 1 - \prod_{i = 1}^{n_1}\prod_{j = 1}^{n_2}(1 -
+P(S_{g_{1i} \rightarrow g_{2j}})),$$ {#eq:taxo}
 
-where $A_i$ and $B_j$ are the species of the corresponding genus. If it is known
-that at least two of these species interact (i.e., $P(A_i \rightarrow B_j) = 1$
-for at least one pair of ${i, j}$), it implies a probability of genus
-interaction equal to $1$. @Canard2012Emergencea built a species-based network
-following a similar approach, by using simulated interactions between
-individuals derived from a neutral model (i.e., a model that assumed ecological
-equivalence among individuals). In contrast, a more sophisticated approach is
-necessary when transitioning from a broader to a finer level of organization.
-This is because knowledge of an interaction between two genera does not
-guarantee that all possible pairwise combinations of their species will also
-interact. One possible method is to build a finer-scale network by generating
-probabilities of interactions through random sampling from a beta distribution,
-parameterized by the broader-scale network.
+where $g_{1i}$ and $g_{2j}$ are the species of the corresponding genus. If it is
+known that at least two of these species interact (i.e., $P(S_{g_{1i}
+\rightarrow g_{2j}}) = 1$ for at least one pair of $(g_{1i}, g_{2j})$, it
+implies a probability of genus interaction equal to $1$. @Canard2012Emergencea
+built a species-based network following a similar approach, by using simulated
+interactions between individuals derived from a neutral model (i.e., a model
+that assumed ecological equivalence among individuals). In contrast, a more
+sophisticated approach is necessary when transitioning from a broader to a finer
+level of organization. This is because knowledge of an interaction between two
+genera does not guarantee that all possible pairwise combinations of their
+species will also interact. One possible method is to build a finer-scale
+network by generating probabilities of interactions through random sampling from
+a beta distribution, parameterized by the broader-scale network.
 
 Ideally, our biological interpretation of probabilistic interactions should
 remain consistent across a network even if it incorporates heterogeneous levels
@@ -640,7 +645,7 @@ spatiotemporal variability of interactions (@eq:local), they serve as valuable
 tools for developing and testing equations describing the scaling of network
 structure with space and time. 
 
-Meta and local webs exhibit distinct relationships with spatial and temporal
+Local and metawebs exhibit distinct relationships with spatial and temporal
 scales. On one hand, probabilistic metawebs, being independent of any local
 context, feature regional interactions that do not scale with space and time.
 This is because regional interactions depend solely on the biological capacity
@@ -651,20 +656,20 @@ which they are present, provided that the data and methods used for estimation
 are consistent. As a result, if a smaller metaweb $M_1$ is derived from
 subsampling a metaweb $M_0$ to represent potential interactions among a subset
 of taxa in a smaller region, their probabilities of interaction should be
-identical regardless of scale, i.e. $P_{M_1}(i \rightarrow j) = P_{M_0}(i
-\rightarrow j)$. However, because the number of taxa may be higher in the larger
-metaweb, it is expected that the overall number of interactions would be higher
-in the larger web, despite pairwise probabilities being identical.
+identical regardless of scale, i.e. $P(M_{1, i \rightarrow j}) = P(M_{0, i
+\rightarrow j})$. However, because the number of taxa may be higher in the
+larger metaweb, it is expected that the overall number of interactions would be
+higher in the larger web, despite pairwise probabilities being identical.
 
 On the other hand, local interactions scale both spatially and temporally, given
 that they have more opportunities to be realized and observed in larger areas
 and longer durations. This is attributed to factors such as a higher number of
 individuals, greater trait variations, and increased opportunities for
 encounters, as highlighted by @McLeod2020EffSpe. For example, if a local
-probabilistic web $N_1$ with an area $A_1$ is derived from a larger web $N_0$
+probabilistic web $L_1$ with an area $A_1$ is derived from a larger web $L_0$
 with an area $A_0$, and $A_1$ is entirely nested within $A_0$, interaction
-probabilities should be lower in the smaller web, i.e. $P_{N_1}(i \rightarrow j
-| A_1 < A_0) \le P_{N_0}(i \rightarrow j | A_0)$. However, if $A_1$ and $A_0$
+probabilities should be lower in the smaller web, i.e. $P(L_{1,i \rightarrow j}
+| A_1 < A_0) \le P(L_{0,i \rightarrow j} | A_0)$. However, if $A_1$ and $A_0$
 are disjoint, interaction probabilities could be higher in the smaller area,
 contingent upon their environmental and biological conditions. Likewise,
 interaction probabilities are expected to be lower in webs with shorter
@@ -724,11 +729,11 @@ As indicated by @eq:co-occur, the probability that two taxa $i$ and $j$ interact
 at a specific location $(x, y, z)$ is determined by the product of their
 probability of interaction given co-occurrence and their probability of
 co-occurrence. First, their co-occurrence probability can be calculated using
-their individual occurrence probabilities $P_i(x, y, z)$ and $P_j(x, y, z)$,
-along with the strength of association $\gamma$ between their occurrences and
-co-occurrence (@Cazelles2016Theorya): 
+their individual occurrence probabilities $P(X_i)$ and $P(X_j)$, along with the
+strength of association $\gamma$ between their occurrences and co-occurrence
+(@Cazelles2016Theorya): 
 
-$$P_{i, j}(x, y, z) = P_i(x, y, z) P_j(x, y, z) \gamma.$$ {#eq:modelcoprob}
+$$P(C_{i, j}) = P(X_i, X_j) = P(X_i) P(X_j) \gamma.$$ {#eq:modelcoprob}
 
 When $\gamma > 1$, it signifies a positive association in the geographic
 distributions of both taxa, indicating that the presence of one taxon enhances
@@ -736,7 +741,7 @@ the probability of occurrence of the other. In empirical webs, $\gamma > 1$
 holds true for the majority of species pairs (@Catchen2023Missinga). The
 co-occurrence of both taxa is modeled as the outcome of a Bernoulli trial
 
-$$C \sim Bernoulli(P_{i, j}(x, y, z)).$$ {#eq:modelco}
+$$C_{i, j} \sim Bernoulli(P(X_i, X_j)).$$ {#eq:modelco}
 
 Next, the probability of interaction given co-occurrence can be made temporally
 explicit by modeling it as a Poisson process with rate parameter $\lambda$. This
@@ -745,7 +750,7 @@ within a defined time interval and can be estimated using prior data on
 interaction strengths, when accessible. The probability that two co-occurring
 taxa engage in an interaction during a time period $t_0$ is given by:
 
-$$P_N(i \rightarrow j | C = 1) = 1-e^{-\lambda t_0},$$ {#eq:modelrate}
+$$P(L_{i \rightarrow j} | C_{i, j} = 1) = 1-e^{-\lambda t_0},$$ {#eq:modelrate}
 
 which tends toward $1$ as $t_0 \to \infty$. It is important to note that the
 units of $\lambda$ and $t_0$ are complementary. For instance, if the duration
@@ -753,13 +758,15 @@ $t_0$ is measured in months, $\lambda$ denote the expected number of
 interactions per month.
 
 The occurrence of an interaction between $i$ and $j$ can be modeled as a
-Bernoulli trial with a probability of $P_{N}(i \rightarrow j)$. Consequently, a
+Bernoulli trial with a probability of $P(L_{i \rightarrow j})$. Consequently, a
 Bayesian inference model can be built based on the preceding equations to
 estimate the value of the $\lambda$ and $\gamma$ parameters and generate novel
 interaction data:
 
-$$I \sim \text{Bernoulli}(P_{N}(i \rightarrow j))$$ {#eq:model} $$P_{N}(i
-\rightarrow j) = P_i(x, y, z) P_j(x, y, z) \gamma (1-e^{-\lambda t_0})$$
+$$L_{i \rightarrow j} \sim \text{Bernoulli}(P(L_{i \rightarrow j}))$$
+{#eq:model} 
+
+$$P(L_{i \rightarrow j}) = P(X_i) P(X_j) \gamma (1-e^{-\lambda t_0})$$
 {#eq:modeleq}
 
 $$\gamma \sim \text{Gamma}(2,0.5)$$ {#eq:modelgamma} 
@@ -769,9 +776,9 @@ $$\lambda \sim \text{Exponential}(2)$$ {#eq:modellambda}
 In @fig:spatiotemporal, we show the variation in the probability of interaction
 under different parameter values. In the right panel, we notice that,
 irrespective of the interaction rate $\lambda$, the probability of interaction
-converges toward an asymptote determined by the co-occurrence $P_{i, j}(x, y,
-z)$ (@eq:modelcoprob). This model can be customized in different ways, such as
-by linking $\lambda$ with specific environmental variables or explicitly
+converges toward an asymptote determined by the co-occurrence $P(C_{i, j})$
+(@eq:modelcoprob). This model can be customized in different ways, such as by
+linking $\lambda$ with specific environmental variables or explicitly
 incorporating observation errors (i.e., the probabilities of false negatives and
 false positives).
 
@@ -855,16 +862,16 @@ when delineating local communities within a broader region of interest. In the
 first approach, pairwise interactions remain constant irrespective of cell size
 since they are sampled only once from the metaweb. However, in the second
 approach, local interaction probabilities are contingent on the network area.
-For instance, consider the local webs $N_1$ and $N_2$ with an area of
+For instance, consider the local webs $L_1$ and $L_2$ with an area of
 $\frac{1}{2}A_0$, both nested within $A_0$ but disjoint from each other, forming
-$N_0$. If we treat $N_1$ and $N_2$ as independent, the probability of
-interaction between taxa $i$ and $j$ in $N_0$ is given by:
+$L_0$. If we treat $L_1$ and $L_2$ as independent, the probability of
+interaction between taxa $i$ and $j$ in $L_0$ is given by:
 
-$$P_{N_0}(i \rightarrow j) = 1 - (1 - P_{N_1}(i \rightarrow j)) \times (1 -
-P_{N_2}(i \rightarrow j)).$$ {#eq:binary}
+$$P(L_{0, i \rightarrow j}) = 1 - (1 - P(L_{1, i \rightarrow j}) \times P(L_{2,
+i \rightarrow j})).$$ {#eq:binary}
 
-Due to its larger area, the probability that the two taxa interact in $N_0$ is
-equal or greater than in $N_1$ and $N_2$. When sampling binary interactions from
+Due to its larger area, the probability that the two taxa interact in $L_0$ is
+equal or greater than in $L_1$ and $L_2$. When sampling binary interactions from
 local webs, it is crucial to sample at the same spatial scale for which
 probabilities were estimated. Otherwise, interaction probabilities must be
 adjusted to align with the intended cell size, preventing systematic biases in
@@ -901,8 +908,8 @@ establish an upper limit for local interactions. In other words, the probability
 of two taxa interacting at a specific location and time is consistently lower or
 equal to the probability of their regional interaction: 
 
-$$P_{N}(i \rightarrow j | A, t, C, \Omega) \le
-P_M(i \rightarrow j).$$ {#eq:switch}
+$$P(L_{i \rightarrow j} | A, t, C, \Omega) \le
+P(M_{i \rightarrow j}).$$ {#eq:switch}
 
 Moreover, the probability that two taxa possess the biological capacity to
 interact must exceed the probability of them interacting at any location and
@@ -911,8 +918,8 @@ cumulative probability of local interactions across all spatial, temporal, and
 environmental conditions must be less than the probability of regional
 interaction, i.e.
 
-$$\int_\Omega\int_A\int_t P_{N}(i \rightarrow j | A, t, \Omega) dt dA d\Omega
-\leq P_M(i \rightarrow j).$$ {#eq:all}
+$$\int_\Omega\int_A\int_t P(L_{i \rightarrow j} | A, t, \Omega) dt dA d\Omega
+\leq P(M_{i \rightarrow j}).$$ {#eq:all}
 
 Estimating more precisely the probability $p$ that two taxa interact locally if
 they can potentially interact allows for improved predictions of local webs from
