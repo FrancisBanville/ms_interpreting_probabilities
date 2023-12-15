@@ -326,25 +326,33 @@ scale are taxa relative abundance (@Canard2012Emergencea) and traits
 (@Angilletta2004TemGro), precipitation (@Woodward2012CliCha), habitat structure
 (@Klecka2014EffHab), and presence of other interacting taxa in the network
 (@Pilosof2017MulNat, @Kefi2012MorMea), as described above. Here, we use the
-variable $\Omega$ to describe the biological and ecological context in which
-interaction probabilities were estimated. For example, if a research team
-conducts a mesocosm experiment to estimate interaction probabilities between
-predators and prey with and without shelters (a place that offers refuge and
-protection for prey, shielding them from predators), $\Omega$ would represent
-the presence or absence of these shelters. Like co-occurrence, $\Omega$ can also
-be modeled probabilistically when the stochasticity or uncertainty of
-environmental and biological factors is considered. In sum, $\Omega$ represents
-all ecological and biological variables that were taken into consideration when
-measuring interaction probabilities and is, therefore, a subset of all factors
-actually impacting ecological interactions. 
+variable $\Omega_{x,y,z,t}$ (hereafter simply $\Omega$) to describe the
+biological and ecological context in which interaction probabilities were
+estimated. For example, if a research team conducts a mesocosm experiment to
+estimate interaction probabilities between predators and prey with and without
+shelters (a place that offers refuge and protection for prey, shielding them
+from predators), $\Omega$ would represent the presence or absence of these
+shelters. Like co-occurrence, $\Omega$ can also be modeled probabilistically
+when the stochasticity or uncertainty of environmental and biological factors is
+considered. In sum, $\Omega$ represents all ecological and biological variables
+that were taken into consideration when measuring interaction probabilities and
+is, therefore, a subset of all factors actually impacting ecological
+interactions. 
 
 The probability that two taxa $i$ and $j$ interact in a local web $L$ can thus
 be conditional on the area (or volume) $A$, the time interval $t$, their
 co-occurrence $C_{i,j}$ and chosen environmental and biological conditions
-$\Omega$. This gives us the following equation when all of these conditions are
-included in the estimation of interaction probabilities:
+$\Omega$. Although these variables are associated with distinct questions or
+mechanisms related to ecological interactions, they may covary with each other,
+such as the possible dependence of $C_{i,j}$ and $\Omega$ on spatial and
+temporal scales. When estimating interaction probabilities using e.g. a
+generalized linear model with multiple explanatory variables that might not be
+independent, it may become important to address collinearity. Using variable
+selection techniques, for instance, may be necessary before fitting the model to
+mitigate this issue. The probability of local interaction is described by the
+following expression when all these conditional variables are included:
 
-$$P(L_{i \rightarrow j} | A, t, C_{i,j}, \Omega).$$
+$$P(L_{i \rightarrow j} | A, t, C_{i,j}, \Omega)$$
 {#eq:local}
 
 The representation of the local context in which probabilities are estimated and
@@ -366,7 +374,7 @@ analysis of the data. In @tbl:prob, we present examples of studies that used
 these diverse formulations of probabilistic interactions and conditional
 variables. 
 
-| Notation | Type | Description | Reference | 
+| Expression | Type | Outcome | Reference | 
 | :--- | :-- | :-------- | -------: | 
 | $P(M_{i \rightarrow j})$ | regional | biological feasibility of the interaction | @Strydom2022Food |   
 | $P(L_{i \rightarrow j})$ | local | realization of the interaction | @Fortuna2006HabLos (null model) |    
@@ -374,19 +382,19 @@ variables.
 | $P(L_{i \rightarrow j} \vert t)$ | local | realization of the interaction during a given time period | @Weinstein2017ComTra |   
 | $P(L_{i \rightarrow j} \vert C_{i, j})$ | local | realization of the interaction given that the taxa co-occur | @Gravel2019BriElt |  
 | $P(L_{i \rightarrow j} \vert \Omega)$ | local | realization of the interaction given environmental conditions | @Gravel2019BriElt (temperature and precipitation) |  
-| $P(L_{i \rightarrow j} \vert M_{i \rightarrow j})$ | local | realization of the interaction among potentially interacting taxa | this study |
+| $P(L_{i \rightarrow j} \vert M_{i \rightarrow j})$ | local | realization of the interaction given that the taxa can biologically interact | this study |
 
-Table: **Notation of probabilistic interactions.** The probability of
-interaction between two taxa $i$ and $j$ is interpreted differently in a metaweb
-$M$ of potential interactions and a local web $L$ of realized interactions. Each
-notation includes a different conditional variable, when applicable. An example
-of a study employing each of these notations and conditional variables is
-provided, with the specific variables used indicated in parentheses. The study
-marked with an asterisk has been carried out on binary webs. Note that
-interaction probabilities can be contingent upon multiple conditional variables,
-or none at all. Additionally, local interaction probabilities might represent
-the probability of observing an interaction, not necessarily its actual
-occurrence. {#tbl:prob}
+Table: **Mathematical expression of probabilistic interactions.** The
+probability of interaction between two taxa $i$ and $j$ is interpreted
+differently in a metaweb $M$ of potential interactions and a local web $L$ of
+realized interactions. Each expression includes a different conditional
+variable, when applicable. An example of a study employing each of these
+notations and conditional variables is provided, with the specific variables
+used indicated in parentheses. The study marked with an asterisk has been
+carried out on binary webs. Note that interaction probabilities can be
+contingent upon multiple conditional variables, or none at all. Additionally,
+local interaction probabilities might represent the probability of observing an
+interaction, not necessarily its actual occurrence. {#tbl:prob}
 
 ## Metawebs: regional catalogs of interactions
 
@@ -418,8 +426,8 @@ be expressed as
 
 $$P(M_{i \rightarrow j}),$$ {#eq:metaweb}
 
-which, in contrast with @eq:local, is not conditional on any spatial, temporal,
-or environmental variables (@tbl:prob). 
+which, in contrast with local webs, is never conditional on any spatial,
+temporal, co-occurrence or environmental variables (@tbl:prob). 
 
 Starting from a selected set of taxa, which are usually distributed within a
 broad region of interest, probabilistic metawebs can be built using different
@@ -469,16 +477,26 @@ species), willow-galling sawflies (96 species), and their parasitoids (126
 species). Given its replicated webs spanning large spatiotemporal scales, this
 dataset is well-suited for analyzing a variety of ecological hypotheses and
 processes. Out of a total of 374 local webs, we retained those containing at
-least 5 species, resulting in a set of 233 georeferenced local webs. We built a
-binary metaweb by aggregating all local interactions, which gave us a regional
-web composed of 274 species and 1080 interactions. In the first two panels of
-@fig:accumulation, we show how the dissimilarity of interactions between common
-species ($\beta_{OS}$) and the dissimilarity in species composition
-($\beta_{S}$) between the metaweb and aggregated local webs
+least 5 species, resulting in a set of 233 georeferenced local webs (networks
+sampled within areas of 0.1 to 0.3 km² during June and/or July spanning 29
+years). We built a binary metaweb by aggregating all local interactions, which
+gave us a regional web composed of 274 species and 1080 interactions. In the
+first two panels of @fig:accumulation, we show how the dissimilarity of
+interactions between common species ($\beta_{OS}$) and the dissimilarity in
+species composition ($\beta_{S}$) between the metaweb and aggregated local webs
 (@Poisot2012Dissimilaritya) vary with the number of sampled local webs. This
 shows that networks of local interactions are highly dissimilar from the
 metaweb, both in terms of species and interactions, especially when only a
-limited number of sites has been sampled.
+limited number of sites has been sampled. Both dissimilarity indices were
+calculated based on the number of items shared by the two webs ($c_{LM}$) and
+the number of items unique to the metaweb ($u_M$) and to the aggregated local
+web ($u_L$). The $\beta_{S}$ dissimilarity index uses species (nodes) as items
+being compared, while the $\beta_{OS}$ index assesses dissimilarity based on
+interactions between shared species (@Poisot2012Dissimilaritya). Both indices
+were calculated following the $\beta_W$ index of @Whittaker1960Vegetation: 
+
+$$\beta_W = \frac{c_{LM} + u_L + u_M}{(2 c_{LM} + u_L + u_M) / 2} - 1.$$
+{#eq:diss}
 
 ![**Network accumulation curves.** (a) Dissimilarity of interactions between
 common species and (b) dissimilarity in species composition between aggregated
@@ -486,7 +504,7 @@ local webs and the binary metaweb of host-parasite interactions. Aggregated
 local webs were obtained by sequentially and randomly selecting a number of
 binary local webs and aggregating both their species and interactions. In both
 panels, the colored line represents the median dissimilarity across simulations
-and the grey areas cover the 50% and 95% percentile intervals. (c) Scaling of
+and the grey areas cover the 50\% and 95\% percentile intervals. (c) Scaling of
 the number of links and (d) scaling of connectance with the number of sampled
 binary and probabilistic local webs. For a better comparison with binary webs,
 local probabilistic webs were derived from the probabilistic metaweb with a
@@ -509,11 +527,11 @@ prevent artificially inflating the total number of links, enabling a more
 accurate comparison with binary webs. This gave us a probability of regional
 interaction of 1 when at least one interaction has been observed and of 0 in the
 absence of any observed interaction between a given pair of species. In the
-second metaweb, we introduced a 5% false positive rate to account for spurious
-interactions and a 10% false negative rate to capture the elevated occurrence of
-false negatives in ecological networks (@Catchen2023Missinga). Observed
-interactions were thus given a probability of regional interaction of 95%,
-whereas unobserved ones were assigned a probability of 10%.
+second metaweb, we introduced a 5\% false positive rate to account for spurious
+interactions and a 10\% false negative rate to capture the elevated occurrence
+of false negatives in ecological networks (@Catchen2023Missinga). Observed
+interactions were thus given a probability of regional interaction of 95\%,
+whereas unobserved ones were assigned a probability of 10\%.
 
 To build probabilistic local webs, we first recognize that local interactions
 must initially be biologically feasible before occurring at a specific time and
@@ -548,8 +566,7 @@ is obtained by:
 $$P(L_{1,2}|M) = 1 - (1 - P(L_{1}|M)) \times (1 - P(L_{2}|M)),$$ {#eq:aggregate}
 
 where $P(L_{1}|M)$ and $P(L_{2}|M)$ are the probabilities of local interaction
-among two
-potentially interacting species in the subnetworks $L_1$ and $L_2$,
+among two potentially interacting species in the subnetworks $L_1$ and $L_2$,
 respectively. 
 
 By comparing the scaling relationships observed in binary and probabilistic
@@ -926,13 +943,12 @@ $$\int_\Omega\int_A\int_t P(L_{i \rightarrow j} | A, t, \Omega) dt dA d\Omega
 \leq P(M_{i \rightarrow j}).$$ {#eq:all}
 
 Estimating more precisely the probability $P(L|M)$ that two taxa interact
-locally if
-they can potentially interact allows for improved predictions of local webs from
-a probabilistic metaweb. This task is challenging due to the variability of this
-probability across space and time, as well as its variability across pairwise
-interactions within a network. Using simple models of $P(L|M)$, as demonstrated
-in our case studies, represents an initial step toward the overarching objective
-of reconstructing local webs from metawebs.
+locally if they can potentially interact allows for improved predictions of
+local webs from a probabilistic metaweb. This task is challenging due to the
+variability of this probability across space and time, as well as its
+variability across pairwise interactions within a network. Using simple models
+of $P(L|M)$, as demonstrated in our case studies, represents an initial step
+toward the overarching objective of reconstructing local webs from metawebs.
 
 # Conclusion
 
