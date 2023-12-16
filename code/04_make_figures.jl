@@ -22,7 +22,6 @@ sites_lat = DataFrame(CSV.File(joinpath("data", "processed", "sites_lat.csv")))
 
 
 
-
 ####### Figure of network accumulation curves (beta diversity) #######
 
 # number of simulations and samples
@@ -172,9 +171,6 @@ plot!(1:n_samples,
 
 
 
-
-
-
 ####### Figure of network accumulation curves (network structure) #######
 
 # simulate network accumulation curves
@@ -194,12 +190,38 @@ Ns_links = links.(Ns_acc)
 Ns_M3_p100_links = links.(Ns_M3_p100_acc)
 Ns_M3_p75_links = links.(Ns_M3_p75_acc)
 Ns_M3_p50_links = links.(Ns_M3_p50_acc)
-    
+
 # calculate connectance
-Ns_co = connectance.(Ns_acc)
-Ns_M3_p100_co = connectance.(Ns_M3_p100_acc)
-Ns_M3_p75_co = connectance.(Ns_M3_p75_acc)
-Ns_M3_p50_co = connectance.(Ns_M3_p50_acc)
+
+function connectance_tripartite(N::AbstractEcologicalNetwork) 
+    
+    # connectance of 0 if the network is empty
+    if richness(N) == 0
+        co = 0
+    else 
+
+    # find species names
+    sp = species(N)
+
+    # calculate number of species in each group
+    S_salix = sum(map(x -> x in salix, sp))
+    S_galler = sum(map(x -> x in galler, sp))
+    S_parasitoid = sum(map(x -> x in parasitoid, sp))
+
+    # calculate number of possible non-forbidden links 
+    S_possible = S_salix * S_galler + S_galler * S_parasitoid 
+    
+    # calculate connectance
+    co = links(N) / S_possible
+    end
+    # calculate connectance
+    return co
+end
+
+Ns_co = connectance_tripartite.(Ns_acc)
+Ns_M3_p100_co = connectance_tripartite.(Ns_M3_p100_acc)
+Ns_M3_p75_co = connectance_tripartite.(Ns_M3_p75_acc)
+Ns_M3_p50_co = connectance_tripartite.(Ns_M3_p50_acc)
 
 
 plot_links = plot(1:n_samples,
@@ -323,7 +345,6 @@ savefig(joinpath("figures","network_accumulation.png"))
 # generate binary realizations of each local network using the two sampling methods (sampling interactions from the metaweb once or independently for each local network)
 
 # calculate connectance for each random draw of each local network
-
 function sample_connectance(M::UnipartiteProbabilisticNetwork, Ns_obj::Vector; nsim=100)
 
     # vectors for the connectance of networks obtained from the two methods
@@ -336,10 +357,10 @@ function sample_connectance(M::UnipartiteProbabilisticNetwork, Ns_obj::Vector; n
         Ns_draws1 = sample_networks(M, Ns_obj)
         ## second sampling method: one random realization for each local network
         Ns_draws2 = sample_networks(Ns_obj)
-
+        
         ## calculate connectance
-        Ns_draws1_co[i, :] = connectance.(Ns_draws1)
-        Ns_draws2_co[i, :] = connectance.(Ns_draws2)
+        Ns_draws1_co[i, :] = connectance_tripartite.(Ns_draws1)
+        Ns_draws2_co[i, :] = connectance_tripartite.(Ns_draws2)
     end
     return (samples_metaweb_co = Ns_draws1_co, samples_local_co = Ns_draws2_co)
 end
@@ -352,8 +373,8 @@ samples_co_100_1 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p100, nsim = 1)
 samples_co_100 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p100, nsim = 100)
 
 # minimum and maximum values for plotting
-min = 0.04
-max = 0.26
+min = 0.2
+max = 1.0
 
 plotA = scatter(mean.(eachcol(samples_co_100_1.samples_metaweb_co)), 
         mean.(eachcol(samples_co_100_1.samples_local_co)), 
@@ -629,7 +650,7 @@ plotA_sup = density(mean.(eachcol(samples_co_100.samples_metaweb_co)),
             linewidth=2)
 
     xaxis!(xlabel="Average connectance across simulations", 
-        xlims=(0, 0.27))
+        xlims=(0, 1))
 
     yaxis!(ylabel="Density", 
         ylims=(0, Inf))
