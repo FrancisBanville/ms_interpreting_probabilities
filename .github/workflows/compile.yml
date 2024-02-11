@@ -47,7 +47,7 @@ jobs:
           message: ${{ steps.word-count.outputs.count }}
       - name: Save artifacts
         if: always()
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@master
         with:
           name: "dist"
           path: dist
