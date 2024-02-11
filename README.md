@@ -740,31 +740,26 @@ values of $P(L|M)$ remaining at their maximum value of $1$ following
 
 ## Box 1: A spatiotemporally explicit model of interactions
 
-Predicting local webs across time and space is a pivotal goal of network ecology
-(@Strydom2021Roadmapa). In a context of scarcity of interaction data
-(@Jordano2016Samplingb), ecologists must resort to predictive models for
-reconstructing networks at fine spatial and temporal scales. For instance,
+Predicting local webs across time and space is a pivotal goal of network
+ecology, especially given the scarcity of interaction data
+(@Strydom2021Roadmapa). Ecologists may resort to predictive models (e.g.,
+generative Bayesian and machine learning models) to reconstruct networks at fine
+spatial and temporal scales with limited interaction data. For instance,
 real-time biomonitoring data coupled with appropriate numerical models
 (@Bohan2017Nextgenerationa) can be employed to reconstruct local ecological
 webs, opening avenues for in-depth studies on local ecosystem functioning and
-dynamics. Apart from their predictive applications, statistical models can also
-be crafted for descriptive purposes, elucidating key parameters of interest such
-as probabilities of interactions. In such instances, the parameter values
-themselves offer valuable ecological insights. Various types of models (e.g.,
-Bayesian and machine learning models) have been used for both predictive and
-descriptive purposes in the realm of ecological interactions
-(@Strydom2021Roadmapa). The probabilistic representation of interactions
-acknowledges the inherent uncertainty in these models, typically expressed
-through probability distributions. We introduce and develop a simple generative
-mechanistic model for probabilistic local interactions that takes into
-consideration their spatiotemporal variability (i.e. a spatiotemporally explicit
-model of local interactions). It is essential to note that our model is not
-designed for regional interactions, which are scale-independent. Rather, it
-could prove valuable for predicting local interactions across time and space by
-generating new interaction data following parameter inference.
+dynamics. The probabilistic representation of interactions acknowledges the
+inherent uncertainty in these models, typically expressed through probability
+distributions. We introduce and develop a simple generative mechanistic model
+for probabilistic local interactions that takes into consideration their
+spatiotemporal variability (i.e. a spatiotemporally explicit model of local
+interactions). It is essential to note that our model is not designed for
+regional interactions, which are scale-independent. Rather, it could prove
+valuable for predicting local interactions across time and space by generating
+new interaction data following parameter inference.
 
 As indicated by @eq:co-occur, the probability that two taxa $i$ and $j$ interact
-at a specific location $(x, y, z)$ is determined by the product of their
+at a specific location $(x, y, z)$ may be determined by the product of their
 probability of interaction given co-occurrence and their probability of
 co-occurrence. First, their co-occurrence probability can be calculated using
 their individual occurrence probabilities $P(X_i)$ and $P(X_j)$, along with the
@@ -829,24 +824,25 @@ different values of $\lambda$ and $\gamma$. In both panels, the individual
 probabilities of occurrence $P_i(x, y, z)$ and $P_j(x, y, z)$ are set to a
 constant value of $0.5$.](figures/spatiotemporal_model.png){#fig:spatiotemporal}
 
-## Sampling binary webs
+## Sampling for binary webs
 
-The prediction of binary interactions through random draws is an important
+The prediction of binary interactions through Bernoulli trials is an important
 application of probabilistic webs. This approach proves beneficial for analyzing
 the structural characteristics of probabilistic webs, particularly in the
-absence of specific analytical measures. By simulating independent Bernoulli
-trials for each interaction, a binary network can be generated. A probability
-distribution of network properties can be obtained by measuring network
-structure across multiple randomly generated networks (@Poisot2016Structure).
-This method enables the representation of the variability of network structure,
-albeit with possible biases when connectance is low (@Poisot2014WheEco,
-@Chagnon2015ChaTop). Employing this strategy to generate binary networks under a
-null model facilitates null hypothesis significance testing, wherein the
-observed measure is compared against the simulated distribution (e.g.,
-@Bascompte2003NesAss). Additionally, randomly generating binary networks across
-spatial and temporal dimensions aids in representing the spatiotemporal
-variability of network structure, allowing the testing of ecological hypotheses
-regarding interactions on large spatial and temporal scales.
+absence of specific analytical measures. By performing independent Bernoulli
+trials for each interaction in a probabilistic web, a binary network may be
+generated. A probability distribution of network properties can be obtained by
+measuring network structure across multiple randomly generated networks
+(@Poisot2016Structure). This method enables the representation of the
+variability of network structure, albeit with possible biases when connectance
+is low (@Poisot2014WheEco, @Chagnon2015ChaTop). Employing this strategy to
+generate binary networks under a null model facilitates null hypothesis
+significance testing, wherein the observed measure is compared against the
+simulated distribution (e.g., @Bascompte2003NesAss). Additionally, the random
+generation of binary networks, from a probabilistic web that accounts for the
+spatiotemporal variability of interactions, may effectively capture network
+structure across space and time. This facilitates the investigation of
+ecological hypotheses about interactions at broad spatial and temporal scales.
 
 There are at least two distinct approaches to sample binary networks from
 probabilistic webs across space, for example, when attempting to predict a
