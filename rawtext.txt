@@ -200,13 +200,13 @@ interaction data.
 
 Local and metawebs, like any type of network, are made of nodes and
 edges that can be represented at different levels of organization and
-precision. The basic unit of food webs and other ecological networks are
-individuals that interact with each other (e.g., by predation,
+precision. The basic units of ecological networks are individuals that
+interact with each other (e.g., by predation in food webs,
 @Elton2001Animal), forming individual-based networks
 (@Melian2011EcoDyn). The aggregation of these individuals into more or
-less homogeneous groups (e.g., populations, species, families) allows us
-to represent nodes at broader taxonomic scales, which affects our
-interpretation of the properties of these systems
+less homogeneous groups (e.g., populations, species, families, feeding
+guilds) allows us to represent nodes at broader taxonomic scales, which
+affects our interpretation of the properties of these systems
 (@Guimaraes2020Structurea, @Hemprich-Bennett2021AssImp).
 
 Edges linking nodes can describe a variety of interaction measures.
@@ -519,10 +519,10 @@ webs, they can have high probabilities in metawebs when the traits of
 both taxa are congruent. On the other hand, interactions that were never
 observed can have low probability values in both local and metawebs,
 going as low as $0$ for forbidden links (i.e., interactions forbidden by
-biological traits). However, because of observation errors due to
-taxonomic misidentifications and ecological misinterpretations (e.g.,
-due to cryptic species and interactions, @Pringle2020Resolving), many
-observations of interactions are in reality false positives. Likewise,
+biological traits). However, many observations of interactions are in
+reality false positives because of observation errors due to taxonomic
+misidentifications and ecological misinterpretations (e.g., due to
+cryptic species and interactions, @Pringle2020Resolving). Likewise,
 forbidden interactions can be false negatives in metawebs, e.g. if they
 have been assessed for specific phenotypes, locations or time. Employing
 Bayesian models, whether they are mechanistic or phenomenological, could
@@ -542,14 +542,17 @@ to consider them may result in misleading results and interpretation
 errors when analyzing the properties of probabilistic webs, which could
 be particularly problematic when addressing crucial ecological questions
 about networks. Here we compare the characteristics of local and
-metawebs through the presentation of four common applications of
-probabilistic interactions. All code and data to reproduce these
-analyses are available at the Open Science Framework (TBD).
+metawebs through the presentation of four applications of probabilistic
+interactions: (1) describing their spatial and temporal scaling, (2)
+describing their taxonomic scaling, (3) sampling for binary webs, and
+(4) reconstructing probabilistic local webs from metawebs. All code and
+data to reproduce these analyses are available at the Open Science
+Framework (TBD).
 
 ## Host-parasite network data
 
 We use the collection of tripartite host-parasite networks sampled
-across Europe, created by @Kopelke2017FooStra, in most of our case
+across Europe, created by @Kopelke2017FooStra, in the following case
 studies. This dataset contains well-resolved binary local interactions
 between willows (52 species), willow-galling sawflies (96 species), and
 their parasitoids (126 species). Given its replicated webs spanning
@@ -669,80 +672,6 @@ especially when $P(L|M) = 1$ (corresponding to the scenario where local
 probabilities of interactions are equivalent to the probabilities of
 regional interactions). However, these biases tend to diminish as the
 number of sampled webs increases.
-
-## Taxonomic scaling of interactions
-
-Probabilistic webs offer a versatile approach to tackle a broad array of
-ecological questions, depending on their level of organization. For
-instance, the assemblage of interactions across ecological scales can be
-explored through species-based networks, while clade-based networks
-provide insights into macroevolutionary processes (e.g.,
-@Gomez2010EcoInt). Given that our interpretation of the properties and
-dynamics of ecological webs depends on their taxonomic scale
-(@Guimaraes2020Structurea), investigating the phylogenetic scaling of
-network structure emerges as a promising research avenue. Examining the
-same system at various taxonomic scales can yield meaningful and
-complementary ecological information, and, in our perspective, employing
-probabilistic webs is an effective approach for such analyses.
-
-There are no inherent differences in the taxonomic scaling between local
-and metawebs, as only the nodes are defined taxonomically. In other
-words, the probability values of edges in both local (eq. 2) and
-metawebs (eq. 3) are not conditional on any taxonomic scale. The
-phylogenetic scale is tied to the definition of the event itself (i.e.,
-the interaction between two taxa), not to the conditional variables. In
-both types of webs, transitioning to a broader level of organization
-(e.g., from a species-level web $S$ to a genus-level web $G$) can be
-accomplished directly by using probabilities from finer scales. For
-example, in a network with $n_1$ species from genus $g_1$ and $n_2$
-species from genus $g_2$, one can compute the probability that at least
-one species from genus $g_1$ interacts with at least one species from
-genus $g_2$ as follows:
-
-[$$P(G_{g_1 \rightarrow g_2}) = 1 - \prod_{i = 1}^{n_1}\prod_{j = 1}^{n_2}(1 -
-P(S_{g_{1i} \rightarrow g_{2j}})),\qquad{(7)}$$]{#eq:taxo}
-
-where $g_{1i}$ and $g_{2j}$ are the species of the corresponding genus.
-If it is known that at least two of these species interact (i.e.,
-$P(S_{g_{1i} \rightarrow g_{2j}}) = 1$ for at least one pair of
-$(g_{1i}, g_{2j})$), it implies a probability of genus interaction equal
-to $1$. @Canard2012Emergencea built a species-based network following a
-similar approach, by using simulated interactions between individuals
-derived from a neutral model (i.e., a model that assumed ecological
-equivalence among individuals). In contrast, a more sophisticated
-approach is necessary when transitioning from a broader to a finer level
-of organization. This is because knowledge of an interaction between two
-genera does not guarantee that all possible pairwise combinations of
-their species will also interact. One possible method is to build a
-finer-scale network by generating probabilities of interactions through
-random sampling from a beta distribution, parameterized by the
-broader-scale network.
-
-Ideally, our biological interpretation of probabilistic interactions
-should remain consistent across a network even if it incorporates
-heterogeneous levels of organization, such as a network whose nodes
-represent both species and trophic species (groups of species sharing
-similar predators and prey). This is common in ecological webs where
-taxonomic resolution is typically low (@Hemprich-Bennett2021AssImp,
-@VazquezSS2022Ecological). Interaction probabilities at broader
-taxonomic scales should be based on probabilities of interactions
-between individuals, for both local and metawebs. For instance, in local
-individual-based food webs, the probability that two individuals
-interact reflects our degree of belief that one individual will consume
-the other. Similarly, in local species-based food webs, the probability
-that two species interact represents our degree of belief that at least
-one individual from the predator species consumes at least another
-individual from the prey species. Furthermore, in local clade-based food
-webs, the probability that two clades interact represents our degree of
-belief that at least two species from these clades interact with each
-other or, equivalently, that at least two individuals from these clades
-interact with each other. Fundamentally, the taxonomic scaling of
-interactions involves aggregating interactions between individuals into
-larger groups, which may exhibit varying degrees of homogeneity based on
-the organisms and the study system. In that regard, taxonomic scaling is
-analogous to the spatial and temporal scaling of interactions, as they
-all represent different ways to aggregate individuals into broader
-groups (either spatially, temporally, or taxonomically).
 
 ## Spatial and temporal scaling of interactions
 
@@ -870,16 +799,20 @@ probabilities $P(X_i)$ and $P(X_j)$, along with the strength of
 association $\gamma$ between their occurrences and co-occurrence
 (@Cazelles2016Theorya):
 
-[$$P(C_{i, j}) = P(X_i, X_j) = P(X_i) P(X_j) \gamma.\qquad{(8)}$$]{#eq:modelcoprob}
+[$$P(C_{i, j}) = P(X_i, X_j) = P(X_i) P(X_j) \gamma.\qquad{(7)}$$]{#eq:modelcoprob}
 
 When $\gamma > 1$, it signifies a positive association in the geographic
 distributions of both taxa, indicating that the presence of one taxon
-enhances the probability of occurrence of the other. In empirical webs,
-$\gamma > 1$ holds true for the majority of species pairs
-(@Catchen2023Missinga). The co-occurrence of both taxa is modeled as the
-outcome of a Bernoulli trial
+enhances the probability of occurrence of the other. Attractions may be
+the result of positive interactions (e.g., mutualism) or
+positive/negative interactions (e.g., antagonism between predators and
+prey, @Cazelles2016Theorya). In empirical webs, $\gamma > 1$ holds true
+for the majority of species pairs (@Catchen2023Missinga). In contrast,
+repulsions ($\gamma < 1$) may be caused by strong interspecific
+competition (@Cazelles2016Theorya). We model the co-occurrence of both
+taxa as the outcome of a Bernoulli trial
 
-[$$C_{i, j} \sim Bernoulli(P(X_i, X_j)).\qquad{(9)}$$]{#eq:modelco}
+[$$C_{i, j} \sim Bernoulli(P(X_i, X_j)).\qquad{(8)}$$]{#eq:modelco}
 
 Next, the probability of interaction given co-occurrence can be made
 temporally explicit by modeling it as a Poisson process with rate
@@ -889,7 +822,7 @@ estimated using prior data on interaction strengths, when accessible.
 The probability that two co-occurring taxa engage in an interaction
 during a time period $t_0$ is given by:
 
-[$$P(L_{i \rightarrow j} | C_{i, j} = 1) = 1-e^{-\lambda t_0},\qquad{(10)}$$]{#eq:modelrate}
+[$$P(L_{i \rightarrow j} | C_{i, j} = 1) = 1-e^{-\lambda t_0},\qquad{(9)}$$]{#eq:modelrate}
 
 which tends toward $1$ as $t_0 \to \infty$. It is important to note that
 the units of $\lambda$ and $t_0$ are complementary. For instance, if the
@@ -902,32 +835,106 @@ Consequently, a Bayesian inference model can be built based on the
 preceding equations to estimate the value of the $\lambda$ and $\gamma$
 parameters and generate novel interaction data:
 
-[$$L_{i \rightarrow j} \sim \text{Bernoulli}(P(L_{i \rightarrow j}))\qquad{(11)}$$]{#eq:model}
+[$$L_{i \rightarrow j} \sim \text{Bernoulli}(P(L_{i \rightarrow j}))\qquad{(10)}$$]{#eq:model}
 
-[$$P(L_{i \rightarrow j}) = P(X_i) P(X_j) \gamma (1-e^{-\lambda t_0})\qquad{(12)}$$]{#eq:modeleq}
+[$$P(L_{i \rightarrow j}) = P(X_i) P(X_j) \gamma (1-e^{-\lambda t_0})\qquad{(11)}$$]{#eq:modeleq}
 
-[$$\gamma \sim \text{Gamma}(2,0.5)\qquad{(13)}$$]{#eq:modelgamma}
+[$$\gamma \sim \text{Gamma}(2,0.5)\qquad{(12)}$$]{#eq:modelgamma}
 
-[$$\lambda \sim \text{Exponential}(2)\qquad{(14)}$$]{#eq:modellambda}
+[$$\lambda \sim \text{Exponential}(2)\qquad{(13)}$$]{#eq:modellambda}
 
 In fig. 3, we show the variation in the probability of interaction under
 different parameter values. In the right panel, we notice that,
 irrespective of the interaction rate $\lambda$, the probability of
 interaction converges toward an asymptote determined by the
-co-occurrence $P(C_{i, j})$ (eq. 8). This model can be customized in
+co-occurrence $P(C_{i, j})$ (eq. 7). This model can be customized in
 different ways, such as by linking $\lambda$ with specific environmental
 variables or explicitly incorporating observation errors (i.e., the
 probabilities of false negatives and false positives).
 
 ![Figure 3: **Parameters of the spatiotemporally explicit model of
 interactions.** (a) Probability of local interaction given by the
-process model (eq. 12) under different values of $\lambda$ and $\gamma$,
+process model (eq. 11) under different values of $\lambda$ and $\gamma$,
 with $t_0 = 1$. The parameter values used in the right panel are denoted
 by the white stars. (b) Scaling of the probability of interaction with
-the duration parameter $t_0$ in eq. 12, for different values of
+the duration parameter $t_0$ in eq. 11, for different values of
 $\lambda$ and $\gamma$. In both panels, the individual probabilities of
 occurrence $P_i(x, y, z)$ and $P_j(x, y, z)$ are set to a constant value
 of $0.5$.](figures/spatiotemporal_model.png){#fig:spatiotemporal}
+
+## Taxonomic scaling of interactions
+
+Probabilistic webs offer a versatile approach to tackle a broad array of
+ecological questions, depending on their level of organization. For
+instance, the assemblage of interactions across ecological scales can be
+explored through species-based networks, while clade-based networks
+provide insights into macroevolutionary processes (e.g.,
+@Gomez2010EcoInt). Given that our interpretation of the properties and
+dynamics of ecological webs depends on their taxonomic scale
+(@Guimaraes2020Structurea), investigating the phylogenetic scaling of
+network structure emerges as a promising research avenue. Examining the
+same system at various taxonomic scales can yield meaningful and
+complementary ecological information, and, in our perspective, employing
+probabilistic webs is an effective approach for such analyses.
+
+There are no inherent differences in the taxonomic scaling between local
+and metawebs, as only the nodes are defined taxonomically. In other
+words, the probability values of edges in both local (eq. 2) and
+metawebs (eq. 3) are not conditional on any taxonomic scale. The
+phylogenetic scale is tied to the definition of the event itself (i.e.,
+the interaction between two taxa), not to the conditional variables. In
+both types of webs, transitioning to a broader level of organization
+(e.g., from a species-level web $S$ to a genus-level web $G$) can be
+accomplished directly by using probabilities from finer scales. For
+example, in a network with $n_1$ species from genus $g_1$ and $n_2$
+species from genus $g_2$, one can compute the probability that at least
+one species from genus $g_1$ interacts with at least one species from
+genus $g_2$ as follows:
+
+[$$P(G_{g_1 \rightarrow g_2}) = 1 - \prod_{i = 1}^{n_1}\prod_{j = 1}^{n_2}(1 -
+P(S_{g_{1i} \rightarrow g_{2j}})),\qquad{(14)}$$]{#eq:taxo}
+
+where $g_{1i}$ and $g_{2j}$ are the species of the corresponding genus.
+If it is known that at least two of these species interact (i.e.,
+$P(S_{g_{1i} \rightarrow g_{2j}}) = 1$ for at least one pair of
+$(g_{1i}, g_{2j})$), it implies a probability of genus interaction equal
+to $1$. @Canard2012Emergencea built a species-based network following a
+similar approach, by using simulated interactions between individuals
+derived from a neutral model (i.e., a model that assumed ecological
+equivalence among individuals). In contrast, a more sophisticated
+approach is necessary when transitioning from a broader to a finer level
+of organization. This is because knowledge of an interaction between two
+genera does not guarantee that all possible pairwise combinations of
+their species will also interact. One possible method is to build a
+finer-scale network by generating probabilities of interactions through
+random sampling from a beta distribution, parameterized by the
+broader-scale network.
+
+Ideally, our biological interpretation of probabilistic interactions
+should remain consistent across a network even if it incorporates
+heterogeneous levels of organization, such as a network whose nodes
+represent both species and trophic species (groups of species sharing
+similar predators and prey). This is common in ecological webs where
+taxonomic resolution is typically low (@Hemprich-Bennett2021AssImp,
+@VazquezSS2022Ecological). Interaction probabilities at broader
+taxonomic scales should be based on probabilities of interactions
+between individuals, for both local and metawebs. For instance, in local
+individual-based food webs, the probability that two individuals
+interact reflects our degree of belief that one individual will consume
+the other. Similarly, in local species-based food webs, the probability
+that two species interact represents our degree of belief that at least
+one individual from the predator species consumes at least another
+individual from the prey species. Furthermore, in local clade-based food
+webs, the probability that two clades interact represents our degree of
+belief that at least two species from these clades interact with each
+other or, equivalently, that at least two individuals from these clades
+interact with each other. Fundamentally, the taxonomic scaling of
+interactions involves aggregating interactions between individuals into
+larger groups, which may exhibit varying degrees of homogeneity based on
+the organisms and the study system. In that regard, taxonomic scaling is
+analogous to the spatial and temporal scaling of interactions, as they
+all represent different ways to aggregate individuals into broader
+groups (either spatially, temporally, or taxonomically).
 
 ## Sampling for binary webs
 
