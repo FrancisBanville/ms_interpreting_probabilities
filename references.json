@@ -2196,6 +2196,45 @@
         "type": "article-journal"
     },
     {
+        "issue": "9",
+        "issued": {
+            "date-parts": [
+                [
+                    2020
+                ]
+            ]
+        },
+        "container-title": "Global Ecology and Biogeography",
+        "author": [
+            {
+                "family": "Maiorano",
+                "given": "Luigi"
+            },
+            {
+                "family": "Montemaggiori",
+                "given": "Alessandro"
+            },
+            {
+                "family": "Ficetola",
+                "given": "Gentile Francesco"
+            },
+            {
+                "family": "O’Connor",
+                "given": "Louise"
+            },
+            {
+                "family": "Thuiller",
+                "given": "Wilfried"
+            }
+        ],
+        "id": "Maiorano2020Tetraeua",
+        "DOI": "10.1111/geb.13138",
+        "volume": "29",
+        "page": "1452-1457",
+        "title": "TETRA-EU 1.0: A species-level trophic metaweb of European tetrapods",
+        "type": "article-journal"
+    },
+    {
         "publisher": "Nature Publishing Group UK London",
         "volume": "446",
         "author": [
@@ -3391,6 +3430,44 @@
         "type": "article-journal"
     },
     {
+        "publisher": "bioRxiv",
+        "issued": {
+            "date-parts": [
+                [
+                    2024
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Shaw",
+                "given": "Jack O."
+            },
+            {
+                "family": "Dunhill",
+                "given": "Alexander M."
+            },
+            {
+                "family": "Beckerman",
+                "given": "Andrew P."
+            },
+            {
+                "family": "Dunne",
+                "given": "Jennifer A."
+            },
+            {
+                "family": "Hull",
+                "given": "Pincelli M."
+            }
+        ],
+        "id": "Shaw2024Framework",
+        "DOI": "10.1101/2024.01.30.578036",
+        "chapter-number": "New Results",
+        "page": "2024.01.30.578036",
+        "title": "A framework for reconstructing ancient food webs using functional trait data",
+        "type": ""
+    },
+    {
         "issue": "12",
         "issued": {
             "date-parts": [
@@ -3666,11 +3743,11 @@
         "container-title": "Ecología Austral",
         "author": [
             {
-                "family": "Vázquez",
+                "family": "Vázquez§",
                 "given": "Diego P."
             },
             {
-                "family": "Peralta",
+                "family": "Peralta§",
                 "given": "Guadalupe"
             },
             {
@@ -3683,7 +3760,7 @@
             },
             {
                 "family": "Igual",
-                "given": " Estos",
+                "given": "§ Estos",
                 "dropping-particle": "autores contribuyeron por"
             }
         ],

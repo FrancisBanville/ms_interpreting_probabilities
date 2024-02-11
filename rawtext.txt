@@ -9,8 +9,10 @@ substantial challenge (@Polis1991Complex, @Pascual2006Ecologicala).
 There are methodological and biological constraints that hinder our
 ability to observe all ecological interactions, leading to significant
 uncertainties in our understanding of these interactions. For example,
-the spatial and temporal uncoupling of species (@Jordano1987PatMut) and
-the large number of rare and cryptic interactions in a community
+the spatial and temporal uncoupling of species (e.g., nocturnal and
+diurnal species coexisting in the same space without interacting due to
+differences in the timing of their daily activities, @Jordano1987PatMut)
+and the large number of rare and cryptic interactions in a community
 contribute to these uncertainties (@Jordano2016Samplingb). More
 generally, a handful of conditions must be satisfied for an interaction
 to be observed locally. First, both species must have overlapping
@@ -23,15 +25,15 @@ also depends on their biological characteristics, such as the
 synchronization of their phenology (@Olesen2010Missing,
 @Singer2012GeoMos) and their discoverability (e.g., @Broom2005You).
 Finally, when species do come into contact, an interaction occurs only
-if their traits are locally compatible\
-(@Poisot2015Speciesa), including but not limited to their body
-phenotypes (@Bolnick2011WhyInt, @Stouffer2011RolBod, @Gravel2013InfFooa)
-and behavioral choices (@Pulliam1974Theory, @Choh2012PreRol).
-Interactions may also be influenced by the presence or prevalence of a
-third species (e.g., of a more profitable prey species)
-(@Golubski2011ModMod, @Sanders2012Indirect). Documenting the location
-and timing of interactions becomes even more difficult when accounting
-for the spatiotemporal variability of ecological interactions
+if their traits are locally compatible(@Poisot2015Speciesa), including
+but not limited to their body phenotypes (@Bolnick2011WhyInt,
+@Stouffer2011RolBod, @Gravel2013InfFooa) and behavioral choices
+(@Pulliam1974Theory, @Choh2012PreRol). Interactions may also be
+influenced by the presence or prevalence of a third species (e.g., of a
+more profitable prey species) (@Golubski2011ModMod,
+@Sanders2012Indirect). Documenting the location and timing of
+interactions becomes even more difficult when accounting for the
+spatiotemporal variability of ecological interactions
 (@Poisot2012Dissimilaritya, @Poisot2015Speciesa). Environmental factors,
 such as temperature (@Angilletta2004TemGro), drought
 (@Woodward2012CliCha), climate change (@Gilman2010FraCom,
@@ -186,10 +188,10 @@ probabilistic webs describe local or regional interactions (tbl. 1
 provides examples of studies employing both types of probabilistic
 networks), or if so-called probabilities are in reality *interaction
 scores* (i.e., non-probabilistic quantitative interactions). When
-probabilistic regional interactions are used and interpreted as local
-interactions (and conversely), this may generate misleading findings
-during data analysis. We believe that a better understanding of the
-differences, similarities, and relationships between these two
+probabilistic regional interactions are used and interpreted incorrectly
+as local interactions (and conversely), this may generate misleading
+findings during data analysis. We believe that a better understanding of
+the differences, similarities, and relationships between these two
 probabilistic representations of ecological webs would alleviate
 interpretation errors and facilitate a more adequate utilization of
 interaction data.
@@ -373,8 +375,9 @@ $\Omega$ can also be modeled probabilistically when the stochasticity or
 uncertainty of environmental and biological factors is considered. In
 sum, $\Omega$ represents all ecological and biological variables that
 were taken into consideration when measuring interaction probabilities
-and is, therefore, a subset of all factors actually impacting ecological
-interactions.
+and is, therefore, a subset of all factors impacting ecological
+interactions. It is a vector of random variables whose values determine
+the overall uncertainty of an interaction.
 
 The probability that two taxa $i$ and $j$ interact in a local web $L$
 can thus be conditional on the area (or volume) $A$, the time interval
@@ -478,18 +481,21 @@ species, @Canard2012Emergencea) tend to have low probability values in
 local webs, they may exhibit a higher probability in the metaweb.
 Potential interactions describe the probability that there exists at
 least one combination of phenotypes of taxa $i$ and $j$ that can
-interact with each other if they were to encounter. To reduce any biases
-in our calculation of this probability, it is crucial to ensure that the
-set of traits sampled or considered accurately reflects the overall
-trait distribution in both taxa. This enhances our confidence in
-concluding that the taxa cannot interact when no positive observation
-has been made and increases our capacity to detect an interaction when
-it is biologically feasible. In addition to pairwise interactions, the
-extent of sampling effort also contributes to shaping our assessment of
-metaweb properties, as sampling a larger number of local webs allows us
-to capture more regional interactions (@McLeod2021Sampling). A
-probability of potential interaction in a metaweb $M$ can be expressed
-as
+interact with each other if they were to encounter. For example, a
+piscivorous species may have the capacity to interact with a potential
+prey species if they share at least one matching combination of body
+sizes, such as an adult predator being able to consume juvenile prey. To
+reduce any biases in our calculation of this probability, it is crucial
+to ensure that the set of traits sampled or considered accurately
+reflects the overall trait distribution in both taxa. This enhances our
+confidence in concluding that the taxa cannot interact when no positive
+observation has been made and increases our capacity to detect an
+interaction when it is biologically feasible. In addition to pairwise
+interactions, the extent of sampling effort also contributes to shaping
+our assessment of metaweb properties, as sampling a larger number of
+local webs allows us to capture more regional interactions
+(@McLeod2021Sampling). A probability of potential interaction in a
+metaweb $M$ can be expressed as
 
 [$$P(M_{i \rightarrow j}),\qquad{(3)}$$]{#eq:metaweb}
 
@@ -497,33 +503,34 @@ which, in contrast with local webs, is never conditional on any spatial,
 temporal, co-occurrence or environmental variables (tbl. 1).
 
 Starting from a selected set of taxa, which are usually distributed
-within a broad region of interest, probabilistic metawebs can be built
-using different data sources, including literature review, fieldwork,
-and predictive models (e.g., the metaweb of trophic interactions between
-Canadian mammals inferred by @Strydom2022Food). Every pair of taxa that
-have confidently been observed to interact at least once can be given a
-probability of $1$ (i.e., $P(M_{i \rightarrow j}) = 1$) since we know
-that they *can* interact. This is not the case in local probabilistic
-webs, in which interaction events usually remain stochastic (i.e.,
+within a broad region of interest, metawebs can be built using different
+data sources, including literature review (e.g., Maiorano2020Tetraeua),
+aggregated local web data (e.g., @Gravel2019BriElt,
+@Saravia2022Ecological), and predictive models (e.g., @Strydom2022Food,
+@Shaw2024Framework). Every pair of taxa that have confidently been
+observed to interact at least once can be given a probability of $1$
+(i.e., $P(M_{i \rightarrow j}) = 1$) since we know that they *can*
+interact. This is not the case in local probabilistic webs, in which
+interaction events usually remain stochastic (i.e.,
 $P(L_{i \rightarrow j}) < 1$) after empirically observing interactions
 because of their intrinsic spatiotemporal variability. Similarly,
 although rare interactions typically have low probabilities in local
 webs, they can have high probabilities in metawebs when the traits of
 both taxa are congruent. On the other hand, interactions that were never
 observed can have low probability values in both local and metawebs,
-going as low as $0$ for forbidden links. However, because of observation
-errors due to taxonomic misidentifications and ecological
-misinterpretations (e.g., due to cryptic species and interactions,
-@Pringle2020Resolving), many observations of interactions are in reality
-false positives. Likewise, forbidden interactions can be false negatives
-in metawebs, e.g. if they have been assessed for specific phenotypes,
-locations or time. Employing Bayesian models, whether they are
-mechanistic or phenomenological, could improve the accuracy of our
-estimation of interaction probabilities within both local and regional
-webs (e.g., @Bartomeus2016ComFra, @Cirtwill2019QuaFra). This improvement
-is achieved in metawebs by leveraging prior information regarding the
-feasibility of interactions along with the empirical data on observed
-interactions.
+going as low as $0$ for forbidden links (i.e., interactions forbidden by
+biological traits). However, because of observation errors due to
+taxonomic misidentifications and ecological misinterpretations (e.g.,
+due to cryptic species and interactions, @Pringle2020Resolving), many
+observations of interactions are in reality false positives. Likewise,
+forbidden interactions can be false negatives in metawebs, e.g. if they
+have been assessed for specific phenotypes, locations or time. Employing
+Bayesian models, whether they are mechanistic or phenomenological, could
+improve the accuracy of our estimation of interaction probabilities
+within both local and regional webs (e.g., @Bartomeus2016ComFra,
+@Cirtwill2019QuaFra). This improvement is achieved in metawebs by
+leveraging prior information regarding the feasibility of interactions
+along with the empirical data on observed interactions.
 
 # Properties of probabilistic webs
 
