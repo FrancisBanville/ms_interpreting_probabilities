@@ -181,6 +181,37 @@
         "type": "article-journal"
     },
     {
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2004
+                ]
+            ]
+        },
+        "container-title": "Journal of Theoretical Biology",
+        "author": [
+            {
+                "family": "Banašek-Richter",
+                "given": "Carolin"
+            },
+            {
+                "family": "Cattin",
+                "given": "Marie-France"
+            },
+            {
+                "family": "Bersier",
+                "given": "Louis-Félix"
+            }
+        ],
+        "id": "Banasek-Richter2004Sampling",
+        "DOI": "10.1016/S0022-5193(03)00305-9",
+        "volume": "226",
+        "page": "23-32",
+        "title": "Sampling effects and the robustness of quantitative and qualitative food-web descriptors",
+        "type": "article-journal"
+    },
+    {
         "issue": "12",
         "issued": {
             "date-parts": [
@@ -332,6 +363,38 @@
         "volume": "73",
         "page": "585-598",
         "title": "Interaction strengths in food webs: Issues and opportunities",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "The University of Chicago Press",
+        "issue": "6",
+        "issued": {
+            "date-parts": [
+                [
+                    1999
+                ]
+            ]
+        },
+        "container-title": "The American Naturalist",
+        "author": [
+            {
+                "family": "Bersier",
+                "given": "Louis-Félix"
+            },
+            {
+                "family": "Dixon",
+                "given": "Paul"
+            },
+            {
+                "family": "Sugihara",
+                "given": "George"
+            }
+        ],
+        "id": "Bersier1999Scale",
+        "DOI": "10.1086/303200",
+        "volume": "153",
+        "page": "676-682",
+        "title": "Scale-Invariant or Scale-Dependent Behavior of the Link Density Property in Food Webs: A Matter of Sampling Effort?",
         "type": "article-journal"
     },
     {
@@ -2208,61 +2271,6 @@
         "type": "article-journal"
     },
     {
-        "issue": "12",
-        "issued": {
-            "date-parts": [
-                [
-                    2021
-                ]
-            ]
-        },
-        "container-title": "Oikos",
-        "author": [
-            {
-                "family": "McLeod",
-                "given": "Anne"
-            },
-            {
-                "family": "Leroux",
-                "given": "Shawn J."
-            },
-            {
-                "family": "Gravel",
-                "given": "Dominique"
-            },
-            {
-                "family": "Chu",
-                "given": "Cindy"
-            },
-            {
-                "family": "Cirtwill",
-                "given": "Alyssa R."
-            },
-            {
-                "family": "Fortin",
-                "given": "Marie-Josée"
-            },
-            {
-                "family": "Galiana",
-                "given": "Núria"
-            },
-            {
-                "family": "Poisot",
-                "given": "Timothée"
-            },
-            {
-                "family": "Wood",
-                "given": "Spencer A."
-            }
-        ],
-        "id": "McLeod2021SamAsy",
-        "DOI": "10.1111/oik.08650",
-        "volume": "130",
-        "page": "2250-2259",
-        "title": "Sampling and asymptotic network properties of spatial multi-trophic networks",
-        "type": "article-journal"
-    },
-    {
         "issue": "n/a",
         "issued": {
             "date-parts": [
@@ -2580,6 +2588,34 @@
         "type": "article-journal"
     },
     {
+        "publisher": "Taylor & Francis",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2004
+                ]
+            ]
+        },
+        "container-title": "African Journal of Marine Science",
+        "author": [
+            {
+                "family": "Plagányi",
+                "given": "É. E."
+            },
+            {
+                "family": "Butterworth",
+                "given": "D. S."
+            }
+        ],
+        "id": "Plaganyi2004Criticala",
+        "DOI": "10.2989/18142320409504061",
+        "volume": "26",
+        "page": "261-287",
+        "title": "A critical look at the potential of Ecopath with ecosim to assist in practical fisheries management",
+        "type": "article-journal"
+    },
+    {
         "publisher": "Wiley",
         "issue": "12",
         "publisher-place": "Hoboken",
@@ -2721,6 +2757,30 @@
         "volume": "7",
         "page": "303-312",
         "title": "The structure of probabilistic networks",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "[University of Chicago Press, American Society of Naturalists]",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    1991
+                ]
+            ]
+        },
+        "container-title": "The American Naturalist",
+        "author": [
+            {
+                "family": "Polis",
+                "given": "Gary A."
+            }
+        ],
+        "id": "Polis1991Complex",
+        "volume": "138",
+        "URL": "https://www.jstor.org/stable/2462536",
+        "page": "123-155",
+        "title": "Complex Trophic Interactions in Deserts: An Empirical Critique of Food-Web Theory",
         "type": "article-journal"
     },
     {
@@ -3685,6 +3745,31 @@
         "volume": "20",
         "page": "326-335",
         "title": "Persistent bill and corolla matching despite shifting temporal resources in tropical hummingbird-plant interactions",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "Ecological Society of America",
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    1960
+                ]
+            ]
+        },
+        "container-title": "Ecological Monographs",
+        "author": [
+            {
+                "family": "Whittaker",
+                "given": "R. H."
+            }
+        ],
+        "id": "Whittaker1960Vegetation",
+        "DOI": "10.2307/1943563",
+        "volume": "30",
+        "URL": "https://www.jstor.org/stable/1943563",
+        "page": "279-338",
+        "title": "Vegetation of the Siskiyou Mountains, Oregon and California",
         "type": "article-journal"
     },
     {
