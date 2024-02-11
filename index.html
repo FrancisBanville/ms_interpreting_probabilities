@@ -1695,38 +1695,28 @@ probabilistic networks</div>
             id="box-1-a-spatiotemporally-explicit-model-of-interactions">Box
             1: A spatiotemporally explicit model of interactions</h2>
             <p>Predicting local webs across time and space is a pivotal
-            goal of network ecology (<span class="citation"
+            goal of network ecology, especially given the scarcity of
+            interaction data (<span class="citation"
             data-cites="Strydom2021Roadmapa">Strydom <em>et al.</em>
-            (2021)</span>). In a context of scarcity of interaction data
+            (2021)</span>). Ecologists may resort to predictive models
+            (e.g., generative Bayesian and machine learning models) to
+            reconstruct networks at fine spatial and temporal scales
+            with limited interaction data. For instance, real-time
+            biomonitoring data coupled with appropriate numerical models
             (<span class="citation"
-            data-cites="Jordano2016Samplingb">Jordano (2016)</span>),
-            ecologists must resort to predictive models for
-            reconstructing networks at fine spatial and temporal scales.
-            For instance, real-time biomonitoring data coupled with
-            appropriate numerical models (<span class="citation"
             data-cites="Bohan2017Nextgenerationa">Bohan <em>et al.</em>
             (2017)</span>) can be employed to reconstruct local
             ecological webs, opening avenues for in-depth studies on
-            local ecosystem functioning and dynamics. Apart from their
-            predictive applications, statistical models can also be
-            crafted for descriptive purposes, elucidating key parameters
-            of interest such as probabilities of interactions. In such
-            instances, the parameter values themselves offer valuable
-            ecological insights. Various types of models (e.g., Bayesian
-            and machine learning models) have been used for both
-            predictive and descriptive purposes in the realm of
-            ecological interactions (<span class="citation"
-            data-cites="Strydom2021Roadmapa">Strydom <em>et al.</em>
-            (2021)</span>). The probabilistic representation of
-            interactions acknowledges the inherent uncertainty in these
-            models, typically expressed through probability
-            distributions. We introduce and develop a simple generative
-            mechanistic model for probabilistic local interactions that
-            takes into consideration their spatiotemporal variability
-            (i.e. a spatiotemporally explicit model of local
-            interactions). It is essential to note that our model is not
-            designed for regional interactions, which are
-            scale-independent. Rather, it could prove valuable for
+            local ecosystem functioning and dynamics. The probabilistic
+            representation of interactions acknowledges the inherent
+            uncertainty in these models, typically expressed through
+            probability distributions. We introduce and develop a simple
+            generative mechanistic model for probabilistic local
+            interactions that takes into consideration their
+            spatiotemporal variability (i.e. a spatiotemporally explicit
+            model of local interactions). It is essential to note that
+            our model is not designed for regional interactions, which
+            are scale-independent. Rather, it could prove valuable for
             predicting local interactions across time and space by
             generating new interaction data following parameter
             inference.</p>
@@ -1735,7 +1725,7 @@ probabilistic networks</div>
             class="math inline"><em>j</em></span> interact at a specific
             location <span
             class="math inline">(<em>x</em>,<em>y</em>,<em>z</em>)</span>
-            is determined by the product of their probability of
+            may be determined by the product of their probability of
             interaction given co-occurrence and their probability of
             co-occurrence. First, their co-occurrence probability can be
             calculated using their individual occurrence probabilities
@@ -1841,34 +1831,36 @@ probabilistic networks</div>
             are set to a constant value of <span
             class="math inline">0.5</span>.</figcaption>
             </figure>
-            <h2 id="sampling-binary-webs">Sampling binary webs</h2>
-            <p>The prediction of binary interactions through random
-            draws is an important application of probabilistic webs.
+            <h2 id="sampling-for-binary-webs">Sampling for binary
+            webs</h2>
+            <p>The prediction of binary interactions through Bernoulli
+            trials is an important application of probabilistic webs.
             This approach proves beneficial for analyzing the structural
             characteristics of probabilistic webs, particularly in the
-            absence of specific analytical measures. By simulating
-            independent Bernoulli trials for each interaction, a binary
-            network can be generated. A probability distribution of
-            network properties can be obtained by measuring network
-            structure across multiple randomly generated networks (<span
-            class="citation" data-cites="Poisot2016Structure">Poisot
-            <em>et al.</em> (2016)</span>). This method enables the
-            representation of the variability of network structure,
-            albeit with possible biases when connectance is low (<span
-            class="citation" data-cites="Poisot2014WheEco">Poisot &amp;
-            Gravel (2014)</span>, <span class="citation"
+            absence of specific analytical measures. By performing
+            independent Bernoulli trials for each interaction in a
+            probabilistic web, a binary network may be generated. A
+            probability distribution of network properties can be
+            obtained by measuring network structure across multiple
+            randomly generated networks (<span class="citation"
+            data-cites="Poisot2016Structure">Poisot <em>et al.</em>
+            (2016)</span>). This method enables the representation of
+            the variability of network structure, albeit with possible
+            biases when connectance is low (<span class="citation"
+            data-cites="Poisot2014WheEco">Poisot &amp; Gravel
+            (2014)</span>, <span class="citation"
             data-cites="Chagnon2015ChaTop">Chagnon (2015)</span>).
             Employing this strategy to generate binary networks under a
             null model facilitates null hypothesis significance testing,
             wherein the observed measure is compared against the
             simulated distribution (e.g., <span class="citation"
             data-cites="Bascompte2003NesAss">Bascompte <em>et al.</em>
-            (2003)</span>). Additionally, randomly generating binary
-            networks across spatial and temporal dimensions aids in
-            representing the spatiotemporal variability of network
-            structure, allowing the testing of ecological hypotheses
-            regarding interactions on large spatial and temporal
-            scales.</p>
+            (2003)</span>). Additionally, the random generation of
+            binary networks, from a probabilistic web that accounts for
+            the spatiotemporal variability of interactions, may
+            effectively capture network structure across space and time.
+            This facilitates the investigation of ecological hypotheses
+            about interactions at broad spatial and temporal scales.</p>
             <p>There are at least two distinct approaches to sample
             binary networks from probabilistic webs across space, for
             example, when attempting to predict a binary network for
