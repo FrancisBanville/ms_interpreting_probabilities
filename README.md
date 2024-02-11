@@ -1,5 +1,6 @@
 # Introduction
 
+
 As we try to navigate global biodiversity change, filling in knowledge gaps
 about biodiversity becomes instrumental to monitoring and mitigating those
 changes (@Gonzalez2022Monitor, @Abrego2021Accounting). However, cataloging
