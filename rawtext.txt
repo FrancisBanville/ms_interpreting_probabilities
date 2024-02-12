@@ -148,28 +148,28 @@ necessitate distinct approaches when applied to key ecological
 questions: local webs describing probabilities of realized interactions,
 and regional webs (metawebs) describing probabilities of potential
 interactions. We highlight the distinctions in the ecological meaning of
-these two representations and show that they yield different statistical
-outcomes regarding e.g. the spatial and temporal scaling of interactions
-and the prediction of binary webs across space. Moreover, there is
-currently no metadata standard that could guide the documentation of all
-types of probabilistic interactions (although see e.g., @Salim2022Data
-who discuss data standards for deterministic mutualistic webs).
-Well-defined metadata for probabilistic webs would support more adequate
-manipulation and integration of interaction data from different sources
-and guard against possible misinterpretations arising from ambiguous
-definitions of probabilistic networks. These metadata should outline the
-nature (i.e., local or regional) and type (e.g., predatory or
-pollination) of the interactions, provide information regarding the
-taxonomic level, identities, and characteristics (e.g., life stages) of
-the individuals involved in an interaction, present the mathematical
-formulation of probabilities, including clearly identified conditional
-variables (e.g., spatial and temporal scales), and describe the methods
-and contexts (e.g., location, time, environmental conditions) in which
-interactions were estimated. Inadequately documented probabilistic
-interaction data should be used with caution when analyzing ecological
-webs. Our observations and advice can be applied to many types of
-ecological networks representing direct interactions, from food webs to
-host-virus networks.
+these two representations and examine some of their properties and
+relationships (particularly with space, time, and between each other)
+through empirical case studies. Moreover, there is currently no metadata
+standard that could guide the documentation of all types of
+probabilistic interactions (although see e.g., @Salim2022Data who
+discuss data standards for deterministic mutualistic webs). Well-defined
+metadata for probabilistic webs would support more adequate manipulation
+and integration of interaction data from different sources and guard
+against possible misinterpretations arising from ambiguous definitions
+of probabilistic networks. These metadata should outline the nature
+(i.e., local or regional) and type (e.g., predatory or pollination) of
+the interactions, provide information regarding the taxonomic level,
+identities, and characteristics (e.g., life stages) of the individuals
+involved in an interaction, present the mathematical formulation of
+probabilities, including clearly identified conditional variables (e.g.,
+spatial and temporal scales), and describe the methods and contexts
+(e.g., location, time, environmental conditions) in which interactions
+were estimated. Inadequately documented probabilistic interaction data
+should be used with caution when analyzing ecological webs. Our
+observations and advice can be applied to most types of ecological
+networks representing direct interactions, from food webs to host-virus
+networks.
 
 # Probabilistic representations of interactions
 
