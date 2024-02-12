@@ -671,11 +671,15 @@ probabilistic networks</div>
             <em>can</em> theoretically interact) whereas a realized
             (local) interaction is the materialization or observation of
             this interaction in a well-defined space and time (i.e., the
-            probability that they interact locally). Here, we use the
-            terms <em>metaweb</em> (<span class="citation"
-            data-cites="Dunne2006Network">Dunne (2006)</span>) to
-            designate regional webs of potential interactions and
-            <em>local webs</em> (<span class="citation"
+            probability that they interact locally). Our discussion of
+            local interactions focus on their occurrence rather than
+            their direct empirical observation, as one of the primary
+            goals of describing them probabilistically is to
+            characterize our uncertainty regarding their actual
+            manifestation. We use the terms <em>metaweb</em> (<span
+            class="citation" data-cites="Dunne2006Network">Dunne
+            (2006)</span>) to designate regional webs of potential
+            interactions and <em>local webs</em> (<span class="citation"
             data-cites="Poisot2012Dissimilaritya">Poisot <em>et al.</em>
             (2012)</span>) for those of realized interactions. Metawebs
             are the network analogs of the species pool, where local
@@ -1698,9 +1702,12 @@ probabilistic networks</div>
             <p><span id="eq:modelrate"><span
             class="math display"><em>P</em>(<em>L</em><sub><em>i</em> → <em>j</em></sub>|<em>C</em><sub><em>i</em>, <em>j</em></sub>=1) = 1 − <em>e</em><sup>−<em>λ</em><em>t</em><sub>0</sub></sup>,   (9)</span></span></p>
             <p>which tends toward <span class="math inline">1</span> as
-            <span class="math inline"><em>t</em><sub>0</sub> → ∞</span>.
-            It is important to note that the units of <span
-            class="math inline"><em>λ</em></span> and <span
+            <span class="math inline"><em>t</em><sub>0</sub> → ∞</span>
+            if <span class="math inline"><em>λ</em> &gt; 0</span>. In
+            other words, two co-occurring taxa with a nonzero rate of
+            interaction will inevitably do so in a sufficiently long
+            observation period. It is important to note that the units
+            of <span class="math inline"><em>λ</em></span> and <span
             class="math inline"><em>t</em><sub>0</sub></span> are
             complementary. For instance, if the duration <span
             class="math inline"><em>t</em><sub>0</sub></span> is
@@ -1789,9 +1796,11 @@ probabilistic networks</div>
             values of edges in both local (eq. 2) and metawebs (eq. 3)
             are not conditional on any taxonomic scale. The phylogenetic
             scale is tied to the definition of the event itself (i.e.,
-            the interaction between two taxa), not to the conditional
-            variables. In both types of webs, transitioning to a broader
-            level of organization (e.g., from a species-level web <span
+            the interaction between two taxa, defined at the desired
+            taxonomical scale), not to the variables on which
+            interaction probabilities are conditional. In both types of
+            webs, transitioning to a broader level of organization
+            (e.g., from a species-level web <span
             class="math inline"><em>S</em></span> to a genus-level web
             <span class="math inline"><em>G</em></span>) can be
             accomplished directly by using probabilities from finer
