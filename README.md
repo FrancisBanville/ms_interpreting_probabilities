@@ -162,8 +162,11 @@ interaction is defined as the biological capacity of two taxa to interact (i.e.,
 the probability that they *can* theoretically interact) whereas a realized
 (local) interaction is the materialization or observation of this interaction in
 a well-defined space and time (i.e., the probability that they interact
-locally). Here, we use the terms *metaweb* (@Dunne2006Network) to designate
-regional webs of potential interactions and *local webs*
+locally). Our discussion of local interactions focus on their occurrence rather
+than their direct empirical observation, as one of the primary goals of
+describing them probabilistically is to characterize our uncertainty regarding
+their actual manifestation. We use the terms *metaweb* (@Dunne2006Network) to
+designate regional webs of potential interactions and *local webs*
 (@Poisot2012Dissimilaritya) for those of realized interactions. Metawebs are the
 network analogs of the species pool, where local webs originate from a subset of
 both species (nodes) and interactions (edges) of the regional metaweb
@@ -732,10 +735,12 @@ taxa engage in an interaction during a time period $t_0$ is given by:
 
 $$P(L_{i \rightarrow j} | C_{i, j} = 1) = 1-e^{-\lambda t_0},$$ {#eq:modelrate}
 
-which tends toward $1$ as $t_0 \to \infty$. It is important to note that the
-units of $\lambda$ and $t_0$ are complementary. For instance, if the duration
-$t_0$ is measured in months, $\lambda$ denote the expected number of
-interactions per month.
+which tends toward $1$ as $t_0 \to \infty$ if $\lambda > 0$. In other words, two
+co-occurring taxa with a nonzero rate of interaction will inevitably do so in a
+sufficiently long observation period. It is important to note that the units of
+$\lambda$ and $t_0$ are complementary. For instance, if the duration $t_0$ is
+measured in months, $\lambda$ denote the expected number of interactions per
+month.
 
 The occurrence of an interaction between $i$ and $j$ can be modeled as a
 Bernoulli trial with a probability of $P(L_{i \rightarrow j})$. Consequently, a
@@ -789,13 +794,15 @@ There are no inherent differences in the taxonomic scaling between local and
 metawebs, as only the nodes are defined taxonomically. In other words, the
 probability values of edges in both local (@eq:local) and metawebs (@eq:metaweb)
 are not conditional on any taxonomic scale. The phylogenetic scale is tied to
-the definition of the event itself (i.e., the interaction between two taxa), not
-to the conditional variables. In both types of webs, transitioning to a broader
-level of organization (e.g., from a species-level web $S$ to a genus-level web
-$G$) can be accomplished directly by using probabilities from finer scales. For
-example, in a network with $n_1$ species from genus $g_1$ and $n_2$ species from
-genus $g_2$, one can compute the probability that at least one species from
-genus $g_1$ interacts with at least one species from genus $g_2$ as follows:
+the definition of the event itself (i.e., the interaction between two taxa,
+defined at the desired taxonomical scale), not to the variables on which
+interaction probabilities are conditional. In both types of webs, transitioning
+to a broader level of organization (e.g., from a species-level web $S$ to a
+genus-level web $G$) can be accomplished directly by using probabilities from
+finer scales. For example, in a network with $n_1$ species from genus $g_1$ and
+$n_2$ species from genus $g_2$, one can compute the probability that at least
+one species from genus $g_1$ interacts with at least one species from genus
+$g_2$ as follows:
 
 $$P(G_{g_1 \rightarrow g_2}) = 1 - \prod_{i = 1}^{n_1}\prod_{j = 1}^{n_2}(1 -
 P(S_{g_{1i} \rightarrow g_{2j}})),$$ {#eq:taxo}
