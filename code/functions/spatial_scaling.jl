@@ -1,11 +1,11 @@
 """
     spatial_scaling(N_obj::Vector, M::UnipartiteProbabilisticNetwork, lats::Vector, A::Float64)
 
-Calculates the expected number of links in all networks (local and potential) within latitudinal windows of length A centered at each latitudes in lats.
+Calculates the connectance of all networks (local and potential) within latitudinal windows of length A centered at each latitudes in lats.
 
 This function has two outputs: 
-(1) The expected number of links of the overall network obtained after merging each local network in the windows.
-(2) The expected number of links in the submetaweb of all species in the windows. 
+(1) The connectance of the overall network obtained after merging each local network in the windows.
+(2) The connectance in the submetaweb of all species in the windows. 
 """
 function spatial_scaling(N_obj::Vector, M::UnipartiteProbabilisticNetwork, lats::Vector, A::Float64)
 
@@ -21,10 +21,10 @@ function spatial_scaling(N_obj::Vector, M::UnipartiteProbabilisticNetwork, lats:
         # find index of all networks within a latitudinal window of length A centered at a given latitude
         ind = findall(latitudes .>= lats[k] - A/2 .&& latitudes .< lats[k] + A/2)
 
-        # keep the number of links at 0 if there is no network between latitudes of index k and k+1
+        # keep connectance at 0 if there is no network between latitudes of index k and k+1
         if length(ind) > 0
         
-            #### expected number of links in the submetaweb 
+            #### expected connectance in the submetaweb 
 
             # find all networks in the window
             Ns_ind = [N_obj[i].N_prob for i in ind]
@@ -32,10 +32,10 @@ function spatial_scaling(N_obj::Vector, M::UnipartiteProbabilisticNetwork, lats:
             # get all species found in the window
             sp_ind = unique(reduce(vcat, species.(Ns_ind)))
 
-            # calculate the expected number of links of the metaweb 
-            links_metaweb[k] = links(M[sp_ind])
+            # calculate the connectance of the metaweb 
+            links_metaweb[k] = connectance(M[sp_ind])
 
-            #### expected number of links in the merged network 
+            #### connectance in the merged network 
         
             # make object for merged networks that will be updated in loop
             N_acc = N_obj[ind[1]]
@@ -45,8 +45,8 @@ function spatial_scaling(N_obj::Vector, M::UnipartiteProbabilisticNetwork, lats:
                 N_acc = merge_networks(N_acc, N_obj[ind[i]], M)
             end
     
-            # calculate the expected number of links of the merged networks
-            links_merged[k] = links(N_acc.N_prob)
+            # calculate the connectance of links of the merged networks
+            links_merged[k] = connectance(N_acc.N_prob)
         end
     end
     return (links_merged = links_merged, links_metaweb = links_metaweb)

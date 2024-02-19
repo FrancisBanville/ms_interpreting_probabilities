@@ -829,10 +829,10 @@ lats = [low_lat:1.0:high_lat;]
 # latitude widths to explore
 areas = [1.0:1.0:12.0;]
 
-# calculate the expected number of links in each network obtained after merging all networks in a window of given width and position
+# calculate the connectance in each network obtained after merging all networks in a window of given width and position
 links_merged = zeros(Float64, length(lats), length(areas))
 
-# calculate the expected number of links in each submetaweb in a window of given width and position
+# calculate the connectance in each submetaweb in a window of given width and position
 links_metaweb = zeros(Float64, length(lats), length(areas))
 
 # use the probabilistic networks built using the false positive and false negative method
@@ -849,7 +849,7 @@ end
 # make spatial scaling figures
 a = [2:2:Int64(maximum(areas));]
 
-## expected number of links in the merged network
+## expected connectance in the merged network
 
 plot_links_merged = plot(areas,
     links_merged[1,:],
@@ -891,11 +891,11 @@ plot!(areas,
 xaxis!(xlabel="Latitude width",
     xticks=(a,a))
 
-yaxis!(ylabel="Expected number of links in merged network", 
+yaxis!(ylabel="Connectance of merged network", 
     ylims=(-0.05, 1650))
 
 
-## expected number of links in the submetawebs
+## connectance of the submetawebs
 
 plot_links_metaweb = plot(areas,
     links_metaweb[1,:],
@@ -937,15 +937,14 @@ plot!(areas,
 xaxis!(xlabel="Latitude width",
     xticks=(a,a))
 
-yaxis!(ylabel="Expected number of links in metaweb", 
+yaxis!(ylabel="Connectance of metaweb", 
     ylims=(-0.05, 1650))
 
 
 
-# heatmaps of the expected numbers of links in the merged networks and submetawebs as a function of position and latitude width 
+# heatmaps of the connectance of the merged networks and submetawebs as a function of position and latitude width 
 heatmap_links_merged = heatmap(areas, lats, links_merged, c = :viridis, 
-        clims=(0,1650),
-        colorbar_title="Expected number of links in merged network",
+        colorbar_title="Connectance of merged network",
         framestyle=:box, 
         grid=false,
         minorgrid=false,
@@ -966,8 +965,7 @@ yaxis!(ylabel="Central latitude (position)")
 
 
 heatmap_links_metaweb = heatmap(areas, lats, links_metaweb, c = :viridis, 
-        clims=(0,1650),
-        colorbar_title="Expected number of links in metaweb",
+        colorbar_title="Connectance of metaweb",
         framestyle=:box, 
         grid=false,
         minorgrid=false,
@@ -988,16 +986,14 @@ yaxis!(ylabel="Central latitude (position)")
 
 
 
-plot(plot_links_merged, plot_links_metaweb, 
-    heatmap_links_merged, heatmap_links_metaweb,
-    title = ["(a)" "(b)" "(c)" "(d)"],
+plot(heatmap_links_merged, heatmap_links_metaweb,
+    title = ["(a)" "(b)"],
     titleloc=:right, 
     titlefont=fonts,
     dpi=1000,
-    size=(800, 700))
+    size=(800, 350))
 
-savefig(joinpath("figures","spatial_scaling.png"))
-
+savefig(joinpath("figures","spatial_scaling2.png"))
 
 
 
