@@ -385,7 +385,7 @@ these diverse formulations of probabilistic interactions and conditional
 variables. 
 
 | Expression | Type | Outcome | Uncertainty sources | Reference | 
-| :--- | :-- | :-------- | :-------- | -------: |   
+| :------ | :-- | :-------- | :-------- | -------: |   
 | $P(M_{i \rightarrow j} \vert T_i, T_j)$ | regional | biological feasibility of the interaction given regional traits (non-forbiddenness) | trait matching models | @Strydom2022Food |   
 | $P(M^*_{i \rightarrow j} \vert T_i, T_j, E)$ | regional | ecological feasibility of the interaction given regional traits and environmental conditions | trait matching and environmental-based models | this study |    
 | $P(L_{i \rightarrow j} \vert X_{il}, X_{jl},...)$ | local | realization of the interaction given taxa co-occurrence | spatiotemporal variability | @Gravel2019BriElt | 
