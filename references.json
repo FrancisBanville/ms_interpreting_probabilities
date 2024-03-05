@@ -3527,6 +3527,41 @@
         "type": "article-journal"
     },
     {
+        "issue": "6",
+        "issued": {
+            "date-parts": [
+                [
+                    2017
+                ]
+            ]
+        },
+        "container-title": "Ecology Letters",
+        "author": [
+            {
+                "family": "Staniczenko",
+                "given": "Phillip P. A."
+            },
+            {
+                "family": "Sivasubramaniam",
+                "given": "Prabu"
+            },
+            {
+                "family": "Suttle",
+                "given": "K. Blake"
+            },
+            {
+                "family": "Pearson",
+                "given": "Richard G."
+            }
+        ],
+        "id": "Staniczenko2017Linking",
+        "DOI": "10.1111/ele.12770",
+        "volume": "20",
+        "page": "693-707",
+        "title": "Linking macroecology and community ecology: Refining predictions of species distributions using biotic interaction networks",
+        "type": "article-journal"
+    },
+    {
         "issue": "3",
         "issued": {
             "date-parts": [
@@ -3730,6 +3765,49 @@
         "volume": "445",
         "page": "202-205",
         "title": "Habitat modification alters the structure of tropical host–parasitoid food webs",
+        "type": "article-journal"
+    },
+    {
+        "issue": "7",
+        "issued": {
+            "date-parts": [
+                [
+                    2007
+                ]
+            ]
+        },
+        "container-title": "Oikos",
+        "author": [
+            {
+                "family": "Vázquez",
+                "given": "Diego P."
+            },
+            {
+                "family": "Melián",
+                "given": "Carlos J."
+            },
+            {
+                "family": "Williams",
+                "given": "Neal M."
+            },
+            {
+                "family": "Blüthgen",
+                "given": "Nico"
+            },
+            {
+                "family": "Krasnov",
+                "given": "Boris R."
+            },
+            {
+                "family": "Poulin",
+                "given": "Robert"
+            }
+        ],
+        "id": "Vazquez2007Species",
+        "DOI": "10.1111/j.0030-1299.2007.15828.x",
+        "volume": "116",
+        "page": "1120-1127",
+        "title": "Species abundance and asymmetric interaction strength in ecological networks",
         "type": "article-journal"
     },
     {
