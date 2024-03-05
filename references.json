@@ -79,7 +79,7 @@
                 "given": "Leda"
             },
             {
-                "family": "Meïté",
+                "family": "Meı̈té",
                 "given": "Aboulaye"
             },
             {
@@ -287,7 +287,7 @@
         "DOI": "10.1073/pnas.1633576100",
         "volume": "100",
         "page": "9383-9387",
-        "title": "The nested assembly of plantanimal mutualistic networks",
+        "title": "The nested assembly of plant–animal mutualistic networks",
         "type": "article-journal"
     },
     {
@@ -739,7 +739,7 @@
         "DOI": "10.1093/beheco/ari024",
         "volume": "16",
         "page": "534-540",
-        "title": "You can runor you can hide: Optimal strategies for cryptic prey against pursuit predators",
+        "title": "You can run—or you can hide: Optimal strategies for cryptic prey against pursuit predators",
         "type": "article-journal"
     },
     {
@@ -1259,7 +1259,7 @@
         "DOI": "10.1111/j.0021-8790.2004.00818.x",
         "volume": "73",
         "page": "399-409",
-        "title": "Predatorprey body size, interaction strength and the stability of a real food web",
+        "title": "Predator–prey body size, interaction strength and the stability of a real food web",
         "type": "article-journal"
     },
     {
@@ -1286,7 +1286,7 @@
         "DOI": "10.1111/j.1461-0248.2005.00868.x",
         "volume": "9",
         "page": "281-286",
-        "title": "Habitat loss and the structure of plantanimal mutualistic networks",
+        "title": "Habitat loss and the structure of plant–animal mutualistic networks",
         "type": "article-journal"
     },
     {
@@ -1599,7 +1599,39 @@
         "DOI": "10.1111/2041-210X.12103",
         "volume": "4",
         "page": "1083-1090",
-        "title": "Inferring food web structure from predatorprey body size relationships",
+        "title": "Inferring food web structure from predator–prey body size relationships",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "Royal Society",
+        "issue": "1694",
+        "issued": {
+            "date-parts": [
+                [
+                    2016
+                ]
+            ]
+        },
+        "container-title": "Philosophical Transactions of the Royal Society B: Biological Sciences",
+        "author": [
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Albouy",
+                "given": "Camille"
+            },
+            {
+                "family": "Thuiller",
+                "given": "Wilfried"
+            }
+        ],
+        "id": "Gravel2016Meaning",
+        "DOI": "10.1098/rstb.2015.0268",
+        "volume": "371",
+        "page": "20150268",
+        "title": "The meaning of functional trait composition of food webs for ecosystem functioning",
         "type": "article-journal"
     },
     {
@@ -1880,7 +1912,7 @@
         "DOI": "10.1046/j.1461-0248.2003.00403.x",
         "volume": "6",
         "page": "69-81",
-        "title": "Invariant properties in coevolutionary networks of plantanimal interactions",
+        "title": "Invariant properties in coevolutionary networks of plant–animal interactions",
         "type": "article-journal"
     },
     {
@@ -2465,7 +2497,7 @@
             },
             {
                 "family": "Chalmandrier",
-                "given": "Loïc"
+                "given": "Loı̈c"
             },
             {
                 "family": "O’Connor",
@@ -2907,7 +2939,7 @@
         "DOI": "10.1111/2041-210X.13125",
         "volume": "10",
         "page": "356-367",
-        "title": "Inferring predatorprey interactions in food webs",
+        "title": "Inferring predator–prey interactions in food webs",
         "type": "article-journal"
     },
     {
@@ -3259,7 +3291,7 @@
         "DOI": "10.1093/gigascience/giac043",
         "volume": "11",
         "page": "giac043",
-        "title": "Data standardization of plantpollinator interactions",
+        "title": "Data standardization of plant–pollinator interactions",
         "type": "article-journal"
     },
     {
@@ -3491,7 +3523,7 @@
         "DOI": "10.1890/11-2078.1",
         "volume": "93",
         "page": "2658-2673",
-        "title": "Geographic mosaics of species’ association: A definition and an example driven by plantinsect phenological synchrony",
+        "title": "Geographic mosaics of species’ association: A definition and an example driven by plant–insect phenological synchrony",
         "type": "article-journal"
     },
     {
@@ -3697,7 +3729,7 @@
         "DOI": "10.1038/nature05429",
         "volume": "445",
         "page": "202-205",
-        "title": "Habitat modification alters the structure of tropical hostparasitoid food webs",
+        "title": "Habitat modification alters the structure of tropical host–parasitoid food webs",
         "type": "article-journal"
     },
     {
@@ -3728,7 +3760,7 @@
         "DOI": "10.1890/08-1837.1",
         "volume": "90",
         "page": "2039-2046",
-        "title": "Evaluating multiple determinants of the structure of plantanimal mutualistic networks",
+        "title": "Evaluating multiple determinants of the structure of plant–animal mutualistic networks",
         "type": "article-journal"
     },
     {
