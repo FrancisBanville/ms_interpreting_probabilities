@@ -79,7 +79,7 @@
                 "given": "Leda"
             },
             {
-                "family": "Meı̈té",
+                "family": "Meïté",
                 "given": "Aboulaye"
             },
             {
@@ -2497,7 +2497,7 @@
             },
             {
                 "family": "Chalmandrier",
-                "given": "Loı̈c"
+                "given": "Loïc"
             },
             {
                 "family": "O’Connor",
@@ -3733,6 +3733,33 @@
         "DOI": "10.1111/2041-210X.13835",
         "volume": "13",
         "title": "Food web reconstruction through phylogenetic transfer of low-rank network representation",
+        "type": "article-journal"
+    },
+    {
+        "issue": "7",
+        "issued": {
+            "date-parts": [
+                [
+                    2005
+                ]
+            ]
+        },
+        "container-title": "Ecology",
+        "author": [
+            {
+                "family": "Thompson",
+                "given": "Ross M."
+            },
+            {
+                "family": "Townsend",
+                "given": "Colin R."
+            }
+        ],
+        "id": "Thompson2005Foodweb",
+        "DOI": "10.1890/04-1352",
+        "volume": "86",
+        "page": "1916-1925",
+        "title": "Food-Web Topology Varies with Spatial Scale in a Patchy Environment",
         "type": "article-journal"
     },
     {
