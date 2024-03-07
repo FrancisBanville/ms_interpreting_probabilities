@@ -295,6 +295,33 @@
         "issued": {
             "date-parts": [
                 [
+                    2010
+                ]
+            ]
+        },
+        "container-title": "Evolutionary Ecology",
+        "author": [
+            {
+                "family": "Berg",
+                "given": "Matty P."
+            },
+            {
+                "family": "Ellers",
+                "given": "Jacintha"
+            }
+        ],
+        "id": "Berg2010Traita",
+        "DOI": "10.1007/s10682-009-9347-8",
+        "volume": "24",
+        "page": "617-629",
+        "title": "Trait plasticity in species interactions: A driving force of community dynamics",
+        "type": "article-journal"
+    },
+    {
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
                     2004
                 ]
             ]
@@ -867,6 +894,37 @@
         "type": "article-journal"
     },
     {
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2007
+                ]
+            ]
+        },
+        "container-title": "Molecular Phylogenetics and Evolution",
+        "author": [
+            {
+                "family": "Castoe",
+                "given": "Todd A."
+            },
+            {
+                "family": "Spencer",
+                "given": "Carol L."
+            },
+            {
+                "family": "Parkinson",
+                "given": "Christopher L."
+            }
+        ],
+        "id": "Castoe2007Phylogeographic",
+        "DOI": "10.1016/j.ympev.2006.07.002",
+        "volume": "42",
+        "page": "193-212",
+        "title": "Phylogeographic structure and historical demography of the western diamondback rattlesnake (<i>Crotalus</i> <i>Atrox</i>): A perspective on North American desert biogeography",
+        "type": "article-journal"
+    },
+    {
         "publisher": "EcoEvoRxiv",
         "author": [
             {
@@ -1260,6 +1318,41 @@
         "volume": "73",
         "page": "399-409",
         "title": "Predator–prey body size, interaction strength and the stability of a real food web",
+        "type": "article-journal"
+    },
+    {
+        "issue": "2",
+        "issued": {
+            "date-parts": [
+                [
+                    2008
+                ]
+            ]
+        },
+        "container-title": "Molecular Ecology",
+        "author": [
+            {
+                "family": "Fedorov",
+                "given": "V. B."
+            },
+            {
+                "family": "Goropashnaya",
+                "given": "A. V."
+            },
+            {
+                "family": "Boeskorov",
+                "given": "G. G."
+            },
+            {
+                "family": "Cook",
+                "given": "J. A."
+            }
+        ],
+        "id": "Fedorov2008Comparative",
+        "DOI": "10.1111/j.1365-294X.2007.03595.x",
+        "volume": "17",
+        "page": "598-610",
+        "title": "Comparative phylogeography and demographic history of the wood lemming (Myopus schisticolor): Implications for late Quaternary history of the taiga species in Eurasia",
         "type": "article-journal"
     },
     {
@@ -1978,6 +2071,70 @@
         "type": "article-journal"
     },
     {
+        "publisher": "Nature Publishing Group",
+        "issue": "7218",
+        "issued": {
+            "date-parts": [
+                [
+                    2008
+                ]
+            ]
+        },
+        "container-title": "Nature",
+        "author": [
+            {
+                "family": "Kausrud",
+                "given": "Kyrre L."
+            },
+            {
+                "family": "Mysterud",
+                "given": "Atle"
+            },
+            {
+                "family": "Steen",
+                "given": "Harald"
+            },
+            {
+                "family": "Vik",
+                "given": "Jon Olav"
+            },
+            {
+                "family": "Østbye",
+                "given": "Eivind"
+            },
+            {
+                "family": "Cazelles",
+                "given": "Bernard"
+            },
+            {
+                "family": "Framstad",
+                "given": "Erik"
+            },
+            {
+                "family": "Eikeset",
+                "given": "Anne Maria"
+            },
+            {
+                "family": "Mysterud",
+                "given": "Ivar"
+            },
+            {
+                "family": "Solhøy",
+                "given": "Torstein"
+            },
+            {
+                "family": "Stenseth",
+                "given": "Nils Chr"
+            }
+        ],
+        "id": "Kausrud2008Linking",
+        "DOI": "10.1038/nature07442",
+        "volume": "456",
+        "page": "93-97",
+        "title": "Linking climate change to lemming cycles",
+        "type": "article-journal"
+    },
+    {
         "issue": "4",
         "issued": {
             "date-parts": [
@@ -2141,6 +2298,37 @@
         "volume": "14",
         "page": "e1002527",
         "title": "How Structured Is the Entangled Bank? The Surprisingly Simple Organization of Multiplex Ecological Networks Leads to Increased Persistence and Resilience",
+        "type": "article-journal"
+    },
+    {
+        "issue": "12",
+        "issued": {
+            "date-parts": [
+                [
+                    1997
+                ]
+            ]
+        },
+        "container-title": "Ethology",
+        "author": [
+            {
+                "family": "Kissner",
+                "given": "Kelley J."
+            },
+            {
+                "family": "Forbes",
+                "given": "Mark R."
+            },
+            {
+                "family": "Secoy",
+                "given": "Diane M."
+            }
+        ],
+        "id": "Kissner1997Rattling",
+        "DOI": "10.1111/j.1439-0310.1997.tb00146.x",
+        "volume": "103",
+        "page": "1042-1050",
+        "title": "Rattling Behavior of Prairie Rattlesnakes (Crotalus viridis viridis, Viperidae) in Relation to Sex, Reproductive Status, Body Size, and Body Temperature",
         "type": "article-journal"
     },
     {
