@@ -445,70 +445,122 @@ asterisk has been conducted on binary interaction webs. {#tbl:prob}
 
 Metawebs are networks of potential interactions that have been designed for
 broad spatial, temporal, and taxonomic scales (e.g., species food webs at the
-continental scale). They represent the probability that taxa can biologically
-interact regardless of their co-occurrence and local environmental conditions.
-Metawebs of probabilistic interactions are particularly valuable when
-interaction data is limited, i.e. when the uncertainty of potential interactions
-is high. As data accumulates, interactions in metawebs should tend towards
-binarity, approaching probability values of $0$ (repeatedly failing to observe
-an interaction) and $1$ (observing an interaction at least once).
-
-Regional interactions are not evaluated for a particular local context. In
-contrast with local webs of probabilistic interactions, which represent the
-stochasticity of interactions occurring in nature, metawebs of probabilistic
-interactions measure our degree of belief in the capacity of two taxa to
-interact (i.e., the probability that their traits could support an interaction
-in the right conditions). Consequently, although *neutrally* forbidden
+continental scale). Potential interactions describe the biological capacity of
+taxa to interact, which is typically assessed at the regional scale. Metawebs of
+probabilistic interactions are particularly useful in situations where there is
+high uncertainty in the ability of taxa to interact if they were to encounter
+each other. This uncertainty frequently arises due to insufficient interaction
+data, especially for taxa that have not yet been observed to co-occur, and
+uncertainties in trait-matching models. As data accumulates, interactions in
+metawebs should tend towards binarity, approaching probability values of $0$
+(repeatedly failing to observe an interaction between two co-occurring taxa) and
+$1$ (observing an interaction at least once). The extent of sampling effort thus
+influences our evaluation of probabilities of potential interactions, as
+sampling over a larger area or for a longer duration enables us to capture a
+greater number of regional interactions (@McLeod2021Sampling). However, in
+contrast with local webs of probabilistic interactions, which describe
+interaction stochasticity in local natural settings, regional interactions are
+not evaluated for any particular local context. Although *neutrally* forbidden
 interactions (i.e., improbable interactions between rare species,
 @Canard2012Emergencea) tend to have low probability values in local webs, they
-may exhibit a higher probability in the metaweb. Potential interactions describe
-the probability that there exists at least one combination of phenotypes of taxa
-$i$ and $j$ that can interact with each other if they were to encounter. For
-example, a piscivorous species may have the capacity to interact with a
-potential prey species if they share at least one matching combination of body
-sizes, such as an adult predator being able to consume juvenile prey. To reduce
-any biases in our calculation of this probability, it is crucial to ensure that
-the set of traits sampled or considered accurately reflects the overall trait
-distribution in both taxa. This enhances our confidence in concluding that the
-taxa cannot interact when no positive observation has been made and increases
-our capacity to detect an interaction when it is biologically feasible. In
-addition to pairwise interactions, the extent of sampling effort also
-contributes to shaping our assessment of metaweb properties, as sampling a
-larger number of local webs allows us to capture more regional interactions
-(@McLeod2021Sampling). A probability of potential interaction in a metaweb $M$
-can be expressed as 
+may have higher probabilities in the metaweb (i.e., when species' biological
+traits can support an interaction if they were to encounter each other).
+Likewise, non-co-occurring taxa may have a non-zero probability of interaction
+in the metaweb.  
+
+Potential interactions describe what we refer to as the *biological* feasibility
+of interactions, which is based solely on the regional traits distributions
+$T_i$ and $T_j$ of taxa $i$ and $j$, respectively. A probability of potential
+interaction in a metaweb $M$ describing the biological feasibility of
+interactions may be expressed as: 
 
 $$P(M_{i \rightarrow j} | T_i, T_j),$$ {#eq:metaweb}
 
-which, in contrast with local webs, is never conditional on any spatial,
-temporal, co-occurrence or environmental variables (@tbl:prob). 
+which, in contrast with local webs, is not conditioned on any spatial, temporal,
+co-occurrence or environmental variables (@tbl:prob). Regional traits may differ
+from local traits $T_{i,l}$ and $T_{j,l}$, which may vary spatially and
+temporally due to phenotypic plasticity (@Berg2010Traita). The biological
+feasibility of interactions expresses our degree of belief that there exists at
+least one combination of phenotypes that could support an interaction if they
+were to encounter each other, assuming they had infinite time to interact.
+Evaluating this probability is conducted without incorporating the environmental
+conditions under which they encounter each other into the model. It is the
+complement of the probability $P(F_{i \rightarrow j} | T_i, T_j)$ of forbidden
+interactions based uniquely on biological traits (i.e., the probability that
+their traits do not support an interaction):
+
+$$P(M_{i \rightarrow j} | T_i, T_j) = 1 - P(F_{i \rightarrow j} | T_i, T_j).$$
+{#eq:forbidden}
+
+For example, let $i$ be a western diamondback rattlesnake (*Crotalus atrox*) and
+$j$, a wood lemming (*Myopus schisticolor*). These two taxa never co-occur, the
+rattlesnake being adapted to warm regions of North America
+(@Castoe2007Phylogeographic) and the lemming, to northern habitats of Eurasia
+(@Fedorov2008Comparative). As we lack direct observations of an interaction
+between these two species, we have to rely on expert knowledge or trait-matching
+models to estimate their probability of potential interaction. To accurately
+estimate this probability using trait-matching models, it is crucial to ensure
+that the set of traits considered reflects the overall traits distributions of
+both taxa. We could for instance consider their average body mass and the
+average phylogenetic proximity of lemmings to rattlesnakes' prey. Doing so, we
+might find a high probability of potential interaction based on these traits. 
+
+The biological feasibility of interactions should not be confused with what we
+refer to as the *ecological* feasibility of interactions. A probability of
+potential interaction in a metaweb $M^*$ describing ecological feasibility of
+interactions may be expressed as: 
+
+$$P(M^*_{i \rightarrow j} | T_i, T_j, E),$$ {#eq:metaweb2}
+
+where $E$ is the environmental conditions under which potential interactions are
+evaluated (@tbl:prob). Unlike $E_l$, these environmental conditions do not
+represent conditions occurring at specific locations. Ecological feasibility
+represents the probability that two taxa interact if they were to encounter each
+other under given environmental conditions, assuming they had infinite time to
+interact. Incorporating environmental conditions into a trait-matching model may
+be important when there is high covariation between the environment and
+biological traits. For instance, in our example involving rattlesnakes and
+lemmings, the probability of potential interaction between these two species may
+be low in most environmental conditions. Western diamondback rattlesnakes may be
+unactive under low temperatures (@Kissner1997Rattling), whereas wood lemmings
+may have low tolerance to high temperatures (@Kausrud2008Linking). The
+probability that an interaction is ecologically feasible is always lower than
+the probability that it is biologically feasible, even across all environmental
+conditions: 
+
+$$\int_{E}P(M^*_{i \rightarrow j} | T_i, T_j, E) dE \leq P(M_{i \rightarrow j} |
+T_i, T_j).$$ {#eq:feasibility}
+
+This is because the biological feasibility of an interaction is a prerequisite
+for its ecological feasibility. Biological feasibility is necessary but not
+sufficient for an interaction to be ecologically feasible. Our discussion of
+metawebs will focus on the biological feasibility of interactions since most
+methods developed for inferring probabilities of regional interactions do not
+explicitly take into account environmental conditions (e.g., @Strydom2022Food). 
 
 Starting from a selected set of taxa, which are usually distributed within a
 broad region of interest, metawebs can be built using different data sources,
 including literature review (e.g., Maiorano2020Tetraeua), aggregated local web
-data (e.g., @Gravel2019BriElt, @Saravia2022Ecological), and predictive models
-(e.g., @Strydom2022Food, @Shaw2024Framework). Every pair of taxa that have
-confidently been observed to interact at least once can be given a probability
-of $1$ (i.e., $P(M_{i \rightarrow j}) = 1$) since we know that they *can*
-interact. This is not the case in local webs of probabilistic interactions, in
-which interaction events could remain stochastic (i.e., $P(L_{i \rightarrow j})
-< 1$) after empirically observing interactions because of their intrinsic
-spatiotemporal variability. Similarly, although rare interactions typically have
-low probabilities in local webs, they can have high probabilities in metawebs
-when the traits of both taxa are congruent. On the other hand, interactions that
-were never observed can have low probability values in both local and metawebs,
-going as low as $0$ for forbidden links (i.e., interactions forbidden by
-biological traits). However, many observations of interactions are in reality
-false positives because of observation errors due to taxonomic
+data (e.g., @Gravel2019BriElt, @Saravia2022Ecological), trait-matching models
+(e.g., @Strydom2022Food, @Shaw2024Framework), and expert knowledge. Every pair
+of taxa that has confidently been observed to interact at least once can be
+given a probability of $1$ (i.e., $P(M_{i \rightarrow j}) = 1$) since we know
+that they *can* interact. This differs from local webs of probabilistic
+interactions, where interaction events may remain stochastic (i.e., $P(L_{i
+\rightarrow j}) < 1$) even after empirically observing interactions due to their
+spatiotemporal variability. Interactions that were never observed may have low
+probability values in local webs and low to high values in metawebs, going as
+low as $0$ for forbidden links. However, many observations of interactions are
+in reality false positives because of observation errors due to taxonomic
 misidentifications and ecological misinterpretations (e.g., due to cryptic
 species and interactions, @Pringle2020Resolving). Likewise, forbidden
-interactions can be false negatives in metawebs, e.g. if they have been assessed
-for specific phenotypes, locations or time. Employing Bayesian models, whether
-they are mechanistic or phenomenological, could improve the accuracy of our
-estimation of interaction probabilities within both local and regional webs
+interactions may be false negatives, e.g. if they have been evaluated based on
+unrepresentative or incomplete traits distributions. Employing Bayesian models
+could prove valuable when estimating interaction probabilities in metawebs
 (e.g., @Bartomeus2016ComFra, @Cirtwill2019QuaFra). This improvement is achieved
-in metawebs by leveraging prior information regarding the feasibility of
-interactions along with the empirical data on observed interactions.
+by updating prior information regarding the feasibility of interactions (e.g.,
+experts' prior assessments of interaction probabilities) with empirical data on
+interactions and traits.
 
 # Properties of probabilistic interaction webs
 
