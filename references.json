@@ -1564,6 +1564,45 @@
         "type": "article-journal"
     },
     {
+        "issue": "10",
+        "issued": {
+            "date-parts": [
+                [
+                    2011
+                ]
+            ]
+        },
+        "container-title": "Ecology Letters",
+        "author": [
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Massol",
+                "given": "François"
+            },
+            {
+                "family": "Canard",
+                "given": "Elsa"
+            },
+            {
+                "family": "Mouillot",
+                "given": "David"
+            },
+            {
+                "family": "Mouquet",
+                "given": "Nicolas"
+            }
+        ],
+        "id": "Gravel2011Trophic",
+        "DOI": "10.1111/j.1461-0248.2011.01667.x",
+        "volume": "14",
+        "page": "1010-1016",
+        "title": "Trophic theory of island biogeography",
+        "type": "article-journal"
+    },
+    {
         "issue": "11",
         "issued": {
             "date-parts": [
