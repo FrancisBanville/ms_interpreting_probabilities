@@ -784,10 +784,14 @@ of probabilistic interactions</div>
             trial <span class="math inline">$B_{i \rightarrow j} \sim
             {\rm Bernoulli}(P(B_{i \rightarrow j}))$</span>, with <span
             class="math inline"><em>P</em>(<em>B</em><sub><em>i</em> → <em>j</em></sub>)</span>
-            being the probability of interaction that characterizes our
-            limited knowledge of the system and/or its intrinsic
-            spatiotemporal variability. In networks of probabilistic
-            interactions, <span
+            being the probability of interaction. This interaction
+            probability characterizes our limited ecological knowledge
+            and/or the intrinsic spatiotemporal variability of
+            interactions. It may be estimated through predictive models
+            (e.g., those based on biological traits and species
+            abundances) or expert (prior) knowledge about the
+            interaction. In networks of probabilistic interactions,
+            <span
             class="math inline"><em>P</em>(<em>B</em><sub><em>i</em> → <em>j</em></sub>)</span>
             are edge values, and the only two possible outcomes are the
             presence (<span
@@ -805,17 +809,23 @@ of probabilistic interactions</div>
             explanatory variables. Predicting the number of local webs
             in which the interaction between two given taxa occurs can
             be achieved by using a Binomial distribution, assuming a
-            constant probability of interaction and independence between
+            constant interaction probability and independence between
             networks (trials). When considering uncertainties around the
             estimation of <span
-            class="math inline"><em>P</em>(<em>B</em><sub><em>i</em> → <em>j</em></sub>)</span>,
-            a Beta distribution can also be used to encompass all
-            possible probability values. In that case, a Beta-Binomial
-            distribution can be used to predict the number of networks
-            in which the interaction occurs. Empirically observing an
-            interaction between two taxa at a given location and time
-            provides important information that can be used to update
-            previous estimates of <span
+            class="math inline"><em>P</em>(<em>B</em><sub><em>i</em> → <em>j</em></sub>)</span>
+            or its spatiotemporal variability, a Beta distribution may
+            be used to represent the relative likelihood of different
+            probability values. For example, when calculating the
+            probability of interaction between two taxa based on their
+            local abundances, any spatiotemporal fluctuations in their
+            abundances would introduce variability in the interaction
+            probability at the local scale. If we take into account the
+            stochasticity of the interaction probability, a
+            Beta-Binomial distribution can be used to predict the number
+            of networks in which the interaction occurs. Empirically
+            observing an interaction between two taxa at a given
+            location and time provides important information that can be
+            used to update previous estimates of <span
             class="math inline"><em>P</em>(<em>B</em><sub><em>i</em> → <em>j</em></sub>)</span>,
             informing us on the biological capacity of both taxa to
             interact and the environmental conditions that enabled them
