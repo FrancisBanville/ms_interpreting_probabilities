@@ -182,6 +182,28 @@ remain relevant and applicable across diverse ecological contexts.
 
 # Probabilistic representations of interactions
 
+Consider a scenario where a species of avian predator has just
+established itself in a northern habitat home to a small rodent species.
+Suppose these species have never co-occurred before, and as a result,
+their interaction has not been previously observed. What is the
+probability that the rodent is part of the diet of the avian predator,
+or put differently, what is the probability that they interact?
+Answering this question requires some clarification, as there are
+multiple ways to interpret and calculate interaction probabilities. We
+may calculate the probability that the traits of these species match,
+i.e. that the avian predator possesses the biological attributes to
+capture and consume the rodent. We may also calculate the probability
+that their traits support an interaction under the typical environmental
+conditions of the new habitat. For example, because avian predators hunt
+by sight, predation could be possible in the absence of snow but highly
+improbable when snow is present, as rodents may use it as a shelter to
+hide from predators. Finally, we may calculate the probability that the
+avian predator will consume the rodent at *that* particular location,
+for which the spatial and temporal boundaries need to be specified. The
+estimation of interaction probabilities, whether through predictive
+models or prior distributions, hinges on our comprehension of these
+probabilities and the specific ecological processes we aim to capture.
+
 One of the first aspects to take into consideration when estimating or
 interpreting probabilities of interactions is knowing if they describe
 potential or realized interactions, as these two types of interactions
