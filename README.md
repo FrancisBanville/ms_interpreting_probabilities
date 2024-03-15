@@ -234,28 +234,35 @@ interact with at least another individual from group $j$. In an adjacency matrix
 $B$ of binary interactions, the presence or absence of an interaction $B_{i
 \rightarrow j}$ between two taxa can be viewed as the result of a Bernoulli
 trial $B_{i \rightarrow j} \sim {\rm Bernoulli}(P(B_{i \rightarrow j}))$, with
-$P(B_{i \rightarrow j})$ being the probability of interaction that characterizes
-our limited knowledge of the system and/or its intrinsic spatiotemporal
-variability. In networks of probabilistic interactions, $P(B_{i \rightarrow j})$
-are edge values, and the only two possible outcomes are the presence ($B_{i
-\rightarrow j} = 1$) or absence ($B_{i \rightarrow j} = 0$) of an interaction
-between each pair of nodes. Depending on the type of probabilistic interaction
-network (local or metaweb), the mathematical formulation and interpretation of
-stochastic parameters like $P(B_{i \rightarrow j})$ can be linked to
-environmental and biological factors such as species abundance, traits, area,
-and time (@tbl:prob), for example using logistic regression with continuous
-explanatory variables. Predicting the number of local webs in which the
-interaction between two given taxa occurs can be achieved by using a Binomial
-distribution, assuming a constant probability of interaction and independence
-between networks (trials). When considering uncertainties around the estimation
-of $P(B_{i \rightarrow j})$, a Beta distribution can also be used to encompass
-all possible probability values. In that case, a Beta-Binomial distribution can
-be used to predict the number of networks in which the interaction occurs.
-Empirically observing an interaction between two taxa at a given location and
-time provides important information that can be used to update previous
-estimates of $P(B_{i \rightarrow j})$, informing us on the biological capacity
-of both taxa to interact and the environmental conditions that enabled them to
-interact locally. 
+$P(B_{i \rightarrow j})$ being the probability of interaction. This interaction
+probability characterizes our limited ecological knowledge and/or the intrinsic
+spatiotemporal variability of interactions. It may be estimated through
+predictive models (e.g., those based on biological traits and species
+abundances) or expert (prior) knowledge about the interaction. In networks of
+probabilistic interactions, $P(B_{i \rightarrow j})$ are edge values, and the
+only two possible outcomes are the presence ($B_{i \rightarrow j} = 1$) or
+absence ($B_{i \rightarrow j} = 0$) of an interaction between each pair of
+nodes. Depending on the type of probabilistic interaction network (local or
+metaweb), the mathematical formulation and interpretation of stochastic
+parameters like $P(B_{i \rightarrow j})$ can be linked to environmental and
+biological factors such as species abundance, traits, area, and time
+(@tbl:prob), for example using logistic regression with continuous explanatory
+variables. Predicting the number of local webs in which the interaction between
+two given taxa occurs can be achieved by using a Binomial distribution, assuming
+a constant interaction probability and independence between networks (trials).
+When considering uncertainties around the estimation of $P(B_{i \rightarrow j})$
+or its spatiotemporal variability, a Beta distribution may be used to represent
+the relative likelihood of different probability values. For example, when
+calculating the probability of interaction between two taxa based on their local
+abundances, any spatiotemporal fluctuations in their abundances would introduce
+variability in the interaction probability at the local scale. If we take into
+account the stochasticity of the interaction probability, a Beta-Binomial
+distribution can be used to predict the number of networks in which the
+interaction occurs. Empirically observing an interaction between two taxa at a
+given location and time provides important information that can be used to
+update previous estimates of $P(B_{i \rightarrow j})$, informing us on the
+biological capacity of both taxa to interact and the environmental conditions
+that enabled them to interact locally. 
 
 Even though binary interaction webs constitute a highly valuable source of
 ecological information (@Pascual2006Ecologicala), they overlook important
@@ -407,8 +414,7 @@ realized is described by the following expression when all these conditional
 variables are included:
 
 $$P(L_{i \rightarrow j} | X_{i,l}, X_{j,l}, N_{i,l}, N_{j,l}, T_{i,l}, T_{j,l},
-E_l, A, t, f(L))$$
-{#eq:local}
+E_l, A, t, f(L))$$ {#eq:local}
 
 The representation of the local context in which probabilities are estimated and
 the variables that should be taken into consideration depend on the study
@@ -1140,14 +1146,14 @@ $$\int_{E_l}\int_A\int_t P(L_{i \rightarrow j} | E_l, A, t) dt dA dE_l \leq
 P(M_{i \rightarrow j} | T_i, T_j).$$ {#eq:all}
 
 Estimating more precisely the probability $P(L_{i \rightarrow j}|M_{i
-\rightarrow j})$ that two taxa interact
-locally if they can potentially interact allows for improved predictions of
-local webs from the metaweb of probabilistic interactions. This task is
-challenging due to the variability of this probability across space and time, as
-well as its variability across pairwise interactions within a network. Using
-simple models of $P(L_{i \rightarrow j}|M_{i \rightarrow j})$, as demonstrated
-in our case studies, represents an initial step toward the overarching objective
-of reconstructing local webs from metawebs.
+\rightarrow j})$ that two taxa interact locally if they can potentially interact
+allows for improved predictions of local webs from the metaweb of probabilistic
+interactions. This task is challenging due to the variability of this
+probability across space and time, as well as its variability across pairwise
+interactions within a network. Using simple models of $P(L_{i \rightarrow
+j}|M_{i \rightarrow j})$, as demonstrated in our case studies, represents an
+initial step toward the overarching objective of reconstructing local webs from
+metawebs.
 
 # Conclusion
 
