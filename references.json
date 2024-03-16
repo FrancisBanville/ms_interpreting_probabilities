@@ -806,6 +806,34 @@
         "type": "article-journal"
     },
     {
+        "publisher": "SAGE Publications Inc",
+        "issue": "2",
+        "issued": {
+            "date-parts": [
+                [
+                    2004
+                ]
+            ]
+        },
+        "container-title": "Sociological Methods & Research",
+        "author": [
+            {
+                "family": "Burnham",
+                "given": "Kenneth P."
+            },
+            {
+                "family": "Anderson",
+                "given": "David R."
+            }
+        ],
+        "id": "Burnham2004Multimodel",
+        "DOI": "10.1177/0049124104268644",
+        "volume": "33",
+        "page": "261-304",
+        "title": "Multimodel Inference: Understanding AIC and BIC in Model Selection",
+        "type": "article-journal"
+    },
+    {
         "publisher": "Public Library of Science",
         "issue": "8",
         "issued": {
@@ -1048,6 +1076,50 @@
         "volume": "2",
         "page": "728",
         "title": "Predator-prey role reversals, juvenile experience and adult antipredator behaviour",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "Nature Publishing Group",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2019
+                ]
+            ]
+        },
+        "container-title": "Nature Reviews Physics",
+        "author": [
+            {
+                "family": "Cimini",
+                "given": "Giulio"
+            },
+            {
+                "family": "Squartini",
+                "given": "Tiziano"
+            },
+            {
+                "family": "Saracco",
+                "given": "Fabio"
+            },
+            {
+                "family": "Garlaschelli",
+                "given": "Diego"
+            },
+            {
+                "family": "Gabrielli",
+                "given": "Andrea"
+            },
+            {
+                "family": "Caldarelli",
+                "given": "Guido"
+            }
+        ],
+        "id": "Cimini2019Statistical",
+        "DOI": "10.1038/s42254-018-0002-6",
+        "volume": "1",
+        "page": "58-71",
+        "title": "The statistical physics of real-world networks",
         "type": "article-journal"
     },
     {
@@ -2787,6 +2859,34 @@
         "type": "article-journal"
     },
     {
+        "publisher": "American Physical Society",
+        "issue": "6",
+        "issued": {
+            "date-parts": [
+                [
+                    2004
+                ]
+            ]
+        },
+        "container-title": "Physical Review E",
+        "author": [
+            {
+                "family": "Park",
+                "given": "Juyong"
+            },
+            {
+                "family": "Newman",
+                "given": "M. E. J."
+            }
+        ],
+        "id": "Park2004Statisticala",
+        "DOI": "10.1103/PhysRevE.70.066117",
+        "volume": "70",
+        "page": "066117",
+        "title": "Statistical mechanics of networks",
+        "type": "article-journal"
+    },
+    {
         "publisher": "Oxford University Press, USA",
         "author": [
             {
@@ -2812,6 +2912,89 @@
             ]
         },
         "type": "book"
+    },
+    {
+        "issue": "2",
+        "issued": {
+            "date-parts": [
+                [
+                    2018
+                ]
+            ]
+        },
+        "container-title": "Biological Reviews",
+        "author": [
+            {
+                "family": "Pellissier",
+                "given": "Loïc"
+            },
+            {
+                "family": "Albouy",
+                "given": "Camille"
+            },
+            {
+                "family": "Bascompte",
+                "given": "Jordi"
+            },
+            {
+                "family": "Farwig",
+                "given": "Nina"
+            },
+            {
+                "family": "Graham",
+                "given": "Catherine"
+            },
+            {
+                "family": "Loreau",
+                "given": "Michel"
+            },
+            {
+                "family": "Maglianesi",
+                "given": "Maria Alejandra"
+            },
+            {
+                "family": "Melián",
+                "given": "Carlos J."
+            },
+            {
+                "family": "Pitteloud",
+                "given": "Camille"
+            },
+            {
+                "family": "Roslin",
+                "given": "Tomas"
+            },
+            {
+                "family": "Rohr",
+                "given": "Rudolf"
+            },
+            {
+                "family": "Saavedra",
+                "given": "Serguei"
+            },
+            {
+                "family": "Thuiller",
+                "given": "Wilfried"
+            },
+            {
+                "family": "Woodward",
+                "given": "Guy"
+            },
+            {
+                "family": "Zimmermann",
+                "given": "Niklaus E."
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            }
+        ],
+        "id": "Pellissier2018Comparing",
+        "DOI": "10.1111/brv.12366",
+        "volume": "93",
+        "page": "785-800",
+        "title": "Comparing species interaction networks along environmental gradients",
+        "type": "article-journal"
     },
     {
         "publisher": "Proceedings of the National Academy of Sciences",
@@ -4136,6 +4319,33 @@
         "type": "article-journal"
     },
     {
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2004
+                ]
+            ]
+        },
+        "container-title": "Psychonomic Bulletin & Review",
+        "author": [
+            {
+                "family": "Wagenmakers",
+                "given": "Eric-Jan"
+            },
+            {
+                "family": "Farrell",
+                "given": "Simon"
+            }
+        ],
+        "id": "Wagenmakers2004Aic",
+        "DOI": "10.3758/BF03206482",
+        "volume": "11",
+        "page": "192-196",
+        "title": "AIC model selection using Akaike weights",
+        "type": "article-journal"
+    },
+    {
         "issued": {
             "date-parts": [
                 [
@@ -4412,6 +4622,38 @@
         "volume": "367",
         "page": "2990-2997",
         "title": "Climate change impacts in multispecies systems: Drought alters food web size structure in a field experiment",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "Nature Publishing Group",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2021
+                ]
+            ]
+        },
+        "container-title": "Nature Communications",
+        "author": [
+            {
+                "family": "Young",
+                "given": "Jean-Gabriel"
+            },
+            {
+                "family": "Valdovinos",
+                "given": "Fernanda S."
+            },
+            {
+                "family": "Newman",
+                "given": "M. E. J."
+            }
+        ],
+        "id": "Young2021Reconstructiona",
+        "DOI": "10.1038/s41467-021-24149-x",
+        "volume": "12",
+        "page": "3911",
+        "title": "Reconstruction of plant–pollinator networks from observational data",
         "type": "article-journal"
     }
 ]
