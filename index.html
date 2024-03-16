@@ -1504,10 +1504,11 @@ of probabilistic interactions</div>
             <p>Starting from a selected set of taxa, which are usually
             distributed within a broad region of interest, metawebs can
             be built using different data sources, including literature
-            review (e.g., Maiorano2020Tetraeua), aggregated local web
-            data (e.g., <span class="citation"
-            data-cites="Gravel2019BriElt">Gravel <em>et al.</em>
-            (2019)</span>, <span class="citation"
+            review (e.g., <span class="citation"
+            data-cites="Maiorano2020Tetraeua">Maiorano <em>et al.</em>
+            (2020)</span>), aggregated local web data (e.g., <span
+            class="citation" data-cites="Gravel2019BriElt">Gravel <em>et
+            al.</em> (2019)</span>, <span class="citation"
             data-cites="Saravia2022Ecological">Saravia <em>et al.</em>
             (2022)</span>), trait-matching models (e.g., <span
             class="citation" data-cites="Strydom2022Food">Strydom <em>et
@@ -1553,9 +1554,9 @@ of probabilistic interactions</div>
             occurs because <span
             class="math inline"><em>P</em>(<em>O</em><sub><em>i</em> → <em>j</em></sub>=0|<em>M</em><sub><em>i</em> → <em>j</em></sub>=1,...)</span>
             must be lower than <span
-            class="math inline"><em>P</em>(<em>O</em><sub><em>i</em> → <em>j</em></sub>=0,...)</span>
-            (there is a higher chance of observing an interaction when
-            we know it is biologically feasible).</p>
+            class="math inline"><em>P</em>(<em>O</em><sub><em>i</em> → <em>j</em></sub>=0,...)</span>,
+            i.e. there is a higher chance of observing an interaction
+            when we know it is biologically feasible.</p>
             <p>Many observations of interactions are false positives
             because of observation errors due to taxonomic
             misidentifications and ecological misinterpretations (e.g.,
@@ -1751,7 +1752,7 @@ of probabilistic interactions</div>
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em> → <em>j</em></sub>|<em>M</em><sub><em>i</em> → <em>j</em></sub>)</span>
             indicate that feasible interactions rarely occur locally,
             intermediate values around <span
-            class="math inline">50</span> suggest considerable
+            class="math inline">50%</span> suggest considerable
             spatiotemporal variability, while high values indicate that
             regional interactions are nearly always realized locally.
             Following eq. 10, the local probability of interaction
@@ -1789,7 +1790,7 @@ of probabilistic interactions</div>
             obtained by:</p>
             <p><span id="eq:aggregate"><span
             class="math display"><em>P</em>(<em>L</em><sub>1, 2, <em>i</em> → <em>j</em></sub>|<em>M</em><sub><em>i</em> → <em>j</em></sub>) = 1 − (1−<em>P</em>(<em>L</em><sub>1, <em>i</em> → <em>j</em></sub>|<em>M</em><sub><em>i</em> → <em>j</em></sub>)) × (1−<em>P</em>(2,<em>L</em><sub><em>i</em> → <em>j</em></sub>|<em>M</em><sub><em>i</em> → <em>j</em></sub>)),   (11)</span></span></p>
-            <p>assuming independence between the interactions of two
+            <p>assuming independence between the interaction of the two
             taxa in different networks. This equation represents the
             probability that the interaction is realized in either (1)
             exclusively the local web <span
@@ -2223,9 +2224,9 @@ of probabilistic interactions</div>
             resolution is typically low (<span class="citation"
             data-cites="Hemprich-Bennett2021AssImp">Hemprich-Bennett
             <em>et al.</em> (2021)</span>, <span class="citation"
-            data-cites="VazquezSS2022Ecological">Vázquez§ <em>et
-            al.</em> (2022)</span>). Interaction probabilities at
-            broader taxonomic scales should be based on probabilities of
+            data-cites="VazquezSS2022Ecological">Vázquez <em>et al.</em>
+            (2022)</span>). Interaction probabilities at broader
+            taxonomic scales should be based on probabilities of
             interactions between individuals, for both local and
             metawebs. For instance, in local individual-based food webs,
             the probability that two individuals interact reflects our
@@ -2540,8 +2541,8 @@ of probabilistic interactions</div>
             estimate the probability of different plant-pollinator
             network structures derived from imperfect observational
             data. A probability distribution of ecological networks may
-            also be derived using maximum entropy principles given some
-            structural constrained (e.g., <span class="citation"
+            also be derived using the principle of maximum entropy given
+            some structural constrained (e.g., <span class="citation"
             data-cites="Park2004Statisticala">Park &amp; Newman
             (2004)</span>, <span class="citation"
             data-cites="Cimini2019Statistical">Cimini <em>et al.</em>
@@ -3132,6 +3133,14 @@ of probabilistic interactions</div>
             District, Northeastern Tanzania</a>. <em>Journal of Medical
             Entomology</em>, 43, 580–588.
             </div>
+            <div id="ref-Maiorano2020Tetraeua" class="csl-entry"
+            role="doc-biblioentry">
+            Maiorano, L., Montemaggiori, A., Ficetola, G.F., O’Connor,
+            L. &amp; Thuiller, W. (2020). <a
+            href="https://doi.org/10.1111/geb.13138">TETRA-EU 1.0: A
+            species-level trophic metaweb of European tetrapods</a>.
+            <em>Global Ecology and Biogeography</em>, 29, 1452–1457.
+            </div>
             <div id="ref-McCann2007ProBio" class="csl-entry"
             role="doc-biblioentry">
             McCann, K. (2007). Protecting biostructure. <em>Nature</em>,
@@ -3424,7 +3433,7 @@ of probabilistic interactions</div>
             </div>
             <div id="ref-VazquezSS2022Ecological" class="csl-entry"
             role="doc-biblioentry">
-            Vázquez§, D.P., Peralta§, G., Cagnolo, L., Santos, M. &amp;
+            Vázquez, D.P., Peralta§, G., Cagnolo, L., Santos, M. &amp;
             Igual, §.E. autores contribuyeron por. (2022). <a
             href="https://doi.org/10.25260/EA.22.32.2.1.1846">Ecological
             interaction networks. What we know, what we don’t, and why
