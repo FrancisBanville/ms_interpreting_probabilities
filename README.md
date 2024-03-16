@@ -479,7 +479,7 @@ average probability of interaction $P(L_{i \rightarrow j}|...)$ can be
 calculated as follows: 
 
 $$P(L_{i \rightarrow j}|...) = P(L_{i \rightarrow j}|mod_1, ...) \times
-P(mod_1)+ P(L_{i \rightarrow j}|mod_2, ...) \times P(mod_2),$$ {#eq:model}
+P(mod_1)+ P(L_{i \rightarrow j}|mod_2, ...) \times P(mod_2),$$ {#eq:model_ens}
 
 where the ellipsis serves as a placeholder for the conditional variables
 incorporated in these models.
