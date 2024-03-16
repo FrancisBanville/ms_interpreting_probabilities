@@ -583,7 +583,7 @@ explicitly take into account environmental conditions (e.g., @Strydom2022Food).
 
 Starting from a selected set of taxa, which are usually distributed within a
 broad region of interest, metawebs can be built using different data sources,
-including literature review (e.g., Maiorano2020Tetraeua), aggregated local web
+including literature review (e.g., @Maiorano2020Tetraeua), aggregated local web
 data (e.g., @Gravel2019BriElt, @Saravia2022Ecological), trait-matching models
 (e.g., @Strydom2022Food, @Shaw2024Framework), and expert knowledge. Every pair
 of taxa that have confidently been observed to interact at least once can be
@@ -612,8 +612,8 @@ The reduction in the probability of regional interaction after considering that
 it was never observed locally (i.e., $P(M_{i \rightarrow j} = 1 | O_{i
 \rightarrow j} = 0,...) < P(M_{i \rightarrow j} = 1 | ...)$) occurs because
 $P(O_{i \rightarrow j} = 0 | M_{i \rightarrow j} = 1,...)$ must be lower than
-$P(O_{i \rightarrow j} = 0, ...)$ (there is a higher chance of observing an
-interaction when we know it is biologically feasible). 
+$P(O_{i \rightarrow j} = 0, ...)$, i.e. there is a higher chance of observing an
+interaction when we know it is biologically feasible. 
 
 Many observations of interactions are false positives because of observation
 errors due to taxonomic misidentifications and ecological misinterpretations
@@ -733,7 +733,7 @@ empirical local networks and attributing pairwise interaction probabilities
 based on the metawebs of probabilistic interactions and a constant value of
 $P(L_{i \rightarrow j}|M_{i \rightarrow j})$ across interactions. Low values of
 $P(L_{i \rightarrow j}|M_{i \rightarrow j})$ indicate that feasible interactions
-rarely occur locally, intermediate values around $50%$ suggest considerable
+rarely occur locally, intermediate values around $50\%$ suggest considerable
 spatiotemporal variability, while high values indicate that regional
 interactions are nearly always realized locally. Following @eq:local_meta, the
 local probability of interaction between a given pair of taxa consistently
@@ -758,7 +758,7 @@ $$P(L_{1,2, i \rightarrow j}|M_{i \rightarrow j}) = 1 - (1 - P(L_{1, i
 \rightarrow j}|M_{i \rightarrow j})) \times (1 - P(2, L_{i \rightarrow j}|M_{i
 \rightarrow j})),$$ {#eq:aggregate}
 
-assuming independence between the interactions of two taxa in different
+assuming independence between the interaction of the two taxa in different
 networks. This equation represents the probability that the interaction is
 realized in either (1) exclusively the local web $L_1$, (2) exclusively the
 local web $L_2$ or (3) both local webs, given that the two taxa have the
@@ -1237,8 +1237,8 @@ that a particular network of binary (or quantitative) interactions (its whole
 adjacency matrix) is realized. For example, @Young2021Reconstructiona used a
 Bayesian approach to estimate the probability of different plant-pollinator
 network structures derived from imperfect observational data. A probability
-distribution of ecological networks may also be derived using maximum entropy
-principles given some structural constrained (e.g., @Park2004Statisticala,
+distribution of ecological networks may also be derived using the principle of
+maximum entropy given some structural constrained (e.g., @Park2004Statisticala,
 @Cimini2019Statistical). Regardless of the method employed, generating
 probabilistic local webs, bypassing the need to independently estimate local
 interaction probabilities, could lead to more accurate predictions of local
