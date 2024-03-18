@@ -49,7 +49,7 @@ trophic interactions) is necessary but not sufficient for inferring their
 interaction at a specific time and space. The recognition of the intrinsic
 variability of species interactions has led ecologists to expand their
 representation of ecological networks (also known as ecological webs) to include
-a probabilistic view of interactions [@Poisot2016Structure,
+a probabilistic view of interactions [@Poisot2016Structure;
 @Dallas2017Predictinga; @Fu2021Link]. This different perspective allows us to
 fill in the Eltonian shortfall [@Hortal2015SevSho] by modeling the probability
 of occurrence of interactions, which can be an important tool for directing
@@ -88,7 +88,7 @@ By accounting for the uncertainty of interactions, networks of probabilistic
 interactions may provide a more realistic portrait of species interactions.
 However, how the uncertainty of pairwise interactions propagates to network
 structure [i.e., community-level properties driving the functioning, dynamics,
-and resilience of ecosystems, @Proulx2005Networka; @McCann2007ProBio,
+and resilience of ecosystems, @Proulx2005Networka; @McCann2007ProBio;
 @McCann2011FooWeb; @Rooney2012IntFoo] remains to be elucidated. The application
 and development of computational methods in network ecology, often based on a
 probabilistic representation of interactions, can alleviate (and guide) the
@@ -107,7 +107,7 @@ sites for disease hotspots [@Andrade-Pacheco2020Finding], but there is
 substantial promise in applying them to probabilistic ecological interactions.
 Statistical models can also be used to generate predictions of ecological webs
 without prior knowledge of pairwise interactions, for instance using body size
-[@Petchey2008SizFor; @Gravel2013InfFooa], phylogeny [@Elmasri2020HieBay,
+[@Petchey2008SizFor; @Gravel2013InfFooa], phylogeny [@Elmasri2020HieBay;
 @Strydom2022Food], or a combination of niche and neutral processes
 [@Bartomeus2016ComFra; @Pomeranz2019InfPre] for inference. Topological null
 models, which generate networks of probabilistic interactions by preserving
@@ -116,7 +116,7 @@ intentionally omitting others [@Bascompte2003NesAss; @Fortuna2006HabLos], serve
 as other examples of common probabilistic interaction models. Null models can be
 used to produce underlying distributions of network measures for null hypothesis
 significance testing. Many measures have been developed to describe the
-structure [@Poisot2016Structure] and diversity [@Ohlmann2019Diversity,
+structure [@Poisot2016Structure] and diversity [@Ohlmann2019Diversity;
 @Godsoe2022Species] of probabilistic interaction webs. These models and measures
 support the use of this approach for the study of a wide range of ecological
 questions, from making better predictions of species distribution
@@ -332,7 +332,7 @@ $(x, y)$ representing longitude and latitude coordinates, and $z$ denoting
 either altitudes or depths. These point coordinates delineate the spatial
 boundaries of the system, which may be portrayed as a polyhedron. Ecological
 interactions may exhibit variations along latitudinal and altitudinal gradients,
-as evidenced by changes in hummingbird-plant interactions [@Weinstein2017PerBil,
+as evidenced by changes in hummingbird-plant interactions [@Weinstein2017PerBil;
 @Weinstein2017ComTra] and mosquito biting rates [e.g., @Kulkarni2006EntEva] at
 different elevations. In contrast, time is defined as the specific time period
 within which interactions were either observed or predicted. Even though space
@@ -345,9 +345,9 @@ networks and provides actual probabilities of interactions, which can be
 obtained by integrating probability densities over space and time. Furthermore,
 we can quantify both an area $A$ and a duration $t$, which can be readily used
 in spatiotemporal analyses of ecological networks. For example, when studying
-network-area relationships [NAR, @Galiana2018Spatiala], we anticipate that
-local probabilities of interactions scale positively with area and duration
-because taxa have more opportunities to interact as these dimensions expand.
+network-area relationships [NAR, @Galiana2018Spatiala], we anticipate that local
+probabilities of interactions scale positively with area and duration because
+taxa have more opportunities to interact as these dimensions expand.
 
 The probability that two taxa $i$ and $j$ interact in a local web $L_{x,y,z,t}$
 (spatial and temporal subscripts hereafter omitted or replaced by the shorter
@@ -778,7 +778,7 @@ webs increases.
 The investigation of network-area relationships and interaction accumulation
 curves is an important area of research in network ecology. First, network-area
 relationships elucidate the scaling of network properties (such as modularity
-and trophic chain lengths) with spatial scale [e.g., @Wood2015Effects,
+and trophic chain lengths) with spatial scale [e.g., @Wood2015Effects;
 @Galiana2018Spatiala]. The variations in network structure across spatial scales
 may stem from the scaling of species richness (species-area relationships,
 SARs), the number of interactions [@Brose2004UniSpa], and many other
@@ -903,8 +903,8 @@ When $\gamma > 1$, it signifies a positive association in the geographic
 distributions of both taxa, indicating that the presence of one taxon enhances
 the probability of occurrence of the other. Attractions may be the result of
 positive interactions (e.g., mutualism) or positive/negative interactions [e.g.,
-antagonism between predators and prey, @Cazelles2016Theorya]. In empirical
-webs, $\gamma > 1$ holds true for the majority of species pairs
+antagonism between predators and prey, @Cazelles2016Theorya]. In empirical webs,
+$\gamma > 1$ holds true for the majority of species pairs
 [@Catchen2023Missinga]. In contrast, repulsions ($\gamma < 1$) may be caused
 e.g. by strong interspecific competition [@Cazelles2016Theorya]. We model the
 co-occurrence $X_{i,j,l}$ of both taxa as the outcome of a Bernoulli trial
