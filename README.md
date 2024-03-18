@@ -10,7 +10,7 @@ biological constraints that hinder our ability to observe all ecological
 interactions, leading to significant uncertainties in our understanding of these
 interactions. For example, the spatial and temporal uncoupling of species [e.g.,
 nocturnal and diurnal species coexisting in the same space without interacting
-due to differences in the timing of their daily activities; @Jordano1987PatMut]
+due to differences in the timing of their daily activities, @Jordano1987PatMut]
 and the large number of rare and cryptic interactions in a community contribute
 to these uncertainties [@Jordano2016Samplingb]. More generally, a handful of
 conditions must be satisfied for an interaction to be observed locally. First,
@@ -29,7 +29,7 @@ contact, an interaction occurs only if their traits are locally compatible
 [@Bolnick2011WhyInt; @Stouffer2011RolBod; @Gravel2013InfFooa] and behavioral
 choices [@Pulliam1974Theory; @Choh2012PreRol]. Interactions may also be
 influenced by the presence or prevalence of a third species [e.g., of a more
-profitable prey species; @Golubski2011ModMod; @Sanders2012Indirect]. Documenting
+profitable prey species, @Golubski2011ModMod; @Sanders2012Indirect]. Documenting
 the location and timing of interactions becomes even more difficult when
 accounting for the spatiotemporal variability of ecological interactions
 [@Poisot2012Dissimilaritya; @Poisot2015Speciesa]. Environmental factors, such as
@@ -80,7 +80,7 @@ numerical value of an interaction is restrained to $0$ (non-occurring) or $1$
 (occurring). Yet, for the sake of clarity, we omit binary interactions from our
 discussion of probabilistic interactions in this contribution. In networks of
 probabilistic interactions, only forbidden interactions [i.e., interactions
-prohibited by biological traits or species absence; @Jordano2003Invarianta,
+prohibited by biological traits or species absence, @Jordano2003Invarianta;
 @Olesen2010Missing] have a probability value of zero, provided that
 intraspecific trait variability is considered [@Gonzalez-Varo2016Labilea]. 
 
@@ -88,7 +88,7 @@ By accounting for the uncertainty of interactions, networks of probabilistic
 interactions may provide a more realistic portrait of species interactions.
 However, how the uncertainty of pairwise interactions propagates to network
 structure [i.e., community-level properties driving the functioning, dynamics,
-and resilience of ecosystems\; @Proulx2005Networka; @McCann2007ProBio,
+and resilience of ecosystems, @Proulx2005Networka; @McCann2007ProBio,
 @McCann2011FooWeb; @Rooney2012IntFoo] remains to be elucidated. The application
 and development of computational methods in network ecology, often based on a
 probabilistic representation of interactions, can alleviate (and guide) the
@@ -220,7 +220,7 @@ interaction data.
 Local and metawebs, like any type of network, are made of nodes and edges that
 may be represented at different levels of organization and precision. The basic
 units of ecological networks are individuals that interact with each other
-[e.g., by predation in food webs\; @Elton2001Animal], forming individual-based
+[e.g., by predation in food webs, @Elton2001Animal], forming individual-based
 networks [@Melian2011EcoDyn]. The aggregation of these individuals into more or
 less homogeneous groups (e.g., populations, species, families, feeding guilds)
 allows us to represent nodes at broader taxonomic scales, which affects our
@@ -273,7 +273,7 @@ interactions between nodes [@Berlow2004Interaction; @Borrett2019Walk], with
 $W_{i \rightarrow j}$ being a natural $\mathbb{N}$ or real $\mathbb{R}$ number
 depending on the measure. For example, they may represent local interaction
 rates between pairs of taxa [e.g., the flower-visiting rates of pollinators in a
-mutualistic network; @Herrera1989PolAbu]. When interaction strengths
+mutualistic network, @Herrera1989PolAbu]. When interaction strengths
 characterize predation pressure on prey taxa in food webs, they can serve as
 good estimators of the parameters describing species interactions in a
 Lotka-Volterra model [e.g., @Emmerson2004Predatora]. The extra amount of
@@ -345,7 +345,7 @@ networks and provides actual probabilities of interactions, which can be
 obtained by integrating probability densities over space and time. Furthermore,
 we can quantify both an area $A$ and a duration $t$, which can be readily used
 in spatiotemporal analyses of ecological networks. For example, when studying
-network-area relationships [NAR\; @Galiana2018Spatiala], we anticipate that
+network-area relationships [NAR, @Galiana2018Spatiala], we anticipate that
 local probabilities of interactions scale positively with area and duration
 because taxa have more opportunities to interact as these dimensions expand.
 
@@ -617,7 +617,7 @@ interaction when we know it is biologically feasible.
 
 Many observations of interactions are false positives because of observation
 errors due to taxonomic misidentifications and ecological misinterpretations
-[e.g., due to cryptic species and interactions; @Pringle2020Resolving].
+[e.g., due to cryptic species and interactions, @Pringle2020Resolving].
 Likewise, forbidden interactions may be false negatives, e.g. if they have been
 evaluated based on unrepresentative or incomplete traits distributions.
 Employing Bayesian models could prove valuable when estimating interaction
@@ -903,7 +903,7 @@ When $\gamma > 1$, it signifies a positive association in the geographic
 distributions of both taxa, indicating that the presence of one taxon enhances
 the probability of occurrence of the other. Attractions may be the result of
 positive interactions (e.g., mutualism) or positive/negative interactions [e.g.,
-antagonism between predators and prey\; @Cazelles2016Theorya]. In empirical
+antagonism between predators and prey, @Cazelles2016Theorya]. In empirical
 webs, $\gamma > 1$ holds true for the majority of species pairs
 [@Catchen2023Missinga]. In contrast, repulsions ($\gamma < 1$) may be caused
 e.g. by strong interspecific competition [@Cazelles2016Theorya]. We model the
