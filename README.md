@@ -88,11 +88,11 @@ By accounting for the uncertainty of interactions, networks of probabilistic
 interactions may provide a more realistic portrait of species interactions.
 However, how the uncertainty of pairwise interactions propagates to network
 structure [i.e., community-level properties driving the functioning, dynamics,
-and resilience of ecosystems, @Proulx2005Networka; @McCann2007ProBio;
-@McCann2011FooWeb; @Rooney2012IntFoo] remains to be elucidated. The application
-and development of computational methods in network ecology, often based on a
-probabilistic representation of interactions, can alleviate (and guide) the
-sampling efforts required to document species interactions
+and resilience of ecosystems, @McCann2007ProBio; @McCann2011FooWeb;
+@Proulx2005Networka; @Rooney2012IntFoo] remains to be elucidated. The
+application and development of computational methods in network ecology, often
+based on a probabilistic representation of interactions, can alleviate (and
+guide) the sampling efforts required to document species interactions
 [@Strydom2021Roadmapa]. For example, statistical models can be used to estimate
 the uncertainty of pairwise interactions [@Cirtwill2019QuaFra] and the
 probability of missing (false negatives) and spurious (false positives)
@@ -319,7 +319,7 @@ interact at a given location and time period. Local interactions are contingent
 upon the environmental and biological conditions of the community. In local
 webs, edges commonly represent our degree of belief that two taxa interact in
 nature, but can also represent the probability of *observing* this interaction
-[@Catchen2023Missinga]. For example; @Gravel2019BriElt analyzed local European
+[@Catchen2023Missinga]. For example, @Gravel2019BriElt analyzed local European
 trophic webs of willow-galling sawflies and their natural enemies depicting
 binary interactions, all referenced in space and time, to infer the
 probabilities of locally observing interactions between co-occurring species.
@@ -332,8 +332,8 @@ $(x, y)$ representing longitude and latitude coordinates, and $z$ denoting
 either altitudes or depths. These point coordinates delineate the spatial
 boundaries of the system, which may be portrayed as a polyhedron. Ecological
 interactions may exhibit variations along latitudinal and altitudinal gradients,
-as evidenced by changes in hummingbird-plant interactions [@Weinstein2017PerBil;
-@Weinstein2017ComTra] and mosquito biting rates [e.g., @Kulkarni2006EntEva] at
+as evidenced by changes in hummingbird-plant interactions [@Weinstein2017ComTra;
+@Weinstein2017PerBil] and mosquito biting rates [e.g., @Kulkarni2006EntEva] at
 different elevations. In contrast, time is defined as the specific time period
 within which interactions were either observed or predicted. Even though space
 and time are continuous variables that should yield probability *densities* of
@@ -585,7 +585,7 @@ Starting from a selected set of taxa, which are usually distributed within a
 broad region of interest, metawebs can be built using different data sources,
 including literature review [e.g., @Maiorano2020Tetraeua], aggregated local web
 data [e.g., @Gravel2019BriElt; @Saravia2022Ecological], trait-matching models
-[e.g., @Strydom2022Food; @Shaw2024Framework], and expert knowledge. Every pair
+[e.g., @Shaw2024Framework, @Strydom2022Food], and expert knowledge. Every pair
 of taxa that have confidently been observed to interact at least once can be
 given a probability of $1$ (i.e., $P(M_{i \rightarrow j}) = 1$) since we know
 that they *can* interact. This differs from local webs of probabilistic
@@ -778,11 +778,11 @@ webs increases.
 The investigation of network-area relationships and interaction accumulation
 curves is an important area of research in network ecology. First, network-area
 relationships elucidate the scaling of network properties (such as modularity
-and trophic chain lengths) with spatial scale [e.g., @Wood2015Effects;
-@Galiana2018Spatiala]. The variations in network structure across spatial scales
-may stem from the scaling of species richness (species-area relationships,
-SARs), the number of interactions [@Brose2004UniSpa], and many other
-higher-level properties of the system [e.g., environmental heterogeneity,
+and trophic chain lengths) with spatial scale [e.g., @Galiana2018Spatiala;
+@Wood2015Effects]. The variations in network structure across spatial scales may
+stem from the scaling of species richness (species-area relationships, SARs),
+the number of interactions [@Brose2004UniSpa], and many other higher-level
+properties of the system [e.g., environmental heterogeneity,
 @Thompson2005Foodweb] with the sampled area. Additionally, ecological processes
 occurring at distinct spatial scales, such as the spatial variability in local
 community composition resulting from different sequences of extinction and
@@ -1234,12 +1234,12 @@ creating *probabilistic networks* ($P(L|...)$ and $P(M|...)$), rather than
 networks of *probabilistic interactions* ($P(L_{i \rightarrow j}|...)$ and
 $P(M_{i \rightarrow j}|...)$). Probabilistic networks describe the probability
 that a particular network of binary (or quantitative) interactions (its whole
-adjacency matrix) is realized. For example; @Young2021Reconstructiona used a
+adjacency matrix) is realized. For example, @Young2021Reconstructiona used a
 Bayesian approach to estimate the probability of different plant-pollinator
 network structures derived from imperfect observational data. A probability
 distribution of ecological networks may also be derived using the principle of
-maximum entropy given some structural constrained [e.g., @Park2004Statisticala;
-@Cimini2019Statistical]. Regardless of the method employed, generating
+maximum entropy given some structural constrained [e.g., @Cimini2019Statistical;
+@Park2004Statisticala]. Regardless of the method employed, generating
 probabilistic local webs, bypassing the need to independently estimate local
 interaction probabilities, could lead to more accurate predictions of local
 webs. Furthermore, probabilistic networks could serve as an alternative to null
