@@ -954,16 +954,16 @@ j}|M_{i \rightarrow j})$ remaining at their maximum value of $1$ following
 > in different ways, such as by linking $\lambda_l$ with specific environmental
 > variables or explicitly incorporating observation errors (i.e., the
 > probabilities of false negatives and false positives).
-
-![**Parameters of the spatiotemporally explicit model of interactions.** (a)
-Probability of local interaction given by the process model (@Eq:modeleq)
-under different values of $\lambda_l$ and $\gamma$, with $t_0 = 1$. The
-parameter values used in the right panel are denoted by the white stars. (b)
-Scaling of the probability of interaction with the duration parameter $t_0$ in
-@Eq:modeleq, for different values of $\lambda_l$ and $\gamma$. In both panels,
-the marginal probabilities of occurrence $P(X_{i,l})$ and $P(X_{j,l})$ are set
-to a constant value of
-$0.5$.](figures/spatiotemporal_model.png){#fig:spatiotemporal}
+> 
+> ![**Parameters of the spatiotemporally explicit model of interactions.** (a)
+> Probability of local interaction given by the process model (@Eq:modeleq)
+> under different values of $\lambda_l$ and $\gamma$, with $t_0 = 1$. The
+> parameter values used in the right panel are denoted by the white stars. (b)
+> Scaling of the probability of interaction with the duration parameter $t_0$ in
+> @Eq:modeleq, for different values of $\lambda_l$ and $\gamma$. In both panels,
+> the marginal probabilities of occurrence $P(X_{i,l})$ and $P(X_{j,l})$ are set
+> to a constant value of
+> $0.5$.](figures/spatiotemporal_model.png){#fig:spatiotemporal}
 
 ## Taxonomic scaling of interactions 
 
