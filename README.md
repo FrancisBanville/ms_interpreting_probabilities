@@ -1,3 +1,10 @@
+---
+header-includes:
+    - \usepackage[most]{tcolorbox}
+    - \renewtcolorbox{quote}{breakable}
+    - \usepackage{float}
+---
+
 # Introduction
 
 As we try to navigate global biodiversity change, filling in knowledge gaps
@@ -863,6 +870,8 @@ within a particular latitudinal window, with the values of $P(L_{i \rightarrow
 j}|M_{i \rightarrow j})$ remaining at their maximum value of $1$ following
 @Eq:aggregate. ](figures/spatial_scaling.png){#fig:spatial}
 
+\floatplacement{figure}{H}
+
 > ## Box 1: A spatiotemporally explicit model of interactions
 >
 > Predicting local webs across time and space is a pivotal goal of network
@@ -964,6 +973,8 @@ j}|M_{i \rightarrow j})$ remaining at their maximum value of $1$ following
 > the marginal probabilities of occurrence $P(X_{i,l})$ and $P(X_{j,l})$ are set
 > to a constant value of
 > $0.5$.](figures/spatiotemporal_model.png){#fig:spatiotemporal}
+
+\floatplacement{figure}{tbp}
 
 ## Taxonomic scaling of interactions 
 
