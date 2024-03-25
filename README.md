@@ -217,9 +217,9 @@ interaction data.
 
 ## Pairwise interactions: the building blocks of ecological networks
 
-Local and metawebs, like any type of network, are made of nodes and edges that
-may be represented at different levels of organization and precision. The basic
-units of ecological networks are individuals that interact with each other
+Local webs and metawebs, like any type of network, are made of nodes and edges
+that may be represented at different levels of organization and precision. The
+basic units of ecological networks are individuals that interact with each other
 [e.g., by predation in food webs, @Elton2001Animal], forming individual-based
 networks [@Melian2011EcoDyn]. The aggregation of these individuals into more or
 less homogeneous groups (e.g., populations, species, families, feeding guilds)
@@ -310,7 +310,7 @@ variable, e.g. represented by a Beta distribution), which underlines the need
 for better guidelines regarding the interpretation and manipulation of these
 types of webs first. For these reasons, our primary focus in this contribution
 will be on addressing the challenges in interpreting and using interaction
-probabilities in Bernoulli distributions, in both local and metawebs.
+probabilities in Bernoulli distributions, in both local webs and metawebs.
 
 ## Local webs: communities interacting in space and time
 
@@ -628,19 +628,19 @@ probabilities) with empirical data on interactions and traits.
 
 # Properties of probabilistic interaction webs
 
-Local and metawebs of probabilistic interactions differ in their type of
+Local webs and metawebs of probabilistic interactions differ in their type of
 interactions (i.e., realized or potential) and in the conditional variables upon
 which interaction values depend. These differences are significant as they
 influence the characteristics of probabilistic interaction networks. Neglecting
 to consider them may result in misleading results and interpretation errors when
 analyzing the properties of probabilistic interaction webs, which could be
 particularly problematic when addressing crucial ecological questions about
-networks. Here we compare the characteristics of local and metawebs through the
-presentation of four applications of probabilistic interactions: (1) describing
-their spatial and temporal scaling, (2) describing their taxonomic scaling, (3)
-sampling for binary interaction webs, and (4) reconstructing local webs of
-probabilistic interactions from metawebs. All code and data to reproduce these
-analyses are available at the Open Science Framework (TBD).
+networks. Here we compare the characteristics of local webs and metawebs through
+the presentation of four applications of probabilistic interactions: (1)
+describing their spatial and temporal scaling, (2) describing their taxonomic
+scaling, (3) sampling for binary interaction webs, and (4) reconstructing local
+webs of probabilistic interactions from metawebs. All code and data to reproduce
+these analyses are available at the Open Science Framework (TBD).
 
 ## Host-parasite network data
 
@@ -698,7 +698,7 @@ We converted these binary interaction networks into probabilistic ones using
 models based on simple assumptions. Our models are not designed to estimate the
 exact values of probabilistic interactions. Instead, their purpose is to create
 plausible networks that serve as illustrative examples to highlight distinctions
-between local and metawebs of probabilistic interactions. We created two
+between local webs and metawebs of probabilistic interactions. We created two
 metawebs of probabilistic interactions by employing constant false positive and
 false negative rates for all regional interactions. In the first metaweb, we set
 both false positive and false negative rates to zero to prevent artificially
@@ -803,7 +803,7 @@ scaling of network structure with space and time, in contrast to webs of binary
 and quantitative interactions, by making the stochasticity of interactions the
 focal point of the modeling process.
 
-Local and metawebs exhibit distinct relationships with spatial and temporal
+Local webs and metawebs exhibit distinct relationships with spatial and temporal
 scales. On one hand, metawebs of probabilistic interactions, representing
 biological feasibility, feature regional interactions that do not scale with
 space and time. This is because regional interactions depend solely on the
@@ -1017,22 +1017,22 @@ trophic species (groups of species sharing similar predators and prey). This is
 common in ecological webs where taxonomic resolution is typically low
 [@Hemprich-Bennett2021AssImp; @VazquezSS2022Ecological]. Interaction
 probabilities at broader taxonomic scales should be based on probabilities of
-interactions between individuals, for both local and metawebs. For instance, in
-local individual-based food webs, the probability that two individuals interact
-reflects our degree of belief that one individual will consume the other.
-Similarly, in local species-based food webs, the probability that two species
-interact represents our degree of belief that at least one individual from the
-predator species consumes at least another individual from the prey species.
-Furthermore, in local clade-based food webs, the probability that two clades
-interact represents our degree of belief that at least two species from these
-clades interact with each other or, equivalently, that at least two individuals
-from these clades interact with each other. Fundamentally, the taxonomic scaling
-of interactions involves aggregating interactions between individuals into
-larger groups, which may exhibit varying degrees of homogeneity based on the
-organisms and the study system. In that regard, taxonomic scaling is analogous
-to the spatial and temporal scaling of interactions, as they all represent
-different ways to aggregate individuals into broader groups (either spatially,
-temporally, or taxonomically).
+interactions between individuals, for both local webs and metawebs. For
+instance, in local individual-based food webs, the probability that two
+individuals interact reflects our degree of belief that one individual will
+consume the other. Similarly, in local species-based food webs, the probability
+that two species interact represents our degree of belief that at least one
+individual from the predator species consumes at least another individual from
+the prey species. Furthermore, in local clade-based food webs, the probability
+that two clades interact represents our degree of belief that at least two
+species from these clades interact with each other or, equivalently, that at
+least two individuals from these clades interact with each other. Fundamentally,
+the taxonomic scaling of interactions involves aggregating interactions between
+individuals into larger groups, which may exhibit varying degrees of homogeneity
+based on the organisms and the study system. In that regard, taxonomic scaling
+is analogous to the spatial and temporal scaling of interactions, as they all
+represent different ways to aggregate individuals into broader groups (either
+spatially, temporally, or taxonomically).
 
 ## Sampling for binary interaction webs
 
@@ -1108,7 +1108,7 @@ process leading to the realization of local interactions in nature.
 
 ![**Connectance of sampled binary interaction webs.** Comparison between the
 average connectance of binary interaction network samples obtained from the
-local and metawebs of probabilistic interactions. Each dot corresponds to a
+local webs and metawebs of probabilistic interactions. Each dot corresponds to a
 different site. The local probability of interaction between potentially
 interacting species was set to three different values: (a) $P(L_{i \rightarrow
 j}|M_{i \rightarrow j}) = 1.0$, (b) $P(L_{i \rightarrow j}|M_{i \rightarrow j})
@@ -1209,10 +1209,10 @@ In this contribution, we underline the importance of network metadata for
 adequately interpreting and manipulating probabilistic interaction data. The
 mathematical representation of probabilities and their statistical properties
 depend on the type of interactions (local or regional) and the conditions under
-which these interactions were evaluated. We showed that local and metawebs of
-probabilistic interactions differ in their relationship to spatial and temporal
-scales, with regional interactions remaining consistent across scales. In
-contrast with metawebs, local interactions are measured in a specific context
+which these interactions were evaluated. We showed that local webs and metawebs
+of probabilistic interactions differ in their relationship to spatial and
+temporal scales, with regional interactions remaining consistent across scales.
+In contrast with metawebs, local interactions are measured in a specific context
 (e.g., in a given area, time, and biological and environmental conditions) and
 depend on taxa co-occurrence. These differences bring to light the need to use
 probabilistic data with caution, for instance when generating network
