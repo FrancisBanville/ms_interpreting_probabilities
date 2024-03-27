@@ -815,7 +815,7 @@ changes with the temporal resolution of the network [@Poisot2012Dissimilaritya],
 acknowledging that distinct interactions take place over time, ranging from
 short-term fluctuations of interactions to long-term trends. As local webs of
 probabilistic interactions may explicitly account for the spatiotemporal
-variability of interactions (as shown in \@ref{box}), they offer a distinct
+variability of interactions (as shown in Box 1), they offer a distinct
 approach to investigating the scaling of network structure with space and time,
 in contrast to webs of binary and quantitative interactions, by making the
 stochasticity of interactions the focal point of the modeling process.
