@@ -4146,6 +4146,73 @@
         "type": "article-journal"
     },
     {
+        "issue": "12",
+        "issued": {
+            "date-parts": [
+                [
+                    2023
+                ]
+            ]
+        },
+        "container-title": "Methods in Ecology and Evolution",
+        "author": [
+            {
+                "family": "Strydom",
+                "given": "Tanya"
+            },
+            {
+                "family": "Bouskila",
+                "given": "Salomé"
+            },
+            {
+                "family": "Banville",
+                "given": "Francis"
+            },
+            {
+                "family": "Barros",
+                "given": "Ceres"
+            },
+            {
+                "family": "Caron",
+                "given": "Dominique"
+            },
+            {
+                "family": "Farrell",
+                "given": "Maxwell J."
+            },
+            {
+                "family": "Fortin",
+                "given": "Marie-Josée"
+            },
+            {
+                "family": "Mercier",
+                "given": "Benjamin"
+            },
+            {
+                "family": "Pollock",
+                "given": "Laura J."
+            },
+            {
+                "family": "Runghen",
+                "given": "Rogini"
+            },
+            {
+                "family": "Dalla Riva",
+                "given": "Giulio V."
+            },
+            {
+                "family": "Poisot",
+                "given": "Timothée"
+            }
+        ],
+        "id": "Strydom2023Graph",
+        "DOI": "10.1111/2041-210X.14228",
+        "volume": "14",
+        "page": "2917-2930",
+        "title": "Graph embedding and transfer learning can help predict potential species interaction networks despite data limitations",
+        "type": "article-journal"
+    },
+    {
         "issue": "7",
         "issued": {
             "date-parts": [

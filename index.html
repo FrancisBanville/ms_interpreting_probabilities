@@ -335,8 +335,8 @@ of probabilistic interactions</div>
             using open data on host-parasite interactions in Europe, we
             show that these two network representations have different
             statistical properties when it comes to common ecological
-            applications. Specifically, we found that local and metawebs
-            differ in their spatial and temporal scaling of
+            applications. Specifically, we found that local webs and
+            metawebs differ in their spatial and temporal scaling of
             probabilistic interactions, but not in their taxonomic
             scaling. We suggest two approaches to inferring binary
             interactions from probabilistic ones that account for these
@@ -411,8 +411,8 @@ of probabilistic interactions</div>
             interaction occurs only if their traits are locally
             compatible <span class="citation"
             data-cites="Poisot2015Speciesa">(Poisot <em>et al.</em>
-            2015)</span>, including but not limited to their body
-            phenotypes <span class="citation"
+            2015)</span>, including their body phenotypes <span
+            class="citation"
             data-cites="Bolnick2011WhyInt Stouffer2011RolBod Gravel2013InfFooa">(Bolnick
             <em>et al.</em> 2011; Gravel <em>et al.</em> 2013; Stouffer
             <em>et al.</em> 2011)</span> and behavioral choices <span
@@ -467,7 +467,9 @@ of probabilistic interactions</div>
             to fill in the Eltonian shortfall <span class="citation"
             data-cites="Hortal2015SevSho">(Hortal <em>et al.</em>
             2015)</span> by modeling the probability of occurrence of
-            interactions, which can be an important tool for directing
+            interactions <span class="citation"
+            data-cites="Gravel2019BriElt">(e.g., Gravel <em>et al.</em>
+            2019)</span>, which can be an important tool for directing
             efforts and taking action, especially in places where access
             and resources for research are scarce. The probabilistic
             representation of interactions is thus far limited to direct
@@ -594,63 +596,64 @@ of probabilistic interactions</div>
             ecological webs <span class="citation"
             data-cites="Gilman2010FraCom">(Gilman <em>et al.</em>
             2010)</span>.</p>
-            <p>The lack of clear guidelines on the use of probabilistic
-            interaction data is worrisome, both for data producers and
-            re-users who generate and manipulate these numbers. This is
-            concerning because sampling strategies and decisions
-            regarding network construction can affect our understanding
-            of network properties <span class="citation"
+            <p>Beyond methodological difficulties that may arise when
+            assessing probabilistic interactions, a precise definition
+            of probabilistic interactions appears to be lacking, making
+            the estimation and use of these data more difficult. We aim
+            to take a step back by outlining different ways in which
+            probabilistic interactions are defined and used in network
+            ecology. We distinguish two broad categories of
+            probabilistic interaction networks that necessitate distinct
+            approaches when applied to key ecological questions: local
+            webs describing probabilities of realized interactions, and
+            regional webs (metawebs) describing probabilities of
+            potential interactions. We highlight the distinctions in the
+            ecological meaning of these two representations and examine
+            some of their properties and relationships (particularly
+            with space, time, and between each other) through empirical
+            case studies. Moreover, the lack of clear guidelines on the
+            use of probabilistic interaction data is worrisome, as it
+            affects both data producers and re-users who generate and
+            manipulate these numbers. This is concerning because
+            sampling strategies and decisions regarding network
+            construction can affect our understanding of network
+            properties <span class="citation"
             data-cites="Brimacombe2023ShoReu">(Brimacombe <em>et
-            al.</em> 2023)</span>. Besides methodological difficulties
-            that may arise when assessing probabilistic interactions, a
-            precise definition of probabilistic interactions appears to
-            be lacking, making the estimation and use of these data more
-            difficult. We aim to take a step back by outlining different
-            ways in which probabilistic interactions are defined and
-            used in network ecology. We distinguish two broad categories
-            of probabilistic interaction networks that necessitate
-            distinct approaches when applied to key ecological
-            questions: local webs describing probabilities of realized
-            interactions, and regional webs (metawebs) describing
-            probabilities of potential interactions. We highlight the
-            distinctions in the ecological meaning of these two
-            representations and examine some of their properties and
-            relationships (particularly with space, time, and between
-            each other) through empirical case studies. Moreover, there
-            is currently no metadata standard that could guide the
-            documentation of all types of probabilistic interactions
-            <span class="citation" data-cites="Salim2022Data">(although
-            see e.g., Salim <em>et al.</em> 2022 who discuss data
-            standards for deterministic mutualistic webs)</span>.
-            Well-defined metadata for probabilistic interactions would
-            support more adequate manipulation and integration of
-            interaction data from different sources and guard against
-            possible misinterpretations arising from ambiguous
-            definitions of probabilistic interaction networks. These
-            metadata should outline the nature (i.e., local or regional)
-            and type (e.g., predatory or pollination) of the
-            interactions, provide information regarding the taxonomic
-            level, identities, and characteristics (e.g., life stages)
-            of the individuals involved in an interaction, present the
-            mathematical formulation of probabilities, including clearly
-            identified conditional variables (e.g., spatial and temporal
-            scales), and describe the methods and contexts (e.g.,
-            location, time, environmental conditions) in which
-            interactions were estimated. Inadequately documented
-            probabilistic interaction data should be used with caution
-            when analyzing ecological webs. Our observations and advice
-            can be applied to most types of ecological networks
-            representing direct interactions, from food webs to
-            host-virus networks. Even though the measurement of
-            interaction probabilities may differ between network types
-            (e.g., estimations often based on frequencies of
-            interactions in plant-pollinator networks), the broad
-            principles underlying our findings remain relevant and
-            applicable across diverse ecological contexts.</p>
+            al.</em> 2023)</span>. There is currently no metadata
+            standard that could guide the documentation of all types of
+            probabilistic interactions <span class="citation"
+            data-cites="Salim2022Data">(although see e.g., Salim <em>et
+            al.</em> 2022 who discuss data standards for deterministic
+            mutualistic webs)</span>. Well-defined metadata for
+            probabilistic interactions would support more adequate
+            manipulation and integration of interaction data from
+            different sources and guard against possible
+            misinterpretations arising from ambiguous definitions of
+            probabilistic interaction networks. These metadata should
+            outline the nature (i.e., local or regional) and type (e.g.,
+            predatory or pollination) of the interactions, provide
+            information regarding the taxonomic level, identities, and
+            characteristics (e.g., life stages) of the individuals
+            involved in an interaction, present the mathematical
+            formulation of probabilities, including clearly identified
+            conditional variables (e.g., spatial and temporal scales),
+            and describe the methods and contexts (e.g., location, time,
+            environmental conditions) in which interactions were
+            estimated. Inadequately documented probabilistic interaction
+            data should be used with caution when analyzing ecological
+            webs. Our observations and advice can be applied to most
+            types of ecological networks representing direct
+            interactions, from food webs to host-virus networks. Even
+            though the measurement of interaction probabilities may
+            differ between network types (e.g., estimations often based
+            on frequencies of interactions in plant-pollinator
+            networks), the broad principles underlying our findings
+            remain relevant and applicable across diverse ecological
+            contexts.</p>
             <h1
             id="probabilistic-representations-of-interactions">Probabilistic
             representations of interactions</h1>
-            <p>Consider a scenario where a species of avian predator has
+            <p>Consider a scenario where an avian predator species has
             just established itself in a northern habitat home to a
             small rodent species. Suppose these species have never
             co-occurred before, and as a result, their interaction has
@@ -690,9 +693,9 @@ of probabilistic interactions</div>
             interact locally). For two co-occurring taxa and over
             infinite time, the probability of local interaction is
             equivalent to the probability of regional (potential)
-            interaction. Our discussion of local interactions focuses on
-            their occurrence rather than their direct empirical
-            observation, as one of the primary goals of describing them
+            interaction. Our discussion focuses on the occurrence of
+            local interactions rather than their direct observation, as
+            one of the primary goals of describing them
             probabilistically is to characterize our uncertainty
             regarding their actual realization. We use the terms
             <em>metaweb</em> <span class="citation"
@@ -710,35 +713,40 @@ of probabilistic interactions</div>
             interaction webs describe local or regional interactions
             (Tbl. 1 provides examples of studies employing both types of
             probabilistic interaction networks), or if so-called
-            probabilities are in reality <em>interaction scores</em>
+            probabilities are in reality a form of interaction score
             (i.e., non-probabilistic quantitative interactions analogous
-            to interaction strengths). When probabilistic regional
-            interactions are used and interpreted incorrectly as local
-            interactions (and conversely), this may generate misleading
-            findings during data analysis. We believe that a better
-            understanding of the differences, similarities, and
-            interconnections between these two probabilistic
-            representations of ecological interactions would alleviate
-            interpretation errors (e.g., when studying network-area
-            relationships) and facilitate a more adequate utilization of
-            interaction data.</p>
+            to interaction strengths, which we won’t cover further).
+            When probabilistic regional interactions are used and
+            interpreted incorrectly as local interactions (and
+            conversely), this may generate misleading findings during
+            data analysis. We believe that a better understanding of the
+            differences, similarities, and interconnections between
+            these two probabilistic representations of ecological
+            interactions would alleviate interpretation errors (e.g.,
+            when studying network-area relationships with metawebs or
+            local webs) and facilitate a more adequate use of
+            interaction data. In the following sections, we delve into
+            these distinctions as we scale up from pairwise interactions
+            to higher-level representations of ecological networks,
+            i.e. local webs and metawebs.</p>
             <h2
             id="pairwise-interactions-the-building-blocks-of-ecological-networks">Pairwise
             interactions: the building blocks of ecological
             networks</h2>
-            <p>Local and metawebs, like any type of network, are made of
-            nodes and edges that may be represented at different levels
-            of organization and precision. The basic units of ecological
-            networks are individuals that interact with each other <span
-            class="citation" data-cites="Elton2001Animal">(e.g., by
-            predation in food webs, Elton 2001)</span>, forming
-            individual-based networks <span class="citation"
-            data-cites="Melian2011EcoDyn">(Melián <em>et al.</em>
-            2011)</span>. The aggregation of these individuals into more
-            or less homogeneous groups (e.g., populations, species,
-            families, feeding guilds) allows us to represent nodes at
-            broader taxonomic scales, which affects our interpretation
-            of the properties of these systems <span class="citation"
+            <p>Local webs and metawebs, like any type of network, are
+            made of nodes and edges that may be represented at different
+            levels of organization and precision. The basic units of
+            ecological networks are individuals that interact with each
+            other <span class="citation"
+            data-cites="Elton2001Animal">(e.g., by predation in food
+            webs, Elton 2001)</span>, forming individual-based networks
+            <span class="citation" data-cites="Melian2011EcoDyn">(Melián
+            <em>et al.</em> 2011)</span>. The aggregation of these
+            individuals into more or less homogeneous groups (e.g.,
+            populations, species, families, feeding guilds) allows us to
+            represent nodes at broader taxonomic scales, which affects
+            our interpretation of the properties of these systems <span
+            class="citation"
             data-cites="Guimaraes2020Structurea Hemprich-Bennett2021AssImp">(Guimarães
             2020; Hemprich-Bennett <em>et al.</em> 2021)</span>.</p>
             <p>Edges linking nodes may describe a variety of interaction
@@ -762,11 +770,11 @@ of probabilistic interactions</div>
             interactions. It may be estimated through predictive models
             (e.g., those based on biological traits and species
             abundances) or expert (prior) knowledge about the
-            interaction. In networks of probabilistic interactions,
-            <span
+            interaction. In networks of probabilistic interactions, the
+            edge values <span
             class="math inline"><em>P</em>(<em>B</em><sub><em>i</em> → <em>j</em></sub>)</span>
-            are edge values, and the only two possible outcomes are the
-            presence (<span
+            are probabilistic events whose only two possible outcomes
+            are the presence (<span
             class="math inline"><em>B</em><sub><em>i</em> → <em>j</em></sub> = 1</span>)
             or absence (<span
             class="math inline"><em>B</em><sub><em>i</em> → <em>j</em></sub> = 0</span>)
@@ -776,13 +784,13 @@ of probabilistic interactions</div>
             stochastic parameters like <span
             class="math inline"><em>P</em>(<em>B</em><sub><em>i</em> → <em>j</em></sub>)</span>
             can be linked to environmental and biological factors such
-            as species abundance, traits, area, and time (Tbl. 1), for
-            example using logistic regression with continuous
-            explanatory variables. Predicting the number of local webs
-            in which the interaction between two given taxa occurs can
-            be achieved by using a Binomial distribution, assuming a
-            constant interaction probability and independence between
-            networks (trials). When considering uncertainties around the
+            as species abundance, traits, area, and time, for example
+            using logistic regression with continuous explanatory
+            variables. Predicting the number of local webs in which the
+            interaction between two given taxa occurs can be achieved by
+            using a Binomial distribution, assuming a constant
+            interaction probability and independence between networks
+            (trials). When considering uncertainties around the
             estimation of <span
             class="math inline"><em>P</em>(<em>B</em><sub><em>i</em> → <em>j</em></sub>)</span>
             or its spatiotemporal variability, a Beta distribution may
@@ -889,8 +897,8 @@ of probabilistic interactions</div>
             these types of webs first. For these reasons, our primary
             focus in this contribution will be on addressing the
             challenges in interpreting and using interaction
-            probabilities in Bernoulli distributions, in both local and
-            metawebs.</p>
+            probabilities in Bernoulli distributions, in both local webs
+            and metawebs.</p>
             <h2
             id="local-webs-communities-interacting-in-space-and-time">Local
             webs: communities interacting in space and time</h2>
@@ -1020,7 +1028,7 @@ of probabilistic interactions</div>
             al.</em> 2012; Pilosof <em>et al.</em> 2017)</span>, as
             described above. Here, we use the variable <span
             class="math inline"><em>E</em><sub><em>l</em></sub></span>
-            to describe the local ecological context in which
+            to describe the local environmental context in which
             interaction probabilities were estimated. For example, if a
             research team conducts a mesocosm experiment to estimate
             interaction probabilities between predators and prey with
@@ -1034,7 +1042,7 @@ of probabilistic interactions</div>
             or uncertainty of environmental factors is considered. In
             sum, <span
             class="math inline"><em>E</em><sub><em>l</em></sub></span>
-            represents all ecological variables that were taken into
+            represents all environmental variables that were taken into
             consideration when measuring interaction probabilities and
             is, therefore, a subset of all environmental factors
             impacting ecological interactions. Finally, local
@@ -1136,26 +1144,29 @@ of probabilistic interactions</div>
             interaction between two taxa <span
             class="math inline"><em>i</em></span> and <span
             class="math inline"><em>j</em></span> is interpreted
-            differently in a metaweb <span
+            differently in a local web <span
+            class="math inline"><em>L</em></span> of realized
+            interactions and a metaweb <span
             class="math inline"><em>M</em></span> of potential
             interactions (representing the <em>biological</em>
-            feasibility of interactions), a metaweb <span
+            feasibility of interactions). Each expression emphasizes a
+            different conditional variable, the ellipsis serving as a
+            placeholder for other variables not explicitly stated in the
+            expression. The outcome of each of these probabilistic
+            events, along with common uncertainty sources (often
+            stemming from the model used for estimation), is presented
+            alongside examples of studies that employed them (with
+            specific variables indicated in parentheses, when
+            applicable). The study marked with an asterisk has been
+            conducted on binary interaction webs. Note that we also
+            included the expression for a local web <span
+            class="math inline"><em>O</em></span> of observed
+            interactions and a metaweb <span
             class="math inline"><em>M</em><sup>*</sup></span> of
             potential interactions (representing the <em>ecological</em>
-            feasibility of interactions), a local web <span
-            class="math inline"><em>L</em></span> of realized
-            interactions and a local web <span
-            class="math inline"><em>O</em></span> of observed
-            interactions. Each expression emphasizes a different
-            conditional variable, the ellipsis serving as a placeholder
-            for other variables not explicitly stated in the expression.
-            The outcome of each of these probabilistic events, along
-            with common uncertainty sources (often stemming from the
-            model used for estimation), is presented alongside examples
-            of studies that employed them (with specific variables
-            indicated in parentheses, when applicable). The study marked
-            with an asterisk has been conducted on binary interaction
-            webs.</caption>
+            feasibility of interactions) as they were mentioned in the
+            main text, even though they are not the focus of this
+            manuscript.</caption>
             <colgroup>
             <col style="width: 19%" />
             <col style="width: 8%" />
@@ -1543,26 +1554,30 @@ of probabilistic interactions</div>
             <h1
             id="properties-of-probabilistic-interaction-webs">Properties
             of probabilistic interaction webs</h1>
-            <p>Local and metawebs of probabilistic interactions differ
-            in their type of interactions (i.e., realized or potential)
-            and in the conditional variables upon which interaction
-            values depend. These differences are significant as they
-            influence the characteristics of probabilistic interaction
-            networks. Neglecting to consider them may result in
-            misleading results and interpretation errors when analyzing
-            the properties of probabilistic interaction webs, which
-            could be particularly problematic when addressing crucial
-            ecological questions about networks. Here we compare the
-            characteristics of local and metawebs through the
-            presentation of four applications of probabilistic
-            interactions: (1) describing their spatial and temporal
-            scaling, (2) describing their taxonomic scaling, (3)
-            sampling for binary interaction webs, and (4) reconstructing
-            local webs of probabilistic interactions from metawebs. All
-            code and data to reproduce these analyses are available at
-            the Open Science Framework (TBD).</p>
-            <h2 id="host-parasite-network-data">Host-parasite network
-            data</h2>
+            <p>Local webs and metawebs of probabilistic interactions
+            differ in their type of interactions (i.e., realized or
+            potential) and in the conditional variables upon which
+            interaction values depend. These differences are significant
+            as they influence the characteristics of probabilistic
+            interaction networks. Neglecting to consider them may result
+            in misleading results and interpretation errors when
+            analyzing the properties of probabilistic interaction webs,
+            which could be particularly problematic when addressing
+            crucial ecological questions about networks. Here we compare
+            the characteristics of local webs and metawebs through the
+            presentation of five applications of probabilistic
+            interactions: (1) describing the dissimilarity between local
+            webs and metawebs of binary and probabilistic interactions
+            (2) describing their spatial and temporal scaling, (3)
+            describing their taxonomic scaling, (4) sampling for binary
+            interaction webs, and (5) reconstructing local webs of
+            probabilistic interactions from metawebs. All code and data
+            to reproduce these analyses are available at the Open
+            Science Framework (TBD).</p>
+            <h2
+            id="application-1-dissimilarity-of-binary-and-probabilistic-interaction-webs">Application
+            1: Dissimilarity of binary and probabilistic interaction
+            webs</h2>
             <p>We use the collection of tripartite host-parasite
             networks sampled across Europe, created by <span
             class="citation" data-cites="Kopelke2017FooStra">Kopelke
@@ -1586,22 +1601,30 @@ of probabilistic interactions</div>
             built a metaweb of binary interactions by aggregating all
             local interactions, which gave us a regional web composed of
             <span class="math inline">274</span> species and <span
-            class="math inline">1080</span> interactions. In the first
-            two panels of Fig. 1, we show how the dissimilarity of
-            interactions between common species (<span
-            class="math inline"><em>β</em><sub><em>O</em><em>S</em></sub></span>)
-            and the dissimilarity in species composition (<span
-            class="math inline"><em>β</em><sub><em>S</em></sub></span>)
-            between the metaweb and aggregated local webs <span
-            class="citation"
+            class="math inline">1080</span> interactions. In Fig. 1, we
+            show how the dissimilarity between the metaweb and the
+            aggregated local webs varies with the number of sampled
+            local webs. To do so, we randomly selected one local web of
+            binary interactions and sequentially sampled additional webs
+            while aggregating both their species and interactions. Next,
+            we compared the metaweb and the aggregated local webs using
+            the dissimilarity of interactions between common species
+            (<span
+            class="math inline"><em>β</em><sub><em>O</em><em>S</em></sub></span>,
+            Fig. 1a) and the dissimilarity in species composition (<span
+            class="math inline"><em>β</em><sub><em>S</em></sub></span>,
+            Fig. 1b) <span class="citation"
             data-cites="Poisot2012Dissimilaritya">(Poisot <em>et
-            al.</em> 2012)</span> vary with the number of sampled local
-            webs. This shows that networks of local interactions are
-            highly dissimilar from the metaweb, both in terms of species
-            and interactions, especially when only a limited number of
-            sites has been sampled. Both dissimilarity indices were
-            calculated based on the number of items shared by the two
-            webs (<span
+            al.</em> 2012)</span>. We repeated this sampling process one
+            hundred times and highlighted the median dissimilarity
+            values across simulations, as well as the <span
+            class="math inline">50%</span> and <span
+            class="math inline">95%</span> percentile intervals. This
+            shows that networks of local interactions are highly
+            dissimilar from the metaweb, both in terms of species and
+            interactions, especially when only a limited number of sites
+            has been sampled. Both dissimilarity indices were calculated
+            based on the number of items shared by the two webs (<span
             class="math inline"><em>c</em><sub><em>L</em><em>M</em></sub></span>)
             and the number of items unique to the metaweb (<span
             class="math inline"><em>u</em><sub><em>M</em></sub></span>)
@@ -1658,29 +1681,32 @@ of probabilistic interactions</div>
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em> → <em>j</em></sub>|<em>M</em><sub><em>i</em> → <em>j</em></sub>)</span>
             adjusting according to Eq. 11).</figcaption>
             </figure>
-            <p>We converted these binary interaction networks into
-            probabilistic ones using models based on simple assumptions.
-            Our models are not designed to estimate the exact values of
-            probabilistic interactions. Instead, their purpose is to
-            create plausible networks that serve as illustrative
-            examples to highlight distinctions between local and
-            metawebs of probabilistic interactions. We created two
-            metawebs of probabilistic interactions by employing constant
-            false positive and false negative rates for all regional
-            interactions. In the first metaweb, we set both false
-            positive and false negative rates to zero to prevent
-            artificially inflating the total number of links, enabling a
-            more accurate comparison with binary interaction webs. This
-            gave us a probability of regional interaction of <span
-            class="math inline">1</span> when at least one interaction
-            has been observed locally and of <span
+            <p>Next, we investigate the differences in scaling between
+            networks of probabilistic or binary interactions
+            (Fig. 1c-d). We converted these binary interaction networks
+            into probabilistic ones using models based on simple
+            assumptions. Our models are not designed to estimate the
+            exact values of probabilistic interactions. Instead, their
+            purpose is to create plausible networks that serve as
+            illustrative examples to highlight distinctions between
+            local webs and metawebs of probabilistic interactions. We
+            created two metawebs of probabilistic interactions by
+            employing constant false positive and false negative rates
+            for all regional interactions. In the first metaweb, we set
+            both false positive and false negative rates to zero to
+            prevent artificially inflating the total number of links,
+            enabling a more accurate comparison with binary interaction
+            webs. This gave us a probability of regional interaction of
+            <span class="math inline">1</span> when at least one
+            interaction has been observed locally and of <span
             class="math inline">0</span> in the absence of any observed
-            interaction between a given pair of species. In the second
-            metaweb, we introduced a <span class="math inline">5%</span>
-            false positive rate to account for spurious interactions and
-            a <span class="math inline">10%</span> false negative rate
-            to address the elevated occurrence of missing interactions
-            in ecological networks <span class="citation"
+            interaction between a given pair of species (Fig. 1c-d). In
+            the second metaweb (used in the next applications), we
+            introduced a <span class="math inline">5%</span> false
+            positive rate to account for spurious interactions and a
+            <span class="math inline">10%</span> false negative rate to
+            address the elevated occurrence of missing interactions in
+            ecological networks <span class="citation"
             data-cites="Catchen2023Missinga">(Catchen <em>et al.</em>
             2023)</span>. We believe these rates represent reasonable
             estimates of missing and spurious potential interactions,
@@ -1700,7 +1726,7 @@ of probabilistic interactions</div>
             interaction given that the two taxa can potentially interact
             <span
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em> → <em>j</em></sub>|<em>M</em><sub><em>i</em> → <em>j</em></sub>=1)</span>,
-            which we denote as <span
+            which we sometimes denote as <span
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em> → <em>j</em></sub>|<em>M</em><sub><em>i</em> → <em>j</em></sub>)</span>
             for the sake of simplicity, with their probability of
             regional interaction <span
@@ -1723,7 +1749,7 @@ of probabilistic interactions</div>
             Following Eq. 10, the local probability of interaction
             between a given pair of taxa consistently remained equal to
             or below their probability of regional interaction.</p>
-            <p>In the last two panels of Fig. 1, we show how the
+            <p>In the last two panels of Fig. 1 (c-d), we show how the
             aggregated number of links and connectance (i.e., the
             proportion of all of the non-forbidden links that are
             realized) scale with the number of sampled local webs,
@@ -1776,8 +1802,8 @@ of probabilistic interactions</div>
             interactions). However, these biases tend to diminish as the
             number of sampled webs increases.</p>
             <h2
-            id="spatial-and-temporal-scaling-of-interactions">Spatial
-            and temporal scaling of interactions</h2>
+            id="application-2-spatial-and-temporal-scaling-of-interactions">Application
+            2: Spatial and temporal scaling of interactions</h2>
             <p>The investigation of network-area relationships and
             interaction accumulation curves is an important area of
             research in network ecology. First, network-area
@@ -1822,14 +1848,14 @@ of probabilistic interactions</div>
             interactions take place over time, ranging from short-term
             fluctuations of interactions to long-term trends. As local
             webs of probabilistic interactions may explicitly account
-            for the spatiotemporal variability of interactions, they
-            offer a distinct approach to investigating the scaling of
-            network structure with space and time, in contrast to webs
-            of binary and quantitative interactions, by making the
-            stochasticity of interactions the focal point of the
-            modeling process.</p>
-            <p>Local and metawebs exhibit distinct relationships with
-            spatial and temporal scales. On one hand, metawebs of
+            for the spatiotemporal variability of interactions (as shown
+            in ), they offer a distinct approach to investigating the
+            scaling of network structure with space and time, in
+            contrast to webs of binary and quantitative interactions, by
+            making the stochasticity of interactions the focal point of
+            the modeling process.</p>
+            <p>Local webs and metawebs exhibit distinct relationships
+            with spatial and temporal scales. On one hand, metawebs of
             probabilistic interactions, representing biological
             feasibility, feature regional interactions that do not scale
             with space and time. This is because regional interactions
@@ -1933,9 +1959,8 @@ of probabilistic interactions</div>
             remaining at their maximum value of <span
             class="math inline">1</span> following Eq. 11.</figcaption>
             </figure>
-            <h2
-            id="box-1-a-spatiotemporally-explicit-model-of-interactions">Box
-            1: A spatiotemporally explicit model of interactions</h2>
+            <h2 id="box">Box 1: A spatiotemporally explicit model of
+            interactions</h2>
             <p>Predicting local webs across time and space is a pivotal
             goal of network ecology, especially given the scarcity of
             interaction data <span class="citation"
@@ -2097,8 +2122,9 @@ of probabilistic interactions</div>
             are set to a constant value of <span
             class="math inline">0.5</span>.</figcaption>
             </figure>
-            <h2 id="taxonomic-scaling-of-interactions">Taxonomic scaling
-            of interactions</h2>
+            <h2
+            id="application-3-taxonomic-scaling-of-interactions">Application
+            3: Taxonomic scaling of interactions</h2>
             <p>Probabilistic interaction networks offer a versatile
             approach to tackle a broad array of ecological questions,
             depending on their level of organization. For instance, the
@@ -2189,10 +2215,10 @@ of probabilistic interactions</div>
             <em>et al.</em> 2021; Vázquez <em>et al.</em> 2022)</span>.
             Interaction probabilities at broader taxonomic scales should
             be based on probabilities of interactions between
-            individuals, for both local and metawebs. For instance, in
-            local individual-based food webs, the probability that two
-            individuals interact reflects our degree of belief that one
-            individual will consume the other. Similarly, in local
+            individuals, for both local webs and metawebs. For instance,
+            in local individual-based food webs, the probability that
+            two individuals interact reflects our degree of belief that
+            one individual will consume the other. Similarly, in local
             species-based food webs, the probability that two species
             interact represents our degree of belief that at least one
             individual from the predator species consumes at least
@@ -2210,23 +2236,26 @@ of probabilistic interactions</div>
             interactions, as they all represent different ways to
             aggregate individuals into broader groups (either spatially,
             temporally, or taxonomically).</p>
-            <h2 id="sampling-for-binary-interaction-webs">Sampling for
-            binary interaction webs</h2>
+            <h2
+            id="application-4-sampling-for-binary-interaction-webs">Application
+            4: Sampling for binary interaction webs</h2>
             <p>The prediction of binary interactions through Bernoulli
             trials is an important application of probabilistic
             interaction webs. This approach proves beneficial for
             analyzing the structural characteristics of probabilistic
             interaction webs, particularly in the absence of specific
-            analytical measures. By performing independent Bernoulli
-            trials for each interaction, a network of binary
-            interactions may be generated. A probability distribution of
-            network properties can be obtained by measuring network
-            structure across multiple randomly generated networks <span
-            class="citation" data-cites="Poisot2016Structure">(Poisot
-            <em>et al.</em> 2016)</span>. This method enables the
-            representation of the variability of network structure,
-            albeit with possible biases when connectance is low <span
-            class="citation"
+            analytical formulas for measures describing the structure of
+            the complete web <span class="citation"
+            data-cites="Poisot2016Structure">(Poisot <em>et al.</em>
+            2016)</span>. By performing independent Bernoulli trials for
+            each interaction, a network of binary interactions may be
+            generated. A probability distribution of network properties
+            can be obtained by measuring network structure across
+            multiple randomly generated networks <span class="citation"
+            data-cites="Poisot2016Structure">(Poisot <em>et al.</em>
+            2016)</span>. This method enables the representation of the
+            variability of network structure, albeit with possible
+            biases when connectance is low <span class="citation"
             data-cites="Poisot2014WheEco Chagnon2015ChaTop">(Chagnon
             2015; Poisot &amp; Gravel 2014)</span>. Employing this
             strategy to generate binary interaction networks under a
@@ -2284,12 +2313,12 @@ of probabilistic interactions</div>
             in binary interactions.</p>
             <p>In Fig. 4, we compare the average connectance of binary
             interaction networks resulting from these two sampling
-            techniques, where regional and local interactions are drawn
-            from our host-parasite networks of probabilistic
-            interactions, generating a number of binary interaction web
-            realizations for each site in the dataset. These two
-            sampling approaches yield different outcomes, particularly
-            for lower values of <span
+            techniques. We drew regional and local interactions from our
+            host-parasite networks of probabilistic interactions,
+            generating a number of binary interaction web realizations
+            for each site in the dataset. These two sampling approaches
+            yield different outcomes, particularly for lower values of
+            <span
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em> → <em>j</em></sub>|<em>M</em><sub><em>i</em> → <em>j</em></sub>)</span>,
             which represent instances where regional interactions do not
             consistently manifest locally. Small discrepancies between
@@ -2297,22 +2326,24 @@ of probabilistic interactions</div>
             probability of local interaction to the probability of
             regional interaction (i.e., when using <span
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em> → <em>j</em></sub>|<em>M</em><sub><em>i</em> → <em>j</em></sub>) = 1.0</span>
-            in Eq. 10), especially when the number of simulations of
-            binary interaction networks for each location is low. As
+            in Eq. 10, Fig. 4a), especially when the number of
+            simulations of binary interaction networks for each location
+            is low (<span class="math inline"><em>n</em> = 1</span>). As
             anticipated, we observe that sampling binary interactions
             from the metaweb tends to overestimate connectance on
-            average compared to sampling them from local webs.
-            Furthermore, we observe an increase in the variability of
-            connectance when employing a single simulation, representing
-            what we consider as a more tangible process leading to the
+            average compared to sampling them from local webs
+            (Fig. 4a-c). Furthermore, we observe an increase in the
+            variability of connectance when employing a single
+            simulation (Fig. 4, gray markers), which in our opinion is a
+            more tangible representation of the process leading to the
             realization of local interactions in nature.</p>
             <figure>
             <img src="figures/network_sampling.png" id="fig:sampling"
-            alt="Figure 4: Connectance of sampled binary interaction webs. Comparison between the average connectance of binary interaction network samples obtained from the local and metawebs of probabilistic interactions. Each dot corresponds to a different site. The local probability of interaction between potentially interacting species was set to three different values: (a) P(L_{i \rightarrow j}|M_{i \rightarrow j}) = 1.0, (b) P(L_{i \rightarrow j}|M_{i \rightarrow j}) = 0.75, and (c) P(L_{i \rightarrow j}|M_{i \rightarrow j}) = 0.50. Grey dots represent the outcome of a single simulation, while colored dots represent the average connectance of each network across 100 simulations. (d) Reduction in the mean squared logarithmic error between the average connectance of binary interaction networks obtained from these two sampling methods as the number of simulations increases, for the same values of P(L_{i \rightarrow j}|M_{i \rightarrow j}) used in panels a-c. Probabilities of regional interactions were obtained with a false positive rate of 5\% and a false negative rate of 10\%. Metaweb samples were obtained by randomly sampling binary interactions from the probabilistic interaction metaweb, and then propagating this result to all local webs that include the species potentially engaged in the interactions. Local binary interaction webs were generated by independently sampling binary interactions for each local web of probabilistic interactions." />
+            alt="Figure 4: Connectance of sampled binary interaction webs. Comparison between the average connectance of binary interaction network samples obtained from the local webs and metawebs of probabilistic interactions. Each dot corresponds to a different site. The local probability of interaction between potentially interacting species was set to three different values: (a) P(L_{i \rightarrow j}|M_{i \rightarrow j}) = 1.0, (b) P(L_{i \rightarrow j}|M_{i \rightarrow j}) = 0.75, and (c) P(L_{i \rightarrow j}|M_{i \rightarrow j}) = 0.50. Grey dots represent the outcome of a single simulation, while colored dots represent the average connectance of each network across 100 simulations. (d) Reduction in the mean squared logarithmic error between the average connectance of binary interaction networks obtained from these two sampling methods as the number of simulations increases, for the same values of P(L_{i \rightarrow j}|M_{i \rightarrow j}) used in panels a-c. Probabilities of regional interactions were obtained with a false positive rate of 5\% and a false negative rate of 10\%. Metaweb samples were obtained by randomly sampling binary interactions from the probabilistic interaction metaweb, and then propagating this result to all local webs that include the species potentially engaged in the interactions. Local binary interaction webs were generated by independently sampling binary interactions for each local web of probabilistic interactions." />
             <figcaption aria-hidden="true">Figure 4: <strong>Connectance
             of sampled binary interaction webs.</strong> Comparison
             between the average connectance of binary interaction
-            network samples obtained from the local and metawebs of
+            network samples obtained from the local webs and metawebs of
             probabilistic interactions. Each dot corresponds to a
             different site. The local probability of interaction between
             potentially interacting species was set to three different
@@ -2379,8 +2410,9 @@ of probabilistic interactions</div>
             were estimated. Otherwise, interaction probabilities must be
             adjusted to align with the intended cell size, preventing
             systematic biases in predictions.</p>
-            <h2 id="prediction-of-local-webs-from-metawebs">Prediction
-            of local webs from metawebs</h2>
+            <h2
+            id="application-5-prediction-of-local-webs-from-metawebs">Application
+            5: Prediction of local webs from metawebs</h2>
             <p>Metawebs serve as a valuable source of ecological
             information for predicting local webs across time and space.
             Local webs of binary interactions can be reconstructed by
@@ -2422,10 +2454,13 @@ of probabilistic interactions</div>
             data-cites="McLeod2021Sampling">McLeod <em>et al.</em>
             (2021)</span>, although metawebs do not capture the
             spatiotemporal variability of interactions, they establish
-            an upper limit for local interactions. In other words, the
-            probability of two taxa interacting at a specific location
-            and time is consistently lower or equal to the probability
-            of their regional interaction:</p>
+            an upper limit for local interactions <span class="citation"
+            data-cites="Strydom2023Graph">(similarly for metawebs of
+            probabilistic interactions, Strydom <em>et al.</em>
+            2023)</span>. In other words, the probability of two taxa
+            interacting at a specific location and time is consistently
+            lower or equal to the probability of their regional
+            interaction:</p>
             <p><span id="eq:switch"><span
             class="math display"><em>P</em>(<em>L</em><sub><em>i</em> → <em>j</em></sub>|<em>X</em><sub><em>i</em>, <em>l</em></sub>,<em>X</em><sub><em>j</em>, <em>l</em></sub>,<em>N</em><sub><em>i</em>, <em>l</em></sub>,<em>N</em><sub><em>j</em>, <em>l</em></sub>,<em>T</em><sub><em>i</em>, <em>l</em></sub>,<em>T</em><sub><em>j</em>, <em>l</em></sub>,<em>E</em><sub><em>l</em></sub>,<em>A</em>,<em>t</em>,<em>f</em>(<em>L</em>)) ≤ <em>P</em>(<em>M</em><sub><em>i</em> → <em>j</em></sub>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>).   (21)</span></span></p>
             <p>Moreover, the probability that two taxa possess the
@@ -2457,7 +2492,7 @@ of probabilistic interactions</div>
             mathematical representation of probabilities and their
             statistical properties depend on the type of interactions
             (local or regional) and the conditions under which these
-            interactions were evaluated. We showed that local and
+            interactions were evaluated. We showed that local webs and
             metawebs of probabilistic interactions differ in their
             relationship to spatial and temporal scales, with regional
             interactions remaining consistent across scales. In contrast
@@ -2544,28 +2579,28 @@ of probabilistic interactions</div>
             approaching <span class="math inline">0</span> or <span
             class="math inline">1</span>) as we investigate various
             conditions, including different combinations of species
-            traits. In local webs, which can be seen as random instances
-            of metawebs, randomness cannot be reduced to the same
-            extent. Local interaction probabilities may represent both
-            their uncertainty and spatiotemporal variability. Owing to
-            environmental heterogeneity, there will invariably be
-            instances in which an interaction occurs and others in which
-            it does not, across different times and locations,
-            irrespective of the extent to which we can improve our
-            knowledge of its biological feasibility and the local
-            conditions that facilitate its occurrence. When local webs
-            describe probabilities of observing interactions rather than
-            their actual occurrence, we must also consider observation
-            variability (sampling error) as an additional source of
-            stochasticity. Every ecological process is stochastic but
-            there is also a possibility that a phenomenon goes
-            undetected. Quantifying and partitioning this stochasticity
-            will enable us to make more accurate predictions about
-            ecological interactions at various spatial and temporal
-            scales. This will prove to be of vital importance as our
-            time to understand nature runs out, especially at the places
-            where the impacts of climate change and habitat loss hit
-            harder.</p>
+            traits. In comparison, although local webs can be seen as
+            random instances of metawebs, their randomness cannot be
+            reduced to the same extent. Local interaction probabilities
+            may represent both their uncertainty and spatiotemporal
+            variability. Owing to environmental heterogeneity, there
+            will invariably be instances in which an interaction occurs
+            and others in which it does not, across different times and
+            locations, irrespective of the extent to which we can
+            improve our knowledge of its biological feasibility and the
+            local conditions that facilitate its occurrence. When local
+            webs describe probabilities of observing interactions rather
+            than their actual occurrence, we must also consider
+            observation variability (sampling error) as an additional
+            source of stochasticity. Every ecological process is
+            stochastic but there is also a possibility that a phenomenon
+            goes undetected. Quantifying and partitioning this
+            stochasticity will enable us to make more accurate
+            predictions about ecological interactions at various spatial
+            and temporal scales. This will prove to be of vital
+            importance as our time to understand nature runs out,
+            especially at locations where the impacts of climate change
+            and habitat loss hit harder.</p>
             <h1 id="acknowledgment">Acknowledgment</h1>
             <p>We acknowledge that this study was conducted on land
             within the traditional unceded territory of the Saint
@@ -3356,6 +3391,15 @@ of probabilistic interactions</div>
             reconstruction through phylogenetic transfer of low-rank
             network representation</a>. <em>Methods in Ecology and
             Evolution</em>, 13.
+            </div>
+            <div id="ref-Strydom2023Graph" class="csl-entry"
+            role="doc-biblioentry">
+            Strydom, T., Bouskila, S., Banville, F., Barros, C., Caron,
+            D., Farrell, M.J., <em>et al.</em> (2023). <a
+            href="https://doi.org/10.1111/2041-210X.14228">Graph
+            embedding and transfer learning can help predict potential
+            species interaction networks despite data limitations</a>.
+            <em>Methods in Ecology and Evolution</em>, 14, 2917–2930.
             </div>
             <div id="ref-Strydom2021Roadmapa" class="csl-entry"
             role="doc-biblioentry">
