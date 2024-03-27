@@ -163,7 +163,7 @@ may differ between network types (e.g., estimations often based on frequencies
 of interactions in plant-pollinator networks), the broad principles underlying
 our findings remain relevant and applicable across diverse ecological contexts.
 
-# Representations of probabilistic interaction webs
+# Probabilistic representations of interactions
 
 Consider a scenario where an avian predator species has just established
 itself in a northern habitat home to a small rodent species. Suppose these
@@ -217,9 +217,9 @@ interconnections between these two probabilistic representations of ecological
 interactions would alleviate interpretation errors (e.g., when studying
 network-area relationships with metawebs or local webs) and facilitate a more 
 adequate use of interaction data.
-In the next sections, we therefore review the differences as we scale up from 
-pairwise interactions to metawebs and local webs as higher-level 
-representations of ecological networks.
+In the following sections, we delve into these distinctions as we scale up from 
+pairwise interactions to higher-level 
+representations of ecological networks, i.e. local webs and metawebs.
 
 ## Pairwise interactions: the building blocks of ecological networks
 
@@ -471,10 +471,9 @@ common uncertainty sources (often stemming from the model used for estimation),
 is presented alongside examples of studies that employed them (with specific
 variables indicated in parentheses, when applicable). The study marked with an
 asterisk has been conducted on binary interaction webs. Note that we also
-included a local web $O$ of observed interactions and a metaweb $M^*$ of
+included the expression for a local web $O$ of observed interactions and a metaweb $M^*$ of
 potential interactions (representing the *ecological* feasibility of
-interactions) as they were mentioned in the main text, even though they do not
-represent the focus of this manuscript. {#tbl:prob}
+interactions) as they were mentioned in the main text, even though they are not the focus of this manuscript. {#tbl:prob}
 
 When testing or employing multiple models to estimate local interaction
 probabilities, rather than selecting a single model that best fits the data,
@@ -667,7 +666,7 @@ least $5$ species, resulting in a set of $233$ georeferenced local webs
 spanning $29$ years). We built a metaweb of binary interactions by aggregating
 all local interactions, which gave us a regional web composed of $274$ species
 and $1080$ interactions. 
-In @Fig:accumulation, we show how the dissimilarity between the metaweb and the aggregated local webs varies with the number of sampled local webs. To do so, we randomly selected one local web of binary interactions and sequentially sampled additional webs while aggregating both their species and interactions. Next, we compared the metaweb and the aggregated local webs using dissimilarity of interactions between common species ($\beta_{OS}$, [@Fig:accumulation]a) and the dissimilarity in species composition ($\beta_{S}$, [@Fig:accumulation]b) [@Poisot2012Dissimilaritya]. We repeated this sampling process one hundred times and highlight the median dissimilarity values across simulations, as well as the 50% and 90% confidence intervals.
+In @Fig:accumulation, we show how the dissimilarity between the metaweb and the aggregated local webs varies with the number of sampled local webs. To do so, we randomly selected one local web of binary interactions and sequentially sampled additional webs while aggregating both their species and interactions. Next, we compared the metaweb and the aggregated local webs using the dissimilarity of interactions between common species ($\beta_{OS}$, [@Fig:accumulation]a) and the dissimilarity in species composition ($\beta_{S}$, [@Fig:accumulation]b) [@Poisot2012Dissimilaritya]. We repeated this sampling process one hundred times and highlighted the median dissimilarity values across simulations, as well as the $50\%$ and $95\%$ percentile intervals.
 This shows that networks of local interactions are highly
 dissimilar from the metaweb, both in terms of species and interactions,
 especially when only a limited number of sites has been sampled. Both
@@ -704,7 +703,7 @@ their species and interactions (with the value of $P(L_{i \rightarrow j}|M_{i
 @Eq:aggregate).](figures/network_accumulation.png){#fig:accumulation}
 
 Next, we investigate the differences in scaling between networks of 
-probabilistic or binary interactions (Fig 1c-d). We converted these binary 
+probabilistic or binary interactions ([@Fig:accumulation]c-d). We converted these binary 
 interaction networks into probabilistic ones using
 models based on simple assumptions. Our models are not designed to estimate the
 exact values of probabilistic interactions. Instead, their purpose is to create
@@ -716,8 +715,8 @@ both false positive and false negative rates to zero to prevent artificially
 inflating the total number of links, enabling a more accurate comparison with
 binary interaction webs. This gave us a probability of regional interaction of
 $1$ when at least one interaction has been observed locally and of $0$ in the
-absence of any observed interaction between a given pair of species (Fig 1c-d). 
-In the second metaweb (used in next applications), we introduced a $5\%$ false 
+absence of any observed interaction between a given pair of species ([@Fig:accumulation]c-d). 
+In the second metaweb (used in the next applications), we introduced a $5\%$ false 
 positive rate to account for
 spurious interactions and a $10\%$ false negative rate to address the elevated
 occurrence of missing interactions in ecological networks
@@ -810,7 +809,7 @@ changes with the temporal resolution of the network [@Poisot2012Dissimilaritya],
 acknowledging that distinct interactions take place over time, ranging from
 short-term fluctuations of interactions to long-term trends. As local webs of
 probabilistic interactions may explicitly account for the spatiotemporal
-variability of interactions, they offer a distinct approach to investigating the
+variability of interactions (as shown in \ref{box}), they offer a distinct approach to investigating the
 scaling of network structure with space and time, in contrast to webs of binary
 and quantitative interactions, by making the stochasticity of interactions the
 focal point of the modeling process.
@@ -1117,7 +1116,7 @@ when the number of
 simulations of binary interaction networks for each location is low ($n=1$). As
 anticipated, we observe that sampling binary interactions from the metaweb tends
 to overestimate connectance on average compared to sampling them from local
-webs [@Fig:sampling]a-c. Furthermore, we observe an increase in the variability 
+webs ([@Fig:sampling]a-c). Furthermore, we observe an increase in the variability 
 of connectance when employing a single simulation ([@Fig:sampling], gray 
 markers), which in our opinion is a more tangible representation of the process 
 leading to the realization of local interactions in nature. 
