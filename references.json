@@ -2745,6 +2745,42 @@
         "type": "chapter"
     },
     {
+        "publisher": "Elsevier",
+        "issue": "6",
+        "issued": {
+            "date-parts": [
+                [
+                    2015
+                ]
+            ]
+        },
+        "container-title": "Trends in Ecology & Evolution",
+        "author": [
+            {
+                "family": "Morales-Castilla",
+                "given": "Ignacio"
+            },
+            {
+                "family": "Matias",
+                "given": "Miguel G."
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Araújo",
+                "given": "Miguel B."
+            }
+        ],
+        "id": "Morales-Castilla2015Inferringa",
+        "DOI": "10.1016/j.tree.2015.03.014",
+        "volume": "30",
+        "page": "347-356",
+        "title": "Inferring biotic interactions from proxies",
+        "type": "article-journal"
+    },
+    {
         "issue": "5",
         "issued": {
             "date-parts": [
