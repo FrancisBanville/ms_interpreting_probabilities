@@ -2,47 +2,49 @@
 
 As we try to navigate global biodiversity change, filling in knowledge gaps
 about biodiversity becomes instrumental to monitoring and mitigating those
-changes [@Gonzalez2022Monitor; @Abrego2021Accounting]. However, cataloging
-species, populations and, in particular, ecological interactions (e.g.,
-predation, parasitism, and pollination) is a substantial challenge
-[@Polis1991Complex; @Pascual2006Ecologicala]. There are methodological and
-biological constraints that hinder our ability to observe all ecological
-interactions, leading to significant uncertainties in our understanding of these
-interactions. For example, the spatial and temporal uncoupling of species [e.g.,
-nocturnal and diurnal species coexisting in the same space without interacting
-due to differences in the timing of their daily activities, @Jordano1987PatMut]
-and the large number of rare and cryptic interactions in a community contribute
-to these uncertainties [@Jordano2016Samplingb]. More generally, a handful of
-conditions must be satisfied for an interaction to be observed locally. First,
-both species must have overlapping geographic ranges, i.e. they must co-occur
-within the region of interest [@Blanchet2020Cooccurrencea]. Second, they must
-have some probability of meeting. Probabilities of interspecific encounters are
-typically low, especially for rare species with low abundances. While species'
-absolute abundances may impact interaction frequencies [@Vazquez2007Species],
-encounter probabilities are determined by their relative abundances
-[@Canard2012Emergencea; @Canard2012Emergencea]. The probability that species
-meet each other also depends on their biological characteristics, such as the
-synchronization of their phenology [@Olesen2010Missing; @Singer2012GeoMos] and
-their discoverability [e.g., @Broom2005You]. Finally, when species do come into
-contact, an interaction occurs only if their traits are locally compatible
-[@Poisot2015Speciesa], including their body phenotypes [@Bolnick2011WhyInt;
-@Stouffer2011RolBod; @Gravel2013InfFooa] and behavioral choices
-[@Pulliam1974Theory; @Choh2012PreRol]. Interactions may also be influenced by
-the presence or prevalence of a third species [e.g., of a more profitable prey
-species, @Golubski2011ModMod; @Sanders2012Indirect]. Documenting the location
-and timing of interactions becomes even more difficult when accounting for the
-spatiotemporal variability of ecological interactions
-[@Poisot2012Dissimilaritya; @Poisot2015Speciesa]. Environmental factors, such as
-temperature [@Angilletta2004TemGro], drought [@Woodward2012CliCha], climate
-change [@Gilman2010FraCom; @Woodward2010ChaEco; @Araujo2011Usinga], and habitat
-modifications [@Tylianakis2007HabMod], contribute to this spatiotemporal
-variability by impacting species abundance and traits. Even after satisfying all
-these conditions, there remains a possibility that the interaction does not
-occur locally, either due to the intricate nature of the system or simply by
-chance. If it does occur, it might still go unnoticed, particularly if it
-happens infrequently. In this context, it is unsurprising that our knowledge of
-ecological interactions remains limited [@Hortal2015SevSho] despite extensive
-biodiversity data collection [@Schmeller2015GloTer]. 
+changes [@Hortal2015SevSho; @Gonzalez2022Monitor; @Abrego2021Accounting].
+However, cataloging species, populations and, in particular, ecological
+interactions (e.g., predation, parasitism, and pollination) is a substantial
+challenge [@Polis1991Complex; @Pascual2006Ecologicala]. There are methodological
+and biological constraints that hinder our ability to document species
+interactions, inevitably introducing uncertainties in our knowledge of
+unobserved interactions. For example, the spatial and temporal uncoupling of
+species [e.g., nocturnal and diurnal species coexisting in the same space
+without interacting because of different daily activity timings,
+@Jordano1987PatMut] and the large number of rare and cryptic interactions in a
+community, contribute to these difficulties in documenting interactions
+[@Jordano2016Samplingb]. 
+
+More generally, several conditions must be satisfied for an interaction to be
+observed locally. First, both species must have overlapping geographic ranges,
+i.e. they must co-occur within the region of interest
+[@Morales-Castilla2015Inferringa; @Cazelles2016Theorya]. Second, they must have
+some probability of meeting [@Poisot2015Speciesa]. Probabilities of
+interspecific encounters are typically low, especially for rare species with low
+abundances. While species' absolute abundances may impact interaction
+frequencies [@Vazquez2007Species], encounter probabilities are determined by
+their relative abundances [@Canard2012Emergencea]. The probability that species
+meet also depends on their biology, such as their phenology [@Olesen2010Missing;
+@Singer2012GeoMos] and discoverability [@Broom2005You]. Finally, when species do
+come into contact, an interaction occurs only if their traits are locally
+compatible [@Poisot2015Speciesa], including their phenotypes
+[@Bolnick2011WhyInt; @Stouffer2011RolBod; @Gravel2013InfFooa] and behavior
+[@Pulliam1974Theory; @Choh2012PreRol]. Interactions may also be influenced by a
+third species [e.g., a more profitable prey species, @Golubski2011ModMod;
+@Sanders2012Indirect]. Documenting the location and timing of interactions
+becomes even more difficult when accounting for the spatiotemporal variability
+of ecological interactions [@Poisot2012Dissimilaritya; @Poisot2015Speciesa].
+Environmental factors, such as temperature [@Angilletta2004TemGro], drought
+[@Woodward2012CliCha], climate change [@Gilman2010FraCom; @Woodward2010ChaEco;
+@Araujo2011Usinga], and habitat modifications [@Tylianakis2007HabMod],
+contribute to this spatiotemporal variability by impacting species abundance and
+traits. Even after satisfying all these conditions, there remains a possibility
+that the interaction does not occur locally, either due to the intricate nature
+of the system or simply by chance. If it does occur, it might go undetected,
+particularly if it happens infrequently. In this context, it is unsurprising
+that our knowledge of ecological interactions remains limited
+[@Hortal2015SevSho] despite extensive biodiversity data collection
+[@Schmeller2015GloTer]. 
 
 Knowing the biological capacity of two species to interact directly (via e.g.,
 trophic interactions) is necessary but not sufficient for inferring their
@@ -815,9 +817,9 @@ changes with the temporal resolution of the network [@Poisot2012Dissimilaritya],
 acknowledging that distinct interactions take place over time, ranging from
 short-term fluctuations of interactions to long-term trends. As local webs of
 probabilistic interactions may explicitly account for the spatiotemporal
-variability of interactions (as shown in Box 1), they offer a distinct
-approach to investigating the scaling of network structure with space and time,
-in contrast to webs of binary and quantitative interactions, by making the
+variability of interactions (as shown in Box 1), they offer a distinct approach
+to investigating the scaling of network structure with space and time, in
+contrast to webs of binary and quantitative interactions, by making the
 stochasticity of interactions the focal point of the modeling process.
 
 Local webs and metawebs exhibit distinct relationships with spatial and temporal
@@ -1317,3 +1319,4 @@ Revelations working group (organized by BIOS²) for their insightful discussions
 and valuable feedback on this manuscript.
 
 # References
+ 
