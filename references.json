@@ -922,6 +922,158 @@
         "type": "article-journal"
     },
     {
+        "publisher": "Royal Society",
+        "issue": "1837",
+        "issued": {
+            "date-parts": [
+                [
+                    2021
+                ]
+            ]
+        },
+        "container-title": "Philosophical Transactions of the Royal Society B: Biological Sciences",
+        "author": [
+            {
+                "family": "Carlson",
+                "given": "Colin J."
+            },
+            {
+                "family": "Farrell",
+                "given": "Maxwell J."
+            },
+            {
+                "family": "Grange",
+                "given": "Zoe"
+            },
+            {
+                "family": "Han",
+                "given": "Barbara A."
+            },
+            {
+                "family": "Mollentze",
+                "given": "Nardus"
+            },
+            {
+                "family": "Phelan",
+                "given": "Alexandra L."
+            },
+            {
+                "family": "Rasmussen",
+                "given": "Angela L."
+            },
+            {
+                "family": "Albery",
+                "given": "Gregory F."
+            },
+            {
+                "family": "Bett",
+                "given": "Bernard"
+            },
+            {
+                "family": "Brett-Major",
+                "given": "David M."
+            },
+            {
+                "family": "Cohen",
+                "given": "Lily E."
+            },
+            {
+                "family": "Dallas",
+                "given": "Tad"
+            },
+            {
+                "family": "Eskew",
+                "given": "Evan A."
+            },
+            {
+                "family": "Fagre",
+                "given": "Anna C."
+            },
+            {
+                "family": "Forbes",
+                "given": "Kristian M."
+            },
+            {
+                "family": "Gibb",
+                "given": "Rory"
+            },
+            {
+                "family": "Halabi",
+                "given": "Sam"
+            },
+            {
+                "family": "Hammer",
+                "given": "Charlotte C."
+            },
+            {
+                "family": "Katz",
+                "given": "Rebecca"
+            },
+            {
+                "family": "Kindrachuk",
+                "given": "Jason"
+            },
+            {
+                "family": "Muylaert",
+                "given": "Renata L."
+            },
+            {
+                "family": "Nutter",
+                "given": "Felicia B."
+            },
+            {
+                "family": "Ogola",
+                "given": "Joseph"
+            },
+            {
+                "family": "Olival",
+                "given": "Kevin J."
+            },
+            {
+                "family": "Rourke",
+                "given": "Michelle"
+            },
+            {
+                "family": "Ryan",
+                "given": "Sadie J."
+            },
+            {
+                "family": "Ross",
+                "given": "Noam"
+            },
+            {
+                "family": "Seifert",
+                "given": "Stephanie N."
+            },
+            {
+                "family": "Sironen",
+                "given": "Tarja"
+            },
+            {
+                "family": "Standley",
+                "given": "Claire J."
+            },
+            {
+                "family": "Taylor",
+                "given": "Kishana"
+            },
+            {
+                "family": "Venter",
+                "given": "Marietjie"
+            },
+            {
+                "family": "Webala",
+                "given": "Paul W."
+            }
+        ],
+        "id": "Carlson2021Future",
+        "DOI": "10.1098/rstb.2020.0358",
+        "volume": "376",
+        "page": "20200358",
+        "title": "The future of zoonotic risk prediction",
+        "type": "article-journal"
+    },
+    {
         "issue": "1",
         "issued": {
             "date-parts": [
