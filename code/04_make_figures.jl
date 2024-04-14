@@ -97,7 +97,7 @@ plot_bos = plot(1:n_samples,
     legendfontfamily="Times")
 
 xaxis!(:log,
-    xlabel="Number of samples", 
+    xlabel="Number of sampled local networks", 
     xticks=(a,a),
     xlims=(1,n_samples))
 
@@ -146,7 +146,7 @@ plot_bs = plot(1:n_samples,
     legendfontfamily="Times")
 
 xaxis!(:log,
-    xlabel="Number of samples", 
+    xlabel="Number of sampled local networks", 
     xticks=(a,a),
     xlims=(1,n_samples))
 
@@ -175,7 +175,7 @@ plot!(1:n_samples,
 
 # simulate network accumulation curves
        
-# get order (same for sampling order for all curves)
+# get order (same sampling order for all curves)
 sampling_order = sample(1:length(Ns), n_samples, replace=false)
 
 # generate network accumulation curves
@@ -228,8 +228,9 @@ plot_links = plot(1:n_samples,
     Ns_links,
     color=RGB(204/255,121/255,167/255),
     alpha=0.9,
-    linewidth=4,
-    label="binary networks",
+    linestyle=:solid,
+    linewidth=2,
+    label="binary local interactions",
     grid=false,
     minorgrid=false,
     dpi=1000, 
@@ -248,37 +249,41 @@ plot!(1:n_samples,
     Ns_M3_p100_links,
     color=RGB(86/255,190/255,233/255),
     alpha=0.6,
-    linewidth=3,
+    linestyle=:dash,
+    linewidth=2,
     label="P(L | M) = 1.0")
 
 plot!(1:n_samples,
     Ns_M3_p75_links,
     color=RGB(0/255,158/255,115/255),
     alpha=0.6,
-    linewidth=3,
+    linestyle=:dashdot,
+    linewidth=1.5,
     label="P(L | M) = 0.75")
 
 plot!(1:n_samples,
     Ns_M3_p50_links,
     color=RGB(230/255,159/255,0/255),
     alpha=0.6,
-    linewidth=3,
+    linestyle=:dot,
+    linewidth=2,
     label="P(L | M) = 0.50")
 
 xaxis!(:log,
-    xlabel="Number of samples", 
+    xlabel="Number of sampled local networks", 
     xticks=(a,a),
     xlims=(1,n_samples))
 
-yaxis!(ylabel="Number of links")
+yaxis!(ylabel="Expected number of local interactions")
 
 
 plot_co = plot(1:n_samples,
     Ns_co,
     color=RGB(204/255,121/255,167/255),
     alpha=0.9,
-    linewidth=4,
-    label="binary networks",
+    linestyle=:solid,
+    linewidth=2,
+    label="binary local interactions",
     grid=false,
     minorgrid=false,
     dpi=1000, 
@@ -298,34 +303,37 @@ plot!(1:n_samples,
     Ns_M3_p100_co,
     color=RGB(86/255,190/255,233/255),
     alpha=0.6,
-    linewidth=3,
+    linestyle=:dash,
+    linewidth=2,
     label="P(L | M) = 1.0")
 
 plot!(1:n_samples,
     Ns_M3_p75_co,
     color=RGB(0/255,158/255,115/255),
     alpha=0.6,
-    linewidth=3,
+    linestyle=:dashdot,
+    linewidth=1.5,
     label="P(L | M) = 0.75")
 
 plot!(1:n_samples,
     Ns_M3_p50_co,
     color=RGB(230/255,159/255,0/255),
     alpha=0.6,
-    linewidth=3,
+    linestyle=:dot,
+    linewidth=2,
     label="P(L | M) = 0.50")
 
 
 xaxis!(:log,
-    xlabel="Number of samples", 
+    xlabel="Number of sampled local networks", 
     xticks=(a,a),
     xlims=(1,n_samples))
 
-yaxis!(ylabel="Connectance")
+yaxis!(ylabel="Expected local connectance")
 
 
 
-plot(plot_bos, plot_bs, plot_links, plot_co,
+plot(plot_bs, plot_bos, plot_links, plot_co,
     title = ["(a)" "(b)" "(c)" "(d)"],
     titleloc=:right, 
     titlefont=fonts,
@@ -850,14 +858,14 @@ end
 a = [2:2:Int64(maximum(areas));]
 
 ## expected number of links in the merged network
-
 plot_links_merged = plot(areas,
-    links_merged[1,:],
-    label="expanding windows",
-    color=:grey,
-    alpha=0.7,
-    linestyle=:dot,
-    linewidth=1, 
+    links_merged',
+    label="",
+    color=:cividis, 
+    line_z=lats',
+    alpha=0.8,
+    linestyle=:solid,
+    linewidth=0.5, 
     grid=false,
     minorgrid=false,
     dpi=1000, 
@@ -866,21 +874,13 @@ plot_links_merged = plot(areas,
     guidefont=fonts,
     xtickfont=fonts, 
     ytickfont=fonts, 
-    foreground_color_legend=:black, 
+    foreground_color_legend=:white, 
     background_color_legend=:white, 
+    colorbar_title="Central latitudinal coordinate",
+    colorbar_titlefont=fonts, 
     legendfont=fonts,
     legendfontpointsize=7,
     legendfontfamily="Times")
-
-for i in 2:length(areas)
-    plot!(areas,
-    links_merged[i,:],
-    linestyle=:dot,
-    alpha=0.7,
-    color="grey",
-    label="",
-    linewidth=1)
-end
 
 plot!(areas,
     median.(eachcol(links_merged)),
@@ -888,22 +888,22 @@ plot!(areas,
     label="median",
     linewidth=5)
 
-xaxis!(xlabel="Latitude width",
+xaxis!(xlabel="Latitudinal window width",
     xticks=(a,a))
 
-yaxis!(ylabel="Expected number of links in merged network", 
+yaxis!(ylabel="Expected number of local interactions", 
     ylims=(-0.05, 1650))
-
 
 ## expected number of links in the submetawebs
 
 plot_links_metaweb = plot(areas,
-    links_metaweb[1,:],
-    label="expanding windows",
-    color=:grey,
-    linewidth=1, 
-    linestyle=:dot,
-    alpha=0.7,
+    links_metaweb',
+    label="",
+    color=:cividis, 
+    line_z=lats',
+    linewidth=0.5, 
+    linestyle=:solid,
+    alpha=0.8,
     grid=false,
     minorgrid=false,
     dpi=1000, 
@@ -912,21 +912,13 @@ plot_links_metaweb = plot(areas,
     guidefont=fonts,
     xtickfont=fonts, 
     ytickfont=fonts, 
-    foreground_color_legend=:black, 
+    colorbar_title="Central latitudinal coordinate",
+    colorbar_titlefont=fonts, 
+    foreground_color_legend=:white, 
     background_color_legend=:white, 
     legendfont=fonts,
     legendfontpointsize=7,
     legendfontfamily="Times")
-
-for i in 2:length(areas)
-    plot!(areas,
-    links_metaweb[i,:],
-    color="grey",
-    label="",
-    alpha=0.7,
-    linestyle=:dot,
-    linewidth=1)
-end
 
 plot!(areas,
     median.(eachcol(links_metaweb)),
@@ -934,18 +926,17 @@ plot!(areas,
     label="median",
     linewidth=5)
 
-xaxis!(xlabel="Latitude width",
+xaxis!(xlabel="Latitudinal window width",
     xticks=(a,a))
 
-yaxis!(ylabel="Expected number of links in metaweb", 
+yaxis!(ylabel="Expected number of regional interactions", 
     ylims=(-0.05, 1650))
-
 
 
 # heatmaps of the expected numbers of links in the merged networks and submetawebs as a function of position and latitude width 
 heatmap_links_merged = heatmap(areas, lats, links_merged, c = :viridis, 
         clims=(0,1650),
-        colorbar_title="Expected number of links in merged network",
+        colorbar_title="Expected number of local interactions",
         framestyle=:box, 
         grid=false,
         minorgrid=false,
@@ -959,15 +950,15 @@ heatmap_links_merged = heatmap(areas, lats, links_merged, c = :viridis,
         foreground_color_legend=:black, 
         background_color_legend=:white)
 
-xaxis!(xlabel="Latitude width",
+xaxis!(xlabel="Latitudinal window width",
         xticks=(a,a))
 
-yaxis!(ylabel="Central latitude (position)")
+yaxis!(ylabel="Central latitudinal coordinate")
 
 
 heatmap_links_metaweb = heatmap(areas, lats, links_metaweb, c = :viridis, 
         clims=(0,1650),
-        colorbar_title="Expected number of links in metaweb",
+        colorbar_title="Expected number of regional interactions",
         framestyle=:box, 
         grid=false,
         minorgrid=false,
@@ -981,10 +972,10 @@ heatmap_links_metaweb = heatmap(areas, lats, links_metaweb, c = :viridis,
         foreground_color_legend=:black, 
         background_color_legend=:white)
 
-xaxis!(xlabel="Latitude width",
+xaxis!(xlabel="Latitudinal window width",
         xticks=(a,a))
 
-yaxis!(ylabel="Central latitude (position)")
+yaxis!(ylabel="Central latitudinal coordinate")
 
 
 
