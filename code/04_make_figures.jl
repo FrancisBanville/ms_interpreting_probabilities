@@ -374,26 +374,35 @@ function sample_connectance(M::UnipartiteProbabilisticNetwork, Ns_obj::Vector; n
 end
 
 
-### first subplot: scatterplot of network connectance obtained from the metaweb and local network sampling methods (averaged across simulations) 
+### scatterplot of network connectance obtained from the metaweb and local network sampling methods (averaged across simulations) 
 # probability of local interaction between potentially interacting species = 1.0
 
 samples_co_100_1 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p100, nsim = 1)
-samples_co_100 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p100, nsim = 100)
+samples_co_100_10 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p100, nsim = 10)
+samples_co_100_50 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p100, nsim = 50)
+samples_co_100_100 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p100, nsim = 100)
+
+# random networks
+Ns_rdm = sample(1:length(Ns), 20)
 
 # minimum and maximum values for plotting
-min = 0.2
-max = 1.0
+min = 0.05
+max = 1.05
 
-plotA = scatter(mean.(eachcol(samples_co_100_1.samples_metaweb_co)), 
-        mean.(eachcol(samples_co_100_1.samples_local_co)), 
-        label = "n = 1",
+# colors 
+
+plotA = scatter(mean.(eachcol(samples_co_100_100.samples_metaweb_co))[Ns_rdm], 
+        mean.(eachcol(samples_co_100_100.samples_local_co))[Ns_rdm], 
+        label = "100 samples",
+        color = RGB(86/255,190/255,233/255),
+        markersize = 15,
+        m = :circle,
         alpha = 0.5,
-        color = :darkgrey,
         framestyle=:box, 
         grid=false,
         minorgrid=false,
         dpi=1000, 
-        size=(800,500), 
+        size=(600,600), 
         margin=5Plots.mm, 
         guidefont=fonts, 
         xtickfont=fonts, 
@@ -401,46 +410,68 @@ plotA = scatter(mean.(eachcol(samples_co_100_1.samples_metaweb_co)),
         foreground_color_legend=:black,
         background_color_legend=:white, 
         legendfont=fonts,
-        legendfontpointsize=8,
+        legendfontpointsize=7,
         legendfontfamily="Times")
-        
-scatter!(mean.(eachcol(samples_co_100.samples_metaweb_co)), 
-        mean.(eachcol(samples_co_100.samples_local_co)), 
-        label = "n = 100",
-        color = RGB(86/255,190/255,233/255),
-        alpha = 0.5)
+      
+scatter!(mean.(eachcol(samples_co_100_50.samples_metaweb_co))[Ns_rdm], 
+        mean.(eachcol(samples_co_100_50.samples_local_co))[Ns_rdm], 
+        label = "50 samples",
+        color = :grey,
+        markersize = 10,
+        m = :hexagon,
+        alpha = 0.4)
+    
+scatter!(mean.(eachcol(samples_co_100_10.samples_metaweb_co))[Ns_rdm], 
+        mean.(eachcol(samples_co_100_10.samples_local_co))[Ns_rdm], 
+        label = "10 samples",
+        markersize = 5,
+        color = :grey,
+        m = :diamond,
+        alpha = 0.6)
+
+scatter!(mean.(eachcol(samples_co_100_1.samples_metaweb_co))[Ns_rdm], 
+        mean.(eachcol(samples_co_100_1.samples_local_co))[Ns_rdm], 
+        label = "1 sample",
+        m = :star4,
+        color = :grey,
+        markersize = 4,
+        alpha = 0.8)
 
 # 1:1 line
 plot!(min:0.01:max, 
         min:0.01:max, 
         linestyle=:dash, 
-        linecolor=:grey,
+        linecolor=:darkgrey,
         label="")
 
-xaxis!(xlabel="Average connectance across metaweb samples", 
-        xlims=(min-0.005, max+0.005))
+xaxis!(xlabel="Average connectance across regional samples", 
+        xlims=(min, max))
 
 yaxis!(ylabel="Average connectance across local samples", 
-        ylims=(min-0.005, max+0.005))
+        ylims=(min, max))
 
 
-### second subplot: scatterplot of network connectance obtained from the metaweb and local network sampling methods (averaged across simulations) 
+### scatterplot of network connectance obtained from the metaweb and local network sampling methods (averaged across simulations) 
 
 # probability of local interaction between potentially interacting species = 0.75
 
 samples_co_75_1 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p75, nsim = 1)
-samples_co_75 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p75, nsim = 100)
+samples_co_75_10 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p75, nsim = 10)
+samples_co_75_50 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p75, nsim = 50)
+samples_co_75_100 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p75, nsim = 100)
 
-plotB = scatter(mean.(eachcol(samples_co_75_1.samples_metaweb_co)), 
-mean.(eachcol(samples_co_75_1.samples_local_co)), 
-    label = "n = 1",
+plotB = scatter(mean.(eachcol(samples_co_75_100.samples_metaweb_co))[Ns_rdm], 
+    mean.(eachcol(samples_co_75_100.samples_local_co))[Ns_rdm], 
+    label = "100 samples",
+    markersize = 15,
+    m = :circle,
+    color = RGB(0/255,158/255,115/255),
     alpha = 0.5,
-    color = :darkgrey,
     framestyle=:box, 
     grid=false,
     minorgrid=false,
     dpi=1000, 
-    size=(800,500), 
+    size=(600,600), 
     margin=5Plots.mm, 
     guidefont=fonts, 
     xtickfont=fonts, 
@@ -448,45 +479,67 @@ mean.(eachcol(samples_co_75_1.samples_local_co)),
     foreground_color_legend=:black,
     background_color_legend=:white, 
     legendfont=fonts,
-    legendfontpointsize=8,
+    legendfontpointsize=7,
     legendfontfamily="Times")
 
-scatter!(mean.(eachcol(samples_co_75.samples_metaweb_co)), 
-        mean.(eachcol(samples_co_75.samples_local_co)), 
-        label = "n = 100",
-        color = RGB(0/255,158/255,115/255),
-        alpha = 0.5)
+scatter!(mean.(eachcol(samples_co_75_50.samples_metaweb_co))[Ns_rdm], 
+        mean.(eachcol(samples_co_75_50.samples_local_co))[Ns_rdm], 
+        label = "50 samples",
+        markersize = 10,
+        m = :hexagon,
+        color = :grey,
+        alpha = 0.4)
+
+scatter!(mean.(eachcol(samples_co_75_10.samples_metaweb_co))[Ns_rdm], 
+        mean.(eachcol(samples_co_75_10.samples_local_co))[Ns_rdm], 
+        label = "10 samples",
+        markersize = 5,
+        color = :grey,
+        m = :diamond,
+        alpha = 0.6)
+
+scatter!(mean.(eachcol(samples_co_75_1.samples_metaweb_co))[Ns_rdm], 
+        mean.(eachcol(samples_co_75_1.samples_local_co))[Ns_rdm], 
+        label = "1 sample",
+        markersize = 4,
+        color = :grey,
+        m = :star4,
+        alpha = 0.8)
 
 # 1:1 line
 plot!(min:0.01:max, 
         min:0.01:max, 
         linestyle=:dash, 
-        linecolor=:grey,
+        linecolor=:darkgrey,
         label="")
 
-xaxis!(xlabel="Average connectance across metaweb samples", 
-        xlims=(min-0.005, max+0.005))
+xaxis!(xlabel="Average connectance across regional samples", 
+        xlims=(min, max))
 
 yaxis!(ylabel="Average connectance across local samples", 
-        ylims=(min-0.005, max+0.005))
+        ylims=(min, max))
 
 
-### third subplot: scatterplot of network connectance obtained from the metaweb and local network sampling methods (averaged across simulations) 
+### scatterplot of network connectance obtained from the metaweb and local network sampling methods (averaged across simulations) 
 # probability of local interaction between potentially interacting species = 0.5
 
 samples_co_50_1 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p50, nsim = 1)
-samples_co_50 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p50, nsim = 100)
+samples_co_50_10 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p50, nsim = 10)
+samples_co_50_50 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p50, nsim = 50)
+samples_co_50_100 = sample_connectance(M3_fpfn, Ns_M3_fpfn_p50, nsim = 100)
 
-plotC = scatter(mean.(eachcol(samples_co_50_1.samples_metaweb_co)), 
-mean.(eachcol(samples_co_50_1.samples_local_co)), 
-    label = "n = 1",
+plotC = scatter(mean.(eachcol(samples_co_50_100.samples_metaweb_co))[Ns_rdm], 
+    mean.(eachcol(samples_co_50_1.samples_local_co))[Ns_rdm], 
+    label = "100 samples",
+    color = RGB(230/255,159/255,0/255),
+    markersize = 15,
+    m = :circle,
     alpha = 0.5,
-    color = :darkgrey,
     framestyle=:box, 
     grid=false,
     minorgrid=false,
     dpi=1000, 
-    size=(800,500), 
+    size=(600,600), 
     margin=5Plots.mm, 
     guidefont=fonts, 
     xtickfont=fonts, 
@@ -494,30 +547,48 @@ mean.(eachcol(samples_co_50_1.samples_local_co)),
     foreground_color_legend=:black,
     background_color_legend=:white, 
     legendfont=fonts,
-    legendfontpointsize=8,
+    legendfontpointsize=7,
     legendfontfamily="Times")
 
-scatter!(mean.(eachcol(samples_co_50.samples_metaweb_co)), 
-        mean.(eachcol(samples_co_50.samples_local_co)), 
-        label = "n = 100",
-        color = RGB(230/255,159/255,0/255),
-        alpha = 0.5)
+scatter!(mean.(eachcol(samples_co_50_50.samples_metaweb_co))[Ns_rdm], 
+    mean.(eachcol(samples_co_50_50.samples_local_co))[Ns_rdm], 
+    label = "50 samples",
+    color = :grey,
+    markersize = 10,
+    m = :hexagon,
+    alpha = 0.4)
+
+scatter!(mean.(eachcol(samples_co_50_10.samples_metaweb_co))[Ns_rdm], 
+    mean.(eachcol(samples_co_50_10.samples_local_co))[Ns_rdm], 
+    label = "10 samples",
+    color = :grey,
+    markersize = 5,
+    m = :diamond,
+    alpha = 0.6)
+
+scatter!(mean.(eachcol(samples_co_50_1.samples_metaweb_co))[Ns_rdm], 
+    mean.(eachcol(samples_co_50_1.samples_local_co))[Ns_rdm], 
+    label = "1 sample",
+    color = :grey,
+    markersize = 4,
+    m = :star4,
+    alpha = 0.8)
 
 # 1:1 line
 plot!(min:0.01:max, 
         min:0.01:max, 
         linestyle=:dash, 
-        linecolor=:grey,
+        linecolor=:darkgrey,
         label="")
 
-xaxis!(xlabel="Average connectance across metaweb samples", 
-        xlims=(min-0.005, max+0.005))
+xaxis!(xlabel="Average connectance across regional samples", 
+        xlims=(min, max))
 
 yaxis!(ylabel="Average connectance across local samples", 
-        ylims=(min-0.005, max+0.005))
+        ylims=(min, max))
 
 
-### fourth subplot: scatterplot of the mean squared logarithmic error between the connectance obtained from the local network and metaweb sampling methods as a function of the number of simulations
+### scatterplot of the mean squared logarithmic error between the connectance obtained from the local network and metaweb sampling methods as a function of the number of simulations
 # for different probabilities of local interaction between potentially interacting species 
 
 # calculate the divergence between the two sampling methods for a given number of simulations
@@ -570,18 +641,18 @@ Threads.@threads for i in nsims
 next!(p)
 end
 
-a = [1,5,10,20,40,100]
+a = [1,5,10,20,50,100]
 
 plotD = scatter(nsims, 
         divergences_100, 
-        label = "P(L | M) = 1.0",
         color = RGB(86/255,190/255,233/255),
+        label = "",
         alpha = 0.8,
         framestyle=:box, 
         grid=false,
         minorgrid=false,
         dpi=1000, 
-        size=(800,500), 
+        size=(600,600), 
         margin=5Plots.mm, 
         guidefont=fonts, 
         xtickfont=fonts, 
@@ -592,35 +663,81 @@ plotD = scatter(nsims,
         legendfontpointsize=8,
         legendfontfamily="Times")
 
-scatter!(nsims, 
-        divergences_75, 
-        label = "P(L | M) = 0.75",
-        alpha = 0.8,
-        color = RGB(0/255,158/255,115/255))
-
-scatter!(nsims, 
-        divergences_50, 
-        label = "P(L | M) = 0.50",
-        color = RGB(230/255,159/255,0/255),
-        alpha = 0.8)
-
 xaxis!(:log,
-        xlabel="Number of binary samples", 
+        xlabel="Number of samples", 
         xticks = (a, a))
 
-yaxis!(ylabel="Mean squared logarithmic error (MSLE)")
+yaxis!(ylabel="Mean squared logarithmic error (MSLE)",
+        ylims=(0,0.14))
+
+
+plotE = scatter(nsims, 
+        divergences_75, 
+        color = RGB(0/255,158/255,115/255),
+        label = "",
+        alpha = 0.8,
+        framestyle=:box, 
+        grid=false,
+        minorgrid=false,
+        dpi=1000, 
+        size=(600,600), 
+        margin=5Plots.mm, 
+        guidefont=fonts, 
+        xtickfont=fonts, 
+        ytickfont=fonts,
+        foreground_color_legend=:black,
+        background_color_legend=:white, 
+        legendfont=fonts,
+        legendfontpointsize=8,
+        legendfontfamily="Times")
+
+xaxis!(:log,
+        xlabel="Number of samples", 
+        xticks = (a, a))
+
+yaxis!(ylabel="Mean squared logarithmic error (MSLE)",
+      ylims=(0,0.14))
 
 
 
-l = @layout [grid(3,1) d{0.6w}]
+plotF = scatter(nsims, 
+        divergences_50, 
+        color = RGB(230/255,159/255,0/255),
+        label = "",
+        alpha = 0.8,
+        framestyle=:box, 
+        grid=false,
+        minorgrid=false,
+        dpi=1000, 
+        size=(600,600), 
+        margin=5Plots.mm, 
+        guidefont=fonts, 
+        xtickfont=fonts, 
+        ytickfont=fonts,
+        foreground_color_legend=:black,
+        background_color_legend=:white, 
+        legendfont=fonts,
+        legendfontpointsize=8,
+        legendfontfamily="Times")
 
-plot(plotA, plotB, plotC, plotD,
-        title = ["(a) P(L | M) = 1.0" "(b) P(L | M) = 0.75" "(c) P(L | M) = 0.50" "(d)"],
+xaxis!(:log,
+        xlabel="Number of samples", 
+        xticks = (a, a))
+
+yaxis!(ylabel="Mean squared logarithmic error (MSLE)",
+        ylims=(0,0.14))
+
+
+
+l = @layout [grid(2,3)]
+
+plot(plotA, plotB, plotC, plotD, plotE, plotF,
+        title = ["(a) P(L | M) = 1.0" "(b) P(L | M) = 0.75" "(c) P(L | M) = 0.50" "(d) P(L | M) = 1.0" "(e) P(L | M) = 0.75" "(f) P(L | M) = 0.50"],
         titleloc=:right, 
         titlefont=fonts,
         layout = l,
         dpi=1000,
-        size=(800, 800))
+        size=(1000, 600))
         
 savefig(joinpath("figures","network_sampling.png"))
 
