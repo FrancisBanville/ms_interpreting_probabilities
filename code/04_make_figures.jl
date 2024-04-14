@@ -1019,7 +1019,9 @@ for i in 1:length(γ_heat), j in 1:length(λ_heat)
 end
 
 # make heatmap
-plotA = heatmap(λ_heat, γ_heat, p, c = :viridis, 
+plotA = heatmap(λ_heat, γ_heat, p, 
+        c=:viridis, 
+        clims=(0,1),
         label="",
         framestyle=:box, 
         grid=false,
