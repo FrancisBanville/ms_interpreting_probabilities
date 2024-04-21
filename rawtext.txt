@@ -423,6 +423,14 @@ $P(M_{i \rightarrow j})$:
 [$$P(L_{i \rightarrow j}) = P(L_{i \rightarrow j} | M_{i \rightarrow j} = 1)
 \times P(M_{i \rightarrow j} = 1).\qquad{(2)}$$]{#eq:local_meta}
 
+Low values of $P(L_{i \rightarrow j}|M_{i \rightarrow j})$ indicate that
+feasible interactions rarely occur locally, intermediate values around
+$50\%$ suggest considerable spatiotemporal variability, while high
+values indicate that regional interactions are nearly always realized
+locally. The local probability of interaction between a given pair of
+taxa is always equal to or below their probability of regional
+interaction.
+
 The probability that two taxa $i$ and $j$ interact in a local network
 $L$ can thus be conditioned on their co-occurrence $X_{i,j,k}$ (or more
 explicitly on their occurrences $X_{i,k}$ and $X_{j,k}$), local
@@ -674,59 +682,53 @@ and $\gamma$. In both panels, the marginal probabilities of occurrence
 $P(X_{i,k})$ and $P(X_{j,k})$ are set to a constant value of
 $0.5$.](figures/spatiotemporal_model.png){#fig:spatiotemporal}
 
-## Box 2: Dissimilarity of host-parasite networks
+## Box 2: Dissimilarity of local host-parasite networks
 
-We use the collection of tripartite host-parasite networks sampled
-across Europe, created by @Kopelke2017FooStra, in the following case
-studies. This dataset contains well-resolved binary local interactions
-between willows ($52$ species), willow-galling sawflies ($96$ species),
-and their parasitoids ($126$ species). Given its replicated networks
-spanning large spatiotemporal scales, this dataset is well-suited for
-analyzing a variety of ecological hypotheses and processes. Out of a
-total of $374$ local networks, we retained those containing at least $5$
-species, resulting in a set of $233$ georeferenced local networks
-(networks sampled within areas of $0.1$ to $0.3$ km² during June and/or
-July spanning $29$ years). We built a metaweb of binary interactions by
-aggregating all local interactions, which gave us a regional network
-composed of $274$ species and $1080$ interactions. In Fig. 2, we show
-how the dissimilarity between the metaweb and the aggregated local
-networks varies with the number of sampled local networks. To do so, we
-randomly selected one local network of binary interactions and
-sequentially sampled additional networks while aggregating both their
-species and interactions. Next, we compared the metaweb and the
-aggregated local networks using the dissimilarity of interactions
-between common species ($\beta_{OS}$, Fig. 2a) and the dissimilarity in
-species composition ($\beta_{S}$, Fig. 2b) [@Poisot2012Dissimilaritya].
-We repeated this sampling process one hundred times and highlighted the
-median dissimilarity values across simulations, as well as the $50\%$
-and $95\%$ percentile intervals. This shows that networks of local
-interactions are highly dissimilar from the metaweb, both in terms of
-species and interactions, especially when only a limited number of sites
-has been sampled. Both dissimilarity indices were calculated based on
-the number of items shared by the two networks ($c_{LM}$) and the number
-of items unique to the metaweb ($u_M$) and to the aggregated local
-network ($u_L$). The $\beta_{S}$ dissimilarity index uses species
-(nodes) as items being compared, while the $\beta_{OS}$ index assesses
-dissimilarity based on interactions between shared species
-[@Poisot2012Dissimilaritya]. Both indices were calculated following the
-$\beta_W$ index of @Whittaker1960Vegetation:
+We use the collection of tripartite host-parasite networks of
+@Kopelke2017FooStra, consisting of willows, willow-galling sawflies, and
+their natural enemies, sampled across Europe ($233$ local networks
+used). Given its replicated networks spanning large spatiotemporal
+scales, this dataset is well-suited for analyzing network variability,
+both in terms of species composition and interactions. Further details
+regarding data manipulation and network construction can be found in the
+supplementary material.
+
+In Fig. 2a-b, we show how the dissimilarity between the metaweb of
+binary interactions and aggregated local networks varies with the number
+of sampled local networks. To do so, we randomly selected one local
+network of binary interactions and sequentially sampled additional
+networks while aggregating both their species and interactions. We
+compared the metaweb and the aggregated local networks using the
+dissimilarity in species composition ($\beta_{S}$, Fig. 2a) and the
+dissimilarity of interactions between common species ($\beta_{OS}$,
+Fig. 2b) indices [@Poisot2012Dissimilaritya]. We repeated this sampling
+process one hundred times and highlighted the median dissimilarity
+values across simulations, as well as the $50\%$ and $95\%$ percentile
+intervals. Both dissimilarity indices were calculated based on the
+number of items shared by the two networks ($c_{LM}$) and the number of
+items unique to the metaweb ($u_M$) and the aggregated local network
+($u_L$). The $\beta_{S}$ dissimilarity index uses species (nodes) as
+items being compared, while the $\beta_{OS}$ index assesses
+dissimilarity based on interactions between shared species. Both indices
+were calculated following the $\beta_W$ index of
+@Whittaker1960Vegetation:
 
 [$$\beta_W = \frac{c_{LM} + u_L + u_M}{(2 c_{LM} + u_L + u_M) / 2} - 1.\qquad{(12)}$$]{#eq:diss}
 
-![Figure 2: **Network accumulation curves.** (a) Dissimilarity of
-interactions between common species and (b) dissimilarity in species
-composition between aggregated local networks and the metaweb of binary
+![Figure 2: **Network accumulation curves.** (a) Dissimilarity in
+species composition and (b) dissimilarity of interactions between common
+species between aggregated local networks and the metaweb of binary
 host-parasite interactions. Aggregated local networks were obtained by
 sequentially and randomly selecting a number of local networks of binary
 interactions and aggregating both their species and interactions. In
 both panels, the colored line represents the median dissimilarity across
 simulations and the grey areas cover the $50\%$ and $95\%$ percentile
-intervals. (c) Scaling of the number of links and (d) scaling of
-connectance with the number of sampled binary and probabilistic local
-interaction networks. For a better comparison with binary interactions,
-local networks of probabilistic interactions were derived from the
-metaweb of probabilistic interactions with a false positive and false
-negative rate of zero. A specific value of
+intervals. (c) Scaling of the number of interactions and (d) scaling of
+connectance with the number of sampled (aggregated) binary and
+probabilistic local interaction networks. For a better comparison with
+binary interactions, local networks of probabilistic interactions were
+derived from a metaweb of probabilistic interactions with a false
+positive and false negative rate of zero. A specific value of
 $P(L_{i \rightarrow j}|M_{i \rightarrow j})$ (the local probability of
 interaction among potentially interacting species, indices omitted in
 the figure for simplicity) was used for all local networks within a
@@ -737,55 +739,35 @@ interactions (with the value of
 $P(L_{i \rightarrow j}|M_{i \rightarrow j})$ adjusting according to
 Eq. 13).](figures/network_accumulation.png){#fig:accumulation}
 
-Next, we investigate the differences in scaling between networks of
-probabilistic or binary interactions (Fig. 2c-d). We converted these
-binary interaction networks into probabilistic ones using models based
-on simple assumptions. Our models are not designed to estimate the exact
-values of probabilistic interactions. Instead, their purpose is to
-create plausible networks that serve as illustrative examples to
-highlight distinctions between local networks and metawebs of
-probabilistic interactions. We created two metawebs of probabilistic
-interactions by employing constant false positive and false negative
-rates for all regional interactions. In the first metaweb, we set both
-false positive and false negative rates to zero to prevent artificially
-inflating the total number of links, enabling a more accurate comparison
-with binary interaction networks. This gave us a probability of regional
-interaction of $1$ when at least one interaction has been observed
-locally and of $0$ in the absence of any observed interaction between a
-given pair of species (Fig. 2c-d). In the second metaweb (used in the
-next applications), we introduced a $5\%$ false positive rate to account
-for spurious interactions and a $10\%$ false negative rate to address
-the elevated occurrence of missing interactions in ecological networks
-[@Catchen2023Missinga]. We believe these rates represent reasonable
-estimates of missing and spurious potential interactions, but confirming
-their accuracy is challenging due to the unavailability of data on the
-actual feasibility of interaction. Observed interactions were thus given
-a probability of regional interaction of $95\%$, whereas unobserved ones
-were assigned a probability of $10\%$.
+Expectingly, local networks are highly dissimilar from the metaweb in
+terms of species composition, especially when only a limited number of
+sites has been sampled. This is because species in the metaweb form the
+regional species pool, and few species occur locally. Moreover, we
+observe a peak in the dissimilarity of interactions between common
+species at intermediate sampling levels. This suggests that species are
+collected faster than their interactions. With a limited number of
+sampled local networks, few regional interactions are observed locally.
+Adding more sites brings new species, but not always their interactions.
+Interactions are more comprehensively captured when the number of
+sampled sites is high. Quadratic relationships of network properties
+with sampling effort were also observed by @McLeod2021Sampling.
 
-We built local networks of probabilistic interactions using the taxa
-found in the empirical local networks and attributing pairwise
-interaction probabilities based on the metawebs of probabilistic
-interactions and a constant value of
-$P(L_{i \rightarrow j}|M_{i \rightarrow j})$ across interactions. Low
-values of $P(L_{i \rightarrow j}|M_{i \rightarrow j})$ indicate that
-feasible interactions rarely occur locally, intermediate values around
-$50\%$ suggest considerable spatiotemporal variability, while high
-values indicate that regional interactions are nearly always realized
-locally. Following Eq. 2, the local probability of interaction between a
-given pair of taxa consistently remained equal to or below their
-probability of regional interaction.
+Next, we investigate how the number of local interactions and
+connectance scale with the number of sampled (aggregated) local networks
+of probabilistic or binary interactions (Fig. 2c-d). We built
+probabilistic local networks following @local_meta, and set
+$P(M_{i \rightarrow j})$ to $1$ when the interaction was observed at
+least once, and to $0$ otherwise (i.e., no false positive or false
+negative in the metaweb). We used a constant value of
+$P(L_{i \rightarrow j}|M_{i \rightarrow j})$ for all interactions.
 
-In the last two panels of Fig. 2 (c-d), we show how the aggregated
-number of links and connectance scale with the number of sampled local
-networks, according to different values of
-$P(L_{i \rightarrow j}|M_{i \rightarrow j})$. When aggregating local
-networks of probabilistic interactions, the constancy of the probability
-of regional interaction across the entire study area means that any rise
-in the probability of local interaction is solely attributable to an
-increase in $P(L_{i \rightarrow j}|M_{i \rightarrow j})$. For example,
-let $L_1$ and $L_2$ be two local networks and $L_{1,2}$ the aggregated
-network. If $P(L_{1, i \rightarrow j}|M_{i \rightarrow j})$ and
+When aggregating local networks of probabilistic interactions, the
+constancy of the probability of regional interaction across the entire
+study area means that any rise in the probability of local interaction
+is solely attributable to an increase in
+$P(L_{i \rightarrow j}|M_{i \rightarrow j})$. For example, let $L_1$ and
+$L_2$ be two local networks and $L_{1,2}$ the aggregated network. If
+$P(L_{1, i \rightarrow j}|M_{i \rightarrow j})$ and
 $P(L_{2, i \rightarrow j}|M_{i \rightarrow j})$ are the probabilities
 that two potentially interacting taxa interact respectively in $L_1$ and
 $L_2$, the probability $P(L_{1,2, i \rightarrow j}|M_{i \rightarrow j})$
@@ -802,14 +784,24 @@ interaction is realized in either (1) exclusively the local network
 $L_1$, (2) exclusively the local network $L_2$ or (3) both, given that
 the two taxa have the biological capacity to interact.
 
-By comparing the scaling relationships observed in networks of binary
-and probabilistic interactions; Fig. 2 illustrates that high values of
-$P(L_{i \rightarrow j}|M_{i \rightarrow j})$ lead to systematic
-overestimations in the number of links and connectance, especially when
+By comparing the scaling relationships observed in local networks of
+binary (empirical) and probabilistic (modeled) interactions, Fig. 2c-d
+shows that high values of $P(L_{i \rightarrow j}|M_{i \rightarrow j})$
+lead to systematic overestimations in the number of interactions and
+connectance, especially when
 $P(L_{i \rightarrow j}|M_{i \rightarrow j}) = 1$ (corresponding to the
 scenario where local probabilities of interactions are equivalent to the
-probabilities of regional interactions). However, these biases tend to
-diminish as the number of sampled networks increases.
+probabilities of regional interactions). This suggests that high values
+of $P(L_{i \rightarrow j}|M_{i \rightarrow j})$ do not adequately
+capture the variability of local interactions. However, these biases
+tend to diminish as the number of sampled networks increases, indicating
+that most interactions are eventually captured when
+$P(L_{i \rightarrow j}|M_{i \rightarrow j})$ is high. In contrast, low
+values of $P(L_{i \rightarrow j}|M_{i \rightarrow j})$ lead to missing
+interactions, resulting in an underestimation of the number of
+interactions and connectance. These results underscore the importance of
+integrating the appropriate level of variability into our assessment of
+local interaction probabilities.
 
 # Metawebs: regional catalogs of interactions
 
