@@ -606,10 +606,6 @@ feasibility of interactions (e.g., experts' prior assessments of interaction
 probabilities) with empirical data on interactions and traits.
 
 \noindent\fbox{\begin{minipage}{\textwidth}
-\paragraph{Lemma} Let the coefficients of the polynomial
-$$a_0+a_1x+a_2x^2+\cdots+a_{m-1}x^{m-1}+x^m$$ be integers. 
-Then any real root of the polynomial is either integral or irrational.
-\end{minipage}}
 
 ## Box 1: A spatiotemporally explicit model of interactions
 
@@ -700,6 +696,8 @@ $P(X_{i,j,k})$ (@Eq:modelcoprob). This model can be customized in different
 ways, such as by linking $\lambda_k$ with specific environmental variables or
 explicitly incorporating observation errors (i.e., the probabilities of false
 negatives and false positives).
+
+\end{minipage}}
 
 ![**Parameters of the spatiotemporally explicit model of interactions.** (a)
 Probability of local interaction given by the process model (@Eq:modeleq) under
