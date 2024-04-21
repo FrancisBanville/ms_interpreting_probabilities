@@ -605,8 +605,7 @@ This improvement is achieved by updating prior information regarding the
 feasibility of interactions (e.g., experts' prior assessments of interaction
 probabilities) with empirical data on interactions and traits.
 
-\fbox{\begin{minipage}{15em}
-
+\fbox{
 ## Box 1: A spatiotemporally explicit model of interactions
 
 Predicting local networks across time and space is a pivotal goal of network
@@ -705,8 +704,7 @@ the probability of interaction with the duration parameter $t_0$ in @Eq:modeleq,
 for different values of $\lambda_k$ and $\gamma$. In both panels, the marginal
 probabilities of occurrence $P(X_{i,k})$ and $P(X_{j,k})$ are set to a constant
 value of $0.5$.](figures/spatiotemporal_model.png){#fig:spatiotemporal}
-
-\end{minipage}}
+}
 
 # Properties of probabilistic interaction networks
 
