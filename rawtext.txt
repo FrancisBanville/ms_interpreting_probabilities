@@ -709,12 +709,6 @@ by updating prior information regarding the feasibility of interactions
 (e.g., experts' prior assessments of interaction probabilities) with
 empirical data on interactions and traits.
 
-`\noindent`{=tex}`\fbox{%
-    \parbox{\textwidth}{%
-        The quick brown fox jumps right over the lazy dog. the quick brown fox jumps right over the lazy dog. the quick brown fox jumps right over the lazy dog. the quick brown fox jumps right over the lazy dog. the quick brown fox jumps right over the lazy dog. the quick brown fox jumps right over the lazy dog. the quick brown fox jumps right over the lazy dog. the quick brown fox jumps right over the lazy dog.
-    }%
-}`{=tex}
-
 ## Box 1: A spatiotemporally explicit model of interactions
 
 Predicting local networks across time and space is a pivotal goal of
