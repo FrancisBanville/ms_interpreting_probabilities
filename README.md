@@ -199,7 +199,7 @@ interaction data. In the following sections, we delve into these distinctions as
 we scale up from pairwise interactions to higher-level representations of
 ecological networks, i.e. local networks and metawebs.
 
-## Pairwise interactions: the building blocks of ecological networks
+# Pairwise interactions: the building blocks of ecological networks
 
 Local networks and metawebs, like any type of network, are made of nodes and
 edges that may be represented at different levels of organization. The basic
@@ -293,7 +293,7 @@ manipulation of these types of networks first. For these reasons, our primary
 focus is interpreting and using interaction probabilities in Bernoulli
 distributions, in both local networks and metawebs.
 
-## Local networks: communities interacting in space and time
+# Local networks: communities interacting in space and time
 
 Local networks of probabilistic interactions describe how likely taxa are to
 interact at a given location and time period. Local interactions are contingent
@@ -465,7 +465,7 @@ P(mod_1)+ P(L_{i \rightarrow j}|mod_2, ...) \times P(mod_2),$$ {#eq:model_ens}
 where the ellipsis serves as a placeholder for the conditional variables
 incorporated in these models.
 
-## Metawebs: regional catalogs of interactions
+# Metawebs: regional catalogs of interactions
 
 Metawebs [@Dunne2006Network] are networks of potential interactions over broad
 spatial, temporal, and taxonomic scales (e.g., food webs at the continental
@@ -604,6 +604,12 @@ probabilities in metawebs [e.g., @Bartomeus2016ComFra; @Cirtwill2019QuaFra].
 This improvement is achieved by updating prior information regarding the
 feasibility of interactions (e.g., experts' prior assessments of interaction
 probabilities) with empirical data on interactions and traits.
+
+\noindent\fbox{\begin{minipage}{\textwidth}
+\paragraph{Lemma} Let the coefficients of the polynomial
+$$a_0+a_1x+a_2x^2+\cdots+a_{m-1}x^{m-1}+x^m$$ be integers. 
+Then any real root of the polynomial is either integral or irrational.
+\end{minipage}}
 
 ## Box 1: A spatiotemporally explicit model of interactions
 
