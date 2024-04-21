@@ -607,7 +607,7 @@ probabilities) with empirical data on interactions and traits.
 
 \noindent\fbox{\begin{minipage}{\textwidth}
 
-Box 1: A spatiotemporally explicit model of interactions
+## Box 1: A spatiotemporally explicit model of interactions
 
 Predicting local networks across time and space is a pivotal goal of network
 ecology, especially given the scarcity of interaction data
@@ -627,7 +627,7 @@ regional interactions, which are scale-independent. Rather, it could prove
 valuable for predicting local interactions across time and space by generating
 new interaction data following parameter inference.
 
-As indicated by @Eq:co-occur, the probability that two taxa $i$ and $j$ interact
+As indicated by Eq:co-occur, the probability that two taxa $i$ and $j$ interact
 at a specific location and time $l$ may be determined by the product of their
 probability of interaction given co-occurrence and their probability of
 co-occurrence. First, their co-occurrence probability can be calculated using
@@ -697,8 +697,6 @@ ways, such as by linking $\lambda_k$ with specific environmental variables or
 explicitly incorporating observation errors (i.e., the probabilities of false
 negatives and false positives).
 
-\end{minipage}}
-
 ![**Parameters of the spatiotemporally explicit model of interactions.** (a)
 Probability of local interaction given by the process model (@Eq:modeleq) under
 different values of $\lambda_k$ and $\gamma$, with $t_0 = 1$. The parameter
@@ -708,6 +706,7 @@ for different values of $\lambda_k$ and $\gamma$. In both panels, the marginal
 probabilities of occurrence $P(X_{i,k})$ and $P(X_{j,k})$ are set to a constant
 value of $0.5$.](figures/spatiotemporal_model.png){#fig:spatiotemporal}
 
+\end{minipage}}
 
 # Properties of probabilistic interaction networks
 
