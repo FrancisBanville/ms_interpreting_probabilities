@@ -605,8 +605,6 @@ This improvement is achieved by updating prior information regarding the
 feasibility of interactions (e.g., experts' prior assessments of interaction
 probabilities) with empirical data on interactions and traits.
 
-\noindent\fbox{\begin{minipage}{\textwidth}
-
 ## Box 1: A spatiotemporally explicit model of interactions
 
 Predicting local networks across time and space is a pivotal goal of network
@@ -627,7 +625,7 @@ regional interactions, which are scale-independent. Rather, it could prove
 valuable for predicting local interactions across time and space by generating
 new interaction data following parameter inference.
 
-As indicated by Eq:co-occur, the probability that two taxa $i$ and $j$ interact
+As indicated by @Eq:co-occur, the probability that two taxa $i$ and $j$ interact
 at a specific location and time $l$ may be determined by the product of their
 probability of interaction given co-occurrence and their probability of
 co-occurrence. First, their co-occurrence probability can be calculated using
@@ -706,7 +704,6 @@ for different values of $\lambda_k$ and $\gamma$. In both panels, the marginal
 probabilities of occurrence $P(X_{i,k})$ and $P(X_{j,k})$ are set to a constant
 value of $0.5$.](figures/spatiotemporal_model.png){#fig:spatiotemporal}
 
-\end{minipage}}
 
 # Properties of probabilistic interaction networks
 
