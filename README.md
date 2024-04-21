@@ -607,8 +607,8 @@ probabilities) with empirical data on interactions and traits.
 
 \noindent\fbox{%
     \parbox{\textwidth}{%
-    
-## Box 1: A spatiotemporally explicit model of interactions
+
+Box 1: A spatiotemporally explicit model of interactions
 
 Predicting local networks across time and space is a pivotal goal of network
 ecology, especially given the scarcity of interaction data
