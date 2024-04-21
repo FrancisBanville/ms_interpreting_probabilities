@@ -709,12 +709,6 @@ by updating prior information regarding the feasibility of interactions
 (e.g., experts' prior assessments of interaction probabilities) with
 empirical data on interactions and traits.
 
-`\noindent`{=tex}`\fbox{\begin{minipage}{\textwidth}
-\paragraph{Lemma} Let the coefficients of the polynomial
-$$a_0+a_1x+a_2x^2+\cdots+a_{m-1}x^{m-1}+x^m$$ be integers. 
-Then any real root of the polynomial is either integral or irrational.
-\end{minipage}}`{=tex}
-
 ## Box 1: A spatiotemporally explicit model of interactions
 
 Predicting local networks across time and space is a pivotal goal of
