@@ -1074,6 +1074,49 @@
         "type": "article-journal"
     },
     {
+        "issue": "4",
+        "issued": {
+            "date-parts": [
+                [
+                    2024
+                ]
+            ]
+        },
+        "container-title": "Global Ecology and Biogeography",
+        "author": [
+            {
+                "family": "Caron",
+                "given": "Dominique"
+            },
+            {
+                "family": "Brose",
+                "given": "Ulrich"
+            },
+            {
+                "family": "Lurgi",
+                "given": "Miguel"
+            },
+            {
+                "family": "Blanchet",
+                "given": "F. Guillaume"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Pollock",
+                "given": "Laura J."
+            }
+        ],
+        "id": "Caron2024Traitmatching",
+        "DOI": "10.1111/geb.13807",
+        "volume": "33",
+        "page": "e13807",
+        "title": "Trait-matching models predict pairwise interactions across regions, not food web properties",
+        "type": "article-journal"
+    },
+    {
         "issue": "1",
         "issued": {
             "date-parts": [
@@ -1343,6 +1386,33 @@
         "volume": "13",
         "page": "e1005557",
         "title": "Predicting cryptic links in host-parasite networks",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "EcoEvoRxiv",
+        "author": [
+            {
+                "family": "Dansereau",
+                "given": "Gabriel"
+            },
+            {
+                "family": "Barros",
+                "given": "Ceres"
+            },
+            {
+                "family": "Poisot",
+                "given": "Timothée"
+            }
+        ],
+        "id": "Dansereau2023Spatially",
+        "title": "Spatially explicit predictions of food web structure from regional level data",
+        "issued": {
+            "date-parts": [
+                [
+                    2023
+                ]
+            ]
+        },
         "type": "article-journal"
     },
     {
