@@ -528,10 +528,10 @@ incorporated in these models.
 > empirical networks, $\gamma > 1$ holds for the majority of species pairs
 > [@Catchen2023Missinga]. In contrast, repulsions ($\gamma < 1$) may be caused
 > e.g. by strong interspecific competition [@Cazelles2016Theorya]. We model the
-> co-occurrence $X_{i,k} \cap X_{j,k}$ of both taxa as the outcome of a
-> Bernoulli trial
+> co-occurrence $X_{i,k} \cap X_{j,k}$ (hereafter $X_{i,j,k}$) of both taxa as
+> the outcome of a Bernoulli trial
 > 
-> $$X_{i,k} \cap X_{j,k} \sim Bernoulli(P(X_{i,k}, X_{j,k})).$$ {#eq:modelco}
+> $$X_{i,j,k} \sim Bernoulli(P(X_{i,k}, X_{j,k})).$$ {#eq:modelco}
 > 
 > Next, the probability of interaction given co-occurrence can be made
 > temporally explicit by modeling it as a Poisson process with rate parameter
