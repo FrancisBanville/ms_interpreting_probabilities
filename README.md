@@ -657,7 +657,7 @@ of occurrence $P(X_{i,k})$ and $P(X_{j,k})$ are set to a constant value of
 > Next, we investigate how the number of local interactions and connectance
 > scale with the number of sampled (aggregated) local networks of probabilistic
 > or binary interactions ([@Fig:accumulation]c-d). We built probabilistic local
-> networks following @local_meta, and set $P(M_{i \rightarrow j})$ to $1$ when
+> networks following @Eq:local_meta, and set $P(M_{i \rightarrow j})$ to $1$ when
 > the interaction was observed at least once, and to $0$ otherwise (i.e., no
 > false positive or false negative in the metaweb). We used a constant value of
 > $P(L_{i \rightarrow j}|M_{i \rightarrow j})$ for all interactions. 
@@ -847,8 +847,8 @@ probabilities in metawebs [e.g., @Bartomeus2016ComFra; @Cirtwill2019QuaFra].
 This improvement is achieved by updating prior information regarding the
 feasibility of interactions (e.g., experts' prior assessments of interaction
 probabilities) with empirical data on interactions and traits.
-> 
-> ## Box 3: Spatial and temporal scaling of interactions
+
+> ## Box 3: Spatial and temporal scaling of interactions {-}
 > 
 > Network-Area Relationships document the scaling of network properties (such as
 > modularity and trophic chain lengths) with spatial scale [e.g.,
@@ -939,7 +939,7 @@ probabilities) with empirical data on interactions and traits.
 > remaining at their maximum value of $1$ following @Eq:aggregate.
 > ](figures/spatial_scaling.png){#fig:spatial}
 
-> ## Box 4: Taxonomic scaling of interactions 
+> ## Box 4: Taxonomic scaling of interactions {-}
 > 
 > Probabilistic interaction networks offer a versatile approach to tackle a
 > broad array of ecological questions, depending on their level of organization.
@@ -1014,7 +1014,7 @@ probabilities) with empirical data on interactions and traits.
 > aggregate individuals into broader groups (either spatially, temporally, or
 > taxonomically).
 
-> ## Box 5: Sampling for binary interaction networks
+> ## Box 5: Sampling for binary interaction networks {-}
 > 
 > The prediction of binary interactions through Bernoulli trials is an important
 > application of probabilistic interaction networks. This approach proves
