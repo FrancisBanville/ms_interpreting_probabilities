@@ -1597,9 +1597,7 @@ interaction networks</div>
             and connectance scale with the number of sampled
             (aggregated) local networks of probabilistic or binary
             interactions (Fig. 2c-d). We built probabilistic local
-            networks following <span class="citation"
-            data-cites="local_meta">(<strong>local_meta?</strong>)</span>,
-            and set <span
+            networks following Eq. 2, and set <span
             class="math inline"><em>P</em>(<em>M</em><sub><em>i</em> → <em>j</em></sub>)</span>
             to <span class="math inline">1</span> when the interaction
             was observed at least once, and to <span
@@ -1894,135 +1892,166 @@ interaction networks</div>
             2019)</span>. This improvement is achieved by updating prior
             information regarding the feasibility of interactions (e.g.,
             experts’ prior assessments of interaction probabilities)
-            with empirical data on interactions and traits. &gt; &gt; ##
-            Box 3: Spatial and temporal scaling of interactions &gt;
-            &gt; Network-Area Relationships document the scaling of
-            network properties (such as &gt; modularity and trophic
-            chain lengths) with spatial scale <span class="citation"
-            data-cites="Galiana2018Spatiala Wood2015Effects">(e.g., &gt;
+            with empirical data on interactions and traits.</p>
+            <blockquote>
+            <h2 id="box-3-spatial-and-temporal-scaling-of-interactions"
+            class="unnumbered">Box 3: Spatial and temporal scaling of
+            interactions</h2>
+            <p>Network-Area Relationships document the scaling of
+            network properties (such as modularity and trophic chain
+            lengths) with spatial scale <span class="citation"
+            data-cites="Galiana2018Spatiala Wood2015Effects">(e.g.,
             Galiana <em>et al.</em> 2018; Wood <em>et al.</em>
-            2015)</span>. The variations in network structure &gt;
-            across spatial scales may stem from the scaling of species
-            richness &gt; (species-area relationships, SARs), the number
-            of interactions &gt; <span class="citation"
+            2015)</span>. The variations in network structure across
+            spatial scales may stem from the scaling of species richness
+            (species-area relationships, SARs), the number of
+            interactions <span class="citation"
             data-cites="Brose2004UniSpa">(Brose <em>et al.</em>
             2004)</span>, and many other higher-level properties of the
-            system &gt; <span class="citation"
+            system <span class="citation"
             data-cites="Thompson2005Foodweb">(e.g., environmental
             heterogeneity, Thompson &amp; Townsend 2005)</span> with the
-            sampled &gt; area. Additionally, ecological processes
-            occurring at distinct spatial scales, &gt; such as the
-            spatial variability in local community composition resulting
-            from &gt; different sequences of extinction and colonization
-            events, can also contribute &gt; to this variation <span
-            class="citation" data-cites="Galiana2018Spatiala">(Galiana
-            <em>et al.</em> 2018)</span>. Next, interaction accumulation
-            &gt; curves describe the scaling of the number of observed
-            interactions with &gt; sampling effort <span
-            class="citation" data-cites="Jordano2016Samplingb">(Jordano
-            2016)</span>. Sampling effort, which may correspond &gt; to
-            the duration of the sampling period used to construct the
-            network, can &gt; impact connectance <span class="citation"
+            sampled area. Additionally, ecological processes occurring
+            at distinct spatial scales, such as the spatial variability
+            in local community composition resulting from different
+            sequences of extinction and colonization events, can also
+            contribute to this variation <span class="citation"
+            data-cites="Galiana2018Spatiala">(Galiana <em>et al.</em>
+            2018)</span>. Next, interaction accumulation curves describe
+            the scaling of the number of observed interactions with
+            sampling effort <span class="citation"
+            data-cites="Jordano2016Samplingb">(Jordano 2016)</span>.
+            Sampling effort, which may correspond to the duration of the
+            sampling period used to construct the network, can impact
+            connectance <span class="citation"
             data-cites="Bersier1999Scale">(Bersier <em>et al.</em>
-            1999)</span> and various measures of network &gt; structure
-            <span class="citation"
+            1999)</span> and various measures of network structure <span
+            class="citation"
             data-cites="Banasek-Richter2004Sampling McLeod2021Sampling">(Banašek-Richter
             <em>et al.</em> 2004; McLeod <em>et al.</em> 2021)</span>.
-            Apart from &gt; sampling effort, the temporal scaling of
-            interactions also elucidates how &gt; network structure
-            changes with the temporal resolution of the network, &gt;
-            acknowledging that distinct interactions take place over
-            time, ranging from &gt; short-term fluctuations of
-            interactions to long-term trends. As local networks &gt; of
-            probabilistic interactions may explicitly account for the
-            spatiotemporal &gt; variability of interactions, they offer
-            a distinct approach to investigating &gt; the scaling of
-            network structure with space and time, in contrast to
-            networks &gt; of binary and quantitative interactions, by
-            making the stochasticity of &gt; interactions the focal
-            point of the modeling process. &gt; &gt; Local networks and
-            metawebs exhibit distinct relationships with spatial and
-            &gt; temporal scales. On one hand, metawebs of probabilistic
-            interactions, &gt; representing biological feasibility,
-            feature regional interactions that do not &gt; scale with
-            space and time. This is because regional interactions depend
-            solely &gt; on the biological capacity of two taxa to
-            interact, regardless of their &gt; co-occurrence and local
-            environmental conditions. However, probabilities of &gt;
+            Apart from sampling effort, the temporal scaling of
+            interactions also elucidates how network structure changes
+            with the temporal resolution of the network, acknowledging
+            that distinct interactions take place over time, ranging
+            from short-term fluctuations of interactions to long-term
+            trends. As local networks of probabilistic interactions may
+            explicitly account for the spatiotemporal variability of
+            interactions, they offer a distinct approach to
+            investigating the scaling of network structure with space
+            and time, in contrast to networks of binary and quantitative
+            interactions, by making the stochasticity of interactions
+            the focal point of the modeling process.</p>
+            <p>Local networks and metawebs exhibit distinct
+            relationships with spatial and temporal scales. On one hand,
+            metawebs of probabilistic interactions, representing
+            biological feasibility, feature regional interactions that
+            do not scale with space and time. This is because regional
+            interactions depend solely on the biological capacity of two
+            taxa to interact, regardless of their co-occurrence and
+            local environmental conditions. However, probabilities of
             potential interactions may change (tending to become more
-            definitive) upon &gt; updating previous estimates with
-            increased sampling effort, even though they &gt; do not vary
-            in a specific direction with the spatial and temporal extent
-            &gt; (boundaries) of the network. The probability of two
-            taxa potentially &gt; interacting should theoretically be
-            the same in all metawebs in which they are &gt; present,
-            provided that the data and methods used for estimation are
-            &gt; consistent. For example, if a smaller metaweb <span
+            definitive) upon updating previous estimates with increased
+            sampling effort, even though they do not vary in a specific
+            direction with the spatial and temporal extent (boundaries)
+            of the network. The probability of two taxa potentially
+            interacting should theoretically be the same in all metawebs
+            in which they are present, provided that the data and
+            methods used for estimation are consistent. For example, if
+            a smaller metaweb <span
             class="math inline"><em>M</em><sub>1</sub></span> is derived
-            from a larger &gt; metaweb <span
+            from a larger metaweb <span
             class="math inline"><em>M</em><sub>0</sub></span> by
             selecting the subset of taxa present in the region described
-            &gt; by <span
-            class="math inline"><em>M</em><sub>1</sub></span> and
-            retaining all their interactions, their probabilities of
-            &gt; interaction should be identical regardless of scale,
+            by <span class="math inline"><em>M</em><sub>1</sub></span>
+            and retaining all their interactions, their probabilities of
+            interaction should be identical regardless of scale,
             i.e. <span
-            class="math inline"><em>P</em>(<em>M</em><sub>1, <em>i</em> &gt;  → <em>j</em></sub>) = <em>P</em>(<em>M</em><sub>0, <em>i</em> → <em>j</em></sub>)</span>.
-            With a larger or equal number of &gt; taxa in <span
+            class="math inline"><em>P</em>(<em>M</em><sub>1, <em>i</em> → <em>j</em></sub>) = <em>P</em>(<em>M</em><sub>0, <em>i</em> → <em>j</em></sub>)</span>.
+            With a larger or equal number of taxa in <span
             class="math inline"><em>M</em><sub>0</sub></span> as
             compared to <span
             class="math inline"><em>M</em><sub>1</sub></span>, the total
-            number of interactions is &gt; expected to be higher or at
-            least equal in the larger network, even though &gt; pairwise
-            probabilities remain identical. &gt; &gt; On the other hand,
-            local interactions scale both spatially and temporally, &gt;
-            given that they have more opportunities to be realized and
-            observed in larger &gt; areas and longer durations. This is
-            attributed to factors such as a higher &gt; number of
-            individuals, greater trait variations, and increased
-            opportunities &gt; for encounters, as highlighted by <span
-            class="citation" data-cites="McLeod2020EffSpe">McLeod <em>et
-            al.</em> (2020)</span>. For example, if a local &gt; network
-            of probabilistic interactions <span
+            number of interactions is expected to be higher or at least
+            equal in the larger network, even though pairwise
+            probabilities remain identical.</p>
+            <p>On the other hand, local interactions scale both
+            spatially and temporally, given that they have more
+            opportunities to be realized and observed in larger areas
+            and longer durations. This is attributed to factors such as
+            a higher number of individuals, greater trait variations,
+            and increased opportunities for encounters, as highlighted
+            by <span class="citation"
+            data-cites="McLeod2020EffSpe">McLeod <em>et al.</em>
+            (2020)</span>. For example, if a local network of
+            probabilistic interactions <span
             class="math inline"><em>L</em><sub>1</sub></span> with an
             area <span class="math inline"><em>A</em><sub>1</sub></span>
-            is derived from &gt; a larger network <span
+            is derived from a larger network <span
             class="math inline"><em>L</em><sub>0</sub></span> with an
             area <span
             class="math inline"><em>A</em><sub>0</sub></span>, and <span
             class="math inline"><em>A</em><sub>1</sub></span> is
-            entirely nested within &gt; <span
+            entirely nested within <span
             class="math inline"><em>A</em><sub>0</sub></span>,
             interaction probabilities should be lower in the smaller
-            network, i.e. &gt; <span
+            network, i.e. <span
             class="math inline"><em>P</em>(<em>L</em><sub>1, <em>i</em> → <em>j</em></sub>|<em>A</em><sub>1</sub>&lt;<em>A</em><sub>0</sub>) ≤ <em>P</em>(<em>L</em><sub>0, <em>i</em> → <em>j</em></sub>|<em>A</em><sub>0</sub>)</span>.
-            &gt; However, if <span
+            However, if <span
             class="math inline"><em>A</em><sub>1</sub></span> and <span
             class="math inline"><em>A</em><sub>0</sub></span> are
-            disjoint, interaction probabilities could be &gt; higher in
-            the smaller area, contingent upon their environmental and
-            biological &gt; conditions. Likewise, interaction
-            probabilities are expected to be lower in &gt; networks with
-            shorter durations when time intervals are nested. In &gt;
-            Fig. <strong>¿fig:spatial?</strong>, we show how the
-            expected number of local host-parasite &gt; interactions
-            scales with area, represented as an expanding latitudinal
-            window, &gt; in comparison with regional interactions. Even
-            though we employed local &gt; probabilities of interactions
-            equal to regional interactions for the purpose &gt; of
-            comparison (i.e., using <span
+            disjoint, interaction probabilities could be higher in the
+            smaller area, contingent upon their environmental and
+            biological conditions. Likewise, interaction probabilities
+            are expected to be lower in networks with shorter durations
+            when time intervals are nested. In Fig. 3, we show how the
+            expected number of local host-parasite interactions scales
+            with area, represented as an expanding latitudinal window,
+            in comparison with regional interactions. Even though we
+            employed local probabilities of interactions equal to
+            regional interactions for the purpose of comparison (i.e.,
+            using <span
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em> → <em>j</em></sub>|<em>M</em><sub><em>i</em> → <em>j</em></sub>) = 1</span>
-            &gt; here), we notice that the total number of regional
-            interactions scales more &gt; rapidly than local
-            interactions. This is because numerous regional &gt;
-            interactions involve species that never co-occur, and as a
-            result, these &gt; interactions are not captured in local
-            networks. &gt; &gt; <img src="figures/spatial_scaling.png"
-            id="fig:spatial"
-            alt="Spatial scaling of interactions. Expected number of host-parasite &gt; interactions in a network aggregating all (a) local and (b) regional &gt; probabilistic interactions within a latitudinal window of a given length. &gt; Every dashed curve corresponds to a different expanding window characterized &gt; by a different central latitude, with the colored solid line representing the &gt; median number of interactions. Heatmaps of the expected number of (c) local &gt; and (d) regional interactions found in windows of specified length and central &gt; latitudes. Probabilities of regional interactions were obtained with a false &gt; positive rate of 5\% and a false negative rate of 10\%. Local &gt; probabilistic interactions were derived from probabilistic regional &gt; interactions by setting the value of P(L_{i \rightarrow j}|M_{i \rightarrow &gt; j}) (the local probability of interaction among potentially interacting &gt; species) to 1, ensuring a conservative comparison between aggregated local &gt; networks and metawebs. Aggregated local networks were obtained by aggregating &gt; both the species and interactions found within a particular latitudinal &gt; window, with the values of P(L_{i \rightarrow j}|M_{i \rightarrow j}) &gt; remaining at their maximum value of 1 following Eq. 13. &gt;" /></p>
+            here), we notice that the total number of regional
+            interactions scales more rapidly than local interactions.
+            This is because numerous regional interactions involve
+            species that never co-occur, and as a result, these
+            interactions are not captured in local networks.</p>
+            <figure>
+            <img src="figures/spatial_scaling.png" id="fig:spatial"
+            alt="Figure 3: Spatial scaling of interactions. Expected number of host-parasite interactions in a network aggregating all (a) local and (b) regional probabilistic interactions within a latitudinal window of a given length. Every dashed curve corresponds to a different expanding window characterized by a different central latitude, with the colored solid line representing the median number of interactions. Heatmaps of the expected number of (c) local and (d) regional interactions found in windows of specified length and central latitudes. Probabilities of regional interactions were obtained with a false positive rate of 5\% and a false negative rate of 10\%. Local probabilistic interactions were derived from probabilistic regional interactions by setting the value of P(L_{i \rightarrow j}|M_{i \rightarrow j}) (the local probability of interaction among potentially interacting species) to 1, ensuring a conservative comparison between aggregated local networks and metawebs. Aggregated local networks were obtained by aggregating both the species and interactions found within a particular latitudinal window, with the values of P(L_{i \rightarrow j}|M_{i \rightarrow j}) remaining at their maximum value of 1 following Eq. 13." />
+            <figcaption aria-hidden="true">Figure 3: <strong>Spatial
+            scaling of interactions.</strong> Expected number of
+            host-parasite interactions in a network aggregating all (a)
+            local and (b) regional probabilistic interactions within a
+            latitudinal window of a given length. Every dashed curve
+            corresponds to a different expanding window characterized by
+            a different central latitude, with the colored solid line
+            representing the median number of interactions. Heatmaps of
+            the expected number of (c) local and (d) regional
+            interactions found in windows of specified length and
+            central latitudes. Probabilities of regional interactions
+            were obtained with a false positive rate of <span
+            class="math inline">5%</span> and a false negative rate of
+            <span class="math inline">10%</span>. Local probabilistic
+            interactions were derived from probabilistic regional
+            interactions by setting the value of <span
+            class="math inline"><em>P</em>(<em>L</em><sub><em>i</em> → <em>j</em></sub>|<em>M</em><sub><em>i</em> → <em>j</em></sub>)</span>
+            (the local probability of interaction among potentially
+            interacting species) to <span class="math inline">1</span>,
+            ensuring a conservative comparison between aggregated local
+            networks and metawebs. Aggregated local networks were
+            obtained by aggregating both the species and interactions
+            found within a particular latitudinal window, with the
+            values of <span
+            class="math inline"><em>P</em>(<em>L</em><sub><em>i</em> → <em>j</em></sub>|<em>M</em><sub><em>i</em> → <em>j</em></sub>)</span>
+            remaining at their maximum value of <span
+            class="math inline">1</span> following Eq. 13.</figcaption>
+            </figure>
+            </blockquote>
             <blockquote>
-            <h2 id="box-4-taxonomic-scaling-of-interactions">Box 4:
-            Taxonomic scaling of interactions</h2>
+            <h2 id="box-4-taxonomic-scaling-of-interactions"
+            class="unnumbered">Box 4: Taxonomic scaling of
+            interactions</h2>
             <p>Probabilistic interaction networks offer a versatile
             approach to tackle a broad array of ecological questions,
             depending on their level of organization. For instance, the
@@ -2137,8 +2166,9 @@ interaction networks</div>
             temporally, or taxonomically).</p>
             </blockquote>
             <blockquote>
-            <h2 id="box-5-sampling-for-binary-interaction-networks">Box
-            5: Sampling for binary interaction networks</h2>
+            <h2 id="box-5-sampling-for-binary-interaction-networks"
+            class="unnumbered">Box 5: Sampling for binary interaction
+            networks</h2>
             <p>The prediction of binary interactions through Bernoulli
             trials is an important application of probabilistic
             interaction networks. This approach proves beneficial for
@@ -2217,7 +2247,7 @@ interaction networks</div>
             binary interaction networks are sampled independently for
             each location, this second approach introduces spatial
             variation in binary interactions.</p>
-            <p>In Fig. 3, we compare the average connectance of binary
+            <p>In Fig. 4, we compare the average connectance of binary
             interaction networks resulting from these two sampling
             techniques. We drew regional and local interactions from our
             host-parasite networks of probabilistic interactions,
@@ -2232,21 +2262,21 @@ interaction networks</div>
             probability of local interaction to the probability of
             regional interaction (i.e., when using <span
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em> → <em>j</em></sub>|<em>M</em><sub><em>i</em> → <em>j</em></sub>) = 1.0</span>
-            in Eq. 2, Fig. 3a), especially when the number of
+            in Eq. 2, Fig. 4a), especially when the number of
             simulations of binary interaction networks for each location
             is low (<span class="math inline"><em>n</em> = 1</span>). As
             anticipated, we observe that sampling binary interactions
             from the metaweb tends to overestimate connectance on
             average compared to sampling them from local networks
-            (Fig. 3a-c). Furthermore, we observe an increase in the
+            (Fig. 4a-c). Furthermore, we observe an increase in the
             variability of connectance when employing a single
-            simulation (Fig. 3, gray markers), which in our opinion is a
+            simulation (Fig. 4, gray markers), which in our opinion is a
             more tangible representation of the process leading to the
             realization of local interactions in nature.</p>
             <figure>
             <img src="figures/network_sampling.png" id="fig:sampling"
-            alt="Figure 3: Connectance of sampled binary interaction networks. Comparison between the average connectance of binary interaction network samples obtained from the local networks and metawebs of probabilistic interactions. Each dot corresponds to a different site. The local probability of interaction between potentially interacting species was set to three different values: (a) P(L_{i \rightarrow j}|M_{i \rightarrow j}) = 1.0, (b) P(L_{i \rightarrow j}|M_{i \rightarrow j}) = 0.75, and (c) P(L_{i \rightarrow j}|M_{i \rightarrow j}) = 0.50. Grey dots represent the outcome of a single simulation, while colored dots represent the average connectance of each network across 100 simulations. (d) Reduction in the mean squared logarithmic error between the average connectance of binary interaction networks obtained from these two sampling methods as the number of simulations increases, for the same values of P(L_{i \rightarrow j}|M_{i \rightarrow j}) used in panels a-c. Probabilities of regional interactions were obtained with a false positive rate of 5\% and a false negative rate of 10\%. Metaweb samples were obtained by randomly sampling binary interactions from the probabilistic interaction metaweb, and then propagating this result to all local networks that include the species potentially engaged in the interactions. Local binary interaction networks were generated by independently sampling binary interactions for each local network of probabilistic interactions." />
-            <figcaption aria-hidden="true">Figure 3: <strong>Connectance
+            alt="Figure 4: Connectance of sampled binary interaction networks. Comparison between the average connectance of binary interaction network samples obtained from the local networks and metawebs of probabilistic interactions. Each dot corresponds to a different site. The local probability of interaction between potentially interacting species was set to three different values: (a) P(L_{i \rightarrow j}|M_{i \rightarrow j}) = 1.0, (b) P(L_{i \rightarrow j}|M_{i \rightarrow j}) = 0.75, and (c) P(L_{i \rightarrow j}|M_{i \rightarrow j}) = 0.50. Grey dots represent the outcome of a single simulation, while colored dots represent the average connectance of each network across 100 simulations. (d) Reduction in the mean squared logarithmic error between the average connectance of binary interaction networks obtained from these two sampling methods as the number of simulations increases, for the same values of P(L_{i \rightarrow j}|M_{i \rightarrow j}) used in panels a-c. Probabilities of regional interactions were obtained with a false positive rate of 5\% and a false negative rate of 10\%. Metaweb samples were obtained by randomly sampling binary interactions from the probabilistic interaction metaweb, and then propagating this result to all local networks that include the species potentially engaged in the interactions. Local binary interaction networks were generated by independently sampling binary interactions for each local network of probabilistic interactions." />
+            <figcaption aria-hidden="true">Figure 4: <strong>Connectance
             of sampled binary interaction networks.</strong> Comparison
             between the average connectance of binary interaction
             network samples obtained from the local networks and
