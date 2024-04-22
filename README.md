@@ -348,12 +348,12 @@ P(X_{i,k} = 1, X_{j,k} = 1).$${#eq:co-occur}
 Other important factors that can impact interaction probabilities at the local
 scale are taxa local abundances $N_{i,k}$ and $N_{j,k}$, which affect encounter
 probabilities [@Canard2012Emergencea], and local traits distributions $T_{i,k}$
-and $T_{j,k}$ (e.g., body mass, presence of given anatomical features, host
-resistance), which determine the ability of individuals to interact after
-encountering each other [@Poisot2015Speciesa]. Moreover, local interactions may
-be conditional on local environmental factors such as temperature
-[@Angilletta2004TemGro], precipitation [@Woodward2012CliCha], habitat structure
-[@Klecka2014EffHab], and presence of other taxa in the network
+and $T_{j,k}$ [e.g., body mass, longevity, and habitat breadth,
+@Caron2024Traitmatching], which determine the ability of individuals to interact
+after encountering each other [@Poisot2015Speciesa]. Moreover, local
+interactions may be conditional on local environmental factors such as
+temperature [@Angilletta2004TemGro], precipitation [@Woodward2012CliCha],
+habitat structure [@Klecka2014EffHab], and presence of other taxa in the network
 [@Pilosof2017MulNat; @Kefi2012MorMea], as described above. Here, we use the
 variable $E_k$ to describe the local environmental context in which interaction
 probabilities were estimated. For example, in a mesocosm experiment estimating
@@ -449,7 +449,7 @@ not on the observation of interactions.
 | :------ | :-- | :---------- | :------ | -------: |   
 | $P(L_{i \rightarrow j} \vert X_{i,k}, X_{j,k},...)$ | local | realization of the interaction given taxa co-occurrence | spatiotemporal variability | @Gravel2019BriElt | 
 | $P(L_{i \rightarrow j} \vert N_{i,k}, N_{j,k},...)$ | local | realization of the interaction given taxa abundances | neutral models | @Canard2014Empiricala |   
-| $P(L_{i \rightarrow j} \vert T_{i,k}, T_{j,k}, ...)$ | local | realization of the interaction given local traits | trait matching models | @Gravel2016Meaning |  
+| $P(L_{i \rightarrow j} \vert T_{i,k}, T_{j,k}, ...)$ | local | realization of the interaction given local traits | trait matching models | @Caron2024Traitmatching |  
 | $P(L_{i \rightarrow j} \vert E_k,...)$ | local | realization of the interaction given local environmental conditions | environmental-based models | @Gravel2019BriElt (temperature and precipitation) | 
 | $P(L_{i \rightarrow j} \vert A, ...)$ | local | realization of the interaction in a given area or volume | spatial models | @Galiana2018Spatiala * |   
 | $P(L_{i \rightarrow j} \vert t,...)$ | local | realization of the interaction during a given time period | temporal models | @Weinstein2017ComTra |    
@@ -594,7 +594,9 @@ natural enemies, sampled across Europe ($233$ local networks used). Given its
 replicated networks spanning large spatiotemporal scales, this dataset is
 well-suited for analyzing network variability, both in terms of species
 composition and interactions. Further details regarding data manipulation and
-network construction can be found in the supplementary material. 
+network construction can be found in the supplementary material. All code and
+data to reproduce these analyses are available at the Open Science Framework
+(TBD).
 
 In [@Fig:accumulation]a-b, we show how the dissimilarity between the metaweb of
 binary interactions and aggregated local networks varies with the number of
@@ -692,9 +694,9 @@ number of sampled networks increases, indicating that most interactions are
 eventually captured when $P(L_{i \rightarrow j}|M_{i \rightarrow j})$ is high.
 In contrast, low values of $P(L_{i \rightarrow j}|M_{i \rightarrow j})$ lead to
 missing interactions, resulting in an underestimation of the number of
-interactions and connectance. These results underscore the importance of
-integrating the appropriate level of variability into our assessment of local
-interaction probabilities.
+interactions and connectance. These results underscore the importance of using
+the appropriate level of variability when estimating local interaction
+probabilities.
 
 # Metawebs: regional catalogs of interactions
 
@@ -714,13 +716,15 @@ probabilities of potential interactions, as sampling over a larger area or for a
 longer duration enables us to capture a greater number of regional interactions
 [@McLeod2021Sampling]. However, in contrast with local networks of probabilistic
 interactions, which describe local interaction stochasticity, regional
-interactions are not evaluated for any particular local context. Although
-*neutrally* forbidden interactions [i.e., between rare species,
-@Canard2012Emergencea] tend to have low probability values in local networks,
-they may have higher probabilities in the metaweb (i.e., when species'
-biological traits can support an interaction if they were to encounter each
-other). Likewise, non-co-occurring taxa may have a non-zero probability of
-interaction in the metaweb.  
+interactions are not evaluated for any particular local context. In Box 3, we
+discuss the differences in spatial and temporal scaling of regional interactions
+compared to local interactions. We do so by using the host-parasite networks of
+@Kopelke2017FooStra as an illustration of spatial scaling. Although *neutrally*
+forbidden interactions [i.e., between rare species, @Canard2012Emergencea] tend
+to have low probability values in local networks, they may have higher
+probabilities in the metaweb (i.e., when species' biological traits can support
+an interaction if they were to encounter each other). Likewise, non-co-occurring
+taxa may have a non-zero probability of interaction in the metaweb.  
 
 Potential interactions describe what we refer to as the *biological* feasibility
 of interactions, which is based solely on the regional traits distributions
@@ -733,15 +737,21 @@ $$P(M_{i \rightarrow j} | T_i, T_j),$$ {#eq:metaweb}
 which, in contrast with local networks, is not conditioned on any spatial,
 temporal, co-occurrence or environmental variables (@Tbl:prob). Regional traits
 may differ from local traits $T_{i,k}$ and $T_{j,k}$, which may vary spatially
-and temporally due to phenotypic plasticity [@Berg2010Traita]. The biological
-feasibility of interactions expresses our degree of belief that there exists at
-least one combination of phenotypes that could support an interaction if they
-were to encounter each other, assuming they had infinite time to interact.
-Evaluating this probability is conducted without incorporating the environmental
-conditions under which they encounter each other into the model, as the
-complement of the probability $P(F_{i \rightarrow j} | T_i, T_j)$ of forbidden
-interactions based uniquely on biological traits (i.e., the probability that
-their traits do not support an interaction):
+and temporally due to phenotypic plasticity [@Berg2010Traita]. The taxonomic
+level at which interactions are evaluated influences the distribution of
+regional and local traits. However, as explained in Box 4, there is no
+fundamental difference in the taxonomic scaling of regional and local
+interactions (i.e., how interaction probabilities change with taxonomic level),
+unlike their spatial and temporal scaling. 
+
+The biological feasibility of interactions expresses our degree of belief that
+there exists at least one combination of phenotypes that could support an
+interaction if they were to encounter each other, assuming they had infinite
+time to interact. Evaluating this probability is conducted without incorporating
+the environmental conditions under which they encounter each other into the
+model, as the complement of the probability $P(F_{i \rightarrow j} | T_i, T_j)$
+of forbidden interactions based uniquely on biological traits (i.e., the
+probability that their traits do not support an interaction):
 
 $$P(M_{i \rightarrow j} | T_i, T_j) = 1 - P(F_{i \rightarrow j} | T_i, T_j).$$
 {#eq:forbidden}
@@ -836,26 +846,7 @@ This improvement is achieved by updating prior information regarding the
 feasibility of interactions (e.g., experts' prior assessments of interaction
 probabilities) with empirical data on interactions and traits.
 
-
-# Properties of probabilistic interaction networks
-
-Local networks and metawebs of probabilistic interactions differ in their type
-of interactions (i.e., realized or potential) and in the conditional variables
-upon which interaction values depend. These differences are significant as they
-influence the characteristics of probabilistic interaction networks. Neglecting
-to consider them may result in misleading results and interpretation errors when
-analyzing the properties of probabilistic interaction networks, which could be
-particularly problematic when addressing crucial ecological questions about
-networks. Here we compare the characteristics of local networks and metawebs
-through the presentation of five applications of probabilistic interactions: (1)
-describing the dissimilarity between local networks and metawebs of binary and
-probabilistic interactions (2) describing their spatial and temporal scaling,
-(3) describing their taxonomic scaling, (4) sampling for binary interaction
-networks, and (5) reconstructing local networks of probabilistic interactions
-from metawebs. All code and data to reproduce these analyses are available at
-the Open Science Framework (TBD).
-
-## Application 2: Spatial and temporal scaling of interactions
+## Box 3: Spatial and temporal scaling of interactions
 
 Network-Area Relationships document the scaling of network properties (such as
 modularity and trophic chain lengths) with spatial scale [e.g.,
@@ -944,8 +935,7 @@ interactions found within a particular latitudinal window, with the values of
 $P(L_{i \rightarrow j}|M_{i \rightarrow j})$ remaining at their maximum value of
 $1$ following @Eq:aggregate. ](figures/spatial_scaling.png){#fig:spatial}
 
-
-## Application 3: Taxonomic scaling of interactions 
+## Box 4: Taxonomic scaling of interactions 
 
 Probabilistic interaction networks offer a versatile approach to tackle a broad
 array of ecological questions, depending on their level of organization. For
@@ -1017,7 +1007,7 @@ is analogous to the spatial and temporal scaling of interactions, as they all
 represent different ways to aggregate individuals into broader groups (either
 spatially, temporally, or taxonomically).
 
-## Application 4: Sampling for binary interaction networks
+## Box 5: Sampling for binary interaction networks
 
 The prediction of binary interactions through Bernoulli trials is an important
 application of probabilistic interaction networks. This approach proves
@@ -1028,27 +1018,30 @@ formulas for measures describing the structure of the complete network
 interaction, a network of binary interactions may be generated. A probability
 distribution of network properties can be obtained by measuring network
 structure across multiple randomly generated networks [@Poisot2016Structure].
-This method enables the representation of the variability of network structure,
-albeit with possible biases when connectance is low [@Poisot2014WheEco;
-@Chagnon2015ChaTop]. Employing this strategy to generate binary interaction
-networks under a null model facilitates null hypothesis significance testing,
-wherein the observed measure is compared against the simulated distribution
-[e.g., @Bascompte2003NesAss]. Additionally, the random generation of binary
-interaction networks, from a probabilistic interaction network that accounts for
-the spatiotemporal variability of interactions, may effectively capture network
-structure across space and time. This facilitates the investigation of
-ecological hypotheses about interactions at broad spatial and temporal scales.
-Yet, inferring network structure through sampling for binary interactions
-assumes independence among interactions, which might not accurately represent
-reality. Covariation among interactions could exist even if we do not explicitly
-condition interactions on others. For example, an interaction between two taxa
-could be more probable when another interaction occurs. The consequences of this
-assumption of independence on the prediction of network structure have yet to be
-empirically examined. 
+This method enables the representation of the variability or uncertainty of
+network structure, albeit with possible biases when connectance is low
+[@Poisot2014WheEco; @Chagnon2015ChaTop]. Employing this strategy to generate
+binary interaction networks under a null model facilitates null hypothesis
+significance testing, wherein the observed measure is compared against the
+simulated distribution [e.g., @Bascompte2003NesAss]. Yet, inferring network
+structure through sampling for binary interactions assumes independence among
+interactions, which might not accurately represent reality. Covariation among
+interactions could exist even if we do not explicitly condition interactions on
+others. For example, an interaction between two taxa could be more probable when
+another interaction occurs. The consequences of this assumption of independence
+on the prediction of network structure have yet to be empirically examined. In
+Box 5, we argue that predicting binary interactions across space using regional
+interaction probabilities differs from doing so with local interaction
+probabilities. We illustrate both sampling processes using the host-parasite
+networks of @Kopelke2017FooStra. The random generation of binary interaction
+networks, from a local network that accounts for the spatiotemporal variability
+of interactions, may effectively capture network structure across space and
+time, facilitating the investigation of ecological hypotheses about interactions
+at broad spatial and temporal scales.
 
 There are at least two distinct approaches to sample binary interaction networks
 from probabilistic interaction networks across space, for example, when
-attempting to predict a binary interaction network for each location $l$ within
+attempting to predict a binary interaction network for each location $k$ within
 a given region. Both approaches assume independence between interactions. The
 first approach involves performing a singular Bernoulli trial for each pair of
 taxa based on their regional probability of interaction: 
@@ -1133,47 +1126,74 @@ probabilities were estimated. Otherwise, interaction probabilities must be
 adjusted to align with the intended cell size, preventing systematic biases in
 predictions.
 
-## Application 5: Prediction of local networks from metawebs
+# Conclusion
 
-Metawebs serve as a valuable source of ecological information for predicting
-local networks across time and space. Local networks of binary interactions can
-be reconstructed by selecting a subset of taxa and interactions from the metaweb
-[@Dunne2006Network]. This implies that metawebs consistently contain more
-interactions than their corresponding local networks, even though their
-connectance is usually much smaller than the ones of local networks
-[@Gravel2011Trophic]. Determining the list of taxa to select can be achieved
-empirically or through numerical methods like range maps or species distribution
-models. As species composition is arguably less difficult to sample or predict
-than pairwise interactions, the primary challenge lies in deciding which
-interactions to select from the metaweb, a task that may necessitate advanced
-statistical models and ecological expertise. Inferring the structure of local
-networks from the metaweb before predicting specific local pairwise interactions
-could hold promise [@Strydom2021Roadmapa], considering that the structure of
-local networks is constrained by the metaweb [@Saravia2022Ecological].
+In this contribution, we underline the importance of network documentation for
+adequately interpreting and manipulating probabilistic interaction data. The
+mathematical representation of probabilities and their statistical properties
+depend on the type of interactions (local or regional) and the conditions under
+which these interactions were evaluated. We showed that local networks and
+metawebs of probabilistic interactions differ in their relationship to spatial
+and temporal scales (Box 3), with regional interactions remaining consistent
+across scales. In contrast with metawebs, local interactions are measured in a
+specific context (e.g., in a given area, time, and biological and environmental
+conditions) and depend on taxa co-occurrence. These differences bring to light
+the need to use probabilistic data with caution, for instance when generating
+network realizations of binary interactions across space (Box 5). Clear
+documentation describing the type of interaction and the variables used in their
+estimation are required to ensure adequate data manipulation. Sound data
+practices and foundations for probabilistic thinking in network ecology
+facilitate reliable assessments of the spatiotemporal variability and
+uncertainty of biotic interactions. Here we identify key research priorities for
+improving our understanding of local and regional interactions and their
+stochasticity.
 
-Building local networks of probabilistic interactions from a metaweb of
-probabilistic interactions involves a reduction in the value of pairwise
-interaction probabilities. This decrease is attributed to the prerequisite that
-two taxa must initially possess the capacity to interact before engaging in
-local interactions (@Eq:local_meta). Therefore, inferring local networks from
-their metaweb while maintaining identical interaction probability values would
-introduce systematic biases into the predictions. In such cases, these networks
-would essentially represent smaller-scale metawebs of potential interactions,
-possibly leading to misinterpretations by being perceived as local interactions.
-As proposed by @McLeod2021Sampling, although metawebs do not capture the
+## Predicting local networks from metawebs
+
+Metawebs are a valuable source of ecological information for predicting local
+networks across time and space. Local networks of binary interactions can be
+reconstructed by selecting a subset of taxa and interactions from the metaweb
+[@Dunne2006Network]. Metawebs thus contain more interactions than local
+networks, even though their connectance is usually much smaller than the one of
+local networks [@Gravel2011Trophic]. Determining the list of taxa to select can
+be achieved empirically (e.g., observed occurrence data for a site) or
+numerically (e.g., species distribution models). As species composition is
+arguably easier to sample or predict than pairwise interactions, the primary
+challenge lies in deciding which interactions to select from the metaweb.
+Inferring the structure of local networks from the metaweb before predicting
+local pairwise interactions could hold promise [@Strydom2021Roadmapa],
+considering that the structure of local networks is constrained by the metaweb
+[@Saravia2022Ecological].
+
+Inferring local networks of probabilistic interactions from a metaweb comes with
+its own set of challenges. For example, @Dansereau2023Spatially inferred
+spatially-explicit food webs from a metaweb of probabilistic trophic
+interactions between Canadian mammals. Their predicted localized food webs are
+downscaled versions of the metaweb (i.e., localized metawebs with the same
+interaction probabilities as those in the regional metaweb). To infer local
+networks as defined in this manuscript (i.e., describing local realizations of
+interactions), local interaction probabilities must be smaller than regional
+interaction probabilities. This decrease is due to the prerequisite that two
+taxa must initially possess the capacity to interact before engaging in local
+interactions (@Eq:local_meta). Inferring local networks from a metaweb by
+maintaining identical interaction probability values introduces systematic
+biases into the predictions, as discussed in Box 1 (unless networks are seen as
+downscaled metawebs).
+
+As suggested by @McLeod2021Sampling, although metawebs do not capture the
 spatiotemporal variability of interactions, they establish an upper limit for
 local interactions [similarly for metawebs of probabilistic interactions,
-@Strydom2023Graph]. In other words, the probability of two taxa interacting at a
+@Strydom2023Graph]. In other words, the probability that two taxa interact at a
 specific location and time is consistently lower or equal to the probability of
-their regional interaction: 
+their regional interaction, regardless of the conditional variables considered:
 
-$$P(L_{i \rightarrow j} | X_{i,k}, X_{j,k}, N_{i,k}, N_{j,k}, T_{i,k}, T_{j,k},
-E_k, A, t, f(L)) \le P(M_{i \rightarrow j} | T_i, T_j).$$ {#eq:switch}
+$$P(L_{i \rightarrow j} | ...) \le P(M_{i \rightarrow j} | T_i, T_j).$$
+{#eq:switch}
 
 Moreover, the probability that two taxa possess the biological capacity to
-interact must exceed the probability of them interacting at any location and
-time because they may never co-occur or encounter locally. Specifically, the
-cumulative probability of local interactions across all spatial, temporal, and
+interact must be higher than the probability of them interacting at any location
+and time because they may never co-occur or encounter locally. Specifically, the
+cumulative probability of local interaction across all spatial, temporal, and
 environmental conditions must be less than the probability of regional
 interaction, i.e.
 
@@ -1186,89 +1206,75 @@ allows for improved predictions of local networks from the metaweb of
 probabilistic interactions. This task is challenging due to the variability of
 this probability across space and time, as well as its variability across
 pairwise interactions within a network. Using simple models of $P(L_{i
-\rightarrow j}|M_{i \rightarrow j})$, as demonstrated in our case studies,
-represents an initial step toward the overarching objective of reconstructing
-local networks from metawebs.
+\rightarrow j}|M_{i \rightarrow j})$, as shown in Box 1, represents an initial
+step toward the overarching objective of reconstructing local networks from
+metawebs.
 
-# Conclusion
+## Quantifying and reducing interaction uncertainty 
 
-In this contribution, we underline the importance of network metadata for
-adequately interpreting and manipulating probabilistic interaction data. The
-mathematical representation of probabilities and their statistical properties
-depend on the type of interactions (local or regional) and the conditions under
-which these interactions were evaluated. We showed that local networks and
-metawebs of probabilistic interactions differ in their relationship to spatial
-and temporal scales, with regional interactions remaining consistent across
-scales. In contrast with metawebs, local interactions are measured in a specific
-context (e.g., in a given area, time, and biological and environmental
-conditions) and depend on taxa co-occurrence. These differences bring to light
-the need to use probabilistic data with caution, for instance when generating
-network realizations of binary interactions across space and predicting local
-networks from metawebs. Clear metadata describing the type of interaction and
-the variables used in their estimation are required to ensure adequate data
-manipulation. Sound data practices and foundations for probabilistic thinking in
-network ecology could facilitate reliable assessments of the spatiotemporal
-variability and uncertainty of biotic interactions.
+While sampling biological communities decreases the uncertainty of interactions
+by accumulating evidence for their feasibility and local realization, there is a
+limit to how much we can reduce uncertainty. In metawebs, probabilities reflect
+our limited knowledge of interactions (i.e., our degree of belief that
+interactions are feasible), which is expected to improve with a larger volume of
+data. Regional interactions should become more definitive (with probabilities
+approaching $0$ or $1$) as we investigate various conditions, including
+different combinations of species traits. 
+
+In comparison, although local networks can be seen as random instances of
+metawebs, their stochasticity cannot be reduced to the same extent. Local
+interaction probabilities may represent both their uncertainty and
+spatiotemporal variability. Owing to environmental heterogeneity, there will
+invariably be instances in which an interaction occurs and others in which it
+does not, across different times and locations, irrespective of the extent to
+which we can improve our knowledge of its biological feasibility and the local
+conditions that facilitate its occurrence. When local networks describe
+probabilities of observing interactions rather than their actual occurrence, we
+must also consider observation variability (sampling error) as an additional
+source of stochasticity. Every ecological process is stochastic but there is
+also a possibility that a phenomenon goes undetected. Quantifying and
+partitioning this stochasticity will enable us to make more accurate predictions
+about ecological interactions at various spatial and temporal scales. This will
+prove to be of vital importance as our time to understand nature runs out,
+especially at locations where the impacts of climate change and habitat loss hit
+harder.
+
+## Relaxing the independence assumption  
 
 Estimating local interaction probabilities independently for each taxa pair and
 assembling them into a network of probabilistic interactions comes with
 limitations. Predicting local networks of binary interactions based on these
 interaction probabilities assumes independence among interactions, a condition
 seldom respected in practice [@Golubski2011ModMod]. Relaxing this assumption is
-the next logical step in the stochastic representation of interactions. A more
-accurate representation of the stochasticity of ecological networks involves
-creating *probabilistic networks* ($P(L|...)$ and $P(M|...)$), rather than
-networks of *probabilistic interactions* ($P(L_{i \rightarrow j}|...)$ and
+the next logical step in the stochastic representation of interactions. 
+
+A more accurate representation of the stochasticity of ecological networks
+involves creating *probabilistic networks* ($P(L|...)$ and $P(M|...)$), rather
+than networks of *probabilistic interactions* ($P(L_{i \rightarrow j}|...)$ and
 $P(M_{i \rightarrow j}|...)$). Probabilistic networks describe the probability
 that a particular network of binary (or quantitative) interactions (its whole
 adjacency matrix) is realized. For example, @Young2021Reconstructiona used a
 Bayesian approach to estimate the probability of different plant-pollinator
 network structures derived from imperfect observational data. A probability
 distribution of ecological networks may also be derived using the principle of
-maximum entropy given some structural constrained [e.g., @Cimini2019Statistical;
-@Park2004Statisticala]. Regardless of the method employed, generating
-probabilistic local networks, bypassing the need to independently estimate local
-interaction probabilities, could lead to more accurate predictions of local
-networks. Furthermore, probabilistic networks could serve as an alternative to
-null hypothesis significance testing when comparing the structure of a local
-network to some random expectations or, as done in @Pellissier2018Comparing, to
-the metaweb. These random expectations are typically derived by performing a
-series of Bernoulli trials on probabilistic interactions, assuming independence,
-to generate a distribution of networks of binary interactions and then calculate
-their structure [@Poisot2016Structure]. One could for instance compare the
-likelihood of an observed network to the one of the most likely network
-structure according to the probabilistic network distribution, thereby directly
-obtaining a measure of discrepancy of the empirical network. Generating
-probabilistic ecological networks represents a tangible challenge, one that, in
-the coming years, promises to unlock doors to more advanced and adequate
-analyses of ecological networks.
+maximum entropy given structural constrained [e.g., @Cimini2019Statistical;
+@Park2004Statisticala]. 
 
-It is essential to enhance our comprehension of both regional and local
-interactions, especially considering the current scarcity of interaction data.
-While sampling biological communities does decrease the uncertainty of
-interactions by accumulating evidence for their feasibility and local
-realization, there is a limit to how much we can reduce uncertainty. In
-metawebs, probabilities reflect our limited knowledge of interactions (i.e., our
-degree of belief that interactions are feasible), which is expected to improve
-with a larger volume of data. Regional interactions should become more
-definitive (with probabilities approaching $0$ or $1$) as we investigate various
-conditions, including different combinations of species traits. In comparison,
-although local networks can be seen as random instances of metawebs, their
-randomness cannot be reduced to the same extent. Local interaction probabilities
-may represent both their uncertainty and spatiotemporal variability. Owing to
-environmental heterogeneity, there will invariably be instances in which an
-interaction occurs and others in which it does not, across different times and
-locations, irrespective of the extent to which we can improve our knowledge of
-its biological feasibility and the local conditions that facilitate its
-occurrence. When local networks describe probabilities of observing interactions
-rather than their actual occurrence, we must also consider observation
-variability (sampling error) as an additional source of stochasticity. Every
-ecological process is stochastic but there is also a possibility that a
-phenomenon goes undetected. Quantifying and partitioning this stochasticity will
-enable us to make more accurate predictions about ecological interactions at
-various spatial and temporal scales. This will prove to be of vital importance
-as our time to understand nature runs out, especially at locations where the
-impacts of climate change and habitat loss hit harder.
+Regardless of the method employed, generating probabilistic local networks could
+lead to more accurate predictions of local networks of binary interactions by
+bypassing the independence assumption. Probabilistic networks could serve as an
+alternative to null hypothesis significance testing when comparing the structure
+of a local network to some random expectations or, as done in
+@Pellissier2018Comparing, to the metaweb. These random expectations are
+typically derived by performing a series of Bernoulli trials on probabilistic
+interactions, assuming independence, to generate a distribution of networks of
+binary interactions to calculate their structure [@Poisot2016Structure]. One
+could for instance compare the likelihood of an observed network to the one of
+the most likely network structure (according to the probabilistic network
+distribution), thereby directly obtaining a measure of discrepancy of the
+empirical network. Generating probabilistic ecological networks represents a
+tangible challenge, one that, in the coming years, promises to unlock doors to
+more advanced and adequate analyses of ecological networks.
 
 # Acknowledgment
 
