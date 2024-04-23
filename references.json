@@ -4230,6 +4230,42 @@
         "type": "article-journal"
     },
     {
+        "publisher": "Nature Portfolio",
+        "publisher-place": "Berlin",
+        "issued": {
+            "date-parts": [
+                [
+                    2017
+                ]
+            ]
+        },
+        "container-title": "SCIENTIFIC REPORTS",
+        "author": [
+            {
+                "family": "Stock",
+                "given": "Michiel"
+            },
+            {
+                "family": "Poisot",
+                "given": "Timothee"
+            },
+            {
+                "family": "Waegeman",
+                "given": "Willem"
+            },
+            {
+                "family": "De Baets",
+                "given": "Bernard"
+            }
+        ],
+        "id": "Stock2017Linear",
+        "DOI": "10.1038/srep45908",
+        "volume": "7",
+        "page": "45908",
+        "title": "Linear filtering reveals false negatives in species interaction data",
+        "type": "article-journal"
+    },
+    {
         "issue": "3",
         "issued": {
             "date-parts": [
