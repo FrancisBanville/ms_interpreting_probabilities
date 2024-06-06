@@ -251,7 +251,7 @@ plot!(1:n_samples,
     alpha=0.6,
     linestyle=:dash,
     linewidth=2,
-    label="P(Li,j | Mi,j) = 1.0")
+    label="P(Li,j,k | Mi,j) = 1.0")
 
 plot!(1:n_samples,
     Ns_M3_p75_links,
@@ -259,7 +259,7 @@ plot!(1:n_samples,
     alpha=0.6,
     linestyle=:dashdot,
     linewidth=1.5,
-    label="P(Li,j | Mi,j) = 0.75")
+    label="P(Li,j,k | Mi,j) = 0.75")
 
 plot!(1:n_samples,
     Ns_M3_p50_links,
@@ -267,7 +267,7 @@ plot!(1:n_samples,
     alpha=0.6,
     linestyle=:dot,
     linewidth=2,
-    label="P(Li,j | Mi,j) = 0.50")
+    label="P(Li,j,k | Mi,j) = 0.50")
 
 xaxis!(:log,
     xlabel="Number of sampled local networks", 
@@ -305,7 +305,7 @@ plot!(1:n_samples,
     alpha=0.6,
     linestyle=:dash,
     linewidth=2,
-    label="P(Li,j | Mi,j) = 1.0")
+    label="P(Li,j,k | Mi,j) = 1.0")
 
 plot!(1:n_samples,
     Ns_M3_p75_co,
@@ -313,7 +313,7 @@ plot!(1:n_samples,
     alpha=0.6,
     linestyle=:dashdot,
     linewidth=1.5,
-    label="P(Li,j | Mi,j) = 0.75")
+    label="P(Li,j,k | Mi,j) = 0.75")
 
 plot!(1:n_samples,
     Ns_M3_p50_co,
@@ -321,7 +321,7 @@ plot!(1:n_samples,
     alpha=0.6,
     linestyle=:dot,
     linewidth=2,
-    label="P(Li,j | Mi,j) = 0.50")
+    label="P(Li,j,k | Mi,j) = 0.50")
 
 
 xaxis!(:log,
@@ -732,7 +732,7 @@ yaxis!(ylabel="Mean squared logarithmic error (MSLE)",
 l = @layout [grid(2,3)]
 
 plot(plotA, plotB, plotC, plotD, plotE, plotF,
-        title = ["(a) P(Li,j | Mi,j) = 1.0" "(b) P(Li,j | Mi,j) = 0.75" "(c) P(Li,j | Mi,j) = 0.50" "(d) P(Li,j | Mi,j) = 1.0" "(e) P(Li,j | Mi,j) = 0.75" "(f) P(Li,j | Mi,j) = 0.50"],
+        title = ["(a) P(Li,j,k | Mi,j) = 1.0" "(b) P(Li,j,k | Mi,j) = 0.75" "(c) P(Li,j,k | Mi,j) = 0.50" "(d) P(Li,j,k | Mi,j) = 1.0" "(e) P(Li,j,k | Mi,j) = 0.75" "(f) P(Li,j,k | Mi,j) = 0.50"],
         titleloc=:right, 
         titlefont=fonts,
         layout = l,
@@ -1013,7 +1013,7 @@ end
 xaxis!(xlabel="Duration t0",
     xlims=(0, Inf))
 
-yaxis!(ylabel="Probability of interaction P(Li,j)", 
+yaxis!(ylabel="Probability of interaction P(Li,j,k)", 
         ylims=(0, 0.52))
 
 
