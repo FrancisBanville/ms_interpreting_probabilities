@@ -387,10 +387,18 @@ $X_{i,j,k}$, which is usually a Boolean describing if the geographic
 distributions of both taxa overlap within the study area. As illustrated
 in Box 1, co-occurrence may be modeled probabilistically, in which case
 it may conform to a Bernoulli distribution
-$X_{i,j,k} \sim {\rm Bernoulli}(P(X_{i,k}, X_{j,k}))$, where $X_{i,k}$
-and $X_{j,k}$ are the local occurrences of both taxa. The probability of
-co-occurrence $P(X_{i,k}, X_{j,k})$ can be estimated through the
-application of joint species distribution models [e.g.,
+$X_{i,j,k} \sim {\rm Bernoulli}(P(X_{i,j,k}))$. The probability of
+co-occurrence can be calculated using the individual (marginal)
+occurrence probabilities $P(X_{i,k})$ and $P(X_{j,k})$. Given that taxa
+occurrences are not independent of each other, the joint probability of
+both taxa occurring together can be calculated by multiplying the
+probability of one taxon being present by the conditional probability of
+the other occurring when the first one is present:
+
+[$$P(X_{i,j,k}) = P(X_{i,k}, X_{j,k})= P(X_{i,k} | X_{j,k}) P(X_{j,k})\qquad{(1)}$$]{#eq:modelcoprob}
+
+The probability of co-occurrence $P(X_{i,j,k})$ can be estimated through
+the application of joint species distribution models [e.g.,
 @Pollock2014UndCoo], potentially taking into account biotic interactions
 [@Staniczenko2017Linking]. Given that the probability that two
 non-co-occurring taxa interact locally is zero (i.e.,
@@ -399,7 +407,7 @@ interaction can be obtained by multiplying the probability of
 interaction given co-occurrence with the probability of co-occurrence:
 
 [$$P(L_{i \rightarrow j}) = P(L_{i \rightarrow j}| X_{i,j,k} = 1) \times
-P(X_{i,k} = 1, X_{j,k} = 1).\qquad{(1)}$$]{#eq:co-occur}
+P(X_{i,j,k} = 1).\qquad{(2)}$$]{#eq:co-occur}
 
 ### Biological and environmental factors
 
@@ -445,7 +453,7 @@ sake of simplicity, with their probability of regional interaction
 $P(M_{i \rightarrow j})$:
 
 [$$P(L_{i \rightarrow j}) = P(L_{i \rightarrow j} | M_{i \rightarrow j} = 1)
-\times P(M_{i \rightarrow j} = 1).\qquad{(2)}$$]{#eq:local_meta}
+\times P(M_{i \rightarrow j} = 1).\qquad{(3)}$$]{#eq:local_meta}
 
 Low values of $P(L_{i \rightarrow j}|M_{i \rightarrow j})$ indicate that
 feasible interactions rarely occur locally, intermediate values around
@@ -478,7 +486,7 @@ described by the following expression when all these conditional
 variables are included:
 
 [$$P(L_{i \rightarrow j} | X_{i,k}, X_{j,k}, N_{i,k}, N_{j,k}, T_{i,k}, T_{j,k},
-E_k, A, t, f(L), M_{i \rightarrow j})\qquad{(3)}$$]{#eq:local}
+E_k, A, t, f(L), M_{i \rightarrow j})\qquad{(4)}$$]{#eq:local}
 
 The representation of the local context in which probabilities are
 estimated and the variables that should be taken into consideration
@@ -494,7 +502,7 @@ reuse these data to show the extent of variation among these local
 networks. We do so by measuring their dissimilarity with the regional
 network (metaweb aggregating all local interactions), both in terms of
 species composition and interactions. We build local probabilistic
-networks following eq. 2, showing that insufficient local variation
+networks following eq. 3, showing that insufficient local variation
 (high probability of local interaction among potentially interacting
 species) results in an overestimation in both the number of interactions
 and connectance (i.e., the proportion of all of the non-forbidden links
@@ -605,7 +613,7 @@ weights) $P(mod_1)$ and $P(mod_2)$, the average probability of
 interaction $P(L_{i \rightarrow j}|...)$ can be calculated as follows:
 
 [$$P(L_{i \rightarrow j}|...) = P(L_{i \rightarrow j}|mod_1, ...) \times
-P(mod_1)+ P(L_{i \rightarrow j}|mod_2, ...) \times P(mod_2),\qquad{(4)}$$]{#eq:model_ens}
+P(mod_1)+ P(L_{i \rightarrow j}|mod_2, ...) \times P(mod_2),\qquad{(5)}$$]{#eq:model_ens}
 
 where the ellipsis serves as a placeholder for the conditional variables
 incorporated in these models. Model structure constitutes another source
@@ -614,107 +622,68 @@ estimating interaction probabilities.
 
 > ## Box 1: A spatiotemporally explicit model of interactions {#box-1-a-spatiotemporally-explicit-model-of-interactions .unnumbered}
 >
-> Ecologists may resort to predictive models (e.g., generative Bayesian
-> models) to reconstruct local networks across time and space
-> [@Strydom2021Roadmapa]. Uncertainty in model parameters, model
-> structure, and input data leads to probabilistic interactions. We
-> introduce and develop a simple generative mechanistic model for
-> probabilistic local interactions that takes into consideration their
-> spatiotemporal variability (i.e., a spatiotemporally explicit model of
-> local interactions). This model is not designed for regional
-> interactions, which do not vary spatially and temporally. Rather, it
-> may prove valuable for predicting local interactions across time and
-> space by generating new interaction data following parameter
+> Ecologists may resort to predictive models to reconstruct local
+> networks across time and space. We introduce and develop a simple
+> generative Bayesian model for probabilistic local interactions, which
+> explicitly accounts for their spatiotemporal variability. Our model is
+> not designed for regional interactions, which do not vary spatially
+> nor temporally. Rather, it could prove valuable for generating new
+> data on local interactions across time and space, following parameter
 > inference.
 >
-> As indicated by Eq. 1, the probability that two taxa $i$ and $j$
-> interact at a specific location and time $k$ may be determined by the
-> product of their probability of interaction given co-occurrence and
-> their probability of co-occurrence. First, their co-occurrence
-> probability can be calculated using their individual (marginal)
-> occurrence probabilities $P(X_{i,k})$ and $P(X_{j,k})$. Given that
-> taxa occurrences are not independent of each other, the joint
-> probability of both taxa occurring together can be calculated by
-> multiplying the probability of one taxon being present by the
-> conditional probability of the other occurring when the first one is
-> present. Alternatively, the joint occurrence probability can be
-> obtained by multiplying the marginal probabilities by the strength of
-> association $\gamma$ between the occurrences of both taxa
-> [@Cazelles2016Theorya]:
+> As indicated by Eq. 2, the probability that two taxa $i$ and $j$
+> interact locally can be obtained by multiplying their probability of
+> interaction given co-occurrence with their probability of
+> co-occurrence. The probability of interaction given co-occurrence can
+> be made temporally explicit by modeling it as a Poisson process with
+> rate parameter $\lambda_k$. This parameter represents the local
+> expected frequency of interaction between co-occurring taxa. The
+> probability that two co-occurring taxa interact during a time interval
+> $t_0$ can be given by:
 >
-> [$$P(X_{i,k}, X_{j,k}) = P(X_{i,k} | X_{j,k}) P(X_{j,k})  = P(X_{i,k})
-> P(X_{j,k}) \gamma.\qquad{(5)}$$]{#eq:modelcoprob}
+> [$$P(L_{i \rightarrow j} | X_{i,j,k}) = 1-e^{-\lambda_k t_0},\qquad{(6)}$$]{#eq:modelrate}
 >
-> When $\gamma > 1$, there is a positive association in the geographic
-> distributions of both taxa, indicating that the presence of one taxon
-> enhances the probability of occurrence of the other. Attractions may
-> be the result of positive interactions (e.g., mutualism) or
-> positive/negative interactions [e.g., antagonism between predators and
-> prey, @Cazelles2016Theorya]. In empirical networks, $\gamma > 1$ holds
-> for the majority of species pairs [@Catchen2023Missinga]. In contrast,
-> repulsions ($\gamma < 1$) may be caused e.g. by strong interspecific
-> competition [@Cazelles2016Theorya]. We model the co-occurrence
-> $X_{i,k} \cap X_{j,k}$ (hereafter $X_{i,j,k}$) of both taxa as the
-> outcome of a Bernoulli trial
+> which tends toward $1$ as $t_0 \to \infty$ if $\lambda_k > 0$. In
+> other words, two co-occurring taxa with a nonzero rate of interaction
+> will inevitably interact in a sufficiently long time interval.
 >
-> [$$X_{i,j,k} \sim Bernoulli(P(X_{i,k}, X_{j,k})).\qquad{(6)}$$]{#eq:modelco}
+> The occurrence of an interaction between $i$ and $j$ may be the result
+> of a Bernoulli trial with probability $P(L_{i \rightarrow j})$. A
+> Bayesian model can be built using the preceding equations to generate
+> new interaction data, following the inference of the $\lambda_k$ and
+> $P(X_{i,j,k})$ parameters.
 >
-> Next, the probability of interaction given co-occurrence can be made
-> temporally explicit by modeling it as a Poisson process with rate
-> parameter $\lambda_k$. This parameter represents the local expected
-> frequency of interaction between the taxa within a defined time
-> interval and can be estimated using prior data on interaction
-> strengths, when accessible. The probability that two co-occurring taxa
-> engage in an interaction during a time period $t_0$ is given by:
+> [$$L_{i \rightarrow j} \sim \text{Bernoulli}(P(L_{i \rightarrow j}))\qquad{(7)}$$]{#eq:model}
 >
-> [$$P(L_{i \rightarrow j} | X_{i,k}, X_{j,k}) = 1-e^{-\lambda_k t_0},\qquad{(7)}$$]{#eq:modelrate}
+> [$$P(L_{i \rightarrow j}) = P(X_{i,j,k})(1-e^{-\lambda_k t_0})\qquad{(8)}$$]{#eq:modeleq}
 >
-> which tends toward $1$ as $t_0 \to \infty$ if $\lambda > 0$. In other
-> words, two co-occurring taxa with a nonzero rate of interaction will
-> inevitably interact in a sufficiently long time period. It is
-> important to note that the units of $\lambda_k$ and $t_0$ are
-> complementary. For instance, if the duration $t_0$ is measured in
-> months, $\lambda_k$ would denote the expected number of interactions
-> per month.
+> [$$P(X_{i,j,k}) \sim \text{Beta}(2,2)\qquad{(9)}$$]{#eq:modelgamma}
 >
-> The occurrence of an interaction between $i$ and $j$ can be modeled as
-> a Bernoulli trial with a probability of $P(L_{i \rightarrow j})$.
-> Consequently, a Bayesian inference model can be built based on the
-> preceding equations to estimate the value of the $\lambda_k$ and
-> $\gamma$ parameters and generate novel interaction data:
->
-> [$$L_{i \rightarrow j} \sim \text{Bernoulli}(P(L_{i \rightarrow j}))\qquad{(8)}$$]{#eq:model}
->
-> [$$P(L_{i \rightarrow j}) = P(X_{i,k}) P(X_{j,k}) \gamma (1-e^{-\lambda_k
-> t_0})\qquad{(9)}$$]{#eq:modeleq}
->
-> [$$\gamma \sim \text{Gamma}(2,0.5)\qquad{(10)}$$]{#eq:modelgamma}
->
-> [$$\lambda_k \sim \text{Exponential}(2)\qquad{(11)}$$]{#eq:modellambda}
+> [$$\lambda_k \sim \text{Exponential}(2)\qquad{(10)}$$]{#eq:modellambda}
 >
 > In Fig. 1, we show the variation in the probability of interaction
-> under different parameter values. In the right panel, we notice that,
-> irrespective of the interaction rate $\lambda_k$, the probability of
-> interaction converges toward an asymptote determined by the
-> probability of co-occurrence $P(X_{i,k}, X_{j,k})$ (Eq. 5). This model
-> can be customized in different ways, such as by linking $\lambda_k$
-> with specific environmental variables or explicitly incorporating
-> observation errors (i.e., the probabilities of false negatives and
-> false positives).
+> under different parameter values. In the right panel, we notice that
+> the probability of interaction always converges toward the probability
+> of co-occurrence $P(X_{i,j,k})$, for all positive values of the
+> interaction rate.
 >
 > ![Figure 1: **Parameters of the spatiotemporally explicit model of
 > interactions.** (a) Probability of local interaction given by the
-> process model (Eq. 9) under different values of $\lambda_k$
-> (interaction rate) and $\gamma$ (strength of co-occurrence), with
-> $t_0 = 1$ (duration). Parameters $t_0$ and $\lambda_k$ have
+> process model (Eq. 8) under different values of $\lambda_k$
+> (interaction rate) and $P(X_{i,j,k})$ (probability of co-occurrence),
+> with $t_0 = 1$ (duration). Parameters $t_0$ and $\lambda_k$ have
 > complementary units (e.g., $t_0$ in months and $\lambda_k$ in number
 > of interactions per month). The parameter values used in the right
 > panel are denoted by the white stars. (b) Scaling of the probability
-> of interaction with the duration parameter $t_0$ in Eq. 9, for
-> different values of $\lambda_k$ and $\gamma$. In both panels, the
-> marginal probabilities of occurrence $P(X_{i,k})$ and $P(X_{j,k})$ are
-> set to a constant value of
-> $0.5$.](figures/spatiotemporal_model.png){#fig:spatiotemporal}
+> of interaction with the duration parameter $t_0$, for different values
+> of $\lambda_k$ and
+> $P(X_{i,j,k})$.](figures/spatiotemporal_model.png){#fig:spatiotemporal}
+>
+> This model can be customized in different ways, such as linking both
+> parameters to specific environmental or biological variables. For
+> instance, the probability of co-occurrence could be modeled as a
+> function of climatic variables, while the interaction rate parameter
+> could be modeled based on taxa abundances.
 
 > ## Box 2: Dissimilarity of local host-parasite networks {#box-2-dissimilarity-of-local-host-parasite-networks .unnumbered}
 >
@@ -748,7 +717,7 @@ estimating interaction probabilities.
 > between shared species. Both indices were calculated following the
 > $\beta_W$ index of @Whittaker1960Vegetation:
 >
-> [$$\beta_W = \frac{c_{LM} + u_L + u_M}{(2 c_{LM} + u_L + u_M) / 2} - 1.\qquad{(12)}$$]{#eq:diss}
+> [$$\beta_W = \frac{c_{LM} + u_L + u_M}{(2 c_{LM} + u_L + u_M) / 2} - 1.\qquad{(11)}$$]{#eq:diss}
 >
 > ![Figure 2: **Network accumulation curves.** (a) Dissimilarity in
 > species composition and (b) dissimilarity of interactions between
@@ -773,7 +742,7 @@ estimating interaction probabilities.
 > number of local networks and aggregating both their species and
 > interactions (with the value of
 > $P(L_{i \rightarrow j}|M_{i \rightarrow j})$ adjusting according to
-> Eq. 13).](figures/network_accumulation.png){#fig:accumulation}
+> Eq. 12).](figures/network_accumulation.png){#fig:accumulation}
 >
 > Expectingly, local networks are highly dissimilar from the metaweb in
 > terms of species composition, especially when only a limited number of
@@ -792,7 +761,7 @@ estimating interaction probabilities.
 > Next, we investigate how the number of local interactions and
 > connectance scale with the number of sampled (aggregated) local
 > networks of probabilistic or binary interactions (Fig. 2c-d). We built
-> probabilistic local networks following Eq. 2, and set
+> probabilistic local networks following Eq. 3, and set
 > $P(M_{i \rightarrow j})$ to $1$ when the interaction was observed at
 > least once, and to $0$ otherwise (i.e., no false positive or false
 > negative in the metaweb). We used a constant value of
@@ -813,7 +782,7 @@ estimating interaction probabilities.
 >
 > [$$P(L_{1,2, i \rightarrow j}|M_{i \rightarrow j}) = 1 - [1 - P(L_{1, i
 > \rightarrow j}|M_{i \rightarrow j})] \times [1 - P(L_{2, i \rightarrow j}|M_{i
-> \rightarrow j})],\qquad{(13)}$$]{#eq:aggregate}
+> \rightarrow j})],\qquad{(12)}$$]{#eq:aggregate}
 >
 > assuming independence between the interaction of the two taxa in
 > different networks. This equation represents the probability that the
@@ -885,7 +854,7 @@ traits distributions $T_i$ and $T_j$ of taxa $i$ and $j$, respectively.
 A probability of potential interaction in a metaweb $M$ describing the
 biological feasibility of interactions may be expressed as:
 
-[$$P(M_{i \rightarrow j} | T_i, T_j),\qquad{(14)}$$]{#eq:metaweb}
+[$$P(M_{i \rightarrow j} | T_i, T_j),\qquad{(13)}$$]{#eq:metaweb}
 
 which, in contrast with local networks, is not conditioned on any
 spatial, temporal, co-occurrence or environmental variables (Tbl. 1).
@@ -908,7 +877,7 @@ the probability $P(F_{i \rightarrow j} | T_i, T_j)$ of forbidden
 interactions (i.e., the probability that their traits do not support an
 interaction), which is based uniquely on biological traits:
 
-[$$P(M_{i \rightarrow j} | T_i, T_j) = 1 - P(F_{i \rightarrow j} | T_i, T_j).\qquad{(15)}$$]{#eq:forbidden}
+[$$P(M_{i \rightarrow j} | T_i, T_j) = 1 - P(F_{i \rightarrow j} | T_i, T_j).\qquad{(14)}$$]{#eq:forbidden}
 
 For example, let $i$ be a western diamondback rattlesnake (*Crotalus
 atrox*) and $j$, a wood lemming (*Myopus schisticolor*). These two taxa
@@ -932,7 +901,7 @@ what we refer to as the *ecological* feasibility of interactions. A
 probability of potential interaction in a metaweb $M^*$ describing
 ecological feasibility of interactions may be expressed as:
 
-[$$P(M^*_{i \rightarrow j} | T_i, T_j, E),\qquad{(16)}$$]{#eq:metaweb2}
+[$$P(M^*_{i \rightarrow j} | T_i, T_j, E),\qquad{(15)}$$]{#eq:metaweb2}
 
 where $E$ is the environmental conditions under which potential
 interactions are evaluated (Tbl. 1). Unlike $E_k$, these environmental
@@ -952,7 +921,7 @@ ecologically feasible is always lower than the probability that it is
 biologically feasible, even across all environmental conditions:
 
 [$$\int_{E}P(M^*_{i \rightarrow j} | T_i, T_j, E) dE \leq P(M_{i \rightarrow j} |
-T_i, T_j).\qquad{(17)}$$]{#eq:feasibility}
+T_i, T_j).\qquad{(16)}$$]{#eq:feasibility}
 
 This is because the biological feasibility of an interaction is a
 prerequisite for its ecological feasibility. Biological feasibility is
@@ -992,7 +961,7 @@ calculated as follows:
 
 [$$P(M_{i \rightarrow j} = 1 | O_{i \rightarrow j} = 0,...) = \frac{P(O_{i
 \rightarrow j} = 0 |M_{i \rightarrow j} = 1, ...) \times P(M_{i \rightarrow j} =
-1 | ...)}{P(O_{i \rightarrow j} = 0 |...)}.\qquad{(18)}$$]{#eq:emp_sampling}
+1 | ...)}{P(O_{i \rightarrow j} = 0 |...)}.\qquad{(17)}$$]{#eq:emp_sampling}
 
 The reduction in the probability of regional interaction after
 considering that it was never observed locally (i.e.,
@@ -1105,7 +1074,7 @@ empirical data on interactions and traits.
 > the species and interactions found within a particular latitudinal
 > window, with the values of
 > $P(L_{i \rightarrow j}|M_{i \rightarrow j})$ remaining at their
-> maximum value of $1$ following Eq. 13. Further details on the data and
+> maximum value of $1$ following Eq. 12. Further details on the data and
 > network construction are presented in the supplementary
 > material.](figures/spatial_scaling.png){#fig:spatial}
 
@@ -1124,7 +1093,7 @@ empirical data on interactions and traits.
 >
 > There are no inherent differences between the taxonomic scaling of
 > local networks and metawebs. Interaction probabilities in both local
-> networks (Eq. 3) and metawebs (Eq. 14) are not directly conditioned on
+> networks (Eq. 4) and metawebs (Eq. 13) are not directly conditioned on
 > taxonomic level. The taxonomic scale is tied to the definition of the
 > event itself (i.e., the interaction between two taxa, defined at the
 > desired taxonomical scale), not to the variables on which interaction
@@ -1144,7 +1113,7 @@ empirical data on interactions and traits.
 > genus-level interaction occurs) as follows:
 >
 > [$$P(G_{g_1 \rightarrow g_2} = 1) = 1 - \prod_{i = 1}^{n_1}\prod_{j =
-> 1}^{n_2}(1 - P(S_{g_{1,i} \rightarrow g_{2,j}} = 1)),\qquad{(19)}$$]{#eq:taxo}
+> 1}^{n_2}(1 - P(S_{g_{1,i} \rightarrow g_{2,j}} = 1)),\qquad{(18)}$$]{#eq:taxo}
 >
 > where $g_{1,i}$ and $g_{2,j}$ are the species of the corresponding
 > genus and assuming independence between species-level interactions. If
@@ -1315,7 +1284,7 @@ empirical data on interactions and traits.
 > interaction between taxa $i$ and $j$ in $L_0$ is given by:
 >
 > [$$P(L_{0, i \rightarrow j}) = 1 - [1 - P(L_{1, i \rightarrow j})] \times [1 -
-> P(L_{2, i \rightarrow j})].\qquad{(20)}$$]{#eq:binary}
+> P(L_{2, i \rightarrow j})].\qquad{(19)}$$]{#eq:binary}
 >
 > Due to its larger area, the probability that the two taxa interact in
 > $L_0$ is equal or greater than in $L_1$ and $L_2$. When sampling
@@ -1376,7 +1345,7 @@ as defined in this manuscript (i.e., describing local realizations of
 interactions), local interaction probabilities must be smaller than
 regional interaction probabilities. This decrease is due to the
 prerequisite that two taxa must initially possess the capacity to
-interact before engaging in local interactions (Eq. 2). Inferring local
+interact before engaging in local interactions (Eq. 3). Inferring local
 networks from a metaweb by maintaining identical interaction probability
 values introduces systematic biases into the predictions, as discussed
 in Box 2 (unless networks are seen as downscaled metawebs).
@@ -1389,7 +1358,7 @@ two taxa interact at a specific location and time is consistently lower
 or equal to the probability of their regional interaction, regardless of
 the conditional variables considered:
 
-[$$P(L_{i \rightarrow j} | ...) \le P(M_{i \rightarrow j} | T_i, T_j).\qquad{(21)}$$]{#eq:switch}
+[$$P(L_{i \rightarrow j} | ...) \le P(M_{i \rightarrow j} | T_i, T_j).\qquad{(20)}$$]{#eq:switch}
 
 Moreover, the probability that two taxa possess the biological capacity
 to interact must be higher than the probability of them interacting at
@@ -1399,7 +1368,7 @@ across all spatial, temporal, and environmental conditions must be less
 than the probability of regional interaction, i.e.
 
 [$$\int_{E_k}\int_A\int_t P(L_{i \rightarrow j} | E_k, A, t) \, \text{d}t \,
-\text{d}A \,\text{d}E_k \leq P(M_{i \rightarrow j} | T_i, T_j).\qquad{(22)}$$]{#eq:all}
+\text{d}A \,\text{d}E_k \leq P(M_{i \rightarrow j} | T_i, T_j).\qquad{(21)}$$]{#eq:all}
 
 Estimating more precisely the probability
 $P(L_{i \rightarrow j}|M_{i \rightarrow j})$ that two taxa interact
