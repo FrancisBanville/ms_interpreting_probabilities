@@ -251,7 +251,7 @@ plot!(1:n_samples,
     alpha=0.6,
     linestyle=:dash,
     linewidth=2,
-    label="P(L | M) = 1.0")
+    label="P(Li,j | Mi,j) = 1.0")
 
 plot!(1:n_samples,
     Ns_M3_p75_links,
@@ -259,7 +259,7 @@ plot!(1:n_samples,
     alpha=0.6,
     linestyle=:dashdot,
     linewidth=1.5,
-    label="P(L | M) = 0.75")
+    label="P(Li,j | Mi,j) = 0.75")
 
 plot!(1:n_samples,
     Ns_M3_p50_links,
@@ -267,7 +267,7 @@ plot!(1:n_samples,
     alpha=0.6,
     linestyle=:dot,
     linewidth=2,
-    label="P(L | M) = 0.50")
+    label="P(Li,j | Mi,j) = 0.50")
 
 xaxis!(:log,
     xlabel="Number of sampled local networks", 
@@ -305,7 +305,7 @@ plot!(1:n_samples,
     alpha=0.6,
     linestyle=:dash,
     linewidth=2,
-    label="P(L | M) = 1.0")
+    label="P(Li,j | Mi,j) = 1.0")
 
 plot!(1:n_samples,
     Ns_M3_p75_co,
@@ -313,7 +313,7 @@ plot!(1:n_samples,
     alpha=0.6,
     linestyle=:dashdot,
     linewidth=1.5,
-    label="P(L | M) = 0.75")
+    label="P(Li,j | Mi,j) = 0.75")
 
 plot!(1:n_samples,
     Ns_M3_p50_co,
@@ -321,7 +321,7 @@ plot!(1:n_samples,
     alpha=0.6,
     linestyle=:dot,
     linewidth=2,
-    label="P(L | M) = 0.50")
+    label="P(Li,j | Mi,j) = 0.50")
 
 
 xaxis!(:log,
@@ -732,7 +732,7 @@ yaxis!(ylabel="Mean squared logarithmic error (MSLE)",
 l = @layout [grid(2,3)]
 
 plot(plotA, plotB, plotC, plotD, plotE, plotF,
-        title = ["(a) P(L | M) = 1.0" "(b) P(L | M) = 0.75" "(c) P(L | M) = 0.50" "(d) P(L | M) = 1.0" "(e) P(L | M) = 0.75" "(f) P(L | M) = 0.50"],
+        title = ["(a) P(Li,j | Mi,j) = 1.0" "(b) P(Li,j | Mi,j) = 0.75" "(c) P(Li,j | Mi,j) = 0.50" "(d) P(Li,j | Mi,j) = 1.0" "(e) P(Li,j | Mi,j) = 0.75" "(f) P(Li,j | Mi,j) = 0.50"],
         titleloc=:right, 
         titlefont=fonts,
         layout = l,
@@ -916,32 +916,32 @@ savefig(joinpath("figures","spatial_scaling.png"))
 
 ####### Figure of spatiotemporal interactions #######
 
-### heatmap of the probability of interactions with changing λ and γ (fixed p_ixy, p_jxy and t0)
+### heatmap of the probability of interactions with changing λ and P(Xij) (fixed t0)
 
-# explored values of λ and γ for heatmap
+# explored values of λ and P(Xij) for heatmap
 λ_heat = [0:0.01:4;]
-γ_heat = [0:0.01:4;]
+pxij_heat = [0:0.01:1;]
 
 # explored values of λ and γ for line plot
-γ_line = [1.0; 2.0]
+pxij_line = [0.3; 0.5]
 λ_line = [1.0; 2.0]
 
 # reshape points for plotting
-params = vec(collect(Base.product(γ_line, λ_line)))
+params = vec(collect(Base.product(pxij_line, λ_line)))
 
 n_points = size(params)[1]
-γ_point = [params[i][1] for i in 1:n_points]
+pxij_point = [params[i][1] for i in 1:n_points]
 λ_point = [params[i][2] for i in 1:n_points]
 
 # calculate probability of interactions
-p = zeros(Float64, length(γ_heat), length(λ_heat))
+p = zeros(Float64, length(pxij_heat), length(λ_heat))
 
-for i in 1:length(γ_heat), j in 1:length(λ_heat)
-    p[i, j] = spatiotemporal_model(γ = γ_heat[i], λ = λ_heat[j], p_ixy = 0.5, p_jxy = 0.5, t0 = 1)
+for i in 1:length(pxij_heat), j in 1:length(λ_heat)
+    p[i, j] = spatiotemporal_model(pxij = pxij_heat[i], λ = λ_heat[j], t0 = 1)
 end
 
 # make heatmap
-plotA = heatmap(λ_heat, γ_heat, p, 
+plotA = heatmap(λ_heat, pxij_heat, p, 
         c=:viridis, 
         clims=(0,1),
         label="",
@@ -958,20 +958,20 @@ plotA = heatmap(λ_heat, γ_heat, p,
         background_color_legend=:white)
 
 scatter!(λ_point, 
-        γ_point,
+        pxij_point,
         markershape = :star4,
         markercolor = :white,
         markersize = 5,
         label = "")
 
-xaxis!(xlabel="Interaction rate λ", 
+xaxis!(xlabel="Interaction rate λk", 
         xlims=(minimum(λ_heat), maximum(λ_heat)))
 
-yaxis!(ylabel="Strength of co-occurrence γ",
-        ylims=(minimum(γ_heat), maximum(γ_heat)))
+yaxis!(ylabel="Probability of co-occurrence P(Xi,j,k)",
+        ylims=(minimum(pxij_heat), maximum(pxij_heat)))
 
 
-### time series of the probability of interactions with changing λ and γ (fixed p_ixy and p_jxy)
+### time series of the probability of interactions with changing λ and pxij 
 
 # time steps
 t = [0:0.1:5;]
@@ -980,7 +980,7 @@ t = [0:0.1:5;]
 p = zeros(length(t), length(params))
 
 for (i, t0) in enumerate(t), j in 1:length(params)
-    p[i,j] = spatiotemporal_model(p_ixy = 0.5, p_jxy = 0.5, γ = params[j][1], λ = params[j][2], t0 = t0)
+    p[i,j] = spatiotemporal_model(pxij = params[j][1], λ = params[j][2], t0 = t0)
 end
 
 # plot time series
@@ -988,7 +988,7 @@ linestyles = [:solid, :dash, :dot, :dashdot]
 plotB = plot(t, p[:,1],
     linewidth=1.5,
     linestyle=linestyles[1],
-    label="γ = $(params[1][1]), λ = $(params[1][2])",
+    label="P(Xi,j,k) = $(params[1][1]), λk = $(params[1][2])",
     grid=false,
     minorgrid=false,
     dpi=1000, 
@@ -1007,13 +1007,13 @@ for i in 2:length(params)
     plot!(t, p[:,i],
         linewidth=1.5,
         linestyle=linestyles[i],
-        label="γ = $(params[i][1]), λ = $(params[i][2])")
+        label="P(Xi,j,k) = $(params[i][1]), λk = $(params[i][2])")
 end
 
 xaxis!(xlabel="Duration t0",
     xlims=(0, Inf))
 
-yaxis!(ylabel="Probability of interaction", 
+yaxis!(ylabel="Probability of interaction P(Li,j)", 
         ylims=(0, 0.52))
 
 
