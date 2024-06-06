@@ -63,16 +63,6 @@
     },
     {
       "affiliations": [
-        "Université de Sherbrooke",
-        "Quebec Centre for Biodiversity Science"
-      ],
-      "familyname": "Gravel",
-      "givennames": "Dominique",
-      "email": "dominique.gravel@usherbrooke.ca",
-      "orcid": "0000-0002-4498-7076"
-    },
-    {
-      "affiliations": [
         "Université de Sherbrooke"
       ],
       "familyname": "Higino",
@@ -105,6 +95,16 @@
       "givennames": "Kari",
       "email": "kari.norman@berkeley.edu",
       "orcid": "0000-0002-2029-2325"
+    },
+    {
+      "affiliations": [
+        "Université de Sherbrooke",
+        "Quebec Centre for Biodiversity Science"
+      ],
+      "familyname": "Gravel",
+      "givennames": "Dominique",
+      "email": "dominique.gravel@usherbrooke.ca",
+      "orcid": "0000-0002-4498-7076"
     },
     {
       "affiliations": [
