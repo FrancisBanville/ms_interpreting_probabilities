@@ -1013,7 +1013,7 @@ end
 xaxis!(xlabel="Duration t₀",
     xlims=(0, Inf))
 
-yaxis!(ylabel="Probability of interaction P(Lᵢ,ⱼ,ₖ)", 
+yaxis!(ylabel="Probability of local interaction P(Lᵢ,ⱼ,ₖ)", 
         ylims=(0, 0.52))
 
 
