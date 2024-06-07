@@ -4,7 +4,7 @@
 theme(:mute)
 default(; frame=:box)
 Plots.scalefontsizes(1.3)
-fonts=font("Times",7)
+fonts=font("DejaVu Sans",6)
 
 ## read network data
 
@@ -93,8 +93,8 @@ plot_bos = plot(1:n_samples,
     foreground_color_legend=:black, 
     background_color_legend=:white, 
     legendfont=fonts,
-    legendfontpointsize=7,
-    legendfontfamily="Times")
+    legendfontpointsize=6,
+    legendfontfamily="DejaVu Sans")
 
 xaxis!(:log,
     xlabel="Number of sampled local networks", 
@@ -142,8 +142,8 @@ plot_bs = plot(1:n_samples,
     foreground_color_legend=:black, 
     background_color_legend=:white, 
     legendfont=fonts,
-    legendfontpointsize=7,
-    legendfontfamily="Times")
+    legendfontpointsize=6,
+    legendfontfamily="DejaVu Sans")
 
 xaxis!(:log,
     xlabel="Number of sampled local networks", 
@@ -242,8 +242,8 @@ plot_links = plot(1:n_samples,
     foreground_color_legend=:black, 
     background_color_legend=:white, 
     legendfont=fonts,
-    legendfontpointsize=7,
-    legendfontfamily="Times")
+    legendfontpointsize=6,
+    legendfontfamily="DejaVu Sans")
 
 plot!(1:n_samples,
     Ns_M3_p100_links,
@@ -251,7 +251,7 @@ plot!(1:n_samples,
     alpha=0.6,
     linestyle=:dash,
     linewidth=2,
-    label="P(Li,j,k | Mi,j) = 1.0")
+    label="P(Lᵢ,ⱼ,ₖ | Mᵢ,ⱼ) = 1.0")
 
 plot!(1:n_samples,
     Ns_M3_p75_links,
@@ -259,7 +259,7 @@ plot!(1:n_samples,
     alpha=0.6,
     linestyle=:dashdot,
     linewidth=1.5,
-    label="P(Li,j,k | Mi,j) = 0.75")
+    label="P(Lᵢ,ⱼ,ₖ | Mᵢ,ⱼ) = 0.75")
 
 plot!(1:n_samples,
     Ns_M3_p50_links,
@@ -267,7 +267,7 @@ plot!(1:n_samples,
     alpha=0.6,
     linestyle=:dot,
     linewidth=2,
-    label="P(Li,j,k | Mi,j) = 0.50")
+    label="P(Lᵢ,ⱼ,ₖ | Mᵢ,ⱼ) = 0.50")
 
 xaxis!(:log,
     xlabel="Number of sampled local networks", 
@@ -295,8 +295,8 @@ plot_co = plot(1:n_samples,
     foreground_color_legend=:black, 
     background_color_legend=:white, 
     legendfont=fonts,
-    legendfontpointsize=7,
-    legendfontfamily="Times")
+    legendfontpointsize=6,
+    legendfontfamily="DejaVu Sans")
 
 
 plot!(1:n_samples,
@@ -305,7 +305,7 @@ plot!(1:n_samples,
     alpha=0.6,
     linestyle=:dash,
     linewidth=2,
-    label="P(Li,j,k | Mi,j) = 1.0")
+    label="P(Lᵢ,ⱼ,ₖ | Mᵢ,ⱼ) = 1.0")
 
 plot!(1:n_samples,
     Ns_M3_p75_co,
@@ -313,7 +313,7 @@ plot!(1:n_samples,
     alpha=0.6,
     linestyle=:dashdot,
     linewidth=1.5,
-    label="P(Li,j,k | Mi,j) = 0.75")
+    label="P(Lᵢ,ⱼ,ₖ | Mᵢ,ⱼ) = 0.75")
 
 plot!(1:n_samples,
     Ns_M3_p50_co,
@@ -321,7 +321,7 @@ plot!(1:n_samples,
     alpha=0.6,
     linestyle=:dot,
     linewidth=2,
-    label="P(Li,j,k | Mi,j) = 0.50")
+    label="P(Lᵢ,ⱼ,ₖ | Mᵢ,ⱼ) = 0.50")
 
 
 xaxis!(:log,
@@ -410,8 +410,8 @@ plotA = scatter(mean.(eachcol(samples_co_100_100.samples_metaweb_co))[Ns_rdm],
         foreground_color_legend=:black,
         background_color_legend=:white, 
         legendfont=fonts,
-        legendfontpointsize=7,
-        legendfontfamily="Times")
+        legendfontpointsize=5,
+        legendfontfamily="DejaVu Sans")
       
 scatter!(mean.(eachcol(samples_co_100_50.samples_metaweb_co))[Ns_rdm], 
         mean.(eachcol(samples_co_100_50.samples_local_co))[Ns_rdm], 
@@ -479,8 +479,8 @@ plotB = scatter(mean.(eachcol(samples_co_75_100.samples_metaweb_co))[Ns_rdm],
     foreground_color_legend=:black,
     background_color_legend=:white, 
     legendfont=fonts,
-    legendfontpointsize=7,
-    legendfontfamily="Times")
+    legendfontpointsize=5,
+    legendfontfamily="DejaVu Sans")
 
 scatter!(mean.(eachcol(samples_co_75_50.samples_metaweb_co))[Ns_rdm], 
         mean.(eachcol(samples_co_75_50.samples_local_co))[Ns_rdm], 
@@ -547,8 +547,8 @@ plotC = scatter(mean.(eachcol(samples_co_50_100.samples_metaweb_co))[Ns_rdm],
     foreground_color_legend=:black,
     background_color_legend=:white, 
     legendfont=fonts,
-    legendfontpointsize=7,
-    legendfontfamily="Times")
+    legendfontpointsize=5,
+    legendfontfamily="DejaVu Sans")
 
 scatter!(mean.(eachcol(samples_co_50_50.samples_metaweb_co))[Ns_rdm], 
     mean.(eachcol(samples_co_50_50.samples_local_co))[Ns_rdm], 
@@ -660,8 +660,8 @@ plotD = scatter(nsims,
         foreground_color_legend=:black,
         background_color_legend=:white, 
         legendfont=fonts,
-        legendfontpointsize=8,
-        legendfontfamily="Times")
+        legendfontpointsize=6,
+        legendfontfamily="DejaVu Sans")
 
 xaxis!(:log,
         xlabel="Number of samples", 
@@ -688,8 +688,8 @@ plotE = scatter(nsims,
         foreground_color_legend=:black,
         background_color_legend=:white, 
         legendfont=fonts,
-        legendfontpointsize=8,
-        legendfontfamily="Times")
+        legendfontpointsize=6,
+        legendfontfamily="DejaVu Sans")
 
 xaxis!(:log,
         xlabel="Number of samples", 
@@ -717,8 +717,8 @@ plotF = scatter(nsims,
         foreground_color_legend=:black,
         background_color_legend=:white, 
         legendfont=fonts,
-        legendfontpointsize=8,
-        legendfontfamily="Times")
+        legendfontpointsize=6,
+        legendfontfamily="DejaVu Sans")
 
 xaxis!(:log,
         xlabel="Number of samples", 
@@ -732,12 +732,12 @@ yaxis!(ylabel="Mean squared logarithmic error (MSLE)",
 l = @layout [grid(2,3)]
 
 plot(plotA, plotB, plotC, plotD, plotE, plotF,
-        title = ["(a) P(Li,j,k | Mi,j) = 1.0" "(b) P(Li,j,k | Mi,j) = 0.75" "(c) P(Li,j,k | Mi,j) = 0.50" "(d) P(Li,j,k | Mi,j) = 1.0" "(e) P(Li,j,k | Mi,j) = 0.75" "(f) P(Li,j,k | Mi,j) = 0.50"],
+        title = ["(a) P(Lᵢ,ⱼ,ₖ| Mᵢ,ⱼ) = 1.0" "(b) P(Lᵢ,ⱼ,ₖ | Mᵢ,ⱼ) = 0.75" "(c) P(Lᵢ,ⱼ,ₖ | Mᵢ,ⱼ) = 0.50" "(d) P(Lᵢ,ⱼ,ₖ | Mᵢ,ⱼ) = 1.0" "(e) P(Lᵢ,ⱼ,ₖ | Mᵢ,ⱼ) = 0.75" "(f) P(Lᵢ,ⱼ,ₖ | Mᵢ,ⱼ) = 0.50"],
         titleloc=:right, 
         titlefont=fonts,
         layout = l,
         dpi=1000,
-        size=(1000, 600))
+        size=(900, 500))
         
 savefig(joinpath("figures","network_sampling.png"))
 
@@ -801,8 +801,8 @@ plot_links_merged = plot(areas,
     colorbar_title="Central latitudinal coordinate",
     colorbar_titlefont=fonts, 
     legendfont=fonts,
-    legendfontpointsize=7,
-    legendfontfamily="Times")
+    legendfontpointsize=6,
+    legendfontfamily="DejaVu Sans")
 
 plot!(areas,
     median.(eachcol(links_merged)),
@@ -839,8 +839,8 @@ plot_links_metaweb = plot(areas,
     foreground_color_legend=:white, 
     background_color_legend=:white, 
     legendfont=fonts,
-    legendfontpointsize=7,
-    legendfontfamily="Times")
+    legendfontpointsize=6,
+    legendfontfamily="DejaVu Sans")
 
 plot!(areas,
     median.(eachcol(links_metaweb)),
@@ -907,7 +907,7 @@ plot(plot_links_merged, plot_links_metaweb,
     titleloc=:right, 
     titlefont=fonts,
     dpi=1000,
-    size=(800, 700))
+    size=(700, 600))
 
 savefig(joinpath("figures","spatial_scaling.png"))
 
@@ -964,10 +964,10 @@ scatter!(λ_point,
         markersize = 5,
         label = "")
 
-xaxis!(xlabel="Interaction rate λk", 
+xaxis!(xlabel="Interaction rate λₖ", 
         xlims=(minimum(λ_heat), maximum(λ_heat)))
 
-yaxis!(ylabel="Probability of co-occurrence P(Xi,j,k)",
+yaxis!(ylabel="Probability of co-occurrence P(Xᵢ,ⱼ,ₖ)",
         ylims=(minimum(pxij_heat), maximum(pxij_heat)))
 
 
@@ -988,7 +988,7 @@ linestyles = [:solid, :dash, :dot, :dashdot]
 plotB = plot(t, p[:,1],
     linewidth=1.5,
     linestyle=linestyles[1],
-    label="P(Xi,j,k) = $(params[1][1]), λk = $(params[1][2])",
+    label="P(Xᵢ,ⱼ,ₖ) = $(params[1][1]), λₖ = $(params[1][2])",
     grid=false,
     minorgrid=false,
     dpi=1000, 
@@ -1000,20 +1000,20 @@ plotB = plot(t, p[:,1],
     foreground_color_legend=:black, 
     background_color_legend=:white, 
     legendfont=fonts,
-    legendfontpointsize=7,
-    legendfontfamily="Times")
+    legendfontpointsize=6,
+    legendfontfamily="DejaVu Sans")
 
 for i in 2:length(params)
     plot!(t, p[:,i],
         linewidth=1.5,
         linestyle=linestyles[i],
-        label="P(Xi,j,k) = $(params[i][1]), λk = $(params[i][2])")
+        label="P(Xᵢ,ⱼ,ₖ) = $(params[i][1]), λₖ = $(params[i][2])")
 end
 
-xaxis!(xlabel="Duration t0",
+xaxis!(xlabel="Duration t₀",
     xlims=(0, Inf))
 
-yaxis!(ylabel="Probability of interaction P(Li,j,k)", 
+yaxis!(ylabel="Probability of interaction P(Lᵢ,ⱼ,ₖ)", 
         ylims=(0, 0.52))
 
 
