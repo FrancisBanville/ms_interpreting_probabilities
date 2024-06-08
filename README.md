@@ -587,8 +587,8 @@ interaction probabilities.
 > regarding species composition and interactions. We do so using the collection
 > of tripartite host-parasite networks of @Kopelke2017FooStra, consisting of
 > willows, willow-galling sawflies, and their natural enemies sampled across
-> Europe. Data manipulation and methods are described in Appendix 1. All code
-> and data to reproduce these analyses are available at the Open Science
+> Europe. All data manipulation and methods are described in Appendix 1. All
+> code and data to reproduce these analyses are available at the Open Science
 > Framework (TBD).
 > 
 > In [@Fig:accumulation]a-b, we show how the dissimilarity between the metaweb
@@ -908,7 +908,7 @@ probabilities) with empirical data on interactions and traits.
 > 
 > Networks of binary interactions may be predicted by performing independent
 > Bernoulli trials for each probabilistic interaction. This is particularly
-> useful when analysing the structure of probabilistic interaction networks in
+> useful when analyzing the structure of probabilistic interaction networks in
 > the absence of specific analytical formulas [@Poisot2016Structure], even
 > though it may introduce biases in our estimations when connectance is low
 > [@Poisot2014WheEco; @Chagnon2015ChaTop]. There are at least two techniques to
