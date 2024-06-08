@@ -921,74 +921,43 @@ empirical data on interactions and traits.
 
 > ## Box 3: Spatial and temporal scaling of interactions {#box-3-spatial-and-temporal-scaling-of-interactions .unnumbered}
 >
-> Network-Area Relationships document the scaling of network properties
-> (such as modularity and connectance) with spatial scale [e.g.,
-> @Galiana2018Spatiala; @Wood2015Effects]. The variation in network
-> structure across spatial scales may stem from the scaling of species
-> richness (species-area relationships, SARs), the number of
-> interactions [@Brose2004UniSpa], and many other higher-level
-> properties of the system [e.g., environmental heterogeneity,
-> @Thompson2005Foodweb] with the sampled area. Likewise, interaction
-> accumulation curves describe the scaling of the number of observed
-> interactions with sampling effort [@Jordano2016Samplingb]. Sampling
-> effort, which may correspond to the duration of the sampling period
-> used to construct the network, can impact connectance
-> [@Bersier1999Scale] and various measures of network structure
-> [@Banasek-Richter2004Sampling; @McLeod2021Sampling]. Apart from
-> sampling effort, the temporal scaling of interactions also describes
-> how network structure changes with the temporal resolution of the
-> network, acknowledging that distinct interactions take place over
-> time, ranging from short-term fluctuations of interactions to
-> long-term trends. As local networks of probabilistic interactions may
-> explicitly account for the spatiotemporal variability of interactions,
-> they offer a distinct approach to investigating the scaling of network
-> structure with space and time.
->
-> Local networks and metawebs exhibit distinct relationships with
-> spatial and temporal scales. On one hand, metawebs of probabilistic
-> interactions feature regional interactions that do not scale with
-> space and time. This is because regional interactions depend solely on
-> the biological capacity of two taxa to interact, regardless of their
-> co-occurrence and local environmental conditions. However,
-> probabilities of potential interactions may change, tending to become
-> more definitive with increased sampling effort (even though they do
-> not vary with the spatial and temporal extent (boundaries) of the
-> network). The probability of two taxa potentially interacting should
-> be the same in all metawebs in which they are present, provided that
-> the data and methods used for estimation are consistent. For example,
-> if a smaller metaweb $M_1$ is derived from a larger metaweb $M_0$ by
-> selecting the subset of taxa present in the region described by $M_1$
-> and retaining all their interactions, their probabilities of
-> interaction should be identical regardless of scale,
-> i.e. $P(M_{1, i, j}) = P(M_{0, i, j})$. With a larger or equal number
-> of taxa in $M_0$ as compared to $M_1$, the total number of
-> interactions is expected to be higher in the larger network, even
-> though pairwise probabilities remain identical.
->
-> On the other hand, local interactions scale both spatially and
-> temporally, given that they have more opportunities to be realized and
-> observed in larger areas and longer durations. This is attributed to
-> factors such as a higher number of individuals, greater trait
-> variations, and increased opportunities for encounters, as highlighted
-> by @McLeod2020EffSpe. For example, if a local network of probabilistic
-> interactions $L_1$ with an area $A_1$ is derived from a larger network
+> Local networks and metawebs have distinct relationships with space
+> (area or volume) and time (sampling effort or duration). Local
+> probabilities of interaction scale both spatially and temporally,
+> because local interactions have more opportunities to be realized in
+> larger areas and longer durations. If a local network of probabilistic
+> interactions $L_1$ with an area $A_1$ is compared to a larger network
 > $L_0$ with an area $A_0$, and $A_1$ is entirely nested within $A_0$,
-> interaction probabilities should be lower in the smaller network, i.e.
-> $P(L_{i,j,1} | A_1 < A_0) \le P(L_{i,j,0} | A_0)$. However, if $A_1$
-> and $A_0$ are disjoint, interaction probabilities could be higher in
-> the smaller area, contingent upon their environmental and biological
-> conditions. Likewise, interaction probabilities should be lower in
-> networks with shorter durations when time intervals are nested. In
-> Fig. 3, we show how the expected number of local host-parasite
-> interactions scales with area, represented as an expanding latitudinal
-> window, in comparison with regional interactions [data from
-> @Kopelke2017FooStra]. Even though we employed local probabilities of
-> interactions equal to regional interactions for the purpose of
-> comparison (i.e., using $P(L_{i, j,k}|M_{i, j}) = 1$ here), we notice
-> that the total number of regional interactions scales more rapidly
-> than local interactions. This is because numerous regional
-> interactions involve species that never co-occur, and as a result,
-> these interactions are not captured in local networks.
+> interaction probabilities should be lower in the smaller network,
+> i.e. $P(L_{i,j,1} | A_1 < A_0) \le P(L_{i,j,0} | A_0)$. However, if
+> $A_1$ and $A_0$ are disjoint, interaction probabilities could be
+> higher in the smaller area, contingent upon local environmental and
+> biological conditions. In contrast, regional probabilities of
+> interaction do not scale with space and time. The probability of two
+> taxa potentially interacting should be the same in all metawebs in
+> which they are present regardless of scale, provided that the data and
+> methods used for estimation are consistent. This is because they
+> depend solely on the biological capacity of two taxa to interact,
+> regardless of co-occurrence and local environmental conditions.
+> However, probabilities of regional interactions may change, tending to
+> become more definitive, with increased sampling effort.
+>
+> In Fig. 3, we show how the expected *number* of local host-parasite
+> interactions scales with the spatial boundary of the network
+> (represented by an expanding latitudinal window) in comparison with
+> regional interactions. We do so using the host-parasite networks of
+> @Kopelke2017FooStra. The increase in the number of regional
+> interactions is due to the inclusion of more species in a larger area.
+> To ensure a conservative comparison between aggregated local and
+> regional networks, we employed equal interaction probabilities (i.e.,
+> using $P(L_{i, j,k}|M_{i, j}) = 1$) in both types of network. This
+> means that local interaction probabilities could not increase further
+> when aggregating them. Despite this, we notice that the total number
+> of regional interactions scales more rapidly than local interactions.
+> This is because numerous regional interactions involve species that
+> never co-occur, and as a result, these interactions are not captured
+> in local networks. All data manipulation and methods are described in
+> Appendix 1.
 >
 > ![Figure 3: **Spatial scaling of interactions.** Expected number of
 > host-parasite interactions in a network aggregating all (a) local and
@@ -997,20 +966,17 @@ empirical data on interactions and traits.
 > centered at a given latitude (color bar), with the pink solid line
 > representing the median number of interactions across windows.
 > Heatmaps of the expected number of (c) local and (d) regional
-> interactions found in windows of specified width and central
-> latitudes. Probabilities of regional interactions were obtained with a
+> interactions found in windows of specified width and position (central
+> latitude). Probabilities of regional interactions were obtained with a
 > false positive rate of $5\%$ and a false negative rate of $10\%$.
-> Local probabilistic interactions were derived from probabilistic
-> regional interactions by setting the value of $P(L_{i, j, k}|M_{i,j})$
-> (the local probability of interaction among potentially interacting
-> species) to $1$, ensuring a conservative comparison between aggregated
-> local networks and metawebs. Aggregated local networks were obtained
-> by aggregating both the species and interactions found within a
-> particular latitudinal window, with the values of
-> $P(L_{i, j, k}|M_{i, j})$ remaining at their maximum value of $1$
-> following Eq. **¿eq:aggregate?**. Further details on the data and
-> network construction are presented in the supplementary
-> material.](figures/spatial_scaling.png){#fig:spatial}
+> Local probabilistic interactions were derived from regional
+> probabilistic interactions by setting the value of
+> $P(L_{i, j, k}|M_{i,j})$ (the local probability of interaction among
+> potentially interacting species) to $1$. Aggregated local networks
+> were obtained by aggregating both the species and interactions found
+> within a particular latitudinal window, with the values of
+> $P(L_{i, j, k}|M_{i, j})$ remaining at their maximum value of
+> $1$.](figures/spatial_scaling.png){#fig:spatial}
 
 > ## Box 4: Taxonomic scaling of interactions {#box-4-taxonomic-scaling-of-interactions .unnumbered}
 >
