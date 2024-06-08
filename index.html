@@ -1892,114 +1892,79 @@ interaction networks</div>
             <h2 id="box-4-taxonomic-scaling-of-interactions"
             class="unnumbered">Box 4: Taxonomic scaling of
             interactions</h2>
-            <p>Probabilistic interaction networks offer a versatile
-            approach to tackle a broad array of ecological questions,
-            depending on their level of organization. For instance, the
-            assemblage of interactions across ecological scales can be
-            explored through species-based networks, while clade-based
-            networks provide insights into macroevolutionary processes
-            <span class="citation" data-cites="Gomez2010EcoInt">(Gomez
-            <em>et al.</em> 2010)</span>. Given that our interpretation
-            of the properties and dynamics of ecological networks
-            depends on their taxonomic level <span class="citation"
+            <p>Given that our interpretation of the properties of
+            ecological networks depends on their taxonomic level <span
+            class="citation"
             data-cites="Guimaraes2020Structurea">(Guimarães
             2020)</span>, investigating the taxonomic scaling of
             interactions (i.e., how interaction probabilities change
-            with taxonomic level) emerges as a promising research
-            avenue.</p>
-            <p>There are no inherent differences between the taxonomic
-            scaling of local networks and metawebs. Interaction
-            probabilities in both local networks (Eq. 4) and metawebs
-            (Eq. 11) are not directly conditioned on taxonomic level.
-            The taxonomic scale is tied to the definition of the event
-            itself (i.e., the interaction between two taxa, defined at
-            the desired taxonomical scale), not to the variables on
-            which interaction probabilities are conditioned. However,
-            some conditional variables (e.g. trait distribution) may
-            vary with taxonomic scale. In such cases, interaction
-            probabilities would vary taxonomically following the scaling
-            of these variables.</p>
-            <p>In both types of networks, transitioning to a broader
+            with taxonomic level) is important. There are no inherent
+            differences between the taxonomic scaling of local and
+            regional interactions. The taxonomic level of interactions
+            impacts the definition of nodes. Local and regional
+            interaction probabilities are not directly conditioned on
+            taxonomic scale. However, some conditional variables (e.g.,
+            trait distribution) may covary with taxonomic scale. In such
+            cases, local and regional interaction probabilities would
+            change taxonomically following the scaling of these
+            variables.</p>
+            <p>In both types of interactions, transitioning to a broader
             level of organization (e.g., from a species-level network
             <span class="math inline"><em>S</em></span> to a genus-level
             network <span class="math inline"><em>G</em></span>) can be
-            accomplished directly by using probabilities from finer
-            scales. For example, in a network with <span
-            class="math inline"><em>n</em><sub>1</sub></span> species
-            from genus <span
+            done using interaction probabilities from finer scales. For
+            example, in a network with <span
+            class="math inline"><em>n</em><sub>1</sub></span> species of
+            genus <span
             class="math inline"><em>g</em><sub>1</sub></span> and <span
-            class="math inline"><em>n</em><sub>2</sub></span> species
-            from genus <span
+            class="math inline"><em>n</em><sub>2</sub></span> species of
+            genus <span
             class="math inline"><em>g</em><sub>2</sub></span>, one can
-            compute the probability that at least one species from genus
-            <span class="math inline"><em>g</em><sub>1</sub></span>
-            interacts with at least one species from genus <span
-            class="math inline"><em>g</em><sub>2</sub></span> (i.e.,
-            that there is a non-zero number of species-level
-            interactions or, equivalently, that the genus-level
-            interaction occurs) as follows:</p>
+            calculate the probability that at least one species from
+            genus <span
+            class="math inline"><em>g</em><sub>1</sub></span> interacts
+            with at least one species from genus <span
+            class="math inline"><em>g</em><sub>2</sub></span> (i.e., the
+            probability that the genus-level interaction occurs) as
+            follows:</p>
             <p><span id="eq:taxo"><span class="math display">$$P(G_{g_1,
-            g_2} = 1) = 1 - \prod_{i = 1}^{n_1}\prod_{j = 1}^{n_2}(1 -
-            P(S_{g_{1,i}, g_{2,j}} =
-            1)),\qquad{(16)}$$</span></span></p>
+            g_2}) = 1 - \prod_{i = 1}^{n_1}\prod_{j = 1}^{n_2}(1 -
+            P(S_{g_{1,i}, g_{2,j}})),\qquad{(16)}$$</span></span></p>
             <p>where <span
             class="math inline"><em>g</em><sub>1, <em>i</em></sub></span>
             and <span
             class="math inline"><em>g</em><sub>2, <em>j</em></sub></span>
             are the species of the corresponding genus and assuming
-            independence between species-level interactions. If it is
-            known that at least two of these species interact (i.e.,
-            <span
-            class="math inline"><em>P</em>(<em>S</em><sub><em>g</em><sub>1, <em>i</em></sub>, <em>g</em><sub>2, <em>j</em></sub></sub>) = 1</span>
-            for at least one pair of <span
-            class="math inline">(<em>g</em><sub>1, <em>i</em></sub>,<em>g</em><sub>2, <em>j</em></sub>)</span>),
-            it implies a probability of genus interaction equal to <span
-            class="math inline">1</span>. <span class="citation"
-            data-cites="Canard2012Emergencea">Canard <em>et al.</em>
-            (2012)</span> built a species-based network following a
-            similar approach, by using simulated interactions between
-            individuals derived from a neutral model (i.e., a model that
-            assumed ecological equivalence among individuals).</p>
-            <p>In contrast, a more sophisticated approach is necessary
-            when transitioning from a broader to a finer level of
+            independence between species-level interactions. In
+            contrast, a different approach is necessary when
+            transitioning from a broader to a finer level of
             organization. This is because the knowledge of an
             interaction between two genera does not guarantee that all
-            possible pairwise combinations of their species will also
-            interact. One possible method is to build a finer-scale
-            network by generating probabilities of interactions through
-            random sampling from a beta distribution, parameterized by
-            the broader-scale network.</p>
-            <p>Ideally, our biological interpretation of probabilistic
-            interactions should remain consistent across a network even
-            if it incorporates heterogeneous levels of organization,
-            such as a network whose nodes represent both species and
-            trophic species (groups of species sharing similar predators
-            and prey). This is common in ecological networks where
-            taxonomic resolution is typically low <span class="citation"
-            data-cites="Hemprich-Bennett2021AssImp VazquezSS2022Ecological">(Hemprich-Bennett
-            <em>et al.</em> 2021; Vázquez <em>et al.</em> 2022)</span>.
-            Interaction probabilities at broader taxonomic scales should
-            be based on probabilities of interactions between
-            individuals, for both local networks and metawebs. In local
+            possible pairwise species combinations will also interact.
+            One possible method is to build a finer-scale network by
+            generating probabilities of interaction through random
+            sampling from a beta distribution, parameterized by the
+            broader-scale network.</p>
+            <p>Fundamentally, the taxonomic scaling of interactions
+            involves aggregating interactions between individuals into
+            larger groups. Interaction probabilities at broader
+            taxonomic scales should thus be conform to probabilities of
+            interactions between individuals. For example, <span
+            class="citation" data-cites="Canard2012Emergencea">Canard
+            <em>et al.</em> (2012)</span> built a species-based network
+            using simulated individual-based networks. In local
             individual-based food webs, the probability that two
             individuals interact reflects our degree of belief that one
-            individual will consume the other. In local species-based
-            food webs, the probability that two species interact
-            represents our degree of belief that at least one individual
-            from the predator species consumes at least another
-            individual from the prey species. In local clade-based food
-            webs, the probability that two clades interact represents
-            our degree of belief that at least two species from these
-            clades interact with each other or, equivalently, that at
-            least two individuals from these clades interact with each
-            other. Fundamentally, the taxonomic scaling of interactions
-            involves aggregating interactions between individuals into
-            larger groups, which may exhibit varying degrees of
-            homogeneity based on the organisms and the study system. In
-            that regard, taxonomic scaling is analogous to the spatial
-            and temporal scaling of interactions, as they all represent
-            different ways to aggregate individuals into broader groups
-            (either spatially, temporally, or taxonomically).</p>
+            individual will consume the other. Likewise, in local
+            species-based food webs, the probability that two species
+            interact represents our degree of belief that <em>at
+            least</em> one individual from the predator species will
+            consume at least another individual from the prey species.
+            In that regard, taxonomic scaling is analogous to the
+            spatial and temporal scaling of interactions, as they all
+            represent different ways to aggregate individuals into
+            broader groups (either spatially, temporally, or
+            taxonomically).</p>
             </blockquote>
             <blockquote>
             <h2 id="box-5-sampling-for-binary-interaction-networks"
@@ -2701,13 +2666,6 @@ interaction networks</div>
             interact?</a> <em>Journal of Animal Ecology</em>, 80,
             1097–1108.
             </div>
-            <div id="ref-Gomez2010EcoInt" class="csl-entry"
-            role="doc-biblioentry">
-            Gomez, J.M., Verdu, M. &amp; Perfectti, F. (2010). <a
-            href="https://doi.org/10.1038/nature09113">Ecological
-            interactions are evolutionarily conserved across the entire
-            tree of life</a>. <em>Nature</em>, 465, 918–U6.
-            </div>
             <div id="ref-Gonzalez2022Monitor" class="csl-entry"
             role="doc-biblioentry">
             Gonzalez, A. &amp; Londoño, M.C. (2022). <a
@@ -3186,14 +3144,6 @@ interaction networks</div>
             href="https://doi.org/10.1111/j.0030-1299.2007.15828.x">Species
             abundance and asymmetric interaction strength in ecological
             networks</a>. <em>Oikos</em>, 116, 1120–1127.
-            </div>
-            <div id="ref-VazquezSS2022Ecological" class="csl-entry"
-            role="doc-biblioentry">
-            Vázquez, D.P., Peralta, G., Cagnolo, L. &amp; Santos, M.
-            (2022). <a
-            href="https://doi.org/10.25260/EA.22.32.2.1.1846">Ecological
-            interaction networks. What we know, what we don’t, and why
-            it matters</a>. <em>Ecología Austral</em>, 32, 670–697.
             </div>
             <div id="ref-Wagenmakers2004Aic" class="csl-entry"
             role="doc-biblioentry">
