@@ -1464,25 +1464,19 @@ interaction networks</div>
             <h2 id="box-2-dissimilarity-of-local-host-parasite-networks"
             class="unnumbered">Box 2: Dissimilarity of local
             host-parasite networks</h2>
-            <p>We use the collection of tripartite host-parasite
-            networks of <span class="citation"
+            <p>We present a way to assess local network variability and
+            dissimilarity regarding species composition and
+            interactions. We do so using the collection of tripartite
+            host-parasite networks of <span class="citation"
             data-cites="Kopelke2017FooStra">Kopelke <em>et al.</em>
             (2017)</span>, consisting of willows, willow-galling
-            sawflies, and their natural enemies, sampled across Europe
-            (<span class="math inline">233</span> local networks used).
-            Given its replicated networks spanning large spatiotemporal
-            scales, this dataset is well-suited for analyzing network
-            variability, both in terms of species composition and
-            interactions. Further details regarding data manipulation
-            and network construction can be found in the supplementary
-            material. All code and data to reproduce these analyses are
-            available at the Open Science Framework (TBD).</p>
+            sawflies, and their natural enemies sampled across Europe.
+            Data manipulation and methods are described in Appendix 1.
+            All code and data to reproduce these analyses are available
+            at the Open Science Framework (TBD).</p>
             <p>In Fig. 2a-b, we show how the dissimilarity between the
             metaweb of binary interactions and aggregated local networks
-            varies with the number of sampled local networks. To do so,
-            we randomly selected one local network of binary
-            interactions and sequentially sampled additional networks
-            while aggregating both their species and interactions. We
+            changes with the number of sampled local networks. We
             compared the metaweb and the aggregated local networks using
             the dissimilarity in species composition (<span
             class="math inline"><em>β</em><sub><em>S</em></sub></span>,
@@ -1491,45 +1485,30 @@ interaction networks</div>
             class="math inline"><em>β</em><sub><em>O</em><em>S</em></sub></span>,
             Fig. 2b) indices <span class="citation"
             data-cites="Poisot2012Dissimilaritya">(Poisot <em>et
-            al.</em> 2012)</span>. We repeated this sampling process one
-            hundred times and highlighted the median dissimilarity
-            values across simulations, as well as the <span
-            class="math inline">50%</span> and <span
-            class="math inline">95%</span> percentile intervals. Both
-            dissimilarity indices were calculated based on the number of
-            items shared by the two networks (<span
-            class="math inline"><em>c</em><sub><em>L</em><em>M</em></sub></span>)
-            and the number of items unique to the metaweb (<span
-            class="math inline"><em>u</em><sub><em>M</em></sub></span>)
-            and the aggregated local network (<span
-            class="math inline"><em>u</em><sub><em>L</em></sub></span>).
-            The <span
-            class="math inline"><em>β</em><sub><em>S</em></sub></span>
-            dissimilarity index uses species (nodes) as items being
-            compared, while the <span
-            class="math inline"><em>β</em><sub><em>O</em><em>S</em></sub></span>
-            index assesses dissimilarity based on interactions between
-            shared species. Both indices were calculated following the
-            <span
-            class="math inline"><em>β</em><sub><em>W</em></sub></span>
-            index of <span class="citation"
-            data-cites="Whittaker1960Vegetation">Whittaker
-            (1960)</span>:</p>
-            <p><span id="eq:diss"><span class="math display">$$\beta_W =
-            \frac{c_{LM} + u_L + u_M}{(2 c_{LM} + u_L + u_M) / 2} -
-            1.\qquad{(11)}$$</span></span></p>
+            al.</em> 2012)</span>. Expectingly, local networks are
+            highly dissimilar from the metaweb in terms of species
+            composition, especially when only a limited number of sites
+            has been sampled. This is because few species from the
+            metaweb (species pool) occur locally. Moreover, we observe a
+            peak in the dissimilarity of interactions between common
+            species at intermediate sampling levels. This suggests that
+            species are collected faster than their interactions. With a
+            limited number of sampled local networks, few regional
+            interactions are observed locally. Adding more sites brings
+            new species, but not always their interactions. Quadratic
+            relationships of network properties with sampling effort
+            were also observed by <span class="citation"
+            data-cites="McLeod2021Sampling">McLeod <em>et al.</em>
+            (2021)</span>.</p>
             <figure>
             <img src="figures/network_accumulation.png"
             id="fig:accumulation"
-            alt="Figure 2: Network accumulation curves. (a) Dissimilarity in species composition and (b) dissimilarity of interactions between common species between aggregated local networks and the metaweb of binary host-parasite interactions. Aggregated local networks were obtained by sequentially and randomly selecting a number of local networks of binary interactions and aggregating both their species and interactions. In both panels, the colored line represents the median dissimilarity across simulations and the grey areas cover the 50\% and 95\% percentile intervals. (c) Scaling of the number of interactions and (d) scaling of connectance with the number of sampled (aggregated) binary and probabilistic local interaction networks. For a better comparison with binary interactions, local networks of probabilistic interactions were derived from a metaweb of probabilistic interactions with a false positive and false negative rate of zero. A specific value of P(L_{i, j, k}|M_{i, j}) (the local probability of interaction among potentially interacting species, indices omitted in the figure for simplicity) was used for all local networks within a particular curve. Aggregated local networks of probabilistic interactions were obtained by sequentially and randomly selecting a number of local networks and aggregating both their species and interactions (with the value of P(L_{i, j, k}|M_{i, j}) adjusting according to Eq. 12)." />
+            alt="Figure 2: Network accumulation curves. (a) Dissimilarity in species composition and (b) dissimilarity of interactions between common species between aggregated local networks and the metaweb of binary host-parasite interactions. In both panels, the colored line represents the median dissimilarity across simulations and the grey areas cover the 50\% and 95\% percentile intervals. (c) Scaling of the number of interactions and (d) scaling of connectance with the number of sampled (aggregated) binary and probabilistic local interaction networks. For a better comparison with binary interactions, local networks of probabilistic interactions were derived from a metaweb of probabilistic interactions with a false positive and false negative rate of zero. A specific value of P(L_{i, j, k}|M_{i, j}) (the local probability of interaction among potentially interacting species) was used for all non-aggregated local networks within a particular curve. Aggregated local networks were obtained by sequentially and randomly selecting a number of local networks and aggregating both their species and interactions (with the value of P(L_{i, j, k}|M_{i, j}) increasing in aggregated local networks of probabilistic interactions)." />
             <figcaption aria-hidden="true">Figure 2: <strong>Network
             accumulation curves.</strong> (a) Dissimilarity in species
             composition and (b) dissimilarity of interactions between
             common species between aggregated local networks and the
-            metaweb of binary host-parasite interactions. Aggregated
-            local networks were obtained by sequentially and randomly
-            selecting a number of local networks of binary interactions
-            and aggregating both their species and interactions. In both
+            metaweb of binary host-parasite interactions. In both
             panels, the colored line represents the median dissimilarity
             across simulations and the grey areas cover the <span
             class="math inline">50%</span> and <span
@@ -1543,89 +1522,28 @@ interaction networks</div>
             negative rate of zero. A specific value of <span
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>)</span>
             (the local probability of interaction among potentially
-            interacting species, indices omitted in the figure for
-            simplicity) was used for all local networks within a
-            particular curve. Aggregated local networks of probabilistic
-            interactions were obtained by sequentially and randomly
+            interacting species) was used for all non-aggregated local
+            networks within a particular curve. Aggregated local
+            networks were obtained by sequentially and randomly
             selecting a number of local networks and aggregating both
             their species and interactions (with the value of <span
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>)</span>
-            adjusting according to Eq. 12).</figcaption>
+            increasing in aggregated local networks of probabilistic
+            interactions).</figcaption>
             </figure>
-            <p>Expectingly, local networks are highly dissimilar from
-            the metaweb in terms of species composition, especially when
-            only a limited number of sites has been sampled. This is
-            because species in the metaweb form the regional species
-            pool, and few species occur locally. Moreover, we observe a
-            peak in the dissimilarity of interactions between common
-            species at intermediate sampling levels. This suggests that
-            species are collected faster than their interactions. With a
-            limited number of sampled local networks, few regional
-            interactions are observed locally. Adding more sites brings
-            new species, but not always their interactions. Interactions
-            are more comprehensively captured when the number of sampled
-            sites is high. Quadratic relationships of network properties
-            with sampling effort were also observed by <span
-            class="citation" data-cites="McLeod2021Sampling">McLeod
-            <em>et al.</em> (2021)</span>.</p>
             <p>Next, we investigate how the number of local interactions
             and connectance scale with the number of sampled
             (aggregated) local networks of probabilistic or binary
-            interactions (Fig. 2c-d). We built probabilistic local
-            networks following Eq. 3, and set <span
-            class="math inline"><em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub>)</span>
-            to <span class="math inline">1</span> when the interaction
-            was observed at least once, and to <span
-            class="math inline">0</span> otherwise (i.e., no false
-            positive or false negative in the metaweb). We used a
-            constant value of <span
-            class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>)</span>
-            for all interactions.</p>
-            <p>When aggregating local networks of probabilistic
-            interactions, the constancy of the probability of regional
-            interaction across the entire study area means that any rise
-            in the probability of local interaction is solely
-            attributable to an increase in <span
-            class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>)</span>.
-            For example, let <span
-            class="math inline"><em>L</em><sub>1</sub></span> and <span
-            class="math inline"><em>L</em><sub>2</sub></span> be two
-            local networks and <span
-            class="math inline"><em>L</em><sub>1, 2</sub></span> the
-            aggregated network. If <span
-            class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, 1</sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>)</span>
-            and <span
-            class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, 2</sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>)</span>
-            are the probabilities that two potentially interacting taxa
-            interact respectively in <span
-            class="math inline"><em>L</em><sub>1</sub></span> and <span
-            class="math inline"><em>L</em><sub>2</sub></span>, the
-            probability <span
-            class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, 1, 2</sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>)</span>
-            that these taxa interact in the aggregated network <span
-            class="math inline"><em>L</em><sub>1, 2</sub></span> is
-            obtained by:</p>
-            <p><span id="eq:aggregate"><span
-            class="math display"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, 1, 2</sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>) = 1 − [1−<em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, 1</sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>)] × [1−<em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, 2</sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>)],   (12)</span></span></p>
-            <p>assuming independence between the interaction of the two
-            taxa in different networks. This equation represents the
-            probability that the interaction is realized in either (1)
-            exclusively the local network <span
-            class="math inline"><em>L</em><sub>1</sub></span>, (2)
-            exclusively the local network <span
-            class="math inline"><em>L</em><sub>2</sub></span> or (3)
-            both, given that the two taxa have the biological capacity
-            to interact.</p>
-            <p>By comparing the scaling relationships observed in local
-            networks of binary (empirical) and probabilistic (modeled)
-            interactions, Fig. 2c-d shows that high values of <span
+            interactions (Fig. 2c-d). By comparing the scaling
+            relationships observed in local networks of binary and
+            probabilistic interactions, we observe that high values of
+            <span
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>)</span>
             lead to systematic overestimations in the number of
             interactions and connectance, especially when <span
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>) = 1</span>
-            (corresponding to the scenario where local probabilities of
-            interactions are equivalent to the probabilities of regional
-            interactions). This suggests that high values of <span
+            (i.e., when local and regional probabilities of interactions
+            are equivalent). This suggests that high values of <span
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>)</span>
             do not adequately capture the variability of local
             interactions. However, these biases tend to diminish as the
@@ -1706,7 +1624,7 @@ interaction networks</div>
             biological feasibility of interactions may be expressed
             as:</p>
             <p><span id="eq:metaweb"><span
-            class="math display"><em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>),   (13)</span></span></p>
+            class="math display"><em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>),   (11)</span></span></p>
             <p>which, in contrast with local networks, is not
             conditioned on any spatial, temporal, co-occurrence or
             environmental variables (Tbl. 1). Regional traits may differ
@@ -1737,7 +1655,7 @@ interaction networks</div>
             traits do not support an interaction), which is based
             uniquely on biological traits:</p>
             <p><span id="eq:forbidden"><span
-            class="math display"><em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>) = 1 − <em>P</em>(<em>F</em><sub><em>i</em>, <em>j</em></sub>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>).   (14)</span></span></p>
+            class="math display"><em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>) = 1 − <em>P</em>(<em>F</em><sub><em>i</em>, <em>j</em></sub>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>).   (12)</span></span></p>
             <p>For example, let <span
             class="math inline"><em>i</em></span> be a western
             diamondback rattlesnake (<em>Crotalus atrox</em>) and <span
@@ -1769,7 +1687,7 @@ interaction networks</div>
             ecological feasibility of interactions may be expressed
             as:</p>
             <p><span id="eq:metaweb2"><span
-            class="math display"><em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub><sup>*</sup>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>,<em>E</em>),   (15)</span></span></p>
+            class="math display"><em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub><sup>*</sup>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>,<em>E</em>),   (13)</span></span></p>
             <p>where <span class="math inline"><em>E</em></span> is the
             environmental conditions under which potential interactions
             are evaluated (Tbl. 1). Unlike <span
@@ -1795,7 +1713,7 @@ interaction networks</div>
             that it is biologically feasible, even across all
             environmental conditions:</p>
             <p><span id="eq:feasibility"><span
-            class="math display">∫<sub><em>E</em></sub><em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub><sup>*</sup>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>,<em>E</em>)<em>d</em><em>E</em> ≤ <em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>).   (16)</span></span></p>
+            class="math display">∫<sub><em>E</em></sub><em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub><sup>*</sup>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>,<em>E</em>)<em>d</em><em>E</em> ≤ <em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>).   (14)</span></span></p>
             <p>This is because the biological feasibility of an
             interaction is a prerequisite for its ecological
             feasibility. Biological feasibility is necessary but not
@@ -1852,7 +1770,7 @@ interaction networks</div>
             class="math display">$$P(M_{i, j} = 1 | O_{i, j, k} = 0,...)
             = \frac{P(O_{i, j, k} = 0 |M_{i, j} = 1,
             ...) \times P(M_{i, j} = 1 | ...)}{P(O_{i, j, k} = 0
-            |...)}.\qquad{(17)}$$</span></span></p>
+            |...)}.\qquad{(15)}$$</span></span></p>
             <p>The reduction in the probability of regional interaction
             after considering that it was never observed locally (i.e.,
             <span
@@ -1996,7 +1914,7 @@ interaction networks</div>
             interactions are not captured in local networks.</p>
             <figure>
             <img src="figures/spatial_scaling.png" id="fig:spatial"
-            alt="Figure 3: Spatial scaling of interactions. Expected number of host-parasite interactions in a network aggregating all (a) local and (b) regional probabilistic interactions within a latitudinal window of a given width. Every dashed curve corresponds to a different window centered at a given latitude (color bar), with the pink solid line representing the median number of interactions across windows. Heatmaps of the expected number of (c) local and (d) regional interactions found in windows of specified width and central latitudes. Probabilities of regional interactions were obtained with a false positive rate of 5\% and a false negative rate of 10\%. Local probabilistic interactions were derived from probabilistic regional interactions by setting the value of P(L_{i, j, k}|M_{i,j}) (the local probability of interaction among potentially interacting species) to 1, ensuring a conservative comparison between aggregated local networks and metawebs. Aggregated local networks were obtained by aggregating both the species and interactions found within a particular latitudinal window, with the values of P(L_{i, j, k}|M_{i, j}) remaining at their maximum value of 1 following Eq. 12. Further details on the data and network construction are presented in the supplementary material." />
+            alt="Figure 3: Spatial scaling of interactions. Expected number of host-parasite interactions in a network aggregating all (a) local and (b) regional probabilistic interactions within a latitudinal window of a given width. Every dashed curve corresponds to a different window centered at a given latitude (color bar), with the pink solid line representing the median number of interactions across windows. Heatmaps of the expected number of (c) local and (d) regional interactions found in windows of specified width and central latitudes. Probabilities of regional interactions were obtained with a false positive rate of 5\% and a false negative rate of 10\%. Local probabilistic interactions were derived from probabilistic regional interactions by setting the value of P(L_{i, j, k}|M_{i,j}) (the local probability of interaction among potentially interacting species) to 1, ensuring a conservative comparison between aggregated local networks and metawebs. Aggregated local networks were obtained by aggregating both the species and interactions found within a particular latitudinal window, with the values of P(L_{i, j, k}|M_{i, j}) remaining at their maximum value of 1 following Eq. ¿eq:aggregate?. Further details on the data and network construction are presented in the supplementary material." />
             <figcaption aria-hidden="true">Figure 3: <strong>Spatial
             scaling of interactions.</strong> Expected number of
             host-parasite interactions in a network aggregating all (a)
@@ -2023,9 +1941,10 @@ interaction networks</div>
             values of <span
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>)</span>
             remaining at their maximum value of <span
-            class="math inline">1</span> following Eq. 12. Further
-            details on the data and network construction are presented
-            in the supplementary material.</figcaption>
+            class="math inline">1</span> following
+            Eq. <strong>¿eq:aggregate?</strong>. Further details on the
+            data and network construction are presented in the
+            supplementary material.</figcaption>
             </figure>
             </blockquote>
             <blockquote>
@@ -2050,7 +1969,7 @@ interaction networks</div>
             <p>There are no inherent differences between the taxonomic
             scaling of local networks and metawebs. Interaction
             probabilities in both local networks (Eq. 4) and metawebs
-            (Eq. 13) are not directly conditioned on taxonomic level.
+            (Eq. 11) are not directly conditioned on taxonomic level.
             The taxonomic scale is tied to the definition of the event
             itself (i.e., the interaction between two taxa, defined at
             the desired taxonomical scale), not to the variables on
@@ -2081,7 +2000,7 @@ interaction networks</div>
             <p><span id="eq:taxo"><span class="math display">$$P(G_{g_1,
             g_2} = 1) = 1 - \prod_{i = 1}^{n_1}\prod_{j = 1}^{n_2}(1 -
             P(S_{g_{1,i}, g_{2,j}} =
-            1)),\qquad{(18)}$$</span></span></p>
+            1)),\qquad{(16)}$$</span></span></p>
             <p>where <span
             class="math inline"><em>g</em><sub>1, <em>i</em></sub></span>
             and <span
@@ -2309,7 +2228,7 @@ interaction networks</div>
             class="math inline"><em>L</em><sub>0</sub></span> is given
             by:</p>
             <p><span id="eq:binary"><span
-            class="math display"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, 0</sub>) = 1 − [1−<em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, 1</sub>)] × [1−<em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, 2</sub>)].   (19)</span></span></p>
+            class="math display"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, 0</sub>) = 1 − [1−<em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, 1</sub>)] × [1−<em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, 2</sub>)].   (17)</span></span></p>
             <p>Due to its larger area, the probability that the two taxa
             interact in <span
             class="math inline"><em>L</em><sub>0</sub></span> is equal
@@ -2406,7 +2325,7 @@ interaction networks</div>
             interaction, regardless of the conditional variables
             considered:</p>
             <p><span id="eq:switch"><span
-            class="math display"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|...) ≤ <em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>).   (20)</span></span></p>
+            class="math display"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|...) ≤ <em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>).   (18)</span></span></p>
             <p>Moreover, the probability that two taxa possess the
             biological capacity to interact must be higher than the
             probability of them interacting at any location and time
@@ -2416,7 +2335,7 @@ interaction networks</div>
             conditions must be less than the probability of regional
             interaction, i.e.</p>
             <p><span id="eq:all"><span
-            class="math display">∫<sub><em>E</em><sub><em>k</em></sub></sub>∫<sub><em>A</em></sub>∫<sub><em>t</em></sub><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>E</em><sub><em>k</em></sub>,<em>A</em>,<em>t</em>) d<em>t</em> d<em>A</em> d<em>E</em><sub><em>k</em></sub> ≤ <em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>).   (21)</span></span></p>
+            class="math display">∫<sub><em>E</em><sub><em>k</em></sub></sub>∫<sub><em>A</em></sub>∫<sub><em>t</em></sub><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>E</em><sub><em>k</em></sub>,<em>A</em>,<em>t</em>) d<em>t</em> d<em>A</em> d<em>E</em><sub><em>k</em></sub> ≤ <em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>).   (19)</span></span></p>
             <p>Estimating more precisely the probability <span
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>)</span>
             that two taxa interact locally if they can potentially
@@ -3397,13 +3316,6 @@ interaction networks</div>
             corolla matching despite shifting temporal resources in
             tropical hummingbird-plant interactions</a>. <em>Ecology
             Letters</em>, 20, 326–335.
-            </div>
-            <div id="ref-Whittaker1960Vegetation" class="csl-entry"
-            role="doc-biblioentry">
-            Whittaker, R.H. (1960). <a
-            href="https://doi.org/10.2307/1943563">Vegetation of the
-            Siskiyou Mountains, Oregon and California</a>.
-            <em>Ecological Monographs</em>, 30, 279–338.
             </div>
             <div id="ref-Wood2015Effects" class="csl-entry"
             role="doc-biblioentry">
