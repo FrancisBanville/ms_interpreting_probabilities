@@ -1357,6 +1357,61 @@
         "type": "article-journal"
     },
     {
+        "issue": "12",
+        "issued": {
+            "date-parts": [
+                [
+                    2011
+                ]
+            ]
+        },
+        "container-title": "Ecology Letters",
+        "author": [
+            {
+                "family": "Clark",
+                "given": "James S."
+            },
+            {
+                "family": "Bell",
+                "given": "David M."
+            },
+            {
+                "family": "Hersh",
+                "given": "Michelle H."
+            },
+            {
+                "family": "Kwit",
+                "given": "Matthew C."
+            },
+            {
+                "family": "Moran",
+                "given": "Emily"
+            },
+            {
+                "family": "Salk",
+                "given": "Carl"
+            },
+            {
+                "family": "Stine",
+                "given": "Anne"
+            },
+            {
+                "family": "Valle",
+                "given": "Denis"
+            },
+            {
+                "family": "Zhu",
+                "given": "Kai"
+            }
+        ],
+        "id": "Clark2011Individualscale",
+        "DOI": "10.1111/j.1461-0248.2011.01685.x",
+        "volume": "14",
+        "page": "1273-1287",
+        "title": "Individual-scale variation, species-scale differences: Inference needed to understand diversity",
+        "type": "article-journal"
+    },
+    {
         "publisher": "Public Library of Science",
         "issue": "5",
         "issued": {
@@ -1520,6 +1575,33 @@
         },
         "container-title": "Ecological networks: Linking structure and dynamics",
         "type": "chapter"
+    },
+    {
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2016
+                ]
+            ]
+        },
+        "container-title": "Theoretical Ecology",
+        "author": [
+            {
+                "family": "Eklöf",
+                "given": "Anna"
+            },
+            {
+                "family": "Stouffer",
+                "given": "Daniel B."
+            }
+        ],
+        "id": "Eklof2016Phylogenetica",
+        "DOI": "10.1007/s12080-015-0273-9",
+        "volume": "9",
+        "page": "107-115",
+        "title": "The phylogenetic component of food web structure and intervality",
+        "type": "article-journal"
     },
     {
         "publisher": "Institute of Mathematical Statistics",
@@ -4168,6 +4250,74 @@
         "type": ""
     },
     {
+        "publisher": "Elsevier",
+        "issue": "4",
+        "issued": {
+            "date-parts": [
+                [
+                    2024
+                ]
+            ]
+        },
+        "container-title": "Trends in Ecology & Evolution",
+        "author": [
+            {
+                "family": "Simmonds",
+                "given": "Emily G."
+            },
+            {
+                "family": "Adjei",
+                "given": "Kwaku P."
+            },
+            {
+                "family": "Cretois",
+                "given": "Benjamin"
+            },
+            {
+                "family": "Dickel",
+                "given": "Lisa"
+            },
+            {
+                "family": "González-Gil",
+                "given": "Ricardo"
+            },
+            {
+                "family": "Laverick",
+                "given": "Jack H."
+            },
+            {
+                "family": "Mandeville",
+                "given": "Caitlin P."
+            },
+            {
+                "family": "Mandeville",
+                "given": "Elizabeth G."
+            },
+            {
+                "family": "Ovaskainen",
+                "given": "Otso"
+            },
+            {
+                "family": "Sicacha-Parada",
+                "given": "Jorge"
+            },
+            {
+                "family": "Skarstein",
+                "given": "Emma S."
+            },
+            {
+                "family": "O’Hara",
+                "given": "Bob"
+            }
+        ],
+        "id": "Simmonds2024Recommendations",
+        "DOI": "10.1016/j.tree.2023.10.012",
+        "volume": "39",
+        "page": "328-337",
+        "title": "Recommendations for quantitative uncertainty consideration in ecology and evolution",
+        "type": "article-journal"
+    },
+    {
         "issue": "12",
         "issued": {
             "date-parts": [
@@ -4294,6 +4444,42 @@
         "volume": "80",
         "page": "632-639",
         "title": "The role of body mass in diet contiguity and food-web structure",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "American Association for the Advancement of Science",
+        "issue": "6075",
+        "issued": {
+            "date-parts": [
+                [
+                    2012
+                ]
+            ]
+        },
+        "container-title": "Science",
+        "author": [
+            {
+                "family": "Stouffer",
+                "given": "Daniel B."
+            },
+            {
+                "family": "Sales-Pardo",
+                "given": "Marta"
+            },
+            {
+                "family": "Sirer",
+                "given": "M. Irmak"
+            },
+            {
+                "family": "Bascompte",
+                "given": "Jordi"
+            }
+        ],
+        "id": "Stouffer2012Evolutionarya",
+        "DOI": "10.1126/science.1216556",
+        "volume": "335",
+        "page": "1489-1492",
+        "title": "Evolutionary Conservation of Species’ Roles in Food Webs",
         "type": "article-journal"
     },
     {
