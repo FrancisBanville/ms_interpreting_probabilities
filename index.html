@@ -372,7 +372,8 @@ interaction networks</div>
             nocturnal and diurnal species coexisting in the same space
             with different daily activity timings, Jordano 1987)</span>
             and the large number of rare and cryptic interactions in a
-            community, contribute to these knowledge gaps <span
+            community, contribute to these knowledge gaps by making it
+            more difficult to observe interactions <span
             class="citation" data-cites="Jordano2016Samplingb">(Jordano
             2016)</span>.</p>
             <p>Several conditions must be satisfied for an interaction
@@ -484,11 +485,59 @@ interaction networks</div>
             spatiotemporal variability of the aforementioned ecological
             processes and the uncertainty in our knowledge of
             interactions. By accounting for the uncertainty of
-            interactions, networks of probabilistic interactions may
-            provide a more realistic portrait of species interactions.
-            However, the absence of a standardized definition for
-            probabilistic interactions hinders our capacity to study and
-            comprehend this uncertainty effectively.</p>
+            interactions, networks of probabilistic interactions (which
+            differ from probabilistic networks describing the
+            uncertainty and variability of the <em>whole</em> network)
+            may provide a more realistic portrait of species
+            interactions. However, the absence of a standardized
+            definition for probabilistic interactions hinders our
+            capacity to study and comprehend this uncertainty
+            effectively.</p>
+            <p>We distinguish the variability of interactions from their
+            uncertainty. Interaction variability is defined as the
+            variation of interactions along spatial, temporal, or
+            environmental axes <span class="citation"
+            data-cites="Poisot2015Speciesa">(Poisot <em>et al.</em>
+            2015)</span>. For instance, the spatiotemporal variability
+            of interactions describe the variation in the occurrence or
+            strength of interactions across space and time. It is a
+            property of interactions that should be quantified if we aim
+            for a comprehensive understanding of ecological networks.
+            Stochasticity is the inherent randomness or unpredictability
+            of interactions that lead to this variability. Conversely,
+            uncertainty is defined as a lack of knowledge about the
+            occurrence of interactions. When using statistical models to
+            infer interactions, uncertainty sources include input data,
+            parameter, and model structure uncertainties <span
+            class="citation"
+            data-cites="Simmonds2024Recommendations">(Simmonds <em>et
+            al.</em> 2024)</span>. Input data uncertainty arises from
+            our inability to empirically observe all interactions and
+            from measurement errors in environmental and biological
+            variables used for inference. Parameter uncertainty
+            represents a plausible range of values for a parameter whose
+            exact value is unknown. For example, we may calculate a
+            range of plausible values for interaction variability (e.g.,
+            there could be a <span class="math inline">50%</span>
+            certainty that an interaction occurs <span
+            class="math inline">50%</span> of the time). Model structure
+            uncertainty recognizes that different statistical models may
+            adequately predict interactions. In contrast to variability,
+            uncertainty can be reduced by sampling additional data.
+            <span class="citation"
+            data-cites="Simmonds2024Recommendations">Simmonds <em>et
+            al.</em> (2024)</span> underscores the importance of
+            quantifying and reporting these diverse sources of
+            uncertainty, alongside ensuring their appropriate
+            propagation to model output (such as predicted interactions)
+            and higher-level measures (such as network structure).
+            Finally, a probability is a measure of how likely a specific
+            outcome is, based on both the uncertainty and variability of
+            interactions. Interaction probabilities may be uncertain
+            when there is a distribution of plausible probability
+            values. While recognizing that these definitions may not be
+            universally accepted, they are the ones we adopt in this
+            manuscript.</p>
             <p>Networks of probabilistic interactions, within a Bayesian
             perspective, express our degree of belief (or confidence)
             regarding the occurrence or observation of interactions. In
@@ -497,19 +546,16 @@ interaction networks</div>
             interactions. Based on the scale at which they are
             estimated, interaction probabilities may reflect our level
             of confidence in whether interactions will be observed,
-            realized locally, or biologically feasible. As an
-            illustration, we could outline a situation in which there is
-            a <span class="math inline">50%</span> certainty that an
-            interaction occurs <span class="math inline">50%</span> of
-            the time. Our level of confidence should be more definitive
-            (approaching either <span class="math inline">0</span> or
-            <span class="math inline">1</span>) as we extend our
-            sampling to a broader area and over a longer time period,
-            thereby diminishing the uncertainty of our knowledge of
-            interactions (but not necessarily the estimation of their
-            variability). In the broadest sense, binary interactions are
-            also a type of probabilistic interaction, in which the
-            numerical value of an interaction is restrained to <span
+            realized locally, or biologically feasible. Our level of
+            confidence should be more definitive (approaching either
+            <span class="math inline">0</span> or <span
+            class="math inline">1</span>) as we extend our sampling to a
+            broader area and over a longer time period, thereby
+            diminishing the uncertainty of our knowledge of interactions
+            (but not necessarily the estimation of their variability).
+            In the broadest sense, binary interactions are also a type
+            of probabilistic interaction, in which the numerical value
+            of an interaction is restrained to <span
             class="math inline">0</span> (non-occurring) or <span
             class="math inline">1</span> (occurring). In networks of
             probabilistic interactions, only forbidden interactions
@@ -3084,6 +3130,15 @@ interaction networks</div>
             href="https://doi.org/10.1101/2024.01.30.578036">A framework
             for reconstructing ancient food webs using functional trait
             data</a>.
+            </div>
+            <div id="ref-Simmonds2024Recommendations" class="csl-entry"
+            role="doc-biblioentry">
+            Simmonds, E.G., Adjei, K.P., Cretois, B., Dickel, L.,
+            González-Gil, R., Laverick, J.H., <em>et al.</em> (2024). <a
+            href="https://doi.org/10.1016/j.tree.2023.10.012">Recommendations
+            for quantitative uncertainty consideration in ecology and
+            evolution</a>. <em>Trends in Ecology &amp; Evolution</em>,
+            39, 328–337.
             </div>
             <div id="ref-Singer2012GeoMos" class="csl-entry"
             role="doc-biblioentry">
