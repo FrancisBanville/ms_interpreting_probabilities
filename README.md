@@ -13,8 +13,8 @@ interactions, inevitably leading to uncertainty in our knowledge of
 interactions. For example, the spatial and temporal uncoupling of species [e.g.,
 nocturnal and diurnal species coexisting in the same space with different daily
 activity timings, @Jordano1987PatMut] and the large number of rare and cryptic
-interactions in a community, contribute to these knowledge gaps
-[@Jordano2016Samplingb]. 
+interactions in a community, contribute to these knowledge gaps by making it
+more difficult to observe interactions [@Jordano2016Samplingb]. 
 
 Several conditions must be satisfied for an interaction to be observed locally.
 First, both species must have overlapping geographic ranges, i.e. they must
@@ -69,10 +69,41 @@ directly observable [@Kefi2015NetStr; @Kefi2016HowStr]. Representing direct
 interactions probabilistically can capture the spatiotemporal variability of the
 aforementioned ecological processes and the uncertainty in our knowledge of
 interactions. By accounting for the uncertainty of interactions, networks of
-probabilistic interactions may provide a more realistic portrait of species
-interactions. However, the absence of a standardized definition for
-probabilistic interactions hinders our capacity to study and comprehend this
-uncertainty effectively.
+probabilistic interactions (which differ from probabilistic networks describing
+the uncertainty and variability of the *whole* network) may provide a more
+realistic portrait of species interactions. However, the absence of a
+standardized definition for probabilistic interactions hinders our capacity to
+study and comprehend this uncertainty effectively.
+
+We distinguish the variability of interactions from their uncertainty.
+Interaction variability is defined as the variation of interactions along
+spatial, temporal, or environmental axes [@Poisot2015Speciesa]. For instance,
+the spatiotemporal variability of interactions describe the variation in the
+occurrence or strength of interactions across space and time. It is a property
+of interactions that should be quantified if we aim for a comprehensive
+understanding of ecological networks. Stochasticity is the inherent randomness
+or unpredictability of interactions that lead to this variability. Conversely,
+uncertainty is defined as a lack of knowledge about the occurrence of
+interactions. When using statistical models to infer interactions, uncertainty
+sources include input data, parameter, and model structure uncertainties
+[@Simmonds2024Recommendations]. Input data uncertainty arises from our inability
+to empirically observe all interactions and from measurement errors in
+environmental and biological variables used for inference. Parameter uncertainty
+represents a plausible range of values for a parameter whose exact value is
+unknown. For example, we may calculate a range of plausible values for
+interaction variability (e.g., there could be a $50\%$ certainty that an
+interaction occurs $50\%$ of the time). Model structure uncertainty recognizes
+that different statistical models may adequately predict interactions. In
+contrast to variability, uncertainty can be reduced by sampling additional data.
+@Simmonds2024Recommendations underscores the importance of quantifying and
+reporting these diverse sources of uncertainty, alongside ensuring their
+appropriate propagation to model output (such as predicted interactions) and
+higher-level measures (such as network structure). Finally, a probability is a
+measure of how likely a specific outcome is, based on both the uncertainty and
+variability of interactions. Interaction probabilities may be uncertain when
+there is a distribution of plausible probability values. While recognizing that
+these definitions may not be universally accepted, they are the ones we adopt in
+this manuscript.
 
 Networks of probabilistic interactions, within a Bayesian perspective, express
 our degree of belief (or confidence) regarding the occurrence or observation of
@@ -80,20 +111,19 @@ interactions. In contrast, interactions are simply regarded as either occurring
 or not in networks of deterministic binary interactions. Based on the scale at
 which they are estimated, interaction probabilities may reflect our level of
 confidence in whether interactions will be observed, realized locally, or
-biologically feasible. As an illustration, we could outline a situation in which
-there is a $50\%$ certainty that an interaction occurs $50\%$ of the time. Our
-level of confidence should be more definitive (approaching either $0$ or $1$) as
-we extend our sampling to a broader area and over a longer time period, thereby
-diminishing the uncertainty of our knowledge of interactions (but not
-necessarily the estimation of their variability). In the broadest sense, binary
-interactions are also a type of probabilistic interaction, in which the
-numerical value of an interaction is restrained to $0$ (non-occurring) or $1$
-(occurring). In networks of probabilistic interactions, only forbidden
-interactions [i.e., interactions prohibited by biological traits or species
-absence, @Jordano2003Invarianta; @Olesen2010Missing] have a probability value of
-zero, provided that intraspecific trait variability is considered
-[@Gonzalez-Varo2016Labilea]. Thus, understanding the nuances of probabilistic
-interactions allows for a more comprehensive depiction of ecological networks.
+biologically feasible. Our level of confidence should be more definitive
+(approaching either $0$ or $1$) as we extend our sampling to a broader area and
+over a longer time period, thereby diminishing the uncertainty of our knowledge
+of interactions (but not necessarily the estimation of their variability). In
+the broadest sense, binary interactions are also a type of probabilistic
+interaction, in which the numerical value of an interaction is restrained to $0$
+(non-occurring) or $1$ (occurring). In networks of probabilistic interactions,
+only forbidden interactions [i.e., interactions prohibited by biological traits
+or species absence, @Jordano2003Invarianta; @Olesen2010Missing] have a
+probability value of zero, provided that intraspecific trait variability is
+considered [@Gonzalez-Varo2016Labilea]. Thus, understanding the nuances of
+probabilistic interactions allows for a more comprehensive depiction of
+ecological networks.
 
 The application and development of computational methods in network ecology,
 often based on a probabilistic representation of interactions, can alleviate
