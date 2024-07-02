@@ -712,6 +712,37 @@
         "type": "article-journal"
     },
     {
+        "issue": "6",
+        "issued": {
+            "date-parts": [
+                [
+                    2024
+                ]
+            ]
+        },
+        "container-title": "Global Change Biology",
+        "author": [
+            {
+                "family": "Brimacombe",
+                "given": "Chris"
+            },
+            {
+                "family": "Bodner",
+                "given": "Korryn"
+            },
+            {
+                "family": "Fortin",
+                "given": "Marie-Josée"
+            }
+        ],
+        "id": "Brimacombe2024Applying",
+        "DOI": "10.1111/gcb.17360",
+        "volume": "30",
+        "page": "e17360",
+        "title": "Applying a method before its proof of concept: A cautionary tale using inferred food webs",
+        "type": "article-journal"
+    },
+    {
         "issue": "n/a",
         "container-title": "Global Ecology and Biogeography",
         "author": [
