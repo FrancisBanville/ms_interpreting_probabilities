@@ -4,7 +4,7 @@
 theme(:mute)
 default(; frame=:box)
 Plots.scalefontsizes(1.3)
-fonts=font("DejaVu Sans",6)
+fonts=font("DejaVu Sans",7)
 
 ## read network data
 
@@ -92,8 +92,9 @@ plot_bos = plot(1:n_samples,
     ytickfont=fonts, 
     foreground_color_legend=:black, 
     background_color_legend=:white, 
+    yguidefontsize=6,
     legendfont=fonts,
-    legendfontpointsize=6,
+    legendfontpointsize=7,
     legendfontfamily="DejaVu Sans")
 
 xaxis!(:log,
@@ -142,7 +143,7 @@ plot_bs = plot(1:n_samples,
     foreground_color_legend=:black, 
     background_color_legend=:white, 
     legendfont=fonts,
-    legendfontpointsize=6,
+    legendfontpointsize=7,
     legendfontfamily="DejaVu Sans")
 
 xaxis!(:log,
@@ -242,7 +243,7 @@ plot_links = plot(1:n_samples,
     foreground_color_legend=:black, 
     background_color_legend=:white, 
     legendfont=fonts,
-    legendfontpointsize=6,
+    legendfontpointsize=7,
     legendfontfamily="DejaVu Sans")
 
 plot!(1:n_samples,
@@ -295,7 +296,7 @@ plot_co = plot(1:n_samples,
     foreground_color_legend=:black, 
     background_color_legend=:white, 
     legendfont=fonts,
-    legendfontpointsize=6,
+    legendfontpointsize=7,
     legendfontfamily="DejaVu Sans")
 
 
@@ -410,7 +411,7 @@ plotA = scatter(mean.(eachcol(samples_co_100_100.samples_metaweb_co))[Ns_rdm],
         foreground_color_legend=:black,
         background_color_legend=:white, 
         legendfont=fonts,
-        legendfontpointsize=5,
+        legendfontpointsize=6,
         legendfontfamily="DejaVu Sans")
       
 scatter!(mean.(eachcol(samples_co_100_50.samples_metaweb_co))[Ns_rdm], 
@@ -479,7 +480,7 @@ plotB = scatter(mean.(eachcol(samples_co_75_100.samples_metaweb_co))[Ns_rdm],
     foreground_color_legend=:black,
     background_color_legend=:white, 
     legendfont=fonts,
-    legendfontpointsize=5,
+    legendfontpointsize=6,
     legendfontfamily="DejaVu Sans")
 
 scatter!(mean.(eachcol(samples_co_75_50.samples_metaweb_co))[Ns_rdm], 
@@ -547,7 +548,7 @@ plotC = scatter(mean.(eachcol(samples_co_50_100.samples_metaweb_co))[Ns_rdm],
     foreground_color_legend=:black,
     background_color_legend=:white, 
     legendfont=fonts,
-    legendfontpointsize=5,
+    legendfontpointsize=6,
     legendfontfamily="DejaVu Sans")
 
 scatter!(mean.(eachcol(samples_co_50_50.samples_metaweb_co))[Ns_rdm], 
@@ -660,7 +661,7 @@ plotD = scatter(nsims,
         foreground_color_legend=:black,
         background_color_legend=:white, 
         legendfont=fonts,
-        legendfontpointsize=6,
+        legendfontpointsize=7,
         legendfontfamily="DejaVu Sans")
 
 xaxis!(:log,
@@ -688,7 +689,7 @@ plotE = scatter(nsims,
         foreground_color_legend=:black,
         background_color_legend=:white, 
         legendfont=fonts,
-        legendfontpointsize=6,
+        legendfontpointsize=7,
         legendfontfamily="DejaVu Sans")
 
 xaxis!(:log,
@@ -717,7 +718,7 @@ plotF = scatter(nsims,
         foreground_color_legend=:black,
         background_color_legend=:white, 
         legendfont=fonts,
-        legendfontpointsize=6,
+        legendfontpointsize=7,
         legendfontfamily="DejaVu Sans")
 
 xaxis!(:log,
@@ -796,12 +797,13 @@ plot_links_merged = plot(areas,
     guidefont=fonts,
     xtickfont=fonts, 
     ytickfont=fonts, 
+    ytickfontsize=6,
     foreground_color_legend=:white, 
     background_color_legend=:white, 
     colorbar_title="Central latitudinal coordinate",
     colorbar_titlefont=fonts, 
     legendfont=fonts,
-    legendfontpointsize=6,
+    legendfontpointsize=7,
     legendfontfamily="DejaVu Sans")
 
 plot!(areas,
@@ -834,12 +836,13 @@ plot_links_metaweb = plot(areas,
     guidefont=fonts,
     xtickfont=fonts, 
     ytickfont=fonts, 
+    ytickfontsize=6,
     colorbar_title="Central latitudinal coordinate",
     colorbar_titlefont=fonts, 
     foreground_color_legend=:white, 
     background_color_legend=:white, 
     legendfont=fonts,
-    legendfontpointsize=6,
+    legendfontpointsize=7,
     legendfontfamily="DejaVu Sans")
 
 plot!(areas,
@@ -868,6 +871,7 @@ heatmap_links_merged = heatmap(areas, lats, links_merged, c = :viridis,
         guidefont=fonts, 
         xtickfont=fonts, 
         ytickfont=fonts,
+        ytickfontsize=6,
         colorbar_titlefont=fonts, 
         foreground_color_legend=:black, 
         background_color_legend=:white)
@@ -890,6 +894,7 @@ heatmap_links_metaweb = heatmap(areas, lats, links_metaweb, c = :viridis,
         guidefont=fonts, 
         xtickfont=fonts, 
         ytickfont=fonts,
+        ytickfontsize=6,
         colorbar_titlefont=fonts, 
         foreground_color_legend=:black, 
         background_color_legend=:white)
@@ -1000,7 +1005,7 @@ plotB = plot(t, p[:,1],
     foreground_color_legend=:black, 
     background_color_legend=:white, 
     legendfont=fonts,
-    legendfontpointsize=6,
+    legendfontpointsize=7,
     legendfontfamily="DejaVu Sans")
 
 for i in 2:length(params)
