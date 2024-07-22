@@ -291,6 +291,115 @@
         "type": "article-journal"
     },
     {
+        "issued": {
+            "date-parts": [
+                [
+                    2020
+                ]
+            ]
+        },
+        "container-title": "Physics Reports",
+        "author": [
+            {
+                "family": "Battiston",
+                "given": "Federico"
+            },
+            {
+                "family": "Cencetti",
+                "given": "Giulia"
+            },
+            {
+                "family": "Iacopini",
+                "given": "Iacopo"
+            },
+            {
+                "family": "Latora",
+                "given": "Vito"
+            },
+            {
+                "family": "Lucas",
+                "given": "Maxime"
+            },
+            {
+                "family": "Patania",
+                "given": "Alice"
+            },
+            {
+                "family": "Young",
+                "given": "Jean-Gabriel"
+            },
+            {
+                "family": "Petri",
+                "given": "Giovanni"
+            }
+        ],
+        "id": "Battiston2020Networks",
+        "collection-title": "Networks beyond pairwise interactions: Structure and dynamics",
+        "DOI": "10.1016/j.physrep.2020.05.004",
+        "volume": "874",
+        "page": "1-92",
+        "title": "Networks beyond pairwise interactions: Structure and dynamics",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "Frontiers",
+        "issued": {
+            "date-parts": [
+                [
+                    2021
+                ]
+            ]
+        },
+        "container-title": "Frontiers in Ecology and Evolution",
+        "author": [
+            {
+                "family": "Beardsell",
+                "given": "Andréanne"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Berteaux",
+                "given": "Dominique"
+            },
+            {
+                "family": "Gauthier",
+                "given": "Gilles"
+            },
+            {
+                "family": "Clermont",
+                "given": "Jeanne"
+            },
+            {
+                "family": "Careau",
+                "given": "Vincent"
+            },
+            {
+                "family": "Lecomte",
+                "given": "Nicolas"
+            },
+            {
+                "family": "Juhasz",
+                "given": "Claire-Cécile"
+            },
+            {
+                "family": "Royer-Boutin",
+                "given": "Pascal"
+            },
+            {
+                "family": "Bêty",
+                "given": "Joël"
+            }
+        ],
+        "id": "Beardsell2021Derivation",
+        "DOI": "10.3389/fevo.2021.630944",
+        "volume": "9",
+        "title": "Derivation of Predator Functional Responses Using a Mechanistic Approach in a Natural System",
+        "type": "article-journal"
+    },
+    {
         "issue": "3",
         "issued": {
             "date-parts": [
@@ -1269,6 +1378,88 @@
         "type": "article-journal"
     },
     {
+        "publisher": "Wiley",
+        "publisher-place": "Hoboken",
+        "issued": {
+            "date-parts": [
+                [
+                    2024
+                ]
+            ]
+        },
+        "container-title": "BIOLOGICAL REVIEWS",
+        "author": [
+            {
+                "family": "Cherif",
+                "given": "Mehdi"
+            },
+            {
+                "family": "Brose",
+                "given": "Ulrich"
+            },
+            {
+                "family": "Hirt",
+                "given": "Myriam R."
+            },
+            {
+                "family": "Ryser",
+                "given": "Remo"
+            },
+            {
+                "family": "Silve",
+                "given": "Violette"
+            },
+            {
+                "family": "Albert",
+                "given": "Georg"
+            },
+            {
+                "family": "Arnott",
+                "given": "Russell"
+            },
+            {
+                "family": "Berti",
+                "given": "Emilio"
+            },
+            {
+                "family": "Cirtwill",
+                "given": "Alyssa"
+            },
+            {
+                "family": "Dyer",
+                "given": "Alexander"
+            },
+            {
+                "family": "Gauzens",
+                "given": "Benoit"
+            },
+            {
+                "family": "Gupta",
+                "given": "Anhubav"
+            },
+            {
+                "family": "Ho",
+                "given": "Hsi-Cheng"
+            },
+            {
+                "family": "Portalier",
+                "given": "Sebastien M. J."
+            },
+            {
+                "family": "Wain",
+                "given": "Danielle"
+            },
+            {
+                "family": "Wootton",
+                "given": "Kate"
+            }
+        ],
+        "id": "Cherif2024Environment",
+        "DOI": "10.1111/brv.13105",
+        "title": "The environment to the rescue: Can physics help predict predator-prey interactions?",
+        "type": "article-journal"
+    },
+    {
         "publisher": "Nature Portfolio",
         "publisher-place": "Berlin",
         "issued": {
@@ -2061,6 +2252,29 @@
         "volume": "378",
         "page": "1147-1147",
         "title": "Monitor biodiversity for action",
+        "type": "article-journal"
+    },
+    {
+        "issue": "4",
+        "issued": {
+            "date-parts": [
+                [
+                    2004
+                ]
+            ]
+        },
+        "container-title": "Ecology",
+        "author": [
+            {
+                "family": "Grabowski",
+                "given": "Jonathan H."
+            }
+        ],
+        "id": "Grabowski2004Habitat",
+        "DOI": "10.1890/03-0067",
+        "volume": "85",
+        "page": "995-1004",
+        "title": "Habitat Complexity Disrupts Predator–Prey Interactions but Not the Trophic Cascade on Oyster Reefs",
         "type": "article-journal"
     },
     {
@@ -3433,6 +3647,42 @@
             }
         ],
         "id": "Pilosof2017MulNat",
+        "DOI": "10.1038/s41559-017-0101",
+        "volume": "1",
+        "page": "1-9",
+        "title": "The multilayer nature of ecological networks",
+        "type": "article-journal"
+    },
+    {
+        "publisher": "Nature Publishing Group",
+        "issue": "4",
+        "issued": {
+            "date-parts": [
+                [
+                    2017
+                ]
+            ]
+        },
+        "container-title": "Nature Ecology & Evolution",
+        "author": [
+            {
+                "family": "Pilosof",
+                "given": "Shai"
+            },
+            {
+                "family": "Porter",
+                "given": "Mason A."
+            },
+            {
+                "family": "Pascual",
+                "given": "Mercedes"
+            },
+            {
+                "family": "Kéfi",
+                "given": "Sonia"
+            }
+        ],
+        "id": "Pilosof2017Multilayer",
         "DOI": "10.1038/s41559-017-0101",
         "volume": "1",
         "page": "1-9",
