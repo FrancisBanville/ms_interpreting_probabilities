@@ -672,8 +672,8 @@ understand better the validity and limitations of our predictions
 > @Kopelke2017FooStra. This collection of networks consists of interactions
 > between willows, willow-galling sawflies, and their natural enemies sampled
 > across Europe. All data manipulation and methods are described in Appendix 1.
-> All code and data to reproduce these analyses are available at the Open
-> Science Framework (TBD).
+> All code and data to reproduce these analyses are available on Zenodo
+> (https://doi.org/10.5281/zenodo.12802326).
 > 
 > In [@Fig:accumulation]a-b, we show how the dissimilarity between the metaweb
 > of binary interactions and aggregated local networks changes with the number
