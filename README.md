@@ -485,7 +485,7 @@ of interaction between a given pair of taxa is thus always equal to or below
 their probability of regional interaction. Taking into account biological
 feasibility in our estimation of local interaction probabilities leverages
 information from the metaweb to better predict the local occurrence of
-interactions [@Strydom2021Roadmapa; @Dansereau2023Spatially].  
+interactions [@Strydom2021Roadmapa; @Dansereau2024Spatially].  
 
 ### Conditional variables must be explicitly stated  
 
@@ -541,14 +541,14 @@ distinction between local observations and actual realizations of interactions.
 
 | Expression | Type | Outcome | Common models | Reference | 
 | :------ | :-- | :---------- | :------ | -------: |   
-| $P(L_{i, j, k} \vert X_{i,k}, X_{j,k},...)$ | local | realization of the interaction given taxa co-occurrence | species distribution models | @Gravel2019BriElt, @Dansereau2023Spatially, Boxes 1 and 5 | 
+| $P(L_{i, j, k} \vert X_{i,k}, X_{j,k},...)$ | local | realization of the interaction given taxa co-occurrence | species distribution models | @Gravel2019BriElt, @Dansereau2024Spatially, Boxes 1 and 5 | 
 | $P(L_{i, j, k} \vert N_{i,k}, N_{j,k},...)$ | local | realization of the interaction given taxa abundances | neutral models | @Canard2014Empiricala |   
 | $P(L_{i, j, k} \vert T_{i,k}, T_{j,k}, ...)$ | local | realization of the interaction given local traits | trait matching models | @Caron2024Traitmatching, Box 4 |  
 | $P(L_{i, j, k} \vert E_k,...)$ | local | realization of the interaction given local environmental conditions | environmental-based models | @Gravel2019BriElt (temperature and precipitation) | 
 | $P(L_{i, j, k} \vert A_0, ...)$ | local | realization of the interaction in a given area or volume | spatial models | @Galiana2018Spatiala *, Box 3 |   
 | $P(L_{i, j, k} \vert t_0,...)$ | local | realization of the interaction during a given time period | temporal models | @Weinstein2017ComTra, Boxes 1 and 3 |    
 | $P(L_{i, j, k} \vert f(L_k),...)$ | local | realization of the interaction given network structure | topological models | @Fortuna2006HabLos (connectance), @Stock2017Linear |   
-| $P(L_{i, j, k} \vert M_{i, j},...)$ | local | realization of the interaction given that it is biologically feasible | spatiotemporal models | @Dansereau2023Spatially, Boxes 2, 3, and 5 |
+| $P(L_{i, j, k} \vert M_{i, j},...)$ | local | realization of the interaction given that it is biologically feasible | spatiotemporal models | @Dansereau2024Spatially, Boxes 2, 3, and 5 |
 | $P(O_{i, j, k} \vert L_{i, j, k},...)$ | local | observation of the interaction given that it is realized locally | sampling models | @Catchen2023Missinga |
 | $P(M_{i, j} \vert T_i, T_j)$ | regional | biological feasibility of the interaction given regional traits (non-forbiddenness) | trait matching models | @Strydom2022Food, Box 4 |   
 | $P(M^*_{i, j} \vert T_i, T_j, E)$ | regional | ecological feasibility of the interaction given regional traits and environmental conditions | trait matching and environmental-based models | this study |    
@@ -1144,7 +1144,7 @@ local networks is constrained by the metaweb [@Saravia2022Ecological].
 
 While predicting local binary interactions from a metaweb is not be a simple
 task, inferring local networks of probabilistic interactions from a metaweb
-comes with its own set of challenges. For example, @Dansereau2023Spatially
+comes with its own set of challenges. For example, @Dansereau2024Spatially
 inferred spatially-explicit food webs from a metaweb of probabilistic trophic
 interactions between Canadian mammals. Their predicted localized food webs are
 downscaled versions of the metaweb (i.e., localized metawebs with the same
