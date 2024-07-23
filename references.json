@@ -1666,7 +1666,16 @@
         "type": "article-journal"
     },
     {
-        "publisher": "EcoEvoRxiv",
+        "publisher": "Royal Society",
+        "issue": "1909",
+        "issued": {
+            "date-parts": [
+                [
+                    2024
+                ]
+            ]
+        },
+        "container-title": "Philosophical Transactions of the Royal Society B: Biological Sciences",
         "author": [
             {
                 "family": "Dansereau",
@@ -1681,15 +1690,11 @@
                 "given": "Timothée"
             }
         ],
-        "id": "Dansereau2023Spatially",
-        "title": "Spatially explicit predictions of food web structure from regional level data",
-        "issued": {
-            "date-parts": [
-                [
-                    2023
-                ]
-            ]
-        },
+        "id": "Dansereau2024Spatially",
+        "DOI": "10.1098/rstb.2023.0166",
+        "volume": "379",
+        "page": "20230166",
+        "title": "Spatially explicit predictions of food web structure from regional-level data",
         "type": "article-journal"
     },
     {

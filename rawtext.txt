@@ -537,7 +537,7 @@ thus always equal to or below their probability of regional interaction.
 Taking into account biological feasibility in our estimation of local
 interaction probabilities leverages information from the metaweb to
 better predict the local occurrence of interactions
-[@Strydom2021Roadmapa; @Dansereau2023Spatially].
+[@Strydom2021Roadmapa; @Dansereau2024Spatially].
 
 ### Conditional variables must be explicitly stated
 
@@ -602,7 +602,7 @@ between local observations and actual realizations of interactions.
   Expression                                     Type       Outcome               Common models                          Reference
   ---------------------------------------------- ---------- --------------------- --------------------- --------------------------
   $P(L_{i, j, k} \vert X_{i,k}, X_{j,k},...)$    local      realization of the    species distribution          @Gravel2019BriElt,
-                                                            interaction given     models                  @Dansereau2023Spatially,
+                                                            interaction given     models                  @Dansereau2024Spatially,
                                                             taxa co-occurrence                                       Boxes 1 and 5
 
   $P(L_{i, j, k} \vert N_{i,k}, N_{j,k},...)$    local      realization of the    neutral models             @Canard2014Empiricala
@@ -630,7 +630,7 @@ between local observations and actual realizations of interactions.
                                                             interaction given                                       (connectance),
                                                             network structure                                     @Stock2017Linear
 
-  $P(L_{i, j, k} \vert M_{i, j},...)$            local      realization of the    spatiotemporal models   @Dansereau2023Spatially,
+  $P(L_{i, j, k} \vert M_{i, j},...)$            local      realization of the    spatiotemporal models   @Dansereau2024Spatially,
                                                             interaction given                                    Boxes 2, 3, and 5
                                                             that it is                                  
                                                             biologically feasible                       
@@ -1304,7 +1304,7 @@ the structure of local networks is constrained by the metaweb
 While predicting local binary interactions from a metaweb is not be a
 simple task, inferring local networks of probabilistic interactions from
 a metaweb comes with its own set of challenges. For example,
-@Dansereau2023Spatially inferred spatially-explicit food webs from a
+@Dansereau2024Spatially inferred spatially-explicit food webs from a
 metaweb of probabilistic trophic interactions between Canadian mammals.
 Their predicted localized food webs are downscaled versions of the
 metaweb (i.e., localized metawebs with the same interaction
