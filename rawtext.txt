@@ -784,7 +784,8 @@ of our predictions [@Simmonds2024Recommendations].
 > interactions between willows, willow-galling sawflies, and their
 > natural enemies sampled across Europe. All data manipulation and
 > methods are described in Appendix 1. All code and data to reproduce
-> these analyses are available at the Open Science Framework (TBD).
+> these analyses are available on Zenodo
+> (https://doi.org/10.5281/zenodo.12802326).
 >
 > In Fig. 2a-b, we show how the dissimilarity between the metaweb of
 > binary interactions and aggregated local networks changes with the
