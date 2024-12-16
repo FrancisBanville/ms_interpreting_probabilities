@@ -478,12 +478,11 @@ emphasize the value of $1$.
 
 The probability of co-occurrence $P(X_{i,j,k})$ (short for
 $P(X_{i,j,k} = 1)$) can be estimated through the application of joint
-species distribution models [e.g., @Pollock2014Understanding],
-potentially taking into account biotic interactions
-[@Staniczenko2017Linking]. Given that the probability that two
-non-co-occurring taxa interact locally is zero (i.e.,
-$P(L_{i, j, k} = 1 | X_{i,j,k} = 0) = 0$), the probability of local
-interaction can be obtained by multiplying the probability of
+species distribution models [e.g., @Pollock2014UndCoo], potentially
+taking into account biotic interactions [@Staniczenko2017Linking]. Given
+that the probability that two non-co-occurring taxa interact locally is
+zero (i.e., $P(L_{i, j, k} = 1 | X_{i,j,k} = 0) = 0$), the probability
+of local interaction can be obtained by multiplying the probability of
 interaction given co-occurrence with the probability of co-occurrence:
 
 [$$P(L_{i, j, k} = 1) = P(L_{i, j, k} = 1| X_{i,j,k} = 1) \times P(X_{i,j,k} =
@@ -499,7 +498,7 @@ Local interactions may also be conditioned on local environmental
 factors such as temperature [@Angilletta2004TemGro], precipitation
 [@Woodward2012CliCha], habitat structure [@Klecka2014EffHab], and the
 presence or abundance of other taxa in the network
-[@Pilosof2017Multilayer; @Kefi2012More]. We use the variable $E_k$ to
+[@Pilosof2017Multilayer; @Kefi2012MorMea]. We use the variable $E_k$ to
 describe the local environmental context in which interaction
 probabilities were estimated. For example, in a mesocosm experiment
 estimating interaction probabilities between predators and prey with and
@@ -740,7 +739,7 @@ of our predictions [@Simmonds2024Recommendations].
 > data on local interactions across time and space, following parameter
 > inference.
 >
-> As indicated by Eq. 2, the probability that two taxa $i$ and $j$
+> As indicated by eq. 2, the probability that two taxa $i$ and $j$
 > interact locally can be obtained by multiplying their probability of
 > interaction given co-occurrence with their probability of
 > co-occurrence. The probability of interaction given co-occurrence can
@@ -1180,7 +1179,7 @@ feasibility of interactions.
 > genus. This equation assumes independence between species-level
 > interactions, which may not hold true in practice due to the strong
 > phylogenetic signal frequently encountered in species interactions
-> [@Gomez2010Ecological]. In contrast, a different approach is necessary
+> [@Gomez2010EcoInt]. In contrast, a different approach is necessary
 > when transitioning from a broader to a finer level of organization.
 > This is because the knowledge of an interaction between two genera
 > does not guarantee that all possible pairwise species combinations
@@ -1295,7 +1294,7 @@ feasibility of interactions.
 > could exist even if we do not explicitly condition interactions on
 > others. For example, the probability that two taxa interact could
 > change with the realization of another interaction or the presence or
-> abundance of other taxa [@Pilosof2017Multilayer; @Kefi2012More]. The
+> abundance of other taxa [@Pilosof2017Multilayer; @Kefi2012MorMea]. The
 > consequences of this assumption of independence on the prediction of
 > network structure have yet to be empirically examined. Sampling whole
 > networks (or graphs) instead of pairwise interactions may eliminate
@@ -1422,9 +1421,9 @@ pair and assembling them into a network of probabilistic interactions
 comes with limitations. Predicting local networks of binary interactions
 based on these interaction probabilities assumes independence among
 interactions, a condition seldom respected in practice
-[@Golubski2011Modifying]. The occurrence of an interaction may depend on
+[@Golubski2011ModMod]. The occurrence of an interaction may depend on
 the realization of other interactions or the presence or abundance of
-other taxa in the network [@Pilosof2017Multilayer; @Kefi2012More].
+other taxa in the network [@Pilosof2017Multilayer; @Kefi2012MorMea].
 Relaxing this assumption of independence is the next logical step in the
 stochastic representation of interactions.
 
