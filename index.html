@@ -283,7 +283,9 @@ interaction networks</div>
                 </a>
                 <sup class="affiliation">4</sup>
                 </span><span class="header--author">
-                Hana Mayall
+                <a href="https://orcid.org/0009-0001-5722-8925" target="_blank">
+                    Hana Mayall
+                </a>
                 <sup class="affiliation">4</sup>
                 </span><span class="header--author">
                 <a href="https://orcid.org/0000-0002-2029-2325" target="_blank">
@@ -632,7 +634,7 @@ interaction networks</div>
             of probabilistic interaction networks. These models and
             measures support the use of probabilistic interactions for
             the study of a wide range of ecological questions, from
-            making better predictions of species distribution <span
+            making better predictions of species distributions <span
             class="citation" data-cites="Cazelles2016Theorya">(Cazelles
             <em>et al.</em> 2016)</span> to forecasting the impact of
             climate change on ecological networks <span class="citation"
@@ -804,8 +806,8 @@ interaction networks</div>
             class="math inline"><em>B</em><sub><em>i</em>, <em>j</em></sub></span>
             between two taxa can be viewed as the result of a Bernoulli
             trial <span class="math inline">$B_{i, j} \sim {\rm
-            Bernoulli}(P(B_{i, j}))$</span>, with <span
-            class="math inline"><em>P</em>(<em>B</em><sub><em>i</em>, <em>j</em></sub>)</span>
+            Bernoulli}(\phi)$</span>, with <span
+            class="math inline"><em>ϕ</em> = <em>P</em>(<em>B</em><sub><em>i</em>, <em>j</em></sub>=1)</span>
             being the probability of interaction. This interaction
             probability characterizes our limited ecological knowledge
             and/or the intrinsic spatiotemporal variability of the
@@ -814,9 +816,12 @@ interaction networks</div>
             abundances) or expert (prior) knowledge about the
             interaction. In networks of probabilistic interactions, the
             edge values <span
+            class="math inline"><em>P</em>(<em>B</em><sub><em>i</em>, <em>j</em></sub>=1)</span>
+            (which we denote as <span
             class="math inline"><em>P</em>(<em>B</em><sub><em>i</em>, <em>j</em></sub>)</span>
-            are probabilistic events whose only two possible outcomes
-            are the presence (<span
+            for simplicity and better readability) are probabilistic
+            events whose only two possible outcomes are the presence
+            (<span
             class="math inline"><em>B</em><sub><em>i</em>, <em>j</em></sub> = 1</span>)
             or absence (<span
             class="math inline"><em>B</em><sub><em>i</em>, <em>j</em></sub> = 0</span>)
@@ -831,10 +836,10 @@ interaction networks</div>
             explanatory variables. This allows us to model the
             probability that at least two individuals interact under
             these conditions.</p>
-            <p>The variability of an interaction determines the fraction
-            of networks in which it occurs. This fraction can be
-            predicted by using a Binomial distribution, assuming a
-            constant interaction probability and independence between
+            <p>The variability of an interaction determines the number
+            of networks in which it occurs. This number can be predicted
+            by using a Binomial distribution, assuming a constant
+            interaction probability and independence between
             interactions in different networks (trials). When
             considering uncertainties around the estimation of <span
             class="math inline"><em>P</em>(<em>B</em><sub><em>i</em>, <em>j</em></sub>)</span>,
@@ -970,8 +975,12 @@ interaction networks</div>
             interact in nature, but can also represent the probability
             of empirically <em>observing</em> this interaction <span
             class="citation" data-cites="Catchen2023Missinga">(Catchen
-            <em>et al.</em> 2023)</span>. Local interactions may thus
-            arise from both the ecological (realized interactions) and
+            <em>et al.</em> 2023)</span>. Realized interactions occur
+            locally without necessarily being observed (two locally
+            interacting taxa may or may not be seen interacting during
+            sampling), whereas observed interactions are those that have
+            been locally recorded. Local interactions may thus arise
+            from both the ecological (realized interactions) and
             sampling (observed interactions) processes taking place
             locally.</p>
             <p>Local networks are delineated within a particular
@@ -1040,35 +1049,55 @@ interaction networks</div>
             illustrated in Box 1, co-occurrence may be modeled
             probabilistically, in which case it may conform to a
             Bernoulli distribution <span class="math inline">$X_{i,j,k}
-            \sim {\rm Bernoulli}(P(X_{i,j,k}))$</span>. The probability
-            of co-occurrence can be calculated using the individual
-            (marginal) occurrence probabilities <span
+            \sim {\rm Bernoulli}(\phi)$</span>, where <span
+            class="math inline"><em>ϕ</em> = <em>P</em>(<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1)</span>.
+            The probability of co-occurrence can be calculated using the
+            individual (marginal) occurrence probabilities <span
+            class="math inline"><em>P</em>(<em>X</em><sub><em>i</em>, <em>k</em></sub>=1)</span>
+            and <span
+            class="math inline"><em>P</em>(<em>X</em><sub><em>j</em>, <em>k</em></sub>=1)</span>
+            (which we denote as <span
             class="math inline"><em>P</em>(<em>X</em><sub><em>i</em>, <em>k</em></sub>)</span>
             and <span
-            class="math inline"><em>P</em>(<em>X</em><sub><em>j</em>, <em>k</em></sub>)</span>.
-            Given that taxa occurrences are not independent of each
-            other, the probability of co-occurrence can be calculated by
+            class="math inline"><em>P</em>(<em>X</em><sub><em>j</em>, <em>k</em></sub>)</span>
+            for simplicity and better readability). Given that taxa
+            occurrences are not independent of each other, the
+            probability of co-occurrence can be calculated by
             multiplying the probability of occurrence of one taxon by
             the probability of occurrence of the other given that the
             first one is present:</p>
             <p><span id="eq:modelcoprob"><span
-            class="math display"><em>P</em>(<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>) = <em>P</em>(<em>X</em><sub><em>i</em>, <em>k</em></sub>,<em>X</em><sub><em>j</em>, <em>k</em></sub>) = <em>P</em>(<em>X</em><sub><em>i</em>, <em>k</em></sub>|<em>X</em><sub><em>j</em>, <em>k</em></sub>)<em>P</em>(<em>X</em><sub><em>j</em>, <em>k</em></sub>)   (1)</span></span></p>
+            class="math display"><em>P</em>(<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>) = <em>P</em>(<em>X</em><sub><em>i</em>, <em>k</em></sub>,<em>X</em><sub><em>j</em>, <em>k</em></sub>) = <em>P</em>(<em>X</em><sub><em>i</em>, <em>k</em></sub>|<em>X</em><sub><em>j</em>, <em>k</em></sub>)<em>P</em>(<em>X</em><sub><em>j</em>, <em>k</em></sub>).   (1)</span></span></p>
+            <p>Note that to keep the text concise and readable, the
+            probability notation used in this manuscript implicitly
+            assigns a value of <span class="math inline">1</span> to
+            binary variables (e.g., in eq. 1 the term <span
+            class="math inline"><em>P</em>(<em>X</em><sub><em>i</em>, <em>k</em></sub>|<em>X</em><sub><em>j</em>, <em>k</em></sub>)</span>
+            is short for <span
+            class="math inline"><em>P</em>(<em>X</em><sub><em>i</em>, <em>k</em></sub>=1|<em>X</em><sub><em>j</em>, <em>k</em></sub>=1)</span>),
+            unless stated otherwise. The value is only stated explicitly
+            when it is <span class="math inline">0</span> or when we
+            wish to emphasize the value of <span
+            class="math inline">1</span>.</p>
             <p>The probability of co-occurrence <span
             class="math inline"><em>P</em>(<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>)</span>
+            (short for <span
+            class="math inline"><em>P</em>(<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1)</span>)
             can be estimated through the application of joint species
             distribution models <span class="citation"
-            data-cites="Pollock2014UndCoo">(e.g., Pollock <em>et
-            al.</em> 2014)</span>, potentially taking into account
-            biotic interactions <span class="citation"
+            data-cites="Pollock2014Understanding">(e.g.,
+            <strong>Pollock2014Understanding?</strong>)</span>,
+            potentially taking into account biotic interactions <span
+            class="citation"
             data-cites="Staniczenko2017Linking">(Staniczenko <em>et
             al.</em> 2017)</span>. Given that the probability that two
             non-co-occurring taxa interact locally is zero (i.e., <span
-            class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=0) = 0</span>),
+            class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1|<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=0) = 0</span>),
             the probability of local interaction can be obtained by
             multiplying the probability of interaction given
             co-occurrence with the probability of co-occurrence:</p>
             <p><span id="eq:co-occur"><span
-            class="math display"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>) = <em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>) × <em>P</em>(<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>).   (2)</span></span></p>
+            class="math display"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1) = <em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1|<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1) × <em>P</em>(<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1).   (2)</span></span></p>
             <p>Knowing that two taxa co-occur improves our estimation of
             the probability that they interact locally by mitigating a
             potential source of uncertainty.</p>
@@ -1084,11 +1113,12 @@ interaction networks</div>
             data-cites="Woodward2012CliCha">(Woodward <em>et al.</em>
             2012)</span>, habitat structure <span class="citation"
             data-cites="Klecka2014EffHab">(Klecka &amp; Boukal
-            2014)</span>, and presence of other taxa in the network
-            <span class="citation"
-            data-cites="Pilosof2017MulNat Kefi2012MorMea">(Kéfi <em>et
-            al.</em> 2012; Pilosof <em>et al.</em> 2017)</span>. We use
-            the variable <span
+            2014)</span>, and the presence or abundance of other taxa in
+            the network <span class="citation"
+            data-cites="Pilosof2017Multilayer Kefi2012More">(Pilosof
+            <em>et al.</em> 2017;
+            <strong>Kefi2012More?</strong>)</span>. We use the variable
+            <span
             class="math inline"><em>E</em><sub><em>k</em></sub></span>
             to describe the local environmental context in which
             interaction probabilities were estimated. For example, in a
@@ -1150,17 +1180,21 @@ interaction networks</div>
             occurring at a specific time and space. A local probability
             of interaction <span
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>)</span>
+            (short for <span
+            class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1)</span>)
             can be expressed as the product of the probability of local
             interaction given that the two taxa can potentially interact
             <span
-            class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>=1)</span>,
-            which we sometimes denote as <span
+            class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1|<em>M</em><sub><em>i</em>, <em>j</em></sub>=1)</span>
+            (which we sometimes denote as <span
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>)</span>
-            for the sake of simplicity, with their probability of
+            for the sake of simplicity), with their probability of
             regional interaction <span
-            class="math inline"><em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub>)</span>:</p>
+            class="math inline"><em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub>=1)</span>:</p>
             <p><span id="eq:local_meta"><span
-            class="math display"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>) = <em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>=1) × <em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub>=1).   (3)</span></span></p>
+            class="math display"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1) = <em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1|<em>M</em><sub><em>i</em>, <em>j</em></sub>=1) × <em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub>=1),   (3)</span></span></p>
+            <p>assuming that <span
+            class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1|<em>M</em><sub><em>i</em>, <em>j</em></sub>=0) = 0</span>.</p>
             <p>Low values of <span
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>)</span>
             indicate that feasible interactions rarely occur locally,
@@ -1210,12 +1244,16 @@ interaction networks</div>
             class="math inline"><em>f</em>(<em>L</em><sub><em>k</em></sub>)</span>,
             and biological feasibility <span
             class="math inline"><em>M</em><sub><em>i</em>, <em>j</em></sub></span>.
-            When these conditions are not explicit, it may be because
-            they have been marginalized over, which would be reflected
-            in the overall uncertainty of the interaction. The local
-            probability of interaction is described by the following
-            expression when all of these conditional variables are
-            included:</p>
+            When these conditions are absent from an expression, it may
+            be because they have been marginalized over, which would be
+            reflected in the overall uncertainty of the interaction.
+            Interaction probabilities may also have been implicitly
+            conditioned on missing variables (e.g., when estimated for
+            specific values of these variables without explicitly
+            including them as conditions), potentially impacting our
+            interpretation. The local probability of interaction is
+            described by the following expression when all of these
+            conditional variables are included:</p>
             <p><span id="eq:local"><span
             class="math display"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>X</em><sub><em>i</em>, <em>k</em></sub>,<em>X</em><sub><em>j</em>, <em>k</em></sub>,<em>N</em><sub><em>i</em>, <em>k</em></sub>,<em>N</em><sub><em>j</em>, <em>k</em></sub>,<em>T</em><sub><em>i</em>, <em>k</em></sub>,<em>T</em><sub><em>j</em>, <em>k</em></sub>,<em>E</em><sub><em>k</em></sub>,<em>A</em><sub>0</sub>,<em>t</em><sub>0</sub>,<em>f</em>(<em>L</em><sub><em>k</em></sub>),<em>M</em><sub><em>i</em>, <em>j</em></sub>).   (4)</span></span></p>
             <p>These conditional variables do not all need to be
@@ -1534,7 +1572,7 @@ interaction networks</div>
             class="math inline"><em>t</em><sub>0</sub></span> can be
             given by:</p>
             <p><span id="eq:modelrate"><span
-            class="math display"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>) = 1 − <em>e</em><sup>−<em>λ</em><sub><em>k</em></sub><em>t</em><sub>0</sub></sup>,   (6)</span></span></p>
+            class="math display"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1|<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1) = 1 − <em>e</em><sup>−<em>λ</em><sub><em>k</em></sub><em>t</em><sub>0</sub></sup>,   (6)</span></span></p>
             <p>which tends toward <span class="math inline">1</span> as
             <span class="math inline"><em>t</em><sub>0</sub> → ∞</span>
             if <span
@@ -1545,19 +1583,20 @@ interaction networks</div>
             <p>The occurrence of an interaction between <span
             class="math inline"><em>i</em></span> and <span
             class="math inline"><em>j</em></span> may be the result of a
-            Bernoulli trial with probability <span
-            class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>)</span>.
+            Bernoulli trial with parameter <span
+            class="math inline"><em>ϕ</em></span> representing the
+            probability of interaction <span
+            class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1)</span>.
             A Bayesian model can be built using the preceding equations
             to generate new interaction data, following the inference of
             the <span
             class="math inline"><em>λ</em><sub><em>k</em></sub></span>
-            and <span
-            class="math inline"><em>P</em>(<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>)</span>
+            and <span class="math inline"><em>ϕ</em></span>
             parameters.</p>
             <p><span id="eq:model"><span
-            class="math display"><em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub> ∼ Bernoulli(<em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>))   (7)</span></span></p>
+            class="math display"><em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub> ∼ Bernoulli(<em>ϕ</em>)   (7)</span></span></p>
             <p><span id="eq:modeleq"><span
-            class="math display"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>) = <em>P</em>(<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>)(1−<em>e</em><sup>−<em>λ</em><sub><em>k</em></sub><em>t</em><sub>0</sub></sup>)   (8)</span></span></p>
+            class="math display"><em>ϕ</em> = <em>P</em>(<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1)(1−<em>e</em><sup>−<em>λ</em><sub><em>k</em></sub><em>t</em><sub>0</sub></sup>)   (8)</span></span></p>
             <p><span id="eq:modelgamma"><span
             class="math display"><em>P</em>(<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>) ∼ Beta(2,2)   (9)</span></span></p>
             <p><span id="eq:modellambda"><span
@@ -1566,21 +1605,27 @@ interaction networks</div>
             interaction under different parameter values. In the right
             panel, we notice that the probability of interaction always
             converges toward the probability of co-occurrence <span
-            class="math inline"><em>P</em>(<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>)</span>,
+            class="math inline"><em>P</em>(<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1)</span>,
             for all positive values of the interaction rate.</p>
             <figure>
             <img src="figures/spatiotemporal_model.png"
             id="fig:spatiotemporal"
-            alt="Figure 1: Parameters of the spatiotemporally explicit model of interactions. (a) Probability of local interaction given by the process model (Eq. 8) under different values of \lambda_k (interaction rate) and P(X_{i,j,k}) (probability of co-occurrence), with t_0 = 1 (duration). The probability of local interaction represents the probability that the two taxa will interact at least once within the given time interval. Parameters t_0 and \lambda_k have complementary units (e.g., t_0 in months and \lambda_k in number of interactions per month). The parameter values used in the right panel are denoted by the white stars. (b) Scaling of the probability of interaction with the duration parameter t_0, for different values of \lambda_k and P(X_{i,j,k})." />
+            alt="Figure 1: Parameters of the spatiotemporally explicit model of interactions. (a) Probability of local interaction \phi = P(L_{i,j,k}) (short for P(L_{i,j,k} = 1)) given by the process model (eq. 8) under different values of \lambda_k (interaction rate) and P(X_{i,j,k}) (probability of co-occurrence, short for P(X_{i,j,k} = 1)), with t_0 = 1 (duration). The probability of local interaction represents the probability that the two taxa will interact at least once within the given time interval. Parameters t_0 and \lambda_k have complementary units (e.g., t_0 in months and \lambda_k in number of interactions per month). The parameter values used in the right panel are denoted by the white stars. (b) Scaling of the probability of interaction with the duration parameter t_0, for different values of \lambda_k and P(X_{i,j,k})." />
             <figcaption aria-hidden="true">Figure 1: <strong>Parameters
             of the spatiotemporally explicit model of
             interactions.</strong> (a) Probability of local interaction
-            given by the process model (Eq. 8) under different values of
+            <span
+            class="math inline"><em>ϕ</em> = <em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>)</span>
+            (short for <span
+            class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1)</span>)
+            given by the process model (eq. 8) under different values of
             <span
             class="math inline"><em>λ</em><sub><em>k</em></sub></span>
             (interaction rate) and <span
             class="math inline"><em>P</em>(<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>)</span>
-            (probability of co-occurrence), with <span
+            (probability of co-occurrence, short for <span
+            class="math inline"><em>P</em>(<em>X</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1)</span>),
+            with <span
             class="math inline"><em>t</em><sub>0</sub> = 1</span>
             (duration). The probability of local interaction represents
             the probability that the two taxa will interact at least
@@ -1689,6 +1734,8 @@ interaction networks</div>
             probabilistic interactions, we observe that high values of
             <span
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>)</span>
+            (short for <span
+            class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1|<em>M</em><sub><em>i</em>, <em>j</em></sub>=1)</span>)
             lead to systematic overestimations in the number of
             interactions and connectance, especially when <span
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>) = 1</span>
@@ -1838,12 +1885,13 @@ interaction networks</div>
             depend on trait aggregation.</p>
             <p>The biological feasibility of interactions expresses our
             degree of belief that there exists at least one combination
-            of phenotypes that could support an interaction if they were
-            to encounter each other, assuming they had enough time to
-            interact. Evaluating this probability is conducted without
-            incorporating the environmental conditions under which they
-            encounter each other into the model. It is the complement of
-            the probability <span
+            of phenotypes that could support a specific type of
+            interaction if they were to encounter each other, assuming
+            they had enough time to interact. Evaluating this
+            probability is conducted without incorporating the
+            environmental conditions under which they encounter each
+            other into the model. It is the complement of the
+            probability <span
             class="math inline"><em>P</em>(<em>F</em><sub><em>i</em>, <em>j</em></sub>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>)</span>
             of forbidden interactions (i.e., the probability that their
             traits do not support an interaction), which is based
@@ -1915,18 +1963,26 @@ interaction networks</div>
             that it is biologically feasible, even across all
             environmental conditions:</p>
             <p><span id="eq:feasibility"><span
-            class="math display">∫<sub><em>E</em></sub><em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub><sup>*</sup>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>,<em>E</em>)<em>d</em><em>E</em> ≤ <em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>).   (14)</span></span></p>
-            <p>This is because the biological feasibility of an
-            interaction is a prerequisite for its ecological
-            feasibility. In other words, biological feasibility is
-            necessary but not sufficient for an interaction to be
-            ecologically feasible. Our discussion of metawebs focuses on
-            the biological feasibility of interactions since most
-            methods developed for inferring probabilities of regional
-            interactions do not explicitly take into account
-            environmental conditions <span class="citation"
-            data-cites="Strydom2022Food">(e.g., Strydom <em>et al.</em>
-            2022)</span>.</p>
+            class="math display"><em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub><sup>*</sup>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>) = ∫<sub><em>E</em></sub><em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub><sup>*</sup>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>,<em>E</em>)<em>g</em>(<em>E</em>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>)<em>d</em><em>E</em> ≤ <em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>),   (14)</span></span></p>
+            <p>where <span
+            class="math inline"><em>g</em>(<em>E</em>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>)</span>
+            is the conditional probability density function of <span
+            class="math inline"><em>E</em></span> given <span
+            class="math inline"><em>T</em><sub><em>i</em></sub></span>
+            and <span
+            class="math inline"><em>T</em><sub><em>j</em></sub></span>.</p>
+            <p>The difference between these two regional probabilities
+            of interaction (across all environmental conditions) arises
+            because the biological feasibility of an interaction is a
+            prerequisite for its ecological feasibility. In other words,
+            biological feasibility is necessary but not sufficient for
+            an interaction to be ecologically feasible. Our discussion
+            of metawebs focuses on the biological feasibility of
+            interactions since most methods developed for inferring
+            probabilities of regional interactions do not explicitly
+            take into account environmental conditions <span
+            class="citation" data-cites="Strydom2022Food">(e.g., Strydom
+            <em>et al.</em> 2022)</span>.</p>
             <h2
             id="how-are-regional-probabilistic-interactions-estimated">How
             are regional probabilistic interactions estimated?</h2>
@@ -2142,9 +2198,13 @@ interaction networks</div>
             class="math inline"><em>g</em><sub>1, <em>i</em></sub></span>
             and <span
             class="math inline"><em>g</em><sub>2, <em>j</em></sub></span>
-            are the species of the corresponding genus and assuming
-            independence between species-level interactions. In
-            contrast, a different approach is necessary when
+            are the species of the corresponding genus. This equation
+            assumes independence between species-level interactions,
+            which may not hold true in practice due to the strong
+            phylogenetic signal frequently encountered in species
+            interactions <span class="citation"
+            data-cites="Gomez2010Ecological">(<strong>Gomez2010Ecological?</strong>)</span>.
+            In contrast, a different approach is necessary when
             transitioning from a broader to a finer level of
             organization. This is because the knowledge of an
             interaction between two genera does not guarantee that all
@@ -2197,7 +2257,9 @@ interaction networks</div>
             trial for each pair of taxa based on their regional
             probability of interaction:</p>
             <p><span class="math display">$$M_{i, j} \sim {\rm
-            Bernoulli}(P(M_{i, j})).$$</span></p>
+            Bernoulli}(\phi_{i,j}),$$</span></p>
+            <p>where <span
+            class="math inline"><em>ϕ</em><sub><em>i</em>, <em>j</em></sub> = <em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub>=1)</span>.</p>
             <p>In employing this technique, we predict a single metaweb
             of binary interactions for each simulation. Every pair of
             taxa predicted to interact in this metaweb will be treated
@@ -2211,7 +2273,9 @@ interaction networks</div>
             <p>The second technique is to independently sample each
             local network of probabilistic interactions:</p>
             <p><span class="math display">$$L_{i, j, k} \sim {\rm
-            Bernoulli}(P(L_{i, j, k})).$$</span></p>
+            Bernoulli}(\phi_{i,j,k}),$$</span></p>
+            <p>where <span
+            class="math inline"><em>ϕ</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub> = <em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>=1)</span>.</p>
             <p>This can be achieved by first generating distinct
             probabilistic interaction networks for each location.
             Because binary interactions are sampled independently for
@@ -2288,10 +2352,14 @@ interaction networks</div>
             <p>Both sampling techniques assume independence between
             interactions, which might not hold true in reality.
             Covariation among interactions could exist even if we do not
-            explicitly condition interactions on others. For example, an
-            interaction between two taxa could be more probable when
-            another interaction occurs. The consequences of this
-            assumption of independence on the prediction of network
+            explicitly condition interactions on others. For example,
+            the probability that two taxa interact could change with the
+            realization of another interaction or the presence or
+            abundance of other taxa <span class="citation"
+            data-cites="Pilosof2017Multilayer Kefi2012More">(Pilosof
+            <em>et al.</em> 2017;
+            <strong>Kefi2012More?</strong>)</span>. The consequences of
+            this assumption of independence on the prediction of network
             structure have yet to be empirically examined. Sampling
             whole networks (or graphs) instead of pairwise interactions
             may eliminate the need for this assumption of independence
@@ -2381,12 +2449,18 @@ interaction networks</div>
             biological capacity to interact must be higher than the
             probability of them interacting at any location and time
             because they may never co-occur or encounter locally.
-            Specifically, the cumulative probability of local
-            interaction across all spatial, temporal, and environmental
-            conditions must be less than the probability of regional
-            interaction, i.e.</p>
+            Specifically, the marginal probability of local interaction
+            across all spatial, temporal, and environmental conditions
+            must be less than the probability of regional interaction,
+            i.e.</p>
             <p><span id="eq:all"><span
-            class="math display">∫<sub><em>E</em><sub><em>k</em></sub></sub>∫<sub><em>A</em><sub>0</sub></sub>∫<sub><em>t</em><sub>0</sub></sub><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>E</em><sub><em>k</em></sub>,<em>A</em><sub>0</sub>,<em>t</em><sub>0</sub>) d<em>t</em><sub>0</sub> d<em>A</em><sub>0</sub> d<em>E</em><sub><em>k</em></sub> ≤ <em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>).   (18)</span></span></p>
+            class="math display">∫<sub><em>E</em><sub><em>k</em></sub></sub>∫<sub><em>A</em><sub>0</sub></sub>∫<sub><em>t</em><sub>0</sub></sub><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>E</em><sub><em>k</em></sub>,<em>A</em><sub>0</sub>,<em>t</em><sub>0</sub>)<em>g</em>(<em>E</em><sub><em>k</em></sub>,<em>A</em><sub>0</sub>,<em>t</em><sub>0</sub>) d<em>t</em><sub>0</sub> d<em>A</em><sub>0</sub> d<em>E</em><sub><em>k</em></sub> ≤ <em>P</em>(<em>M</em><sub><em>i</em>, <em>j</em></sub>|<em>T</em><sub><em>i</em></sub>,<em>T</em><sub><em>j</em></sub>),   (18)</span></span></p>
+            <p>where <span
+            class="math inline"><em>g</em>(<em>E</em><sub><em>k</em></sub>,<em>A</em><sub>0</sub>,<em>t</em><sub>0</sub>)</span>
+            is the joint density function of <span
+            class="math inline"><em>E</em><sub><em>k</em></sub></span>,
+            <span class="math inline"><em>A</em><sub>0</sub></span>, and
+            <span class="math inline"><em>t</em><sub>0</sub></span>.</p>
             <p>Estimating more precisely the probability <span
             class="math inline"><em>P</em>(<em>L</em><sub><em>i</em>, <em>j</em>, <em>k</em></sub>|<em>M</em><sub><em>i</em>, <em>j</em></sub>)</span>
             that two taxa interact locally if they can potentially
@@ -2441,10 +2515,17 @@ interaction networks</div>
             Predicting local networks of binary interactions based on
             these interaction probabilities assumes independence among
             interactions, a condition seldom respected in practice <span
-            class="citation" data-cites="Golubski2011ModMod">(Golubski
-            &amp; Abrams 2011)</span>. Relaxing this assumption is the
-            next logical step in the stochastic representation of
-            interactions.</p>
+            class="citation"
+            data-cites="Golubski2011Modifying">(<strong>Golubski2011Modifying?</strong>)</span>.
+            The occurrence of an interaction may depend on the
+            realization of other interactions or the presence or
+            abundance of other taxa in the network <span
+            class="citation"
+            data-cites="Pilosof2017Multilayer Kefi2012More">(Pilosof
+            <em>et al.</em> 2017;
+            <strong>Kefi2012More?</strong>)</span>. Relaxing this
+            assumption of independence is the next logical step in the
+            stochastic representation of interactions.</p>
             <p>A more accurate representation of the uncertainty and
             variability of ecological networks involves creating
             <em>probabilistic networks</em> (<span
@@ -2978,14 +3059,6 @@ interaction networks</div>
             interactions on Chilean rocky shores</a>. <em>Ecology</em>,
             96, 291–303.
             </div>
-            <div id="ref-Kefi2012MorMea" class="csl-entry"
-            role="doc-biblioentry">
-            Kéfi, S., Berlow, E.L., Wieters, E.A., Navarrete, S.A.,
-            Petchey, O.L., Wood, S.A., <em>et al.</em> (2012). <a
-            href="https://doi.org/10.1111/j.1461-0248.2011.01732.x">More
-            than a meal… integrating non-feeding interactions into food
-            webs</a>. <em>Ecology Letters</em>, 15, 291–300.
-            </div>
             <div id="ref-Kefi2016HowStr" class="csl-entry"
             role="doc-biblioentry">
             Kéfi, S., Miele, V., Wieters, E.A., Navarrete, S.A. &amp;
@@ -3120,7 +3193,7 @@ interaction networks</div>
             foraging, and food web structure</a>. <em>Proceedings of the
             National Academy of Sciences</em>, 105, 4191–4196.
             </div>
-            <div id="ref-Pilosof2017MulNat" class="csl-entry"
+            <div id="ref-Pilosof2017Multilayer" class="csl-entry"
             role="doc-biblioentry">
             Pilosof, S., Porter, M.A., Pascual, M. &amp; Kéfi, S.
             (2017). <a
@@ -3173,15 +3246,6 @@ interaction networks</div>
             href="https://www.jstor.org/stable/2462536">Complex Trophic
             Interactions in Deserts: An Empirical Critique of Food-Web
             Theory</a>. <em>The American Naturalist</em>, 138, 123–155.
-            </div>
-            <div id="ref-Pollock2014UndCoo" class="csl-entry"
-            role="doc-biblioentry">
-            Pollock, L.J., Tingley, R., Morris, W.K., Golding, N.,
-            O’Hara, R.B., Parris, K.M., <em>et al.</em> (2014). <a
-            href="https://doi.org/10.1111/2041-210X.12180">Understanding
-            co-occurrence bymodelling species simultaneously with a
-            Joint Species DistributionModel (JSDM)</a>. <em>Methods in
-            Ecology and Evolution</em>, 5, 397–406.
             </div>
             <div id="ref-Pomeranz2019InfPre" class="csl-entry"
             role="doc-biblioentry">
