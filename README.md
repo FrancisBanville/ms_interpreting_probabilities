@@ -433,7 +433,7 @@ when it is $0$ or when we wish to emphasize the value of $1$.
 
 The probability of co-occurrence $P(X_{i,j,k})$ (short for $P(X_{i,j,k} = 1)$)
 can be estimated through the application of joint species distribution models
-[e.g., @Pollock2014Understanding], potentially taking into account biotic
+[e.g., @Pollock2014UndCoo], potentially taking into account biotic
 interactions [@Staniczenko2017Linking]. Given that the probability that two
 non-co-occurring taxa interact locally is zero (i.e., $P(L_{i, j, k} = 1 |
 X_{i,j,k} = 0) = 0$), the probability of local interaction can be obtained by
@@ -451,7 +451,7 @@ they interact locally by mitigating a potential source of uncertainty.
 Local interactions may also be conditioned on local environmental factors such
 as temperature [@Angilletta2004TemGro], precipitation [@Woodward2012CliCha],
 habitat structure [@Klecka2014EffHab], and the presence or abundance of other
-taxa in the network [@Pilosof2017Multilayer; @Kefi2012More]. We use the variable
+taxa in the network [@Pilosof2017Multilayer; @Kefi2012MorMea]. We use the variable
 $E_k$ to describe the local environmental context in which interaction
 probabilities were estimated. For example, in a mesocosm experiment estimating
 interaction probabilities between predators and prey with and without refuges,
@@ -631,7 +631,7 @@ understand better the validity and limitations of our predictions
 > prove valuable for generating new data on local interactions across time and
 > space, following parameter inference. 
 > 
-> As indicated by @Eq:co-occur, the probability that two taxa $i$ and $j$
+> As indicated by @eq:co-occur, the probability that two taxa $i$ and $j$
 > interact locally can be obtained by multiplying their probability of
 > interaction given co-occurrence with their probability of co-occurrence. The
 > probability of interaction given co-occurrence can be made temporally explicit
@@ -1033,7 +1033,7 @@ feasibility of interactions.
 > where $g_{1,i}$ and $g_{2,j}$ are the species of the corresponding genus. This
 > equation assumes independence between species-level interactions, which may
 > not hold true in practice due to the strong phylogenetic signal frequently
-> encountered in species interactions [@Gomez2010Ecological]. In contrast, a
+> encountered in species interactions [@Gomez2010EcoInt]. In contrast, a
 > different approach is necessary when transitioning from a broader to a finer
 > level of organization. This is because the knowledge of an interaction between
 > two genera does not guarantee that all possible pairwise species combinations
@@ -1137,7 +1137,7 @@ feasibility of interactions.
 > we do not explicitly condition interactions on others. For example, the
 > probability that two taxa interact could change with the realization of
 > another interaction or the presence or abundance of other taxa
-> [@Pilosof2017Multilayer; @Kefi2012More]. The consequences of this assumption
+> [@Pilosof2017Multilayer; @Kefi2012MorMea]. The consequences of this assumption
 > of independence on the prediction of network structure have yet to be
 > empirically examined. Sampling whole networks (or graphs) instead of pairwise
 > interactions may eliminate the need for this assumption of independence
@@ -1255,10 +1255,10 @@ Estimating local interaction probabilities independently for each taxa pair and
 assembling them into a network of probabilistic interactions comes with
 limitations. Predicting local networks of binary interactions based on these
 interaction probabilities assumes independence among interactions, a condition
-seldom respected in practice [@Golubski2011Modifying]. The occurrence of an
+seldom respected in practice [@Golubski2011ModMod]. The occurrence of an
 interaction may depend on the realization of other interactions or the presence
 or abundance of other taxa in the network [@Pilosof2017Multilayer;
-@Kefi2012More]. Relaxing this assumption of independence is the next logical
+@Kefi2012MorMea]. Relaxing this assumption of independence is the next logical
 step in the stochastic representation of interactions. 
 
 A more accurate representation of the uncertainty and variability of ecological
