@@ -26,9 +26,9 @@ jobs:
           arch: 'x64'      
       - name: Get the typesetter
         run: |
-          wget https://github.com/gabrieldansereau/manuscript-typesetter/archive/refs/heads/main.tar.gz
+          wget https://github.com/gabrieldansereau/manuscript-typesetter/archive/refs/tags/2024-04_ms_interpreting_probabilities.tar.gz -O main.tar.gz
           tar -xvf main.tar.gz
-          mv manuscript-typesetter-main .typesetter
+          mv manuscript-typesetter-* .typesetter
       - name: Julia packages
         uses: julia-actions/julia-buildpkg@v1
         with:
